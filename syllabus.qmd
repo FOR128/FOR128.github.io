@@ -1,0 +1,58 @@
+---
+title: "Syllabus"
+subtitle: "FOR 128: Practical Computing and Data Science Tools"
+---
+
+## Useful Information
+
+**Instructor**: Grayson White ([whitegra\@msu.edu](mailto:whitegra@msu.edu), Room 211 Natural Resources Building)
+
+**Links**:
+
+-   The course website, [www.for128.org](https://www.for128.org), for course information, lecture slides, and course materials.
+
+-   [D2L](https://d2l.msu.edu), for course feedback and non-public course materials.
+
+-   [Slack](), for course communication, troubleshooting, and questions.
+
+**Course Description**:
+
+This course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using spreadsheet software and the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences.
+
+------------------------------------------------------------------------
+
+## Learning Outcomes
+
+Upon completion of this course students should be able to:
+
+1.  apply best practices for naming and organizing files within a directory structure to facilitate an efficient and reproducible workflow,
+
+2.  transform raw data into more readily used formats, i.e., perform key "data wrangling" tasks such as data cleaning, structuring, enriching, and validating,
+
+3.  conduct basic Exploratory Data Analysis (EDA), i.e., apply built-in and costume written functions to explore data characteristics and communicate findings using summary tables, graphics, and basic summary statistics.
+
+------------------------------------------------------------------------
+
+## Learning Materials & Tools
+
+**Textbook**: Introduction to Forestry Data Analysis with R, by Andrew O. Finley and Jeffrey W. Doser. *Available free, online:* [www.finley-lab.com/files/ifdar/](https://www.finley-lab.com/files/ifdar/)
+
+**R and RStudio**: R is a free and open source programming language, and RStudio is an Integrated Development Environment (IDE) which allows for streamlined use of the R programming language. Both are free to install, and installation instructions will be provided in this course. A laptop that can run R and RStudio is required for this course.
+
+------------------------------------------------------------------------
+
+## Meetings & Office Hours
+
+------------------------------------------------------------------------
+
+## Assessments
+
+------------------------------------------------------------------------
+
+## AI Policy for FOR 128
+
+Artificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.
+
+Violations of this policy are considered academic misconduct.
+
+------------------------------------------------------------------------

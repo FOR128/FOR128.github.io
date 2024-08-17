@@ -1,0 +1,28 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "FOR 128"
+  image: assets/stat20-hex.png
+  site-url: "https://www.for128.org/"
+  navbar:
+    title: false
+    logo: assets/for128-hex.png
+    logo-alt: "FOR 128 logo"
+    background: white
+    foreground: "gray-800"
+    left:
+      - href: index.qmd
+        text: Home
+      - syllabus.qmd
+      - about.qmd
+
+format:
+  html:
+    theme: sandstone
+    css: assets/styles.scss
+    toc: true
+
+editor: visual
+

@@ -1,0 +1,25 @@
+---
+---
+
+:::::{.content-block}
+::::{.grid}
+:::{#banner .g-col-12 .g-col-md-6 style="margin: 3em -5em 0em 1em"}
+
+:::{.banner-text}
+Practical Computing and Data Science Tools
+:::
+
+[For 128 Michigan State University]{.smallcaps}
+
+
+
+:::
+
+:::{#hex .g-col-12 .g-col-md-6 .text-center style="margin: 0em -5em 0em 1em"}
+
+\
+
+![](assets/for128-hex.png){.img-fluid width=250}
+:::
+::::
+:::::
