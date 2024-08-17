@@ -23,6 +23,9 @@ format:
     theme: sandstone
     css: assets/styles.scss
     toc: true
+    
+resources: 
+  - CNAME
 
 editor: visual
 
