@@ -15,8 +15,14 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - syllabus.qmd
-      - about.qmd
+      - href: syllabus.qmd
+        text: Syllabus
+      - href: https://www.finley-lab.com/files/ifdar/
+        target: "_blank"
+        rel: "noopener noreferrer"
+        text: Textbook
+      - href: about.qmd
+        text: About
 
 format:
   html:
