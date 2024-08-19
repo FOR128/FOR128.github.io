@@ -17,6 +17,11 @@ website:
         text: Home
       - href: syllabus.qmd
         text: Syllabus
+      - text: Slides
+        menu:
+          - slides/test_slides.qmd
+      - href: assignments.qmd
+        text: Assignments
       - href: https://www.finley-lab.com/files/ifdar/
         target: "_blank"
         rel: "noopener noreferrer"

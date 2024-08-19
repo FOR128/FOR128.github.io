@@ -1,6 +1,6 @@
 ---
 title: "Syllabus"
-subtitle: "FOR 128: Practical Computing and Data Science Tools"
+subtitle: "FOR 128: Practical Computing and Data Science Tools, Fall 2024"
 format:
   html: default
   pdf: default

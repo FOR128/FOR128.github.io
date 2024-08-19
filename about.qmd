@@ -1,5 +1,0 @@
----
-title: "About"
----
-
-This site was created with Quarto. Much inspiration, styling, and format troubleshooting was drawn from UC Berkeley's [Stat 20 website](https://www.stat20.org/).

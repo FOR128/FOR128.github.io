@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "tickets/test_tickets.html",
+    "href": "tickets/test_tickets.html",
+    "title": "Lecture Ticket Test",
+    "section": "",
+    "text": "Question one\nQuestion two\n\netc.."
+  },
+  {
     "objectID": "syllabus.html",
     "href": "syllabus.html",
     "title": "Syllabus",
@@ -56,17 +63,59 @@
     "text": "AI Policy for FOR 128\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
   },
   {
+    "objectID": "labs/test_labs.html",
+    "href": "labs/test_labs.html",
+    "title": "Test Labs",
+    "section": "",
+    "text": "Question one\nQuestion two\n\netc.."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Practical Computing   and Data Science Tools",
     "section": "",
-    "text": "Practical Computing   and Data Science Tools\nFor 128 Michigan State University"
+    "text": "For 128 Michigan State University\nFall 2024\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "index.html#week-1-august-25---31",
+    "href": "index.html#week-1-august-25---31",
+    "title": "Practical Computing   and Data Science Tools",
     "section": "",
-    "text": "This site was created with Quarto. Much inspiration, styling, and format troubleshooting was drawn from UC Berkeley’s Stat 20 website."
+    "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+  },
+  {
+    "objectID": "psets/test_psets.html",
+    "href": "psets/test_psets.html",
+    "title": "test pset",
+    "section": "",
+    "text": "pset question one\nQuestion two\n\netc.."
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Assignment\nLab 1\nLab 2\n\n\n\nAvailable date\nThursday, 8/27, at lab.\nThursday, 9/5, at lab.\n\n\n\nDue Date\nWednesday, 9/4 at 10pm.\nWednesday, 9/11 at 10pm."
+  },
+  {
+    "objectID": "assignments.html#labs",
+    "href": "assignments.html#labs",
+    "title": "Assignments",
+    "section": "",
+    "text": "Assignment\nLab 1\nLab 2\n\n\n\nAvailable date\nThursday, 8/27, at lab.\nThursday, 9/5, at lab.\n\n\n\nDue Date\nWednesday, 9/4 at 10pm.\nWednesday, 9/11 at 10pm."
+  },
+  {
+    "objectID": "assignments.html#problem-sets",
+    "href": "assignments.html#problem-sets",
+    "title": "Assignments",
+    "section": "Problem Sets",
+    "text": "Problem Sets"
+  },
+  {
+    "objectID": "assignments.html#lecture-tickets",
+    "href": "assignments.html#lecture-tickets",
+    "title": "Assignments",
+    "section": "Lecture Tickets",
+    "text": "Lecture Tickets"
   }
 ]

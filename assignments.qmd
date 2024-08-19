@@ -1,0 +1,46 @@
+---
+title: "Assignments"
+subtitle: "FOR 128: Practical Computing and Data Science Tools, Fall 2024"
+---
+
+## Labs
+
+:::: {.columns}
+
+::: {.column width="20%"}
+**Assignment**
+
+Lab 1
+
+Lab 2
+:::
+
+::: {.column width="10%"}
+<!-- empty column to create gap -->
+:::
+
+::: {.column width="25%"}
+**Available date**
+
+Thursday, 8/27, at lab. 
+
+Thursday, 9/5, at lab. 
+:::
+
+::: {.column width="10%"}
+<!-- empty column to create gap -->
+:::
+
+::: {.column width="25%"}
+**Due Date**
+
+Wednesday, 9/4 at 10pm.
+
+Wednesday, 9/11 at 10pm.
+:::
+
+::::
+
+## Problem Sets
+
+## Lecture Tickets
