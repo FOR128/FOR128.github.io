@@ -1,11 +1,14 @@
 ---
 title: "Syllabus"
 subtitle: "FOR 128: Practical Computing and Data Science Tools"
+format:
+  html: default
+  pdf: default
 ---
 
 ## Useful Information
 
-**Instructor**: Grayson White ([whitegra\@msu.edu](mailto:whitegra@msu.edu), Room 211 Natural Resources Building)
+**Instructor**: Grayson White ([whitegra@msu.edu](mailto:whitegra@msu.edu), Room 211 Natural Resources Building)
 
 **Links**:
 
@@ -45,21 +48,21 @@ Upon completion of this course students should be able to:
 
 We'll have a lecture-style meeting twice a week, and a lab meeting once a week.
 
-- Lectures are on Tuesdays and Thursdays, 9:10am - 10am, Natural Resources Building, Room 152. 
+-   Lectures are on Tuesdays and Thursdays, 9:10am - 10am, Natural Resources Building, Room 152.
 
-- Labs are on Thursdays, 10am - 12pm, Natural Resources Building, Room 223.
+-   Labs are on Thursdays, 10am - 12pm, Natural Resources Building, Room 223.
 
-Outside of lectures and labs, I will also hold *office hours*. Office hours will be held Tuesdays (10:30am - 11:30am) and Thursdays (1:30pm - 2:30pm), Natural Resources Building, Room 211. 
+Outside of lectures and labs, I will also hold *office hours*. Office hours will be held Tuesdays (10:30am - 11:30am) and Thursdays (1:30pm - 2:30pm), Natural Resources Building, Room 211.
 
 Office hours are a great way to:
 
-- get help on assignments you are stuck on,
+-   get help on assignments you are stuck on,
 
-- ask questions you didn't get a chance to ask in class, 
+-   ask questions you didn't get a chance to ask in class,
 
-- familiarize yourself with the instructor and course expectations, 
+-   familiarize yourself with the instructor and course expectations,
 
-- and much more!
+-   and much more!
 
 Office hours can be a very helpful tool for your success in this course and beyond in college. Attending office hours is a great habit!
 
@@ -67,19 +70,34 @@ Office hours can be a very helpful tool for your success in this course and beyo
 
 ## Assessments
 
-In this course, you'll be assessed based on your work and participation. In particular: 
+In this course, you'll be assessed based on your work and participation. In particular:
 
-- Lab reports (40%)
+-   Lab reports (40%)
 
-- Exams (20%)
+-   Exams (20%)
 
-- Homework Exercises (15%)
+-   Homework exercises (15%)
 
-- In-class quizzes (15%)
+-   In-class quizzes (15%)
 
-- Participation (10%)
+-   Lecture tickets (10%)
 
 ------------------------------------------------------------------------
+
+## Collaboration Policy for FOR 128
+
+Working with your classmates on difficult and interesting problems can not only help your learning, but help you get to know each other. Therefore, we allow and encourage collaboration on lab reports, homework exercises, and lecture tickets. However, collaboration on exams and quizzes is strictly prohibited and will be considered academic misconduct.
+
+If you choose to collaborate with a classmate, please add their name to the top of your assignment, and list them as a collaborator, e.g.: 
+
+Collaborator(s): Elliot Shannon, Romain Boutelet
+
+**But what *is* collaboration?**
+
+For FOR 128, collaboration can look like: working with classmates together on a given problem, doing scratch work, helping each other get un-stuck on a part of a problem, and even coming to a solution. However, you must write up your own problem solutions individually and cannot copy other's solutions (even those who you have collaborated with). Further, copying code from a collaborator, classmate, or generative AI tool (see the following section) is strictly prohibited and will be considered academic misconduct.  
+
+------------------------------------------------------------------------
+
 
 ## AI Policy for FOR 128
 

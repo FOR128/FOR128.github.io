@@ -39,7 +39,7 @@
     "href": "syllabus.html#assessments",
     "title": "Syllabus",
     "section": "Assessments",
-    "text": "Assessments\nIn this course, you’ll be assessed based on your work and participation. In particular:\n\nLab reports (40%)\nExams (20%)\nHomework Exercises (15%)\nIn-class quizzes (15%)\nParticipation (10%)"
+    "text": "Assessments\nIn this course, you’ll be assessed based on your work and participation. In particular:\n\nLab reports (40%)\nExams (20%)\nHomework exercises (15%)\nIn-class quizzes (15%)\nLecture tickets (10%)"
   },
   {
     "objectID": "syllabus.html#ai-policy-for-for-128",
@@ -51,9 +51,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "FOR 128",
+    "title": "Practical Computing   and Data Science Tools",
     "section": "",
-    "text": "Practical Computing and Data Science Tools\n\nFor 128 Michigan State University"
+    "text": "Practical Computing   and Data Science Tools\nFor 128 Michigan State University"
   },
   {
     "objectID": "about.html",
@@ -61,5 +61,19 @@
     "title": "About",
     "section": "",
     "text": "This site was created with Quarto. Much inspiration, styling, and format troubleshooting was drawn from UC Berkeley’s Stat 20 website."
+  },
+  {
+    "objectID": "syllabus.html#collaboration-policy-for-for-128",
+    "href": "syllabus.html#collaboration-policy-for-for-128",
+    "title": "Syllabus",
+    "section": "Collaboration Policy for FOR 128",
+    "text": "Collaboration Policy for FOR 128\nWorking with your classmates on difficult and interesting problems can not only help your learning, but help you get to know each other. Therefore, we allow and encourage collaboration on lab reports, homework exercises, and lecture tickets. However, collaboration on exams and quizzes is strictly prohibited and will be considered academic misconduct.\nIf you choose to collaborate with a classmate, please add their name to the top of your assignment, and list them as a collaborator, e.g.:\nCollaborator(s): Elliot Shannon, Romain Boutelet\nBut what is collaboration?\nFor FOR 128, collaboration can look like: working with classmates together on a given problem, doing scratch work, helping each other get un-stuck on a part of a problem, and even coming to a solution. However, you must write up your own problem solutions individually and cannot copy other’s solutions (even those who you have collaborated with). Further, copying code from a collaborator, classmate, or generative AI tool (see the following section) is strictly prohibited and will be considered academic misconduct."
+  },
+  {
+    "objectID": "index.html#practical-computing-and-data-science-tools",
+    "href": "index.html#practical-computing-and-data-science-tools",
+    "title": "FOR 128",
+    "section": "",
+    "text": "For 128 Michigan State University"
   }
 ]
