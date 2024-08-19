@@ -4,14 +4,14 @@
     "href": "syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "Instructor: Grayson White (whitegra@msu.edu, Room 211 Natural Resources Building)\nLinks:\n\nThe course website, www.for128.org, for course information, lecture slides, and course materials.\nD2L, for course feedback and non-public course materials.\n\n\nCourse Description:\nThis course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using spreadsheet software and the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences."
+    "text": "Instructor: Andrew Finley (finleya@msu.edu, Room 211 Natural Resources Building)\nLinks:\n\nThe course website, www.for128.org, for course information, lecture slides, and course materials.\nD2L, for course feedback and non-public course materials.\n\nCourse Description:\nThis course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences."
   },
   {
     "objectID": "syllabus.html#useful-information",
     "href": "syllabus.html#useful-information",
     "title": "Syllabus",
     "section": "",
-    "text": "Instructor: Grayson White (whitegra@msu.edu, Room 211 Natural Resources Building)\nLinks:\n\nThe course website, www.for128.org, for course information, lecture slides, and course materials.\nD2L, for course feedback and non-public course materials.\n\n\nCourse Description:\nThis course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using spreadsheet software and the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences."
+    "text": "Instructor: Andrew Finley (finleya@msu.edu, Room 211 Natural Resources Building)\nLinks:\n\nThe course website, www.for128.org, for course information, lecture slides, and course materials.\nD2L, for course feedback and non-public course materials.\n\nCourse Description:\nThis course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences."
   },
   {
     "objectID": "syllabus.html#learning-outcomes",
@@ -42,6 +42,13 @@
     "text": "Assessments\nIn this course, you’ll be assessed based on your work and participation. In particular:\n\nLab reports (40%)\nExams (20%)\nHomework exercises (15%)\nIn-class quizzes (15%)\nLecture tickets (10%)"
   },
   {
+    "objectID": "syllabus.html#collaboration-policy-for-for-128",
+    "href": "syllabus.html#collaboration-policy-for-for-128",
+    "title": "Syllabus",
+    "section": "Collaboration Policy for FOR 128",
+    "text": "Collaboration Policy for FOR 128\nWorking with your classmates on difficult and interesting problems can not only help your learning, but help you get to know each other. Therefore, we allow and encourage collaboration on lab reports, homework exercises, and lecture tickets. However, collaboration on exams and quizzes is strictly prohibited and will be considered academic misconduct.\nIf you choose to collaborate with a classmate, please add their name to the top of your assignment, and list them as a collaborator, e.g.:\nCollaborator(s): Elliot Shannon, Romain Boutelet\nBut what is collaboration?\nFor FOR 128, collaboration can look like: working with classmates together on a given problem, doing scratch work, helping each other get un-stuck on a part of a problem, and even coming to a solution. However, you must write up your own problem solutions individually and cannot copy other’s solutions (even those who you have collaborated with). Further, copying code from a collaborator, classmate, or generative AI tool (see the following section) is strictly prohibited and will be considered academic misconduct."
+  },
+  {
     "objectID": "syllabus.html#ai-policy-for-for-128",
     "href": "syllabus.html#ai-policy-for-for-128",
     "title": "Syllabus",
@@ -61,19 +68,5 @@
     "title": "About",
     "section": "",
     "text": "This site was created with Quarto. Much inspiration, styling, and format troubleshooting was drawn from UC Berkeley’s Stat 20 website."
-  },
-  {
-    "objectID": "syllabus.html#collaboration-policy-for-for-128",
-    "href": "syllabus.html#collaboration-policy-for-for-128",
-    "title": "Syllabus",
-    "section": "Collaboration Policy for FOR 128",
-    "text": "Collaboration Policy for FOR 128\nWorking with your classmates on difficult and interesting problems can not only help your learning, but help you get to know each other. Therefore, we allow and encourage collaboration on lab reports, homework exercises, and lecture tickets. However, collaboration on exams and quizzes is strictly prohibited and will be considered academic misconduct.\nIf you choose to collaborate with a classmate, please add their name to the top of your assignment, and list them as a collaborator, e.g.:\nCollaborator(s): Elliot Shannon, Romain Boutelet\nBut what is collaboration?\nFor FOR 128, collaboration can look like: working with classmates together on a given problem, doing scratch work, helping each other get un-stuck on a part of a problem, and even coming to a solution. However, you must write up your own problem solutions individually and cannot copy other’s solutions (even those who you have collaborated with). Further, copying code from a collaborator, classmate, or generative AI tool (see the following section) is strictly prohibited and will be considered academic misconduct."
-  },
-  {
-    "objectID": "index.html#practical-computing-and-data-science-tools",
-    "href": "index.html#practical-computing-and-data-science-tools",
-    "title": "FOR 128",
-    "section": "",
-    "text": "For 128 Michigan State University"
   }
 ]
