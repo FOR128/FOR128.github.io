@@ -13,7 +13,7 @@ subtitle: "FOR 128: Practical Computing and Data Science Tools"
 
 -   [D2L](https://d2l.msu.edu), for course feedback and non-public course materials.
 
--   [Slack](), for course communication, troubleshooting, and questions.
+<!-- -   [Slack](), for course communication, troubleshooting, and questions. -->
 
 **Course Description**:
 
@@ -43,9 +43,41 @@ Upon completion of this course students should be able to:
 
 ## Meetings & Office Hours
 
+We'll have a lecture-style meeting twice a week, and a lab meeting once a week.
+
+- Lectures are on Tuesdays and Thursdays, 9:10am - 10am, Natural Resources Building, Room 152. 
+
+- Labs are on Thursdays, 10am - 12pm, Natural Resources Building, Room 223.
+
+Outside of lectures and labs, I will also hold *office hours*. Office hours will be held Tuesdays (10:30am - 11:30am) and Thursdays (1:30pm - 2:30pm), Natural Resources Building, Room 211. 
+
+Office hours are a great way to:
+
+- get help on assignments you are stuck on,
+
+- ask questions you didn't get a chance to ask in class, 
+
+- familiarize yourself with the instructor and course expectations, 
+
+- and much more!
+
+Office hours can be a very helpful tool for your success in this course and beyond in college. Attending office hours is a great habit!
+
 ------------------------------------------------------------------------
 
 ## Assessments
+
+In this course, you'll be assessed based on your work and participation. In particular: 
+
+- Lab reports (40%)
+
+- Exams (20%)
+
+- Homework Exercises (15%)
+
+- In-class quizzes (15%)
+
+- Participation (10%)
 
 ------------------------------------------------------------------------
 

@@ -21,8 +21,6 @@ website:
         target: "_blank"
         rel: "noopener noreferrer"
         text: Textbook
-      - href: about.qmd
-        text: About
 
 format:
   html:
