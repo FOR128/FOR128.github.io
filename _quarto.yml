@@ -10,6 +10,7 @@ website:
   title: "FOR 128"
   image: assets/stat20-hex.png
   site-url: "https://www.for128.org/"
+  favicon: assets/favicon.ico
   navbar:
     title: false
     logo: assets/for128-hex.png
