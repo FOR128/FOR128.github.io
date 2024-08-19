@@ -1,7 +1,7 @@
 [
   {
-    "objectID": "tickets/test_tickets.html",
-    "href": "tickets/test_tickets.html",
+    "objectID": "tickets/ticket_01.html",
+    "href": "tickets/ticket_01.html",
     "title": "Lecture Ticket Test",
     "section": "",
     "text": "Question one\nQuestion two\n\netc.."
@@ -63,8 +63,8 @@
     "text": "AI Policy for FOR 128\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
   },
   {
-    "objectID": "labs/test_labs.html",
-    "href": "labs/test_labs.html",
+    "objectID": "labs/lab_01.html",
+    "href": "labs/lab_01.html",
     "title": "Test Labs",
     "section": "",
     "text": "Question one\nQuestion two\n\netc.."
@@ -84,8 +84,8 @@
     "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
   },
   {
-    "objectID": "psets/test_psets.html",
-    "href": "psets/test_psets.html",
+    "objectID": "psets/pset_01.html",
+    "href": "psets/pset_01.html",
     "title": "test pset",
     "section": "",
     "text": "pset question one\nQuestion two\n\netc.."
@@ -95,27 +95,27 @@
     "href": "assignments.html",
     "title": "Assignments",
     "section": "",
-    "text": "Assignment\nLab 1\nLab 2\n\n\n\nAvailable date\nThursday, 8/27, at lab.\nThursday, 9/5, at lab.\n\n\n\nDue Date\nWednesday, 9/4 at 10pm.\nWednesday, 9/11 at 10pm."
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 10pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/4 (at 10pm)"
   },
   {
     "objectID": "assignments.html#labs",
     "href": "assignments.html#labs",
     "title": "Assignments",
     "section": "",
-    "text": "Assignment\nLab 1\nLab 2\n\n\n\nAvailable date\nThursday, 8/27, at lab.\nThursday, 9/5, at lab.\n\n\n\nDue Date\nWednesday, 9/4 at 10pm.\nWednesday, 9/11 at 10pm."
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 10pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/4 (at 10pm)"
   },
   {
     "objectID": "assignments.html#problem-sets",
     "href": "assignments.html#problem-sets",
     "title": "Assignments",
     "section": "Problem Sets",
-    "text": "Problem Sets"
+    "text": "Problem Sets\nProblem sets are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nProblem set 1\nTuesday 9/3 (at 10:30am)\nSunday 9/8 (at 10pm)\n\n\nProblem set 2\nTuesday 9/10 (at 10:30am)\nSunday 9/15 (at 10pm)"
   },
   {
     "objectID": "assignments.html#lecture-tickets",
     "href": "assignments.html#lecture-tickets",
     "title": "Assignments",
     "section": "Lecture Tickets",
-    "text": "Lecture Tickets"
+    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (at 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 | Tuesday 9/3 (at 5pm) | (in lecture)"
   }
 ]

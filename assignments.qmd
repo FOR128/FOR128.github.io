@@ -5,42 +5,45 @@ subtitle: "FOR 128: Practical Computing and Data Science Tools, Fall 2024"
 
 ## Labs
 
-:::: {.columns}
+Labs are turned in on [D2L](https://d2l.msu.edu).
 
-::: {.column width="20%"}
-**Assignment**
++----------------------------+-----------------+-----------------+
+| Assignment                 | Available       | Due             |
++============================+=================+=================+
+| [Lab 1](labs/lab_01.qmd)   | Thursday 8/27   | Wednesday 9/4   |
+|                            | (at lab time)   | (at 10pm)       |
++----------------------------+-----------------+-----------------+
+| Lab 2                      | Thursday 9/5    | Wednesday 9/4   |
+|                            | (at lab time)   | (at 10pm)       |
++----------------------------+-----------------+-----------------+
 
-Lab 1
-
-Lab 2
-:::
-
-::: {.column width="10%"}
-<!-- empty column to create gap -->
-:::
-
-::: {.column width="25%"}
-**Available date**
-
-Thursday, 8/27, at lab. 
-
-Thursday, 9/5, at lab. 
-:::
-
-::: {.column width="10%"}
-<!-- empty column to create gap -->
-:::
-
-::: {.column width="25%"}
-**Due Date**
-
-Wednesday, 9/4 at 10pm.
-
-Wednesday, 9/11 at 10pm.
-:::
-
-::::
 
 ## Problem Sets
 
+Problem sets are turned in on [D2L](https://d2l.msu.edu).
+
++--------------------------------------+-----------------+-----------------+
+| Assignment                           | Available       | Due             |
++======================================+=================+=================+
+| [Problem set 1](psets/pset_01.qmd)   | Tuesday 9/3     | Sunday 9/8      |
+|                                      | (at 10:30am)    | (at 10pm)       |
++--------------------------------------+-----------------+-----------------+
+| Problem set 2                        | Tuesday 9/10    | Sunday 9/15     |
+|                                      | (at 10:30am)    | (at 10pm)       |
++--------------------------------------+-----------------+-----------------+
+
+
 ## Lecture Tickets
+
+Lecture tickets are turned in on a piece of paper in-person at lecture.
+
++---------------------------------------------+-----------------+-----------------+
+| Assignment                                  | Available       | Due             |
++=============================================+=================+=================+
+| [Lecture ticket 1](tickets/ticket_01.qmd)   | Tuesday 8/27    | Thursday 8/29   |
+|                                             | (at 5pm)        | (in lecture)    |
++---------------------------------------------+-----------------+-----------------+
+| Lecture ticket 2                            | Thursday 8/29    | Tuesday 9/3    |
+|                                             | (at 5pm)         | (in lecture)   |
++---------------------------------------------+-----------------+-----------------+
+
