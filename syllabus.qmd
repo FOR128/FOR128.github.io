@@ -8,7 +8,7 @@ format:
 
 ## Useful Information
 
-**Instructor**: Grayson White ([whitegra@msu.edu](mailto:whitegra@msu.edu), Room 211 Natural Resources Building)
+**Instructor**: Andrew Finley ([finleya@msu.edu](mailto:finleya@msu.edu), Room 211 Natural Resources Building)
 
 **Links**:
 
@@ -16,11 +16,10 @@ format:
 
 -   [D2L](https://d2l.msu.edu), for course feedback and non-public course materials.
 
-<!-- -   [Slack](), for course communication, troubleshooting, and questions. -->
 
 **Course Description**:
 
-This course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using spreadsheet software and the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences.
+This course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences.
 
 ------------------------------------------------------------------------
 
