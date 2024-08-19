@@ -4,7 +4,8 @@ project:
   render:
     - "*.qmd"
     - "!labs/*.qmd"
-
+    - "!psets/*.qmd"
+    
 website:
   title: "FOR 128"
   image: assets/stat20-hex.png
