@@ -1,0 +1,108 @@
+---
+title: "Welcome to FOR 128!"
+format: 
+  revealjs:
+    author: "FOR 128: Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+---
+
+## Agenda
+
+::: {.incremental}
+- Introductions
+
+- Course goals
+
+- Course expectations + syllabus
+
+- Explore course website
+
+- Preparing for Thursday
+:::
+
+# Introductions
+
+In groups of 3-4, introduce yourselves to each other. 
+
+(name, hometown, major, favorite food, etc.)
+
+```{r}
+countdown::countdown(minutes = 4)
+```
+
+---
+
+## About me
+
+::: {.incremental}
+- I'm Grayson, a PhD student in Forestry. 
+
+- Before coming to Michigan State, I majored in Mathematics & Statistics at Reed College.
+
+- I also worked as a Data Scientist contracting for the USDA Forest Service.
+
+- I `r emo::ji("heart")` teaching, especially about data science!
+:::
+---
+
+## About me
+
+```{r}
+knitr::include_graphics("../assets/mymap.png")
+```
+
+## Course goals 
+
+::: {.incremental}
+
+- Getting to know your computer
+  - Operating systems, files, directories, paths, ...
+
+- Using your computer thoughtfully
+  - naming conventions, organization, ... 
+  
+- Learn how to program in `R` with the RStudio IDE
+  - reproducibility
+  - data structures
+  - functions
+  - the `tidyverse`
+
+:::
+
+## Course expectations: syllabus
+
+```{=html}
+<iframe width="1750" height="800" src="https://for128.org/syllabus.html"></iframe>
+```
+
+
+# [www.for128.org](https://www.for128.org)
+
+## Next time: 
+
+- Reading assignment
+
+- Lecture ticket
+
+- 
+
+
+
+
+
+

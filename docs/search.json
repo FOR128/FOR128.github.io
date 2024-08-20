@@ -103,5 +103,75 @@
     "title": "Syllabus",
     "section": "AI Policy for FOR 128",
     "text": "AI Policy for FOR 128\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
+  },
+  {
+    "objectID": "slides/w1d1.html#practical-computing-and-data-science-tools",
+    "href": "slides/w1d1.html#practical-computing-and-data-science-tools",
+    "title": "Practical Computing and Data Science Tools",
+    "section": "Practical Computing and Data Science Tools",
+    "text": "Practical Computing and Data Science Tools"
+  },
+  {
+    "objectID": "slides/w1d1.html#h2",
+    "href": "slides/w1d1.html#h2",
+    "title": "Welcome to FOR 128!",
+    "section": "h2",
+    "text": "h2\nPractical Computing and Data Science Tools h3\nh4"
+  },
+  {
+    "objectID": "slides/w1d1.html#welcome-to-for-128",
+    "href": "slides/w1d1.html#welcome-to-for-128",
+    "title": "Welcome to FOR 128!",
+    "section": "Welcome to FOR 128!",
+    "text": "Welcome to FOR 128!"
+  },
+  {
+    "objectID": "slides/w1d1.html#welcome-to-for-128-1",
+    "href": "slides/w1d1.html#welcome-to-for-128-1",
+    "title": "Welcome to FOR 128!",
+    "section": "Welcome to FOR 128!",
+    "text": "Welcome to FOR 128!"
+  },
+  {
+    "objectID": "slides/w1d1.html#agenda",
+    "href": "slides/w1d1.html#agenda",
+    "title": "Welcome to FOR 128!",
+    "section": "Agenda",
+    "text": "Agenda\n\n\nIntroductions\nCourse goals\nCourse expectations + syllabus\nExplore course website\nPreparing for Thursday"
+  },
+  {
+    "objectID": "slides/w1d1.html#about-me",
+    "href": "slides/w1d1.html#about-me",
+    "title": "Welcome to FOR 128!",
+    "section": "About me",
+    "text": "About me\n\n\nI’m Grayson, a PhD student in Forestry.\nBefore coming to Michigan State, I majored in Mathematics & Statistics at Reed College.\nI also worked as a Data Scientist contracting for the USDA Forest Service.\nI ❤️ teaching, especially about data science!"
+  },
+  {
+    "objectID": "slides/w1d1.html#about-me-1",
+    "href": "slides/w1d1.html#about-me-1",
+    "title": "Welcome to FOR 128!",
+    "section": "About me",
+    "text": "About me"
+  },
+  {
+    "objectID": "slides/w1d1.html#course-goals",
+    "href": "slides/w1d1.html#course-goals",
+    "title": "Welcome to FOR 128!",
+    "section": "Course goals",
+    "text": "Course goals\n\n\nGetting to know your computer\n\nOperating systems, files, directories, paths, …\n\nUsing your computer thoughtfully\n\nnaming conventions, organization, …\n\nLearn how to program in R with the RStudio IDE\n\nreproducibility\ndata structures\nfunctions\nthe tidyverse"
+  },
+  {
+    "objectID": "slides/w1d1.html#course-expectations-syllabus",
+    "href": "slides/w1d1.html#course-expectations-syllabus",
+    "title": "Welcome to FOR 128!",
+    "section": "Course expectations: syllabus",
+    "text": "Course expectations: syllabus"
+  },
+  {
+    "objectID": "slides/w1d1.html#next-time",
+    "href": "slides/w1d1.html#next-time",
+    "title": "Welcome to FOR 128!",
+    "section": "Next time:",
+    "text": "Next time:\n\nReading assignment\nLecture ticket"
   }
 ]
