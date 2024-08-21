@@ -44,7 +44,7 @@ list.files()
 
 ## Exercise 2
 
-Create a subfolder called `data` in the folder you just created in Exercise 1. Download the data for next week's lab (Lab 2) from the course website and put it in the data folder.
+Create a subfolder called `data` in the folder you just created in Exercise 1. For now, we'll leave this directory empty, but we will use it for future labs.
 
 Now, run the following code chunk. The output should include the lab 2 data file (`lab_02.txt`). What do you think specifying the `path` argument in the `list.files()` function did? Please answer between the rows of asterisks (stars).
 
@@ -78,7 +78,7 @@ Note: You can answer this Exercise just with words, so there is no need for a co
 
 # Part 2: `R` as a calculator
 
-## Exercise 3
+## Exercise 4
 
 Do Exercise 2.1 from IFDAR in the following code chunk.
 
@@ -91,7 +91,7 @@ Do Exercise 2.1 from IFDAR in the following code chunk.
 
 ***
 
-## Exercise 4
+## Exercise 5
 
 Do Exercise 2.2 from IFDAR in the following code chunk.
 
@@ -103,7 +103,7 @@ Do Exercise 2.2 from IFDAR in the following code chunk.
 
 ***
 
-## Exercise 5
+## Exercise 6
 
 Do Exercise 2.3 from IFDAR. Note, you'll have to make your own code chunk. 
 
@@ -118,7 +118,7 @@ Hint: on Windows and Linux you can create a new code chunk with control + alt + 
 ***
 
 
-## Exercise 6
+## Exercise 7
 
 Do Exercise 2.4 from IFDAR. Note, you'll have to make your own code chunk.
 

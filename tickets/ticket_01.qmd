@@ -1,9 +1,31 @@
 ---
-title: "Lecture Ticket Test"
+title: "Lecture Ticket W1D2"
 ---
 
-1. Question one
+## Reading
 
-2. Question two
+Read the following sections of IFDAR. 
 
-etc..
+  - Chapter 1 (read sections 1.1 and 1.3 closely, you can skim 1.2) 
+  - Begin Chapter 2 (STOP at the bottom of page 19)
+
+## Tasks
+
+### 1. Install `R` and RStudio
+
+As discussed in IFDAR, go to [Posit's website](https://posit.co/download/rstudio-desktop/). Install R first, and then install RStudio.
+
+### 2. Run your first `R` command
+
+In the console, type in the following command and press Enter to run it:
+
+```{r}
+#| eval: false
+rnorm(1)
+```
+
+### 3. Record your result
+
+Come to class on Thursday with a piece of paper with your name on it that includes the result (it will be a number) from running `rnorm(1)` in task 2.
+
+If you were unable to install R and RStudio and ran into issues, instead come to class with a piece of paper with your name on it that explains the issue you were having with installation.

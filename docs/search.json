@@ -2,9 +2,23 @@
   {
     "objectID": "tickets/ticket_01.html",
     "href": "tickets/ticket_01.html",
-    "title": "Lecture Ticket Test",
+    "title": "Lecture Ticket W1D2",
     "section": "",
-    "text": "Question one\nQuestion two\n\netc.."
+    "text": "Read the following sections of IFDAR.\n\nChapter 1 (read sections 1.1 and 1.3 closely, you can skim 1.2)\nBegin Chapter 2 (STOP at the bottom of page 19)"
+  },
+  {
+    "objectID": "tickets/ticket_01.html#reading",
+    "href": "tickets/ticket_01.html#reading",
+    "title": "Lecture Ticket W1D2",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 1 (read sections 1.1 and 1.3 closely, you can skim 1.2)\nBegin Chapter 2 (STOP at the bottom of page 19)"
+  },
+  {
+    "objectID": "tickets/ticket_01.html#tasks",
+    "href": "tickets/ticket_01.html#tasks",
+    "title": "Lecture Ticket W1D2",
+    "section": "Tasks",
+    "text": "Tasks\n\n1. Install R and RStudio\nAs discussed in IFDAR, go to Posit’s website. Install R first, and then install RStudio.\n\n\n2. Run your first R command\nIn the console, type in the following command and press Enter to run it:\n\nrnorm(1)\n\n\n\n3. Record your result\nCome to class on Thursday with a piece of paper with your name on it that includes the result (it will be a number) from running rnorm(1) in task 2.\nIf you were unable to install R and RStudio and ran into issues, instead come to class with a piece of paper with your name on it that explains the issue you were having with installation."
   },
   {
     "objectID": "slides/w1d1.html#agenda",
@@ -60,21 +74,21 @@
     "href": "assignments.html",
     "title": "Assignments",
     "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 10pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 10pm)"
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)"
   },
   {
     "objectID": "assignments.html#labs",
     "href": "assignments.html#labs",
     "title": "Assignments",
     "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 10pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 10pm)"
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)"
   },
   {
     "objectID": "assignments.html#lecture-tickets",
     "href": "assignments.html#lecture-tickets",
     "title": "Assignments",
     "section": "Lecture Tickets",
-    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (at 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 | Tuesday 9/3 (at 5pm) | (in lecture)"
+    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29\nTuesday 9/3 (by 5pm)"
   },
   {
     "objectID": "syllabus.html",
