@@ -2,21 +2,21 @@
   {
     "objectID": "tickets/ticket_01.html",
     "href": "tickets/ticket_01.html",
-    "title": "Lecture Ticket W1D2",
+    "title": "Lecture Ticket 1",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 1 (read sections 1.1 and 1.3 closely, you can skim 1.2)\nBegin Chapter 2 (STOP at the bottom of page 19)"
+    "text": "Read the following sections of IFDAR.\n\nChapter 1\nBegin Chapter 2 (STOP at the bottom of page 19)"
   },
   {
     "objectID": "tickets/ticket_01.html#reading",
     "href": "tickets/ticket_01.html#reading",
-    "title": "Lecture Ticket W1D2",
+    "title": "Lecture Ticket 1",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 1 (read sections 1.1 and 1.3 closely, you can skim 1.2)\nBegin Chapter 2 (STOP at the bottom of page 19)"
+    "text": "Read the following sections of IFDAR.\n\nChapter 1\nBegin Chapter 2 (STOP at the bottom of page 19)"
   },
   {
     "objectID": "tickets/ticket_01.html#tasks",
     "href": "tickets/ticket_01.html#tasks",
-    "title": "Lecture Ticket W1D2",
+    "title": "Lecture Ticket 1",
     "section": "Tasks",
     "text": "Tasks\n\n1. Install R and RStudio\nAs discussed in IFDAR, go to Posit’s website. Install R first, and then install RStudio.\n\n\n2. Run your first R command\nIn the console, type in the following command and press Enter to run it:\n\nrnorm(1)\n\n\n\n3. Record your result\nCome to class on Thursday with a piece of paper with your name on it that includes the result (it will be a number) from running rnorm(1) in task 2.\nIf you were unable to install R and RStudio and ran into issues, instead come to class with a piece of paper with your name on it that explains the issue you were having with installation."
   },
@@ -130,7 +130,7 @@
     "href": "syllabus.html#assessments",
     "title": "Syllabus",
     "section": "Assessments",
-    "text": "Assessments\nIn this course, you’ll be assessed based on your work and participation. In particular:\n\nLab reports (50%)\n\nLab reports are assigned on Thursdays during lab time, and due the following Wednesday at 10pm on D2L. We will have a lab each week (except for the week of the midterm exam).\n\nExams (25%)\n\nThere will be two exams. A midterm near the halfway point of the semester (12.5% of final grade), and a final exam during finals week (12.5% of final grade).\n\nIn-class quizzes (15%)\n\nIn-class quizzes do not have a regular schedule and will occur based on the material we get through.\n\nLecture tickets (10%)\n\nLecture tickets are due at the beginning of every lecture, handed in in-person, by you."
+    "text": "Assessments\nIn this course, you’ll be assessed based on your work and participation. In particular:\n\nLab reports (50%)\n\nLab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on D2L. We will have a lab each week (except for the week of the midterm exam).\n\nExams (25%)\n\nThere will be two exams. A midterm near the halfway point of the semester (12.5% of final grade), and a final exam during finals week (12.5% of final grade).\n\nIn-class quizzes (15%)\n\nIn-class quizzes do not have a regular schedule and will occur based on the material we get through.\n\nLecture tickets (10%)\n\nLecture tickets are due at the beginning of every lecture, handed in in-person, by you."
   },
   {
     "objectID": "syllabus.html#collaboration-policy-for-for-128",

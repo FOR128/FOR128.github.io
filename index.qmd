@@ -2,6 +2,8 @@
 format: 
   html:
     toc: false
+editor: 
+  mode: source
 ---
 
 # Practical Computing <a><img src="assets/for128-hex.png" align="right" height="200"/></a> <br/> and Data Science Tools
@@ -14,15 +16,15 @@ format:
 
 ### Tuesday
 
-- Before coming to class, please read the [syllabus](syllabus.qmd). 
+-   Before coming to class, please read the [syllabus](syllabus.qmd).
 
-- No lecture ticket today.
+-   No lecture ticket today.
 
 ### Thursday
 
-- We'll have a lecture ticket due at the beginning of class. See the [assignments](assignments.qmd) page.  
+-   We'll have a lecture ticket due at the beginning of class. See the [assignments](assignments.qmd) page.
 
-- Lab 1, also available on the [assignments](assignments.qmd) page, will be assigned.
+-   Lab 1, also available on the [assignments](assignments.qmd) page, will be assigned.
 
 <!-- ## Week 2, September 1 - 7 -->
 

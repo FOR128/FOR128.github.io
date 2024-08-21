@@ -4,6 +4,8 @@ author: "Insert Your Name Here"
 date: "8/29/2024"
 format:
   pdf: default
+editor: 
+  mode: source
 ---
 
 ## Welcome
@@ -34,13 +36,9 @@ Now, run the following code chunk (press the green arrow on the far right of the
 list.files()
 ```
 
-***
+------------------------------------------------------------------------
 
-
-
-
-
-***
+------------------------------------------------------------------------
 
 ## Exercise 2
 
@@ -52,13 +50,9 @@ Now, run the following code chunk. The output should include the lab 2 data file
 list.files(path = "data/")
 ```
 
-***
+------------------------------------------------------------------------
 
-
-
-
-
-***
+------------------------------------------------------------------------
 
 ## Exercise 3
 
@@ -66,15 +60,9 @@ Render this document by clicking "Render" towards the top of the RStudio window.
 
 Note: You can answer this Exercise just with words, so there is no need for a code chunk for this Exercise.
 
-***
+------------------------------------------------------------------------
 
-
-
-
-
-***
-
-
+------------------------------------------------------------------------
 
 # Part 2: `R` as a calculator
 
@@ -82,54 +70,44 @@ Note: You can answer this Exercise just with words, so there is no need for a co
 
 Do Exercise 2.1 from IFDAR in the following code chunk.
 
-***
+------------------------------------------------------------------------
 
 ```{r}
 # put your code on the following line
 
 ```
 
-***
+------------------------------------------------------------------------
 
 ## Exercise 5
 
 Do Exercise 2.2 from IFDAR in the following code chunk.
 
-***
+------------------------------------------------------------------------
 
 ```{r}
 
 ```
 
-***
+------------------------------------------------------------------------
 
 ## Exercise 6
 
-Do Exercise 2.3 from IFDAR. Note, you'll have to make your own code chunk. 
+Do Exercise 2.3 from IFDAR. Note, you'll have to make your own code chunk.
 
-Hint: on Windows and Linux you can create a new code chunk with control + alt + I and on macOS you can make a new code chunk with command + alt + I. Otherwise, you can create a new code chunk by clicking the code dropdown menu in RStudio and then clicking Insert Chunk. 
+Hint: on Windows and Linux you can create a new code chunk with control + alt + I and on macOS you can make a new code chunk with command + alt + I. Otherwise, you can create a new code chunk by clicking the code dropdown menu in RStudio and then clicking Insert Chunk.
 
-***
+------------------------------------------------------------------------
 
-
-
-
-
-***
-
+------------------------------------------------------------------------
 
 ## Exercise 7
 
 Do Exercise 2.4 from IFDAR. Note, you'll have to make your own code chunk.
 
-***
+------------------------------------------------------------------------
 
-
-
-
-
-***
-
+------------------------------------------------------------------------
 
 # Wrap up
 

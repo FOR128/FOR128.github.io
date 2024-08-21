@@ -1,13 +1,15 @@
 ---
-title: "Lecture Ticket W1D2"
+title: "Lecture Ticket 1"
+editor: 
+  mode: source
 ---
 
 ## Reading
 
-Read the following sections of IFDAR. 
+Read the following sections of IFDAR.
 
-  - Chapter 1 (read sections 1.1 and 1.3 closely, you can skim 1.2) 
-  - Begin Chapter 2 (STOP at the bottom of page 19)
+-   Chapter 1
+-   Begin Chapter 2 (STOP at the bottom of page 19)
 
 ## Tasks
 

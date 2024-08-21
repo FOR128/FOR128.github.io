@@ -4,18 +4,19 @@ subtitle: "FOR 128: Practical Computing and Data Science Tools, Fall 2024"
 format:
   html: default
   pdf: default
+editor: 
+  mode: source
 ---
 
 ## Useful Information
 
-**Instructor**: Andrew Finley ([finleya@msu.edu](mailto:finleya@msu.edu), Room 211 Natural Resources Building)
+**Instructor**: Andrew Finley ([finleya\@msu.edu](mailto:finleya@msu.edu), Room 211 Natural Resources Building)
 
 **Links**:
 
 -   The course website, [www.for128.org](https://www.for128.org), for course information, lecture slides, and course materials.
 
 -   [D2L](https://d2l.msu.edu), for course feedback and non-public course materials.
-
 
 **Course Description**:
 
@@ -51,7 +52,7 @@ We'll have a lecture-style meeting twice a week, and a lab meeting once a week.
 
 -   Labs are on Thursdays, 10am - 12pm, Natural Resources Building, Room 223.
 
-Outside of lectures and labs, I will also hold *office hours*. 
+Outside of lectures and labs, I will also hold *office hours*.
 
 -   Office hours will be held Tuesdays (10:30am - 11:30am) and Thursdays (1:30pm - 2:30pm), Natural Resources Building, Room 211.
 
@@ -64,16 +65,13 @@ Office hours are a great way to get help on assignments you are stuck on, ask qu
 In this course, you'll be assessed based on your work and participation. In particular:
 
 -   Lab reports (50%)
-    - Lab reports are assigned on Thursdays during lab time, and due the following Wednesday at 10pm on [D2L](https://d2l.msu.edu). We will have a lab each week (except for the week of the midterm exam).
-
+    -   Lab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on [D2L](https://d2l.msu.edu). We will have a lab each week (except for the week of the midterm exam).
 -   Exams (25%)
-    - There will be two exams. A midterm near the halfway point of the semester (12.5% of final grade), and a final exam during finals week (12.5% of final grade). 
-
+    -   There will be two exams. A midterm near the halfway point of the semester (12.5% of final grade), and a final exam during finals week (12.5% of final grade).
 -   In-class quizzes (15%)
-    - In-class quizzes do not have a regular schedule and will occur based on the material we get through. 
-
+    -   In-class quizzes do not have a regular schedule and will occur based on the material we get through.
 -   Lecture tickets (10%)
-    - Lecture tickets are due at the beginning of every lecture, handed in in-person, by you. 
+    -   Lecture tickets are due at the beginning of every lecture, handed in in-person, by you.
 
 ------------------------------------------------------------------------
 
@@ -81,16 +79,15 @@ In this course, you'll be assessed based on your work and participation. In part
 
 Working with your classmates on difficult and interesting problems can not only help your learning, but help you get to know each other. Therefore, we allow and encourage collaboration on lab reports and lecture tickets. However, collaboration on exams and quizzes is strictly prohibited and will be considered academic misconduct.
 
-If you choose to collaborate with a classmate, please add their name to the top of your assignment, and list them as a collaborator, e.g.: 
+If you choose to collaborate with a classmate, please add their name to the top of your assignment, and list them as a collaborator, e.g.:
 
 Collaborator(s): Elliot Shannon, Romain Boutelet
 
 **But what *is* collaboration?**
 
-For FOR 128, collaboration can look like: working with classmates together on a given problem, doing scratch work, helping each other get un-stuck on a part of a problem, and even coming to a solution. However, you must write up your own problem solutions individually and cannot copy other's solutions (even those who you have collaborated with). Further, copying code from a collaborator, classmate, or generative AI tool (see the following section) is strictly prohibited and will be considered academic misconduct.  
+For FOR 128, collaboration can look like: working with classmates together on a given problem, doing scratch work, helping each other get un-stuck on a part of a problem, and even coming to a solution. However, you must write up your own problem solutions individually and cannot copy other's solutions (even those who you have collaborated with). Further, copying code from a collaborator, classmate, or generative AI tool (see the following section) is strictly prohibited and will be considered academic misconduct.
 
 ------------------------------------------------------------------------
-
 
 ## AI Policy for FOR 128
 
