@@ -30,7 +30,7 @@ Upload your rendered PDF (`lab_01.pdf`) **and** Quarto (`lab_01.qmd`) document t
 
 Create a folder on your computer where you'll store all your work for this course. We do not suggest putting this on your Desktop. A better place would be your Documents folder or your home directory. Make sure to give the folder an informative name like `for128` or `for128_f24` or something else. Put this file (`lab_01.qmd`) in your new folder.
 
-Now, run the following code chunk (press the green arrow on the far right of the code chunk). The output should include this file. What do you think the `list.files()` function does in this case? Please answer between the rows of asterisks (stars).
+Now, run the following code chunk (press the green arrow on the far right of the code chunk). The output should include this file. What do you think the `list.files()` function does in this case? For all lab exercises in this course, please answer between the rows of dashed lines.
 
 ```{r}
 list.files()
@@ -38,19 +38,27 @@ list.files()
 
 ------------------------------------------------------------------------
 
+
+
+
+
 ------------------------------------------------------------------------
 
 ## Exercise 2
 
 Create a subfolder called `data` in the folder you just created in Exercise 1. For now, we'll leave this directory empty, but we will use it for future labs.
 
-Now, run the following code chunk. The output should include the lab 2 data file (`lab_02.txt`). What do you think specifying the `path` argument in the `list.files()` function did? Please answer between the rows of asterisks (stars).
+Now, run the following code chunk. What do you think specifying the `path` argument in the `list.files()` function did? 
 
 ```{r}
 list.files(path = "data/")
 ```
 
 ------------------------------------------------------------------------
+
+
+
+
 
 ------------------------------------------------------------------------
 
@@ -61,6 +69,10 @@ Render this document by clicking "Render" towards the top of the RStudio window.
 Note: You can answer this Exercise just with words, so there is no need for a code chunk for this Exercise.
 
 ------------------------------------------------------------------------
+
+
+
+
 
 ------------------------------------------------------------------------
 
@@ -99,6 +111,10 @@ Hint: on Windows and Linux you can create a new code chunk with control + alt + 
 
 ------------------------------------------------------------------------
 
+
+
+
+
 ------------------------------------------------------------------------
 
 ## Exercise 7
@@ -106,6 +122,10 @@ Hint: on Windows and Linux you can create a new code chunk with control + alt + 
 Do Exercise 2.4 from IFDAR. Note, you'll have to make your own code chunk.
 
 ------------------------------------------------------------------------
+
+
+
+
 
 ------------------------------------------------------------------------
 
