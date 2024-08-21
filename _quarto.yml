@@ -24,7 +24,8 @@ website:
         text: Syllabus
       - text: Slides
         menu:
-          - slides/test_slides.qmd
+          - href: slides/w1d1.qmd
+            text: "Week 1 Day 1"
       - href: assignments.qmd
         text: Assignments
       - href: https://www.finley-lab.com/files/ifdar/

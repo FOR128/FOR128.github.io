@@ -1,9 +1,0 @@
----
-title: "test pset"
----
-
-1. pset question one
-
-2. Question two
-
-etc..

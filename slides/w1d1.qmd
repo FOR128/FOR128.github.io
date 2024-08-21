@@ -84,11 +84,12 @@ knitr::include_graphics("../assets/mymap.png")
 
 :::
 
-## Course expectations: syllabus
+# Course expectations: let's review the syllabus
 
-```{=html}
-<iframe width="1750" height="800" src="https://for128.org/syllabus.html"></iframe>
+```{r}
+countdown::countdown(minutes = 5)
 ```
+
 
 
 # [www.for128.org](https://www.for128.org)

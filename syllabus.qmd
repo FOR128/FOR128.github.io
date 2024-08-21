@@ -51,19 +51,11 @@ We'll have a lecture-style meeting twice a week, and a lab meeting once a week.
 
 -   Labs are on Thursdays, 10am - 12pm, Natural Resources Building, Room 223.
 
-Outside of lectures and labs, I will also hold *office hours*. Office hours will be held Tuesdays (10:30am - 11:30am) and Thursdays (1:30pm - 2:30pm), Natural Resources Building, Room 211.
+Outside of lectures and labs, I will also hold *office hours*. 
 
-Office hours are a great way to:
+-   Office hours will be held Tuesdays (10:30am - 11:30am) and Thursdays (1:30pm - 2:30pm), Natural Resources Building, Room 211.
 
--   get help on assignments you are stuck on,
-
--   ask questions you didn't get a chance to ask in class,
-
--   familiarize yourself with the instructor and course expectations,
-
--   and much more!
-
-Office hours can be a very helpful tool for your success in this course and beyond in college. Attending office hours is a great habit!
+Office hours are a great way to get help on assignments you are stuck on, ask questions you didn't get a chance to ask in class, familiarize yourself with the instructor and course expectations, and much more! Further, office hours can be a very helpful tool for your success in this course and beyond in college. Attending office hours is a great habit!
 
 ------------------------------------------------------------------------
 
@@ -71,21 +63,23 @@ Office hours can be a very helpful tool for your success in this course and beyo
 
 In this course, you'll be assessed based on your work and participation. In particular:
 
--   Lab reports (40%)
+-   Lab reports (50%)
+    - Lab reports are assigned on Thursdays during lab time, and due the following Wednesday at 10pm on [D2L](https://d2l.msu.edu). We will have a lab each week (except for the week of the midterm exam).
 
--   Exams (20%)
-
--   Homework exercises (15%)
+-   Exams (25%)
+    - There will be two exams. A midterm near the halfway point of the semester (12.5% of final grade), and a final exam during finals week (12.5% of final grade). 
 
 -   In-class quizzes (15%)
+    - In-class quizzes do not have a regular schedule and will occur based on the material we get through. 
 
 -   Lecture tickets (10%)
+    - Lecture tickets are due at the beginning of every lecture, handed in in-person, by you. 
 
 ------------------------------------------------------------------------
 
 ## Collaboration Policy for FOR 128
 
-Working with your classmates on difficult and interesting problems can not only help your learning, but help you get to know each other. Therefore, we allow and encourage collaboration on lab reports, homework exercises, and lecture tickets. However, collaboration on exams and quizzes is strictly prohibited and will be considered academic misconduct.
+Working with your classmates on difficult and interesting problems can not only help your learning, but help you get to know each other. Therefore, we allow and encourage collaboration on lab reports and lecture tickets. However, collaboration on exams and quizzes is strictly prohibited and will be considered academic misconduct.
 
 If you choose to collaborate with a classmate, please add their name to the top of your assignment, and list them as a collaborator, e.g.: 
 

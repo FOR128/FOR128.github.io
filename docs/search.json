@@ -7,32 +7,39 @@
     "text": "Question one\nQuestion two\n\netc.."
   },
   {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 10pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/4 (at 10pm)"
+    "objectID": "slides/w1d1.html#agenda",
+    "href": "slides/w1d1.html#agenda",
+    "title": "Welcome to FOR 128!",
+    "section": "Agenda",
+    "text": "Agenda\n\n\nIntroductions\nCourse goals\nCourse expectations + syllabus\nExplore course website\nPreparing for Thursday"
   },
   {
-    "objectID": "assignments.html#labs",
-    "href": "assignments.html#labs",
-    "title": "Assignments",
-    "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 10pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/4 (at 10pm)"
+    "objectID": "slides/w1d1.html#about-me",
+    "href": "slides/w1d1.html#about-me",
+    "title": "Welcome to FOR 128!",
+    "section": "About me",
+    "text": "About me\n\n\nI’m Grayson, a PhD student in Forestry.\nBefore coming to Michigan State, I majored in Mathematics & Statistics at Reed College.\nI also worked as a Data Scientist contracting for the USDA Forest Service.\nI ❤️ teaching, especially about data science!"
   },
   {
-    "objectID": "assignments.html#problem-sets",
-    "href": "assignments.html#problem-sets",
-    "title": "Assignments",
-    "section": "Problem Sets",
-    "text": "Problem Sets\nProblem sets are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nProblem set 1\nTuesday 9/3 (at 10:30am)\nSunday 9/8 (at 10pm)\n\n\nProblem set 2\nTuesday 9/10 (at 10:30am)\nSunday 9/15 (at 10pm)"
+    "objectID": "slides/w1d1.html#about-me-1",
+    "href": "slides/w1d1.html#about-me-1",
+    "title": "Welcome to FOR 128!",
+    "section": "About me",
+    "text": "About me"
   },
   {
-    "objectID": "assignments.html#lecture-tickets",
-    "href": "assignments.html#lecture-tickets",
-    "title": "Assignments",
-    "section": "Lecture Tickets",
-    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (at 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 | Tuesday 9/3 (at 5pm) | (in lecture)"
+    "objectID": "slides/w1d1.html#course-goals",
+    "href": "slides/w1d1.html#course-goals",
+    "title": "Welcome to FOR 128!",
+    "section": "Course goals",
+    "text": "Course goals\n\n\nGetting to know your computer\n\nOperating systems, files, directories, paths, …\n\nUsing your computer thoughtfully\n\nnaming conventions, organization, …\n\nLearn how to program in R with the RStudio IDE\n\nreproducibility\ndata structures\nfunctions\nthe tidyverse"
+  },
+  {
+    "objectID": "slides/w1d1.html#next-time",
+    "href": "slides/w1d1.html#next-time",
+    "title": "Welcome to FOR 128!",
+    "section": "Next time:",
+    "text": "Next time:\n\nReading assignment\nLecture ticket"
   },
   {
     "objectID": "index.html",
@@ -47,6 +54,27 @@
     "title": "Practical Computing   and Data Science Tools",
     "section": "",
     "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 10pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 10pm)"
+  },
+  {
+    "objectID": "assignments.html#labs",
+    "href": "assignments.html#labs",
+    "title": "Assignments",
+    "section": "",
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 10pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 10pm)"
+  },
+  {
+    "objectID": "assignments.html#lecture-tickets",
+    "href": "assignments.html#lecture-tickets",
+    "title": "Assignments",
+    "section": "Lecture Tickets",
+    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (at 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 | Tuesday 9/3 (at 5pm) | (in lecture)"
   },
   {
     "objectID": "syllabus.html",
@@ -81,21 +109,21 @@
     "href": "syllabus.html#meetings-office-hours",
     "title": "Syllabus",
     "section": "Meetings & Office Hours",
-    "text": "Meetings & Office Hours\nWe’ll have a lecture-style meeting twice a week, and a lab meeting once a week.\n\nLectures are on Tuesdays and Thursdays, 9:10am - 10am, Natural Resources Building, Room 152.\nLabs are on Thursdays, 10am - 12pm, Natural Resources Building, Room 223.\n\nOutside of lectures and labs, I will also hold office hours. Office hours will be held Tuesdays (10:30am - 11:30am) and Thursdays (1:30pm - 2:30pm), Natural Resources Building, Room 211.\nOffice hours are a great way to:\n\nget help on assignments you are stuck on,\nask questions you didn’t get a chance to ask in class,\nfamiliarize yourself with the instructor and course expectations,\nand much more!\n\nOffice hours can be a very helpful tool for your success in this course and beyond in college. Attending office hours is a great habit!"
+    "text": "Meetings & Office Hours\nWe’ll have a lecture-style meeting twice a week, and a lab meeting once a week.\n\nLectures are on Tuesdays and Thursdays, 9:10am - 10am, Natural Resources Building, Room 152.\nLabs are on Thursdays, 10am - 12pm, Natural Resources Building, Room 223.\n\nOutside of lectures and labs, I will also hold office hours.\n\nOffice hours will be held Tuesdays (10:30am - 11:30am) and Thursdays (1:30pm - 2:30pm), Natural Resources Building, Room 211.\n\nOffice hours are a great way to get help on assignments you are stuck on, ask questions you didn’t get a chance to ask in class, familiarize yourself with the instructor and course expectations, and much more! Further, office hours can be a very helpful tool for your success in this course and beyond in college. Attending office hours is a great habit!"
   },
   {
     "objectID": "syllabus.html#assessments",
     "href": "syllabus.html#assessments",
     "title": "Syllabus",
     "section": "Assessments",
-    "text": "Assessments\nIn this course, you’ll be assessed based on your work and participation. In particular:\n\nLab reports (40%)\nExams (20%)\nHomework exercises (15%)\nIn-class quizzes (15%)\nLecture tickets (10%)"
+    "text": "Assessments\nIn this course, you’ll be assessed based on your work and participation. In particular:\n\nLab reports (50%)\n\nLab reports are assigned on Thursdays during lab time, and due the following Wednesday at 10pm on D2L. We will have a lab each week (except for the week of the midterm exam).\n\nExams (25%)\n\nThere will be two exams. A midterm near the halfway point of the semester (12.5% of final grade), and a final exam during finals week (12.5% of final grade).\n\nIn-class quizzes (15%)\n\nIn-class quizzes do not have a regular schedule and will occur based on the material we get through.\n\nLecture tickets (10%)\n\nLecture tickets are due at the beginning of every lecture, handed in in-person, by you."
   },
   {
     "objectID": "syllabus.html#collaboration-policy-for-for-128",
     "href": "syllabus.html#collaboration-policy-for-for-128",
     "title": "Syllabus",
     "section": "Collaboration Policy for FOR 128",
-    "text": "Collaboration Policy for FOR 128\nWorking with your classmates on difficult and interesting problems can not only help your learning, but help you get to know each other. Therefore, we allow and encourage collaboration on lab reports, homework exercises, and lecture tickets. However, collaboration on exams and quizzes is strictly prohibited and will be considered academic misconduct.\nIf you choose to collaborate with a classmate, please add their name to the top of your assignment, and list them as a collaborator, e.g.:\nCollaborator(s): Elliot Shannon, Romain Boutelet\nBut what is collaboration?\nFor FOR 128, collaboration can look like: working with classmates together on a given problem, doing scratch work, helping each other get un-stuck on a part of a problem, and even coming to a solution. However, you must write up your own problem solutions individually and cannot copy other’s solutions (even those who you have collaborated with). Further, copying code from a collaborator, classmate, or generative AI tool (see the following section) is strictly prohibited and will be considered academic misconduct."
+    "text": "Collaboration Policy for FOR 128\nWorking with your classmates on difficult and interesting problems can not only help your learning, but help you get to know each other. Therefore, we allow and encourage collaboration on lab reports and lecture tickets. However, collaboration on exams and quizzes is strictly prohibited and will be considered academic misconduct.\nIf you choose to collaborate with a classmate, please add their name to the top of your assignment, and list them as a collaborator, e.g.:\nCollaborator(s): Elliot Shannon, Romain Boutelet\nBut what is collaboration?\nFor FOR 128, collaboration can look like: working with classmates together on a given problem, doing scratch work, helping each other get un-stuck on a part of a problem, and even coming to a solution. However, you must write up your own problem solutions individually and cannot copy other’s solutions (even those who you have collaborated with). Further, copying code from a collaborator, classmate, or generative AI tool (see the following section) is strictly prohibited and will be considered academic misconduct."
   },
   {
     "objectID": "syllabus.html#ai-policy-for-for-128",
@@ -103,75 +131,5 @@
     "title": "Syllabus",
     "section": "AI Policy for FOR 128",
     "text": "AI Policy for FOR 128\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
-  },
-  {
-    "objectID": "slides/w1d1.html#practical-computing-and-data-science-tools",
-    "href": "slides/w1d1.html#practical-computing-and-data-science-tools",
-    "title": "Practical Computing and Data Science Tools",
-    "section": "Practical Computing and Data Science Tools",
-    "text": "Practical Computing and Data Science Tools"
-  },
-  {
-    "objectID": "slides/w1d1.html#h2",
-    "href": "slides/w1d1.html#h2",
-    "title": "Welcome to FOR 128!",
-    "section": "h2",
-    "text": "h2\nPractical Computing and Data Science Tools h3\nh4"
-  },
-  {
-    "objectID": "slides/w1d1.html#welcome-to-for-128",
-    "href": "slides/w1d1.html#welcome-to-for-128",
-    "title": "Welcome to FOR 128!",
-    "section": "Welcome to FOR 128!",
-    "text": "Welcome to FOR 128!"
-  },
-  {
-    "objectID": "slides/w1d1.html#welcome-to-for-128-1",
-    "href": "slides/w1d1.html#welcome-to-for-128-1",
-    "title": "Welcome to FOR 128!",
-    "section": "Welcome to FOR 128!",
-    "text": "Welcome to FOR 128!"
-  },
-  {
-    "objectID": "slides/w1d1.html#agenda",
-    "href": "slides/w1d1.html#agenda",
-    "title": "Welcome to FOR 128!",
-    "section": "Agenda",
-    "text": "Agenda\n\n\nIntroductions\nCourse goals\nCourse expectations + syllabus\nExplore course website\nPreparing for Thursday"
-  },
-  {
-    "objectID": "slides/w1d1.html#about-me",
-    "href": "slides/w1d1.html#about-me",
-    "title": "Welcome to FOR 128!",
-    "section": "About me",
-    "text": "About me\n\n\nI’m Grayson, a PhD student in Forestry.\nBefore coming to Michigan State, I majored in Mathematics & Statistics at Reed College.\nI also worked as a Data Scientist contracting for the USDA Forest Service.\nI ❤️ teaching, especially about data science!"
-  },
-  {
-    "objectID": "slides/w1d1.html#about-me-1",
-    "href": "slides/w1d1.html#about-me-1",
-    "title": "Welcome to FOR 128!",
-    "section": "About me",
-    "text": "About me"
-  },
-  {
-    "objectID": "slides/w1d1.html#course-goals",
-    "href": "slides/w1d1.html#course-goals",
-    "title": "Welcome to FOR 128!",
-    "section": "Course goals",
-    "text": "Course goals\n\n\nGetting to know your computer\n\nOperating systems, files, directories, paths, …\n\nUsing your computer thoughtfully\n\nnaming conventions, organization, …\n\nLearn how to program in R with the RStudio IDE\n\nreproducibility\ndata structures\nfunctions\nthe tidyverse"
-  },
-  {
-    "objectID": "slides/w1d1.html#course-expectations-syllabus",
-    "href": "slides/w1d1.html#course-expectations-syllabus",
-    "title": "Welcome to FOR 128!",
-    "section": "Course expectations: syllabus",
-    "text": "Course expectations: syllabus"
-  },
-  {
-    "objectID": "slides/w1d1.html#next-time",
-    "href": "slides/w1d1.html#next-time",
-    "title": "Welcome to FOR 128!",
-    "section": "Next time:",
-    "text": "Next time:\n\nReading assignment\nLecture ticket"
   }
 ]
