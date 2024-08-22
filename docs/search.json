@@ -32,14 +32,14 @@
     "href": "slides/w1d1.html#about-me",
     "title": "Welcome to FOR 128!",
     "section": "About me",
-    "text": "About me\n\n\nI’m Grayson, a PhD student in Forestry.\nBefore coming to Michigan State, I majored in Mathematics & Statistics at Reed College.\nI also worked as a Data Scientist contracting for the USDA Forest Service.\nI ❤️ teaching, especially about data science!"
+    "text": "About me\n\n\nI’m Grayson, a PhD student in Forestry.\nBefore coming to Michigan State, I worked as a Data Scientist contracting for the USDA Forest Service.\nBefore that, I majored in Mathematics & Statistics at Reed College."
   },
   {
     "objectID": "slides/w1d1.html#about-me-1",
     "href": "slides/w1d1.html#about-me-1",
     "title": "Welcome to FOR 128!",
     "section": "About me",
-    "text": "About me"
+    "text": "About me\n\n\nI ❤️ teaching, especially about Data Science + Forestry.\nIn the past, I’ve co-directed a Forestry Data Science lab for undergraduates."
   },
   {
     "objectID": "slides/w1d1.html#course-goals",
@@ -145,5 +145,19 @@
     "title": "Syllabus",
     "section": "AI Policy for FOR 128",
     "text": "AI Policy for FOR 128\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
+  },
+  {
+    "objectID": "slides/w1d1.html#path-to-forestry-data-science",
+    "href": "slides/w1d1.html#path-to-forestry-data-science",
+    "title": "Welcome to FOR 128!",
+    "section": "Path to Forestry Data Science",
+    "text": "Path to Forestry Data Science\n\n\nTake this class and engage thoughtfully with the material. ✅\nTake FOR 372 (offered this spring) to gain more domain-specific statistical expertise.\nA wide variety of knowledge in statistics, computer science, and your domain field of expertise (forestry) is important.\nEngage in undergraduate research opportunities!"
+  },
+  {
+    "objectID": "slides/w1d1.html#about-me-2",
+    "href": "slides/w1d1.html#about-me-2",
+    "title": "Welcome to FOR 128!",
+    "section": "About me",
+    "text": "About me\n\nI ❤️ teaching, especially about Data Science + Forestry.\nIn the past, I’ve co-directed a Forestry Data Science lab for undergraduates."
   }
 ]

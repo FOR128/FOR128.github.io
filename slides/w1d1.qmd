@@ -37,12 +37,12 @@ format:
 
 # Introductions
 
-In groups of 3-4, introduce yourselves to each other. 
+In groups of ~3, introduce yourselves to each other. 
 
 (name, hometown, major, favorite food, etc.)
 
 ```{r}
-countdown::countdown(minutes = 4)
+countdown::countdown(minutes = 3)
 ```
 
 ---
@@ -52,19 +52,90 @@ countdown::countdown(minutes = 4)
 ::: {.incremental}
 - I'm Grayson, a PhD student in Forestry. 
 
-- Before coming to Michigan State, I majored in Mathematics & Statistics at Reed College.
+- Before coming to Michigan State, I worked as a Data Scientist contracting for the USDA Forest Service.
 
-- I also worked as a Data Scientist contracting for the USDA Forest Service.
+- Before that, I majored in Mathematics & Statistics at Reed College.
 
-- I `r emo::ji("heart")` teaching, especially about data science!
 :::
----
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/mymap.png")
+```
 
 ## About me
 
+::: {.incremental}
+- I `r emo::ji("heart")` teaching, especially about Data Science + Forestry.
+
+- In the past, I've co-directed a Forestry Data Science lab for undergraduates. 
+
+:::
+
+## About me
+
+- I `r emo::ji("heart")` teaching, especially about Data Science + Forestry.
+
+- In the past, I've co-directed a Forestry Data Science lab for undergraduates. 
+
 ```{r}
-knitr::include_graphics("../assets/mymap.png")
+#| fig-align: 'center'
+knitr::include_graphics("figs/ufds.png")
 ```
+
+
+
+
+# What is (Forestry) Data Science?
+
+---
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/Data_Science_VD.png")
+```
+
+---
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/datasciwiki.png")
+```
+
+# Okay, but really, what *is* (Forestry) Data Science? 
+
+---
+
+- Creating dashboards, like this [Forestry Data Science Dashboard](https://ncasi-shiny-tools.shinyapps.io/Counties/)
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/dashboard.png")
+```
+
+--- 
+
+- Creating `R` packages, like `saeczi`, which an undergraduate wrote while doing Forestry Data Science research with me
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/saeczi.gif")
+```
+
+
+## Path to Forestry Data Science 
+
+::: {.incremental}
+- Take this class and engage thoughtfully with the material. `r emo::ji("check")`
+
+- Take FOR 372 (offered this spring) to gain more domain-specific statistical expertise.
+
+- A wide variety of knowledge in statistics, computer science, and your domain field of expertise (forestry) is important.
+
+- Engage in undergraduate research opportunities! 
+
+:::
+
 
 ## Course goals 
 
