@@ -66,14 +66,33 @@ In this course, you'll be assessed based on your work and participation. In part
 
 -   Lab reports (40%)
     -   Lab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on [D2L](https://d2l.msu.edu). We will have a lab each week (except for the week of the midterm exam).
+    -   The lowest lab grade is dropped.
 -   Midterm Exams (20%)
     -   There will be two midterm exams, one on week 6 and one on week 12. Each midterm is worth 10% of the final grade.
 -   Final Project (15%)
-    -   The details of the final project will be discussed as the semester goes on.    
+    -   Rather than a final exam, we will have a final group project with project presentations during the final exam time period. More details to come as the semester goes on.      
 -   In-class quizzes (15%)
     -   In-class quizzes do not have a regular schedule and will occur based on the material we get through.
+    -   The lowest in-class quiz grade is dropped.
 -   Lecture tickets (10%)
     -   Lecture tickets are due at the beginning of every lecture, handed in in-person, by you.
+    -   The lowest three (3) lecture ticket grades will be dropped.
+    
+    
+Grades are calculated on a four point scale and correspond to the following grade percent:
+
+| Grade percent  | Grade points  |
+|----------------|---------------|
+| 90% - 100%     | 4.0           |
+| 85.0% - 89.9%  | 3.5           |
+| 80.0% - 84.9%  | 3.0           |
+| 75.0% - 79.9%  | 2.5           |
+| 70.0% - 74.9%  | 2.0           |
+| 65.0% - 69.9%  | 1.5           |
+| 60.0 - 64.9%   | 1.0           |
+| 0% - 60%       | 0.0           |
+
+: {.striped .hover}
 
 ------------------------------------------------------------------------
 
