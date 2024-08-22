@@ -4,8 +4,7 @@ project:
   render:
     - "*.qmd"
     - "!labs/*.qmd"
-    - "!psets/*.qmd"
-    
+
 website:
   title: "FOR 128"
   image: assets/stat20-hex.png
@@ -38,7 +37,7 @@ format:
     theme: sandstone
     css: assets/styles.scss
     toc: true
-    
+
 resources: 
   - CNAME
 
