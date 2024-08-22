@@ -220,6 +220,16 @@ knitr::include_graphics("figs/schedule.png")
     -   The details of the final project will be discussed as the semester goes on.
 :::
 
+## Syllabus: Collaboration
+::: incremental
+
+  - Working with classmates on labs and lecture tickets is perfectly acceptable. 
+  - However, please cite your collaborator(s) at the top of your assignment.
+  - Collaboration on exams and quizzes is strictly prohibited. 
+  - But what *is* collaboration? 
+  
+:::
+  
 ##  {background-image="figs/elephant.png" background-size="contain"}
 
 ## Artificial Intelligence (AI)
@@ -243,7 +253,7 @@ knitr::include_graphics("figs/elephant.png")
 
 # Syllabus: Questions? {background-color="#00817c"}
 
-# [www.for128.org](https://www.for128.org) {background-color="#9f8e71"}
+# [www.for128.org](https://www.for128.org)
 
 ## Next time:
 
