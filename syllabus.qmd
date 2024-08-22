@@ -10,7 +10,7 @@ editor:
 
 ## Useful Information
 
-**Instructor**: Andrew Finley ([finleya\@msu.edu](mailto:finleya@msu.edu), Room 211 Natural Resources Building)
+**Instructor**: Andrew Finley ([finleya@msu.edu](mailto:finleya@msu.edu), Room 211 Natural Resources Building)
 
 **Links**:
 
@@ -64,10 +64,12 @@ Office hours are a great way to get help on assignments you are stuck on, ask qu
 
 In this course, you'll be assessed based on your work and participation. In particular:
 
--   Lab reports (50%)
+-   Lab reports (40%)
     -   Lab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on [D2L](https://d2l.msu.edu). We will have a lab each week (except for the week of the midterm exam).
--   Exams (25%)
-    -   There will be two exams. A midterm near the halfway point of the semester (12.5% of final grade), and a final exam during finals week (12.5% of final grade).
+-   Midterm Exams (20%)
+    -   There will be two midterm exams, one on week 6 and one on week 12. Each midterm is worth 10% of the final grade.
+-   Final Project (15%)
+    -   The details of the final project will be discussed as the semester goes on.    
 -   In-class quizzes (15%)
     -   In-class quizzes do not have a regular schedule and will occur based on the material we get through.
 -   Lecture tickets (10%)

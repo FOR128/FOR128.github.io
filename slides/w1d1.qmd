@@ -70,19 +70,39 @@ knitr::include_graphics("../assets/mymap.png")
 
 ::: {.incremental}
 
-- Getting to know your computer
-  - Operating systems, files, directories, paths, ...
-
-- Using your computer thoughtfully
-  - naming conventions, organization, ... 
-  
-- Learn how to program in `R` with the RStudio IDE
-  - reproducibility
-  - data structures
-  - functions
-  - the `tidyverse`
+- Getting to know your computer and using it thoughtfully
+  - Operating systems, 
+  - files, 
+  - directories, 
+  - good naming conventions,
+  - file organization
 
 :::
+
+
+## Course goals 
+
+::: {.incremental}
+  
+- Learn how to use a variety of data science tools with forestry applications
+  - The `R` programming language,
+  - The RStudio IDE,
+  - Quarto (for reproducible reports)
+  
+- Learn extensive `R` programming skills
+  - base `R` and `tidyverse` approaches
+  - data structures
+  - custom functions
+  - data wrangling & reshaping
+  - beautiful plots with `ggplot2`
+
+:::
+
+## Why Data Science?
+
+- 
+
+
 
 # Course expectations: let's review the syllabus
 
@@ -90,6 +110,44 @@ knitr::include_graphics("../assets/mymap.png")
 countdown::countdown(minutes = 5)
 ```
 
+## Syllabus: Materials
+
+**Textbook**: Introduction to Forestry Data Analysis with R, by Andrew O. Finley and Jeffrey W. Doser. *Available free, online:* [www.finley-lab.com/files/ifdar/](https://www.finley-lab.com/files/ifdar/)
+
+**R and RStudio**: R is a free and open source programming language, and RStudio is an Integrated Development Environment (IDE) which allows for streamlined use of the R programming language. Both are free to install, and installation instructions will be provided in this course. A laptop that can run R and RStudio is required for this course.
+
+## Syllabus: Meetings
+
+-   Lectures are on Tuesdays and Thursdays, 9:10am - 10am, Natural Resources Building, Room 152.
+
+-   Labs are on Thursdays, 10am - 12pm, Natural Resources Building, Room 223.
+
+-   Office hours will be held Tuesdays (10:30am - 11:30am) and Thursdays (1:30pm - 2:30pm), Natural Resources Building, Room 211.
+
+## Syllabus: Assessments
+
+::: {.incremental}
+
+-   Lab reports (40%)
+    -   Lab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on [D2L](https://d2l.msu.edu). We will have a lab each week (except for the week of the midterm exam).
+-   Midterm Exams (20%)
+    -   There will be two midterm exams, one on week 6 and one on week 12. Each midterm is worth 10% of the final grade.
+-   In-class quizzes (15%)
+    -   In-class quizzes do not have a regular schedule and will occur based on the material we get through.
+
+:::
+
+## Syllabus: Assessments
+
+::: {.incremental}
+
+-   Lecture tickets (10%)
+    -   Lecture tickets are due at the beginning of every lecture, handed in in-person, by you.
+
+-   Final Project (15%)
+    -   The details of the final project will be discussed as the semester goes on.    
+    
+:::
 
 
 # [www.for128.org](https://www.for128.org)
