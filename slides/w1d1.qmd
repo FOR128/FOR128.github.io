@@ -2,7 +2,7 @@
 title: "Welcome to FOR 128!"
 format: 
   revealjs:
-    author: "FOR 128: Practical Computing and Data Science Tools"
+    author: "Practical Computing and Data Science Tools"
     height: 900
     width: 1600
     theme: ../assets/slides.scss
@@ -23,21 +23,44 @@ format:
 
 ## Agenda
 
-::: {.incremental}
-- Introductions
+-   Introductions
 
-- Course goals
+-   Course goals
 
-- Course expectations + syllabus
+-   Course expectations + syllabus
 
-- Explore course website
+-   Explore course website
 
-- Preparing for Thursday
+-   Preparing for Thursday
+
+------------------------------------------------------------------------
+
+##  {background-image="figs/elephant.png" background-size="contain"}
+
+------------------------------------------------------------------------
+
+## Engagement
+
+::: columns
+::: {.column .incremental width="=50%"}
+-   It has become harder and harder to stay focused over the last decade given the massive rise in wearable and mobile technology.
+
+-   If you'll be using a laptop to take notes, please avoid distractions to yourself and classmates by silencing notifications and avoiding checking emails, news, social media, etc.
+
+-   Please leave your phone on silent and put it somewhere where it won't distract you.
 :::
 
-# Introductions
+::: {.column width="50%"}
+```{r}
+#| fig-align: 'right'
+knitr::include_graphics("figs/elephant.png")
+```
+:::
+:::
 
-In groups of ~3, introduce yourselves to each other. 
+# Introductions {background-color="#00817c"}
+
+In groups of \~3, introduce yourselves to each other.
 
 (name, hometown, major, favorite food, etc.)
 
@@ -45,17 +68,16 @@ In groups of ~3, introduce yourselves to each other.
 countdown::countdown(minutes = 3)
 ```
 
----
+------------------------------------------------------------------------
 
 ## About me
 
-::: {.incremental}
-- I'm Grayson, a PhD student in Forestry. 
+::: incremental
+-   I'm Grayson, a PhD student in Forestry.
 
-- Before coming to Michigan State, I worked as a Data Scientist contracting for the USDA Forest Service.
+-   Before coming to Michigan State, I worked as a Data Scientist contracting for the USDA Forest Service.
 
-- Before that, I majored in Mathematics & Statistics at Reed College.
-
+-   Before that, I majored in Mathematics & Statistics at Reed College.
 :::
 
 ```{r}
@@ -65,117 +87,98 @@ knitr::include_graphics("figs/mymap.png")
 
 ## About me
 
-::: {.incremental}
-- I `r emo::ji("heart")` teaching, especially about Data Science + Forestry.
+::: incremental
+-   I `r emo::ji("heart")` teaching, especially about Data Science + Forestry.
 
-- In the past, I've co-directed a Forestry Data Science lab for undergraduates. 
-
+-   In the past, I've co-directed a Forestry Data Science lab for undergraduates.
 :::
 
 ## About me
 
-- I `r emo::ji("heart")` teaching, especially about Data Science + Forestry.
+-   I `r emo::ji("heart")` teaching, especially about Data Science + Forestry.
 
-- In the past, I've co-directed a Forestry Data Science lab for undergraduates. 
+-   In the past, I've co-directed a Forestry Data Science lab for undergraduates.
 
 ```{r}
 #| fig-align: 'center'
 knitr::include_graphics("figs/ufds.png")
 ```
 
-
-
-
 # What is (Forestry) Data Science?
 
----
+------------------------------------------------------------------------
 
 ```{r}
 #| fig-align: 'center'
 knitr::include_graphics("figs/Data_Science_VD.png")
 ```
 
----
+------------------------------------------------------------------------
 
 ```{r}
 #| fig-align: 'center'
 knitr::include_graphics("figs/datasciwiki.png")
 ```
 
-# Okay, but really, what *is* (Forestry) Data Science? 
+# Okay, but really, what *is* (Forestry) Data Science?
 
----
+------------------------------------------------------------------------
 
-- Creating dashboards, like this [Forestry Data Science Dashboard](https://ncasi-shiny-tools.shinyapps.io/Counties/)
+-   Creating dashboards, like this [Forestry Data Science Dashboard](https://ncasi-shiny-tools.shinyapps.io/Counties/)
 
 ```{r}
 #| fig-align: 'center'
 knitr::include_graphics("figs/dashboard.png")
 ```
 
---- 
+------------------------------------------------------------------------
 
-- Creating `R` packages, like `saeczi`, which an undergraduate wrote while doing Forestry Data Science research with me
+-   Creating `R` packages, like `saeczi`, which an undergraduate wrote while doing Forestry Data Science research with me
 
 ```{r}
 #| fig-align: 'center'
 knitr::include_graphics("figs/saeczi.gif")
 ```
 
+## Path to Forestry Data Science
 
-## Path to Forestry Data Science 
+::: incremental
+-   Take this class and engage thoughtfully with the material. `r emo::ji("check")`
 
-::: {.incremental}
-- Take this class and engage thoughtfully with the material. `r emo::ji("check")`
+-   Take FOR 372 (offered this spring) to gain more domain-specific statistical expertise.
 
-- Take FOR 372 (offered this spring) to gain more domain-specific statistical expertise.
+-   A wide variety of knowledge in statistics, computer science, and your domain field of expertise (forestry) is important.
 
-- A wide variety of knowledge in statistics, computer science, and your domain field of expertise (forestry) is important.
-
-- Engage in undergraduate research opportunities! 
-
+-   Engage in undergraduate research opportunities!
 :::
 
+## Course goals
 
-## Course goals 
-
-::: {.incremental}
-
-- Getting to know your computer and using it thoughtfully
-  - Operating systems, 
-  - files, 
-  - directories, 
-  - good naming conventions,
-  - file organization
-
+::: incremental
+-   Getting to know your computer and using it thoughtfully
+    -   Operating systems,
+    -   files,
+    -   directories,
+    -   good naming conventions,
+    -   file organization
 :::
 
+## Course goals
 
-## Course goals 
-
-::: {.incremental}
-  
-- Learn how to use a variety of data science tools with forestry applications
-  - The `R` programming language,
-  - The RStudio IDE,
-  - Quarto (for reproducible reports)
-  
-- Learn extensive `R` programming skills
-  - base `R` and `tidyverse` approaches
-  - data structures
-  - custom functions
-  - data wrangling & reshaping
-  - beautiful plots with `ggplot2`
-
+::: incremental
+-   Learn how to use a variety of data science tools with forestry applications
+    -   The `R` programming language,
+    -   The RStudio IDE,
+    -   Quarto (for reproducible reports)
+-   Learn extensive `R` programming skills
+    -   base `R` and `tidyverse` approaches
+    -   data structures
+    -   custom functions
+    -   data wrangling & reshaping
+    -   beautiful plots with `ggplot2`
 :::
 
-## Why Data Science?
-
-- 
-
-
-
-# Course expectations: let's review the syllabus
+# Course expectations: let's review the syllabus {background-color="#00817c"}
 
 ```{r}
 countdown::countdown(minutes = 5)
@@ -183,56 +186,67 @@ countdown::countdown(minutes = 5)
 
 ## Syllabus: Materials
 
-**Textbook**: Introduction to Forestry Data Analysis with R, by Andrew O. Finley and Jeffrey W. Doser. *Available free, online:* [www.finley-lab.com/files/ifdar/](https://www.finley-lab.com/files/ifdar/)
+### Textbook: IFDAR
 
-**R and RStudio**: R is a free and open source programming language, and RStudio is an Integrated Development Environment (IDE) which allows for streamlined use of the R programming language. Both are free to install, and installation instructions will be provided in this course. A laptop that can run R and RStudio is required for this course.
+Introduction to Forestry Data Analysis with R, by Andrew O. Finley and Jeffrey W. Doser. *Available free, online:* [www.finley-lab.com/files/ifdar/](https://www.finley-lab.com/files/ifdar/)
+
+### Technologies: `R`, RStudio, a laptop
+
+R is a free and open source programming language, and RStudio is an Integrated Development Environment (IDE) which allows for streamlined use of the R programming language. Both are free to install, and installation instructions will be provided in this course. A laptop that can run R and RStudio is required for this course.
 
 ## Syllabus: Meetings
 
--   Lectures are on Tuesdays and Thursdays, 9:10am - 10am, Natural Resources Building, Room 152.
-
--   Labs are on Thursdays, 10am - 12pm, Natural Resources Building, Room 223.
-
--   Office hours will be held Tuesdays (10:30am - 11:30am) and Thursdays (1:30pm - 2:30pm), Natural Resources Building, Room 211.
+```{r}
+knitr::include_graphics("figs/schedule.png")
+```
 
 ## Syllabus: Assessments
 
-::: {.incremental}
-
+::: incremental
 -   Lab reports (40%)
     -   Lab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on [D2L](https://d2l.msu.edu). We will have a lab each week (except for the week of the midterm exam).
 -   Midterm Exams (20%)
     -   There will be two midterm exams, one on week 6 and one on week 12. Each midterm is worth 10% of the final grade.
 -   In-class quizzes (15%)
     -   In-class quizzes do not have a regular schedule and will occur based on the material we get through.
-
 :::
 
 ## Syllabus: Assessments
 
-::: {.incremental}
-
+::: incremental
 -   Lecture tickets (10%)
     -   Lecture tickets are due at the beginning of every lecture, handed in in-person, by you.
-
 -   Final Project (15%)
-    -   The details of the final project will be discussed as the semester goes on.    
-    
+    -   The details of the final project will be discussed as the semester goes on.
 :::
 
+##  {background-image="figs/elephant.png" background-size="contain"}
 
-# [www.for128.org](https://www.for128.org)
+## Artificial Intelligence (AI)
 
-## Next time: 
+::: columns
+::: {.column .incremental width="=50%"}
+-   "...a key goal of this course is for you to learn how to **thoughtfully, ethically, and independently** write code and extract knowledge from data"
 
-- Reading assignment
+-   AI tools are being used by others to *write code*, but as Data Scientists, we must write code *responsibly*
 
-- Lecture ticket
+-   At this stage of learning how to code, AI tools inhibit learning and understanding.
+:::
 
-- 
+::: {.column width="50%"}
+```{r}
+#| fig-align: 'right'
+knitr::include_graphics("figs/elephant.png")
+```
+:::
+:::
 
+# Syllabus: Questions? {background-color="#00817c"}
 
+# [www.for128.org](https://www.for128.org) {background-color="#9f8e71"}
 
+## Next time:
 
+-   Come to class with a laptop
 
-
+-   Complete Lecture Ticket 1 before lecture on Thursday.

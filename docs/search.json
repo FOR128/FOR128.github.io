@@ -25,7 +25,14 @@
     "href": "slides/w1d1.html#agenda",
     "title": "Welcome to FOR 128!",
     "section": "Agenda",
-    "text": "Agenda\n\n\nIntroductions\nCourse goals\nCourse expectations + syllabus\nExplore course website\nPreparing for Thursday"
+    "text": "Agenda\n\nIntroductions\nCourse goals\nCourse expectations + syllabus\nExplore course website\nPreparing for Thursday"
+  },
+  {
+    "objectID": "slides/w1d1.html#engagement",
+    "href": "slides/w1d1.html#engagement",
+    "title": "Welcome to FOR 128!",
+    "section": "Engagement",
+    "text": "Engagement\n\n\n\nIt has become harder and harder to stay focused over the last decade given the massive rise in wearable and mobile technology.\nIf you’ll be using a laptop to take notes, please avoid distractions to yourself and classmates by silencing notifications and avoiding checking emails, news, social media, etc.\nPlease leave your phone on silent and put it somewhere where it won’t distract you."
   },
   {
     "objectID": "slides/w1d1.html#about-me",
@@ -42,6 +49,20 @@
     "text": "About me\n\n\nI ❤️ teaching, especially about Data Science + Forestry.\nIn the past, I’ve co-directed a Forestry Data Science lab for undergraduates."
   },
   {
+    "objectID": "slides/w1d1.html#about-me-2",
+    "href": "slides/w1d1.html#about-me-2",
+    "title": "Welcome to FOR 128!",
+    "section": "About me",
+    "text": "About me\n\nI ❤️ teaching, especially about Data Science + Forestry.\nIn the past, I’ve co-directed a Forestry Data Science lab for undergraduates."
+  },
+  {
+    "objectID": "slides/w1d1.html#path-to-forestry-data-science",
+    "href": "slides/w1d1.html#path-to-forestry-data-science",
+    "title": "Welcome to FOR 128!",
+    "section": "Path to Forestry Data Science",
+    "text": "Path to Forestry Data Science\n\n\nTake this class and engage thoughtfully with the material. ✅\nTake FOR 372 (offered this spring) to gain more domain-specific statistical expertise.\nA wide variety of knowledge in statistics, computer science, and your domain field of expertise (forestry) is important.\nEngage in undergraduate research opportunities!"
+  },
+  {
     "objectID": "slides/w1d1.html#course-goals",
     "href": "slides/w1d1.html#course-goals",
     "title": "Welcome to FOR 128!",
@@ -56,25 +77,18 @@
     "text": "Course goals\n\n\nLearn how to use a variety of data science tools with forestry applications\n\nThe R programming language,\nThe RStudio IDE,\nQuarto (for reproducible reports)\n\nLearn extensive R programming skills\n\nbase R and tidyverse approaches\ndata structures\ncustom functions\ndata wrangling & reshaping\nbeautiful plots with ggplot2"
   },
   {
-    "objectID": "slides/w1d1.html#why-data-science",
-    "href": "slides/w1d1.html#why-data-science",
-    "title": "Welcome to FOR 128!",
-    "section": "Why Data Science?",
-    "text": "Why Data Science?"
-  },
-  {
     "objectID": "slides/w1d1.html#syllabus-materials",
     "href": "slides/w1d1.html#syllabus-materials",
     "title": "Welcome to FOR 128!",
     "section": "Syllabus: Materials",
-    "text": "Syllabus: Materials\nTextbook: Introduction to Forestry Data Analysis with R, by Andrew O. Finley and Jeffrey W. Doser. Available free, online: www.finley-lab.com/files/ifdar/\nR and RStudio: R is a free and open source programming language, and RStudio is an Integrated Development Environment (IDE) which allows for streamlined use of the R programming language. Both are free to install, and installation instructions will be provided in this course. A laptop that can run R and RStudio is required for this course."
+    "text": "Syllabus: Materials\nTextbook: IFDAR\nIntroduction to Forestry Data Analysis with R, by Andrew O. Finley and Jeffrey W. Doser. Available free, online: www.finley-lab.com/files/ifdar/\nTechnologies: R, RStudio, a laptop\nR is a free and open source programming language, and RStudio is an Integrated Development Environment (IDE) which allows for streamlined use of the R programming language. Both are free to install, and installation instructions will be provided in this course. A laptop that can run R and RStudio is required for this course."
   },
   {
     "objectID": "slides/w1d1.html#syllabus-meetings",
     "href": "slides/w1d1.html#syllabus-meetings",
     "title": "Welcome to FOR 128!",
     "section": "Syllabus: Meetings",
-    "text": "Syllabus: Meetings\n\nLectures are on Tuesdays and Thursdays, 9:10am - 10am, Natural Resources Building, Room 152.\nLabs are on Thursdays, 10am - 12pm, Natural Resources Building, Room 223.\nOffice hours will be held Tuesdays (10:30am - 11:30am) and Thursdays (1:30pm - 2:30pm), Natural Resources Building, Room 211."
+    "text": "Syllabus: Meetings"
   },
   {
     "objectID": "slides/w1d1.html#syllabus-assessments",
@@ -91,11 +105,18 @@
     "text": "Syllabus: Assessments\n\n\nLecture tickets (10%)\n\nLecture tickets are due at the beginning of every lecture, handed in in-person, by you.\n\nFinal Project (15%)\n\nThe details of the final project will be discussed as the semester goes on."
   },
   {
+    "objectID": "slides/w1d1.html#artificial-intelligence-ai",
+    "href": "slides/w1d1.html#artificial-intelligence-ai",
+    "title": "Welcome to FOR 128!",
+    "section": "Artificial Intelligence (AI)",
+    "text": "Artificial Intelligence (AI)\n\n\n\n“…a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data”\nAI tools are being used by others to write code, but as Data Scientists, we must write code responsibly\nAt this stage of learning how to code, AI tools inhibit learning and understanding."
+  },
+  {
     "objectID": "slides/w1d1.html#next-time",
     "href": "slides/w1d1.html#next-time",
     "title": "Welcome to FOR 128!",
     "section": "Next time:",
-    "text": "Next time:\n\nReading assignment\nLecture ticket"
+    "text": "Next time:\n\nCome to class with a laptop\nComplete Lecture Ticket 1 before lecture on Thursday."
   },
   {
     "objectID": "index.html",
@@ -187,19 +208,5 @@
     "title": "Syllabus",
     "section": "AI Policy for FOR 128",
     "text": "AI Policy for FOR 128\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
-  },
-  {
-    "objectID": "slides/w1d1.html#path-to-forestry-data-science",
-    "href": "slides/w1d1.html#path-to-forestry-data-science",
-    "title": "Welcome to FOR 128!",
-    "section": "Path to Forestry Data Science",
-    "text": "Path to Forestry Data Science\n\n\nTake this class and engage thoughtfully with the material. ✅\nTake FOR 372 (offered this spring) to gain more domain-specific statistical expertise.\nA wide variety of knowledge in statistics, computer science, and your domain field of expertise (forestry) is important.\nEngage in undergraduate research opportunities!"
-  },
-  {
-    "objectID": "slides/w1d1.html#about-me-2",
-    "href": "slides/w1d1.html#about-me-2",
-    "title": "Welcome to FOR 128!",
-    "section": "About me",
-    "text": "About me\n\nI ❤️ teaching, especially about Data Science + Forestry.\nIn the past, I’ve co-directed a Forestry Data Science lab for undergraduates."
   }
 ]
