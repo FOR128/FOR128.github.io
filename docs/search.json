@@ -46,7 +46,49 @@
     "href": "slides/w1d1.html#course-goals",
     "title": "Welcome to FOR 128!",
     "section": "Course goals",
-    "text": "Course goals\n\n\nGetting to know your computer\n\nOperating systems, files, directories, paths, …\n\nUsing your computer thoughtfully\n\nnaming conventions, organization, …\n\nLearn how to program in R with the RStudio IDE\n\nreproducibility\ndata structures\nfunctions\nthe tidyverse"
+    "text": "Course goals\n\n\nGetting to know your computer and using it thoughtfully\n\nOperating systems,\nfiles,\ndirectories,\ngood naming conventions,\nfile organization"
+  },
+  {
+    "objectID": "slides/w1d1.html#course-goals-1",
+    "href": "slides/w1d1.html#course-goals-1",
+    "title": "Welcome to FOR 128!",
+    "section": "Course goals",
+    "text": "Course goals\n\n\nLearn how to use a variety of data science tools with forestry applications\n\nThe R programming language,\nThe RStudio IDE,\nQuarto (for reproducible reports)\n\nLearn extensive R programming skills\n\nbase R and tidyverse approaches\ndata structures\ncustom functions\ndata wrangling & reshaping\nbeautiful plots with ggplot2"
+  },
+  {
+    "objectID": "slides/w1d1.html#why-data-science",
+    "href": "slides/w1d1.html#why-data-science",
+    "title": "Welcome to FOR 128!",
+    "section": "Why Data Science?",
+    "text": "Why Data Science?"
+  },
+  {
+    "objectID": "slides/w1d1.html#syllabus-materials",
+    "href": "slides/w1d1.html#syllabus-materials",
+    "title": "Welcome to FOR 128!",
+    "section": "Syllabus: Materials",
+    "text": "Syllabus: Materials\nTextbook: Introduction to Forestry Data Analysis with R, by Andrew O. Finley and Jeffrey W. Doser. Available free, online: www.finley-lab.com/files/ifdar/\nR and RStudio: R is a free and open source programming language, and RStudio is an Integrated Development Environment (IDE) which allows for streamlined use of the R programming language. Both are free to install, and installation instructions will be provided in this course. A laptop that can run R and RStudio is required for this course."
+  },
+  {
+    "objectID": "slides/w1d1.html#syllabus-meetings",
+    "href": "slides/w1d1.html#syllabus-meetings",
+    "title": "Welcome to FOR 128!",
+    "section": "Syllabus: Meetings",
+    "text": "Syllabus: Meetings\n\nLectures are on Tuesdays and Thursdays, 9:10am - 10am, Natural Resources Building, Room 152.\nLabs are on Thursdays, 10am - 12pm, Natural Resources Building, Room 223.\nOffice hours will be held Tuesdays (10:30am - 11:30am) and Thursdays (1:30pm - 2:30pm), Natural Resources Building, Room 211."
+  },
+  {
+    "objectID": "slides/w1d1.html#syllabus-assessments",
+    "href": "slides/w1d1.html#syllabus-assessments",
+    "title": "Welcome to FOR 128!",
+    "section": "Syllabus: Assessments",
+    "text": "Syllabus: Assessments\n\n\nLab reports (40%)\n\nLab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on D2L. We will have a lab each week (except for the week of the midterm exam).\n\nMidterm Exams (20%)\n\nThere will be two midterm exams, one on week 6 and one on week 12. Each midterm is worth 10% of the final grade.\n\nIn-class quizzes (15%)\n\nIn-class quizzes do not have a regular schedule and will occur based on the material we get through."
+  },
+  {
+    "objectID": "slides/w1d1.html#syllabus-assessments-1",
+    "href": "slides/w1d1.html#syllabus-assessments-1",
+    "title": "Welcome to FOR 128!",
+    "section": "Syllabus: Assessments",
+    "text": "Syllabus: Assessments\n\n\nLecture tickets (10%)\n\nLecture tickets are due at the beginning of every lecture, handed in in-person, by you.\n\nFinal Project (15%)\n\nThe details of the final project will be discussed as the semester goes on."
   },
   {
     "objectID": "slides/w1d1.html#next-time",
@@ -130,7 +172,7 @@
     "href": "syllabus.html#assessments",
     "title": "Syllabus",
     "section": "Assessments",
-    "text": "Assessments\nIn this course, you’ll be assessed based on your work and participation. In particular:\n\nLab reports (50%)\n\nLab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on D2L. We will have a lab each week (except for the week of the midterm exam).\n\nExams (25%)\n\nThere will be two exams. A midterm near the halfway point of the semester (12.5% of final grade), and a final exam during finals week (12.5% of final grade).\n\nIn-class quizzes (15%)\n\nIn-class quizzes do not have a regular schedule and will occur based on the material we get through.\n\nLecture tickets (10%)\n\nLecture tickets are due at the beginning of every lecture, handed in in-person, by you."
+    "text": "Assessments\nIn this course, you’ll be assessed based on your work and participation. In particular:\n\nLab reports (40%)\n\nLab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on D2L. We will have a lab each week (except for the week of the midterm exam).\n\nMidterm Exams (20%)\n\nThere will be two midterm exams, one on week 6 and one on week 12. Each midterm is worth 10% of the final grade.\n\nFinal Project (15%)\n\nThe details of the final project will be discussed as the semester goes on.\n\n\nIn-class quizzes (15%)\n\nIn-class quizzes do not have a regular schedule and will occur based on the material we get through.\n\nLecture tickets (10%)\n\nLecture tickets are due at the beginning of every lecture, handed in in-person, by you."
   },
   {
     "objectID": "syllabus.html#collaboration-policy-for-for-128",
