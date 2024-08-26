@@ -24,22 +24,22 @@
     "objectID": "slides/w1d1.html#agenda",
     "href": "slides/w1d1.html#agenda",
     "title": "Welcome to FOR 128!",
-    "section": "Agenda",
-    "text": "Agenda\n\nIntroductions\nCourse goals\nCourse expectations + syllabus\nExplore course website\nPreparing for Thursday"
+    "section": "",
+    "text": "Introductions\nCourse goals\nCourse expectations + syllabus\nExplore course website\nPreparing for Thursday"
   },
   {
     "objectID": "slides/w1d1.html#engagement",
     "href": "slides/w1d1.html#engagement",
     "title": "Welcome to FOR 128!",
     "section": "Engagement",
-    "text": "Engagement\n\n\n\nIt has become harder and harder to stay focused over the last decade given the massive rise in wearable and mobile technology.\nIf you’ll be using a laptop to take notes, please avoid distractions to yourself and classmates by silencing notifications and avoiding checking emails, news, social media, etc.\nPlease leave your phone on silent and put it somewhere where it won’t distract you."
+    "text": "Engagement\n\n\n\nIt has become harder and harder to stay focused over the last decade given the massive rise in wearable and mobile technology.\nIf you’ll be using a laptop to take notes, please avoid distractions to yourself and classmates by silencing notifications and avoiding checking emails, news, social media, etc.\nPlease leave your phone on silent and put it somewhere where it won’t distract you.\n\n\n\nknitr::include_graphics(\"figs/elephant.png\")"
   },
   {
     "objectID": "slides/w1d1.html#about-me",
     "href": "slides/w1d1.html#about-me",
     "title": "Welcome to FOR 128!",
     "section": "About me",
-    "text": "About me\n\n\nI’m Grayson, a PhD student in Forestry.\nBefore coming to Michigan State, I worked as a Data Scientist contracting for the USDA Forest Service.\nBefore that, I majored in Mathematics & Statistics at Reed College."
+    "text": "About me\n\n\nI’m Grayson, a PhD student in Forestry.\nBefore coming to Michigan State, I worked as a Data Scientist contracting for the USDA Forest Service.\nBefore that, I majored in Mathematics & Statistics at Reed College.\n\n\n\nknitr::include_graphics(\"figs/mymap.png\")"
   },
   {
     "objectID": "slides/w1d1.html#about-me-1",
@@ -53,7 +53,7 @@
     "href": "slides/w1d1.html#about-me-2",
     "title": "Welcome to FOR 128!",
     "section": "About me",
-    "text": "About me\n\nI ❤️ teaching, especially about Data Science + Forestry.\nIn the past, I’ve co-directed a Forestry Data Science lab for undergraduates."
+    "text": "About me\n\nI ❤️ teaching, especially about Data Science + Forestry.\nIn the past, I’ve co-directed a Forestry Data Science lab for undergraduates.\n\n\nknitr::include_graphics(\"figs/ufds.png\")"
   },
   {
     "objectID": "slides/w1d1.html#path-to-forestry-data-science",
@@ -81,14 +81,14 @@
     "href": "slides/w1d1.html#syllabus-materials",
     "title": "Welcome to FOR 128!",
     "section": "Syllabus: Materials",
-    "text": "Syllabus: Materials\nTextbook: IFDAR\nIntroduction to Forestry Data Analysis with R, by Andrew O. Finley and Jeffrey W. Doser. Available free, online: www.finley-lab.com/files/ifdar/\nTechnologies: R, RStudio, a laptop\nR is a free and open source programming language, and RStudio is an Integrated Development Environment (IDE) which allows for streamlined use of the R programming language. Both are free to install, and installation instructions will be provided in this course. A laptop that can run R and RStudio is required for this course."
+    "text": "Syllabus: Materials\n\nTextbook: IFDAR\nIntroduction to Forestry Data Analysis with R, by Andrew O. Finley and Jeffrey W. Doser. Available free, online: www.finley-lab.com/files/ifdar/\n\n\nTechnologies: R, RStudio, a laptop\nR is a free and open source programming language, and RStudio is an Integrated Development Environment (IDE) which allows for streamlined use of the R programming language. Both are free to install, and installation instructions will be provided in this course. A laptop that can run R and RStudio is required for this course."
   },
   {
     "objectID": "slides/w1d1.html#syllabus-meetings",
     "href": "slides/w1d1.html#syllabus-meetings",
     "title": "Welcome to FOR 128!",
     "section": "Syllabus: Meetings",
-    "text": "Syllabus: Meetings"
+    "text": "Syllabus: Meetings\n\nknitr::include_graphics(\"figs/schedule.png\")"
   },
   {
     "objectID": "slides/w1d1.html#syllabus-assessments",
@@ -116,7 +116,7 @@
     "href": "slides/w1d1.html#artificial-intelligence-ai",
     "title": "Welcome to FOR 128!",
     "section": "Artificial Intelligence (AI)",
-    "text": "Artificial Intelligence (AI)\n\n\n\n“…a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data”\nAI tools are being used by others to write code, but as Data Scientists, we must write code responsibly\nAt this stage of learning how to code, AI tools inhibit learning and understanding."
+    "text": "Artificial Intelligence (AI)\n\n\n\n“…a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data”\nAI tools are being used by others to write code, but as Data Scientists, we must write code responsibly\nAt this stage of learning how to code, AI tools inhibit learning and understanding.\n\n\n\nknitr::include_graphics(\"figs/elephant.png\")"
   },
   {
     "objectID": "slides/w1d1.html#next-time",
@@ -193,7 +193,7 @@
     "href": "syllabus.html#meetings-office-hours",
     "title": "Syllabus",
     "section": "Meetings & Office Hours",
-    "text": "Meetings & Office Hours\nWe’ll have a lecture-style meeting twice a week, and a lab meeting once a week.\n\nLectures are on Tuesdays and Thursdays, 9:10am - 10am, Natural Resources Building, Room 152.\nLabs are on Thursdays, 10am - 12pm, Natural Resources Building, Room 223.\n\nOutside of lectures and labs, I will also hold office hours.\n\nOffice hours will be held Tuesdays (10:30am - 11:30am) and Thursdays (1:30pm - 2:30pm), Natural Resources Building, Room 211.\n\nOffice hours are a great way to get help on assignments you are stuck on, ask questions you didn’t get a chance to ask in class, familiarize yourself with the instructor and course expectations, and much more! Further, office hours can be a very helpful tool for your success in this course and beyond in college. Attending office hours is a great habit!"
+    "text": "Meetings & Office Hours\nWe’ll have a lecture-style meeting twice a week, and a lab meeting once a week.\n\nLectures are on Tuesdays and Thursdays, 9:10am - 10am, Natural Resources Building, Room 152.\nLabs are on Thursdays, 10am - 12pm, Natural Resources Building, Room 223.\n\nOutside of lectures and labs, I will also hold office hours.\n\nOffice hours will be held Tuesdays (10:30am - 11:30am) and Thursdays (1:30pm - 2:30pm), Natural Resources Building, Room 211.\nIf these times do not work for you, we also hold office hours by appointment. Please email to set up a time to meet.\n\nOffice hours are a great way to get help on assignments you are stuck on, ask questions you didn’t get a chance to ask in class, familiarize yourself with the instructor and course expectations, and much more! Further, office hours can be a very helpful tool for your success in this course and beyond in college. Attending office hours is a great habit!"
   },
   {
     "objectID": "syllabus.html#assessments",
@@ -215,5 +215,12 @@
     "title": "Syllabus",
     "section": "AI Policy for FOR 128",
     "text": "AI Policy for FOR 128\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
+  },
+  {
+    "objectID": "slides/w1d1.html",
+    "href": "slides/w1d1.html",
+    "title": "Welcome to FOR 128!",
+    "section": "",
+    "text": "Introductions\nCourse goals\nCourse expectations + syllabus\nExplore course website\nPreparing for Thursday"
   }
 ]

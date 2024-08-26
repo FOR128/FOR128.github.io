@@ -181,7 +181,7 @@ knitr::include_graphics("figs/saeczi.gif")
 # Course expectations: let's review the syllabus {background-color="#00817c"}
 
 ```{r}
-countdown::countdown(minutes = 5)
+countdown::countdown(minutes = 2)
 ```
 
 ## Syllabus: Materials
@@ -221,15 +221,14 @@ knitr::include_graphics("figs/schedule.png")
 :::
 
 ## Syllabus: Collaboration
-::: incremental
 
-  - Working with classmates on labs and lecture tickets is perfectly acceptable. 
-  - However, please cite your collaborator(s) at the top of your assignment.
-  - Collaboration on exams and quizzes is strictly prohibited. 
-  - But what *is* collaboration? 
-  
+::: incremental
+-   Working with classmates on labs and lecture tickets is perfectly acceptable.
+-   However, please cite your collaborator(s) at the top of your assignment.
+-   Collaboration on exams and quizzes is strictly prohibited.
+-   But what *is* collaboration?
 :::
-  
+
 ##  {background-image="figs/elephant.png" background-size="contain"}
 
 ## Artificial Intelligence (AI)
