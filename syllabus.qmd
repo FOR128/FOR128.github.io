@@ -8,9 +8,15 @@ editor:
   mode: source
 ---
 
+\vspace{-2.5cm}
+
 ## Useful Information
 
 **Instructor**: Andrew Finley ([finleya@msu.edu](mailto:finleya@msu.edu), Room 211 Natural Resources Building)
+
+**Research Assistant**: Grayson White ([whitegra@msu.edu](mailto:whitegra@msu.edu), Room 211 Natural Resources Building)
+
+**Emails**: Direct all email inquiries regarding the course and material covered to **both** the Instructor and Research Assistant, Andrew Finley and Grayson White (both as recipient, or CC'd). 
 
 **Links**:
 
@@ -72,7 +78,7 @@ In this course, you'll be assessed based on your work and participation. In part
 -   Midterm Exams (20%)
     -   There will be two midterm exams, one on week 6 and one on week 12. Each midterm is worth 10% of the final grade.
 -   Final Project (15%)
-    -   Rather than a final exam, we will have a final group project with project presentations during the final exam time period. More details to come as the semester goes on.      
+    -   Rather than a final exam, we will have a final group project with project presentations during the final exam time period. More details to come as the semester goes on.
 -   In-class quizzes (15%)
     -   In-class quizzes do not have a regular schedule and will occur based on the material we get through.
     -   The lowest in-class quiz grade is dropped.

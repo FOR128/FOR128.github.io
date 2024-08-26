@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.for128.org/tickets/ticket_01.html</loc>
-    <lastmod>2024-08-21T18:06:22.354Z</lastmod>
-  </url>
-  <url>
     <loc>https://www.for128.org/slides/w1d1.html</loc>
     <lastmod>2024-08-26T13:54:39.935Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.for128.org/syllabus.html</loc>
+    <lastmod>2024-08-26T14:38:30.250Z</lastmod>
   </url>
   <url>
     <loc>https://www.for128.org/index.html</loc>
@@ -21,7 +21,7 @@
     <lastmod>2024-08-19T18:24:48.561Z</lastmod>
   </url>
   <url>
-    <loc>https://www.for128.org/syllabus.html</loc>
-    <lastmod>2024-08-26T13:55:52.085Z</lastmod>
+    <loc>https://www.for128.org/tickets/ticket_01.html</loc>
+    <lastmod>2024-08-21T18:06:22.354Z</lastmod>
   </url>
 </urlset>
