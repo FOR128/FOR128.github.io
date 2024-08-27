@@ -56,7 +56,7 @@ We'll have a lecture-style meeting twice a week, and a lab meeting once a week.
 
 -   Lectures are on Tuesdays and Thursdays, 9:10am - 10am, Natural Resources Building, Room 152.
 
--   Labs are on Thursdays, 10am - 12pm, Natural Resources Building, Room 223.
+-   Labs are on Thursdays, 10:20am - 12:10pm, Natural Resources Building, Room 223.
 
 Outside of lectures and labs, I will also hold *office hours*.
 
