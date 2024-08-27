@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.for128.org/slides/w1d1.html</loc>
-    <lastmod>2024-08-27T12:33:55.853Z</lastmod>
+    <loc>https://www.for128.org/tickets/ticket_01.html</loc>
+    <lastmod>2024-08-21T20:45:35.710Z</lastmod>
   </url>
   <url>
-    <loc>https://www.for128.org/syllabus.html</loc>
-    <lastmod>2024-08-27T12:32:16.176Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.for128.org/recordings.html</loc>
-    <lastmod>2024-08-27T14:56:25.390Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.for128.org/assignments.html</loc>
-    <lastmod>2024-08-27T14:41:34.092Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.for128.org/index.html</loc>
-    <lastmod>2024-08-22T20:31:54.334Z</lastmod>
+    <loc>https://www.for128.org/slides/w1d2.html</loc>
+    <lastmod>2024-08-27T19:31:37.998Z</lastmod>
   </url>
   <url>
     <loc>https://www.for128.org/slides/test_slides.html</loc>
-    <lastmod>2024-08-19T18:24:48.561Z</lastmod>
+    <lastmod>2024-08-21T12:16:50.416Z</lastmod>
   </url>
   <url>
-    <loc>https://www.for128.org/tickets/ticket_01.html</loc>
-    <lastmod>2024-08-21T18:06:22.354Z</lastmod>
+    <loc>https://www.for128.org/index.html</loc>
+    <lastmod>2024-08-21T20:45:35.709Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.for128.org/assignments.html</loc>
+    <lastmod>2024-08-27T18:32:03.811Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.for128.org/recordings.html</loc>
+    <lastmod>2024-08-27T18:32:03.838Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.for128.org/slides/w1d1.html</loc>
+    <lastmod>2024-08-27T18:55:05.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.for128.org/syllabus.html</loc>
+    <lastmod>2024-08-27T18:32:03.851Z</lastmod>
   </url>
 </urlset>

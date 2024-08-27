@@ -24,6 +24,18 @@ Welcome to Lab 1! Today, we'll get started with a few data science tools (`R`, R
 
 Upload your rendered PDF (`lab_01.pdf`) **and** Quarto (`lab_01.qmd`) document to the lab drop box. Make sure the Quarto document properly renders to PDF.
 
+### Collaborator(s)
+
+List any collaborators you worked with in the space below. 
+
+------------------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------------------
+
 # Part 1: Setting up your workspace
 
 ## Exercise 1
@@ -46,12 +58,13 @@ list.files()
 
 ## Exercise 2
 
-Create a subfolder called `data` in the folder you just created in Exercise 1. For now, we'll leave this directory empty, but we will use it for future labs.
+Go to D2L and download the `datasets.zip` file. This file contains datasets needed to work with our textbook. Use your computer to "unzip" the file (a folder called "datasets" should appear). Move this folder into the folder you just created in Exercise 1. For now, we'll leave this directory alone, but we will use it for future labs.
 
-Now, run the following code chunk. What do you think specifying the `path` argument in the `list.files()` function did? 
+Now, run the following code chunk. What do you think specifying the `path` argument in the `list.files()` function did?
 
 ```{r}
-list.files(path = "data/")
+list.files()
+list.files(path = "datasets/")
 ```
 
 ------------------------------------------------------------------------

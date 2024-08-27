@@ -1,0 +1,174 @@
+---
+title: "Tools for Data Science"
+editor: 
+  mode: source
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+---
+
+## Agenda
+
+Today, we'll introduce a few topics
+
+-   The `R` programming language
+-   The RStudio IDE
+-   Quarto, for reproducible reports
+-   Navigating your computer: files, folders, and directories
+
+# The `R` programming language
+
+## The `R` programming language
+
+-   talk about what R is and origins, uses, etc. 
+
+## `R` as a calculator
+
+-   `R` includes many mathematical operations, and is a great calculator. 
+
+```{r}
+#| eval: true
+#| echo: true
+2 + 3 # addition
+2 * 3 # multiplication
+2 / 3 # division
+2 - 3 # subtraction
+```
+
+## `R` as a calculator
+
+-   Functions exists for more complex mathematical operations
+
+```{r}
+#| eval: true
+#| echo: true
+log(7) # the natural logarithm
+log(7, base = 10) # log base 10
+exp(7) # the exponential function
+sqrt(7) # the square root function
+abs(10 - 17) # absolute value
+```
+
+## `R` as a calculator
+
+-   Functions can be nested in each other
+
+```{r}
+#| eval: true
+#| echo: true
+log(exp(7))
+```
+
+## `R` as a calculator
+
+-   Exponents with `^`: `2^3` means $2^3$
+
+```{r}
+#| eval: true
+#| echo: true
+2^3
+```
+
+
+
+## What's going on here? 
+
+```{r}
+#| eval: false
+#| echo: true
+rnorm(1)
+```
+
+::: incremental
+-   `rnorm` is a *function*.
+-   `1` is the value we gave to one of it's *arguments*.
+-   We can type `?rnorm` for more information about the `rnorm` function.
+-   Let's check it out!
+
+:::
+
+## What have we learned? 
+
+::: incremental
+
+- The `rnorm` function takes `n` random draws from a normal distribution with a center (`mean`) and spread (`sd`). 
+  - These statistical details are not necessary for this class. 
+  
+:::
+
+## What have we learned? 
+
+- The `rnorm` function takes `n` random draws from a normal distribution with a center (`mean`) and spread (`sd`). 
+  - These statistical details are not necessary for this class. 
+
+We could have written:
+
+```{r}
+#| eval: false
+#| echo: true
+rnorm(n = 1)
+```
+
+## What have we learned? 
+
+- The `rnorm` function takes `n` random draws from a normal distribution with a center (`mean`) and spread (`sd`). 
+  - These statistical details are not necessary for this class. 
+
+We could have written:
+
+```{r}
+#| eval: false
+#| echo: true
+rnorm(n = 1)
+```
+
+Or even:
+
+```{r}
+#| eval: false
+#| echo: true
+rnorm(n = 1, mean = 0, sd = 1)
+```
+
+
+## Arguments
+
+```{r}
+#| eval: false
+#| echo: true
+rnorm(n = 1, mean = 0, sd = 1)
+```
+
+::: incremental
+-   `n` must be specified for `rnorm()` to run
+-   `mean` and `sd` are optional, but if you don't specify them, `R` will choose for you (in this case, the defaults are `0` and `1`). 
+:::
+
+## Objects 
+
+-   `R` can store objects in your global 
+
+# The RStudio IDE
+
+# Quarto: demo
+
+# Navigating your computer
+
+
+
