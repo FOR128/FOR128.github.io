@@ -1,0 +1,10 @@
+---
+title: "Lecture Recordings"
+subtitle: "FOR 128: Practical Computing and Data Science Tools, Fall 2024"
+editor: 
+  mode: source
+---
+
+## Recordings
+
+Week 1, day 1: *Welcome to the course*. Available [here](https://mediaspace.msu.edu/media/Week+1+Day+1/1_33yh2vbh).

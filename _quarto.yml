@@ -27,6 +27,8 @@ website:
             text: "Week 1 Day 1"
       - href: assignments.qmd
         text: Assignments
+      - href: recordings.qmd
+        text: Lecture Recordings
       - href: https://www.finley-lab.com/files/ifdar/
         target: "_blank"
         rel: "noopener noreferrer"
