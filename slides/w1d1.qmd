@@ -156,7 +156,7 @@ knitr::include_graphics("figs/saeczi.gif")
 
 ::: incremental
 -   Getting to know your computer and using it thoughtfully
-    -   Operating systems,
+    -   operating systems,
     -   files,
     -   directories,
     -   good naming conventions,
