@@ -1,157 +1,80 @@
 [
   {
-    "objectID": "tickets/ticket_01.html",
-    "href": "tickets/ticket_01.html",
-    "title": "Lecture Ticket 1",
+    "objectID": "tickets/ticket_02.html",
+    "href": "tickets/ticket_02.html",
+    "title": "Lecture Ticket 2",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 1\nBegin Chapter 2 (STOP at the bottom of page 19)"
+    "text": "Read the following sections of IFDAR.\n\nChapter 2"
   },
   {
-    "objectID": "tickets/ticket_01.html#reading",
-    "href": "tickets/ticket_01.html#reading",
-    "title": "Lecture Ticket 1",
+    "objectID": "tickets/ticket_02.html#reading",
+    "href": "tickets/ticket_02.html#reading",
+    "title": "Lecture Ticket 2",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 1\nBegin Chapter 2 (STOP at the bottom of page 19)"
+    "text": "Read the following sections of IFDAR.\n\nChapter 2"
   },
   {
-    "objectID": "tickets/ticket_01.html#tasks",
-    "href": "tickets/ticket_01.html#tasks",
-    "title": "Lecture Ticket 1",
-    "section": "Tasks",
-    "text": "Tasks\n\n1. Install R and RStudio\nAs discussed in IFDAR, go to Posit’s website. Install R first, and then install RStudio.\n\n\n2. Run your first R command\nIn the console, type in the following command and press Enter to run it:\n\nrnorm(1)\n\n\n\n3. Record your result\nCome to class on Thursday with a piece of paper with your name on it that includes the result (it will be a number) from running rnorm(1) in task 2.\nIf you were unable to install R and RStudio and ran into issues, instead come to class with a piece of paper with your name on it that explains the issue you were having with installation."
+    "objectID": "tickets/ticket_02.html#questions",
+    "href": "tickets/ticket_02.html#questions",
+    "title": "Lecture Ticket 2",
+    "section": "Questions",
+    "text": "Questions\n\nWhat are the two main operators used in R for assignment?\nWhat code would you write to assign the value 37 to the object favorite_number?\nOpen RStudio and check your working directory by entering a command into the R console. What is your working directory? Example: /Users/graysonwhite/Documents/\nWhat does the install.packages() function do? What about library()? How are they different?"
   },
   {
-    "objectID": "slides/w1d2.html#agenda",
-    "href": "slides/w1d2.html#agenda",
-    "title": "Tools for Data Science",
-    "section": "Agenda",
-    "text": "Agenda\nToday, we’ll introduce a few topics\n\nThe R programming language\nThe RStudio IDE\nQuarto, for reproducible reports\nNavigating your computer: files, folders, and directories"
-  },
-  {
-    "objectID": "slides/w1d2.html#the-r-programming-language-1",
-    "href": "slides/w1d2.html#the-r-programming-language-1",
-    "title": "Tools for Data Science",
-    "section": "The R programming language",
-    "text": "The R programming language\n\ntalk about what R is and origins, uses, etc."
-  },
-  {
-    "objectID": "slides/w1d2.html#r-as-a-calculator",
-    "href": "slides/w1d2.html#r-as-a-calculator",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n\n[1] 5\n\n2 * 3 # multiplication\n\n[1] 6\n\n2 / 3 # division\n\n[1] 0.6666667\n\n2 - 3 # subtraction\n\n[1] -1"
-  },
-  {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-1",
-    "href": "slides/w1d2.html#r-as-a-calculator-1",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\n\n[1] 1.94591\n\nlog(7, base = 10) # log base 10\n\n[1] 0.845098\n\nexp(7) # the exponential function\n\n[1] 1096.633\n\nsqrt(7) # the square root function\n\n[1] 2.645751\n\nabs(10 - 17) # absolute value\n\n[1] 7"
-  },
-  {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-2",
-    "href": "slides/w1d2.html#r-as-a-calculator-2",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nFunctions can be nested in each other\n\n\nlog(exp(7))\n\n[1] 7"
-  },
-  {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-3",
-    "href": "slides/w1d2.html#r-as-a-calculator-3",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nExponents with ^: 2^3 means \\(2^3\\)\n\n\n2^3\n\n[1] 8"
-  },
-  {
-    "objectID": "slides/w1d2.html#whats-going-on-here",
-    "href": "slides/w1d2.html#whats-going-on-here",
-    "title": "Tools for Data Science",
-    "section": "What’s going on here?",
-    "text": "What’s going on here?\n\nrnorm(1)\n\n\n\nrnorm is a function.\n1 is the value we gave to one of it’s arguments.\nWe can type ?rnorm for more information about the rnorm function.\nLet’s check it out!"
-  },
-  {
-    "objectID": "slides/w1d2.html#what-have-we-learned",
-    "href": "slides/w1d2.html#what-have-we-learned",
-    "title": "Tools for Data Science",
-    "section": "What have we learned?",
-    "text": "What have we learned?\n\n\nThe rnorm function takes n random draws from a normal distribution with a center (mean) and spread (sd).\n\nThese statistical details are not necessary for this class."
-  },
-  {
-    "objectID": "slides/w1d2.html#what-have-we-learned-1",
-    "href": "slides/w1d2.html#what-have-we-learned-1",
-    "title": "Tools for Data Science",
-    "section": "What have we learned?",
-    "text": "What have we learned?\n\nThe rnorm function takes n random draws from a normal distribution with a center (mean) and spread (sd).\n\nThese statistical details are not necessary for this class.\n\n\nWe could have written:\n\nrnorm(n = 1)"
-  },
-  {
-    "objectID": "slides/w1d2.html#what-have-we-learned-2",
-    "href": "slides/w1d2.html#what-have-we-learned-2",
-    "title": "Tools for Data Science",
-    "section": "What have we learned?",
-    "text": "What have we learned?\n\nThe rnorm function takes n random draws from a normal distribution with a center (mean) and spread (sd).\n\nThese statistical details are not necessary for this class.\n\n\nWe could have written:\n\nrnorm(n = 1)\n\nOr even:\n\nrnorm(n = 1, mean = 0, sd = 1)"
-  },
-  {
-    "objectID": "slides/w1d2.html#arguments",
-    "href": "slides/w1d2.html#arguments",
-    "title": "Tools for Data Science",
-    "section": "Arguments",
-    "text": "Arguments\n\nrnorm(n = 1, mean = 0, sd = 1)\n\n\n\nn must be specified for rnorm() to run\nmean and sd are optional, but if you don’t specify them, R will choose for you (in this case, the defaults are 0 and 1)."
-  },
-  {
-    "objectID": "slides/w1d2.html#objects",
-    "href": "slides/w1d2.html#objects",
-    "title": "Tools for Data Science",
-    "section": "Objects",
-    "text": "Objects\n\nR can store objects in your global"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Practical Computing   and Data Science Tools",
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
     "section": "",
-    "text": "For 128 Michigan State University\nFall 2024\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+    "text": "Instructor: Andrew Finley (finleya@msu.edu, Room 211 Natural Resources Building)\nResearch Assistant: Grayson White (whitegra@msu.edu, Room 211 Natural Resources Building)\nEmails: Direct all email inquiries regarding the course and material covered to both the Instructor and Research Assistant, Andrew Finley and Grayson White (both as recipient, or CC’d).\nLinks:\n\nThe course website, www.for128.org, for course information, lecture slides, and course materials.\nD2L, for course feedback and non-public course materials.\n\nCourse Description:\nThis course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences."
   },
   {
-    "objectID": "index.html#week-1-august-25---31",
-    "href": "index.html#week-1-august-25---31",
-    "title": "Practical Computing   and Data Science Tools",
+    "objectID": "syllabus.html#useful-information",
+    "href": "syllabus.html#useful-information",
+    "title": "Syllabus",
     "section": "",
-    "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+    "text": "Instructor: Andrew Finley (finleya@msu.edu, Room 211 Natural Resources Building)\nResearch Assistant: Grayson White (whitegra@msu.edu, Room 211 Natural Resources Building)\nEmails: Direct all email inquiries regarding the course and material covered to both the Instructor and Research Assistant, Andrew Finley and Grayson White (both as recipient, or CC’d).\nLinks:\n\nThe course website, www.for128.org, for course information, lecture slides, and course materials.\nD2L, for course feedback and non-public course materials.\n\nCourse Description:\nThis course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences."
   },
   {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\n\n\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)"
+    "objectID": "syllabus.html#learning-outcomes",
+    "href": "syllabus.html#learning-outcomes",
+    "title": "Syllabus",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nUpon completion of this course students should be able to:\n\napply best practices for naming and organizing files within a directory structure to facilitate an efficient and reproducible workflow,\ntransform raw data into more readily used formats, i.e., perform key “data wrangling” tasks such as data cleaning, structuring, enriching, and validating,\nconduct basic Exploratory Data Analysis (EDA), i.e., apply built-in and costume written functions to explore data characteristics and communicate findings using summary tables, graphics, and basic summary statistics."
   },
   {
-    "objectID": "assignments.html#labs",
-    "href": "assignments.html#labs",
-    "title": "Assignments",
-    "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\n\n\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)"
+    "objectID": "syllabus.html#learning-materials-tools",
+    "href": "syllabus.html#learning-materials-tools",
+    "title": "Syllabus",
+    "section": "Learning Materials & Tools",
+    "text": "Learning Materials & Tools\nTextbook: Introduction to Forestry Data Analysis with R, by Andrew O. Finley and Jeffrey W. Doser. Available free, online: www.finley-lab.com/files/ifdar/\nR and RStudio: R is a free and open source programming language, and RStudio is an Integrated Development Environment (IDE) which allows for streamlined use of the R programming language. Both are free to install, and installation instructions will be provided in this course. A laptop that can run R and RStudio is required for this course."
   },
   {
-    "objectID": "assignments.html#lecture-tickets",
-    "href": "assignments.html#lecture-tickets",
-    "title": "Assignments",
-    "section": "Lecture Tickets",
-    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29\nTuesday 9/3 (by 5pm)"
+    "objectID": "syllabus.html#meetings-office-hours",
+    "href": "syllabus.html#meetings-office-hours",
+    "title": "Syllabus",
+    "section": "Meetings & Office Hours",
+    "text": "Meetings & Office Hours\nWe’ll have a lecture-style meeting twice a week, and a lab meeting once a week.\n\nLectures are on Tuesdays and Thursdays, 9:10am - 10am, Natural Resources Building, Room 152.\nLabs are on Thursdays, 10:20am - 12:10pm, Natural Resources Building, Room 223.\n\nOutside of lectures and labs, I will also hold office hours.\n\nOffice hours will be held Tuesdays (10:30am - 11:30am) and Thursdays (1:30pm - 2:30pm), Natural Resources Building, Room 211.\nIf these times do not work for you, we also hold office hours by appointment. Please email to set up a time to meet.\n\nOffice hours are a great way to get help on assignments you are stuck on, ask questions you didn’t get a chance to ask in class, familiarize yourself with the instructor and course expectations, and much more! Further, office hours can be a very helpful tool for your success in this course and beyond in college. Attending office hours is a great habit!"
   },
   {
-    "objectID": "recordings.html",
-    "href": "recordings.html",
-    "title": "Lecture Recordings",
-    "section": "",
-    "text": "Week 1, day 1: Welcome to the course. Available here."
+    "objectID": "syllabus.html#assessments",
+    "href": "syllabus.html#assessments",
+    "title": "Syllabus",
+    "section": "Assessments",
+    "text": "Assessments\nIn this course, you’ll be assessed based on your work and participation. In particular:\n\nLab reports (40%)\n\nLab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on D2L. We will have a lab each week (except for the week of the midterm exam).\nThe lowest lab grade is dropped.\n\nMidterm Exams (20%)\n\nThere will be two midterm exams, one on week 6 and one on week 12. Each midterm is worth 10% of the final grade.\n\nFinal Project (15%)\n\nRather than a final exam, we will have a final group project with project presentations during the final exam time period. More details to come as the semester goes on.\n\nIn-class quizzes (15%)\n\nIn-class quizzes do not have a regular schedule and will occur based on the material we get through.\nThe lowest in-class quiz grade is dropped.\n\nLecture tickets (10%)\n\nLecture tickets are due at the beginning of every lecture, handed in in-person, by you.\nThe lowest three (3) lecture ticket grades will be dropped.\n\n\nGrades are calculated on a four point scale and correspond to the following grade percent:\n\n\n\n\nGrade percent\nGrade points\n\n\n\n\n90% - 100%\n4.0\n\n\n85.0% - 89.9%\n3.5\n\n\n80.0% - 84.9%\n3.0\n\n\n75.0% - 79.9%\n2.5\n\n\n70.0% - 74.9%\n2.0\n\n\n65.0% - 69.9%\n1.5\n\n\n60.0 - 64.9%\n1.0\n\n\n0% - 60%\n0.0"
   },
   {
-    "objectID": "recordings.html#recordings",
-    "href": "recordings.html#recordings",
-    "title": "Lecture Recordings",
-    "section": "",
-    "text": "Week 1, day 1: Welcome to the course. Available here."
+    "objectID": "syllabus.html#collaboration-policy-for-for-128",
+    "href": "syllabus.html#collaboration-policy-for-for-128",
+    "title": "Syllabus",
+    "section": "Collaboration Policy for FOR 128",
+    "text": "Collaboration Policy for FOR 128\nWorking with your classmates on difficult and interesting problems can not only help your learning, but help you get to know each other. Therefore, we allow and encourage collaboration on lab reports and lecture tickets. However, collaboration on exams and quizzes is strictly prohibited and will be considered academic misconduct.\nIf you choose to collaborate with a classmate, please add their name to the top of your assignment, and list them as a collaborator, e.g.:\nCollaborator(s): Elliot Shannon, Romain Boutelet\nBut what is collaboration?\nFor FOR 128, collaboration can look like: working with classmates together on a given problem, doing scratch work, helping each other get un-stuck on a part of a problem, and even coming to a solution. However, you must write up your own problem solutions individually and cannot copy other’s solutions (even those who you have collaborated with). Further, copying code from a collaborator, classmate, or generative AI tool (see the following section) is strictly prohibited and will be considered academic misconduct."
+  },
+  {
+    "objectID": "syllabus.html#ai-policy-for-for-128",
+    "href": "syllabus.html#ai-policy-for-for-128",
+    "title": "Syllabus",
+    "section": "AI Policy for FOR 128",
+    "text": "AI Policy for FOR 128\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
   },
   {
     "objectID": "slides/w1d1.html#agenda",
@@ -259,59 +182,206 @@
     "text": "Next time:\n\nCome to class with a laptop\nComplete Lecture Ticket 1 before lecture on Thursday."
   },
   {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
+    "objectID": "recordings.html",
+    "href": "recordings.html",
+    "title": "Lecture Recordings",
     "section": "",
-    "text": "Instructor: Andrew Finley (finleya@msu.edu, Room 211 Natural Resources Building)\nResearch Assistant: Grayson White (whitegra@msu.edu, Room 211 Natural Resources Building)\nEmails: Direct all email inquiries regarding the course and material covered to both the Instructor and Research Assistant, Andrew Finley and Grayson White (both as recipient, or CC’d).\nLinks:\n\nThe course website, www.for128.org, for course information, lecture slides, and course materials.\nD2L, for course feedback and non-public course materials.\n\nCourse Description:\nThis course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences."
+    "text": "Week 1, day 1: Welcome to the course. Available here."
   },
   {
-    "objectID": "syllabus.html#useful-information",
-    "href": "syllabus.html#useful-information",
-    "title": "Syllabus",
+    "objectID": "recordings.html#recordings",
+    "href": "recordings.html#recordings",
+    "title": "Lecture Recordings",
     "section": "",
-    "text": "Instructor: Andrew Finley (finleya@msu.edu, Room 211 Natural Resources Building)\nResearch Assistant: Grayson White (whitegra@msu.edu, Room 211 Natural Resources Building)\nEmails: Direct all email inquiries regarding the course and material covered to both the Instructor and Research Assistant, Andrew Finley and Grayson White (both as recipient, or CC’d).\nLinks:\n\nThe course website, www.for128.org, for course information, lecture slides, and course materials.\nD2L, for course feedback and non-public course materials.\n\nCourse Description:\nThis course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences."
+    "text": "Week 1, day 1: Welcome to the course. Available here."
   },
   {
-    "objectID": "syllabus.html#learning-outcomes",
-    "href": "syllabus.html#learning-outcomes",
-    "title": "Syllabus",
-    "section": "Learning Outcomes",
-    "text": "Learning Outcomes\nUpon completion of this course students should be able to:\n\napply best practices for naming and organizing files within a directory structure to facilitate an efficient and reproducible workflow,\ntransform raw data into more readily used formats, i.e., perform key “data wrangling” tasks such as data cleaning, structuring, enriching, and validating,\nconduct basic Exploratory Data Analysis (EDA), i.e., apply built-in and costume written functions to explore data characteristics and communicate findings using summary tables, graphics, and basic summary statistics."
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Labs are turned in on D2L.\n\n\n\n\n\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)"
   },
   {
-    "objectID": "syllabus.html#learning-materials-tools",
-    "href": "syllabus.html#learning-materials-tools",
-    "title": "Syllabus",
-    "section": "Learning Materials & Tools",
-    "text": "Learning Materials & Tools\nTextbook: Introduction to Forestry Data Analysis with R, by Andrew O. Finley and Jeffrey W. Doser. Available free, online: www.finley-lab.com/files/ifdar/\nR and RStudio: R is a free and open source programming language, and RStudio is an Integrated Development Environment (IDE) which allows for streamlined use of the R programming language. Both are free to install, and installation instructions will be provided in this course. A laptop that can run R and RStudio is required for this course."
+    "objectID": "assignments.html#labs",
+    "href": "assignments.html#labs",
+    "title": "Assignments",
+    "section": "",
+    "text": "Labs are turned in on D2L.\n\n\n\n\n\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)"
   },
   {
-    "objectID": "syllabus.html#meetings-office-hours",
-    "href": "syllabus.html#meetings-office-hours",
-    "title": "Syllabus",
-    "section": "Meetings & Office Hours",
-    "text": "Meetings & Office Hours\nWe’ll have a lecture-style meeting twice a week, and a lab meeting once a week.\n\nLectures are on Tuesdays and Thursdays, 9:10am - 10am, Natural Resources Building, Room 152.\nLabs are on Thursdays, 10:20am - 12:10pm, Natural Resources Building, Room 223.\n\nOutside of lectures and labs, I will also hold office hours.\n\nOffice hours will be held Tuesdays (10:30am - 11:30am) and Thursdays (1:30pm - 2:30pm), Natural Resources Building, Room 211.\nIf these times do not work for you, we also hold office hours by appointment. Please email to set up a time to meet.\n\nOffice hours are a great way to get help on assignments you are stuck on, ask questions you didn’t get a chance to ask in class, familiarize yourself with the instructor and course expectations, and much more! Further, office hours can be a very helpful tool for your success in this course and beyond in college. Attending office hours is a great habit!"
+    "objectID": "assignments.html#lecture-tickets",
+    "href": "assignments.html#lecture-tickets",
+    "title": "Assignments",
+    "section": "Lecture Tickets",
+    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29\nTuesday 9/3 (by 5pm)"
   },
   {
-    "objectID": "syllabus.html#assessments",
-    "href": "syllabus.html#assessments",
-    "title": "Syllabus",
-    "section": "Assessments",
-    "text": "Assessments\nIn this course, you’ll be assessed based on your work and participation. In particular:\n\nLab reports (40%)\n\nLab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on D2L. We will have a lab each week (except for the week of the midterm exam).\nThe lowest lab grade is dropped.\n\nMidterm Exams (20%)\n\nThere will be two midterm exams, one on week 6 and one on week 12. Each midterm is worth 10% of the final grade.\n\nFinal Project (15%)\n\nRather than a final exam, we will have a final group project with project presentations during the final exam time period. More details to come as the semester goes on.\n\nIn-class quizzes (15%)\n\nIn-class quizzes do not have a regular schedule and will occur based on the material we get through.\nThe lowest in-class quiz grade is dropped.\n\nLecture tickets (10%)\n\nLecture tickets are due at the beginning of every lecture, handed in in-person, by you.\nThe lowest three (3) lecture ticket grades will be dropped.\n\n\nGrades are calculated on a four point scale and correspond to the following grade percent:\n\n\n\n\nGrade percent\nGrade points\n\n\n\n\n90% - 100%\n4.0\n\n\n85.0% - 89.9%\n3.5\n\n\n80.0% - 84.9%\n3.0\n\n\n75.0% - 79.9%\n2.5\n\n\n70.0% - 74.9%\n2.0\n\n\n65.0% - 69.9%\n1.5\n\n\n60.0 - 64.9%\n1.0\n\n\n0% - 60%\n0.0"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "For 128 Michigan State University\nFall 2024\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
   },
   {
-    "objectID": "syllabus.html#collaboration-policy-for-for-128",
-    "href": "syllabus.html#collaboration-policy-for-for-128",
-    "title": "Syllabus",
-    "section": "Collaboration Policy for FOR 128",
-    "text": "Collaboration Policy for FOR 128\nWorking with your classmates on difficult and interesting problems can not only help your learning, but help you get to know each other. Therefore, we allow and encourage collaboration on lab reports and lecture tickets. However, collaboration on exams and quizzes is strictly prohibited and will be considered academic misconduct.\nIf you choose to collaborate with a classmate, please add their name to the top of your assignment, and list them as a collaborator, e.g.:\nCollaborator(s): Elliot Shannon, Romain Boutelet\nBut what is collaboration?\nFor FOR 128, collaboration can look like: working with classmates together on a given problem, doing scratch work, helping each other get un-stuck on a part of a problem, and even coming to a solution. However, you must write up your own problem solutions individually and cannot copy other’s solutions (even those who you have collaborated with). Further, copying code from a collaborator, classmate, or generative AI tool (see the following section) is strictly prohibited and will be considered academic misconduct."
+    "objectID": "index.html#week-1-august-25---31",
+    "href": "index.html#week-1-august-25---31",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
   },
   {
-    "objectID": "syllabus.html#ai-policy-for-for-128",
-    "href": "syllabus.html#ai-policy-for-for-128",
-    "title": "Syllabus",
-    "section": "AI Policy for FOR 128",
-    "text": "AI Policy for FOR 128\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
+    "objectID": "slides/w1d2.html#agenda",
+    "href": "slides/w1d2.html#agenda",
+    "title": "Tools for Data Science",
+    "section": "Agenda",
+    "text": "Agenda\nToday, we’ll introduce a few topics\n\nThe R programming language\nThe RStudio IDE\nQuarto, for reproducible reports\nNavigating your computer: files, folders, and directories"
+  },
+  {
+    "objectID": "slides/w1d2.html#the-r-programming-language-overview",
+    "href": "slides/w1d2.html#the-r-programming-language-overview",
+    "title": "Tools for Data Science",
+    "section": "The R programming language: overview",
+    "text": "The R programming language: overview\n\n\nR is an open source and freely available programming language with fully featured graphics.\nR is a quite popular language, especially for scientific programming (but it does have lots of industry popularity, as well!).\nR is somewhat similar to python in syntax, and is a great first programming language to learn."
+  },
+  {
+    "objectID": "slides/w1d2.html#the-r-programming-language-history",
+    "href": "slides/w1d2.html#the-r-programming-language-history",
+    "title": "Tools for Data Science",
+    "section": "The R programming language: history",
+    "text": "The R programming language: history\n\n\nInitially, there was S. Developed by Bell Laboratories in the mid-70s.\nJohn Chambers, one of S’s primary developers described its purpose as follows: “to turn ideas into software, quickly and faithfully”.\nR was developed in the early 90’s and deals with many of the memory problems that existed in S.\nUnder the hood, R calls routines from the lower-level FORTRAN and C languages."
+  },
+  {
+    "objectID": "slides/w1d2.html#rstudio",
+    "href": "slides/w1d2.html#rstudio",
+    "title": "Tools for Data Science",
+    "section": "RStudio",
+    "text": "RStudio\n\n\nRStudio, or the RStudio Integrated Development Environment (IDE), is a tool we’ll use to run R code, edit reproducible reports, and even navigate our file system.\nLargely, RStudio is a tool to code efficiently and reproducibly in the R programming language.\nLet’s take a look at it!"
+  },
+  {
+    "objectID": "slides/w1d2.html#rstudio-1",
+    "href": "slides/w1d2.html#rstudio-1",
+    "title": "Tools for Data Science",
+    "section": "RStudio",
+    "text": "RStudio\n\nRStudio has four panes: source, console, environment, and file manager."
+  },
+  {
+    "objectID": "slides/w1d2.html#whats-going-on-here",
+    "href": "slides/w1d2.html#whats-going-on-here",
+    "title": "Tools for Data Science",
+    "section": "What’s going on here?",
+    "text": "What’s going on here?\n\nrnorm(1)\n\n\n\nrnorm() is a function.\n1 is the value we gave to one of it’s arguments.\nWe can type ?rnorm() for more information about the rnorm() function.\nLet’s check it out!"
+  },
+  {
+    "objectID": "slides/w1d2.html#what-have-we-learned",
+    "href": "slides/w1d2.html#what-have-we-learned",
+    "title": "Tools for Data Science",
+    "section": "What have we learned?",
+    "text": "What have we learned?\n\n\nThe rnorm() function takes n random draws from a normal distribution with a center (mean) and spread (sd).\n\nThese statistical details are not necessary for this class."
+  },
+  {
+    "objectID": "slides/w1d2.html#what-have-we-learned-1",
+    "href": "slides/w1d2.html#what-have-we-learned-1",
+    "title": "Tools for Data Science",
+    "section": "What have we learned?",
+    "text": "What have we learned?\n\nThe rnorm() function takes n random draws from a normal distribution with a center (mean) and spread (sd).\n\nThese statistical details are not necessary for this class.\n\n\nWe could have written:\n\nrnorm(n = 1)"
+  },
+  {
+    "objectID": "slides/w1d2.html#what-have-we-learned-2",
+    "href": "slides/w1d2.html#what-have-we-learned-2",
+    "title": "Tools for Data Science",
+    "section": "What have we learned?",
+    "text": "What have we learned?\n\nThe rnorm() function takes n random draws from a normal distribution with a center (mean) and spread (sd).\n\nThese statistical details are not necessary for this class.\n\n\nWe could have written:\n\nrnorm(n = 1)\n\nOr even:\n\nrnorm(n = 1, mean = 0, sd = 1)"
+  },
+  {
+    "objectID": "slides/w1d2.html#arguments",
+    "href": "slides/w1d2.html#arguments",
+    "title": "Tools for Data Science",
+    "section": "Arguments",
+    "text": "Arguments\n\nrnorm(n = 1, mean = 0, sd = 1)\n\n\n\nn must be specified for rnorm() to run\nmean and sd are optional, but if you don’t specify them, R will choose for you (in this case, the defaults are 0 and 1)."
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-1",
+    "href": "slides/w1d2.html#r-as-a-calculator-1",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n\n[1] 5\n\n2 * 3 # multiplication\n\n[1] 6\n\n2 / 3 # division\n\n[1] 0.6666667\n\n2 - 3 # subtraction\n\n[1] -1"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-2",
+    "href": "slides/w1d2.html#r-as-a-calculator-2",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\n\n[1] 1.94591\n\nlog(7, base = 10) # log base 10\n\n[1] 0.845098\n\nexp(7) # the exponential function\n\n[1] 1096.633\n\nsqrt(7) # the square root function\n\n[1] 2.645751\n\nabs(10 - 17) # absolute value\n\n[1] 7"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-3",
+    "href": "slides/w1d2.html#r-as-a-calculator-3",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nFunctions can be nested in each other\n\n\nlog(exp(7))\n\n[1] 7"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-4",
+    "href": "slides/w1d2.html#r-as-a-calculator-4",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nExponents with ^: 2^3 means \\(2^3\\)\n\n\n2^3\n\n[1] 8"
+  },
+  {
+    "objectID": "slides/w1d2.html#quarto-1",
+    "href": "slides/w1d2.html#quarto-1",
+    "title": "Tools for Data Science",
+    "section": "Quarto",
+    "text": "Quarto\n\n\nQuarto is a markdown language.\nAllows you to include code and text in the same document.\nDocuments output or “Render” to PDF or HTML (web) documents.\nThese slides (and the course website!) are made with Quarto."
+  },
+  {
+    "objectID": "slides/w1d2.html#quarto-for-reproducible-reports",
+    "href": "slides/w1d2.html#quarto-for-reproducible-reports",
+    "title": "Tools for Data Science",
+    "section": "Quarto for reproducible reports",
+    "text": "Quarto for reproducible reports\n\n\nQuarto is a great tool to help us do reproducible science.\nWhat does reproducibility mean?\nreproducibility \\(\\neq\\) replicability / repeatability"
+  },
+  {
+    "objectID": "slides/w1d2.html#a-project-is-reproducible-if-another-person-could-take-your-code-and-data-run-the-code-and-get-the-exact-same-answer.",
+    "href": "slides/w1d2.html#a-project-is-reproducible-if-another-person-could-take-your-code-and-data-run-the-code-and-get-the-exact-same-answer.",
+    "title": "Tools for Data Science",
+    "section": "A project is reproducible if another person could take your code and data, run the code, and get the exact same answer.",
+    "text": "A project is reproducible if another person could take your code and data, run the code, and get the exact same answer."
+  },
+  {
+    "objectID": "slides/w1d2.html#a-project-is-replicable-repeatable-if-another-person-could-take-the-steps-to-do-your-project-again-in-their-own-setting.",
+    "href": "slides/w1d2.html#a-project-is-replicable-repeatable-if-another-person-could-take-the-steps-to-do-your-project-again-in-their-own-setting.",
+    "title": "Tools for Data Science",
+    "section": "A project is replicable / repeatable if another person could take the steps to do your project again in their own setting.",
+    "text": "A project is replicable / repeatable if another person could take the steps to do your project again in their own setting."
+  },
+  {
+    "objectID": "slides/w1d2.html#objects",
+    "href": "slides/w1d2.html#objects",
+    "title": "Tools for Data Science",
+    "section": "Objects",
+    "text": "Objects\n\nR can store objects in your global"
+  },
+  {
+    "objectID": "tickets/ticket_01.html",
+    "href": "tickets/ticket_01.html",
+    "title": "Lecture Ticket 1",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 1\nBegin Chapter 2 (STOP at the bottom of page 19)"
+  },
+  {
+    "objectID": "tickets/ticket_01.html#reading",
+    "href": "tickets/ticket_01.html#reading",
+    "title": "Lecture Ticket 1",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 1\nBegin Chapter 2 (STOP at the bottom of page 19)"
+  },
+  {
+    "objectID": "tickets/ticket_01.html#tasks",
+    "href": "tickets/ticket_01.html#tasks",
+    "title": "Lecture Ticket 1",
+    "section": "Tasks",
+    "text": "Tasks\n\n1. Install R and RStudio\nAs discussed in IFDAR, go to Posit’s website. Install R first, and then install RStudio.\n\n\n2. Run your first R command\nIn the console, type in the following command and press Enter to run it:\n\nrnorm(1)\n\n\n\n3. Record your result\nCome to class on Thursday with a piece of paper with your name on it that includes the result (it will be a number) from running rnorm(1) in task 2.\nIf you were unable to install R and RStudio and ran into issues, instead come to class with a piece of paper with your name on it that explains the issue you were having with installation."
   }
 ]

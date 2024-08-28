@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.for128.org/tickets/ticket_01.html</loc>
-    <lastmod>2024-08-21T20:45:35.710Z</lastmod>
+    <loc>https://www.for128.org/tickets/ticket_02.html</loc>
+    <lastmod>2024-08-28T15:38:26.157Z</lastmod>
   </url>
   <url>
-    <loc>https://www.for128.org/slides/w1d2.html</loc>
-    <lastmod>2024-08-27T19:31:37.998Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.for128.org/slides/test_slides.html</loc>
-    <lastmod>2024-08-21T12:16:50.416Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.for128.org/index.html</loc>
-    <lastmod>2024-08-21T20:45:35.709Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.for128.org/assignments.html</loc>
-    <lastmod>2024-08-27T18:32:03.811Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.for128.org/recordings.html</loc>
-    <lastmod>2024-08-27T18:32:03.838Z</lastmod>
+    <loc>https://www.for128.org/syllabus.html</loc>
+    <lastmod>2024-08-27T18:32:03.851Z</lastmod>
   </url>
   <url>
     <loc>https://www.for128.org/slides/w1d1.html</loc>
     <lastmod>2024-08-27T18:55:05.114Z</lastmod>
   </url>
   <url>
-    <loc>https://www.for128.org/syllabus.html</loc>
-    <lastmod>2024-08-27T18:32:03.851Z</lastmod>
+    <loc>https://www.for128.org/recordings.html</loc>
+    <lastmod>2024-08-27T18:32:03.838Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.for128.org/assignments.html</loc>
+    <lastmod>2024-08-27T18:32:03.811Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.for128.org/index.html</loc>
+    <lastmod>2024-08-21T20:45:35.709Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.for128.org/slides/test_slides.html</loc>
+    <lastmod>2024-08-21T12:16:50.416Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.for128.org/slides/w1d2.html</loc>
+    <lastmod>2024-08-28T14:18:24.894Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.for128.org/tickets/ticket_01.html</loc>
+    <lastmod>2024-08-21T20:45:35.710Z</lastmod>
   </url>
 </urlset>

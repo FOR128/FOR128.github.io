@@ -413,112 +413,72 @@ Practical Computing and Data Science Tools
 <li>Navigating your computer: files, folders, and directories</li>
 </ul>
 </section>
-<section>
-<section id="the-r-programming-language" class="title-slide slide level1 center">
-<h1>The <code>R</code> programming language</h1>
+<section id="the-r-programming-language-overview" class="slide level2">
+<h2>The <code>R</code> programming language: overview</h2>
+<div>
+<ul>
+<li class="fragment"><code>R</code> is an open source and freely available programming language with fully featured graphics.</li>
+<li class="fragment"><code>R</code> is a quite popular language, especially for scientific programming (but it does have lots of industry popularity, as well!).</li>
+<li class="fragment"><code>R</code> is somewhat similar to <code>python</code> in syntax, and is a great first programming language to learn.</li>
+</ul>
+</div>
+</section>
+<section id="the-r-programming-language-history" class="slide level2">
+<h2>The <code>R</code> programming language: history</h2>
+<div>
+<ul>
+<li class="fragment">Initially, there was <code>S</code>. Developed by Bell Laboratories in the mid-70s.</li>
+<li class="fragment">John Chambers, one of <code>S</code>’s primary developers described its purpose as follows: “to turn ideas into software, quickly and faithfully”.</li>
+<li class="fragment"><code>R</code> was developed in the early 90’s and deals with many of the memory problems that existed in <code>S</code>.</li>
+<li class="fragment">Under the hood, <code>R</code> calls routines from the lower-level <code>FORTRAN</code> and <code>C</code> languages.</li>
+</ul>
+</div>
+</section>
+<section id="rstudio" class="slide level2">
+<h2>RStudio</h2>
+<div>
+<ul>
+<li class="fragment">RStudio, or the RStudio Integrated Development Environment (IDE), is a tool we’ll use to run R code, edit reproducible reports, and even navigate our file system.</li>
+<li class="fragment">Largely, RStudio is a tool to code efficiently and reproducibly in the <code>R</code> programming language.</li>
+<li class="fragment">Let’s take a look at it!</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
 
-</section>
-<section id="the-r-programming-language-1" class="slide level2">
-<h2>The <code>R</code> programming language</h2>
+
+<img data-src="figs/rstudio-ide.png" width="1573" class="r-stretch quarto-figure-center"></section>
+<section id="rstudio-1" class="slide level2">
+<h2>RStudio</h2>
 <ul>
-<li>talk about what R is and origins, uses, etc.</li>
+<li>RStudio has four panes: source, console, environment, and file manager.</li>
 </ul>
-</section>
-<section id="r-as-a-calculator" class="slide level2">
-<h2><code>R</code> as a calculator</h2>
-<ul>
-<li><code>R</code> includes many mathematical operations, and is a great calculator.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span> <span class="co"># addition</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="dv">3</span> <span class="co"># multiplication</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 6</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="dv">2</span> <span class="sc">/</span> <span class="dv">3</span> <span class="co"># division</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6666667</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="dv">2</span> <span class="sc">-</span> <span class="dv">3</span> <span class="co"># subtraction</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] -1</code></pre>
-</div>
-</div>
-</section>
-<section id="r-as-a-calculator-1" class="slide level2">
-<h2><code>R</code> as a calculator</h2>
-<ul>
-<li>Functions exists for more complex mathematical operations</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">log</span>(<span class="dv">7</span>) <span class="co"># the natural logarithm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.94591</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">log</span>(<span class="dv">7</span>, <span class="at">base =</span> <span class="dv">10</span>) <span class="co"># log base 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.845098</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">exp</span>(<span class="dv">7</span>) <span class="co"># the exponential function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1096.633</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">sqrt</span>(<span class="dv">7</span>) <span class="co"># the square root function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.645751</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">abs</span>(<span class="dv">10</span> <span class="sc">-</span> <span class="dv">17</span>) <span class="co"># absolute value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 7</code></pre>
-</div>
-</div>
-</section>
-<section id="r-as-a-calculator-2" class="slide level2">
-<h2><code>R</code> as a calculator</h2>
-<ul>
-<li>Functions can be nested in each other</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">log</span>(<span class="fu">exp</span>(<span class="dv">7</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 7</code></pre>
-</div>
-</div>
-</section>
-<section id="r-as-a-calculator-3" class="slide level2">
-<h2><code>R</code> as a calculator</h2>
-<ul>
-<li>Exponents with <code>^</code>: <code>2^3</code> means <span class="math inline">\(2^3\)</span></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="dv">2</span><span class="sc">^</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 8</code></pre>
-</div>
-</div>
-</section>
+
+<img data-src="figs/rstudio-ide.png" width="1573" class="r-stretch quarto-figure-center"></section>
 <section id="whats-going-on-here" class="slide level2">
 <h2>What’s going on here?</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">rnorm</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">rnorm</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
 <ul>
-<li class="fragment"><code>rnorm</code> is a <em>function</em>.</li>
+<li class="fragment"><code>rnorm()</code> is a <em>function</em>.</li>
 <li class="fragment"><code>1</code> is the value we gave to one of it’s <em>arguments</em>.</li>
-<li class="fragment">We can type <code>?rnorm</code> for more information about the <code>rnorm</code> function.</li>
+<li class="fragment">We can type <code>?rnorm()</code> for more information about the <code>rnorm()</code> function.</li>
 <li class="fragment">Let’s check it out!</li>
 </ul>
 </div>
+</section>
+<section>
+<section id="rnorm-and-rstudio-demo" class="title-slide slide level1 center">
+<h1><code>rnorm()</code> and RStudio demo</h1>
+
 </section>
 <section id="what-have-we-learned" class="slide level2">
 <h2>What have we learned?</h2>
 <div>
 <ul>
-<li class="fragment">The <code>rnorm</code> function takes <code>n</code> random draws from a normal distribution with a center (<code>mean</code>) and spread (<code>sd</code>).
+<li class="fragment">The <code>rnorm()</code> function takes <code>n</code> random draws from a normal distribution with a center (<code>mean</code>) and spread (<code>sd</code>).
 <ul>
 <li class="fragment">These statistical details are not necessary for this class.</li>
 </ul></li>
@@ -528,37 +488,37 @@ Practical Computing and Data Science Tools
 <section id="what-have-we-learned-1" class="slide level2">
 <h2>What have we learned?</h2>
 <ul>
-<li>The <code>rnorm</code> function takes <code>n</code> random draws from a normal distribution with a center (<code>mean</code>) and spread (<code>sd</code>).
+<li>The <code>rnorm()</code> function takes <code>n</code> random draws from a normal distribution with a center (<code>mean</code>) and spread (<code>sd</code>).
 <ul>
 <li>These statistical details are not necessary for this class.</li>
 </ul></li>
 </ul>
 <p>We could have written:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="what-have-we-learned-2" class="slide level2">
 <h2>What have we learned?</h2>
 <ul>
-<li>The <code>rnorm</code> function takes <code>n</code> random draws from a normal distribution with a center (<code>mean</code>) and spread (<code>sd</code>).
+<li>The <code>rnorm()</code> function takes <code>n</code> random draws from a normal distribution with a center (<code>mean</code>) and spread (<code>sd</code>).
 <ul>
 <li>These statistical details are not necessary for this class.</li>
 </ul></li>
 </ul>
 <p>We could have written:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Or even:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arguments" class="slide level2">
 <h2>Arguments</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
 <ul>
@@ -566,6 +526,124 @@ Practical Computing and Data Science Tools
 <li class="fragment"><code>mean</code> and <code>sd</code> are optional, but if you don’t specify them, <code>R</code> will choose for you (in this case, the defaults are <code>0</code> and <code>1</code>).</li>
 </ul>
 </div>
+</section></section>
+<section>
+<section id="r-as-a-calculator" class="title-slide slide level1 center">
+<h1><code>R</code> as a calculator</h1>
+
+</section>
+<section id="r-as-a-calculator-1" class="slide level2">
+<h2><code>R</code> as a calculator</h2>
+<ul>
+<li><code>R</code> includes many mathematical operations, and is a great calculator.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span> <span class="co"># addition</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="dv">3</span> <span class="co"># multiplication</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="dv">2</span> <span class="sc">/</span> <span class="dv">3</span> <span class="co"># division</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.6666667</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="dv">2</span> <span class="sc">-</span> <span class="dv">3</span> <span class="co"># subtraction</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1</code></pre>
+</div>
+</div>
+</section>
+<section id="r-as-a-calculator-2" class="slide level2">
+<h2><code>R</code> as a calculator</h2>
+<ul>
+<li>Functions exists for more complex mathematical operations</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">log</span>(<span class="dv">7</span>) <span class="co"># the natural logarithm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.94591</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">log</span>(<span class="dv">7</span>, <span class="at">base =</span> <span class="dv">10</span>) <span class="co"># log base 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.845098</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">exp</span>(<span class="dv">7</span>) <span class="co"># the exponential function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1096.633</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">sqrt</span>(<span class="dv">7</span>) <span class="co"># the square root function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.645751</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">abs</span>(<span class="dv">10</span> <span class="sc">-</span> <span class="dv">17</span>) <span class="co"># absolute value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+</div>
+</section>
+<section id="r-as-a-calculator-3" class="slide level2">
+<h2><code>R</code> as a calculator</h2>
+<ul>
+<li>Functions can be nested in each other</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">log</span>(<span class="fu">exp</span>(<span class="dv">7</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+</div>
+</section>
+<section id="r-as-a-calculator-4" class="slide level2">
+<h2><code>R</code> as a calculator</h2>
+<ul>
+<li>Exponents with <code>^</code>: <code>2^3</code> means <span class="math inline">\(2^3\)</span></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="dv">2</span><span class="sc">^</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="quarto" class="title-slide slide level1 center">
+<h1>Quarto</h1>
+
+</section>
+<section id="quarto-1" class="slide level2">
+<h2>Quarto</h2>
+<div>
+<ul>
+<li class="fragment">Quarto is a markdown language.</li>
+<li class="fragment">Allows you to include code and text in the same document.</li>
+<li class="fragment">Documents output or “Render” to PDF or HTML (web) documents.</li>
+<li class="fragment">These slides (and the course website!) are made with Quarto.</li>
+</ul>
+</div>
+</section>
+<section id="quarto-for-reproducible-reports" class="slide level2">
+<h2>Quarto for reproducible reports</h2>
+<div>
+<ul>
+<li class="fragment">Quarto is a great tool to help us do reproducible science.</li>
+<li class="fragment">What does reproducibility mean?</li>
+<li class="fragment">reproducibility <span class="math inline">\(\neq\)</span> replicability / repeatability</li>
+</ul>
+</div>
+</section>
+<section id="a-project-is-reproducible-if-another-person-could-take-your-code-and-data-run-the-code-and-get-the-exact-same-answer." class="slide level2">
+<h2>A project is <em>reproducible</em> if another person could take your code and data, run the code, and get the exact same answer.</h2>
+</section>
+<section id="a-project-is-replicable-repeatable-if-another-person-could-take-the-steps-to-do-your-project-again-in-their-own-setting." class="slide level2">
+<h2>A project is <em>replicable / repeatable</em> if another person could take the steps to do your project again in their own setting.</h2>
+</section></section>
+<section>
+<section id="quarto-demo" class="title-slide slide level1 center">
+<h1>Quarto demo</h1>
+
 </section>
 <section id="objects" class="slide level2">
 <h2>Objects</h2>
@@ -573,16 +651,6 @@ Practical Computing and Data Science Tools
 <li><code>R</code> can store objects in your global</li>
 </ul>
 </section></section>
-<section id="the-rstudio-ide" class="title-slide slide level1 center">
-<h1>The RStudio IDE</h1>
-
-</section>
-
-<section id="quarto-demo" class="title-slide slide level1 center">
-<h1>Quarto: demo</h1>
-
-</section>
-
 <section id="navigating-your-computer" class="title-slide slide level1 center">
 <h1>Navigating your computer</h1>
 

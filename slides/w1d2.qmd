@@ -32,11 +32,133 @@ Today, we'll introduce a few topics
 -   Quarto, for reproducible reports
 -   Navigating your computer: files, folders, and directories
 
-# The `R` programming language
+## The `R` programming language: overview
 
-## The `R` programming language
+::: incremental
 
--   talk about what R is and origins, uses, etc. 
+-   `R` is an open source and freely available programming language with fully featured graphics.
+-   `R` is a quite popular language, especially for scientific programming (but it does have lots of industry popularity, as well!).
+- `R` is somewhat similar to `python` in syntax, and is a great first programming language to learn.
+
+:::
+
+## The `R` programming language: history
+
+::: incremental
+
+-   Initially, there was `S`. Developed by Bell Laboratories in the mid-70s. 
+-   John Chambers, one of `S`'s primary developers described its purpose as follows: "to turn ideas into software, quickly and faithfully".
+-   `R` was developed in the early 90's and deals with many of the memory problems that existed in `S`.
+-   Under the hood, `R` calls routines from the lower-level `FORTRAN` and `C` languages. 
+
+:::
+
+## RStudio
+
+::: incremental
+
+-   RStudio, or the RStudio Integrated Development Environment (IDE), is a tool we'll use to run R code, edit reproducible reports, and even navigate our file system.
+-   Largely, RStudio is a tool to code efficiently and reproducibly in the `R` programming language.
+-   Let's take a look at it! 
+
+:::
+
+---
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/rstudio-ide.png")
+```
+
+
+## RStudio
+
+-   RStudio has four panes: source, console, environment, and file manager. 
+
+
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/rstudio-ide.png")
+```
+
+
+## What's going on here? 
+
+```{r}
+#| eval: false
+#| echo: true
+rnorm(1)
+```
+
+::: incremental
+-   `rnorm()` is a *function*.
+-   `1` is the value we gave to one of it's *arguments*.
+-   We can type `?rnorm()` for more information about the `rnorm()` function.
+-   Let's check it out!
+
+:::
+
+# `rnorm()` and RStudio demo
+
+## What have we learned? 
+
+::: incremental
+
+- The `rnorm()` function takes `n` random draws from a normal distribution with a center (`mean`) and spread (`sd`). 
+  - These statistical details are not necessary for this class. 
+  
+:::
+
+## What have we learned? 
+
+- The `rnorm()` function takes `n` random draws from a normal distribution with a center (`mean`) and spread (`sd`). 
+  - These statistical details are not necessary for this class. 
+
+We could have written:
+
+```{r}
+#| eval: false
+#| echo: true
+rnorm(n = 1)
+```
+
+## What have we learned? 
+
+- The `rnorm()` function takes `n` random draws from a normal distribution with a center (`mean`) and spread (`sd`). 
+  - These statistical details are not necessary for this class. 
+
+We could have written:
+
+```{r}
+#| eval: false
+#| echo: true
+rnorm(n = 1)
+```
+
+Or even:
+
+```{r}
+#| eval: false
+#| echo: true
+rnorm(n = 1, mean = 0, sd = 1)
+```
+
+
+## Arguments
+
+```{r}
+#| eval: false
+#| echo: true
+rnorm(n = 1, mean = 0, sd = 1)
+```
+
+::: incremental
+-   `n` must be specified for `rnorm()` to run
+-   `mean` and `sd` are optional, but if you don't specify them, `R` will choose for you (in this case, the defaults are `0` and `1`). 
+:::
+
+# `R` as a calculator
 
 ## `R` as a calculator
 
@@ -85,88 +207,45 @@ log(exp(7))
 2^3
 ```
 
+# Quarto
 
-
-## What's going on here? 
-
-```{r}
-#| eval: false
-#| echo: true
-rnorm(1)
-```
-
-::: incremental
--   `rnorm` is a *function*.
--   `1` is the value we gave to one of it's *arguments*.
--   We can type `?rnorm` for more information about the `rnorm` function.
--   Let's check it out!
-
-:::
-
-## What have we learned? 
+## Quarto 
 
 ::: incremental
 
-- The `rnorm` function takes `n` random draws from a normal distribution with a center (`mean`) and spread (`sd`). 
-  - These statistical details are not necessary for this class. 
-  
+-   Quarto is a markdown language.
+-   Allows you to include code and text in the same document.
+-   Documents output or "Render" to PDF or HTML (web) documents.
+-   These slides (and the course website!) are made with Quarto. 
+
 :::
 
-## What have we learned? 
-
-- The `rnorm` function takes `n` random draws from a normal distribution with a center (`mean`) and spread (`sd`). 
-  - These statistical details are not necessary for this class. 
-
-We could have written:
-
-```{r}
-#| eval: false
-#| echo: true
-rnorm(n = 1)
-```
-
-## What have we learned? 
-
-- The `rnorm` function takes `n` random draws from a normal distribution with a center (`mean`) and spread (`sd`). 
-  - These statistical details are not necessary for this class. 
-
-We could have written:
-
-```{r}
-#| eval: false
-#| echo: true
-rnorm(n = 1)
-```
-
-Or even:
-
-```{r}
-#| eval: false
-#| echo: true
-rnorm(n = 1, mean = 0, sd = 1)
-```
-
-
-## Arguments
-
-```{r}
-#| eval: false
-#| echo: true
-rnorm(n = 1, mean = 0, sd = 1)
-```
+## Quarto for reproducible reports
 
 ::: incremental
--   `n` must be specified for `rnorm()` to run
--   `mean` and `sd` are optional, but if you don't specify them, `R` will choose for you (in this case, the defaults are `0` and `1`). 
+
+-   Quarto is a great tool to help us do reproducible science. 
+-   What does reproducibility mean? 
+-   reproducibility $\neq$ replicability / repeatability
+
 :::
+
+---
+
+## A project is *reproducible* if another person could take your code and data, run the code, and get the exact same answer. 
+
+## A project is *replicable / repeatable* if another person could take the steps to do your project again in their own setting. 
+
+
+
+# Quarto demo
+
+
 
 ## Objects 
 
 -   `R` can store objects in your global 
 
-# The RStudio IDE
-
-# Quarto: demo
 
 # Navigating your computer
 
