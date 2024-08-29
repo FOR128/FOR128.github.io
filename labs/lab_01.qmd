@@ -180,6 +180,8 @@ Use the `rnorm()` function to generate 100 random numbers with a `mean` of 0 and
 
 Once you have completed parts (a) and (b), set the `eval` option from `false` to `true` in the following chunk. Then run the following code and comment on what you see. What happens if you change the number of `bins` from 10 to 20? to 50? to 100? to 1? 
 
+Note: You are not expected to understand the following code at this stage of the course, but it is a good glimpse into what we'll do as the course progresses.  
+
 ```{r}
 #| eval: false
 library(ggplot2)
