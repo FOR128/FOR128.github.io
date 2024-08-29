@@ -1,0 +1,390 @@
+---
+title: "Tools for Data Science"
+editor: 
+  mode: source
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+---
+
+## Agenda
+
+Today, we'll introduce a few important data science tools:
+
+-   The `R` programming language
+-   The RStudio IDE
+-   Quarto, for reproducible reports
+
+## The `R` programming language: overview
+
+::: incremental
+
+-   `R` is an open source and freely available programming language with fully featured graphics.
+-   `R` is a quite popular language, especially for scientific programming (but it does have lots of industry popularity, as well!).
+- `R` is somewhat similar to `python` in syntax, and is a great first programming language to learn.
+
+:::
+
+## The `R` programming language: history
+
+::: incremental
+
+-   Initially, there was `S`. Developed by Bell Laboratories in the mid-70s. 
+-   John Chambers, one of `S`'s primary developers described its purpose as follows: "to turn ideas into software, quickly and faithfully".
+-   `R` was developed in the early 90's and deals with many of the memory problems that existed in `S`.
+-   Under the hood, `R` calls routines from the lower-level `FORTRAN` and `C` languages. 
+
+:::
+
+## RStudio
+
+::: incremental
+
+-   RStudio, or the RStudio Integrated Development Environment (IDE), is a tool we'll use to run R code, edit reproducible reports, and even navigate our file system.
+-   RStudio was initially released in 2011, and is the most popular IDE for `R` programming.
+-   Largely, RStudio is a tool to code efficiently and reproducibly in the `R` programming language.
+-   Let's take a look at it! 
+
+:::
+
+---
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/rstudio-ide.png")
+```
+
+
+## RStudio
+
+-   RStudio has four panes: source, console, environment, and file manager. 
+
+
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/rstudio-ide.png")
+```
+
+
+## What's going on here? 
+
+```{r}
+#| eval: false
+#| echo: true
+rnorm(1)
+```
+
+::: incremental
+-   `rnorm()` is a *function*.
+-   `1` is the value we gave to one of it's *arguments*.
+-   We can type `?rnorm()` for more information about the `rnorm()` function.
+-   Let's check it out!
+
+:::
+
+# `rnorm()` and RStudio demo
+
+## What have we learned? 
+
+::: incremental
+
+- The `rnorm()` function takes `n` random draws from a normal distribution with a center (`mean`) and spread (`sd`). 
+  - These statistical details are not necessary for this class. 
+  
+:::
+
+## What have we learned? 
+
+- The `rnorm()` function takes `n` random draws from a normal distribution with a center (`mean`) and spread (`sd`). 
+  - These statistical details are not necessary for this class. 
+
+We could have written:
+
+```{r}
+#| eval: false
+#| echo: true
+rnorm(n = 1)
+```
+
+## What have we learned? 
+
+- The `rnorm()` function takes `n` random draws from a normal distribution with a center (`mean`) and spread (`sd`). 
+  - These statistical details are not necessary for this class. 
+
+We could have written:
+
+```{r}
+#| eval: false
+#| echo: true
+rnorm(n = 1)
+```
+
+Or even:
+
+```{r}
+#| eval: false
+#| echo: true
+rnorm(n = 1, mean = 0, sd = 1)
+```
+
+
+## Arguments
+
+```{r}
+#| eval: false
+#| echo: true
+rnorm(n = 1, mean = 0, sd = 1)
+```
+
+::: incremental
+-   `n` must be specified for `rnorm()` to run
+-   `mean` and `sd` are optional, but if you don't specify them, `R` will choose for you (in this case, the defaults are `0` and `1`). 
+:::
+
+# `R` as a calculator
+
+## `R` as a calculator
+
+-   `R` includes many mathematical operations, and is a great calculator. 
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "1"
+2 + 3 # addition
+2 * 3 # multiplication
+2 / 3 # division
+2 - 3 # subtraction
+```
+
+## `R` as a calculator
+
+-   `R` includes many mathematical operations, and is a great calculator. 
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "2"
+2 + 3 # addition
+2 * 3 # multiplication
+2 / 3 # division
+2 - 3 # subtraction
+```
+
+## `R` as a calculator
+
+-   `R` includes many mathematical operations, and is a great calculator. 
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "3"
+2 + 3 # addition
+2 * 3 # multiplication
+2 / 3 # division
+2 - 3 # subtraction
+```
+
+## `R` as a calculator
+
+-   `R` includes many mathematical operations, and is a great calculator. 
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "4"
+2 + 3 # addition
+2 * 3 # multiplication
+2 / 3 # division
+2 - 3 # subtraction
+```
+
+## `R` as a calculator
+
+-   Functions exists for more complex mathematical operations
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "1,2"
+log(7) # the natural logarithm
+log(7, base = 10) # log base 10
+exp(7) # the exponential function
+sqrt(7) # the square root function
+abs(10 - 17) # absolute value
+```
+
+## `R` as a calculator
+
+-   Functions exists for more complex mathematical operations
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "3"
+log(7) # the natural logarithm
+log(7, base = 10) # log base 10
+exp(7) # the exponential function
+sqrt(7) # the square root function
+abs(10 - 17) # absolute value
+```
+
+## `R` as a calculator
+
+-   Functions exists for more complex mathematical operations
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "4"
+log(7) # the natural logarithm
+log(7, base = 10) # log base 10
+exp(7) # the exponential function
+sqrt(7) # the square root function
+abs(10 - 17) # absolute value
+```
+
+## `R` as a calculator
+
+-   Functions exists for more complex mathematical operations
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "5"
+log(7) # the natural logarithm
+log(7, base = 10) # log base 10
+exp(7) # the exponential function
+sqrt(7) # the square root function
+abs(10 - 17) # absolute value
+```
+
+## `R` as a calculator
+
+-   Functions can be nested in each other
+
+```{r}
+#| eval: true
+#| echo: true
+log(exp(7))
+```
+
+## `R` as a calculator
+
+-   Exponents with `^`: `2^3` means $2^3$
+
+```{r}
+#| eval: true
+#| echo: true
+2^3
+```
+
+# Quarto
+
+## Quarto 
+
+::: incremental
+
+-   Quarto is a markdown language, released in 2022.
+-   Allows you to include code and text in the same document.
+-   Documents output or "Render" to PDF or HTML (web) documents.
+-   These slides (and the course website!) are made with Quarto. 
+
+:::
+
+## Quarto for reproducible reports
+
+::: incremental
+
+-   Quarto is a great tool to help us do reproducible science. 
+-   What does reproducibility mean? 
+-   reproducibility $\neq$ replicability / repeatability
+
+:::
+
+---
+
+## A project is *reproducible* if another person could take your code and data, run the code, and get the exact same answer. 
+
+## A project is *replicable / repeatable* if another person could take the steps to do your project again in their own setting. 
+
+
+
+# Quarto demo
+
+
+## Objects in `R`
+
+-   `R` can store objects for use later in what we call an *environment*.
+
+```{r}
+#| eval: true
+#| echo: true
+dbh_in <- 40 # store tree diameter (inches)
+```
+
+---
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/assign-variable.png")
+```
+
+---
+
+
+## Objects in `R` 
+
+-   `R` can store objects for use later in what we call an *environment*.
+-   Here, we stored `dbh_in` in our environment, and printed it out to see its value.
+
+```{r}
+#| eval: true
+#| echo: true
+dbh_in
+```
+
+## Objects in `R`
+
+-   `R` can store objects for use later in what we call an *environment*.
+-   Here, we stored `dbh_in` in our environment, and printed it out to see its value.
+-   We can use `R` as a calculator to compute the tree's basal area.
+
+```{r}
+#| eval: true
+#| echo: true
+BA_in2 <- pi * (dbh_in / 2)^2 # compute tree basal area
+BA_in2
+```
+
+## Next time
+
+::: incremental
+
+-   We'll talk about file systems, paths, folders, and navigating your computer.
+-   More advanced features of `R` as well: basic data structures, variable naming and code formatting, reading/writing data, and more!
+
+:::
+
+# See you all upstairs in lab! (Natural Resources room 223)
+
+
+
+

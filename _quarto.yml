@@ -25,6 +25,8 @@ website:
         menu:
           - href: slides/w1d1.qmd
             text: "Week 1 Day 1"
+          - href: slides/w1d2.qmd
+            text: "Week 1 Day 2"
       - href: assignments.qmd
         text: Assignments
       - href: recordings.qmd

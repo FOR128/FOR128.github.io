@@ -1,5 +1,6 @@
 ---
-title: "FOR 128: Lab 1"
+title: "Getting started with `R`"
+subtitle: "FOR 128: Lab 1"
 author: "Insert Your Name Here"
 date: "8/29/2024"
 format:
@@ -10,7 +11,7 @@ editor:
 
 ## Welcome
 
-Welcome to Lab 1! Today, we'll get started with a few data science tools (`R`, RStudio, and Quarto), and learn to use `R` as a calculator.
+Welcome to Lab 1! Today, we'll get started with a few data science tools (`R`, RStudio, and Quarto), learn to use `R` as a calculator, and get a glimpse into graphics with `R`.
 
 ### Learning objectives
 
@@ -19,10 +20,23 @@ Welcome to Lab 1! Today, we'll get started with a few data science tools (`R`, R
 -   Begin working with Quarto (.qmd) documents.
 -   Learn to save and render your work with Quarto.
 -   Start using `R` as a calculator.
+-   Gain familiarity with graphics in `R`
 
 ### Deliverables (i.e., what to put in the lab drop box)
 
 Upload your rendered PDF (`lab_01.pdf`) **and** Quarto (`lab_01.qmd`) document to the lab drop box. Make sure the Quarto document properly renders to PDF.
+
+### Collaborator(s)
+
+List any collaborators you worked with in the space below. 
+
+------------------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------------------
 
 # Part 1: Setting up your workspace
 
@@ -46,12 +60,13 @@ list.files()
 
 ## Exercise 2
 
-Create a subfolder called `data` in the folder you just created in Exercise 1. For now, we'll leave this directory empty, but we will use it for future labs.
+Go to D2L and download the `datasets.zip` file. This file contains datasets needed to work with our textbook. Use your computer to "unzip" the file (a folder called "datasets" should appear). Move this folder into the folder you just created in Exercise 1. For now, we'll leave this directory alone, but we will use it for future labs.
 
-Now, run the following code chunk. What do you think specifying the `path` argument in the `list.files()` function did? 
+Now, run the following code chunk. What do you think specifying the `path` argument in the `list.files()` function did?
 
 ```{r}
-list.files(path = "data/")
+list.files()
+list.files(path = "datasets/")
 ```
 
 ------------------------------------------------------------------------
@@ -128,6 +143,63 @@ Do Exercise 2.4 from IFDAR. Note, you'll have to make your own code chunk.
 
 
 ------------------------------------------------------------------------
+
+# Part 3: A glimpse into graphics
+
+## Exercise 8
+
+### Part (a)
+
+Run the following code to install the `ggplot2` package. Note the `eval: false` setting. This means this code will not run when you render the document (we don't want to install `ggplot2` every time we render the document, rather we'd like to install it just once when we run the chunk by hand). Do not change the `eval` setting for this code chunk.
+
+```{r}
+#| eval: false
+install.packages("ggplot2")
+```
+
+If everything has gone correctly, the following chunk should return `TRUE`: 
+
+```{r}
+"ggplot2" %in% installed.packages()
+```
+
+
+### Part (b)
+
+Use the `rnorm()` function to generate 100 random numbers with a `mean` of 0 and a `sd` of 1. Save these numbers to an `R` object called `draws`. 
+
+------------------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------------------
+
+### Part (c)
+
+Once you have completed parts (a) and (b), set the `eval` option from `false` to `true` in the following chunk. Then run the following code and comment on what you see. What happens if you change the number of `bins` from 10 to 20? to 50? to 100? to 1? 
+
+Note: You are not expected to understand the following code at this stage of the course, but it is a good glimpse into what we'll do as the course progresses.  
+
+```{r}
+#| eval: false
+library(ggplot2)
+
+dat <- data.frame(draws = draws)
+
+ggplot(data = dat, mapping = aes(x = draws)) + 
+  geom_histogram(bins = 10)
+```
+
+------------------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------------------
+
 
 # Wrap up
 

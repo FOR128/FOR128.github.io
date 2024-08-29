@@ -1,0 +1,22 @@
+---
+title: "Lecture Ticket 2"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read the following sections of IFDAR.
+
+-   Chapter 2
+
+
+## Questions
+
+1. What are the two main operators used in `R` for assignment?
+
+2. What code would you write to assign the value `37` to the object `favorite_number`?
+
+3. Open RStudio and check your working directory by entering a command into the `R` console. What is your working directory? Example: /Users/graysonwhite/Documents/
+
+4. What does the `install.packages()` function do? What about `library()`? How are they different? 
