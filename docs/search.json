@@ -235,7 +235,7 @@
     "href": "slides/w1d2.html#agenda",
     "title": "Tools for Data Science",
     "section": "Agenda",
-    "text": "Agenda\nToday, we’ll introduce a few topics\n\nThe R programming language\nThe RStudio IDE\nQuarto, for reproducible reports\nNavigating your computer: files, folders, and directories"
+    "text": "Agenda\nToday, we’ll introduce a few important data science tools:\n\nThe R programming language\nThe RStudio IDE\nQuarto, for reproducible reports"
   },
   {
     "objectID": "slides/w1d2.html#the-r-programming-language-overview",
@@ -256,7 +256,7 @@
     "href": "slides/w1d2.html#rstudio",
     "title": "Tools for Data Science",
     "section": "RStudio",
-    "text": "RStudio\n\n\nRStudio, or the RStudio Integrated Development Environment (IDE), is a tool we’ll use to run R code, edit reproducible reports, and even navigate our file system.\nLargely, RStudio is a tool to code efficiently and reproducibly in the R programming language.\nLet’s take a look at it!"
+    "text": "RStudio\n\n\nRStudio, or the RStudio Integrated Development Environment (IDE), is a tool we’ll use to run R code, edit reproducible reports, and even navigate our file system.\nRStudio was initially released in 2011, and is the most popular IDE for R programming.\nLargely, RStudio is a tool to code efficiently and reproducibly in the R programming language.\nLet’s take a look at it!"
   },
   {
     "objectID": "slides/w1d2.html#rstudio-1",
@@ -305,25 +305,67 @@
     "href": "slides/w1d2.html#r-as-a-calculator-1",
     "title": "Tools for Data Science",
     "section": "R as a calculator",
-    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n\n[1] 5\n\n2 * 3 # multiplication\n\n[1] 6\n\n2 / 3 # division\n\n[1] 0.6666667\n\n2 - 3 # subtraction\n\n[1] -1"
+    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
   },
   {
     "objectID": "slides/w1d2.html#r-as-a-calculator-2",
     "href": "slides/w1d2.html#r-as-a-calculator-2",
     "title": "Tools for Data Science",
     "section": "R as a calculator",
-    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\n\n[1] 1.94591\n\nlog(7, base = 10) # log base 10\n\n[1] 0.845098\n\nexp(7) # the exponential function\n\n[1] 1096.633\n\nsqrt(7) # the square root function\n\n[1] 2.645751\n\nabs(10 - 17) # absolute value\n\n[1] 7"
+    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
   },
   {
     "objectID": "slides/w1d2.html#r-as-a-calculator-3",
     "href": "slides/w1d2.html#r-as-a-calculator-3",
     "title": "Tools for Data Science",
     "section": "R as a calculator",
-    "text": "R as a calculator\n\nFunctions can be nested in each other\n\n\nlog(exp(7))\n\n[1] 7"
+    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
   },
   {
     "objectID": "slides/w1d2.html#r-as-a-calculator-4",
     "href": "slides/w1d2.html#r-as-a-calculator-4",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-5",
+    "href": "slides/w1d2.html#r-as-a-calculator-5",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-6",
+    "href": "slides/w1d2.html#r-as-a-calculator-6",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-7",
+    "href": "slides/w1d2.html#r-as-a-calculator-7",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-8",
+    "href": "slides/w1d2.html#r-as-a-calculator-8",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-9",
+    "href": "slides/w1d2.html#r-as-a-calculator-9",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nFunctions can be nested in each other\n\n\nlog(exp(7))\n\n[1] 7"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-10",
+    "href": "slides/w1d2.html#r-as-a-calculator-10",
     "title": "Tools for Data Science",
     "section": "R as a calculator",
     "text": "R as a calculator\n\nExponents with ^: 2^3 means \\(2^3\\)\n\n\n2^3\n\n[1] 8"
@@ -333,7 +375,7 @@
     "href": "slides/w1d2.html#quarto-1",
     "title": "Tools for Data Science",
     "section": "Quarto",
-    "text": "Quarto\n\n\nQuarto is a markdown language.\nAllows you to include code and text in the same document.\nDocuments output or “Render” to PDF or HTML (web) documents.\nThese slides (and the course website!) are made with Quarto."
+    "text": "Quarto\n\n\nQuarto is a markdown language, released in 2022.\nAllows you to include code and text in the same document.\nDocuments output or “Render” to PDF or HTML (web) documents.\nThese slides (and the course website!) are made with Quarto."
   },
   {
     "objectID": "slides/w1d2.html#quarto-for-reproducible-reports",
@@ -357,11 +399,32 @@
     "text": "A project is replicable / repeatable if another person could take the steps to do your project again in their own setting."
   },
   {
-    "objectID": "slides/w1d2.html#objects",
-    "href": "slides/w1d2.html#objects",
+    "objectID": "slides/w1d2.html#objects-in-r",
+    "href": "slides/w1d2.html#objects-in-r",
     "title": "Tools for Data Science",
-    "section": "Objects",
-    "text": "Objects\n\nR can store objects in your global"
+    "section": "Objects in R",
+    "text": "Objects in R\n\nR can store objects for use later in what we call an environment.\n\n\ndbh_in &lt;- 40 # store tree diameter (inches)"
+  },
+  {
+    "objectID": "slides/w1d2.html#objects-in-r-1",
+    "href": "slides/w1d2.html#objects-in-r-1",
+    "title": "Tools for Data Science",
+    "section": "Objects in R",
+    "text": "Objects in R\n\nR can store objects for use later in what we call an environment.\nHere, we stored dbh_in in our environment, and printed it out to see its value.\n\n\ndbh_in\n\n[1] 40"
+  },
+  {
+    "objectID": "slides/w1d2.html#objects-in-r-2",
+    "href": "slides/w1d2.html#objects-in-r-2",
+    "title": "Tools for Data Science",
+    "section": "Objects in R",
+    "text": "Objects in R\n\nR can store objects for use later in what we call an environment.\nHere, we stored dbh_in in our environment, and printed it out to see its value.\nWe can use R as a calculator to compute the tree’s basal area.\n\n\nBA_in2 &lt;- pi * (dbh_in / 2)^2 # compute tree basal area\nBA_in2\n\n[1] 1256.637"
+  },
+  {
+    "objectID": "slides/w1d2.html#next-time",
+    "href": "slides/w1d2.html#next-time",
+    "title": "Tools for Data Science",
+    "section": "Next time",
+    "text": "Next time\n\n\nWe’ll talk about file systems, paths, folders, and navigating your computer.\nMore advanced features of R as well: basic data structures, variable naming and code formatting, reading/writing data, and more!"
   },
   {
     "objectID": "tickets/ticket_01.html",

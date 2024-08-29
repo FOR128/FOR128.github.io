@@ -25,12 +25,11 @@ format:
 
 ## Agenda
 
-Today, we'll introduce a few topics
+Today, we'll introduce a few important data science tools:
 
 -   The `R` programming language
 -   The RStudio IDE
 -   Quarto, for reproducible reports
--   Navigating your computer: files, folders, and directories
 
 ## The `R` programming language: overview
 
@@ -58,6 +57,7 @@ Today, we'll introduce a few topics
 ::: incremental
 
 -   RStudio, or the RStudio Integrated Development Environment (IDE), is a tool we'll use to run R code, edit reproducible reports, and even navigate our file system.
+-   RStudio was initially released in 2011, and is the most popular IDE for `R` programming.
 -   Largely, RStudio is a tool to code efficiently and reproducibly in the `R` programming language.
 -   Let's take a look at it! 
 
@@ -165,8 +165,51 @@ rnorm(n = 1, mean = 0, sd = 1)
 -   `R` includes many mathematical operations, and is a great calculator. 
 
 ```{r}
-#| eval: true
+#| eval: false
 #| echo: true
+#| code-line-numbers: "1"
+2 + 3 # addition
+2 * 3 # multiplication
+2 / 3 # division
+2 - 3 # subtraction
+```
+
+## `R` as a calculator
+
+-   `R` includes many mathematical operations, and is a great calculator. 
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "2"
+2 + 3 # addition
+2 * 3 # multiplication
+2 / 3 # division
+2 - 3 # subtraction
+```
+
+## `R` as a calculator
+
+-   `R` includes many mathematical operations, and is a great calculator. 
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "3"
+2 + 3 # addition
+2 * 3 # multiplication
+2 / 3 # division
+2 - 3 # subtraction
+```
+
+## `R` as a calculator
+
+-   `R` includes many mathematical operations, and is a great calculator. 
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "4"
 2 + 3 # addition
 2 * 3 # multiplication
 2 / 3 # division
@@ -178,8 +221,54 @@ rnorm(n = 1, mean = 0, sd = 1)
 -   Functions exists for more complex mathematical operations
 
 ```{r}
-#| eval: true
+#| eval: false
 #| echo: true
+#| code-line-numbers: "1,2"
+log(7) # the natural logarithm
+log(7, base = 10) # log base 10
+exp(7) # the exponential function
+sqrt(7) # the square root function
+abs(10 - 17) # absolute value
+```
+
+## `R` as a calculator
+
+-   Functions exists for more complex mathematical operations
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "3"
+log(7) # the natural logarithm
+log(7, base = 10) # log base 10
+exp(7) # the exponential function
+sqrt(7) # the square root function
+abs(10 - 17) # absolute value
+```
+
+## `R` as a calculator
+
+-   Functions exists for more complex mathematical operations
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "4"
+log(7) # the natural logarithm
+log(7, base = 10) # log base 10
+exp(7) # the exponential function
+sqrt(7) # the square root function
+abs(10 - 17) # absolute value
+```
+
+## `R` as a calculator
+
+-   Functions exists for more complex mathematical operations
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "5"
 log(7) # the natural logarithm
 log(7, base = 10) # log base 10
 exp(7) # the exponential function
@@ -213,7 +302,7 @@ log(exp(7))
 
 ::: incremental
 
--   Quarto is a markdown language.
+-   Quarto is a markdown language, released in 2022.
 -   Allows you to include code and text in the same document.
 -   Documents output or "Render" to PDF or HTML (web) documents.
 -   These slides (and the course website!) are made with Quarto. 
@@ -241,13 +330,61 @@ log(exp(7))
 # Quarto demo
 
 
+## Objects in `R`
 
-## Objects 
+-   `R` can store objects for use later in what we call an *environment*.
 
--   `R` can store objects in your global 
+```{r}
+#| eval: true
+#| echo: true
+dbh_in <- 40 # store tree diameter (inches)
+```
+
+---
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/assign-variable.png")
+```
+
+---
 
 
-# Navigating your computer
+## Objects in `R` 
+
+-   `R` can store objects for use later in what we call an *environment*.
+-   Here, we stored `dbh_in` in our environment, and printed it out to see its value.
+
+```{r}
+#| eval: true
+#| echo: true
+dbh_in
+```
+
+## Objects in `R`
+
+-   `R` can store objects for use later in what we call an *environment*.
+-   Here, we stored `dbh_in` in our environment, and printed it out to see its value.
+-   We can use `R` as a calculator to compute the tree's basal area.
+
+```{r}
+#| eval: true
+#| echo: true
+BA_in2 <- pi * (dbh_in / 2)^2 # compute tree basal area
+BA_in2
+```
+
+## Next time
+
+::: incremental
+
+-   We'll talk about file systems, paths, folders, and navigating your computer.
+-   More advanced features of `R` as well: basic data structures, variable naming and code formatting, reading/writing data, and more!
+
+:::
+
+# See you all upstairs in lab! (Natural Resources room 223)
+
 
 
 
