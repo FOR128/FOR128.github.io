@@ -217,6 +217,76 @@
     "text": "Tasks\n\n1. Install R and RStudio\nAs discussed in IFDAR, go to Posit’s website. Install R first, and then install RStudio.\n\n\n2. Run your first R command\nIn the console, type in the following command and press Enter to run it:\n\nrnorm(1)\n\n\n\n3. Record your result\nCome to class on Thursday with a piece of paper with your name on it that includes the result (it will be a number) from running rnorm(1) in task 2.\nIf you were unable to install R and RStudio and ran into issues, instead come to class with a piece of paper with your name on it that explains the issue you were having with installation."
   },
   {
+    "objectID": "tickets/ticket_02.html",
+    "href": "tickets/ticket_02.html",
+    "title": "Lecture Ticket 2",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 2\nChapter 3: read through section 3.3.1 (STOP at 3.3.2 External data)"
+  },
+  {
+    "objectID": "tickets/ticket_02.html#reading",
+    "href": "tickets/ticket_02.html#reading",
+    "title": "Lecture Ticket 2",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 2\nChapter 3: read through section 3.3.1 (STOP at 3.3.2 External data)"
+  },
+  {
+    "objectID": "tickets/ticket_02.html#questions",
+    "href": "tickets/ticket_02.html#questions",
+    "title": "Lecture Ticket 2",
+    "section": "Questions",
+    "text": "Questions\n\nWhat are the two main operators used in R for assignment?\nWhat code would you write to assign the value 37 to the object favorite_number?\nOpen RStudio and check your working directory by entering a command into the R console. What is your working directory? Example: /Users/graysonwhite/Documents/"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "For 128 Michigan State University\nFall 2024\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+  },
+  {
+    "objectID": "index.html#week-1-august-25---31",
+    "href": "index.html#week-1-august-25---31",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)"
+  },
+  {
+    "objectID": "assignments.html#labs",
+    "href": "assignments.html#labs",
+    "title": "Assignments",
+    "section": "",
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)"
+  },
+  {
+    "objectID": "assignments.html#lecture-tickets",
+    "href": "assignments.html#lecture-tickets",
+    "title": "Assignments",
+    "section": "Lecture Tickets",
+    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)"
+  },
+  {
+    "objectID": "recordings.html",
+    "href": "recordings.html",
+    "title": "Lecture Recordings",
+    "section": "",
+    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here."
+  },
+  {
+    "objectID": "recordings.html#recordings",
+    "href": "recordings.html#recordings",
+    "title": "Lecture Recordings",
+    "section": "",
+    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here."
+  },
+  {
     "objectID": "syllabus.html",
     "href": "syllabus.html",
     "title": "Syllabus",
@@ -259,6 +329,13 @@
     "text": "Assessments\nIn this course, you’ll be assessed based on your work and participation. In particular:\n\nLab reports (40%)\n\nLab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on D2L. We will have a lab each week (except for the week of the midterm exam).\nThe lowest lab grade is dropped.\n\nMidterm Exams (20%)\n\nThere will be two midterm exams, one on week 6 and one on week 12. Each midterm is worth 10% of the final grade.\n\nFinal Project (15%)\n\nRather than a final exam, we will have a final group project with project presentations during the final exam time period. More details to come as the semester goes on.\n\nIn-class quizzes (15%)\n\nIn-class quizzes do not have a regular schedule and will occur based on the material we get through.\nThe lowest in-class quiz grade is dropped.\n\nLecture tickets (10%)\n\nLecture tickets are due at the beginning of every lecture, handed in in-person, by you.\nThe lowest three (3) lecture ticket grades will be dropped.\n\n\nGrades are calculated on a four point scale and correspond to the following grade percent:\n\n\n\nGrade percent\nGrade points\n\n\n\n\n90% - 100%\n4.0\n\n\n85.0% - 89.9%\n3.5\n\n\n80.0% - 84.9%\n3.0\n\n\n75.0% - 79.9%\n2.5\n\n\n70.0% - 74.9%\n2.0\n\n\n65.0% - 69.9%\n1.5\n\n\n60.0 - 64.9%\n1.0\n\n\n0% - 60%\n0.0"
   },
   {
+    "objectID": "syllabus.html#late-work-policy",
+    "href": "syllabus.html#late-work-policy",
+    "title": "Syllabus",
+    "section": "Late work policy",
+    "text": "Late work policy\n\nLabs turned in after the deadline will not be accepted unless an extension was granted by the Instructor and/or Research Assistant prior to the deadline. Note though that one (1) lab will be dropped and not counted towards your grade.\nIf you anticipate not being able to make a midterm, reach out to the Instructor and/or Research Assistant at least a week in advance. Note that midterms will occur during lab time on weeks 6 and 12.\nLate lecture tickets will not be accepted. Note though that three (3) lecture tickets will be dropped and not counted towards your grade.\nIn-class quizzes cannot be made up outside of class. Note though that one (1) in-class quiz will be dropped and not counted towards your grade.\nThe final project must be turned in on time."
+  },
+  {
     "objectID": "syllabus.html#collaboration-policy-for-for-128",
     "href": "syllabus.html#collaboration-policy-for-for-128",
     "title": "Syllabus",
@@ -273,74 +350,25 @@
     "text": "AI Policy for FOR 128\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
   },
   {
-    "objectID": "recordings.html",
-    "href": "recordings.html",
-    "title": "Lecture Recordings",
+    "objectID": "tickets/ticket_03.html",
+    "href": "tickets/ticket_03.html",
+    "title": "Lecture Ticket 3",
     "section": "",
-    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here."
+    "text": "Read the following sections of IFDAR."
   },
   {
-    "objectID": "recordings.html#recordings",
-    "href": "recordings.html#recordings",
-    "title": "Lecture Recordings",
+    "objectID": "tickets/ticket_03.html#reading",
+    "href": "tickets/ticket_03.html#reading",
+    "title": "Lecture Ticket 3",
     "section": "",
-    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here."
+    "text": "Read the following sections of IFDAR."
   },
   {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)"
-  },
-  {
-    "objectID": "assignments.html#labs",
-    "href": "assignments.html#labs",
-    "title": "Assignments",
-    "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)"
-  },
-  {
-    "objectID": "assignments.html#lecture-tickets",
-    "href": "assignments.html#lecture-tickets",
-    "title": "Assignments",
-    "section": "Lecture Tickets",
-    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "For 128 Michigan State University\nFall 2024\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
-  },
-  {
-    "objectID": "index.html#week-1-august-25---31",
-    "href": "index.html#week-1-august-25---31",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
-  },
-  {
-    "objectID": "tickets/ticket_02.html",
-    "href": "tickets/ticket_02.html",
-    "title": "Lecture Ticket 2",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 2"
-  },
-  {
-    "objectID": "tickets/ticket_02.html#reading",
-    "href": "tickets/ticket_02.html#reading",
-    "title": "Lecture Ticket 2",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 2"
-  },
-  {
-    "objectID": "tickets/ticket_02.html#questions",
-    "href": "tickets/ticket_02.html#questions",
-    "title": "Lecture Ticket 2",
+    "objectID": "tickets/ticket_03.html#questions",
+    "href": "tickets/ticket_03.html#questions",
+    "title": "Lecture Ticket 3",
     "section": "Questions",
-    "text": "Questions\n\nWhat are the two main operators used in R for assignment?\nWhat code would you write to assign the value 37 to the object favorite_number?\nOpen RStudio and check your working directory by entering a command into the R console. What is your working directory? Example: /Users/graysonwhite/Documents/\nWhat does the install.packages() function do? What about library()? How are they different?"
+    "text": "Questions\n\nWhat does the install.packages() function do? What about library()? How are they different?"
   },
   {
     "objectID": "slides/w1d1.html#agenda",

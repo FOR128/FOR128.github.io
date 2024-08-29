@@ -1,0 +1,16 @@
+---
+title: "Lecture Ticket 3"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read the following sections of IFDAR.
+
+-   
+
+
+## Questions
+
+1. What does the `install.packages()` function do? What about `library()`? How are they different? 

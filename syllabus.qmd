@@ -104,6 +104,20 @@ Grades are calculated on a four point scale and correspond to the following grad
 
 ------------------------------------------------------------------------
 
+## Late work policy
+
+-   Labs turned in after the deadline will not be accepted unless an extension was granted by the Instructor and/or Research Assistant prior to the deadline. Note though that one (1) lab will be dropped and not counted towards your grade. 
+
+-   If you anticipate not being able to make a midterm, reach out to the Instructor and/or Research Assistant at least a week in advance. Note that midterms will occur during lab time on weeks 6 and 12. 
+
+-   Late lecture tickets will not be accepted. Note though that three (3) lecture tickets will be dropped and not counted towards your grade. 
+
+-   In-class quizzes cannot be made up outside of class. Note though that one (1) in-class quiz will be dropped and not counted towards your grade. 
+
+-   The final project must be turned in on time. 
+
+------------------------------------------------------------------------
+
 ## Collaboration Policy for FOR 128
 
 Working with your classmates on difficult and interesting problems can not only help your learning, but help you get to know each other. Therefore, we allow and encourage collaboration on lab reports and lecture tickets. However, collaboration on exams and quizzes is strictly prohibited and will be considered academic misconduct.

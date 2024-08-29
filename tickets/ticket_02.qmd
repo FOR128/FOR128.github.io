@@ -8,7 +8,8 @@ editor:
 
 Read the following sections of IFDAR.
 
--   Chapter 2
+-   Finish Chapter 2
+-   Chapter 3: read through section 3.3.1 (STOP at 3.3.2 External data)
 
 
 ## Questions
@@ -19,4 +20,3 @@ Read the following sections of IFDAR.
 
 3. Open RStudio and check your working directory by entering a command into the `R` console. What is your working directory? Example: /Users/graysonwhite/Documents/
 
-4. What does the `install.packages()` function do? What about `library()`? How are they different? 
