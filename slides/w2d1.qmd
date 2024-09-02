@@ -26,9 +26,8 @@ format:
 ## Agenda
 
 -   Review
--   Files and directories
 -   Naming best practices
--   Quiz
+-   Files and directories
 
 ## Last week
 
@@ -280,7 +279,12 @@ knitr::include_graphics("figs/path.jpg")
 
 # Working directories in Quarto and `R` demo
 
-# Quiz `r countdown::countdown(15)`
+## What have we learned? 
+
+-   In Quarto, the default working directory is the folder where the quarto document lives. 
+    - Crucial note: this may be different than the working directory in your R console. 
+-   You can set your working directory in `R` with `setwd()`
+-   You can get your current working directory in `R` with `getwd()`
 
 ## Next time
 

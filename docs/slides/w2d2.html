@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.5.56">
 
   <meta name="author" content="Practical Computing and Data Science Tools">
-  <title>FOR 128 – Intro to Practical Computing</title>
+  <title>FOR 128 – Reading and Writing Data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -327,7 +327,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="../assets/for128-hex.png" data-background-position="50% 20%" data-background-size="20%" class="quarto-title-block center">
-  <h1 class="title">Intro to Practical Computing</h1>
+  <h1 class="title">Reading and Writing Data</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -341,273 +341,19 @@ Practical Computing and Data Science Tools
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ul>
-<li>Review</li>
-<li>Naming best practices</li>
-<li>Files and directories</li>
+<li>Quiz</li>
+<li>Reading and writing data</li>
 </ul>
 </section>
-<section id="last-week" class="slide level2">
-<h2>Last week</h2>
-<ul>
-<li>Syllabus</li>
-<li>Lab 1</li>
-<li>Tools for the course: <code>R</code>, RStudio, and Quarto</li>
-</ul>
-</section>
-<section id="syllabus" class="slide level2">
-<h2>Syllabus</h2>
-<div>
-<ul>
-<li class="fragment">Recall lecture tickets are due in person at the beginning of lecture.<br>
-</li>
-<li class="fragment">Course late policy has been added to online version.</li>
-<li class="fragment">Let’s quickly review the late policy.</li>
-</ul>
-</div>
-</section>
-<section>
-<section id="www.for128.orgsyllabus.html" class="title-slide slide level1 center">
-<h1><a href="https://for128.org/syllabus.html">www.for128.org/syllabus.html</a></h1>
-
-</section>
-<section id="lab-1" class="slide level2">
-<h2>Lab 1</h2>
-<div>
-<ul>
-<li class="fragment">If you’re having troubles, technical or otherwise, come to office hours.</li>
-<li class="fragment">Make sure to turn in (.pdf and .qmd) to D2L by 5pm on Wednesday (tomorrow).</li>
-</ul>
-</div>
-</section>
-<section id="data-science-tools" class="slide level2">
-<h2>Data Science Tools</h2>
-<div>
-<ul>
-<li class="fragment"><code>R</code> is a programming language.</li>
-<li class="fragment">RStudio is an IDE (what we use to interact with <code>R</code> and our computer).</li>
-<li class="fragment">Quarto is a markdown language, for writing reports.</li>
-</ul>
-</div>
-</section>
-<section class="slide level2">
-
-<div>
-<ul>
-<li class="fragment">You, the chef</li>
-</ul>
-</div>
-
-<img data-src="figs/chef.jpg" class="quarto-figure quarto-figure-center r-stretch" width="540"><div class="footer">
-<p>Image credit: The Culinary School of Fort Worth</p>
-</div>
-</section>
-<section class="slide level2">
-
-<div>
-<ul>
-<li class="fragment"><code>R</code>, the ingredients</li>
-</ul>
-</div>
-
-<img data-src="figs/ingredients.jpg" class="quarto-figure quarto-figure-center r-stretch" width="750"><div class="footer">
-<p>Image credit: foodandwine.com</p>
-</div>
-</section>
-<section class="slide level2">
-
-<div>
-<ul>
-<li class="fragment">RStudio, your kitchen</li>
-</ul>
-</div>
-
-<img data-src="figs/kitchen.jpg" class="quarto-figure quarto-figure-center r-stretch" width="576"><div class="footer">
-<p>Image credit: Country living magazine</p>
-</div>
-</section>
-<section class="slide level2">
-
-<div>
-<ul>
-<li class="fragment">Quarto, the plated final product</li>
-</ul>
-</div>
-
-<img data-src="figs/plated.jpg" class="quarto-figure quarto-figure-center r-stretch" width="400"><div class="footer">
-<p>Image credit: budgetbytes.com</p>
-</div>
-</section></section>
-<section>
-<section id="practical-computing" class="title-slide slide level1 center">
-<h1>Practical computing</h1>
-
-</section>
-<section id="practical-computing-1" class="slide level2">
-<h2>Practical computing</h2>
-<div>
-<ul>
-<li class="fragment"><p>Understanding your computer and its file system is vital to success in this class and beyond.</p></li>
-<li class="fragment"><p>Last week, we threw you into the deep end with data science tools.</p></li>
-<li class="fragment"><p>This week, we’ll spend a bit more time on the details to help you interact with your computer and these tools.</p></li>
-<li class="fragment"><p>Today, we’ll focus on file systems and file/folder naming.</p></li>
-</ul>
-</div>
-</section>
-<section id="naming-files-and-folders" class="slide level2">
-<h2>Naming files and folders</h2>
-<p>Some best practices are important for naming files and folders:</p>
-<div>
-<ul>
-<li class="fragment">Use consistent casing:
-<ul>
-<li class="fragment">delimiter naming, e.g.&nbsp;<code>lab_01.qmd</code> or <code>cat_pictures</code></li>
-<li class="fragment">camel case, e.g., <code>finalProjectMaterials.qmd</code> or <code>catPictures</code></li>
-</ul></li>
-<li class="fragment">Name your files and folders clearly, concisely, and informatively:
-<ul>
-<li class="fragment">Good: <code>for128_f24</code></li>
-<li class="fragment">Bad: <code>my_work_for_forestry128_in_fall_2024</code></li>
-<li class="fragment">Really bad: <code>myWorkFor_forestry128_inFall_2024</code></li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="file-systems-directories" class="slide level2">
-<h2>File systems / directories</h2>
-<div>
-<ul>
-<li class="fragment">Every time you create or download a file, you are storing it <em>somewhere</em> in your computer’s file system.</li>
-<li class="fragment"><em>But where?</em> 🤔</li>
-</ul>
-</div>
-</section>
-<section id="file-systems-directories-1" class="slide level2">
-<h2>File systems / directories</h2>
-<ul>
-<li>Think of your computer’s file system as a tree</li>
-</ul>
-
-<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch" width="1238"></section>
-<section id="the-root" class="slide level2">
-<h2>The root</h2>
-<p>The <em>root directory</em> is the start or base of your file system.</p>
-<div>
-<ul>
-<li class="fragment">On Windows, the root is <code>C:/</code></li>
-<li class="fragment">On macOS and Linux, the root is <code>/</code></li>
-</ul>
-</div>
-</section>
-<section id="your-home-directory" class="slide level2">
-<h2>Your home directory</h2>
-<p>When interacting with your computer, you are logged in as a <em>user</em>. Each user has a <em>home directory</em>.</p>
-<p>For example:</p>
-<div>
-<ul>
-<li class="fragment">On Windows, <code>C:/Users/Sarah</code></li>
-<li class="fragment">On macOS and Linux, <code>/home/sarah</code></li>
-</ul>
-</div>
-</section>
-<section id="your-home-directory-1" class="slide level2">
-<h2>Your home directory</h2>
-<p>It is often easier to use a shortcut to access your home directory: <code>~</code>. On Windows, macOS, and Linux, you can use <code>~</code> to access your home directory:</p>
-<ul>
-<li><code>~</code> is equivalent to <code>C:/Users/Sarah</code> and <code>/home/sarah</code></li>
-</ul>
-</section>
-<section id="paths" class="slide level2">
-<h2>Paths</h2>
-<p><code>C:/Users/Sarah</code> and <code>/home/sarah</code> are examples of <em>paths</em>. In particular, these are paths to Sarah’s home directory.</p>
-
-<img data-src="figs/path.jpg" class="quarto-figure quarto-figure-center r-stretch" width="600"></section>
-<section id="paths-1" class="slide level2">
-<h2>Paths</h2>
-<div>
-<ul>
-<li class="fragment">Paths specify the location of a file or folder on your computer, let’s look at a few examples:
-<ul>
-<li class="fragment"><code>/</code></li>
-<li class="fragment"><code>/home/sarah</code></li>
-<li class="fragment"><code>/home/sarah/Desktop</code></li>
-<li class="fragment"><code>/home/sarah/Documents/for128/lab_01.qmd</code></li>
-<li class="fragment"><code>~/Documents/for128/lab_01.qmd</code></li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="paths-2" class="slide level2">
-<h2>Paths</h2>
-<ul>
-<li>Equivalent paths, on Windows:
-<ul>
-<li><code>C:/</code></li>
-<li><code>C:/Users/Sarah</code></li>
-<li><code>C:/Users/Sarah/Desktop</code></li>
-<li><code>C:/Users/Sarah/Documents/for128/lab_01.qmd</code></li>
-<li><code>~/Documents/for128/lab_01.qmd</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="relative-vs.-absolute-paths" class="slide level2">
-<h2>Relative vs.&nbsp;absolute paths</h2>
-<div>
-<ul>
-<li class="fragment">So far, we’ve only shown <em>absolute paths</em>.</li>
-<li class="fragment">Absolute paths show a file or folder in reference to your computer’s file system.</li>
-<li class="fragment"><em>Relative paths</em>, on the other hand, show a file or folder in relation to a <em>working directory</em>.</li>
-</ul>
-</div>
-</section>
-<section id="working-directory-example" class="slide level2">
-<h2>Working directory example</h2>
-<div>
-<ul>
-<li class="fragment">Recall the absolute path to <code>lab_01.qmd</code>:
-<ul>
-<li class="fragment"><code>/home/sarah/Documents/for128/lab_01.qmd</code></li>
-</ul></li>
-<li class="fragment">Say our working directory is the documents folder:
-<ul>
-<li class="fragment"><code>/home/sarah/Documents</code></li>
-</ul></li>
-<li class="fragment">Then the relative path to <code>lab_01.qmd</code> is:
-<ul>
-<li class="fragment"><code>for128/lab_01.qmd</code></li>
-</ul></li>
-</ul>
-</div>
-</section></section>
-<section>
-<section id="working-directories-in-quarto-and-r-demo" class="title-slide slide level1 center">
-<h1>Working directories in Quarto and <code>R</code> demo</h1>
-
-</section>
-<section id="what-have-we-learned" class="slide level2">
-<h2>What have we learned?</h2>
-<ul>
-<li>In Quarto, the default working directory is the folder where the quarto document lives.
-<ul>
-<li>Crucial note: this may be different than the working directory in your R console.</li>
-</ul></li>
-<li>You can set your working directory in <code>R</code> with <code>setwd()</code></li>
-<li>You can get your current working directory in <code>R</code> with <code>getwd()</code></li>
-</ul>
-</section>
-<section id="next-time" class="slide level2">
-<h2>Next time</h2>
-<ul>
-<li>Remember, <strong>lab 1 is due tomorrow at 5pm on D2L</strong>.</li>
-<li>File and folder naming conventions.</li>
-<li>Reading and writing data.</li>
-</ul>
+<section id="quiz-r-countdowncountdown15" class="title-slide slide level1 center">
+<h1>Quiz <code>r countdown::countdown(15)</code></h1>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
@@ -818,44 +564,6 @@ Practical Computing and Data Science Tools
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
