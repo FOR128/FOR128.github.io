@@ -579,26 +579,49 @@ Practical Computing and Data Science Tools
 </div>
 </section></section>
 <section>
+<section id="use-relative-not-absolute-paths" class="title-slide slide level1 center">
+<h1>Use relative (not absolute) paths!</h1>
+
+</section>
+<section id="why" class="slide level2">
+<h2>Why?</h2>
+<div>
+<ul>
+<li class="fragment">Reproducibility!
+<ul>
+<li class="fragment">They will work on <strong>any</strong> computer, not just your own.</li>
+</ul></li>
+<li class="fragment">Clear and concise.</li>
+<li class="fragment">But really, reproducibility.</li>
+</ul>
+</div>
+</section></section>
+<section>
 <section id="working-directories-in-quarto-and-r-demo" class="title-slide slide level1 center">
 <h1>Working directories in Quarto and <code>R</code> demo</h1>
 
 </section>
 <section id="what-have-we-learned" class="slide level2">
 <h2>What have we learned?</h2>
+<div>
 <ul>
-<li>In Quarto, the default working directory is the folder where the quarto document lives.
+<li class="fragment">In Quarto, the default working directory is the folder where the quarto document lives.
 <ul>
-<li>Crucial note: this may be different than the working directory in your R console.</li>
+<li class="fragment">Crucial note: this may be different than the working directory in your R console.</li>
 </ul></li>
-<li>You can set your working directory in <code>R</code> with <code>setwd()</code></li>
-<li>You can get your current working directory in <code>R</code> with <code>getwd()</code></li>
+<li class="fragment">You can set your working directory in <code>R</code> with <code>setwd()</code>
+<ul>
+<li class="fragment">Just for your <code>R</code> console, though. This does not apply to Quarto documents.</li>
+</ul></li>
+<li class="fragment">You can get your current working directory in <code>R</code> with <code>getwd()</code></li>
 </ul>
+</div>
 </section>
 <section id="next-time" class="slide level2">
 <h2>Next time</h2>
 <ul>
 <li>Remember, <strong>lab 1 is due tomorrow at 5pm on D2L</strong>.</li>
-<li>File and folder naming conventions.</li>
+<li>RStudio projects.</li>
 <li>Reading and writing data.</li>
 </ul>
 

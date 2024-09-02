@@ -277,19 +277,38 @@ knitr::include_graphics("figs/path.jpg")
     
 :::
 
+# Use relative (not absolute) paths!
+
+## Why? 
+
+::: incremental
+
+-   Reproducibility!
+    - They will work on **any** computer, not just your own.
+-   Clear and concise. 
+-   But really, reproducibility.
+
+:::
+    
+
 # Working directories in Quarto and `R` demo
 
 ## What have we learned? 
 
+::: incremental
+
 -   In Quarto, the default working directory is the folder where the quarto document lives. 
     - Crucial note: this may be different than the working directory in your R console. 
 -   You can set your working directory in `R` with `setwd()`
+    - Just for your `R` console, though. This does not apply to Quarto documents. 
 -   You can get your current working directory in `R` with `getwd()`
+
+:::
 
 ## Next time
 
 -   Remember, **lab 1 is due tomorrow at 5pm on D2L**. 
--   File and folder naming conventions.
+-   RStudio projects.
 -   Reading and writing data.
 
 

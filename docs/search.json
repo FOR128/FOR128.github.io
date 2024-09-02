@@ -315,18 +315,25 @@
     "text": "Working directory example\n\n\nRecall the absolute path to lab_01.qmd:\n\n/home/sarah/Documents/for128/lab_01.qmd\n\nSay our working directory is the documents folder:\n\n/home/sarah/Documents\n\nThen the relative path to lab_01.qmd is:\n\nfor128/lab_01.qmd"
   },
   {
+    "objectID": "slides/w2d1.html#why",
+    "href": "slides/w2d1.html#why",
+    "title": "Intro to Practical Computing",
+    "section": "Why?",
+    "text": "Why?\n\n\nReproducibility!\n\nThey will work on any computer, not just your own.\n\nClear and concise.\nBut really, reproducibility."
+  },
+  {
     "objectID": "slides/w2d1.html#what-have-we-learned",
     "href": "slides/w2d1.html#what-have-we-learned",
     "title": "Intro to Practical Computing",
     "section": "What have we learned?",
-    "text": "What have we learned?\n\nIn Quarto, the default working directory is the folder where the quarto document lives.\n\nCrucial note: this may be different than the working directory in your R console.\n\nYou can set your working directory in R with setwd()\nYou can get your current working directory in R with getwd()"
+    "text": "What have we learned?\n\n\nIn Quarto, the default working directory is the folder where the quarto document lives.\n\nCrucial note: this may be different than the working directory in your R console.\n\nYou can set your working directory in R with setwd()\n\nJust for your R console, though. This does not apply to Quarto documents.\n\nYou can get your current working directory in R with getwd()"
   },
   {
     "objectID": "slides/w2d1.html#next-time",
     "href": "slides/w2d1.html#next-time",
     "title": "Intro to Practical Computing",
     "section": "Next time",
-    "text": "Next time\n\nRemember, lab 1 is due tomorrow at 5pm on D2L.\nFile and folder naming conventions.\nReading and writing data."
+    "text": "Next time\n\nRemember, lab 1 is due tomorrow at 5pm on D2L.\nRStudio projects.\nReading and writing data."
   },
   {
     "objectID": "tickets/ticket_03.html",
@@ -413,18 +420,18 @@
     "text": "AI Policy for FOR 128\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Practical Computing   and Data Science Tools",
+    "objectID": "recordings.html",
+    "href": "recordings.html",
+    "title": "Lecture Recordings",
     "section": "",
-    "text": "For 128 Michigan State University\nFall 2024\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here."
   },
   {
-    "objectID": "index.html#week-1-august-25---31",
-    "href": "index.html#week-1-august-25---31",
-    "title": "Practical Computing   and Data Science Tools",
+    "objectID": "recordings.html#recordings",
+    "href": "recordings.html#recordings",
+    "title": "Lecture Recordings",
     "section": "",
-    "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here."
   },
   {
     "objectID": "assignments.html",
@@ -448,18 +455,18 @@
     "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)"
   },
   {
-    "objectID": "recordings.html",
-    "href": "recordings.html",
-    "title": "Lecture Recordings",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Practical Computing   and Data Science Tools",
     "section": "",
-    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here."
+    "text": "For 128 Michigan State University\nFall 2024\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
   },
   {
-    "objectID": "recordings.html#recordings",
-    "href": "recordings.html#recordings",
-    "title": "Lecture Recordings",
+    "objectID": "index.html#week-1-august-25---31",
+    "href": "index.html#week-1-august-25---31",
+    "title": "Practical Computing   and Data Science Tools",
     "section": "",
-    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here."
+    "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
   },
   {
     "objectID": "slides/w2d2.html#agenda",

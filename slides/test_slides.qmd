@@ -1,6 +1,0 @@
----
-title: "test slides"
-format: revealjs
----
-
-This is an example of a slidedeck. 
