@@ -4,6 +4,7 @@ project:
   render:
     - "*.qmd"
     - "!labs/*.qmd"
+    - "!quizzes/"
 
 website:
   title: "FOR 128"

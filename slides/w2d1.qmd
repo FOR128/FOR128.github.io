@@ -1,0 +1,304 @@
+---
+title: "Intro to Practical Computing"
+editor: 
+  mode: source
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+---
+
+## Agenda
+
+-   Review
+-   Files and directories
+-   Naming best practices
+-   Quiz
+
+## Last week
+
+-   Syllabus
+-   Lab 1
+-   Tools for the course: `R`, RStudio, and Quarto
+
+## Syllabus
+
+::: incremental
+
+-   Recall lecture tickets are due in person at the beginning of lecture.  
+-   Course late policy has been added to online version.
+-   Let's quickly review the late policy.
+
+:::
+
+# [www.for128.org/syllabus.html](https://for128.org/syllabus.html)
+
+## Lab 1
+
+::: incremental
+
+-   If you're having troubles, technical or otherwise, come to office hours. 
+-   Make sure to turn in (.pdf and .qmd) to D2L by 5pm on Wednesday (tomorrow).
+
+:::
+
+## Data Science Tools
+
+::: incremental
+
+-   `R` is a programming language.
+-   RStudio is an IDE (what we use to interact with `R` and our computer).
+-   Quarto is a markdown language, for writing reports. 
+
+:::
+
+---
+
+::: incremental
+
+-   You, the chef
+
+:::
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/chef.jpg")
+```
+
+::: footer
+Image credit: The Culinary School of Fort Worth
+:::
+
+---
+
+::: incremental
+
+-   `R`, the ingredients
+
+:::
+
+
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/ingredients.jpg")
+```
+
+::: footer
+Image credit: foodandwine.com 
+:::
+
+---
+
+::: incremental
+
+-   RStudio, your kitchen
+
+:::
+
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/kitchen.jpg")
+```
+
+::: footer
+Image credit: Country living magazine
+:::
+
+---
+
+::: incremental
+
+-   Quarto, the plated final product
+
+:::
+
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/plated.jpg")
+```
+
+::: footer
+Image credit: budgetbytes.com
+:::
+
+# Practical computing
+
+## Practical computing
+
+::: incremental
+
+-   Understanding your computer and its file system is vital to success in this class and beyond. 
+
+-   Last week, we threw you into the deep end with data science tools.
+
+-   This week, we'll spend a bit more time on the details to help you interact with your computer and these tools.
+
+-   Today, we'll focus on file systems and file/folder naming.
+
+:::
+
+## Naming files and folders
+
+Some best practices are important for naming files and folders: 
+
+::: incremental
+
+-   Use consistent casing:
+    - delimiter naming, e.g. `lab_01.qmd` or `cat_pictures`
+    - camel case, e.g., `finalProjectMaterials.qmd` or `catPictures`
+-   Name your files and folders clearly, concisely, and informatively:
+    - Good: `for128_f24`
+    - Bad: `my_work_for_forestry128_in_fall_2024`
+    - Really bad: `myWorkFor_forestry128_inFall_2024`
+    
+:::
+
+
+## File systems / directories
+
+::: incremental
+
+-   Every time you create or download a file, you are storing it *somewhere* in your computer's file system. 
+-   *But where?* `r emo::ji("thinking")`
+
+:::
+
+## File systems / directories
+
+-   Think of your computer's file system as a tree
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/directory-example.png")
+```
+
+## The root
+
+The *root directory* is the start or base of your file system.
+
+::: incremental
+
+-   On Windows, the root is `C:/`
+-   On macOS and Linux, the root is `/`
+
+:::
+
+## Your home directory
+
+When interacting with your computer, you are logged in as a *user*. Each user has a *home directory*.
+
+For example:
+
+::: incremental
+
+-   On Windows, `C:/Users/Sarah`
+-   On macOS and Linux, `/home/sarah`
+
+:::
+
+## Your home directory
+
+It is often easier to use a shortcut to access your home directory: `~`. On Windows, macOS, and Linux, you can use `~` to access your home directory:
+
+-   `~` is equivalent to `C:/Users/Sarah` and `/home/sarah`
+
+
+
+## Paths
+
+`C:/Users/Sarah` and `/home/sarah` are examples of *paths*. In particular, these are paths to Sarah's home directory. 
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/path.jpg")
+```
+
+## Paths
+
+::: incremental
+
+-   Paths specify the location of a file or folder on your computer, let's look at a few examples:
+    -   `/`
+    -   `/home/sarah`
+    -   `/home/sarah/Desktop`
+    -   `/home/sarah/Documents/for128/lab_01.qmd`
+    -   `~/Documents/for128/lab_01.qmd`
+
+:::
+
+## Paths
+
+-   Equivalent paths, on Windows:
+    -   `C:/`
+    -   `C:/Users/Sarah`
+    -   `C:/Users/Sarah/Desktop`
+    -   `C:/Users/Sarah/Documents/for128/lab_01.qmd`
+    -   `~/Documents/for128/lab_01.qmd`
+    
+## Relative vs. absolute paths
+
+::: incremental
+
+-   So far, we've only shown *absolute paths*. 
+-   Absolute paths show a file or folder in reference to your computer's file system.
+-   *Relative paths*, on the other hand, show a file or folder in relation to a *working directory*.
+
+:::
+
+## Working directory example
+
+::: incremental
+
+-   Recall the absolute path to `lab_01.qmd`:
+    - `/home/sarah/Documents/for128/lab_01.qmd`
+
+-   Say our working directory is the documents folder: 
+    - `/home/sarah/Documents`
+
+-   Then the relative path to `lab_01.qmd` is:
+    - `for128/lab_01.qmd`
+    
+:::
+
+# Working directories in Quarto and `R` demo
+
+# Quiz `r countdown::countdown(15)`
+
+## Next time
+
+-   Remember, **lab 1 is due tomorrow at 5pm on D2L**. 
+-   File and folder naming conventions.
+-   Reading and writing data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

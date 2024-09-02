@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.5.56">
 
   <meta name="author" content="Practical Computing and Data Science Tools">
-  <title>FOR 128 – Welcome to FOR 128!</title>
+  <title>FOR 128 – Intro to Practical Computing</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -329,7 +329,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="../assets/for128-hex.png" data-background-position="50% 20%" data-background-size="20%" class="quarto-title-block center">
-  <h1 class="title">Welcome to FOR 128!</h1>
+  <h1 class="title">Intro to Practical Computing</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -343,265 +343,260 @@ Practical Computing and Data Science Tools
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ul>
-<li><p>Introductions</p></li>
-<li><p>Course goals</p></li>
-<li><p>Course expectations + syllabus</p></li>
-<li><p>Explore course website</p></li>
-<li><p>Preparing for Thursday</p></li>
+<li>Review</li>
+<li>Files and directories</li>
+<li>Naming best practices</li>
+<li>Quiz</li>
 </ul>
 </section>
-<section id="section" class="slide level2" data-background-image="figs/elephant.png" data-background-size="contain">
-<h2></h2>
-</section>
-<section id="engagement" class="slide level2">
-<h2>Engagement</h2>
-<div class="columns">
-<div class="column" style="width:=50%;">
+<section id="last-week" class="slide level2">
+<h2>Last week</h2>
 <ul>
-<li class="fragment"><p>It has become harder and harder to stay focused over the last decade given the massive rise in wearable and mobile technology.</p></li>
-<li class="fragment"><p>If you’ll be using a laptop to take notes, please avoid distractions to yourself and classmates by silencing notifications and avoiding checking emails, news, social media, etc.</p></li>
-<li class="fragment"><p>Please leave your phone on silent and put it somewhere where it won’t distract you.</p></li>
+<li>Syllabus</li>
+<li>Lab 1</li>
+<li>Tools for the course: <code>R</code>, RStudio, and Quarto</li>
 </ul>
-</div><div class="column" style="width:50%;">
-<div class="cell" data-layout-align="right">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-right">
-<figure>
-<p><img data-src="figs/elephant.png" class="quarto-figure quarto-figure-right" width="699"></p>
-</figure>
+</section>
+<section id="syllabus" class="slide level2">
+<h2>Syllabus</h2>
+<div>
+<ul>
+<li class="fragment">Recall lecture tickets are due in person at the beginning of lecture.<br>
+</li>
+<li class="fragment">Course late policy has been added to online version.</li>
+<li class="fragment">Let’s quickly review the late policy.</li>
+</ul>
 </div>
-</div>
-</div>
-</div></div>
 </section>
 <section>
-<section id="introductions" class="title-slide slide level1 center" data-background-color="#00817c">
-<h1>Introductions</h1>
-<p>In groups of ~3, introduce yourselves to each other.</p>
-<p>(name, hometown, major, favorite food, etc.)</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_b956886b" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
-</section>
-<section id="about-me" class="slide level2">
-<h2>About me</h2>
-<div>
-<ul>
-<li class="fragment"><p>I’m Grayson, a PhD student in Forestry.</p></li>
-<li class="fragment"><p>Before coming to Michigan State, I worked as a Data Scientist contracting for the USDA Forest Service.</p></li>
-<li class="fragment"><p>Before that, I majored in Mathematics &amp; Statistics at Reed College.</p></li>
-</ul>
-</div>
+<section id="www.for128.orgsyllabus.html" class="title-slide slide level1 center">
+<h1><a href="https://for128.org/syllabus.html">www.for128.org/syllabus.html</a></h1>
 
-<img data-src="figs/mymap.png" class="quarto-figure quarto-figure-center r-stretch" width="544"></section>
-<section id="about-me-1" class="slide level2">
-<h2>About me</h2>
+</section>
+<section id="lab-1" class="slide level2">
+<h2>Lab 1</h2>
 <div>
 <ul>
-<li class="fragment"><p>I ❤️ teaching, especially about Data Science + Forestry.</p></li>
-<li class="fragment"><p>In the past, I’ve co-directed a Forestry Data Science lab for undergraduates.</p></li>
+<li class="fragment">If you’re having troubles, technical or otherwise, come to office hours.</li>
+<li class="fragment">Make sure to turn in (.pdf and .qmd) to D2L by 5pm on Wednesday (tomorrow).</li>
 </ul>
 </div>
 </section>
-<section id="about-me-2" class="slide level2">
-<h2>About me</h2>
+<section id="data-science-tools" class="slide level2">
+<h2>Data Science Tools</h2>
+<div>
 <ul>
-<li><p>I ❤️ teaching, especially about Data Science + Forestry.</p></li>
-<li><p>In the past, I’ve co-directed a Forestry Data Science lab for undergraduates.</p></li>
+<li class="fragment"><code>R</code> is a programming language.</li>
+<li class="fragment">RStudio is an IDE (what we use to interact with <code>R</code> and our computer).</li>
+<li class="fragment">Quarto is a markdown language, for writing reports.</li>
 </ul>
+</div>
+</section>
+<section class="slide level2">
 
-<img data-src="figs/ufds.png" class="quarto-figure quarto-figure-center r-stretch" width="841"></section></section>
+<div>
+<ul>
+<li class="fragment">You, the chef</li>
+</ul>
+</div>
+
+<img data-src="figs/chef.jpg" class="quarto-figure quarto-figure-center r-stretch" width="540"><div class="footer">
+<p>Image credit: The Culinary School of Fort Worth</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div>
+<ul>
+<li class="fragment"><code>R</code>, the ingredients</li>
+</ul>
+</div>
+
+<img data-src="figs/ingredients.jpg" class="quarto-figure quarto-figure-center r-stretch" width="750"><div class="footer">
+<p>Image credit: foodandwine.com</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div>
+<ul>
+<li class="fragment">RStudio, your kitchen</li>
+</ul>
+</div>
+
+<img data-src="figs/kitchen.jpg" class="quarto-figure quarto-figure-center r-stretch" width="576"><div class="footer">
+<p>Image credit: Country living magazine</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div>
+<ul>
+<li class="fragment">Quarto, the plated final product</li>
+</ul>
+</div>
+
+<img data-src="figs/plated.jpg" class="quarto-figure quarto-figure-center r-stretch" width="400"><div class="footer">
+<p>Image credit: budgetbytes.com</p>
+</div>
+</section></section>
 <section>
-<section id="what-is-forestry-data-science" class="title-slide slide level1 center">
-<h1>What is (Forestry) Data Science?</h1>
+<section id="practical-computing" class="title-slide slide level1 center">
+<h1>Practical computing</h1>
 
 </section>
-<section class="slide level2">
-
-
-<img data-src="figs/Data_Science_VD.png" class="quarto-figure quarto-figure-center r-stretch" width="264"></section>
-<section class="slide level2">
-
-
-<img data-src="figs/datasciwiki.png" class="quarto-figure quarto-figure-center r-stretch" width="356"></section></section>
-<section>
-<section id="okay-but-really-what-is-forestry-data-science" class="title-slide slide level1 center">
-<h1>Okay, but really, what <em>is</em> (Forestry) Data Science?</h1>
-
-</section>
-<section class="slide level2">
-
-<ul>
-<li>Creating dashboards, like this <a href="https://ncasi-shiny-tools.shinyapps.io/Counties/">Forestry Data Science Dashboard</a></li>
-</ul>
-
-<img data-src="figs/dashboard.png" class="quarto-figure quarto-figure-center r-stretch" width="682"></section>
-<section class="slide level2">
-
-<ul>
-<li>Creating <code>R</code> packages, like <code>saeczi</code>, which an undergraduate wrote while doing Forestry Data Science research with me</li>
-</ul>
-
-<img data-src="figs/saeczi.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="path-to-forestry-data-science" class="slide level2">
-<h2>Path to Forestry Data Science</h2>
+<section id="practical-computing-1" class="slide level2">
+<h2>Practical computing</h2>
 <div>
 <ul>
-<li class="fragment"><p>Take this class and engage thoughtfully with the material. ✅</p></li>
-<li class="fragment"><p>Take FOR 372 (offered this spring) to gain more domain-specific statistical expertise.</p></li>
-<li class="fragment"><p>A wide variety of knowledge in statistics, computer science, and your domain field of expertise (forestry) is important.</p></li>
-<li class="fragment"><p>Engage in undergraduate research opportunities!</p></li>
+<li class="fragment"><p>Understanding your computer and its file system is vital to success in this class and beyond.</p></li>
+<li class="fragment"><p>Last week, we threw you into the deep end with data science tools.</p></li>
+<li class="fragment"><p>This week, we’ll spend a bit more time on the details to help you interact with your computer and these tools.</p></li>
+<li class="fragment"><p>Today, we’ll focus on file systems and file/folder naming.</p></li>
 </ul>
 </div>
 </section>
-<section id="course-goals" class="slide level2">
-<h2>Course goals</h2>
+<section id="naming-files-and-folders" class="slide level2">
+<h2>Naming files and folders</h2>
+<p>Some best practices are important for naming files and folders:</p>
 <div>
 <ul>
-<li class="fragment">Getting to know your computer and using it thoughtfully
+<li class="fragment">Use consistent casing:
 <ul>
-<li class="fragment">operating systems,</li>
-<li class="fragment">files,</li>
-<li class="fragment">directories,</li>
-<li class="fragment">good naming conventions,</li>
-<li class="fragment">file organization</li>
+<li class="fragment">delimiter naming, e.g.&nbsp;<code>lab_01.qmd</code> or <code>cat_pictures</code></li>
+<li class="fragment">camel case, e.g., <code>finalProjectMaterials.qmd</code> or <code>catPictures</code></li>
+</ul></li>
+<li class="fragment">Name your files and folders clearly, concisely, and informatively:
+<ul>
+<li class="fragment">Good: <code>for128_f24</code></li>
+<li class="fragment">Bad: <code>my_work_for_forestry128_in_fall_2024</code></li>
+<li class="fragment">Really bad: <code>myWorkFor_forestry128_inFall_2024</code></li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="course-goals-1" class="slide level2">
-<h2>Course goals</h2>
+<section id="file-systems-directories" class="slide level2">
+<h2>File systems / directories</h2>
 <div>
 <ul>
-<li class="fragment">Learn how to use a variety of data science tools with forestry applications
+<li class="fragment">Every time you create or download a file, you are storing it <em>somewhere</em> in your computer’s file system.</li>
+<li class="fragment"><em>But where?</em> 🤔</li>
+</ul>
+</div>
+</section>
+<section id="file-systems-directories-1" class="slide level2">
+<h2>File systems / directories</h2>
 <ul>
-<li class="fragment">The <code>R</code> programming language,</li>
-<li class="fragment">The RStudio IDE,</li>
-<li class="fragment">Quarto (for reproducible reports)</li>
+<li>Think of your computer’s file system as a tree</li>
+</ul>
+
+<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch" width="1238"></section>
+<section id="the-root" class="slide level2">
+<h2>The root</h2>
+<p>The <em>root directory</em> is the start or base of your file system.</p>
+<div>
+<ul>
+<li class="fragment">On Windows, the root is <code>C:/</code></li>
+<li class="fragment">On macOS and Linux, the root is <code>/</code></li>
+</ul>
+</div>
+</section>
+<section id="your-home-directory" class="slide level2">
+<h2>Your home directory</h2>
+<p>When interacting with your computer, you are logged in as a <em>user</em>. Each user has a <em>home directory</em>.</p>
+<p>For example:</p>
+<div>
+<ul>
+<li class="fragment">On Windows, <code>C:/Users/Sarah</code></li>
+<li class="fragment">On macOS and Linux, <code>/home/sarah</code></li>
+</ul>
+</div>
+</section>
+<section id="your-home-directory-1" class="slide level2">
+<h2>Your home directory</h2>
+<p>It is often easier to use a shortcut to access your home directory: <code>~</code>. On Windows, macOS, and Linux, you can use <code>~</code> to access your home directory:</p>
+<ul>
+<li><code>~</code> is equivalent to <code>C:/Users/Sarah</code> and <code>/home/sarah</code></li>
+</ul>
+</section>
+<section id="paths" class="slide level2">
+<h2>Paths</h2>
+<p><code>C:/Users/Sarah</code> and <code>/home/sarah</code> are examples of <em>paths</em>. In particular, these are paths to Sarah’s home directory.</p>
+
+<img data-src="figs/path.jpg" class="quarto-figure quarto-figure-center r-stretch" width="600"></section>
+<section id="paths-1" class="slide level2">
+<h2>Paths</h2>
+<div>
+<ul>
+<li class="fragment">Paths specify the location of a file or folder on your computer, let’s look at a few examples:
+<ul>
+<li class="fragment"><code>/</code></li>
+<li class="fragment"><code>/home/sarah</code></li>
+<li class="fragment"><code>/home/sarah/Desktop</code></li>
+<li class="fragment"><code>/home/sarah/Documents/for128/lab_01.qmd</code></li>
+<li class="fragment"><code>~/Documents/for128/lab_01.qmd</code></li>
 </ul></li>
-<li class="fragment">Learn extensive <code>R</code> programming skills
+</ul>
+</div>
+</section>
+<section id="paths-2" class="slide level2">
+<h2>Paths</h2>
 <ul>
-<li class="fragment">base <code>R</code> and <code>tidyverse</code> approaches</li>
-<li class="fragment">data structures</li>
-<li class="fragment">custom functions</li>
-<li class="fragment">data wrangling &amp; reshaping</li>
-<li class="fragment">beautiful plots with <code>ggplot2</code></li>
+<li>Equivalent paths, on Windows:
+<ul>
+<li><code>C:/</code></li>
+<li><code>C:/Users/Sarah</code></li>
+<li><code>C:/Users/Sarah/Desktop</code></li>
+<li><code>C:/Users/Sarah/Documents/for128/lab_01.qmd</code></li>
+<li><code>~/Documents/for128/lab_01.qmd</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="relative-vs.-absolute-paths" class="slide level2">
+<h2>Relative vs.&nbsp;absolute paths</h2>
+<div>
+<ul>
+<li class="fragment">So far, we’ve only shown <em>absolute paths</em>.</li>
+<li class="fragment">Absolute paths show a file or folder in reference to your computer’s file system.</li>
+<li class="fragment"><em>Relative paths</em>, on the other hand, show a file or folder in relation to a <em>working directory</em>.</li>
+</ul>
+</div>
+</section>
+<section id="working-directory-example" class="slide level2">
+<h2>Working directory example</h2>
+<div>
+<ul>
+<li class="fragment">Recall the absolute path to <code>lab_01.qmd</code>:
+<ul>
+<li class="fragment"><code>/home/sarah/Documents/for128/lab_01.qmd</code></li>
+</ul></li>
+<li class="fragment">Say our working directory is the documents folder:
+<ul>
+<li class="fragment"><code>/home/sarah/Documents</code></li>
+</ul></li>
+<li class="fragment">Then the relative path to <code>lab_01.qmd</code> is:
+<ul>
+<li class="fragment"><code>for128/lab_01.qmd</code></li>
 </ul></li>
 </ul>
 </div>
 </section></section>
-<section>
-<section id="course-expectations-lets-review-the-syllabus" class="title-slide slide level1 center" data-background-color="#00817c">
-<h1>Course expectations: let’s review the syllabus</h1>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_8d1bfbf7" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
-</section>
-<section id="syllabus-materials" class="slide level2">
-<h2>Syllabus: Materials</h2>
-<h3 id="textbook-ifdar">Textbook: IFDAR</h3>
-<p>Introduction to Forestry Data Analysis with R, by Andrew O. Finley and Jeffrey W. Doser. <em>Available free, online:</em> <a href="https://www.finley-lab.com/files/ifdar/">www.finley-lab.com/files/ifdar/</a></p>
-<h3 id="technologies-r-rstudio-a-laptop">Technologies: <code>R</code>, RStudio, a laptop</h3>
-<p>R is a free and open source programming language, and RStudio is an Integrated Development Environment (IDE) which allows for streamlined use of the R programming language. Both are free to install, and installation instructions will be provided in this course. A laptop that can run R and RStudio is required for this course.</p>
-</section>
-<section id="syllabus-meetings" class="slide level2">
-<h2>Syllabus: Meetings</h2>
-
-<img data-src="figs/schedule.png" width="634" class="r-stretch"></section>
-<section id="syllabus-assessments" class="slide level2">
-<h2>Syllabus: Assessments</h2>
-<div>
-<ul>
-<li class="fragment">Lab reports (40%)
-<ul>
-<li class="fragment">Lab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on <a href="https://d2l.msu.edu">D2L</a>. We will have a lab each week (except for the week of the midterm exam).</li>
-</ul></li>
-<li class="fragment">Midterm Exams (20%)
-<ul>
-<li class="fragment">There will be two midterm exams, one on week 6 and one on week 12. Each midterm is worth 10% of the final grade.</li>
-</ul></li>
-<li class="fragment">In-class quizzes (15%)
-<ul>
-<li class="fragment">In-class quizzes do not have a regular schedule and will occur based on the material we get through.</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="syllabus-assessments-1" class="slide level2">
-<h2>Syllabus: Assessments</h2>
-<div>
-<ul>
-<li class="fragment">Lecture tickets (10%)
-<ul>
-<li class="fragment">Lecture tickets are due at the beginning of every lecture, handed in in-person, by you.</li>
-</ul></li>
-<li class="fragment">Final Project (15%)
-<ul>
-<li class="fragment">The details of the final project will be discussed as the semester goes on.</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="syllabus-collaboration" class="slide level2">
-<h2>Syllabus: Collaboration</h2>
-<div>
-<ul>
-<li class="fragment">Working with classmates on labs and lecture tickets is perfectly acceptable.</li>
-<li class="fragment">However, please cite your collaborator(s) at the top of your assignment.</li>
-<li class="fragment">Collaboration on exams and quizzes is strictly prohibited.</li>
-<li class="fragment">But what <em>is</em> collaboration?</li>
-</ul>
-</div>
-</section>
-<section id="section-1" class="slide level2" data-background-image="figs/elephant.png" data-background-size="contain">
-<h2></h2>
-</section>
-<section id="artificial-intelligence-ai" class="slide level2">
-<h2>Artificial Intelligence (AI)</h2>
-<div class="columns">
-<div class="column" style="width:=50%;">
-<ul>
-<li class="fragment"><p>“…a key goal of this course is for you to learn how to <strong>thoughtfully, ethically, and independently</strong> write code and extract knowledge from data”</p></li>
-<li class="fragment"><p>AI tools are being used by others to <em>write code</em>, but as Data Scientists, we must write code <em>responsibly</em></p></li>
-<li class="fragment"><p>At this stage of learning how to code, AI tools inhibit learning and understanding.</p></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="cell" data-layout-align="right">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-right">
-<figure>
-<p><img data-src="figs/elephant.png" class="quarto-figure quarto-figure-right" width="699"></p>
-</figure>
-</div>
-</div>
-</div>
-</div></div>
-</section></section>
-<section id="syllabus-questions" class="title-slide slide level1 center" data-background-color="#00817c">
-<h1>Syllabus: Questions?</h1>
+<section id="working-directories-in-quarto-and-r-demo" class="title-slide slide level1 center">
+<h1>Working directories in Quarto and <code>R</code> demo</h1>
 
 </section>
 
 <section>
-<section id="www.for128.org" class="title-slide slide level1 center">
-<h1><a href="https://www.for128.org">www.for128.org</a></h1>
+<section id="quiz" class="title-slide slide level1 center">
+<h1>Quiz <div class="countdown" id="timer_ccb1ae0d" data-update-every="1" tabindex="0" style="right:0;bottom:0;"> <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div> <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code> </div></h1>
 
 </section>
 <section id="next-time" class="slide level2">
-<h2>Next time:</h2>
+<h2>Next time</h2>
 <ul>
-<li><p>Come to class with a laptop</p></li>
-<li><p>Complete Lecture Ticket 1 before lecture on Thursday.</p></li>
+<li>Remember, <strong>lab 1 is due tomorrow at 5pm on D2L</strong>.</li>
+<li>File and folder naming conventions.</li>
+<li>Reading and writing data.</li>
 </ul>
 
 <div class="quarto-auto-generated-content">
