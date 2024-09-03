@@ -1,0 +1,82 @@
+---
+title: "a nice title"
+subtitle: "FOR 128: Lab 2"
+author: "Insert Your Name Here"
+date: "9/5/2024"
+format:
+  pdf: default
+editor: 
+  mode: source
+---
+
+## Welcome
+
+Welcome to Lab 2! Today, we'll do XYZ
+
+### Learning objectives
+
+-   bullet points
+
+### Deliverables (i.e., what to put in the lab drop box)
+
+Upload your rendered PDF (`lab_02.pdf`) **and** Quarto (`lab_02.qmd`) document to the lab drop box. Make sure the Quarto document properly renders to PDF.
+
+### Collaborator(s)
+
+List any collaborators you worked with in the space below. 
+
+------------------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------------------
+
+# Part 1: section title
+
+## Exercise 1
+
+exercise text
+
+
+------------------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------------------
+
+## Exercise 2
+
+exercise text
+
+------------------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------------------
+
+
+# Part 2: section title
+
+## Exercise 4
+
+Do Exercise XYZ from IFDAR in the following code chunk.
+
+------------------------------------------------------------------------
+
+```{r}
+# put your code on the following line
+
+```
+
+------------------------------------------------------------------------
+
+
+# Wrap up
+
+Congratulations! You've made it to the end of Lab 1. Make sure to render your final document and submit both the .pdf and .qmd file to D2L.

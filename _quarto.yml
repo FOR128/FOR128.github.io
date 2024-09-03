@@ -28,6 +28,8 @@ website:
             text: "Week 1 Day 1"
           - href: slides/w1d2.qmd
             text: "Week 1 Day 2"
+          - href: slides/w2d1.qmd
+            text: "Week 2 Day 1"
       - href: assignments.qmd
         text: Assignments
       - href: recordings.qmd
