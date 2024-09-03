@@ -8,9 +8,17 @@ editor:
 
 Read the following sections of IFDAR.
 
--   
+-   Finish Chapter 3
 
 
 ## Questions
 
-1. What does the `install.packages()` function do? What about `library()`? How are they different? 
+1. What function is used to set a working directory in R? How about to get your current working directory?
+
+2. What is the difference between a relative and absolute path? 
+
+3. Consider the following absolute path: 
+
+`/home/grayson/courses/for128/lab_01.qmd`
+
+If the working directory is `/home/grayson/courses/`, what is the relative path to `lab_01.qmd`?  

@@ -340,21 +340,21 @@
     "href": "tickets/ticket_03.html",
     "title": "Lecture Ticket 3",
     "section": "",
-    "text": "Read the following sections of IFDAR."
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 3"
   },
   {
     "objectID": "tickets/ticket_03.html#reading",
     "href": "tickets/ticket_03.html#reading",
     "title": "Lecture Ticket 3",
     "section": "",
-    "text": "Read the following sections of IFDAR."
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 3"
   },
   {
     "objectID": "tickets/ticket_03.html#questions",
     "href": "tickets/ticket_03.html#questions",
     "title": "Lecture Ticket 3",
     "section": "Questions",
-    "text": "Questions\n\nWhat does the install.packages() function do? What about library()? How are they different?"
+    "text": "Questions\n\nWhat function is used to set a working directory in R? How about to get your current working directory?\nWhat is the difference between a relative and absolute path?\nConsider the following absolute path:\n\n/home/grayson/courses/for128/lab_01.qmd\nIf the working directory is /home/grayson/courses/, what is the relative path to lab_01.qmd?"
   },
   {
     "objectID": "syllabus.html",
@@ -452,7 +452,7 @@
     "href": "assignments.html#lecture-tickets",
     "title": "Assignments",
     "section": "Lecture Tickets",
-    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)"
+    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)\n\n\nLecture ticket 3\nTuesday 9/3 (by 5pm)\nThursday 9/5 (in lecture)"
   },
   {
     "objectID": "index.html",

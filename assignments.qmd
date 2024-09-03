@@ -22,3 +22,5 @@ Lecture tickets are turned in on a piece of paper in-person at lecture.
 |-------------------------------------------|-----------------------|----------------------------|
 | [Lecture ticket 1](tickets/ticket_01.qmd) | Tuesday 8/27 (by 5pm) | Thursday 8/29 (in lecture) |
 | [Lecture ticket 2](tickets/ticket_02.qmd) | Thursday 8/29 (by 5pm)| Tuesday 9/3 (in lecture)   |
+| [Lecture ticket 3](tickets/ticket_03.qmd) | Tuesday  9/3 (by 5pm) | Thursday 9/5 (in lecture)  |
+
