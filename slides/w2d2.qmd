@@ -25,8 +25,359 @@ format:
 
 ## Agenda
 
--   Quiz
+-   Quiz 1 review
+-   Navigating your computer
 -   Reading and writing data
 
-# Quiz `r countdown::countdown(15)`
+# Quiz Review {background-color="#00817c"}
+
+# Navigating your computer {background-color="#00817c"}
+
+## Recall your computer's file system
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/directory-example.png")
+```
+
+
+## What is the root directory?
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/directory-example.png")
+```
+
+## What is the root directory?
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/directory-example.png")
+```
+
+### `C:/`
+
+## What is the home directory?
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/directory-example.png")
+```
+
+## What is the home directory?
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/directory-example.png")
+```
+
+### `C:/Users/Sarah`
+
+## How do we specify the absolute path to `File_1.csv`?
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/directory-example.png")
+```
+
+---
+
+## How do we specify the absolute path to `File_1.csv`?
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/directory-example.png")
+```
+
+### `C:/Users/Sarah/Archive/Data/File_1.csv`
+
+## How do we specify the relative path to `File_1.csv`, if Sarah's home directory is her working directory? 
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/directory-example.png")
+```
+
+## How do we specify the relative path to `File_1.csv`, if Sarah's home directory is her working directory? 
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/directory-example.png")
+```
+
+### `Archive/Data/File_1.csv`
+
+
+## How do we specify the relative path to `File_1.csv`, if Sarah's home directory is  `C:/Users/Sarah/Documents`?
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/directory-example.png")
+```
+
+## How do we specify the relative path to `File_1.csv`, if Sarah's home directory is  `C:/Users/Sarah/Documents`?
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/directory-example.png")
+```
+
+### `../Archive/Data/File_1.csv`
+
+## What's going on with those two dots? (`../`)
+
+::: incremental
+
+-   Using `..` in a file path means "go back a level"
+-   Example: Say I want to access a file on my desktop:
+    - `/home/grayson/Desktop/important_file.pdf`
+-   But, my working directory is as follows:
+    - `/home/grayson/courses/for128`
+-   The relative path to the important file on my desktop is then: 
+    - `../../Desktop/important_file.pdf`
+
+:::
+
+## Now consider a different computer
+
+::: incremental
+
+-   We have an absolute path to `lab_01.qmd`:
+    - `/home/elliot/Documents/for128/lab_01.qmd`
+    
+-   What operating system might Elliot be using? 
+
+-   Say Elliot is using the following working directory: 
+    - `/home/elliot/Documents`
+
+-   What is the relative path to `lab_01.qmd`?
+    - `for128/lab_01.qmd`
+    
+:::
+
+# Reading and writing data {background-color="#00817c"}
+
+## Reading data
+
+In this course, we'll focus on reading 2-dimensional data (things that look like spreadsheets) into `R`.
+
+## Reading data
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/data-raw.png")
+```
+
+## Reading data
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/data-rstudio.png")
+```
+
+## Reading data
+
+`R` includes a variety of functions for reading data efficiently. One of the most common is `read.csv()`. 
+
+## Reading data
+
+`R` includes a variety of functions for reading data efficiently. One of the most common is `read.csv()`. 
+
+To read data, we first may want to check our working directory: 
+
+```{r}
+#| echo: true
+getwd()
+```
+
+## Reading data
+
+`R` includes a variety of functions for reading data efficiently. One of the most common is `read.csv()`. 
+
+To read data, we first may want to check our working directory: 
+
+```{r}
+#| echo: true
+getwd()
+```
+
+Then we can find the datasets folder. I've kept mine with my labs: 
+
+```{r}
+#| echo: true
+list.files("../labs/")
+```
+
+## Reading data
+
+`R` includes a variety of functions for reading data efficiently. One of the most common is `read.csv()`. 
+
+To read data, we first may want to check our working directory: 
+
+```{r}
+#| echo: true
+getwd()
+```
+
+Then we can find the datasets folder. I've kept mine with my labs: 
+
+```{r}
+#| echo: true
+list.files("../labs/")
+```
+
+Now, given our working directory and datasets location, we specify a relative path and load in the data: 
+
+```{r}
+#| echo: true
+fef <- read.csv(file = "../labs/datasets/FEF_trees.csv")
+```
+
+## Reading data
+
+We can take a look at our dataset in `R`: 
+
+```{r}
+#| echo: true
+nrow(fef) # number of rows
+ncol(fef) # number of columns
+head(fef) # first few rows
+```
+
+## Reading data
+
+`read.csv()` reads comma separated value (csv) files, but `R` has the ability to read a massive variety of file types:
+
+::: incremental
+
+-   `read.table()` allows you to read file types with different separators like tabs and spaces, rather than just commas. 
+
+:::
+
+## Reading data
+
+If we wanted to use `read.table()` to load in `FEF_trees.csv`, we would run the following code:
+
+```{r}
+#| echo: true
+fef <- read.table(file = "../labs/datasets/FEF_trees.csv",
+                  header = TRUE,
+                  sep = ",")
+```
+
+## Reading data
+
+If we wanted to use `read.table()` to load in `FEF_trees.csv`, we would run the following code:
+
+```{r}
+#| code-line-numbers: "2"
+#| echo: true
+fef <- read.table(file = "../labs/datasets/FEF_trees.csv",
+                  header = TRUE,
+                  sep = ",")
+```
+
+## Reading data
+
+If we wanted to use `read.table()` to load in `FEF_trees.csv`, we would run the following code:
+
+```{r}
+#| code-line-numbers: "3"
+#| echo: true
+fef <- read.table(file = "../labs/datasets/FEF_trees.csv",
+                  header = TRUE,
+                  sep = ",")
+```
+
+## Reading data: tab separated
+
+We also have the file `FEF_trees.tsv`, which looks a bit different than `FEF_trees.csv`.
+
+## `FEF_trees.csv`
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/data-raw.png")
+```
+
+## `FEF_trees.tsv`
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/data-tsv.png")
+```
+
+## Reading `FEF_trees.tsv` into `R`
+
+```{r}
+#| echo: true
+fef <- read.table(file = "../labs/datasets/FEF_trees.tsv",
+                  header = TRUE,
+                  sep = "\t")
+```
+
+## Reading `FEF_trees.tsv` into `R`
+
+```{r}
+#| echo: true
+#| code-line-numbers: "3"
+fef <- read.table(file = "../labs/datasets/FEF_trees.tsv",
+                  header = TRUE,
+                  sep = "\t")
+```
+
+## Writing data
+
+::: incremental
+
+-   Similar to `read.csv()` and `read.table()`, `R` includes `write.csv()` and `write.table()` functions. 
+
+-   These functions allow you to create (or "write") your own files with an R object. 
+
+-   Let's take a look!
+
+:::
+
+## Writing data
+
+First, we look at the files in my "labs" folder
+
+```{r}
+#| echo: true
+list.files("../labs")
+```
+
+Next, we can write the `fef` object to a .csv file.
+
+```{r}
+#| echo: true
+write.csv(x = fef,
+          file = "../labs/my_fef.csv")
+```
+
+Now, we can see that the file is written. 
+
+```{r}
+#| echo: true
+list.files("../labs")
+```
+
+
+```{r}
+#| output: false
+file.remove("../labs/my_fef.csv")
+```
+
+## Next Week
+
+-   Andy will deliver lecture and lab through Tuesday 9/17.
+-   Main focuses: Chapter 4. 
+
+# See you upstairs in lab!
+
+
+
+
+
+
 

@@ -5,6 +5,7 @@ project:
     - "*.qmd"
     - "!labs/*.qmd"
     - "!quizzes/"
+    - "!labs/datasets/"
 
 website:
   title: "FOR 128"

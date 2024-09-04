@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -341,12 +406,332 @@ Practical Computing and Data Science Tools
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ul>
-<li>Quiz</li>
+<li>Quiz 1 review</li>
+<li>Navigating your computer</li>
 <li>Reading and writing data</li>
 </ul>
 </section>
-<section id="quiz-r-countdowncountdown15" class="title-slide slide level1 center">
-<h1>Quiz <code>r countdown::countdown(15)</code></h1>
+<section id="quiz-review" class="title-slide slide level1 center" data-background-color="#00817c">
+<h1>Quiz Review</h1>
+
+</section>
+
+<section>
+<section id="navigating-your-computer" class="title-slide slide level1 center" data-background-color="#00817c">
+<h1>Navigating your computer</h1>
+
+</section>
+<section id="recall-your-computers-file-system" class="slide level2">
+<h2>Recall your computer’s file system</h2>
+
+<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch" width="1238"></section>
+<section id="what-is-the-root-directory" class="slide level2">
+<h2>What is the root directory?</h2>
+
+<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch" width="1238"></section>
+<section id="what-is-the-root-directory-1" class="slide level2">
+<h2>What is the root directory?</h2>
+
+<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch" width="1238"><h3 id="c"><code>C:/</code></h3>
+</section>
+<section id="what-is-the-home-directory" class="slide level2">
+<h2>What is the home directory?</h2>
+
+<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch" width="1238"></section>
+<section id="what-is-the-home-directory-1" class="slide level2">
+<h2>What is the home directory?</h2>
+
+<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch" width="1238"><h3 id="cuserssarah"><code>C:/Users/Sarah</code></h3>
+</section>
+<section id="how-do-we-specify-the-absolute-path-to-file_1.csv" class="slide level2">
+<h2>How do we specify the absolute path to <code>File_1.csv</code>?</h2>
+
+<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch" width="1238"></section>
+<section id="how-do-we-specify-the-absolute-path-to-file_1.csv-1" class="slide level2">
+<h2>How do we specify the absolute path to <code>File_1.csv</code>?</h2>
+
+<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch" width="1238"><h3 id="cuserssaraharchivedatafile_1.csv"><code>C:/Users/Sarah/Archive/Data/File_1.csv</code></h3>
+</section>
+<section id="how-do-we-specify-the-relative-path-to-file_1.csv-if-sarahs-home-directory-is-her-working-directory" class="slide level2">
+<h2>How do we specify the relative path to <code>File_1.csv</code>, if Sarah’s home directory is her working directory?</h2>
+
+<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch" width="1238"></section>
+<section id="how-do-we-specify-the-relative-path-to-file_1.csv-if-sarahs-home-directory-is-her-working-directory-1" class="slide level2">
+<h2>How do we specify the relative path to <code>File_1.csv</code>, if Sarah’s home directory is her working directory?</h2>
+
+<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch" width="1238"><h3 id="archivedatafile_1.csv"><code>Archive/Data/File_1.csv</code></h3>
+</section>
+<section id="how-do-we-specify-the-relative-path-to-file_1.csv-if-sarahs-home-directory-is-cuserssarahdocuments" class="slide level2">
+<h2>How do we specify the relative path to <code>File_1.csv</code>, if Sarah’s home directory is <code>C:/Users/Sarah/Documents</code>?</h2>
+
+<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch" width="1238"></section>
+<section id="how-do-we-specify-the-relative-path-to-file_1.csv-if-sarahs-home-directory-is-cuserssarahdocuments-1" class="slide level2">
+<h2>How do we specify the relative path to <code>File_1.csv</code>, if Sarah’s home directory is <code>C:/Users/Sarah/Documents</code>?</h2>
+
+<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch" width="1238"><h3 id="archivedatafile_1.csv-1"><code>../Archive/Data/File_1.csv</code></h3>
+</section>
+<section id="whats-going-on-with-those-two-dots-.." class="slide level2">
+<h2>What’s going on with those two dots? (<code>../</code>)</h2>
+<div>
+<ul>
+<li class="fragment">Using <code>..</code> in a file path means “go back a level”</li>
+<li class="fragment">Example: Say I want to access a file on my desktop:
+<ul>
+<li class="fragment"><code>/home/grayson/Desktop/important_file.pdf</code></li>
+</ul></li>
+<li class="fragment">But, my working directory is as follows:
+<ul>
+<li class="fragment"><code>/home/grayson/courses/for128</code></li>
+</ul></li>
+<li class="fragment">The relative path to the important file on my desktop is then:
+<ul>
+<li class="fragment"><code>../../Desktop/important_file.pdf</code></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="now-consider-a-different-computer" class="slide level2">
+<h2>Now consider a different computer</h2>
+<div>
+<ul>
+<li class="fragment"><p>We have an absolute path to <code>lab_01.qmd</code>:</p>
+<ul>
+<li class="fragment"><code>/home/elliot/Documents/for128/lab_01.qmd</code></li>
+</ul></li>
+<li class="fragment"><p>What operating system might Elliot be using?</p></li>
+<li class="fragment"><p>Say Elliot is using the following working directory:</p>
+<ul>
+<li class="fragment"><code>/home/elliot/Documents</code></li>
+</ul></li>
+<li class="fragment"><p>What is the relative path to <code>lab_01.qmd</code>?</p>
+<ul>
+<li class="fragment"><code>for128/lab_01.qmd</code></li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="reading-and-writing-data" class="title-slide slide level1 center" data-background-color="#00817c">
+<h1>Reading and writing data</h1>
+
+</section>
+<section id="reading-data" class="slide level2">
+<h2>Reading data</h2>
+<p>In this course, we’ll focus on reading 2-dimensional data (things that look like spreadsheets) into <code>R</code>.</p>
+</section>
+<section id="reading-data-1" class="slide level2">
+<h2>Reading data</h2>
+
+<img data-src="figs/data-raw.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="reading-data-2" class="slide level2">
+<h2>Reading data</h2>
+
+<img data-src="figs/data-rstudio.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="reading-data-3" class="slide level2">
+<h2>Reading data</h2>
+<p><code>R</code> includes a variety of functions for reading data efficiently. One of the most common is <code>read.csv()</code>.</p>
+</section>
+<section id="reading-data-4" class="slide level2">
+<h2>Reading data</h2>
+<p><code>R</code> includes a variety of functions for reading data efficiently. One of the most common is <code>read.csv()</code>.</p>
+<p>To read data, we first may want to check our working directory:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "/home/grayson/courses/FOR128/FOR128.github.io/slides"</code></pre>
+</div>
+</div>
+</section>
+<section id="reading-data-5" class="slide level2">
+<h2>Reading data</h2>
+<p><code>R</code> includes a variety of functions for reading data efficiently. One of the most common is <code>read.csv()</code>.</p>
+<p>To read data, we first may want to check our working directory:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "/home/grayson/courses/FOR128/FOR128.github.io/slides"</code></pre>
+</div>
+</div>
+<p>Then we can find the datasets folder. I’ve kept mine with my labs:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">list.files</span>(<span class="st">"../labs/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "datasets"   "lab_01.qmd" "lab_02.qmd"</code></pre>
+</div>
+</div>
+</section>
+<section id="reading-data-6" class="slide level2">
+<h2>Reading data</h2>
+<p><code>R</code> includes a variety of functions for reading data efficiently. One of the most common is <code>read.csv()</code>.</p>
+<p>To read data, we first may want to check our working directory:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "/home/grayson/courses/FOR128/FOR128.github.io/slides"</code></pre>
+</div>
+</div>
+<p>Then we can find the datasets folder. I’ve kept mine with my labs:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">list.files</span>(<span class="st">"../labs/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "datasets"   "lab_01.qmd" "lab_02.qmd"</code></pre>
+</div>
+</div>
+<p>Now, given our working directory and datasets location, we specify a relative path and load in the data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>fef <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">"../labs/datasets/FEF_trees.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="reading-data-7" class="slide level2">
+<h2>Reading data</h2>
+<p>We can take a look at our dataset in <code>R</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">nrow</span>(fef) <span class="co"># number of rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 88</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">ncol</span>(fef) <span class="co"># number of columns</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 18</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">head</span>(fef) <span class="co"># first few rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  watershed year plot     species dbh_in height_ft stem_green_kg top_green_kg
+1         3 1991   29 Acer rubrum    6.0        48          92.2         13.1
+2         3 1991   33 Acer rubrum    6.9        48         102.3         23.1
+3         3 1991   35 Acer rubrum    6.4        48         124.4          8.7
+4         3 1991   39 Acer rubrum    6.5        49          91.7         39.0
+5         3 1991   44 Acer rubrum    7.2        51         186.2          8.9
+6         3 1992   26 Acer rubrum    3.1        40          20.8          0.9
+  smbranch_green_kg lgbranch_green_kg allwoody_green_kg leaves_green_kg
+1              30.5              48.4             184.2            16.1
+2              23.5              57.7             206.6            12.9
+3              22.3              44.1             199.5            16.5
+4              22.5              35.5             188.7            12.0
+5              25.4              65.1             285.6            22.4
+6               1.9               1.5              25.1             0.9
+  stem_dry_kg top_dry_kg smbranch_dry_kg lgbranch_dry_kg allwoody_dry_kg
+1        54.7        7.1            15.3            28.0           105.1
+2        62.3       12.4            14.8            33.6           123.1
+3        73.3        4.6            11.5            25.1           114.4
+4        53.6       21.3            11.2            19.8           105.9
+5       106.4        4.7            11.7            36.1           159.0
+6        11.7        0.5             1.1             0.9            14.2
+  leaves_dry_kg
+1           6.1
+2           4.6
+3           6.1
+4           4.2
+5           7.9
+6           0.3</code></pre>
+</div>
+</div>
+</section>
+<section id="reading-data-8" class="slide level2">
+<h2>Reading data</h2>
+<p><code>read.csv()</code> reads comma separated value (csv) files, but <code>R</code> has the ability to read a massive variety of file types:</p>
+<div>
+<ul>
+<li class="fragment"><code>read.table()</code> allows you to read file types with different separators like tabs and spaces, rather than just commas.</li>
+</ul>
+</div>
+</section>
+<section id="reading-data-9" class="slide level2">
+<h2>Reading data</h2>
+<p>If we wanted to use <code>read.table()</code> to load in <code>FEF_trees.csv</code>, we would run the following code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>fef <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">"../labs/datasets/FEF_trees.csv"</span>,</span>
+<span id="cb18-2"><a></a>                  <span class="at">header =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb18-3"><a></a>                  <span class="at">sep =</span> <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="reading-data-10" class="slide level2">
+<h2>Reading data</h2>
+<p>If we wanted to use <code>read.table()</code> to load in <code>FEF_trees.csv</code>, we would run the following code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>fef <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">"../labs/datasets/FEF_trees.csv"</span>,</span>
+<span id="cb19-2"><a></a>                  <span class="at">header =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb19-3"><a></a>                  <span class="at">sep =</span> <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="reading-data-11" class="slide level2">
+<h2>Reading data</h2>
+<p>If we wanted to use <code>read.table()</code> to load in <code>FEF_trees.csv</code>, we would run the following code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>fef <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">"../labs/datasets/FEF_trees.csv"</span>,</span>
+<span id="cb20-2"><a></a>                  <span class="at">header =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb20-3"><a></a>                  <span class="at">sep =</span> <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="reading-data-tab-separated" class="slide level2">
+<h2>Reading data: tab separated</h2>
+<p>We also have the file <code>FEF_trees.tsv</code>, which looks a bit different than <code>FEF_trees.csv</code>.</p>
+</section>
+<section id="fef_trees.csv" class="slide level2">
+<h2><code>FEF_trees.csv</code></h2>
+
+<img data-src="figs/data-raw.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="fef_trees.tsv" class="slide level2">
+<h2><code>FEF_trees.tsv</code></h2>
+
+<img data-src="figs/data-tsv.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="reading-fef_trees.tsv-into-r" class="slide level2">
+<h2>Reading <code>FEF_trees.tsv</code> into <code>R</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>fef <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">"../labs/datasets/FEF_trees.tsv"</span>,</span>
+<span id="cb21-2"><a></a>                  <span class="at">header =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb21-3"><a></a>                  <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="reading-fef_trees.tsv-into-r-1" class="slide level2">
+<h2>Reading <code>FEF_trees.tsv</code> into <code>R</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>fef <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">"../labs/datasets/FEF_trees.tsv"</span>,</span>
+<span id="cb22-2"><a></a>                  <span class="at">header =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb22-3"><a></a>                  <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="writing-data" class="slide level2">
+<h2>Writing data</h2>
+<div>
+<ul>
+<li class="fragment"><p>Similar to <code>read.csv()</code> and <code>read.table()</code>, <code>R</code> includes <code>write.csv()</code> and <code>write.table()</code> functions.</p></li>
+<li class="fragment"><p>These functions allow you to create (or “write”) your own files with an R object.</p></li>
+<li class="fragment"><p>Let’s take a look!</p></li>
+</ul>
+</div>
+</section>
+<section id="writing-data-1" class="slide level2">
+<h2>Writing data</h2>
+<p>First, we look at the files in my “labs” folder</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">list.files</span>(<span class="st">"../labs"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "datasets"   "lab_01.qmd" "lab_02.qmd"</code></pre>
+</div>
+</div>
+<p>Next, we can write the <code>fef</code> object to a .csv file.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">write.csv</span>(<span class="at">x =</span> fef,</span>
+<span id="cb25-2"><a></a>          <span class="at">file =</span> <span class="st">"../labs/my_fef.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, we can see that the file is written.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">list.files</span>(<span class="st">"../labs"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "datasets"   "lab_01.qmd" "lab_02.qmd" "my_fef.csv"</code></pre>
+</div>
+</div>
+</section>
+<section id="next-week" class="slide level2">
+<h2>Next Week</h2>
+<ul>
+<li>Andy will deliver lecture and lab through Tuesday 9/17.</li>
+<li>Main focuses: Chapter 4.</li>
+</ul>
+</section></section>
+<section id="see-you-upstairs-in-lab" class="title-slide slide level1 center">
+<h1>See you upstairs in lab!</h1>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -564,6 +949,44 @@ Practical Computing and Data Science Tools
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
