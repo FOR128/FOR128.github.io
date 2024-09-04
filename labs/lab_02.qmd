@@ -11,11 +11,14 @@ editor:
 
 ## Welcome
 
-Welcome to Lab 2! Today, we'll do XYZ
+Welcome to Lab 2! Today, we'll start importing and exporting data in R, thinking about relative and absolute paths, and navigating our computer. Let's get started!
 
 ### Learning objectives
 
--   bullet points
+-   Understand your computer's file system.
+-   Be able to read data from a specific location.
+-   Be able to write data to a specific location.
+-   Understand and use relative and absolute paths.
 
 ### Deliverables (i.e., what to put in the lab drop box)
 
@@ -23,58 +26,49 @@ Upload your rendered PDF (`lab_02.pdf`) **and** Quarto (`lab_02.qmd`) document t
 
 ### Collaborator(s)
 
-List any collaborators you worked with in the space below. 
-
-------------------------------------------------------------------------
+List any collaborators you worked with below. 
 
 
 
 
 
-------------------------------------------------------------------------
 
-# Part 1: section title
+# Part 1: Conceptual Questions
 
 ## Exercise 1
 
-exercise text
+Do Exercise 3.1 from IFDAR.
 
+(a)
 
-------------------------------------------------------------------------
+(b)
 
+(c)
 
+(d)
 
+(e)
 
+(f)
 
-------------------------------------------------------------------------
 
 ## Exercise 2
 
-exercise text
+Do Exercise 3.2 from IFDAR.
 
-------------------------------------------------------------------------
+(a)
+
+(b)
+
+(c)
+
+(d)
 
 
+# Part 2: Application with R
 
+## Exercise 3
 
-
-------------------------------------------------------------------------
-
-
-# Part 2: section title
-
-## Exercise 4
-
-Do Exercise XYZ from IFDAR in the following code chunk.
-
-------------------------------------------------------------------------
-
-```{r}
-# put your code on the following line
-
-```
-
-------------------------------------------------------------------------
 
 
 # Wrap up

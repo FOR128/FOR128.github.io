@@ -10,3 +10,5 @@ editor:
 Week 1, day 1: *Welcome to the course*. Available [here](https://mediaspace.msu.edu/media/Week+1+Day+1/1_33yh2vbh).
 
 Week 1, day 2: *Data science tools*. Available [here](https://mediaspace.msu.edu/media/Week+1+Day+2/1_at4prglo).
+
+Week 2, day 2: *Practical computing*. Available [here](https://mediaspace.msu.edu/media/FOR+128+F24A+Week+2+Day+1/1_zs9on3pq).
