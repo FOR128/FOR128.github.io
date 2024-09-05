@@ -12,7 +12,7 @@ Labs are turned in on [D2L](https://d2l.msu.edu).
 | Assignment               | Available                   | Due                     |
 |------------------------------|---------------------|---------------------|
 | [Lab 1](labs/lab_01.qmd) | Thursday 8/27 (at lab time) | Wednesday 9/4 (at 5pm)  |
-| Lab 2                    | Thursday 9/5 (at lab time)  | Wednesday 9/11 (at 5pm) |
+| [Lab 2](labs/lab_02.qmd) | Thursday 9/5 (at lab time)  | Wednesday 9/11 (at 5pm) |
 | Lab 3                    | Thursday 9/12 (at lab time)  | Wednesday 9/18 (at 5pm) |
 | Lab 4                    | Thursday 9/19 (at lab time)  | Wednesday 9/25 (at 5pm) |
 | Lab 5                    | Thursday 9/26 (at lab time)  | Wednesday 10/2 (at 5pm) |
