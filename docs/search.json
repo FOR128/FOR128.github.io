@@ -378,81 +378,25 @@
     "text": "Tasks\n\n1. Install R and RStudio\nAs discussed in IFDAR, go to Posit’s website. Install R first, and then install RStudio.\n\n\n2. Run your first R command\nIn the console, type in the following command and press Enter to run it:\n\nrnorm(1)\n\n\n\n3. Record your result\nCome to class on Thursday with a piece of paper with your name on it that includes the result (it will be a number) from running rnorm(1) in task 2.\nIf you were unable to install R and RStudio and ran into issues, instead come to class with a piece of paper with your name on it that explains the issue you were having with installation."
   },
   {
-    "objectID": "tickets/ticket_02.html",
-    "href": "tickets/ticket_02.html",
-    "title": "Lecture Ticket 2",
+    "objectID": "tickets/ticket_03.html",
+    "href": "tickets/ticket_03.html",
+    "title": "Lecture Ticket 3",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 2\nChapter 3: read through section 3.3.1 (STOP at 3.3.2 External data)"
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 3"
   },
   {
-    "objectID": "tickets/ticket_02.html#reading",
-    "href": "tickets/ticket_02.html#reading",
-    "title": "Lecture Ticket 2",
+    "objectID": "tickets/ticket_03.html#reading",
+    "href": "tickets/ticket_03.html#reading",
+    "title": "Lecture Ticket 3",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 2\nChapter 3: read through section 3.3.1 (STOP at 3.3.2 External data)"
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 3"
   },
   {
-    "objectID": "tickets/ticket_02.html#questions",
-    "href": "tickets/ticket_02.html#questions",
-    "title": "Lecture Ticket 2",
+    "objectID": "tickets/ticket_03.html#questions",
+    "href": "tickets/ticket_03.html#questions",
+    "title": "Lecture Ticket 3",
     "section": "Questions",
-    "text": "Questions\n\nWhat are the two main operators used in R for assignment?\nWhat code would you write to assign the value 37 to the object favorite_number?\nOpen RStudio and check your working directory by entering a command into the R console. What is your working directory? Example: /Users/graysonwhite/Documents/"
-  },
-  {
-    "objectID": "recordings.html",
-    "href": "recordings.html",
-    "title": "Lecture Recordings",
-    "section": "",
-    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here."
-  },
-  {
-    "objectID": "recordings.html#recordings",
-    "href": "recordings.html#recordings",
-    "title": "Lecture Recordings",
-    "section": "",
-    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here."
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)"
-  },
-  {
-    "objectID": "assignments.html#labs",
-    "href": "assignments.html#labs",
-    "title": "Assignments",
-    "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)"
-  },
-  {
-    "objectID": "assignments.html#lecture-tickets",
-    "href": "assignments.html#lecture-tickets",
-    "title": "Assignments",
-    "section": "Lecture Tickets",
-    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)\n\n\nLecture ticket 3\nTuesday 9/3 (by 5pm)\nThursday 9/5 (in lecture)\n\n\nLecture ticket 4\nThursday 9/5 (by 5pm)\nTuesday 9/10 (in lecture)\n\n\nLecture ticket 5\nTuesday 9/10 (by 5pm)\nThursday 9/12 (in lecture)\n\n\nLecture ticket 6\nThursday 9/12 (by 5pm)\nTuesday 9/17 (in lecture)\n\n\nLecture ticket 7\nTuesday 9/17 (by 5pm)\nThursday 9/19 (in lecture)\n\n\nLecture ticket 8\nThursday 9/19 (by 5pm)\nTuesday 9/24 (in lecture)\n\n\nLecture ticket 9\nTuesday 9/24 (by 5pm)\nThursday 9/26 (in lecture)"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "For 128 Michigan State University\nFall 2024\n\n\n\n\n\nOffice hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L.\n\n\n\n\n\n\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
-  },
-  {
-    "objectID": "index.html#week-2-september-1---7",
-    "href": "index.html#week-2-september-1---7",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "Office hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L."
-  },
-  {
-    "objectID": "index.html#week-1-august-25---31",
-    "href": "index.html#week-1-august-25---31",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+    "text": "Questions\n\nWhat function is used to set a working directory in R? How about to get your current working directory?\nWhat is the difference between a relative and absolute path?\nConsider the following absolute path:\n\n/home/grayson/courses/for128/lab_01.qmd\nIf the working directory is /home/grayson/courses/, what is the relative path to lab_01.qmd?"
   },
   {
     "objectID": "syllabus.html",
@@ -518,25 +462,102 @@
     "text": "AI Policy for FOR 128\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
   },
   {
-    "objectID": "tickets/ticket_03.html",
-    "href": "tickets/ticket_03.html",
-    "title": "Lecture Ticket 3",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Practical Computing   and Data Science Tools",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 3"
+    "text": "For 128 Michigan State University\nFall 2024\n\n\n\n\n\nOffice hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L.\n\n\n\n\n\n\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
   },
   {
-    "objectID": "tickets/ticket_03.html#reading",
-    "href": "tickets/ticket_03.html#reading",
-    "title": "Lecture Ticket 3",
+    "objectID": "index.html#week-2-september-1---7",
+    "href": "index.html#week-2-september-1---7",
+    "title": "Practical Computing   and Data Science Tools",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 3"
+    "text": "Office hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L."
   },
   {
-    "objectID": "tickets/ticket_03.html#questions",
-    "href": "tickets/ticket_03.html#questions",
-    "title": "Lecture Ticket 3",
+    "objectID": "index.html#week-1-august-25---31",
+    "href": "index.html#week-1-august-25---31",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)"
+  },
+  {
+    "objectID": "assignments.html#labs",
+    "href": "assignments.html#labs",
+    "title": "Assignments",
+    "section": "",
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)"
+  },
+  {
+    "objectID": "assignments.html#lecture-tickets",
+    "href": "assignments.html#lecture-tickets",
+    "title": "Assignments",
+    "section": "Lecture Tickets",
+    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)\n\n\nLecture ticket 3\nTuesday 9/3 (by 5pm)\nThursday 9/5 (in lecture)\n\n\nLecture ticket 4\nThursday 9/5 (by 5pm)\nTuesday 9/10 (in lecture)\n\n\nLecture ticket 5\nTuesday 9/10 (by 5pm)\nThursday 9/12 (in lecture)\n\n\nLecture ticket 6\nThursday 9/12 (by 5pm)\nTuesday 9/17 (in lecture)\n\n\nLecture ticket 7\nTuesday 9/17 (by 5pm)\nThursday 9/19 (in lecture)\n\n\nLecture ticket 8\nThursday 9/19 (by 5pm)\nTuesday 9/24 (in lecture)\n\n\nLecture ticket 9\nTuesday 9/24 (by 5pm)\nThursday 9/26 (in lecture)"
+  },
+  {
+    "objectID": "recordings.html",
+    "href": "recordings.html",
+    "title": "Lecture Recordings",
+    "section": "",
+    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here."
+  },
+  {
+    "objectID": "recordings.html#recordings",
+    "href": "recordings.html#recordings",
+    "title": "Lecture Recordings",
+    "section": "",
+    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here."
+  },
+  {
+    "objectID": "tickets/ticket_02.html",
+    "href": "tickets/ticket_02.html",
+    "title": "Lecture Ticket 2",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 2\nChapter 3: read through section 3.3.1 (STOP at 3.3.2 External data)"
+  },
+  {
+    "objectID": "tickets/ticket_02.html#reading",
+    "href": "tickets/ticket_02.html#reading",
+    "title": "Lecture Ticket 2",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 2\nChapter 3: read through section 3.3.1 (STOP at 3.3.2 External data)"
+  },
+  {
+    "objectID": "tickets/ticket_02.html#questions",
+    "href": "tickets/ticket_02.html#questions",
+    "title": "Lecture Ticket 2",
     "section": "Questions",
-    "text": "Questions\n\nWhat function is used to set a working directory in R? How about to get your current working directory?\nWhat is the difference between a relative and absolute path?\nConsider the following absolute path:\n\n/home/grayson/courses/for128/lab_01.qmd\nIf the working directory is /home/grayson/courses/, what is the relative path to lab_01.qmd?"
+    "text": "Questions\n\nWhat are the two main operators used in R for assignment?\nWhat code would you write to assign the value 37 to the object favorite_number?\nOpen RStudio and check your working directory by entering a command into the R console. What is your working directory? Example: /Users/graysonwhite/Documents/"
+  },
+  {
+    "objectID": "tickets/ticket_04.html",
+    "href": "tickets/ticket_04.html",
+    "title": "Lecture Ticket 4",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.1 and 4.2 (Stop at 4.3 Factors)"
+  },
+  {
+    "objectID": "tickets/ticket_04.html#reading",
+    "href": "tickets/ticket_04.html#reading",
+    "title": "Lecture Ticket 4",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.1 and 4.2 (Stop at 4.3 Factors)"
+  },
+  {
+    "objectID": "tickets/ticket_04.html#questions",
+    "href": "tickets/ticket_04.html#questions",
+    "title": "Lecture Ticket 4",
+    "section": "Questions",
+    "text": "Questions\n\nWhat is a qualitative variable? What about a quantitative variable? How are they different?\nWhat does the c() function do?\nSuppose you have the following vector:\n\n\nheight_in &lt;- c(70, 62, 72, 67)\nheight_in\n\n[1] 70 62 72 67\n\n\nWhat code would you write to replace the second element of height_in with the value 63?"
   },
   {
     "objectID": "slides/w2d1.html#agenda",

@@ -1,0 +1,30 @@
+---
+title: "Lecture Ticket 4"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read the following sections of IFDAR.
+
+-   Chapter 4: sections 4.1 and 4.2 (Stop at 4.3 Factors)
+
+
+## Questions
+
+1. What is a qualitative variable? What about a quantitative variable? How are they different? 
+
+2. What does the `c()` function do? 
+
+3. Suppose you have the following vector:
+
+```{r}
+height_in <- c(70, 62, 72, 67)
+height_in
+```
+
+What code would you write to replace the second element of `height_in` with the value `63`?
+
+
+
