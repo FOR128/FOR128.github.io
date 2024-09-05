@@ -1,5 +1,5 @@
 ---
-title: "a nice title"
+title: "Navigating Your Computer"
 subtitle: "FOR 128: Lab 2"
 author: "Insert Your Name Here"
 date: "9/5/2024"
@@ -74,41 +74,46 @@ Do Exercise 3.2 from IFDAR.
 
 
 
-# Part 2: Application with R
+# Part 2: Application with `R`
+
+One of the most crucial uses of file paths in this course and beyond is in reading and writing data. In a data analysis workflow, one must know where the data are stored in order to access and analyze the data, and one must know how to export summaries of the data to their computer. This section of the lab focuses primarily on reading and writing data, but also takes a look into data summarization in `R`.
 
 ## Data Overview
 
-Here, we consider a data set that was collected to create allometric equations for tree biomass by tree component for four key central Appalachian hardwood species sampled on the lovely [Fernow Experimental Forest](http://www.nrs.fs.fed.us/ef/locations/wv/fernow) (FEF) in West Virginia. A total of 88 trees were measured in two different watersheds on the FEF. Hardwood species sampled include <i>Acer rubrum</i>, <i>Betula lenta</i>, <i>Liriodendron tulipifera</i>, and <i>Prunus serotina</i>, all of which were measured in the summer of 1991 and 1992. Data include tree height, diameter, as well as green and dry weight of tree stem, top, small branches, large branches, and leaves.
+Here, we consider a data set that was collected to create allometric equations for tree biomass by tree component for four key central Appalachian hardwood species sampled on the lovely [Fernow Experimental Forest](https://research.fs.usda.gov/nrs/forestsandranges/locations/fernow) (FEF) in West Virginia. A total of 88 trees were measured in two different watersheds on the FEF. Hardwood species sampled include *Acer rubrum*, *Betula lenta*, *Liriodendron tulipifera*, and *Prunus serotina*, all of which were measured in the summer of 1991 and 1992. Data include tree height, diameter, as well as green and dry weight of tree stem, top, small branches, large branches, and leaves.
 
 
 ## Exercise 4
 
-Read the "FEF_trees.csv" file into `R` and call the resulting object `fef_csv`. Make sure to use a relative path to this file.
+In the "datasets" folder that you downloaded in Lab 1, there is a file called "FEF_trees.csv". Read this file into `R` and call the resulting object `fef_csv` by using an assignment operator. Make sure to use a relative path to this file when reading it in.
 
-Hint: you can use either `read.csv()` or `read.table()` for this exercise. 
+Hint: you can use either `read.csv()` or `read.table()` for this exercise, but the former will be a bit easier. 
 
 
 ```{r}
-fef_csv <- read.csv("datasets/FEF_trees.csv")
+
 ```
 
 ## Exercise 5
 
-Now, read the "FEF_trees.tsv" file into `R` and call the resulting object `fef_tsv`. Make sure to use a relative path to this file.
+There is another file in the "datasets" folder called "FEF_trees.tsv". Rather than being comma seperated, this file is tab separated (note the difference in the file extension, csv vs tsv). Read this file into `R` and call the resulting object `fef_tsv`. Make sure to use a relative path to this file.
 
 Hint: use `read.table()` for this exercise. 
 
 ```{r}
-fef_tsv <- read.table("datasets/FEF_trees.tsv", sep = "\t", header = F)
+
 ```
 
 ## Exercise 6
 
-If you've done Exercises 4 and 5 correctly, `fef_csv` and `fef_tsv` should be identical. Check their dimensions with the `dim()` function. `dim()` returns the rows and columns of a given object. How many rows do the `fef_csv` and `fef_tsv` have? Are they the same? 
+If you've done Exercises 4 and 5 correctly, `fef_csv` and `fef_tsv` should be identical. Check their dimensions by running the code below. The `dim()` function returns the rows and columns of a given object. How many rows do the `fef_csv` and `fef_tsv` have? Are they the same? 
+
+Note: make sure to change eval from false to true in the code chunk below. 
 
 ```{r}
-
-
+#| eval: false
+dim(fef_csv)
+dim(fef_tsv)
 ```
 
 ## Exercise 7
@@ -129,7 +134,7 @@ If you've done Exercises 4 and 5 correctly, `fef_csv` and `fef_tsv` should be id
 
 ## Exercise 8
 
-(a) Now, we'll create a new dataframe called `species_summary`. Run the following code (make sure you install `dplyr` if you haven't already). What are the dimensions of the new dataframe (use `dim()`? What does the dataframe look like (use `head()`)? What do you think this new dataframe represents? 
+(a) Now, we'll create a new dataframe called `species_summary`. Run the following code (make sure you install `dplyr` with `install.packages("dplyr")` if you haven't already). What are the dimensions of the new dataframe (use `dim()`? What does the dataframe look like (use `head()`)? What do you think this new dataframe represents? 
 
 ```{r}
 library(dplyr)
@@ -144,8 +149,7 @@ species_summary <- fef_csv %>%
 
 
 
-
-(b) Use `write.csv()` to write `species_summary` to a file called "species_summary.csv" in your "datasets" folder. 
+(b) Use `write.csv()` to write `species_summary` to a file called "FEF_species_summary.csv" in your "datasets" folder. 
 
 ```{r}
 

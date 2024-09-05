@@ -41,7 +41,7 @@ knitr::include_graphics("figs/directory-example.png")
 ```
 
 
-## What is the root directory?
+## What is the root directory? `r countdown::countdown(1)`
 
 ```{r}
 #| fig-align: 'center'
@@ -57,7 +57,7 @@ knitr::include_graphics("figs/directory-example.png")
 
 ### `C:/`
 
-## What is the home directory?
+## What is the home directory? `r countdown::countdown(1)`
 
 ```{r}
 #| fig-align: 'center'
@@ -73,7 +73,7 @@ knitr::include_graphics("figs/directory-example.png")
 
 ### `C:/Users/Sarah`
 
-## How do we specify the absolute path to `File_1.csv`?
+## How do we specify the absolute path to `File_1.csv`? `r countdown::countdown(1)`
 
 ```{r}
 #| fig-align: 'center'
@@ -91,7 +91,7 @@ knitr::include_graphics("figs/directory-example.png")
 
 ### `C:/Users/Sarah/Archive/Data/File_1.csv`
 
-## How do we specify the relative path to `File_1.csv`, if Sarah's home directory is her working directory? 
+## How do we specify the relative path to `File_1.csv`, if Sarah's home directory is her working directory? `r countdown::countdown(1)`
 
 ```{r}
 #| fig-align: 'center'
@@ -108,7 +108,7 @@ knitr::include_graphics("figs/directory-example.png")
 ### `Archive/Data/File_1.csv`
 
 
-## How do we specify the relative path to `File_1.csv`, if Sarah's home directory is  `C:/Users/Sarah/Documents`?
+## How do we specify the relative path to `File_1.csv`, if Sarah's home directory is  `C:/Users/Sarah/Documents`? `r countdown::countdown(1)`
 
 ```{r}
 #| fig-align: 'center'
@@ -124,7 +124,7 @@ knitr::include_graphics("figs/directory-example.png")
 
 ### `../Archive/Data/File_1.csv`
 
-## What's going on with those two dots? (`../`)
+## What's going on with those two dots? (`../`) `r countdown::countdown(1)`
 
 ::: incremental
 
@@ -132,26 +132,29 @@ knitr::include_graphics("figs/directory-example.png")
 -   Example: Say I want to access a file on my desktop:
     - `/home/grayson/Desktop/important_file.pdf`
 -   But, my working directory is as follows:
-    - `/home/grayson/courses/for128`
--   The relative path to the important file on my desktop is then: 
-    - `../../Desktop/important_file.pdf`
+    - `/home/grayson/Documents`
+-   Q: What is the relative path to the important file on my desktop? 
+    
+-   A: `../Desktop/important_file.pdf`
 
 :::
 
-## Now consider a different computer
+## Now consider a different computer `r countdown::countdown(1)`
 
 ::: incremental
 
 -   We have an absolute path to `lab_01.qmd`:
     - `/home/elliot/Documents/for128/lab_01.qmd`
     
--   What operating system might Elliot be using? 
-
 -   Say Elliot is using the following working directory: 
-    - `/home/elliot/Documents`
+    - `/home/elliot/research/spatio_temporal`
 
--   What is the relative path to `lab_01.qmd`?
-    - `for128/lab_01.qmd`
+-   Q1: What operating system might Elliot be using? 
+
+-   Q2: What is the relative path to `lab_01.qmd`?
+
+-   A1: macOS or Linux
+-   A2: `../../for128/lab_01.qmd`
     
 :::
 
@@ -239,9 +242,8 @@ We can take a look at our dataset in `R`:
 
 ```{r}
 #| echo: true
-nrow(fef) # number of rows
-ncol(fef) # number of columns
-head(fef) # first few rows
+dim(fef) # dimensions (rows columns) of fef
+head(fef) # first few rows of fef
 ```
 
 ## Reading data
@@ -347,6 +349,18 @@ First, we look at the files in my "labs" folder
 list.files("../labs")
 ```
 
+## Writing data
+
+Next, we can write the `fef` object to a .csv file.
+
+```{r}
+#| echo: true
+write.csv(x = fef,
+          file = "../labs/my_fef.csv")
+```
+
+## Writing data
+
 Next, we can write the `fef` object to a .csv file.
 
 ```{r}
@@ -362,7 +376,6 @@ Now, we can see that the file is written.
 list.files("../labs")
 ```
 
-
 ```{r}
 #| output: false
 file.remove("../labs/my_fef.csv")
@@ -371,9 +384,9 @@ file.remove("../labs/my_fef.csv")
 ## Next Week
 
 -   Andy will deliver lecture and lab through Tuesday 9/17.
--   Main focuses: Chapter 4. 
+-   Main focuses: Chapter 4 (Data Structures). 
 
-# See you upstairs in lab!
+# See you upstairs in lab! {background-color="#00817c"}
 
 
 

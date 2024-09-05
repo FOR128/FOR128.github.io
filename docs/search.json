@@ -17,8 +17,8 @@
     "objectID": "slides/w2d2.html#what-is-the-root-directory",
     "href": "slides/w2d2.html#what-is-the-root-directory",
     "title": "Reading and Writing Data",
-    "section": "What is the root directory?",
-    "text": "What is the root directory?"
+    "section": "What is the root directory?  −+ 01:00 ",
+    "text": "What is the root directory?  −+ 01:00"
   },
   {
     "objectID": "slides/w2d2.html#what-is-the-root-directory-1",
@@ -31,8 +31,8 @@
     "objectID": "slides/w2d2.html#what-is-the-home-directory",
     "href": "slides/w2d2.html#what-is-the-home-directory",
     "title": "Reading and Writing Data",
-    "section": "What is the home directory?",
-    "text": "What is the home directory?"
+    "section": "What is the home directory?  −+ 01:00 ",
+    "text": "What is the home directory?  −+ 01:00"
   },
   {
     "objectID": "slides/w2d2.html#what-is-the-home-directory-1",
@@ -45,8 +45,8 @@
     "objectID": "slides/w2d2.html#how-do-we-specify-the-absolute-path-to-file_1.csv",
     "href": "slides/w2d2.html#how-do-we-specify-the-absolute-path-to-file_1.csv",
     "title": "Reading and Writing Data",
-    "section": "How do we specify the absolute path to File_1.csv?",
-    "text": "How do we specify the absolute path to File_1.csv?"
+    "section": "How do we specify the absolute path to File_1.csv?  −+ 01:00 ",
+    "text": "How do we specify the absolute path to File_1.csv?  −+ 01:00"
   },
   {
     "objectID": "slides/w2d2.html#how-do-we-specify-the-absolute-path-to-file_1.csv-1",
@@ -59,8 +59,8 @@
     "objectID": "slides/w2d2.html#how-do-we-specify-the-relative-path-to-file_1.csv-if-sarahs-home-directory-is-her-working-directory",
     "href": "slides/w2d2.html#how-do-we-specify-the-relative-path-to-file_1.csv-if-sarahs-home-directory-is-her-working-directory",
     "title": "Reading and Writing Data",
-    "section": "How do we specify the relative path to File_1.csv, if Sarah’s home directory is her working directory?",
-    "text": "How do we specify the relative path to File_1.csv, if Sarah’s home directory is her working directory?"
+    "section": "How do we specify the relative path to File_1.csv, if Sarah’s home directory is her working directory?  −+ 01:00 ",
+    "text": "How do we specify the relative path to File_1.csv, if Sarah’s home directory is her working directory?  −+ 01:00"
   },
   {
     "objectID": "slides/w2d2.html#how-do-we-specify-the-relative-path-to-file_1.csv-if-sarahs-home-directory-is-her-working-directory-1",
@@ -73,8 +73,8 @@
     "objectID": "slides/w2d2.html#how-do-we-specify-the-relative-path-to-file_1.csv-if-sarahs-home-directory-is-cuserssarahdocuments",
     "href": "slides/w2d2.html#how-do-we-specify-the-relative-path-to-file_1.csv-if-sarahs-home-directory-is-cuserssarahdocuments",
     "title": "Reading and Writing Data",
-    "section": "How do we specify the relative path to File_1.csv, if Sarah’s home directory is C:/Users/Sarah/Documents?",
-    "text": "How do we specify the relative path to File_1.csv, if Sarah’s home directory is C:/Users/Sarah/Documents?"
+    "section": "How do we specify the relative path to File_1.csv, if Sarah’s home directory is C:/Users/Sarah/Documents?  −+ 01:00 ",
+    "text": "How do we specify the relative path to File_1.csv, if Sarah’s home directory is C:/Users/Sarah/Documents?  −+ 01:00"
   },
   {
     "objectID": "slides/w2d2.html#how-do-we-specify-the-relative-path-to-file_1.csv-if-sarahs-home-directory-is-cuserssarahdocuments-1",
@@ -87,15 +87,15 @@
     "objectID": "slides/w2d2.html#whats-going-on-with-those-two-dots-..",
     "href": "slides/w2d2.html#whats-going-on-with-those-two-dots-..",
     "title": "Reading and Writing Data",
-    "section": "What’s going on with those two dots? (../)",
-    "text": "What’s going on with those two dots? (../)\n\n\nUsing .. in a file path means “go back a level”\nExample: Say I want to access a file on my desktop:\n\n/home/grayson/Desktop/important_file.pdf\n\nBut, my working directory is as follows:\n\n/home/grayson/courses/for128\n\nThe relative path to the important file on my desktop is then:\n\n../../Desktop/important_file.pdf"
+    "section": "What’s going on with those two dots? (../)  −+ 01:00 ",
+    "text": "What’s going on with those two dots? (../)  −+ 01:00 \n\n\nUsing .. in a file path means “go back a level”\nExample: Say I want to access a file on my desktop:\n\n/home/grayson/Desktop/important_file.pdf\n\nBut, my working directory is as follows:\n\n/home/grayson/Documents\n\nQ: What is the relative path to the important file on my desktop?\nA: ../Desktop/important_file.pdf"
   },
   {
     "objectID": "slides/w2d2.html#now-consider-a-different-computer",
     "href": "slides/w2d2.html#now-consider-a-different-computer",
     "title": "Reading and Writing Data",
-    "section": "Now consider a different computer",
-    "text": "Now consider a different computer\n\n\nWe have an absolute path to lab_01.qmd:\n\n/home/elliot/Documents/for128/lab_01.qmd\n\nWhat operating system might Elliot be using?\nSay Elliot is using the following working directory:\n\n/home/elliot/Documents\n\nWhat is the relative path to lab_01.qmd?\n\nfor128/lab_01.qmd"
+    "section": "Now consider a different computer  −+ 01:00 ",
+    "text": "Now consider a different computer  −+ 01:00 \n\n\nWe have an absolute path to lab_01.qmd:\n\n/home/elliot/Documents/for128/lab_01.qmd\n\nSay Elliot is using the following working directory:\n\n/home/elliot/research/spatio_temporal\n\nQ1: What operating system might Elliot be using?\nQ2: What is the relative path to lab_01.qmd?\nA1: macOS or Linux\nA2: ../../for128/lab_01.qmd"
   },
   {
     "objectID": "slides/w2d2.html#reading-data",
@@ -151,7 +151,7 @@
     "href": "slides/w2d2.html#reading-data-7",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nWe can take a look at our dataset in R:\n\nnrow(fef) # number of rows\n\n[1] 88\n\nncol(fef) # number of columns\n\n[1] 18\n\nhead(fef) # first few rows\n\n  watershed year plot     species dbh_in height_ft stem_green_kg top_green_kg\n1         3 1991   29 Acer rubrum    6.0        48          92.2         13.1\n2         3 1991   33 Acer rubrum    6.9        48         102.3         23.1\n3         3 1991   35 Acer rubrum    6.4        48         124.4          8.7\n4         3 1991   39 Acer rubrum    6.5        49          91.7         39.0\n5         3 1991   44 Acer rubrum    7.2        51         186.2          8.9\n6         3 1992   26 Acer rubrum    3.1        40          20.8          0.9\n  smbranch_green_kg lgbranch_green_kg allwoody_green_kg leaves_green_kg\n1              30.5              48.4             184.2            16.1\n2              23.5              57.7             206.6            12.9\n3              22.3              44.1             199.5            16.5\n4              22.5              35.5             188.7            12.0\n5              25.4              65.1             285.6            22.4\n6               1.9               1.5              25.1             0.9\n  stem_dry_kg top_dry_kg smbranch_dry_kg lgbranch_dry_kg allwoody_dry_kg\n1        54.7        7.1            15.3            28.0           105.1\n2        62.3       12.4            14.8            33.6           123.1\n3        73.3        4.6            11.5            25.1           114.4\n4        53.6       21.3            11.2            19.8           105.9\n5       106.4        4.7            11.7            36.1           159.0\n6        11.7        0.5             1.1             0.9            14.2\n  leaves_dry_kg\n1           6.1\n2           4.6\n3           6.1\n4           4.2\n5           7.9\n6           0.3"
+    "text": "Reading data\nWe can take a look at our dataset in R:\n\ndim(fef) # dimensions (rows columns) of fef\n\n[1] 88 18\n\nhead(fef) # first few rows of fef\n\n  watershed year plot     species dbh_in height_ft stem_green_kg top_green_kg\n1         3 1991   29 Acer rubrum    6.0        48          92.2         13.1\n2         3 1991   33 Acer rubrum    6.9        48         102.3         23.1\n3         3 1991   35 Acer rubrum    6.4        48         124.4          8.7\n4         3 1991   39 Acer rubrum    6.5        49          91.7         39.0\n5         3 1991   44 Acer rubrum    7.2        51         186.2          8.9\n6         3 1992   26 Acer rubrum    3.1        40          20.8          0.9\n  smbranch_green_kg lgbranch_green_kg allwoody_green_kg leaves_green_kg\n1              30.5              48.4             184.2            16.1\n2              23.5              57.7             206.6            12.9\n3              22.3              44.1             199.5            16.5\n4              22.5              35.5             188.7            12.0\n5              25.4              65.1             285.6            22.4\n6               1.9               1.5              25.1             0.9\n  stem_dry_kg top_dry_kg smbranch_dry_kg lgbranch_dry_kg allwoody_dry_kg\n1        54.7        7.1            15.3            28.0           105.1\n2        62.3       12.4            14.8            33.6           123.1\n3        73.3        4.6            11.5            25.1           114.4\n4        53.6       21.3            11.2            19.8           105.9\n5       106.4        4.7            11.7            36.1           159.0\n6        11.7        0.5             1.1             0.9            14.2\n  leaves_dry_kg\n1           6.1\n2           4.6\n3           6.1\n4           4.2\n5           7.9\n6           0.3"
   },
   {
     "objectID": "slides/w2d2.html#reading-data-8",
@@ -228,14 +228,28 @@
     "href": "slides/w2d2.html#writing-data-1",
     "title": "Reading and Writing Data",
     "section": "Writing data",
-    "text": "Writing data\nFirst, we look at the files in my “labs” folder\n\nlist.files(\"../labs\")\n\n[1] \"datasets\"   \"lab_01.qmd\" \"lab_02.qmd\"\n\n\nNext, we can write the fef object to a .csv file.\n\nwrite.csv(x = fef,\n          file = \"../labs/my_fef.csv\")\n\nNow, we can see that the file is written.\n\nlist.files(\"../labs\")\n\n[1] \"datasets\"   \"lab_01.qmd\" \"lab_02.qmd\" \"my_fef.csv\""
+    "text": "Writing data\nFirst, we look at the files in my “labs” folder\n\nlist.files(\"../labs\")\n\n[1] \"datasets\"   \"lab_01.qmd\" \"lab_02.qmd\""
+  },
+  {
+    "objectID": "slides/w2d2.html#writing-data-2",
+    "href": "slides/w2d2.html#writing-data-2",
+    "title": "Reading and Writing Data",
+    "section": "Writing data",
+    "text": "Writing data\nNext, we can write the fef object to a .csv file.\n\nwrite.csv(x = fef,\n          file = \"../labs/my_fef.csv\")"
+  },
+  {
+    "objectID": "slides/w2d2.html#writing-data-3",
+    "href": "slides/w2d2.html#writing-data-3",
+    "title": "Reading and Writing Data",
+    "section": "Writing data",
+    "text": "Writing data\nNext, we can write the fef object to a .csv file.\n\nwrite.csv(x = fef,\n          file = \"../labs/my_fef.csv\")\n\nNow, we can see that the file is written.\n\nlist.files(\"../labs\")\n\n[1] \"datasets\"   \"lab_01.qmd\" \"lab_02.qmd\" \"my_fef.csv\""
   },
   {
     "objectID": "slides/w2d2.html#next-week",
     "href": "slides/w2d2.html#next-week",
     "title": "Reading and Writing Data",
     "section": "Next Week",
-    "text": "Next Week\n\nAndy will deliver lecture and lab through Tuesday 9/17.\nMain focuses: Chapter 4."
+    "text": "Next Week\n\nAndy will deliver lecture and lab through Tuesday 9/17.\nMain focuses: Chapter 4 (Data Structures)."
   },
   {
     "objectID": "slides/w1d1.html#agenda",
