@@ -13,6 +13,10 @@ Labs are turned in on [D2L](https://d2l.msu.edu).
 |------------------------------|---------------------|---------------------|
 | [Lab 1](labs/lab_01.qmd) | Thursday 8/27 (at lab time) | Wednesday 9/4 (at 5pm)  |
 | Lab 2                    | Thursday 9/5 (at lab time)  | Wednesday 9/11 (at 5pm) |
+| Lab 3                    | Thursday 9/12 (at lab time)  | Wednesday 9/18 (at 5pm) |
+| Lab 4                    | Thursday 9/19 (at lab time)  | Wednesday 9/25 (at 5pm) |
+| Lab 5                    | Thursday 9/26 (at lab time)  | Wednesday 10/2 (at 5pm) |
+
 
 ## Lecture Tickets
 
@@ -23,4 +27,11 @@ Lecture tickets are turned in on a piece of paper in-person at lecture.
 | [Lecture ticket 1](tickets/ticket_01.qmd) | Tuesday 8/27 (by 5pm) | Thursday 8/29 (in lecture) |
 | [Lecture ticket 2](tickets/ticket_02.qmd) | Thursday 8/29 (by 5pm)| Tuesday 9/3 (in lecture)   |
 | [Lecture ticket 3](tickets/ticket_03.qmd) | Tuesday  9/3 (by 5pm) | Thursday 9/5 (in lecture)  |
+| Lecture ticket 4 | Thursday  9/5 (by 5pm) | Tuesday 9/10 (in lecture)  |
+| Lecture ticket 5 | Tuesday  9/10 (by 5pm) | Thursday 9/12 (in lecture)  |
+| Lecture ticket 6 | Thursday  9/12 (by 5pm) | Tuesday 9/17 (in lecture)  |
+| Lecture ticket 7 | Tuesday  9/17 (by 5pm) | Thursday 9/19 (in lecture)  |
+| Lecture ticket 8 | Thursday  9/19 (by 5pm) | Tuesday 9/24 (in lecture)  |
+| Lecture ticket 9 | Tuesday  9/24 (by 5pm) | Thursday 9/26 (in lecture)  |
+
 
