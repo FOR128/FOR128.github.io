@@ -863,21 +863,21 @@
   {
     "objectID": "slides/w3d1.html#agenda",
     "href": "slides/w3d1.html#agenda",
-    "title": "Reading and Writing Data",
+    "title": "Data Structures: Vectors",
     "section": "Agenda",
     "text": "Agenda\n\nOverview of data structures\nA tour of vectors"
   },
   {
     "objectID": "slides/w3d1.html#data-structures",
     "href": "slides/w3d1.html#data-structures",
-    "title": "Reading and Writing Data",
+    "title": "Data Structures: Vectors",
     "section": "Data structures",
     "text": "Data structures\n\nA data structure is a format for organizing and storing data. The structure is designed so that data can be accessed and worked with in specific ways.\nStructures are either homogeneous or heterogeneous, which describes the data types they hold (one type versus multiple types).\nStructures can also be characterized by their dimensionality, see Table Table 1.\n\n\n\nTable 1: Dimension and type content of base data structures in R.\n\n\nDimension\nHomogeneous\nHeterogeneous\n\n\n\n\n1\nAtomic vector\nList\n\n\n2\nMatrix\nData frame\n\n\nN\nArray"
   },
   {
     "objectID": "slides/w3d1.html#data-structures-1",
     "href": "slides/w3d1.html#data-structures-1",
-    "title": "Reading and Writing Data",
+    "title": "Data Structures: Vectors",
     "section": "Data structures",
     "text": "Data structures\n\nLet’s take a look at vectors.qmd."
   },
