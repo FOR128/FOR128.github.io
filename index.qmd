@@ -12,6 +12,13 @@ editor:
 
 [Fall 2024]{.smallcaps}
 
+## Week 3, September 8 - 14
+
+### Tuesday
+
+-   We'll go through [vectors.qmd](in_class/vectors.qmd) in class.
+
+
 ## Week 2, September 1 - 7
 
 ### Tuesday

@@ -1,0 +1,58 @@
+---
+title: "Reading and Writing Data"
+editor: 
+  mode: source
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+---
+
+## Agenda
+
+-   Overview of data structures
+-   A tour of vectors
+
+## Data structures
+
+-   A <span style="color:#4267B2;">data structure</span> is a format for organizing and storing data. The structure
+is designed so that data can be accessed and worked with in specific ways.
+
+-   Structures are either <span style="color:#4267B2;">homogeneous</span> or <span style="color:#4267B2;">heterogeneous</span>, which describes the
+data types they hold (one type versus multiple types).
+
+-   Structures can also be characterized by their dimensionality, see Table @tbl-str.
+
+
+| Dimension | Homogeneous | Heterogeneous |
+|------|------|------|
+1 |Atomic vector |List
+2 |Matrix |Data frame
+N |Array|
+: Dimension and type content of base data structures in R. {#tbl-str}
+
+## Data structures
+
+-  Let's take a look at vectors.qmd.
+
+
+
+
+
+
+
