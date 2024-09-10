@@ -1,0 +1,18 @@
+---
+title: "Lecture Ticket 5"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read the following sections of IFDAR.
+
+-   Chapter 4: sections 4.3, 4.4 and 4.5 (Stop at 4.6)
+
+
+## Questions
+
+1. How many dimensions do dataframes have? 
+
+2. Consider the dataframe `treedat`. How would you access the element in the second row and third column of `treedat`? 
