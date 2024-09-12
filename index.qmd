@@ -18,6 +18,17 @@ editor:
 
 -   We'll go through [vectors.qmd](in_class/vectors.qmd) in class.
 
+### Thursday
+
+-   Lecture materials:
+    - In-class work: [vectors_dataframes.qmd](in_class/vectors_dataframes.qmd)
+    - Data for in-class work: [Loblolly.csv](in_class/Loblolly.csv)
+    
+-   Supplementary lab materials:
+    - Example **R script** lab setup: [lab_03_example.R](labs/lab_03_example.R)
+    - Lab 3 data: [FEF_trees.csv](labs/FEF_trees.csv)
+
+
 
 ## Week 2, September 1 - 7
 

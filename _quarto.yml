@@ -3,7 +3,8 @@ project:
   output-dir: docs
   render:
     - "*.qmd"
-    - "!labs/*.qmd"
+    - "!labs/lab_01.qmd"
+    - "!labs/lab_02.qmd"
     - "!quizzes/"
     - "!labs/datasets/"
     - "!/in_class/*.qmd"

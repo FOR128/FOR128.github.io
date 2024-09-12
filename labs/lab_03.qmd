@@ -1,0 +1,93 @@
+---
+title: "Vectors and Dataframes"
+subtitle: "FOR 128: Lab 3"
+date: "9/12/2024"
+format:
+  html: default
+editor: 
+  mode: source
+---
+
+## Getting started
+
+### Learning objectives
+
+  - Create, subset, and manipulate vectors and data frames.
+  - Practice reading data from external files.
+  - Get some practice writing R scripts.
+
+### Preperation
+
+Create a new directory called `lab_03` within your `labs` directory (e.g., `~/FOR_128/labs/lab_03`). In RStudio set `lab_03` as your working directory. Download and move the `FEF_trees.csv` file from the D2L lab page to your `lab_03` directory.
+
+Create a new script and save it as `lab_03.R` (it should save to your working directory). 
+
+Now, use our book, help "man" pages, Google, your intuition, and experimentation to describe the behavior of the code in each of the following questions. For each question, write and execute the code in each question then, using a comment `#`, add notes above the code to describe/define its behavior (see example script `lab_03_example.R` in the lab's D2L page).
+
+## Questions
+
+### Functions and index subsetting of vectors and data frames
+
+Use the code below to create the `plt` data frame.
+
+```{r}
+spp <- c("tsugca", "tsugca", "betual", "acerru", "pinust", "pinust", "betual", "acerru")
+dbh <- c(15, 12, 6.6, 9.3, 28.1, 9.23, 15.3, 11.1)
+qual <- c("ugs", "ags", "ags", "ugs", "ags", "ags", "ugs", "ags")
+live <- c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE)
+
+plt <- data.frame(spp, dbh, qual, live)
+```
+
+  1) `plt` <!-- #print the plt data frame -->
+  2) `class(plt)` <!-- #prints that plt is a data frame -->
+  3) `names(plt)` <!-- #prints the column names -->
+  4) `nrow(plt)` <!-- #prints the number of rows in the data frame -->
+  5) `ncol(plt)` <!-- #prints the number of columns in the data frame -->
+  6) `dim(plt)` <!-- #prints a vector of length 2 with the first element being the number of rows and second element being the number of columns -->
+  7) `length(plt)` <!-- #prints the number of columns, because a data frame is actually a fancy list with each column representing a vector in the list -->
+  8) `plt[2:4,c(1,4)]` <!-- #prints the values at rows 2 through 4 and columns 1 and 4 -->
+  9) `plt[1:3,c("spp", "dbh")]` <!-- #prints rows 1 through 3 and columns labeled spp and dbh -->
+  10) `plt$qual` <!-- #extracts and prints the qual column -->
+  11) `class(plt$qual)` <!-- #prints that plt$qual is a vector -->
+  12) `head(plt)` <!-- #prints the first six rows of plt -->
+  13) `tail(plt)` <!-- #prints the last six rows of plt -->
+  14) `head(plt, n=3)` <!-- #prints the first three rows of plt -->
+  15) `tail(plt, n=2)` <!-- #prints the last two rows of plt -->
+  16) `plt.cpy <- plt` <!-- #makes a copy of plt and calls it plt.cpy -->
+  17) `plt.cpy[1:3,1] <-  c("pinust", "pinust", "acerru")` <!-- #changes the value in the first three rows of column 1 to the vector on the right of the <-  -->
+  18) `plt.cpy[1:2,1] <-  c("pinust", "pinust", "acerru")` <!-- #throws and error because you are trying to change two elements, i.e., rows 1 and 2 in column 1 to a vector of  length three. -->
+  19) `plt.cpy$live[8] <- FALSE` <!-- #changes the value at row eight in the column labeled live to FALSE -->
+  20) `plt.cpy[8,"live"] <- TRUE` <!-- #same as above, just another approach to change the value at row eight in the column labeled live to FALSE -->
+  21) `rep("ugs", nrow(plt.cpy))` <!-- #repeats or replicates "ugs" eight times -->
+  22) `plt.cpy[,"status"] <- rep("ugs", nrow(plt.cpy))` <!-- #overwrites the plt.cpy column status with the vector of "ugs". -->
+  23) `!TRUE` <!-- #! changes TRUE to FALSE, and !FALSE to TRUE -->
+  24) `colnames(plt.cpy)[4] <- "dead"` <!-- #changes 4th column label to "dead" -->
+  25) `plt.cpy$dead <- !plt$live` <!-- #changes all the values in the "dead" column from FALSE to TRUE, and TRUE to FALSE -->
+  26) `plt.cpy <- plt[-(1:5),]` <!-- #removes rows 1:5 and assigns he smaller data frame to plt.cpy -->
+  27) `plt.cpy <- plt[-1:5,]` <!-- #throws an error because of -1:5 makes -1, 0, 1, 2, 3, 4, 5 and -1 and 0 are not valid row indexes -->
+  28) `plt.cpy <- rbind(plt, c("some new spp", 100, "ugs", FALSE))` <!-- #adds a new row to the bottom of plt and assigns the result to plt.cpy -->
+  29) `plt.cpy <- cbind(plt, 1:nrow(plt))` <!-- #adds a new column to the right side of plt with values 1:8 -->
+  30) `colnames(plt.cpy)[ncol(plt.cpy)] <- "tree.indx"` <!-- #changes the name of the new column added in 30 to "tree.indx" -->
+  31) `str(plt)` <!-- #prints information about the plt data frame (similar to the top right window in RStudio) -->
+
+Read the external data file `FEF_trees.csv` into R using the `read.csv()` function and call the resulting data frame `fef`.
+
+```{r}
+fef <- read.csv("FEF_trees.csv")
+```
+
+  32) `dim(fef)` <!-- #prints a vector of length 2 with the first element being the number of rows and second element being the number of columns -->
+  33) `head(fef)` <!-- #prints the first six rows -->
+  34) `tail(fef)` <!-- #prints the last six rows -->
+  35) `sum(fef$height_ft)` <!-- #sum of all tree heights -->
+  36) `max(fef$height_ft)` <!-- #max tree height -->
+  37) `min(fef$height_ft)` <!-- #min tree height -->
+  38) `which.max(fef$height_ft)` <!-- #the vector index of the max height -->
+  39) `fef[which.max(fef$height_ft), ]` <!-- #the row with the max height -->
+  40) `fef[which.min(fef$height_ft), ]` <!-- #the row with the max height -->
+  41) In the previous two labs you did your work in a Quarto document. What are some ways the script you created for this lab are different from the Quarto document?
+
+# Wrap up
+
+Congratulations! You've made it to the end of Lab 3. Submit your `lab_03.R` script to D2L.
