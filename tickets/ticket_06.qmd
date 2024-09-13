@@ -1,0 +1,38 @@
+---
+title: "Lecture Ticket 6"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read the following sections of IFDAR.
+
+-   Chapter 4: sections 4.7, 4.8 and 4.9
+
+
+## Questions
+
+1. You learned about comparison and logical operators in the reading. In `R`, what is the operator for each of the following:
+    a. equality,
+    b. greater than,
+    c. greater than or equal to,
+    d. not equal to,
+    e. or,
+    f. and.
+    
+2. Consider the following vector: 
+
+```{r}
+x <- 1:10
+x
+```
+
+What does the following do to `x`? 
+
+```{r}
+#| eval: false
+x[x < 5] <- 0
+```
+
+
