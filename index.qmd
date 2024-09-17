@@ -12,6 +12,12 @@ editor:
 
 [Fall 2024]{.smallcaps}
 
+## Week 4, September 15 - 21
+
+### Tuesday
+
+-   The [lecture notes](slides/w4d1.qmd) are available. 
+
 ## Week 3, September 8 - 14
 
 ### Tuesday

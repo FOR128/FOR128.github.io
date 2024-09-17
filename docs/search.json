@@ -126,6 +126,559 @@
     "text": "AI Policy for FOR 128\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
   },
   {
+    "objectID": "slides/w3d1.html#agenda",
+    "href": "slides/w3d1.html#agenda",
+    "title": "Data Structures: Vectors",
+    "section": "Agenda",
+    "text": "Agenda\n\nOverview of data structures\nA tour of vectors"
+  },
+  {
+    "objectID": "slides/w3d1.html#data-structures",
+    "href": "slides/w3d1.html#data-structures",
+    "title": "Data Structures: Vectors",
+    "section": "Data structures",
+    "text": "Data structures\n\nA data structure is a format for organizing and storing data. The structure is designed so that data can be accessed and worked with in specific ways.\nStructures are either homogeneous or heterogeneous, which describes the data types they hold (one type versus multiple types).\nStructures can also be characterized by their dimensionality, see Table Table 1.\n\n\n\nTable 1: Dimension and type content of base data structures in R.\n\n\nDimension\nHomogeneous\nHeterogeneous\n\n\n\n\n1\nAtomic vector\nList\n\n\n2\nMatrix\nData frame\n\n\nN\nArray"
+  },
+  {
+    "objectID": "slides/w3d1.html#data-structures-1",
+    "href": "slides/w3d1.html#data-structures-1",
+    "title": "Data Structures: Vectors",
+    "section": "Data structures",
+    "text": "Data structures\n\nLet’s take a look at vectors.qmd."
+  },
+  {
+    "objectID": "slides/w2d1.html#agenda",
+    "href": "slides/w2d1.html#agenda",
+    "title": "Intro to Practical Computing",
+    "section": "Agenda",
+    "text": "Agenda\n\nReview\nNaming best practices\nFiles and directories"
+  },
+  {
+    "objectID": "slides/w2d1.html#last-week",
+    "href": "slides/w2d1.html#last-week",
+    "title": "Intro to Practical Computing",
+    "section": "Last week",
+    "text": "Last week\n\nSyllabus\nLab 1\nTools for the course: R, RStudio, and Quarto"
+  },
+  {
+    "objectID": "slides/w2d1.html#syllabus",
+    "href": "slides/w2d1.html#syllabus",
+    "title": "Intro to Practical Computing",
+    "section": "Syllabus",
+    "text": "Syllabus\n\n\nRecall lecture tickets are due in person at the beginning of lecture.\n\nCourse late policy has been added to online version.\nLet’s quickly review the late policy."
+  },
+  {
+    "objectID": "slides/w2d1.html#lab-1",
+    "href": "slides/w2d1.html#lab-1",
+    "title": "Intro to Practical Computing",
+    "section": "Lab 1",
+    "text": "Lab 1\n\n\nIf you’re having troubles, technical or otherwise, come to office hours.\nMake sure to turn in (.pdf and .qmd) to D2L by 5pm on Wednesday (tomorrow)."
+  },
+  {
+    "objectID": "slides/w2d1.html#data-science-tools",
+    "href": "slides/w2d1.html#data-science-tools",
+    "title": "Intro to Practical Computing",
+    "section": "Data Science Tools",
+    "text": "Data Science Tools\n\n\nR is a programming language.\nRStudio is an IDE (what we use to interact with R and our computer).\nQuarto is a markdown language, for writing reports."
+  },
+  {
+    "objectID": "slides/w2d1.html#practical-computing-1",
+    "href": "slides/w2d1.html#practical-computing-1",
+    "title": "Intro to Practical Computing",
+    "section": "Practical computing",
+    "text": "Practical computing\n\n\nUnderstanding your computer and its file system is vital to success in this class and beyond.\nLast week, we threw you into the deep end with data science tools.\nThis week, we’ll spend a bit more time on the details to help you interact with your computer and these tools.\nToday, we’ll focus on file systems and file/folder naming."
+  },
+  {
+    "objectID": "slides/w2d1.html#naming-files-and-folders",
+    "href": "slides/w2d1.html#naming-files-and-folders",
+    "title": "Intro to Practical Computing",
+    "section": "Naming files and folders",
+    "text": "Naming files and folders\nSome best practices are important for naming files and folders:\n\n\nUse consistent casing:\n\ndelimiter naming, e.g. lab_01.qmd or cat_pictures\ncamel case, e.g., finalProjectMaterials.qmd or catPictures\n\nName your files and folders clearly, concisely, and informatively:\n\nGood: for128_f24\nBad: my_work_for_forestry128_in_fall_2024\nReally bad: myWorkFor_forestry128_inFall_2024"
+  },
+  {
+    "objectID": "slides/w2d1.html#file-systems-directories",
+    "href": "slides/w2d1.html#file-systems-directories",
+    "title": "Intro to Practical Computing",
+    "section": "File systems / directories",
+    "text": "File systems / directories\n\n\nEvery time you create or download a file, you are storing it somewhere in your computer’s file system.\nBut where? 🤔"
+  },
+  {
+    "objectID": "slides/w2d1.html#file-systems-directories-1",
+    "href": "slides/w2d1.html#file-systems-directories-1",
+    "title": "Intro to Practical Computing",
+    "section": "File systems / directories",
+    "text": "File systems / directories\n\nThink of your computer’s file system as a tree"
+  },
+  {
+    "objectID": "slides/w2d1.html#the-root",
+    "href": "slides/w2d1.html#the-root",
+    "title": "Intro to Practical Computing",
+    "section": "The root",
+    "text": "The root\nThe root directory is the start or base of your file system.\n\n\nOn Windows, the root is C:/\nOn macOS and Linux, the root is /"
+  },
+  {
+    "objectID": "slides/w2d1.html#your-home-directory",
+    "href": "slides/w2d1.html#your-home-directory",
+    "title": "Intro to Practical Computing",
+    "section": "Your home directory",
+    "text": "Your home directory\nWhen interacting with your computer, you are logged in as a user. Each user has a home directory.\nFor example:\n\n\nOn Windows, C:/Users/Sarah\nOn macOS and Linux, /home/sarah"
+  },
+  {
+    "objectID": "slides/w2d1.html#your-home-directory-1",
+    "href": "slides/w2d1.html#your-home-directory-1",
+    "title": "Intro to Practical Computing",
+    "section": "Your home directory",
+    "text": "Your home directory\nIt is often easier to use a shortcut to access your home directory: ~. On Windows, macOS, and Linux, you can use ~ to access your home directory:\n\n~ is equivalent to C:/Users/Sarah and /home/sarah"
+  },
+  {
+    "objectID": "slides/w2d1.html#paths",
+    "href": "slides/w2d1.html#paths",
+    "title": "Intro to Practical Computing",
+    "section": "Paths",
+    "text": "Paths\nC:/Users/Sarah and /home/sarah are examples of paths. In particular, these are paths to Sarah’s home directory."
+  },
+  {
+    "objectID": "slides/w2d1.html#paths-1",
+    "href": "slides/w2d1.html#paths-1",
+    "title": "Intro to Practical Computing",
+    "section": "Paths",
+    "text": "Paths\n\n\nPaths specify the location of a file or folder on your computer, let’s look at a few examples:\n\n/\n/home/sarah\n/home/sarah/Desktop\n/home/sarah/Documents/for128/lab_01.qmd\n~/Documents/for128/lab_01.qmd"
+  },
+  {
+    "objectID": "slides/w2d1.html#paths-2",
+    "href": "slides/w2d1.html#paths-2",
+    "title": "Intro to Practical Computing",
+    "section": "Paths",
+    "text": "Paths\n\nEquivalent paths, on Windows:\n\nC:/\nC:/Users/Sarah\nC:/Users/Sarah/Desktop\nC:/Users/Sarah/Documents/for128/lab_01.qmd\n~/Documents/for128/lab_01.qmd"
+  },
+  {
+    "objectID": "slides/w2d1.html#relative-vs.-absolute-paths",
+    "href": "slides/w2d1.html#relative-vs.-absolute-paths",
+    "title": "Intro to Practical Computing",
+    "section": "Relative vs. absolute paths",
+    "text": "Relative vs. absolute paths\n\n\nSo far, we’ve only shown absolute paths.\nAbsolute paths show a file or folder in reference to your computer’s file system.\nRelative paths, on the other hand, show a file or folder in relation to a working directory."
+  },
+  {
+    "objectID": "slides/w2d1.html#working-directory-example",
+    "href": "slides/w2d1.html#working-directory-example",
+    "title": "Intro to Practical Computing",
+    "section": "Working directory example",
+    "text": "Working directory example\n\n\nRecall the absolute path to lab_01.qmd:\n\n/home/sarah/Documents/for128/lab_01.qmd\n\nSay our working directory is the documents folder:\n\n/home/sarah/Documents\n\nThen the relative path to lab_01.qmd is:\n\nfor128/lab_01.qmd"
+  },
+  {
+    "objectID": "slides/w2d1.html#why",
+    "href": "slides/w2d1.html#why",
+    "title": "Intro to Practical Computing",
+    "section": "Why?",
+    "text": "Why?\n\n\nReproducibility!\n\nThey will work on any computer, not just your own.\n\nClear and concise.\nBut really, reproducibility."
+  },
+  {
+    "objectID": "slides/w2d1.html#what-have-we-learned",
+    "href": "slides/w2d1.html#what-have-we-learned",
+    "title": "Intro to Practical Computing",
+    "section": "What have we learned?",
+    "text": "What have we learned?\n\n\nIn Quarto, the default working directory is the folder where the quarto document lives.\n\nCrucial note: this may be different than the working directory in your R console.\n\nYou can set your working directory in R with setwd()\n\nJust for your R console, though. This does not apply to Quarto documents.\n\nYou can get your current working directory in R with getwd()"
+  },
+  {
+    "objectID": "slides/w2d1.html#next-time",
+    "href": "slides/w2d1.html#next-time",
+    "title": "Intro to Practical Computing",
+    "section": "Next time",
+    "text": "Next time\n\nRemember, lab 1 is due tomorrow at 5pm on D2L.\nRStudio projects.\nReading and writing data."
+  },
+  {
+    "objectID": "slides/w1d1.html#agenda",
+    "href": "slides/w1d1.html#agenda",
+    "title": "Welcome to FOR 128!",
+    "section": "Agenda",
+    "text": "Agenda\n\nIntroductions\nCourse goals\nCourse expectations + syllabus\nExplore course website\nPreparing for Thursday"
+  },
+  {
+    "objectID": "slides/w1d1.html#engagement",
+    "href": "slides/w1d1.html#engagement",
+    "title": "Welcome to FOR 128!",
+    "section": "Engagement",
+    "text": "Engagement\n\n\n\nIt has become harder and harder to stay focused over the last decade given the massive rise in wearable and mobile technology.\nIf you’ll be using a laptop to take notes, please avoid distractions to yourself and classmates by silencing notifications and avoiding checking emails, news, social media, etc.\nPlease leave your phone on silent and put it somewhere where it won’t distract you."
+  },
+  {
+    "objectID": "slides/w1d1.html#about-me",
+    "href": "slides/w1d1.html#about-me",
+    "title": "Welcome to FOR 128!",
+    "section": "About me",
+    "text": "About me\n\n\nI’m Grayson, a PhD student in Forestry.\nBefore coming to Michigan State, I worked as a Data Scientist contracting for the USDA Forest Service.\nBefore that, I majored in Mathematics & Statistics at Reed College."
+  },
+  {
+    "objectID": "slides/w1d1.html#about-me-1",
+    "href": "slides/w1d1.html#about-me-1",
+    "title": "Welcome to FOR 128!",
+    "section": "About me",
+    "text": "About me\n\n\nI ❤️ teaching, especially about Data Science + Forestry.\nIn the past, I’ve co-directed a Forestry Data Science lab for undergraduates."
+  },
+  {
+    "objectID": "slides/w1d1.html#about-me-2",
+    "href": "slides/w1d1.html#about-me-2",
+    "title": "Welcome to FOR 128!",
+    "section": "About me",
+    "text": "About me\n\nI ❤️ teaching, especially about Data Science + Forestry.\nIn the past, I’ve co-directed a Forestry Data Science lab for undergraduates."
+  },
+  {
+    "objectID": "slides/w1d1.html#path-to-forestry-data-science",
+    "href": "slides/w1d1.html#path-to-forestry-data-science",
+    "title": "Welcome to FOR 128!",
+    "section": "Path to Forestry Data Science",
+    "text": "Path to Forestry Data Science\n\n\nTake this class and engage thoughtfully with the material. ✅\nTake FOR 372 (offered this spring) to gain more domain-specific statistical expertise.\nA wide variety of knowledge in statistics, computer science, and your domain field of expertise (forestry) is important.\nEngage in undergraduate research opportunities!"
+  },
+  {
+    "objectID": "slides/w1d1.html#course-goals",
+    "href": "slides/w1d1.html#course-goals",
+    "title": "Welcome to FOR 128!",
+    "section": "Course goals",
+    "text": "Course goals\n\n\nGetting to know your computer and using it thoughtfully\n\noperating systems,\nfiles,\ndirectories,\ngood naming conventions,\nfile organization"
+  },
+  {
+    "objectID": "slides/w1d1.html#course-goals-1",
+    "href": "slides/w1d1.html#course-goals-1",
+    "title": "Welcome to FOR 128!",
+    "section": "Course goals",
+    "text": "Course goals\n\n\nLearn how to use a variety of data science tools with forestry applications\n\nThe R programming language,\nThe RStudio IDE,\nQuarto (for reproducible reports)\n\nLearn extensive R programming skills\n\nbase R and tidyverse approaches\ndata structures\ncustom functions\ndata wrangling & reshaping\nbeautiful plots with ggplot2"
+  },
+  {
+    "objectID": "slides/w1d1.html#syllabus-materials",
+    "href": "slides/w1d1.html#syllabus-materials",
+    "title": "Welcome to FOR 128!",
+    "section": "Syllabus: Materials",
+    "text": "Syllabus: Materials\nTextbook: IFDAR\nIntroduction to Forestry Data Analysis with R, by Andrew O. Finley and Jeffrey W. Doser. Available free, online: www.finley-lab.com/files/ifdar/\nTechnologies: R, RStudio, a laptop\nR is a free and open source programming language, and RStudio is an Integrated Development Environment (IDE) which allows for streamlined use of the R programming language. Both are free to install, and installation instructions will be provided in this course. A laptop that can run R and RStudio is required for this course."
+  },
+  {
+    "objectID": "slides/w1d1.html#syllabus-meetings",
+    "href": "slides/w1d1.html#syllabus-meetings",
+    "title": "Welcome to FOR 128!",
+    "section": "Syllabus: Meetings",
+    "text": "Syllabus: Meetings"
+  },
+  {
+    "objectID": "slides/w1d1.html#syllabus-assessments",
+    "href": "slides/w1d1.html#syllabus-assessments",
+    "title": "Welcome to FOR 128!",
+    "section": "Syllabus: Assessments",
+    "text": "Syllabus: Assessments\n\n\nLab reports (40%)\n\nLab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on D2L. We will have a lab each week (except for the week of the midterm exam).\n\nMidterm Exams (20%)\n\nThere will be two midterm exams, one on week 6 and one on week 12. Each midterm is worth 10% of the final grade.\n\nIn-class quizzes (15%)\n\nIn-class quizzes do not have a regular schedule and will occur based on the material we get through."
+  },
+  {
+    "objectID": "slides/w1d1.html#syllabus-assessments-1",
+    "href": "slides/w1d1.html#syllabus-assessments-1",
+    "title": "Welcome to FOR 128!",
+    "section": "Syllabus: Assessments",
+    "text": "Syllabus: Assessments\n\n\nLecture tickets (10%)\n\nLecture tickets are due at the beginning of every lecture, handed in in-person, by you.\n\nFinal Project (15%)\n\nThe details of the final project will be discussed as the semester goes on."
+  },
+  {
+    "objectID": "slides/w1d1.html#syllabus-collaboration",
+    "href": "slides/w1d1.html#syllabus-collaboration",
+    "title": "Welcome to FOR 128!",
+    "section": "Syllabus: Collaboration",
+    "text": "Syllabus: Collaboration\n\n\nWorking with classmates on labs and lecture tickets is perfectly acceptable.\nHowever, please cite your collaborator(s) at the top of your assignment.\nCollaboration on exams and quizzes is strictly prohibited.\nBut what is collaboration?"
+  },
+  {
+    "objectID": "slides/w1d1.html#artificial-intelligence-ai",
+    "href": "slides/w1d1.html#artificial-intelligence-ai",
+    "title": "Welcome to FOR 128!",
+    "section": "Artificial Intelligence (AI)",
+    "text": "Artificial Intelligence (AI)\n\n\n\n“…a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data”\nAI tools are being used by others to write code, but as Data Scientists, we must write code responsibly\nAt this stage of learning how to code, AI tools inhibit learning and understanding."
+  },
+  {
+    "objectID": "slides/w1d1.html#next-time",
+    "href": "slides/w1d1.html#next-time",
+    "title": "Welcome to FOR 128!",
+    "section": "Next time:",
+    "text": "Next time:\n\nCome to class with a laptop\nComplete Lecture Ticket 1 before lecture on Thursday."
+  },
+  {
+    "objectID": "labs/lab_03.html",
+    "href": "labs/lab_03.html",
+    "title": "Vectors and Dataframes",
+    "section": "",
+    "text": "Create, subset, and manipulate vectors and data frames.\nPractice reading data from external files.\nGet some practice writing R scripts.\n\n\n\n\nCreate a new directory called lab_03 within your labs directory (e.g., ~/FOR_128/labs/lab_03). In RStudio set lab_03 as your working directory. Download and move the FEF_trees.csv file from the D2L lab page to your lab_03 directory.\nCreate a new script and save it as lab_03.R (it should save to your working directory).\nNow, use our book, help “man” pages, Google, your intuition, and experimentation to describe the behavior of the code in each of the following questions. For each question, write and execute the code in each question then, using a comment #, add notes above the code to describe/define its behavior (see example script lab_03_example.R in the lab’s D2L page)."
+  },
+  {
+    "objectID": "labs/lab_03.html#getting-started",
+    "href": "labs/lab_03.html#getting-started",
+    "title": "Vectors and Dataframes",
+    "section": "",
+    "text": "Create, subset, and manipulate vectors and data frames.\nPractice reading data from external files.\nGet some practice writing R scripts.\n\n\n\n\nCreate a new directory called lab_03 within your labs directory (e.g., ~/FOR_128/labs/lab_03). In RStudio set lab_03 as your working directory. Download and move the FEF_trees.csv file from the D2L lab page to your lab_03 directory.\nCreate a new script and save it as lab_03.R (it should save to your working directory).\nNow, use our book, help “man” pages, Google, your intuition, and experimentation to describe the behavior of the code in each of the following questions. For each question, write and execute the code in each question then, using a comment #, add notes above the code to describe/define its behavior (see example script lab_03_example.R in the lab’s D2L page)."
+  },
+  {
+    "objectID": "labs/lab_03.html#questions",
+    "href": "labs/lab_03.html#questions",
+    "title": "Vectors and Dataframes",
+    "section": "Questions",
+    "text": "Questions\n\nFunctions and index subsetting of vectors and data frames\nUse the code below to create the plt data frame.\n\nspp &lt;- c(\"tsugca\", \"tsugca\", \"betual\", \"acerru\", \"pinust\", \"pinust\", \"betual\", \"acerru\")\ndbh &lt;- c(15, 12, 6.6, 9.3, 28.1, 9.23, 15.3, 11.1)\nqual &lt;- c(\"ugs\", \"ags\", \"ags\", \"ugs\", \"ags\", \"ags\", \"ugs\", \"ags\")\nlive &lt;- c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE)\n\nplt &lt;- data.frame(spp, dbh, qual, live)\n\n\nplt \nclass(plt) \nnames(plt) \nnrow(plt) \nncol(plt) \ndim(plt) \nlength(plt) \nplt[2:4,c(1,4)] \nplt[1:3,c(\"spp\", \"dbh\")] \nplt$qual \nclass(plt$qual) \nhead(plt) \ntail(plt) \nhead(plt, n=3) \ntail(plt, n=2) \nplt.cpy &lt;- plt \nplt.cpy[1:3,1] &lt;-  c(\"pinust\", \"pinust\", \"acerru\") \nplt.cpy[1:2,1] &lt;-  c(\"pinust\", \"pinust\", \"acerru\") \nplt.cpy$live[8] &lt;- FALSE \nplt.cpy[8,\"live\"] &lt;- TRUE \nrep(\"ugs\", nrow(plt.cpy)) \nplt.cpy[,\"status\"] &lt;- rep(\"ugs\", nrow(plt.cpy)) \n!TRUE \ncolnames(plt.cpy)[4] &lt;- \"dead\" \nplt.cpy$dead &lt;- !plt$live \nplt.cpy &lt;- plt[-(1:5),] \nplt.cpy &lt;- plt[-1:5,] \nplt.cpy &lt;- rbind(plt, c(\"some new spp\", 100, \"ugs\", FALSE)) \nplt.cpy &lt;- cbind(plt, 1:nrow(plt)) \ncolnames(plt.cpy)[ncol(plt.cpy)] &lt;- \"tree.indx\" \nstr(plt) \n\nRead the external data file FEF_trees.csv into R using the read.csv() function and call the resulting data frame fef.\n\nfef &lt;- read.csv(\"FEF_trees.csv\")\n\n\ndim(fef) \nhead(fef) \ntail(fef) \nsum(fef$height_ft) \nmax(fef$height_ft) \nmin(fef$height_ft) \nwhich.max(fef$height_ft) \nfef[which.max(fef$height_ft), ] \nfef[which.min(fef$height_ft), ] \nIn the previous two labs you did your work in a Quarto document. What are some ways the script you created for this lab are different from the Quarto document?"
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)"
+  },
+  {
+    "objectID": "assignments.html#labs",
+    "href": "assignments.html#labs",
+    "title": "Assignments",
+    "section": "",
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)"
+  },
+  {
+    "objectID": "assignments.html#lecture-tickets",
+    "href": "assignments.html#lecture-tickets",
+    "title": "Assignments",
+    "section": "Lecture Tickets",
+    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)\n\n\nLecture ticket 3\nTuesday 9/3 (by 5pm)\nThursday 9/5 (in lecture)\n\n\nLecture ticket 4\nThursday 9/5 (by 5pm)\nTuesday 9/10 (in lecture)\n\n\nLecture ticket 5\nTuesday 9/10 (by 5pm)\nThursday 9/12 (in lecture)\n\n\nLecture ticket 6\nThursday 9/12 (by 5pm)\nTuesday 9/17 (in lecture)\n\n\nLecture ticket 7\nTuesday 9/17 (by 5pm)\nThursday 9/19 (in lecture)\n\n\nLecture ticket 8\nThursday 9/19 (by 5pm)\nTuesday 9/24 (in lecture)\n\n\nLecture ticket 9\nTuesday 9/24 (by 5pm)\nThursday 9/26 (in lecture)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "For 128 Michigan State University\nFall 2024\n\n\n\n\n\nThe lecture notes are available.\n\n\n\n\n\n\n\n\nWe’ll go through vectors.qmd in class.\n\n\n\n\n\nLecture materials:\n\nIn-class work: vectors_dataframes.qmd\nData for in-class work: Loblolly.csv\n\nSupplementary lab materials:\n\nExample R script lab setup: lab_03_example.R\nLab 3 data: FEF_trees.csv\n\n\n\n\n\n\n\n\n\nOffice hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L.\n\n\n\n\n\n\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+  },
+  {
+    "objectID": "index.html#week-4-september-15---21",
+    "href": "index.html#week-4-september-15---21",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "The lecture notes are available."
+  },
+  {
+    "objectID": "index.html#week-3-september-8---14",
+    "href": "index.html#week-3-september-8---14",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "We’ll go through vectors.qmd in class.\n\n\n\n\n\nLecture materials:\n\nIn-class work: vectors_dataframes.qmd\nData for in-class work: Loblolly.csv\n\nSupplementary lab materials:\n\nExample R script lab setup: lab_03_example.R\nLab 3 data: FEF_trees.csv"
+  },
+  {
+    "objectID": "index.html#week-2-september-1---7",
+    "href": "index.html#week-2-september-1---7",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "Office hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L."
+  },
+  {
+    "objectID": "index.html#week-1-august-25---31",
+    "href": "index.html#week-1-august-25---31",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+  },
+  {
+    "objectID": "recordings.html",
+    "href": "recordings.html",
+    "title": "Lecture Recordings",
+    "section": "",
+    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 2: Data structures. Available here."
+  },
+  {
+    "objectID": "recordings.html#recordings",
+    "href": "recordings.html#recordings",
+    "title": "Lecture Recordings",
+    "section": "",
+    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 2: Data structures. Available here."
+  },
+  {
+    "objectID": "slides/w1d2.html#agenda",
+    "href": "slides/w1d2.html#agenda",
+    "title": "Tools for Data Science",
+    "section": "Agenda",
+    "text": "Agenda\nToday, we’ll introduce a few important data science tools:\n\nThe R programming language\nThe RStudio IDE\nQuarto, for reproducible reports"
+  },
+  {
+    "objectID": "slides/w1d2.html#the-r-programming-language-overview",
+    "href": "slides/w1d2.html#the-r-programming-language-overview",
+    "title": "Tools for Data Science",
+    "section": "The R programming language: overview",
+    "text": "The R programming language: overview\n\n\nR is an open source and freely available programming language with fully featured graphics.\nR is a quite popular language, especially for scientific programming (but it does have lots of industry popularity, as well!).\nR is somewhat similar to python in syntax, and is a great first programming language to learn."
+  },
+  {
+    "objectID": "slides/w1d2.html#the-r-programming-language-history",
+    "href": "slides/w1d2.html#the-r-programming-language-history",
+    "title": "Tools for Data Science",
+    "section": "The R programming language: history",
+    "text": "The R programming language: history\n\n\nInitially, there was S. Developed by Bell Laboratories in the mid-70s.\nJohn Chambers, one of S’s primary developers described its purpose as follows: “to turn ideas into software, quickly and faithfully”.\nR was developed in the early 90’s and deals with many of the memory problems that existed in S.\nUnder the hood, R calls routines from the lower-level FORTRAN and C languages."
+  },
+  {
+    "objectID": "slides/w1d2.html#rstudio",
+    "href": "slides/w1d2.html#rstudio",
+    "title": "Tools for Data Science",
+    "section": "RStudio",
+    "text": "RStudio\n\n\nRStudio, or the RStudio Integrated Development Environment (IDE), is a tool we’ll use to run R code, edit reproducible reports, and even navigate our file system.\nRStudio was initially released in 2011, and is the most popular IDE for R programming.\nLargely, RStudio is a tool to code efficiently and reproducibly in the R programming language.\nLet’s take a look at it!"
+  },
+  {
+    "objectID": "slides/w1d2.html#rstudio-1",
+    "href": "slides/w1d2.html#rstudio-1",
+    "title": "Tools for Data Science",
+    "section": "RStudio",
+    "text": "RStudio\n\nRStudio has four panes: source, console, environment, and file manager."
+  },
+  {
+    "objectID": "slides/w1d2.html#whats-going-on-here",
+    "href": "slides/w1d2.html#whats-going-on-here",
+    "title": "Tools for Data Science",
+    "section": "What’s going on here?",
+    "text": "What’s going on here?\n\nrnorm(1)\n\n\n\nrnorm() is a function.\n1 is the value we gave to one of it’s arguments.\nWe can type ?rnorm() for more information about the rnorm() function.\nLet’s check it out!"
+  },
+  {
+    "objectID": "slides/w1d2.html#what-have-we-learned",
+    "href": "slides/w1d2.html#what-have-we-learned",
+    "title": "Tools for Data Science",
+    "section": "What have we learned?",
+    "text": "What have we learned?\n\n\nThe rnorm() function takes n random draws from a normal distribution with a center (mean) and spread (sd).\n\nThese statistical details are not necessary for this class."
+  },
+  {
+    "objectID": "slides/w1d2.html#what-have-we-learned-1",
+    "href": "slides/w1d2.html#what-have-we-learned-1",
+    "title": "Tools for Data Science",
+    "section": "What have we learned?",
+    "text": "What have we learned?\n\nThe rnorm() function takes n random draws from a normal distribution with a center (mean) and spread (sd).\n\nThese statistical details are not necessary for this class.\n\n\nWe could have written:\n\nrnorm(n = 1)"
+  },
+  {
+    "objectID": "slides/w1d2.html#what-have-we-learned-2",
+    "href": "slides/w1d2.html#what-have-we-learned-2",
+    "title": "Tools for Data Science",
+    "section": "What have we learned?",
+    "text": "What have we learned?\n\nThe rnorm() function takes n random draws from a normal distribution with a center (mean) and spread (sd).\n\nThese statistical details are not necessary for this class.\n\n\nWe could have written:\n\nrnorm(n = 1)\n\nOr even:\n\nrnorm(n = 1, mean = 0, sd = 1)"
+  },
+  {
+    "objectID": "slides/w1d2.html#arguments",
+    "href": "slides/w1d2.html#arguments",
+    "title": "Tools for Data Science",
+    "section": "Arguments",
+    "text": "Arguments\n\nrnorm(n = 1, mean = 0, sd = 1)\n\n\n\nn must be specified for rnorm() to run\nmean and sd are optional, but if you don’t specify them, R will choose for you (in this case, the defaults are 0 and 1)."
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-1",
+    "href": "slides/w1d2.html#r-as-a-calculator-1",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-2",
+    "href": "slides/w1d2.html#r-as-a-calculator-2",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-3",
+    "href": "slides/w1d2.html#r-as-a-calculator-3",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-4",
+    "href": "slides/w1d2.html#r-as-a-calculator-4",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-5",
+    "href": "slides/w1d2.html#r-as-a-calculator-5",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-6",
+    "href": "slides/w1d2.html#r-as-a-calculator-6",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-7",
+    "href": "slides/w1d2.html#r-as-a-calculator-7",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-8",
+    "href": "slides/w1d2.html#r-as-a-calculator-8",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-9",
+    "href": "slides/w1d2.html#r-as-a-calculator-9",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nFunctions can be nested in each other\n\n\nlog(exp(7))\n\n[1] 7"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-10",
+    "href": "slides/w1d2.html#r-as-a-calculator-10",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nExponents with ^: 2^3 means \\(2^3\\)\n\n\n2^3\n\n[1] 8"
+  },
+  {
+    "objectID": "slides/w1d2.html#quarto-1",
+    "href": "slides/w1d2.html#quarto-1",
+    "title": "Tools for Data Science",
+    "section": "Quarto",
+    "text": "Quarto\n\n\nQuarto is a markdown language, released in 2022.\nAllows you to include code and text in the same document.\nDocuments output or “Render” to PDF or HTML (web) documents.\nThese slides (and the course website!) are made with Quarto."
+  },
+  {
+    "objectID": "slides/w1d2.html#quarto-for-reproducible-reports",
+    "href": "slides/w1d2.html#quarto-for-reproducible-reports",
+    "title": "Tools for Data Science",
+    "section": "Quarto for reproducible reports",
+    "text": "Quarto for reproducible reports\n\n\nQuarto is a great tool to help us do reproducible science.\nWhat does reproducibility mean?\nreproducibility \\(\\neq\\) replicability / repeatability"
+  },
+  {
+    "objectID": "slides/w1d2.html#a-project-is-reproducible-if-another-person-could-take-your-code-and-data-run-the-code-and-get-the-exact-same-answer.",
+    "href": "slides/w1d2.html#a-project-is-reproducible-if-another-person-could-take-your-code-and-data-run-the-code-and-get-the-exact-same-answer.",
+    "title": "Tools for Data Science",
+    "section": "A project is reproducible if another person could take your code and data, run the code, and get the exact same answer.",
+    "text": "A project is reproducible if another person could take your code and data, run the code, and get the exact same answer."
+  },
+  {
+    "objectID": "slides/w1d2.html#a-project-is-replicable-repeatable-if-another-person-could-take-the-steps-to-do-your-project-again-in-their-own-setting.",
+    "href": "slides/w1d2.html#a-project-is-replicable-repeatable-if-another-person-could-take-the-steps-to-do-your-project-again-in-their-own-setting.",
+    "title": "Tools for Data Science",
+    "section": "A project is replicable / repeatable if another person could take the steps to do your project again in their own setting.",
+    "text": "A project is replicable / repeatable if another person could take the steps to do your project again in their own setting."
+  },
+  {
+    "objectID": "slides/w1d2.html#objects-in-r",
+    "href": "slides/w1d2.html#objects-in-r",
+    "title": "Tools for Data Science",
+    "section": "Objects in R",
+    "text": "Objects in R\n\nR can store objects for use later in what we call an environment.\n\n\ndbh_in &lt;- 40 # store tree diameter (inches)"
+  },
+  {
+    "objectID": "slides/w1d2.html#objects-in-r-1",
+    "href": "slides/w1d2.html#objects-in-r-1",
+    "title": "Tools for Data Science",
+    "section": "Objects in R",
+    "text": "Objects in R\n\nR can store objects for use later in what we call an environment.\nHere, we stored dbh_in in our environment, and printed it out to see its value.\n\n\ndbh_in\n\n[1] 40"
+  },
+  {
+    "objectID": "slides/w1d2.html#objects-in-r-2",
+    "href": "slides/w1d2.html#objects-in-r-2",
+    "title": "Tools for Data Science",
+    "section": "Objects in R",
+    "text": "Objects in R\n\nR can store objects for use later in what we call an environment.\nHere, we stored dbh_in in our environment, and printed it out to see its value.\nWe can use R as a calculator to compute the tree’s basal area.\n\n\nBA_in2 &lt;- pi * (dbh_in / 2)^2 # compute tree basal area\nBA_in2\n\n[1] 1256.637"
+  },
+  {
+    "objectID": "slides/w1d2.html#next-time",
+    "href": "slides/w1d2.html#next-time",
+    "title": "Tools for Data Science",
+    "section": "Next time",
+    "text": "Next time\n\n\nWe’ll talk about file systems, paths, folders, and navigating your computer.\nMore advanced features of R as well: basic data structures, variable naming and code formatting, reading/writing data, and more!"
+  },
+  {
     "objectID": "slides/w2d2.html#agenda",
     "href": "slides/w2d2.html#agenda",
     "title": "Reading and Writing Data",
@@ -378,550 +931,39 @@
     "text": "Next Week\n\nAndy will deliver lecture and lab through Tuesday 9/17.\nMain focuses: Chapter 4 (Data Structures)."
   },
   {
-    "objectID": "slides/w1d2.html#agenda",
-    "href": "slides/w1d2.html#agenda",
-    "title": "Tools for Data Science",
-    "section": "Agenda",
-    "text": "Agenda\nToday, we’ll introduce a few important data science tools:\n\nThe R programming language\nThe RStudio IDE\nQuarto, for reproducible reports"
-  },
-  {
-    "objectID": "slides/w1d2.html#the-r-programming-language-overview",
-    "href": "slides/w1d2.html#the-r-programming-language-overview",
-    "title": "Tools for Data Science",
-    "section": "The R programming language: overview",
-    "text": "The R programming language: overview\n\n\nR is an open source and freely available programming language with fully featured graphics.\nR is a quite popular language, especially for scientific programming (but it does have lots of industry popularity, as well!).\nR is somewhat similar to python in syntax, and is a great first programming language to learn."
-  },
-  {
-    "objectID": "slides/w1d2.html#the-r-programming-language-history",
-    "href": "slides/w1d2.html#the-r-programming-language-history",
-    "title": "Tools for Data Science",
-    "section": "The R programming language: history",
-    "text": "The R programming language: history\n\n\nInitially, there was S. Developed by Bell Laboratories in the mid-70s.\nJohn Chambers, one of S’s primary developers described its purpose as follows: “to turn ideas into software, quickly and faithfully”.\nR was developed in the early 90’s and deals with many of the memory problems that existed in S.\nUnder the hood, R calls routines from the lower-level FORTRAN and C languages."
-  },
-  {
-    "objectID": "slides/w1d2.html#rstudio",
-    "href": "slides/w1d2.html#rstudio",
-    "title": "Tools for Data Science",
-    "section": "RStudio",
-    "text": "RStudio\n\n\nRStudio, or the RStudio Integrated Development Environment (IDE), is a tool we’ll use to run R code, edit reproducible reports, and even navigate our file system.\nRStudio was initially released in 2011, and is the most popular IDE for R programming.\nLargely, RStudio is a tool to code efficiently and reproducibly in the R programming language.\nLet’s take a look at it!"
-  },
-  {
-    "objectID": "slides/w1d2.html#rstudio-1",
-    "href": "slides/w1d2.html#rstudio-1",
-    "title": "Tools for Data Science",
-    "section": "RStudio",
-    "text": "RStudio\n\nRStudio has four panes: source, console, environment, and file manager."
-  },
-  {
-    "objectID": "slides/w1d2.html#whats-going-on-here",
-    "href": "slides/w1d2.html#whats-going-on-here",
-    "title": "Tools for Data Science",
-    "section": "What’s going on here?",
-    "text": "What’s going on here?\n\nrnorm(1)\n\n\n\nrnorm() is a function.\n1 is the value we gave to one of it’s arguments.\nWe can type ?rnorm() for more information about the rnorm() function.\nLet’s check it out!"
-  },
-  {
-    "objectID": "slides/w1d2.html#what-have-we-learned",
-    "href": "slides/w1d2.html#what-have-we-learned",
-    "title": "Tools for Data Science",
-    "section": "What have we learned?",
-    "text": "What have we learned?\n\n\nThe rnorm() function takes n random draws from a normal distribution with a center (mean) and spread (sd).\n\nThese statistical details are not necessary for this class."
-  },
-  {
-    "objectID": "slides/w1d2.html#what-have-we-learned-1",
-    "href": "slides/w1d2.html#what-have-we-learned-1",
-    "title": "Tools for Data Science",
-    "section": "What have we learned?",
-    "text": "What have we learned?\n\nThe rnorm() function takes n random draws from a normal distribution with a center (mean) and spread (sd).\n\nThese statistical details are not necessary for this class.\n\n\nWe could have written:\n\nrnorm(n = 1)"
-  },
-  {
-    "objectID": "slides/w1d2.html#what-have-we-learned-2",
-    "href": "slides/w1d2.html#what-have-we-learned-2",
-    "title": "Tools for Data Science",
-    "section": "What have we learned?",
-    "text": "What have we learned?\n\nThe rnorm() function takes n random draws from a normal distribution with a center (mean) and spread (sd).\n\nThese statistical details are not necessary for this class.\n\n\nWe could have written:\n\nrnorm(n = 1)\n\nOr even:\n\nrnorm(n = 1, mean = 0, sd = 1)"
-  },
-  {
-    "objectID": "slides/w1d2.html#arguments",
-    "href": "slides/w1d2.html#arguments",
-    "title": "Tools for Data Science",
-    "section": "Arguments",
-    "text": "Arguments\n\nrnorm(n = 1, mean = 0, sd = 1)\n\n\n\nn must be specified for rnorm() to run\nmean and sd are optional, but if you don’t specify them, R will choose for you (in this case, the defaults are 0 and 1)."
-  },
-  {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-1",
-    "href": "slides/w1d2.html#r-as-a-calculator-1",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
-  },
-  {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-2",
-    "href": "slides/w1d2.html#r-as-a-calculator-2",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
-  },
-  {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-3",
-    "href": "slides/w1d2.html#r-as-a-calculator-3",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
-  },
-  {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-4",
-    "href": "slides/w1d2.html#r-as-a-calculator-4",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
-  },
-  {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-5",
-    "href": "slides/w1d2.html#r-as-a-calculator-5",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
-  },
-  {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-6",
-    "href": "slides/w1d2.html#r-as-a-calculator-6",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
-  },
-  {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-7",
-    "href": "slides/w1d2.html#r-as-a-calculator-7",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
-  },
-  {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-8",
-    "href": "slides/w1d2.html#r-as-a-calculator-8",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
-  },
-  {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-9",
-    "href": "slides/w1d2.html#r-as-a-calculator-9",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nFunctions can be nested in each other\n\n\nlog(exp(7))\n\n[1] 7"
-  },
-  {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-10",
-    "href": "slides/w1d2.html#r-as-a-calculator-10",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nExponents with ^: 2^3 means \\(2^3\\)\n\n\n2^3\n\n[1] 8"
-  },
-  {
-    "objectID": "slides/w1d2.html#quarto-1",
-    "href": "slides/w1d2.html#quarto-1",
-    "title": "Tools for Data Science",
-    "section": "Quarto",
-    "text": "Quarto\n\n\nQuarto is a markdown language, released in 2022.\nAllows you to include code and text in the same document.\nDocuments output or “Render” to PDF or HTML (web) documents.\nThese slides (and the course website!) are made with Quarto."
-  },
-  {
-    "objectID": "slides/w1d2.html#quarto-for-reproducible-reports",
-    "href": "slides/w1d2.html#quarto-for-reproducible-reports",
-    "title": "Tools for Data Science",
-    "section": "Quarto for reproducible reports",
-    "text": "Quarto for reproducible reports\n\n\nQuarto is a great tool to help us do reproducible science.\nWhat does reproducibility mean?\nreproducibility \\(\\neq\\) replicability / repeatability"
-  },
-  {
-    "objectID": "slides/w1d2.html#a-project-is-reproducible-if-another-person-could-take-your-code-and-data-run-the-code-and-get-the-exact-same-answer.",
-    "href": "slides/w1d2.html#a-project-is-reproducible-if-another-person-could-take-your-code-and-data-run-the-code-and-get-the-exact-same-answer.",
-    "title": "Tools for Data Science",
-    "section": "A project is reproducible if another person could take your code and data, run the code, and get the exact same answer.",
-    "text": "A project is reproducible if another person could take your code and data, run the code, and get the exact same answer."
-  },
-  {
-    "objectID": "slides/w1d2.html#a-project-is-replicable-repeatable-if-another-person-could-take-the-steps-to-do-your-project-again-in-their-own-setting.",
-    "href": "slides/w1d2.html#a-project-is-replicable-repeatable-if-another-person-could-take-the-steps-to-do-your-project-again-in-their-own-setting.",
-    "title": "Tools for Data Science",
-    "section": "A project is replicable / repeatable if another person could take the steps to do your project again in their own setting.",
-    "text": "A project is replicable / repeatable if another person could take the steps to do your project again in their own setting."
-  },
-  {
-    "objectID": "slides/w1d2.html#objects-in-r",
-    "href": "slides/w1d2.html#objects-in-r",
-    "title": "Tools for Data Science",
-    "section": "Objects in R",
-    "text": "Objects in R\n\nR can store objects for use later in what we call an environment.\n\n\ndbh_in &lt;- 40 # store tree diameter (inches)"
-  },
-  {
-    "objectID": "slides/w1d2.html#objects-in-r-1",
-    "href": "slides/w1d2.html#objects-in-r-1",
-    "title": "Tools for Data Science",
-    "section": "Objects in R",
-    "text": "Objects in R\n\nR can store objects for use later in what we call an environment.\nHere, we stored dbh_in in our environment, and printed it out to see its value.\n\n\ndbh_in\n\n[1] 40"
-  },
-  {
-    "objectID": "slides/w1d2.html#objects-in-r-2",
-    "href": "slides/w1d2.html#objects-in-r-2",
-    "title": "Tools for Data Science",
-    "section": "Objects in R",
-    "text": "Objects in R\n\nR can store objects for use later in what we call an environment.\nHere, we stored dbh_in in our environment, and printed it out to see its value.\nWe can use R as a calculator to compute the tree’s basal area.\n\n\nBA_in2 &lt;- pi * (dbh_in / 2)^2 # compute tree basal area\nBA_in2\n\n[1] 1256.637"
-  },
-  {
-    "objectID": "slides/w1d2.html#next-time",
-    "href": "slides/w1d2.html#next-time",
-    "title": "Tools for Data Science",
-    "section": "Next time",
-    "text": "Next time\n\n\nWe’ll talk about file systems, paths, folders, and navigating your computer.\nMore advanced features of R as well: basic data structures, variable naming and code formatting, reading/writing data, and more!"
-  },
-  {
-    "objectID": "recordings.html",
-    "href": "recordings.html",
-    "title": "Lecture Recordings",
+    "objectID": "slides/w4d1.html",
+    "href": "slides/w4d1.html",
+    "title": "Logical subsetting vectors and data frames",
     "section": "",
-    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 2: Data structures. Available here."
+    "text": "create, subset, and manipulate vectors and data frames\nuse comparison and logical operators\npractice combining logical tests to extract information from vectors and data frames\nstart thinking “inside out”"
   },
   {
-    "objectID": "recordings.html#recordings",
-    "href": "recordings.html#recordings",
-    "title": "Lecture Recordings",
+    "objectID": "slides/w4d1.html#learning-objectives",
+    "href": "slides/w4d1.html#learning-objectives",
+    "title": "Logical subsetting vectors and data frames",
     "section": "",
-    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 2: Data structures. Available here."
+    "text": "create, subset, and manipulate vectors and data frames\nuse comparison and logical operators\npractice combining logical tests to extract information from vectors and data frames\nstart thinking “inside out”"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "For 128 Michigan State University\nFall 2024\n\n\n\n\n\nWe’ll go through vectors.qmd in class.\n\n\n\n\n\nLecture materials:\n\nIn-class work: vectors_dataframes.qmd\nData for in-class work: Loblolly.csv\n\nSupplementary lab materials:\n\nExample R script lab setup: lab_03_example.R\nLab 3 data: FEF_trees.csv\n\n\n\n\n\n\n\n\n\nOffice hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L.\n\n\n\n\n\n\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+    "objectID": "slides/w4d1.html#logical-subsetting",
+    "href": "slides/w4d1.html#logical-subsetting",
+    "title": "Logical subsetting vectors and data frames",
+    "section": "Logical subsetting",
+    "text": "Logical subsetting\nSo far we have directly specified the elements of vectors that we want to extract, for example spp[1] or dbh[length(dbh)] or spp[c(1,3,5)]. We have also subsetted data frame rows and columns, for example, plt[c(2,5),], plt[nrow(plt),], plt[,1:2], or plt[,c(\"spp\",\"dbh\")]. More commonly we want to extract elements that meet a condition, such as all trees greater than some minimum DBH or all trees of a given species. For this we use subsetting with logical vectors, see Section 6.6 in the course book.\nHere are the comparison operators:\n\nEqual: ==\nNot equal: !=\nGreater than: &gt;\nLess than: &lt;\nGreater than or equal to: &gt;=\nLess than or equal to: &lt;=\n\nLet’s give these operators a spin using the plt data frame.\nFirst on a single column, i.e., a vector subset operation.\n\nplt$qual[plt$qual == \"ags\"] # Understand this statement from the inside out!\n\n[1] \"ags\" \"ags\" \"ags\" \"ags\" \"ags\"\n\n\nGet all trees (i.e., rows) for species acerru.\n\nplt[plt$spp == \"acerru\", ]\n\n     spp  dbh qual  live\n4 acerru  9.3  ugs FALSE\n8 acerru 11.1  ags  TRUE\n\n\nGet all trees (i.e., rows) but for acerru.\n\nplt[plt$spp != \"acerru\", ]\n\n     spp   dbh qual  live\n1 tsugca 15.00  ugs  TRUE\n2 tsugca 12.00  ags  TRUE\n3 betual  6.60  ags  TRUE\n5 pinust 28.10  ags  TRUE\n6 pinust  9.23  ags  TRUE\n7 betual 15.30  ugs FALSE\n\n\nGet all trees (i.e., rows) with DBH greater than 10.\n\nplt[plt$dbh &gt; 10, ]\n\n     spp  dbh qual  live\n1 tsugca 15.0  ugs  TRUE\n2 tsugca 12.0  ags  TRUE\n5 pinust 28.1  ags  TRUE\n7 betual 15.3  ugs FALSE\n8 acerru 11.1  ags  TRUE\n\n\nGet all tree species with DBH greater than 10.\n\nplt[plt$dbh &gt; 10, \"spp\"]\n\n[1] \"tsugca\" \"tsugca\" \"pinust\" \"betual\" \"acerru\"\n\n\nFind all live trees. Note, why do I have plt$live and not plt$live == TRUE in the code below?\n\nplt[plt$live, ]\n\n     spp   dbh qual live\n1 tsugca 15.00  ugs TRUE\n2 tsugca 12.00  ags TRUE\n3 betual  6.60  ags TRUE\n5 pinust 28.10  ags TRUE\n6 pinust  9.23  ags TRUE\n8 acerru 11.10  ags TRUE"
   },
   {
-    "objectID": "index.html#week-3-september-8---14",
-    "href": "index.html#week-3-september-8---14",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "We’ll go through vectors.qmd in class.\n\n\n\n\n\nLecture materials:\n\nIn-class work: vectors_dataframes.qmd\nData for in-class work: Loblolly.csv\n\nSupplementary lab materials:\n\nExample R script lab setup: lab_03_example.R\nLab 3 data: FEF_trees.csv"
+    "objectID": "slides/w4d1.html#a-bit-on-logical-operators-and-subsetting",
+    "href": "slides/w4d1.html#a-bit-on-logical-operators-and-subsetting",
+    "title": "Logical subsetting vectors and data frames",
+    "section": "A bit on logical operators and subsetting",
+    "text": "A bit on logical operators and subsetting\nThere are some logical operators we haven’t seen yet, including the “and” operator and the “or” operator.\n\nand: &\nor: |\n\nThe & operator compares vector elements on its left and right to see if they match. If they are both TRUE, then & returns TRUE, otherwise FALSE. The | operator compares vector elements on its left and right to see if either of them are TRUE. If at least one is TRUE then | returns TRUE, otherwise if both are FALSE then FALSE is returned. These operations are applied for each element pair along the vectors. For example:\n\nc(FALSE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)\n\n[1]  TRUE  TRUE FALSE\n\nc(FALSE, TRUE, FALSE) & c(TRUE, TRUE, FALSE)\n\n[1] FALSE  TRUE FALSE\n\n\nSo, say you want all acerru with DBH greater than 10.\n\nplt[plt$spp == \"acerru\" & plt$dbh &gt; 10, ]\n\n     spp  dbh qual live\n8 acerru 11.1  ags TRUE\n\n\nAnother useful logical operator is the ! (i.e., the exclamation point, referred to as the “bang” in coding slang) which negates or flips the logical value, so for example !FALSE is TRUE and !TRUE is FALSE (or !“I know what I’m talking about”).\nYet another very handy operator is %in% which is used to identify if an element occurs in a second vector. Or a substitute for a series of “or” statements. Consider the example below and consult the manual page via help(\"%in%\").\n\ndbh == 15 | dbh == 6 | dbh == 11\n\n[1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n\ndbh %in% c(15, 6, 11)\n\n[1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n\n\n\nletters\n\n [1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\" \"k\" \"l\" \"m\" \"n\" \"o\" \"p\" \"q\" \"r\" \"s\"\n[20] \"t\" \"u\" \"v\" \"w\" \"x\" \"y\" \"z\"\n\nletters %in% c(\"a\", \"m\", \"q\", \"s\")\n\n [1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n[13]  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE\n[25] FALSE FALSE\n\n# letters == \"a\" | letters == \"m\" | letters = \"q\" | letters == \"s\" ## Find the error.\n\nSay you want acerru and tsugca with DBH greater than 10.\n\nplt[plt$spp %in% c(\"acerru\", \"tsugca\") & plt$dbh &gt; 10,]\n\n     spp  dbh qual live\n1 tsugca 15.0  ugs TRUE\n2 tsugca 12.0  ags TRUE\n8 acerru 11.1  ags TRUE\n\n\nNow, say you want acerru and tsugca with DBH greater than 10 and acceptable growing stock.\n\nplt[plt$spp %in% c(\"acerru\", \"tsugca\") & plt$dbh &gt; 10 & plt$qual == \"ags\",]\n\n     spp  dbh qual live\n2 tsugca 12.0  ags TRUE\n8 acerru 11.1  ags TRUE"
   },
   {
-    "objectID": "index.html#week-2-september-1---7",
-    "href": "index.html#week-2-september-1---7",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "Office hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L."
-  },
-  {
-    "objectID": "index.html#week-1-august-25---31",
-    "href": "index.html#week-1-august-25---31",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)"
-  },
-  {
-    "objectID": "assignments.html#labs",
-    "href": "assignments.html#labs",
-    "title": "Assignments",
-    "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)"
-  },
-  {
-    "objectID": "assignments.html#lecture-tickets",
-    "href": "assignments.html#lecture-tickets",
-    "title": "Assignments",
-    "section": "Lecture Tickets",
-    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)\n\n\nLecture ticket 3\nTuesday 9/3 (by 5pm)\nThursday 9/5 (in lecture)\n\n\nLecture ticket 4\nThursday 9/5 (by 5pm)\nTuesday 9/10 (in lecture)\n\n\nLecture ticket 5\nTuesday 9/10 (by 5pm)\nThursday 9/12 (in lecture)\n\n\nLecture ticket 6\nThursday 9/12 (by 5pm)\nTuesday 9/17 (in lecture)\n\n\nLecture ticket 7\nTuesday 9/17 (by 5pm)\nThursday 9/19 (in lecture)\n\n\nLecture ticket 8\nThursday 9/19 (by 5pm)\nTuesday 9/24 (in lecture)\n\n\nLecture ticket 9\nTuesday 9/24 (by 5pm)\nThursday 9/26 (in lecture)"
-  },
-  {
-    "objectID": "labs/lab_03.html",
-    "href": "labs/lab_03.html",
-    "title": "Vectors and Dataframes",
-    "section": "",
-    "text": "Create, subset, and manipulate vectors and data frames.\nPractice reading data from external files.\nGet some practice writing R scripts.\n\n\n\n\nCreate a new directory called lab_03 within your labs directory (e.g., ~/FOR_128/labs/lab_03). In RStudio set lab_03 as your working directory. Download and move the FEF_trees.csv file from the D2L lab page to your lab_03 directory.\nCreate a new script and save it as lab_03.R (it should save to your working directory).\nNow, use our book, help “man” pages, Google, your intuition, and experimentation to describe the behavior of the code in each of the following questions. For each question, write and execute the code in each question then, using a comment #, add notes above the code to describe/define its behavior (see example script lab_03_example.R in the lab’s D2L page)."
-  },
-  {
-    "objectID": "labs/lab_03.html#getting-started",
-    "href": "labs/lab_03.html#getting-started",
-    "title": "Vectors and Dataframes",
-    "section": "",
-    "text": "Create, subset, and manipulate vectors and data frames.\nPractice reading data from external files.\nGet some practice writing R scripts.\n\n\n\n\nCreate a new directory called lab_03 within your labs directory (e.g., ~/FOR_128/labs/lab_03). In RStudio set lab_03 as your working directory. Download and move the FEF_trees.csv file from the D2L lab page to your lab_03 directory.\nCreate a new script and save it as lab_03.R (it should save to your working directory).\nNow, use our book, help “man” pages, Google, your intuition, and experimentation to describe the behavior of the code in each of the following questions. For each question, write and execute the code in each question then, using a comment #, add notes above the code to describe/define its behavior (see example script lab_03_example.R in the lab’s D2L page)."
-  },
-  {
-    "objectID": "labs/lab_03.html#questions",
-    "href": "labs/lab_03.html#questions",
-    "title": "Vectors and Dataframes",
-    "section": "Questions",
-    "text": "Questions\n\nFunctions and index subsetting of vectors and data frames\nUse the code below to create the plt data frame.\n\nspp &lt;- c(\"tsugca\", \"tsugca\", \"betual\", \"acerru\", \"pinust\", \"pinust\", \"betual\", \"acerru\")\ndbh &lt;- c(15, 12, 6.6, 9.3, 28.1, 9.23, 15.3, 11.1)\nqual &lt;- c(\"ugs\", \"ags\", \"ags\", \"ugs\", \"ags\", \"ags\", \"ugs\", \"ags\")\nlive &lt;- c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE)\n\nplt &lt;- data.frame(spp, dbh, qual, live)\n\n\nplt \nclass(plt) \nnames(plt) \nnrow(plt) \nncol(plt) \ndim(plt) \nlength(plt) \nplt[2:4,c(1,4)] \nplt[1:3,c(\"spp\", \"dbh\")] \nplt$qual \nclass(plt$qual) \nhead(plt) \ntail(plt) \nhead(plt, n=3) \ntail(plt, n=2) \nplt.cpy &lt;- plt \nplt.cpy[1:3,1] &lt;-  c(\"pinust\", \"pinust\", \"acerru\") \nplt.cpy[1:2,1] &lt;-  c(\"pinust\", \"pinust\", \"acerru\") \nplt.cpy$live[8] &lt;- FALSE \nplt.cpy[8,\"live\"] &lt;- TRUE \nrep(\"ugs\", nrow(plt.cpy)) \nplt.cpy[,\"status\"] &lt;- rep(\"ugs\", nrow(plt.cpy)) \n!TRUE \ncolnames(plt.cpy)[4] &lt;- \"dead\" \nplt.cpy$dead &lt;- !plt$live \nplt.cpy &lt;- plt[-(1:5),] \nplt.cpy &lt;- plt[-1:5,] \nplt.cpy &lt;- rbind(plt, c(\"some new spp\", 100, \"ugs\", FALSE)) \nplt.cpy &lt;- cbind(plt, 1:nrow(plt)) \ncolnames(plt.cpy)[ncol(plt.cpy)] &lt;- \"tree.indx\" \nstr(plt) \n\nRead the external data file FEF_trees.csv into R using the read.csv() function and call the resulting data frame fef.\n\nfef &lt;- read.csv(\"FEF_trees.csv\")\n\n\ndim(fef) \nhead(fef) \ntail(fef) \nsum(fef$height_ft) \nmax(fef$height_ft) \nmin(fef$height_ft) \nwhich.max(fef$height_ft) \nfef[which.max(fef$height_ft), ] \nfef[which.min(fef$height_ft), ] \nIn the previous two labs you did your work in a Quarto document. What are some ways the script you created for this lab are different from the Quarto document?"
-  },
-  {
-    "objectID": "slides/w1d1.html#agenda",
-    "href": "slides/w1d1.html#agenda",
-    "title": "Welcome to FOR 128!",
-    "section": "Agenda",
-    "text": "Agenda\n\nIntroductions\nCourse goals\nCourse expectations + syllabus\nExplore course website\nPreparing for Thursday"
-  },
-  {
-    "objectID": "slides/w1d1.html#engagement",
-    "href": "slides/w1d1.html#engagement",
-    "title": "Welcome to FOR 128!",
-    "section": "Engagement",
-    "text": "Engagement\n\n\n\nIt has become harder and harder to stay focused over the last decade given the massive rise in wearable and mobile technology.\nIf you’ll be using a laptop to take notes, please avoid distractions to yourself and classmates by silencing notifications and avoiding checking emails, news, social media, etc.\nPlease leave your phone on silent and put it somewhere where it won’t distract you."
-  },
-  {
-    "objectID": "slides/w1d1.html#about-me",
-    "href": "slides/w1d1.html#about-me",
-    "title": "Welcome to FOR 128!",
-    "section": "About me",
-    "text": "About me\n\n\nI’m Grayson, a PhD student in Forestry.\nBefore coming to Michigan State, I worked as a Data Scientist contracting for the USDA Forest Service.\nBefore that, I majored in Mathematics & Statistics at Reed College."
-  },
-  {
-    "objectID": "slides/w1d1.html#about-me-1",
-    "href": "slides/w1d1.html#about-me-1",
-    "title": "Welcome to FOR 128!",
-    "section": "About me",
-    "text": "About me\n\n\nI ❤️ teaching, especially about Data Science + Forestry.\nIn the past, I’ve co-directed a Forestry Data Science lab for undergraduates."
-  },
-  {
-    "objectID": "slides/w1d1.html#about-me-2",
-    "href": "slides/w1d1.html#about-me-2",
-    "title": "Welcome to FOR 128!",
-    "section": "About me",
-    "text": "About me\n\nI ❤️ teaching, especially about Data Science + Forestry.\nIn the past, I’ve co-directed a Forestry Data Science lab for undergraduates."
-  },
-  {
-    "objectID": "slides/w1d1.html#path-to-forestry-data-science",
-    "href": "slides/w1d1.html#path-to-forestry-data-science",
-    "title": "Welcome to FOR 128!",
-    "section": "Path to Forestry Data Science",
-    "text": "Path to Forestry Data Science\n\n\nTake this class and engage thoughtfully with the material. ✅\nTake FOR 372 (offered this spring) to gain more domain-specific statistical expertise.\nA wide variety of knowledge in statistics, computer science, and your domain field of expertise (forestry) is important.\nEngage in undergraduate research opportunities!"
-  },
-  {
-    "objectID": "slides/w1d1.html#course-goals",
-    "href": "slides/w1d1.html#course-goals",
-    "title": "Welcome to FOR 128!",
-    "section": "Course goals",
-    "text": "Course goals\n\n\nGetting to know your computer and using it thoughtfully\n\noperating systems,\nfiles,\ndirectories,\ngood naming conventions,\nfile organization"
-  },
-  {
-    "objectID": "slides/w1d1.html#course-goals-1",
-    "href": "slides/w1d1.html#course-goals-1",
-    "title": "Welcome to FOR 128!",
-    "section": "Course goals",
-    "text": "Course goals\n\n\nLearn how to use a variety of data science tools with forestry applications\n\nThe R programming language,\nThe RStudio IDE,\nQuarto (for reproducible reports)\n\nLearn extensive R programming skills\n\nbase R and tidyverse approaches\ndata structures\ncustom functions\ndata wrangling & reshaping\nbeautiful plots with ggplot2"
-  },
-  {
-    "objectID": "slides/w1d1.html#syllabus-materials",
-    "href": "slides/w1d1.html#syllabus-materials",
-    "title": "Welcome to FOR 128!",
-    "section": "Syllabus: Materials",
-    "text": "Syllabus: Materials\nTextbook: IFDAR\nIntroduction to Forestry Data Analysis with R, by Andrew O. Finley and Jeffrey W. Doser. Available free, online: www.finley-lab.com/files/ifdar/\nTechnologies: R, RStudio, a laptop\nR is a free and open source programming language, and RStudio is an Integrated Development Environment (IDE) which allows for streamlined use of the R programming language. Both are free to install, and installation instructions will be provided in this course. A laptop that can run R and RStudio is required for this course."
-  },
-  {
-    "objectID": "slides/w1d1.html#syllabus-meetings",
-    "href": "slides/w1d1.html#syllabus-meetings",
-    "title": "Welcome to FOR 128!",
-    "section": "Syllabus: Meetings",
-    "text": "Syllabus: Meetings"
-  },
-  {
-    "objectID": "slides/w1d1.html#syllabus-assessments",
-    "href": "slides/w1d1.html#syllabus-assessments",
-    "title": "Welcome to FOR 128!",
-    "section": "Syllabus: Assessments",
-    "text": "Syllabus: Assessments\n\n\nLab reports (40%)\n\nLab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on D2L. We will have a lab each week (except for the week of the midterm exam).\n\nMidterm Exams (20%)\n\nThere will be two midterm exams, one on week 6 and one on week 12. Each midterm is worth 10% of the final grade.\n\nIn-class quizzes (15%)\n\nIn-class quizzes do not have a regular schedule and will occur based on the material we get through."
-  },
-  {
-    "objectID": "slides/w1d1.html#syllabus-assessments-1",
-    "href": "slides/w1d1.html#syllabus-assessments-1",
-    "title": "Welcome to FOR 128!",
-    "section": "Syllabus: Assessments",
-    "text": "Syllabus: Assessments\n\n\nLecture tickets (10%)\n\nLecture tickets are due at the beginning of every lecture, handed in in-person, by you.\n\nFinal Project (15%)\n\nThe details of the final project will be discussed as the semester goes on."
-  },
-  {
-    "objectID": "slides/w1d1.html#syllabus-collaboration",
-    "href": "slides/w1d1.html#syllabus-collaboration",
-    "title": "Welcome to FOR 128!",
-    "section": "Syllabus: Collaboration",
-    "text": "Syllabus: Collaboration\n\n\nWorking with classmates on labs and lecture tickets is perfectly acceptable.\nHowever, please cite your collaborator(s) at the top of your assignment.\nCollaboration on exams and quizzes is strictly prohibited.\nBut what is collaboration?"
-  },
-  {
-    "objectID": "slides/w1d1.html#artificial-intelligence-ai",
-    "href": "slides/w1d1.html#artificial-intelligence-ai",
-    "title": "Welcome to FOR 128!",
-    "section": "Artificial Intelligence (AI)",
-    "text": "Artificial Intelligence (AI)\n\n\n\n“…a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data”\nAI tools are being used by others to write code, but as Data Scientists, we must write code responsibly\nAt this stage of learning how to code, AI tools inhibit learning and understanding."
-  },
-  {
-    "objectID": "slides/w1d1.html#next-time",
-    "href": "slides/w1d1.html#next-time",
-    "title": "Welcome to FOR 128!",
-    "section": "Next time:",
-    "text": "Next time:\n\nCome to class with a laptop\nComplete Lecture Ticket 1 before lecture on Thursday."
-  },
-  {
-    "objectID": "slides/w2d1.html#agenda",
-    "href": "slides/w2d1.html#agenda",
-    "title": "Intro to Practical Computing",
-    "section": "Agenda",
-    "text": "Agenda\n\nReview\nNaming best practices\nFiles and directories"
-  },
-  {
-    "objectID": "slides/w2d1.html#last-week",
-    "href": "slides/w2d1.html#last-week",
-    "title": "Intro to Practical Computing",
-    "section": "Last week",
-    "text": "Last week\n\nSyllabus\nLab 1\nTools for the course: R, RStudio, and Quarto"
-  },
-  {
-    "objectID": "slides/w2d1.html#syllabus",
-    "href": "slides/w2d1.html#syllabus",
-    "title": "Intro to Practical Computing",
-    "section": "Syllabus",
-    "text": "Syllabus\n\n\nRecall lecture tickets are due in person at the beginning of lecture.\n\nCourse late policy has been added to online version.\nLet’s quickly review the late policy."
-  },
-  {
-    "objectID": "slides/w2d1.html#lab-1",
-    "href": "slides/w2d1.html#lab-1",
-    "title": "Intro to Practical Computing",
-    "section": "Lab 1",
-    "text": "Lab 1\n\n\nIf you’re having troubles, technical or otherwise, come to office hours.\nMake sure to turn in (.pdf and .qmd) to D2L by 5pm on Wednesday (tomorrow)."
-  },
-  {
-    "objectID": "slides/w2d1.html#data-science-tools",
-    "href": "slides/w2d1.html#data-science-tools",
-    "title": "Intro to Practical Computing",
-    "section": "Data Science Tools",
-    "text": "Data Science Tools\n\n\nR is a programming language.\nRStudio is an IDE (what we use to interact with R and our computer).\nQuarto is a markdown language, for writing reports."
-  },
-  {
-    "objectID": "slides/w2d1.html#practical-computing-1",
-    "href": "slides/w2d1.html#practical-computing-1",
-    "title": "Intro to Practical Computing",
-    "section": "Practical computing",
-    "text": "Practical computing\n\n\nUnderstanding your computer and its file system is vital to success in this class and beyond.\nLast week, we threw you into the deep end with data science tools.\nThis week, we’ll spend a bit more time on the details to help you interact with your computer and these tools.\nToday, we’ll focus on file systems and file/folder naming."
-  },
-  {
-    "objectID": "slides/w2d1.html#naming-files-and-folders",
-    "href": "slides/w2d1.html#naming-files-and-folders",
-    "title": "Intro to Practical Computing",
-    "section": "Naming files and folders",
-    "text": "Naming files and folders\nSome best practices are important for naming files and folders:\n\n\nUse consistent casing:\n\ndelimiter naming, e.g. lab_01.qmd or cat_pictures\ncamel case, e.g., finalProjectMaterials.qmd or catPictures\n\nName your files and folders clearly, concisely, and informatively:\n\nGood: for128_f24\nBad: my_work_for_forestry128_in_fall_2024\nReally bad: myWorkFor_forestry128_inFall_2024"
-  },
-  {
-    "objectID": "slides/w2d1.html#file-systems-directories",
-    "href": "slides/w2d1.html#file-systems-directories",
-    "title": "Intro to Practical Computing",
-    "section": "File systems / directories",
-    "text": "File systems / directories\n\n\nEvery time you create or download a file, you are storing it somewhere in your computer’s file system.\nBut where? 🤔"
-  },
-  {
-    "objectID": "slides/w2d1.html#file-systems-directories-1",
-    "href": "slides/w2d1.html#file-systems-directories-1",
-    "title": "Intro to Practical Computing",
-    "section": "File systems / directories",
-    "text": "File systems / directories\n\nThink of your computer’s file system as a tree"
-  },
-  {
-    "objectID": "slides/w2d1.html#the-root",
-    "href": "slides/w2d1.html#the-root",
-    "title": "Intro to Practical Computing",
-    "section": "The root",
-    "text": "The root\nThe root directory is the start or base of your file system.\n\n\nOn Windows, the root is C:/\nOn macOS and Linux, the root is /"
-  },
-  {
-    "objectID": "slides/w2d1.html#your-home-directory",
-    "href": "slides/w2d1.html#your-home-directory",
-    "title": "Intro to Practical Computing",
-    "section": "Your home directory",
-    "text": "Your home directory\nWhen interacting with your computer, you are logged in as a user. Each user has a home directory.\nFor example:\n\n\nOn Windows, C:/Users/Sarah\nOn macOS and Linux, /home/sarah"
-  },
-  {
-    "objectID": "slides/w2d1.html#your-home-directory-1",
-    "href": "slides/w2d1.html#your-home-directory-1",
-    "title": "Intro to Practical Computing",
-    "section": "Your home directory",
-    "text": "Your home directory\nIt is often easier to use a shortcut to access your home directory: ~. On Windows, macOS, and Linux, you can use ~ to access your home directory:\n\n~ is equivalent to C:/Users/Sarah and /home/sarah"
-  },
-  {
-    "objectID": "slides/w2d1.html#paths",
-    "href": "slides/w2d1.html#paths",
-    "title": "Intro to Practical Computing",
-    "section": "Paths",
-    "text": "Paths\nC:/Users/Sarah and /home/sarah are examples of paths. In particular, these are paths to Sarah’s home directory."
-  },
-  {
-    "objectID": "slides/w2d1.html#paths-1",
-    "href": "slides/w2d1.html#paths-1",
-    "title": "Intro to Practical Computing",
-    "section": "Paths",
-    "text": "Paths\n\n\nPaths specify the location of a file or folder on your computer, let’s look at a few examples:\n\n/\n/home/sarah\n/home/sarah/Desktop\n/home/sarah/Documents/for128/lab_01.qmd\n~/Documents/for128/lab_01.qmd"
-  },
-  {
-    "objectID": "slides/w2d1.html#paths-2",
-    "href": "slides/w2d1.html#paths-2",
-    "title": "Intro to Practical Computing",
-    "section": "Paths",
-    "text": "Paths\n\nEquivalent paths, on Windows:\n\nC:/\nC:/Users/Sarah\nC:/Users/Sarah/Desktop\nC:/Users/Sarah/Documents/for128/lab_01.qmd\n~/Documents/for128/lab_01.qmd"
-  },
-  {
-    "objectID": "slides/w2d1.html#relative-vs.-absolute-paths",
-    "href": "slides/w2d1.html#relative-vs.-absolute-paths",
-    "title": "Intro to Practical Computing",
-    "section": "Relative vs. absolute paths",
-    "text": "Relative vs. absolute paths\n\n\nSo far, we’ve only shown absolute paths.\nAbsolute paths show a file or folder in reference to your computer’s file system.\nRelative paths, on the other hand, show a file or folder in relation to a working directory."
-  },
-  {
-    "objectID": "slides/w2d1.html#working-directory-example",
-    "href": "slides/w2d1.html#working-directory-example",
-    "title": "Intro to Practical Computing",
-    "section": "Working directory example",
-    "text": "Working directory example\n\n\nRecall the absolute path to lab_01.qmd:\n\n/home/sarah/Documents/for128/lab_01.qmd\n\nSay our working directory is the documents folder:\n\n/home/sarah/Documents\n\nThen the relative path to lab_01.qmd is:\n\nfor128/lab_01.qmd"
-  },
-  {
-    "objectID": "slides/w2d1.html#why",
-    "href": "slides/w2d1.html#why",
-    "title": "Intro to Practical Computing",
-    "section": "Why?",
-    "text": "Why?\n\n\nReproducibility!\n\nThey will work on any computer, not just your own.\n\nClear and concise.\nBut really, reproducibility."
-  },
-  {
-    "objectID": "slides/w2d1.html#what-have-we-learned",
-    "href": "slides/w2d1.html#what-have-we-learned",
-    "title": "Intro to Practical Computing",
-    "section": "What have we learned?",
-    "text": "What have we learned?\n\n\nIn Quarto, the default working directory is the folder where the quarto document lives.\n\nCrucial note: this may be different than the working directory in your R console.\n\nYou can set your working directory in R with setwd()\n\nJust for your R console, though. This does not apply to Quarto documents.\n\nYou can get your current working directory in R with getwd()"
-  },
-  {
-    "objectID": "slides/w2d1.html#next-time",
-    "href": "slides/w2d1.html#next-time",
-    "title": "Intro to Practical Computing",
-    "section": "Next time",
-    "text": "Next time\n\nRemember, lab 1 is due tomorrow at 5pm on D2L.\nRStudio projects.\nReading and writing data."
-  },
-  {
-    "objectID": "slides/w3d1.html#agenda",
-    "href": "slides/w3d1.html#agenda",
-    "title": "Data Structures: Vectors",
-    "section": "Agenda",
-    "text": "Agenda\n\nOverview of data structures\nA tour of vectors"
-  },
-  {
-    "objectID": "slides/w3d1.html#data-structures",
-    "href": "slides/w3d1.html#data-structures",
-    "title": "Data Structures: Vectors",
-    "section": "Data structures",
-    "text": "Data structures\n\nA data structure is a format for organizing and storing data. The structure is designed so that data can be accessed and worked with in specific ways.\nStructures are either homogeneous or heterogeneous, which describes the data types they hold (one type versus multiple types).\nStructures can also be characterized by their dimensionality, see Table Table 1.\n\n\n\nTable 1: Dimension and type content of base data structures in R.\n\n\nDimension\nHomogeneous\nHeterogeneous\n\n\n\n\n1\nAtomic vector\nList\n\n\n2\nMatrix\nData frame\n\n\nN\nArray"
-  },
-  {
-    "objectID": "slides/w3d1.html#data-structures-1",
-    "href": "slides/w3d1.html#data-structures-1",
-    "title": "Data Structures: Vectors",
-    "section": "Data structures",
-    "text": "Data structures\n\nLet’s take a look at vectors.qmd."
+    "objectID": "slides/w4d1.html#your-turn",
+    "href": "slides/w4d1.html#your-turn",
+    "title": "Logical subsetting vectors and data frames",
+    "section": "Your turn!",
+    "text": "Your turn!\n\nFind all trees with DBH less than 9.5.\nFind all trees that are not tsugca (hint use the !).\nFind all dead trees (hint use the !).\nFind all live trees of unacceptable growing stock.\nFind all live betual and acerru that are of acceptable growing stock.\nMake up your own subsetting criteria."
   },
   {
     "objectID": "tickets/ticket_01.html",

@@ -1,0 +1,131 @@
+---
+title: "Logical subsetting vectors and data frames"
+
+date: "9/17/2024"
+format:
+  html: default
+editor: 
+  mode: source
+---
+
+
+## Learning objectives
+  + create, subset, and manipulate vectors and data frames
+  + use comparison and logical operators
+  + practice combining logical tests to extract information from vectors and data frames
+  + start thinking "inside out"
+
+# Class exercise
+Let's again work with a data frame comprising four columns and eight rows. 
+```{r}
+spp <- c("tsugca", "tsugca", "betual", "acerru", "pinust", "pinust", "betual", "acerru")
+dbh <- c(15, 12, 6.6, 9.3, 28.1, 9.23, 15.3, 11.1)
+qual <- c("ugs", "ags", "ags", "ugs", "ags", "ags", "ugs", "ags")
+live <- c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE)
+
+plt <- data.frame(spp, dbh, qual, live)
+```
+
+Start a new script and copy the code above to create the `plt` data frame.
+
+```{r global_options, echo=FALSE}
+knitr::opts_chunk$set(comment = NA, tidy = TRUE)
+```
+
+## Logical subsetting
+
+So far we have directly specified the elements of vectors that we want to extract, for example `spp[1]` or `dbh[length(dbh)]` or `spp[c(1,3,5)]`. We have also subsetted data frame rows and columns, for example, `plt[c(2,5),]`, `plt[nrow(plt),]`, `plt[,1:2]`, or `plt[,c("spp","dbh")]`. More commonly we want to extract elements that meet a condition, such as all trees greater than some minimum DBH or all trees of a given species. For this we use subsetting with logical vectors, see Section 6.6 in the course book.
+
+Here are the comparison operators:
+
+ * Equal: `==`
+ * Not equal: `!=`
+ * Greater than: `>`
+ * Less than: `<`
+ * Greater than or equal to: `>=`
+ * Less than or equal to: `<=`
+
+Let's give these operators a spin using the `plt` data frame.
+
+First on a single column, i.e., a vector subset operation.
+```{r}
+plt$qual[plt$qual == "ags"] # Understand this statement from the inside out!
+```
+
+Get all trees (i.e., rows) for species acerru.
+```{r}
+plt[plt$spp == "acerru", ]
+```
+
+Get all trees (i.e., rows) but for acerru.
+```{r}
+plt[plt$spp != "acerru", ]
+```
+
+Get all trees (i.e., rows) with DBH greater than 10.
+```{r}
+plt[plt$dbh > 10, ]
+```
+
+Get all tree species with DBH greater than 10.
+```{r}
+plt[plt$dbh > 10, "spp"]
+```
+
+Find all live trees. Note, why do I have `plt$live` and not `plt$live == TRUE` in the code below?
+```{r}
+plt[plt$live, ]
+```
+
+## A bit on logical operators and subsetting
+
+There are some logical operators we haven't seen yet, including the "and" operator and the "or" operator.
+
+  * and: `&`
+  * or: `|`
+
+The `&` operator compares vector elements on its left and right to see if they match. If they are both `TRUE`, then `&` returns `TRUE`, otherwise `FALSE`. The `|` operator compares vector elements on its left and right to see if either of them are `TRUE`. If at least one is `TRUE` then `|` returns `TRUE`, otherwise if both are `FALSE` then `FALSE` is returned. These operations are applied for each element pair along the vectors. For example:
+```{r}
+c(FALSE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)
+c(FALSE, TRUE, FALSE) & c(TRUE, TRUE, FALSE)
+```
+
+So, say you want all acerru with DBH greater than 10.
+
+```{r}
+plt[plt$spp == "acerru" & plt$dbh > 10, ]
+```
+
+Another useful logical operator is the `!` (i.e., the exclamation point, referred to as the "bang" in coding slang) which negates or flips the logical value, so for example `!FALSE` is `TRUE` and `!TRUE` is `FALSE` (or !"I know what I'm talking about").
+
+Yet another very handy operator is `%in%` which is used to identify if an element occurs in a second vector. Or a substitute for a series of "or" statements. Consider the example below and consult the manual page via `help("%in%")`.
+
+```{r}
+dbh == 15 | dbh == 6 | dbh == 11
+dbh %in% c(15, 6, 11)
+```
+
+```{r}
+letters
+letters %in% c("a", "m", "q", "s")
+# letters == "a" | letters == "m" | letters = "q" | letters == "s" ## Find the error.
+```
+
+Say you want acerru and tsugca with DBH greater than 10.
+```{r}
+plt[plt$spp %in% c("acerru", "tsugca") & plt$dbh > 10,]
+```
+
+Now, say you want acerru and tsugca with DBH greater than 10 and acceptable growing stock.
+```{r}
+plt[plt$spp %in% c("acerru", "tsugca") & plt$dbh > 10 & plt$qual == "ags",]
+```
+
+## Your turn!
+
+  1) Find all trees with DBH less than 9.5.
+  2) Find all trees that are not tsugca (hint use the `!`).
+  3) Find all dead trees (hint use the `!`).
+  4) Find all live trees of unacceptable growing stock.
+  5) Find all live betual and acerru that are of acceptable growing stock. 
+  6) Make up your own subsetting criteria.
