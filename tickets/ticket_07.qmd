@@ -1,0 +1,33 @@
+---
+title: "Lecture Ticket 7"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read the following sections of IFDAR.
+
+-   Chapter 5: sections 5.1
+
+
+## Questions
+
+Consider the function:
+
+```{r}
+#| eval: false
+my_function <- function(x) {
+  y <- x * 2
+  z <- x + 4
+  return(y + z)
+}
+```
+
+1. What would `my_function(x = 10)` return?
+
+2. What would  `my_function(x = 0)` return?
+
+3. What would  `my_function(x = 5) + 10` return?
+
+
