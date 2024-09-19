@@ -1,0 +1,287 @@
+---
+title: "Data Structures"
+subtitle: "FOR 128: Lab 4"
+author: "Insert Your Name Here"
+date: "9/25/2024"
+format:
+  pdf: default
+editor: 
+  mode: source
+---
+
+## Welcome
+
+Welcome to Lab 4! Today, we'll focus on data structures (such as vectors and dataframes), and logical subsetting of data structures. 
+
+### Learning objectives
+
+-   Gain more understanding of important data structures in `R`.
+-   Apply logical subsetting to data. 
+
+### Deliverables (i.e., what to put in the lab drop box)
+
+Upload your rendered PDF (`lab_04.pdf`) **and** Quarto (`lab_04.qmd`) document to the lab drop box. Make sure the Quarto document properly renders to PDF.
+
+### Collaborator(s)
+
+List any collaborators you worked with below. 
+
+
+
+
+
+
+# Part 1: Six Trees
+
+We'll first look at six trees measured across three forest stands as described in IFDAR. 
+
+## Exercise 1
+
+Do Exercise 4.1 from IFDAR
+
+```{r}
+
+```
+
+## Exercise 2
+
+Do Exercise 4.2 from IFDAR
+
+```{r}
+
+```
+
+## Exercise 3
+
+Do Exercise 4.3 from IFDAR
+
+a.
+
+```{r}
+
+```
+
+b. 
+
+```{r}
+
+```
+
+c. 
+
+```{r}
+
+```
+
+d.
+
+```{r}
+
+```
+
+
+## Exercise 4
+
+Do Exercise 4.4 from IFDAR
+
+```{r}
+
+```
+
+## Exercise 5
+
+Do Exercise 4.5 from IFDAR
+
+a. 
+
+```{r}
+
+```
+
+b.
+
+```{r}
+
+```
+
+c.
+
+```{r}
+
+```
+
+d. 
+
+```{r}
+
+```
+
+e.
+
+```{r}
+
+```
+
+f. 
+
+```{r}
+
+```
+
+g. 
+
+```{r}
+
+```
+
+
+## Exercise 6
+
+Do Exercise 4.6 from IFDAR
+
+```{r}
+
+```
+
+## Exercise 7
+
+Do Exercise 4.7 from IFDAR
+
+```{r}
+
+```
+
+## Exercise 8
+
+Do Exercise 4.8 from IFDAR
+
+```{r}
+
+```
+
+## Exercise 9
+
+Do Exercise 4.9 from IFDAR
+
+```{r}
+
+```
+
+
+
+
+# Part 2: the `forested` package
+
+This section of the lab will use the `forested` R package. If you haven't already, you'll need to install it with the `install.packages()` function. 
+
+
+## Data Overview
+
+The `forested` R package contains a dataset, also called `forested`, that contains plot data collected by the U.S. Department of Agriculture, Forest Service, Forest Inventory and Analysis (FIA) Program in Washington state. Each row represents a plot and each column represents a value measured at that plot. Take a look at the help file for the `forested` dataset to learn more about the data. 
+
+## Exercise 10
+
+Load the `forested` R package and its data with the code below. How many rows does the `forested` dataframe have? How many columns?
+
+```{r}
+library(forested)
+data(forested)
+str(forested)
+```
+
+```{r}
+
+```
+
+## Exercise 11
+
+Tell me about three columns of your choice in the `forested` dataset. In particular: 
+    - What are they measuring? 
+    - Do they have units? If so, what are they? 
+    - Do they have factor levels? If so, what are they? 
+    
+
+
+## Exercise 12
+
+Create a new dataframe by subsetting the `forested` R package to only include rows that are forested. Call this dataframe `only_forested`. 
+
+```{r}
+
+```
+
+## Exercise 13
+
+Similarly to Exercise 11, create a new dataframe by subsetting the `forested` R package to only include rows that are not forested. Call this dataframe `not_forested`. 
+
+```{r}
+
+```
+
+
+## Exercise 14
+
+a. What is the average (mean) percent tree canopy cover on the forested plots? 
+
+```{r}
+
+```
+
+
+b. What is the average (mean) percent tree canopy cover on the unforested plots? 
+
+```{r}
+
+```
+
+
+## Exercise 15
+
+Print the row with the highest elevation for each dataset using logical subsetting: `only_forested` and `not_forested`. Which dataset contains the highest elevation plot?
+
+Hint: you might want to use the `which.max()` function. 
+
+```{r}
+
+```
+
+## Exercise 16
+
+Use logical subsetting to find the plot in the `forested` dataset with the highest annual precipitation. Is this plot forested or not? What is it's elevation? 
+
+```{r}
+
+```
+
+## Exercise 17
+
+Use logical subsetting to print the elevation and percent canopy cover of all plots in the `forested` dataset with elevation greater than 2,500 meters. 
+
+```{r}
+
+```
+
+
+
+## Exercise 18
+
+Use logical subsetting to print the elevation and percent canopy cover of all plots in the `forested` dataset with elevation greater than 2,500 meters and percent canopy cover greater than 12%. 
+
+```{r}
+
+```
+
+## Exercise 19
+
+Use logical subsetting to print all plots in the `forested` dataset that have either barren or non-tree vegetation land cover types. 
+
+```{r}
+
+```
+
+
+
+
+# Wrap up
+
+Congratulations! You've made it to the end of Lab 4. Make sure to render your final document and submit both the .pdf and .qmd file to D2L.

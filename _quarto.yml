@@ -5,6 +5,7 @@ project:
     - "*.qmd"
     - "!labs/lab_01.qmd"
     - "!labs/lab_02.qmd"
+    - "!labs/lab_04.qmd"
     - "!quizzes/"
     - "!labs/datasets/"
     - "!/in_class/*.qmd"
