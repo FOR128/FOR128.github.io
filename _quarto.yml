@@ -39,6 +39,8 @@ website:
             text: "Week 3 Day 1"
           - href: slides/w4d1.qmd
             text: "Week 4 Day 1 (Notes)"
+          - href: slides/w4d2.qmd
+            text: "Week 4 Day 2"
       - href: assignments.qmd
         text: Assignments
       - href: recordings.qmd

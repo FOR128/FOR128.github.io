@@ -1,0 +1,536 @@
+---
+title: "Functions"
+editor: 
+  mode: source
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+---
+
+## Agenda
+
+
+-   Review Data Structures
+-   Functions
+
+# Data Structures {background-color="#00817c"} 
+
+## Vectors
+
+Consider the vectors: 
+
+```{r}
+#| echo: true
+names <- c("Western red cedar", "Douglas-fir", "Pacific madrone")
+ages <- c(NA, 120, 82)
+conifer <- c(TRUE, TRUE, FALSE)
+```
+
+What are their types? 
+
+## Vectors
+
+What are their types? 
+
+```{r}
+#| echo: true
+typeof(names)
+typeof(ages)
+typeof(conifer)
+```
+
+Why are these different? Aren't they all vectors? 
+
+```{r}
+countdown::countdown(.5)
+```
+
+
+## Vectors
+
+What's the average age?
+
+```{r}
+#| echo: true
+mean(ages)
+```
+
+## Vectors
+
+What's the average age?
+
+```{r}
+#| echo: true
+mean(ages)
+mean(ages, na.rm = TRUE)
+```
+
+## Vectors
+
+How do we get the second element of `conifer`?
+
+```{r}
+countdown::countdown(.5)
+```
+
+
+
+## Vectors
+
+How do we get the second element of `conifer`?
+
+```{r}
+#| echo: true
+conifer[2]
+```
+
+## Dataframes
+
+Consider the dataframe:
+
+```{r}
+#| echo: true
+my_df <- data.frame(
+  names = names,
+  ages = ages,
+  conifer = conifer
+)
+
+my_df
+```
+
+## Dataframes
+
+How do we access the third row of `my_df`? 
+
+```{r}
+countdown::countdown(.5)
+```
+
+## Dataframes
+
+How do we access the third row of `my_df`? 
+
+```{r}
+#| echo: true
+my_df[3, ]
+```
+
+## Dataframes
+
+How do we access the age in the third row of `my_df`? 
+
+```{r}
+countdown::countdown(.5)
+```
+
+## Dataframes
+
+How do we access the age in the third row of `my_df`? 
+
+```{r}
+#| echo: true
+my_df[3, "ages"]
+```
+
+## Comparison and logical operators 
+
+You learned about some very important operators in Chapter 4: 
+
+::: incremental
+
+-   `>` and `<`: greater than and less than
+-   `>=` and `<=`: greater than or equal to and less than or equal to
+-   `==` and `!=`: equal to and not equal to
+-   `&`: and
+-   `|`: or
+-   `%in%`: in
+
+:::
+
+## Comparison and logical operators 
+
+Remember, we can use these operators to subset vectors and dataframes:
+
+```{r}
+#| echo: true
+ages[ages > 82]
+```
+
+## Comparison and logical operators 
+
+Remember, we can use these operators to subset vectors and dataframes:
+
+```{r}
+#| echo: true
+my_df[!my_df$conifer, ]
+```
+
+## Comparison and logical operators 
+
+Remember, we can use these operators to subset vectors and dataframes:
+
+```{r}
+#| echo: true
+my_df[my_df$names == "Pacific madrone", ]
+```
+
+## Comparison and logical operators 
+
+Remember, we can use these operators to subset vectors and dataframes:
+
+```{r}
+#| echo: true
+my_df[my_df$names %in% c("Pacific madrone", "Douglas-fir"), ]
+```
+
+
+# Functions {background-color="#00817c"} 
+
+
+# What are some functions we've used in this class? 
+```{r}
+countdown::countdown(1)
+```
+
+## Example: `write.csv()`
+
+```{r}
+#| eval: false
+#| echo: true
+write.csv()
+```
+
+
+## Example: `write.csv()`
+
+```{r}
+#| eval: false
+#| echo: true
+write.csv(
+  x = dataset,
+  file = "path/to/output.csv"
+)
+```
+
+## Example: `write.csv()`
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "2"
+write.csv(
+  x = dataset,
+  file = "path/to/output.csv"
+)
+```
+
+## Example: `write.csv()`
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "3"
+write.csv(
+  x = dataset,
+  file = "path/to/output.csv"
+)
+```
+
+::: incremental
+
+-   `x` and `file` are *arguments* supplied to the `write.csv()` *function*.
+
+-   *Functions* in `R` fall into three categories:
+    - Already built-in functions like `read.csv()`,
+    - functions from *packages* that you install onto your computer, and
+    - entirely custom function built by you!
+
+:::
+
+---
+
+## Built-in 'base' functions
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/kraft.jpg")
+```
+
+---
+
+## Functions from packages you install
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/annies.jpg")
+```
+
+---
+
+## Custom functions built by you!
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/homemade.png")
+```
+
+---
+
+
+## Writing a function 
+
+```{r}
+#| echo: true
+hello_world <- function() {
+  
+}
+```
+
+## Writing a function 
+
+```{r}
+#| echo: true
+hello_world <- function() {
+  
+}
+
+hello_world()
+```
+
+## Writing a function 
+
+```{r}
+#| echo: true
+hello_world <- function() {
+  return("hello!")
+}
+```
+
+## Writing a function 
+
+```{r}
+#| echo: true
+hello_world <- function() {
+  return("hello!")
+}
+
+hello_world()
+```
+
+## Writing a(n interesting) function
+
+```{r}
+#| echo: true
+pow <- function(x, v) {
+  result <- x^v
+  return(result)
+}
+```
+
+::: incremental
+
+-   What does the `pow()` function do?
+-   What arguments does `pow()` take?
+-   What will `pow(5, 2)` return? 
+-   What will `pow(v = 5, x = 2)` return? 
+-   What will `pow("ten", "two")` return?
+-   What will `pow(x = 5, z = 2)` return?
+
+:::
+
+```{r}
+countdown::countdown(2)
+```
+
+## `pow()` test
+
+```{r}
+#| echo: true
+#| error: true
+pow(5, 2)
+```
+
+## `pow()` test
+
+```{r}
+#| echo: true
+#| error: true
+pow(5, 2)
+pow(v = 5, x = 2)
+```
+
+## `pow()` test
+
+```{r}
+#| echo: true
+#| error: true
+pow(5, 2)
+pow(v = 5, x = 2)
+pow("ten", "two")
+```
+
+## `pow()` test
+
+```{r}
+#| echo: true
+#| error: true
+pow(5, 2)
+pow(v = 5, x = 2)
+pow("ten", "two")
+pow(x = 5, z = 2)
+```
+
+## Errors 
+
+Consider the following errors:
+
+```{r}
+#| echo: true
+#| error: true
+pow("ten", "two")
+pow(x = 5, z = 2)
+```
+
+::: incremental
+
+-   What do/don't you like about each error? 
+
+-   Which error message is better? Why? 
+
+:::
+
+```{r}
+countdown::countdown(2)
+```
+
+# Informative Error Messages
+
+## Informative Error Messages
+
+```{r}
+#| echo: true
+new_pow <- function(x, v) {
+  stopifnot(
+    "The x argument value should be numeric." = is.numeric(x),
+    "The v argument value should be numeric." = is.numeric(v)
+  )
+  
+  result <- x^v
+  return(result)
+}
+```
+
+## Testing `pow()` vs. `new_pow()`
+
+```{r}
+#| echo: true
+#| error: true
+pow("ten", "two")
+new_pow("ten", "two")
+```
+
+## Testing `pow()` vs. `new_pow()`
+
+```{r}
+#| echo: true
+#| error: true
+pow("ten", "two")
+new_pow("ten", "two")
+new_pow(10, "two")
+```
+
+## Testing `pow()` vs. `new_pow()`
+
+```{r}
+#| echo: true
+#| error: true
+pow("ten", "two")
+new_pow("ten", "two")
+new_pow(10, "two")
+new_pow(10, 2)
+```
+
+## Difference function
+
+Write a function, called `diff()`, that takes the difference (subtracts) its first and second arguments.
+
+```{r}
+countdown::countdown(5)
+```
+
+
+## Difference function
+
+A possible solution:
+
+```{r}
+#| echo: true
+diff <- function(a, b) {
+  result <- a - b
+  return(result)
+}
+```
+
+## Difference function
+
+A possible solution with informative error messages:
+
+```{r}
+#| echo: true
+#| error: true
+diff <- function(a, b) {
+  stopifnot(
+    "The a argument value should be numeric." = is.numeric(a),
+    "The b argument value should be numeric." = is.numeric(b)
+  )
+  result <- a - b
+  return(result)
+}
+```
+
+## Difference function
+
+Testing:
+
+```{r}
+#| echo: true
+#| error: true
+diff(5, 2)
+diff(2, 5)
+diff("two", 5)
+```
+
+
+
+## Next Week
+
+-   More functions! 
+-   Control statements: `if`, `else`
+-   Loops!
+
+
+# See you upstairs in lab! {background-color="#00817c"}
+
+
+
+
+
+
+
