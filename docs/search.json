@@ -179,28 +179,28 @@
     "href": "slides/w4d2.html#comparison-and-logical-operators-1",
     "title": "Functions",
     "section": "Comparison and logical operators",
-    "text": "Comparison and logical operators\nRemember, we can use these operators to subset vectors and dataframes:\n\nages[ages &gt; 82]\n\n[1]  NA 120"
+    "text": "Comparison and logical operators\nRemember, we can use these operators to subset vectors and dataframes:\nIn ages, get all ages that are greater than 82\n\n\n[1]  NA 120  82\n\n\n\n−+\n01:00"
   },
   {
     "objectID": "slides/w4d2.html#comparison-and-logical-operators-2",
     "href": "slides/w4d2.html#comparison-and-logical-operators-2",
     "title": "Functions",
     "section": "Comparison and logical operators",
-    "text": "Comparison and logical operators\nRemember, we can use these operators to subset vectors and dataframes:\n\nmy_df[!my_df$conifer, ]\n\n            names ages conifer\n3 Pacific madrone   82   FALSE"
+    "text": "Comparison and logical operators\nRemember, we can use these operators to subset vectors and dataframes:\nIn ages, get all ages that are greater than 82\n\nages[ages &gt; 82]\n\n[1]  NA 120"
   },
   {
     "objectID": "slides/w4d2.html#comparison-and-logical-operators-3",
     "href": "slides/w4d2.html#comparison-and-logical-operators-3",
     "title": "Functions",
     "section": "Comparison and logical operators",
-    "text": "Comparison and logical operators\nRemember, we can use these operators to subset vectors and dataframes:\n\nmy_df[my_df$names == \"Pacific madrone\", ]\n\n            names ages conifer\n3 Pacific madrone   82   FALSE"
+    "text": "Comparison and logical operators\nRemember, we can use these operators to subset vectors and dataframes:\nIn ages, get all ages that are greater than 82\n\nages[ages &gt; 82]\n\n[1]  NA 120\n\n\nWhat’s going on with that NA? Try:\n\nages[ages &gt; 82 & !is.na(ages)]\n\n[1] 120"
   },
   {
     "objectID": "slides/w4d2.html#comparison-and-logical-operators-4",
     "href": "slides/w4d2.html#comparison-and-logical-operators-4",
     "title": "Functions",
     "section": "Comparison and logical operators",
-    "text": "Comparison and logical operators\nRemember, we can use these operators to subset vectors and dataframes:\n\nmy_df[my_df$names %in% c(\"Pacific madrone\", \"Douglas-fir\"), ]\n\n            names ages conifer\n2     Douglas-fir  120    TRUE\n3 Pacific madrone   82   FALSE"
+    "text": "Comparison and logical operators\nRemember, we can use these operators to subset vectors and dataframes:\nIn my_df, get all rows that are not conifers\n\n\n              names ages conifer\n1 Western red cedar   NA    TRUE\n2       Douglas-fir  120    TRUE\n3   Pacific madrone   82   FALSE\n\n\n\n−+\n01:00"
   },
   {
     "objectID": "slides/w4d2.html#example-write.csv",
@@ -1349,5 +1349,40 @@
     "title": "Lecture Ticket 6",
     "section": "Questions",
     "text": "Questions\n\nYou learned about comparison and logical operators in the reading. In R, what is the operator for each of the following:\n\nequality,\ngreater than,\ngreater than or equal to,\nnot equal to,\nor,\nand.\n\nConsider the following vector:\n\n\nx &lt;- 1:10\nx\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nWhat does the following do to x?\n\nx[x &lt; 5] &lt;- 0"
+  },
+  {
+    "objectID": "slides/w4d2.html#comparison-and-logical-operators-5",
+    "href": "slides/w4d2.html#comparison-and-logical-operators-5",
+    "title": "Functions",
+    "section": "Comparison and logical operators",
+    "text": "Comparison and logical operators\nRemember, we can use these operators to subset vectors and dataframes:\nIn my_df, get all rows that are not conifers\n\nmy_df[!my_df$conifer, ]\n\n            names ages conifer\n3 Pacific madrone   82   FALSE"
+  },
+  {
+    "objectID": "slides/w4d2.html#comparison-and-logical-operators-6",
+    "href": "slides/w4d2.html#comparison-and-logical-operators-6",
+    "title": "Functions",
+    "section": "Comparison and logical operators",
+    "text": "Comparison and logical operators\nRemember, we can use these operators to subset vectors and dataframes:\nIn my_df, get all rows that are Pacific madrone\n\n\n              names ages conifer\n1 Western red cedar   NA    TRUE\n2       Douglas-fir  120    TRUE\n3   Pacific madrone   82   FALSE\n\n\n\n−+\n01:00"
+  },
+  {
+    "objectID": "slides/w4d2.html#comparison-and-logical-operators-7",
+    "href": "slides/w4d2.html#comparison-and-logical-operators-7",
+    "title": "Functions",
+    "section": "Comparison and logical operators",
+    "text": "Comparison and logical operators\nRemember, we can use these operators to subset vectors and dataframes:\nIn my_df, get all rows that are Pacific madrone\n\nmy_df[my_df$names == \"Pacific madrone\", ]\n\n            names ages conifer\n3 Pacific madrone   82   FALSE"
+  },
+  {
+    "objectID": "slides/w4d2.html#comparison-and-logical-operators-8",
+    "href": "slides/w4d2.html#comparison-and-logical-operators-8",
+    "title": "Functions",
+    "section": "Comparison and logical operators",
+    "text": "Comparison and logical operators\nRemember, we can use these operators to subset vectors and dataframes:\nIn my_df, get all rows that are either Pacific madrone or Douglas-fir.\n\n\n              names ages conifer\n1 Western red cedar   NA    TRUE\n2       Douglas-fir  120    TRUE\n3   Pacific madrone   82   FALSE\n\n\n\n−+\n01:00"
+  },
+  {
+    "objectID": "slides/w4d2.html#comparison-and-logical-operators-9",
+    "href": "slides/w4d2.html#comparison-and-logical-operators-9",
+    "title": "Functions",
+    "section": "Comparison and logical operators",
+    "text": "Comparison and logical operators\nRemember, we can use these operators to subset vectors and dataframes:\nIn my_df, get all rows that are either Pacific madrone or Douglas-fir.\n\nmy_df[my_df$names %in% c(\"Pacific madrone\", \"Douglas-fir\"), ]\n\n            names ages conifer\n2     Douglas-fir  120    TRUE\n3 Pacific madrone   82   FALSE"
   }
 ]

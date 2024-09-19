@@ -168,6 +168,21 @@ You learned about some very important operators in Chapter 4:
 
 Remember, we can use these operators to subset vectors and dataframes:
 
+In `ages`, get all ages that are greater than 82
+
+```{r}
+ages
+countdown::countdown(1)
+```
+
+
+
+## Comparison and logical operators 
+
+Remember, we can use these operators to subset vectors and dataframes:
+
+In `ages`, get all ages that are greater than 82
+
 ```{r}
 #| echo: true
 ages[ages > 82]
@@ -176,6 +191,38 @@ ages[ages > 82]
 ## Comparison and logical operators 
 
 Remember, we can use these operators to subset vectors and dataframes:
+
+In `ages`, get all ages that are greater than 82
+
+```{r}
+#| echo: true
+ages[ages > 82]
+```
+
+What's going on with that `NA`? Try: 
+
+```{r}
+#| echo: true
+ages[ages > 82 & !is.na(ages)]
+```
+
+
+## Comparison and logical operators 
+
+Remember, we can use these operators to subset vectors and dataframes:
+
+In `my_df`, get all rows that are not conifers
+
+```{r}
+my_df
+countdown::countdown(1)
+```
+
+## Comparison and logical operators 
+
+Remember, we can use these operators to subset vectors and dataframes:
+
+In `my_df`, get all rows that are not conifers
 
 ```{r}
 #| echo: true
@@ -186,6 +233,19 @@ my_df[!my_df$conifer, ]
 
 Remember, we can use these operators to subset vectors and dataframes:
 
+In `my_df`, get all rows that are Pacific madrone
+
+```{r}
+my_df
+countdown::countdown(1)
+```
+
+## Comparison and logical operators 
+
+Remember, we can use these operators to subset vectors and dataframes:
+
+In `my_df`, get all rows that are Pacific madrone
+
 ```{r}
 #| echo: true
 my_df[my_df$names == "Pacific madrone", ]
@@ -194,6 +254,19 @@ my_df[my_df$names == "Pacific madrone", ]
 ## Comparison and logical operators 
 
 Remember, we can use these operators to subset vectors and dataframes:
+
+In `my_df`, get all rows that are either Pacific madrone or Douglas-fir.
+
+```{r}
+my_df
+countdown::countdown(1)
+```
+
+## Comparison and logical operators 
+
+Remember, we can use these operators to subset vectors and dataframes:
+
+In `my_df`, get all rows that are either Pacific madrone or Douglas-fir.
 
 ```{r}
 #| echo: true
