@@ -21,3 +21,5 @@ Week 3, day 2: *Data structures*. Available [here]( https://mediaspace.msu.edu/m
 
 Week 4, day 1: No recording available.
 
+Week 4, day 2: *Review of data structures & intro to functions*. Available [here](https://mediaspace.msu.edu/media/Week+4+Day+2/1_fjcmm6ye)
+
