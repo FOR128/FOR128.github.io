@@ -23,6 +23,11 @@ format:
       data-background-position: 50% 20%
 ---
 
+## Annoucements
+
+-   Midterm 1 is in two weeks, Nov 3, during lab time. 
+-   Lab 1 & 2 grades will be released soon on D2L. 
+
 ## Agenda
 
 
