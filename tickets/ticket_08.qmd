@@ -1,0 +1,38 @@
+---
+title: "Lecture Ticket 8"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read the following sections of IFDAR.
+
+-   Finish Chapter 5
+
+
+## Questions
+
+Consider the function:
+
+```{r}
+#| eval: false
+my_pets <- function(species) {
+  if (species == "dog") {
+    return("Dude")
+  } else if (species == "cat") {
+    return(c("Pickle", "Kyle", "Nubs"))
+  } else {
+    return("Not my pet")
+  }
+}
+```
+
+1. What would `my_pets(species = "dog")` return?
+
+2. What would  `my_pets(species = "bird")` return?
+
+3. What would  `my_pets(species = "cat")` return?
+
+
+
