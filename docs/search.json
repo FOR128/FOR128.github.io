@@ -319,14 +319,14 @@
     "href": "slides/w2d2.html#reading-data-5",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n[1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n[5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\""
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01.qmd\"          \n [4] \"lab_02_solutions.pdf\" \"lab_02_solutions.qmd\" \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\""
   },
   {
     "objectID": "slides/w2d2.html#reading-data-6",
     "href": "slides/w2d2.html#reading-data-6",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n[1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n[5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\"      \n\n\nNow, given our working directory and datasets location, we specify a relative path and load in the data:\n\nfef &lt;- read.csv(file = \"../labs/datasets/FEF_trees.csv\")"
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01.qmd\"          \n [4] \"lab_02_solutions.pdf\" \"lab_02_solutions.qmd\" \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"          \n\n\nNow, given our working directory and datasets location, we specify a relative path and load in the data:\n\nfef &lt;- read.csv(file = \"../labs/datasets/FEF_trees.csv\")"
   },
   {
     "objectID": "slides/w2d2.html#reading-data-7",
@@ -410,7 +410,7 @@
     "href": "slides/w2d2.html#writing-data-1",
     "title": "Reading and Writing Data",
     "section": "Writing data",
-    "text": "Writing data\nFirst, we look at the files in my “labs” folder\n\nlist.files(\"../labs\")\n\n[1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n[5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\""
+    "text": "Writing data\nFirst, we look at the files in my “labs” folder\n\nlist.files(\"../labs\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01.qmd\"          \n [4] \"lab_02_solutions.pdf\" \"lab_02_solutions.qmd\" \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\""
   },
   {
     "objectID": "slides/w2d2.html#writing-data-2",
@@ -424,7 +424,7 @@
     "href": "slides/w2d2.html#writing-data-3",
     "title": "Reading and Writing Data",
     "section": "Writing data",
-    "text": "Writing data\nNext, we can write the fef object to a .csv file.\n\nwrite.csv(x = fef,\n          file = \"../labs/my_fef.csv\")\n\nNow, we can see that the file is written.\n\nlist.files(\"../labs\")\n\n[1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n[5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\"      \n[9] \"my_fef.csv\""
+    "text": "Writing data\nNext, we can write the fef object to a .csv file.\n\nwrite.csv(x = fef,\n          file = \"../labs/my_fef.csv\")\n\nNow, we can see that the file is written.\n\nlist.files(\"../labs\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01.qmd\"          \n [4] \"lab_02_solutions.pdf\" \"lab_02_solutions.qmd\" \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"my_fef.csv\""
   },
   {
     "objectID": "slides/w2d2.html#next-week",
@@ -644,11 +644,39 @@
     "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 1: No recording available.\nWeek 3, day 2: Data structures. Available here.\nWeek 4, day 1: No recording available.\nWeek 4, day 2: Review of data structures & intro to functions. Available here"
   },
   {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)"
+  },
+  {
+    "objectID": "assignments.html#labs",
+    "href": "assignments.html#labs",
+    "title": "Assignments",
+    "section": "",
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)"
+  },
+  {
+    "objectID": "assignments.html#lecture-tickets",
+    "href": "assignments.html#lecture-tickets",
+    "title": "Assignments",
+    "section": "Lecture Tickets",
+    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)\n\n\nLecture ticket 3\nTuesday 9/3 (by 5pm)\nThursday 9/5 (in lecture)\n\n\nLecture ticket 4\nThursday 9/5 (by 5pm)\nTuesday 9/10 (in lecture)\n\n\nLecture ticket 5\nTuesday 9/10 (by 5pm)\nThursday 9/12 (in lecture)\n\n\nLecture ticket 6\nThursday 9/12 (by 5pm)\nTuesday 9/17 (in lecture)\n\n\nLecture ticket 7\nTuesday 9/17 (by 5pm)\nThursday 9/19 (in lecture)\n\n\nLecture ticket 8\nThursday 9/19 (by 5pm)\nTuesday 9/24 (in lecture)\n\n\nLecture ticket 9\nTuesday 9/24 (by 5pm)\nThursday 9/26 (in lecture)"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Practical Computing   and Data Science Tools",
     "section": "",
-    "text": "For 128 Michigan State University\nFall 2024\n\n\n\n\n\nThe lecture notes are available.\n\n\n\n\n\n\n\n\nWe’ll go through vectors.qmd in class.\n\n\n\n\n\nLecture materials:\n\nIn-class work: vectors_dataframes.qmd\nData for in-class work: Loblolly.csv\n\nSupplementary lab materials:\n\nExample R script lab setup: lab_03_example.R\nLab 3 data: FEF_trees.csv\n\n\n\n\n\n\n\n\n\nOffice hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L.\n\n\n\n\n\n\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+    "text": "For 128 Michigan State University\nFall 2024\n\n\nExtra office hours this week:\n\nMonday 9/23: 10:30am - 11:30am\nTuesday 9/24: 10am - 11am (note the 30 minute change)\nWednesday 9/25: 12:30pm - 2pm\nThursday 9/26: 1:30pm - 2:30pm (regular time)\n\n\n\n\n\n\n\nThe lecture notes are available.\n\n\n\n\n\n\n\n\nWe’ll go through vectors.qmd in class.\n\n\n\n\n\nLecture materials:\n\nIn-class work: vectors_dataframes.qmd\nData for in-class work: Loblolly.csv\n\nSupplementary lab materials:\n\nExample R script lab setup: lab_03_example.R\nLab 3 data: FEF_trees.csv\n\n\n\n\n\n\n\n\n\nOffice hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L.\n\n\n\n\n\n\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+  },
+  {
+    "objectID": "index.html#week-5-september-22---28",
+    "href": "index.html#week-5-september-22---28",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "Extra office hours this week:\n\nMonday 9/23: 10:30am - 11:30am\nTuesday 9/24: 10am - 11am (note the 30 minute change)\nWednesday 9/25: 12:30pm - 2pm\nThursday 9/26: 1:30pm - 2:30pm (regular time)"
   },
   {
     "objectID": "index.html#week-4-september-15---21",
@@ -677,27 +705,6 @@
     "title": "Practical Computing   and Data Science Tools",
     "section": "",
     "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)"
-  },
-  {
-    "objectID": "assignments.html#labs",
-    "href": "assignments.html#labs",
-    "title": "Assignments",
-    "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)"
-  },
-  {
-    "objectID": "assignments.html#lecture-tickets",
-    "href": "assignments.html#lecture-tickets",
-    "title": "Assignments",
-    "section": "Lecture Tickets",
-    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)\n\n\nLecture ticket 3\nTuesday 9/3 (by 5pm)\nThursday 9/5 (in lecture)\n\n\nLecture ticket 4\nThursday 9/5 (by 5pm)\nTuesday 9/10 (in lecture)\n\n\nLecture ticket 5\nTuesday 9/10 (by 5pm)\nThursday 9/12 (in lecture)\n\n\nLecture ticket 6\nThursday 9/12 (by 5pm)\nTuesday 9/17 (in lecture)\n\n\nLecture ticket 7\nTuesday 9/17 (by 5pm)\nThursday 9/19 (in lecture)\n\n\nLecture ticket 8\nThursday 9/19 (by 5pm)\nTuesday 9/24 (in lecture)\n\n\nLecture ticket 9\nTuesday 9/24 (by 5pm)\nThursday 9/26 (in lecture)"
   },
   {
     "objectID": "labs/lab_03.html",
