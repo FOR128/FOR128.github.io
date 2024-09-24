@@ -1,0 +1,517 @@
+---
+title: "Functions and conditionals"
+editor: 
+  mode: source
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+---
+
+## Annoucements
+
+-   Midterm 1 is next week, Oct 3, during lab time. 
+-   Lab 1 and 2 grades are posted on D2L. 
+-   Lab 3 grades will be released by the end of the week on D2L. 
+
+## Agenda
+
+-   More functions
+-   Informative error messages
+-   Conditional statements
+
+# Functions {background-color="#00817c"} 
+
+## Recall the `pow()` function from last time
+
+```{r}
+#| echo: true
+pow <- function(x, v) {
+  result <- x^v
+  return(result)
+}
+```
+
+## `pow()` test
+
+```{r}
+#| echo: true
+#| error: true
+pow(5, 2)
+```
+
+## `pow()` test
+
+```{r}
+#| echo: true
+#| error: true
+pow(5, 2)
+pow(v = 5, x = 2)
+```
+
+## `pow()` test
+
+```{r}
+#| echo: true
+#| error: true
+pow(5, 2)
+pow(v = 5, x = 2)
+pow("ten", "two")
+```
+
+## `pow()` test
+
+```{r}
+#| echo: true
+#| error: true
+pow(5, 2)
+pow(v = 5, x = 2)
+pow("ten", "two")
+pow(x = 5, z = 2)
+```
+
+## Errors 
+
+Consider the following errors:
+
+```{r}
+#| echo: true
+#| error: true
+pow("ten", "two")
+pow(x = 5, z = 2)
+```
+
+::: incremental
+
+-   What do/don't you like about each error? 
+
+-   Which error message is better? Why? 
+
+:::
+
+```{r}
+countdown::countdown(2)
+```
+
+# Informative Error Messages {background-color="#00817c"} 
+
+## Informative Error Messages
+
+```{r}
+#| echo: true
+new_pow <- function(x, v) {
+  stopifnot(
+    "The x argument value should be numeric." = is.numeric(x),
+    "The v argument value should be numeric." = is.numeric(v)
+  )
+  
+  result <- x^v
+  return(result)
+}
+```
+
+-   Note the syntax of `stopifnot()`
+
+## Testing `pow()` vs. `new_pow()`
+
+```{r}
+#| echo: true
+#| error: true
+pow("ten", "two")
+new_pow("ten", "two")
+```
+
+## Testing `pow()` vs. `new_pow()`
+
+```{r}
+#| echo: true
+#| error: true
+pow("ten", "two")
+new_pow("ten", "two")
+new_pow(10, "two")
+```
+
+## Testing `pow()` vs. `new_pow()`
+
+```{r}
+#| echo: true
+#| error: true
+pow("ten", "two")
+new_pow("ten", "two")
+new_pow(10, "two")
+new_pow(10, 2)
+```
+
+## Difference function
+
+Write a function, called `diff()`, that takes the difference (subtracts) its first and second arguments. If you have time, try to include any necessary informative error messages.
+
+```{r}
+countdown::countdown(5)
+```
+
+
+## Difference function
+
+A possible solution:
+
+```{r}
+#| echo: true
+diff <- function(a, b) {
+  result <- a - b
+  return(result)
+}
+```
+
+## Difference function
+
+A possible solution with informative error messages:
+
+```{r}
+#| echo: true
+#| error: true
+diff <- function(a, b) {
+  stopifnot(
+    "The a argument value should be numeric." = is.numeric(a),
+    "The b argument value should be numeric." = is.numeric(b)
+  )
+  result <- a - b
+  return(result)
+}
+```
+
+## Difference function
+
+Testing:
+
+```{r}
+#| echo: true
+#| error: true
+diff(5, 2)
+diff(2, 5)
+diff("two", 5)
+```
+
+# Conditional statements {background-color="#00817c"} 
+
+## Conditional statements
+
+-   *Conditional statements* allow for code to run based on whether a statement is true or false: 
+
+```{r}
+#| echo: true
+#| eval: false
+if (condition here is true) {
+  run any code within these curly braces 
+}
+```
+
+
+## Conditional statements
+
+-   *Conditional statements* allow for code to run based on whether a statement is true or false: 
+
+```{r}
+#| echo: true
+#| eval: false
+if (condition here is true) {
+  run any code within these curly braces 
+} else {
+  run this code
+}
+```
+
+## Conditional statements
+
+-   We can also use the `else if` condition to check multiple conditions:
+
+```{r}
+#| echo: true
+#| eval: false
+if (condition 1 is true) {
+  run any code within these curly braces 
+} else if (some other condition is true) {
+  run this code
+} else {
+  this code will run
+}
+```
+
+## Conditional statement example
+
+What will this print? 
+
+```{r}
+#| echo: true
+#| eval: false
+species <- "doug-fir"
+
+if (species == "doug-fir") {
+  print("evergreen!")
+} else {
+  print(":-(")
+}
+```
+
+```{r}
+countdown::countdown(.5)
+```
+
+
+## Conditional statement example
+
+What will this print?
+
+```{r}
+#| echo: true
+#| eval: true
+species <- "doug-fir"
+
+if (species == "doug-fir") {
+  print("evergreen!")
+} else {
+  print(":-(")
+}
+```
+
+## Conditional statement example
+
+What will this print?
+
+```{r}
+#| echo: true
+#| eval: false
+species <- "doug-fir"
+dbh <- 22
+
+if (species == "doug-fir") {
+  print("evergreen!")
+} else if (dbh > 20) {
+  print("big tree!")
+} else {
+  print(":-(")
+}
+```
+
+```{r}
+countdown::countdown(.5)
+```
+
+## Conditional statement example
+
+What will this print?
+
+```{r}
+#| echo: true
+#| eval: true
+species <- "doug-fir"
+dbh <- 22
+
+if (species == "doug-fir") {
+  print("evergreen!")
+} else if (dbh > 20) {
+  print("big tree!")
+} else {
+  print(":-(")
+}
+```
+
+## Conditional statement example
+
+What will this print?
+
+```{r}
+#| echo: true
+#| eval: false
+species <- "doug-fir"
+dbh <- 22
+
+if (species == "doug-fir") {
+  print("evergreen!")
+}  
+if (dbh > 20) {
+  print("big tree!")
+} else {
+  print(":-(")
+}
+```
+
+```{r}
+countdown::countdown(.5)
+```
+
+## Conditional statement example
+
+What will this print?
+
+```{r}
+#| echo: true
+#| eval: true
+species <- "doug-fir"
+dbh <- 22
+
+if (species == "doug-fir") {
+  print("evergreen!")
+}  
+if (dbh > 20) {
+  print("big tree!")
+} else {
+  print(":-(")
+}
+```
+
+
+
+## Conditional statements in a function
+
+-   Let's say you're tired of `R` defaulting `na.rm = FALSE` when you take the mean of a variable. You could write a function with a different default!
+
+## Conditional statements in a function
+
+-   Let's say you're tired of `R` defaulting `na.rm = FALSE` when you take the mean of a variable. You could write a function with a different default!
+
+-   It might look something like this: 
+
+```{r}
+#| echo: true
+my_mean <- function(x, na.rm = TRUE) {
+  if (na.rm) {
+    x <- x[!is.na(x)]
+  }
+  
+  average <- sum(x) / length(x)
+  return(average)
+}
+```   
+
+## Conditional statements in a function
+
+-   Let's say you're tired of `R` defaulting `na.rm = FALSE` when you take the mean of a variable. You could write a function with a different default!
+
+-   It might look something like this: 
+
+```{r}
+#| echo: true
+#| code-line-numbers: "1,8|2,3,4|6,7"
+my_mean <- function(x, na.rm = TRUE) {
+  if (na.rm) {
+    x <- x[!is.na(x)]
+  }
+  
+  average <- sum(x) / length(x)
+  return(average)
+}
+```
+
+## Conditional statements in a function
+
+```{r}
+#| echo: true
+nums <- c(1, 2, 3, NA, 5, 6)
+my_mean(x = nums)
+mean(x = nums)
+mean(x = nums, na.rm = TRUE)
+```
+
+## A cautious mean
+
+```{r}
+#| echo: true
+#| code-line-numbers: "1,13|2,9|3,4,5,6,7|8|11,12"
+my_mean <- function(x, na.rm = TRUE) {
+  if (na.rm) {
+    if (any(is.na(x))) {
+      print("Watch out, you are removing NAs")
+    } else {
+      print("We didn't remove any NAs")
+    }
+    x <- x[!is.na(x)]
+  } 
+  
+  average <- sum(x) / length(x)
+  return(average)
+}
+```
+
+## A cautious mean
+
+```{r}
+#| echo: true
+nums <- c(1, 2, 3, NA, 5, 6)
+primes <- c(2, 3, 5, 7, 11, 13, 17, 19, 23)
+```
+
+What will 
+
+```{r}
+#| echo: true
+#| eval: false
+my_mean(x = nums)
+my_mean(x = primes)
+```
+
+output? 
+
+```{r}
+countdown::countdown(1)
+```
+
+## A cautious mean
+
+```{r}
+#| echo: true
+my_mean(x = nums)
+my_mean(x = primes)
+```
+
+## A cautious mean
+
+```{r}
+#| echo: true
+my_mean(x = nums)
+my_mean(x = primes)
+# What about `prime_mean`? 
+prime_mean <- my_mean(x = primes)
+```
+
+## A cautious mean
+
+```{r}
+#| echo: true
+my_mean(x = nums)
+my_mean(x = primes)
+# What about `prime_mean`? 
+prime_mean <- my_mean(x = primes)
+prime_mean
+```
+
+
+
+## Next time
+
+-   Loops!
+-   Review Quarto
+
+
+
+
+
+
+
+
+

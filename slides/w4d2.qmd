@@ -25,7 +25,7 @@ format:
 
 ## Annoucements
 
--   Midterm 1 is in two weeks, Nov 3, during lab time. 
+-   Midterm 1 is in two weeks, Oct 3, during lab time. 
 -   Lab 1 & 2 grades will be released soon on D2L. 
 
 ## Agenda
