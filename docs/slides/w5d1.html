@@ -516,7 +516,7 @@ Practical Computing and Data Science Tools
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_2e29379c" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_016ab5d3" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -541,18 +541,29 @@ Practical Computing and Data Science Tools
 <span id="cb26-8"><a href="#cb26-8"></a>  <span class="fu">return</span>(result)</span>
 <span id="cb26-9"><a href="#cb26-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ul>
-<li>Note the syntax of <code>stopifnot()</code></li>
-</ul>
+</section>
+<section id="informative-error-messages-2" class="slide level2">
+<h2>Informative Error Messages</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27" data-code-line-numbers="2,3,4,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>new_pow <span class="ot">&lt;-</span> <span class="cf">function</span>(x, v) {</span>
+<span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">stopifnot</span>(</span>
+<span id="cb27-3"><a href="#cb27-3"></a>    <span class="st">"The x argument value should be numeric."</span> <span class="ot">=</span> <span class="fu">is.numeric</span>(x),</span>
+<span id="cb27-4"><a href="#cb27-4"></a>    <span class="st">"The v argument value should be numeric."</span> <span class="ot">=</span> <span class="fu">is.numeric</span>(v)</span>
+<span id="cb27-5"><a href="#cb27-5"></a>  )</span>
+<span id="cb27-6"><a href="#cb27-6"></a>  </span>
+<span id="cb27-7"><a href="#cb27-7"></a>  result <span class="ot">&lt;-</span> x<span class="sc">^</span>v</span>
+<span id="cb27-8"><a href="#cb27-8"></a>  <span class="fu">return</span>(result)</span>
+<span id="cb27-9"><a href="#cb27-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="testing-pow-vs.-new_pow" class="slide level2">
 <h2>Testing <code>pow()</code> vs.&nbsp;<code>new_pow()</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">pow</span>(<span class="st">"ten"</span>, <span class="st">"two"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">pow</span>(<span class="st">"ten"</span>, <span class="st">"two"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in x^v: non-numeric argument to binary operator</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">new_pow</span>(<span class="st">"ten"</span>, <span class="st">"two"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">new_pow</span>(<span class="st">"ten"</span>, <span class="st">"two"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in new_pow("ten", "two"): The x argument value should be numeric.</code></pre>
 </div>
@@ -561,15 +572,15 @@ Practical Computing and Data Science Tools
 <section id="testing-pow-vs.-new_pow-1" class="slide level2">
 <h2>Testing <code>pow()</code> vs.&nbsp;<code>new_pow()</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">pow</span>(<span class="st">"ten"</span>, <span class="st">"two"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">pow</span>(<span class="st">"ten"</span>, <span class="st">"two"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in x^v: non-numeric argument to binary operator</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">new_pow</span>(<span class="st">"ten"</span>, <span class="st">"two"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">new_pow</span>(<span class="st">"ten"</span>, <span class="st">"two"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in new_pow("ten", "two"): The x argument value should be numeric.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">new_pow</span>(<span class="dv">10</span>, <span class="st">"two"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">new_pow</span>(<span class="dv">10</span>, <span class="st">"two"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in new_pow(10, "two"): The v argument value should be numeric.</code></pre>
 </div>
@@ -578,19 +589,19 @@ Practical Computing and Data Science Tools
 <section id="testing-pow-vs.-new_pow-2" class="slide level2">
 <h2>Testing <code>pow()</code> vs.&nbsp;<code>new_pow()</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">pow</span>(<span class="st">"ten"</span>, <span class="st">"two"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">pow</span>(<span class="st">"ten"</span>, <span class="st">"two"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in x^v: non-numeric argument to binary operator</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">new_pow</span>(<span class="st">"ten"</span>, <span class="st">"two"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">new_pow</span>(<span class="st">"ten"</span>, <span class="st">"two"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in new_pow("ten", "two"): The x argument value should be numeric.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">new_pow</span>(<span class="dv">10</span>, <span class="st">"two"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="fu">new_pow</span>(<span class="dv">10</span>, <span class="st">"two"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in new_pow(10, "two"): The v argument value should be numeric.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">new_pow</span>(<span class="dv">10</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">new_pow</span>(<span class="dv">10</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 100</code></pre>
 </div>
@@ -601,7 +612,7 @@ Practical Computing and Data Science Tools
 <p>Write a function, called <code>diff()</code>, that takes the difference (subtracts) its first and second arguments. If you have time, try to include any necessary informative error messages.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_1fca9f93" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_48ea1c21" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -612,39 +623,39 @@ Practical Computing and Data Science Tools
 <h2>Difference function</h2>
 <p>A possible solution:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>diff <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
-<span id="cb45-2"><a href="#cb45-2"></a>  result <span class="ot">&lt;-</span> a <span class="sc">-</span> b</span>
-<span id="cb45-3"><a href="#cb45-3"></a>  <span class="fu">return</span>(result)</span>
-<span id="cb45-4"><a href="#cb45-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>diff <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb46-2"><a href="#cb46-2"></a>  result <span class="ot">&lt;-</span> a <span class="sc">-</span> b</span>
+<span id="cb46-3"><a href="#cb46-3"></a>  <span class="fu">return</span>(result)</span>
+<span id="cb46-4"><a href="#cb46-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="difference-function-2" class="slide level2">
 <h2>Difference function</h2>
 <p>A possible solution with informative error messages:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>diff <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
-<span id="cb46-2"><a href="#cb46-2"></a>  <span class="fu">stopifnot</span>(</span>
-<span id="cb46-3"><a href="#cb46-3"></a>    <span class="st">"The a argument value should be numeric."</span> <span class="ot">=</span> <span class="fu">is.numeric</span>(a),</span>
-<span id="cb46-4"><a href="#cb46-4"></a>    <span class="st">"The b argument value should be numeric."</span> <span class="ot">=</span> <span class="fu">is.numeric</span>(b)</span>
-<span id="cb46-5"><a href="#cb46-5"></a>  )</span>
-<span id="cb46-6"><a href="#cb46-6"></a>  result <span class="ot">&lt;-</span> a <span class="sc">-</span> b</span>
-<span id="cb46-7"><a href="#cb46-7"></a>  <span class="fu">return</span>(result)</span>
-<span id="cb46-8"><a href="#cb46-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>diff <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb47-2"><a href="#cb47-2"></a>  <span class="fu">stopifnot</span>(</span>
+<span id="cb47-3"><a href="#cb47-3"></a>    <span class="st">"The a argument value should be numeric."</span> <span class="ot">=</span> <span class="fu">is.numeric</span>(a),</span>
+<span id="cb47-4"><a href="#cb47-4"></a>    <span class="st">"The b argument value should be numeric."</span> <span class="ot">=</span> <span class="fu">is.numeric</span>(b)</span>
+<span id="cb47-5"><a href="#cb47-5"></a>  )</span>
+<span id="cb47-6"><a href="#cb47-6"></a>  result <span class="ot">&lt;-</span> a <span class="sc">-</span> b</span>
+<span id="cb47-7"><a href="#cb47-7"></a>  <span class="fu">return</span>(result)</span>
+<span id="cb47-8"><a href="#cb47-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="difference-function-3" class="slide level2">
 <h2>Difference function</h2>
 <p>Testing:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">diff</span>(<span class="dv">5</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">diff</span>(<span class="dv">5</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="fu">diff</span>(<span class="dv">2</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="fu">diff</span>(<span class="dv">2</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="fu">diff</span>(<span class="st">"two"</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="fu">diff</span>(<span class="st">"two"</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in diff("two", 5): The a argument value should be numeric.</code></pre>
 </div>
@@ -661,9 +672,9 @@ Practical Computing and Data Science Tools
 <li><em>Conditional statements</em> allow for code to run based on whether a statement is true or false:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="cf">if</span> (condition here is true) {</span>
-<span id="cb53-2"><a href="#cb53-2"></a>  run any code within these curly braces </span>
-<span id="cb53-3"><a href="#cb53-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="cf">if</span> (condition here is true) {</span>
+<span id="cb54-2"><a href="#cb54-2"></a>  run any code within these curly braces </span>
+<span id="cb54-3"><a href="#cb54-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="conditional-statements-2" class="slide level2">
@@ -672,11 +683,11 @@ Practical Computing and Data Science Tools
 <li><em>Conditional statements</em> allow for code to run based on whether a statement is true or false:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="cf">if</span> (condition here is true) {</span>
-<span id="cb54-2"><a href="#cb54-2"></a>  run any code within these curly braces </span>
-<span id="cb54-3"><a href="#cb54-3"></a>} <span class="cf">else</span> {</span>
-<span id="cb54-4"><a href="#cb54-4"></a>  run this code</span>
-<span id="cb54-5"><a href="#cb54-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="cf">if</span> (condition here is true) {</span>
+<span id="cb55-2"><a href="#cb55-2"></a>  run any code within these curly braces </span>
+<span id="cb55-3"><a href="#cb55-3"></a>} <span class="cf">else</span> {</span>
+<span id="cb55-4"><a href="#cb55-4"></a>  run this code</span>
+<span id="cb55-5"><a href="#cb55-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="conditional-statements-3" class="slide level2">
@@ -685,37 +696,16 @@ Practical Computing and Data Science Tools
 <li>We can also use the <code>else if</code> condition to check multiple conditions:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="cf">if</span> (condition <span class="dv">1</span> is true) {</span>
-<span id="cb55-2"><a href="#cb55-2"></a>  run any code within these curly braces </span>
-<span id="cb55-3"><a href="#cb55-3"></a>} <span class="cf">else</span> <span class="cf">if</span> (some other condition is true) {</span>
-<span id="cb55-4"><a href="#cb55-4"></a>  run this code</span>
-<span id="cb55-5"><a href="#cb55-5"></a>} <span class="cf">else</span> {</span>
-<span id="cb55-6"><a href="#cb55-6"></a>  this code will run</span>
-<span id="cb55-7"><a href="#cb55-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="cf">if</span> (condition <span class="dv">1</span> is true) {</span>
+<span id="cb56-2"><a href="#cb56-2"></a>  run any code within these curly braces </span>
+<span id="cb56-3"><a href="#cb56-3"></a>} <span class="cf">else</span> <span class="cf">if</span> (some other condition is true) {</span>
+<span id="cb56-4"><a href="#cb56-4"></a>  run this code</span>
+<span id="cb56-5"><a href="#cb56-5"></a>} <span class="cf">else</span> {</span>
+<span id="cb56-6"><a href="#cb56-6"></a>  this code will run</span>
+<span id="cb56-7"><a href="#cb56-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="conditional-statement-example" class="slide level2">
-<h2>Conditional statement example</h2>
-<p>What will this print?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a>species <span class="ot">&lt;-</span> <span class="st">"doug-fir"</span></span>
-<span id="cb56-2"><a href="#cb56-2"></a></span>
-<span id="cb56-3"><a href="#cb56-3"></a><span class="cf">if</span> (species <span class="sc">==</span> <span class="st">"doug-fir"</span>) {</span>
-<span id="cb56-4"><a href="#cb56-4"></a>  <span class="fu">print</span>(<span class="st">"evergreen!"</span>)</span>
-<span id="cb56-5"><a href="#cb56-5"></a>} <span class="cf">else</span> {</span>
-<span id="cb56-6"><a href="#cb56-6"></a>  <span class="fu">print</span>(<span class="st">":-("</span>)</span>
-<span id="cb56-7"><a href="#cb56-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_42d7c742" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
-</div>
-</div>
-</div>
-</section>
-<section id="conditional-statement-example-1" class="slide level2">
 <h2>Conditional statement example</h2>
 <p>What will this print?</p>
 <div class="cell">
@@ -726,36 +716,33 @@ Practical Computing and Data Science Tools
 <span id="cb57-5"><a href="#cb57-5"></a>} <span class="cf">else</span> {</span>
 <span id="cb57-6"><a href="#cb57-6"></a>  <span class="fu">print</span>(<span class="st">":-("</span>)</span>
 <span id="cb57-7"><a href="#cb57-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "evergreen!"</code></pre>
-</div>
-</div>
-</section>
-<section id="conditional-statement-example-2" class="slide level2">
-<h2>Conditional statement example</h2>
-<p>What will this print?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a>species <span class="ot">&lt;-</span> <span class="st">"doug-fir"</span></span>
-<span id="cb59-2"><a href="#cb59-2"></a>dbh <span class="ot">&lt;-</span> <span class="dv">22</span></span>
-<span id="cb59-3"><a href="#cb59-3"></a></span>
-<span id="cb59-4"><a href="#cb59-4"></a><span class="cf">if</span> (species <span class="sc">==</span> <span class="st">"doug-fir"</span>) {</span>
-<span id="cb59-5"><a href="#cb59-5"></a>  <span class="fu">print</span>(<span class="st">"evergreen!"</span>)</span>
-<span id="cb59-6"><a href="#cb59-6"></a>} <span class="cf">else</span> <span class="cf">if</span> (dbh <span class="sc">&gt;</span> <span class="dv">20</span>) {</span>
-<span id="cb59-7"><a href="#cb59-7"></a>  <span class="fu">print</span>(<span class="st">"big tree!"</span>)</span>
-<span id="cb59-8"><a href="#cb59-8"></a>} <span class="cf">else</span> {</span>
-<span id="cb59-9"><a href="#cb59-9"></a>  <span class="fu">print</span>(<span class="st">":-("</span>)</span>
-<span id="cb59-10"><a href="#cb59-10"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_81c7514a" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_d3692092" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 </div>
 </div>
 </section>
-<section id="conditional-statement-example-3" class="slide level2">
+<section id="conditional-statement-example-1" class="slide level2">
+<h2>Conditional statement example</h2>
+<p>What will this print?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a>species <span class="ot">&lt;-</span> <span class="st">"doug-fir"</span></span>
+<span id="cb58-2"><a href="#cb58-2"></a></span>
+<span id="cb58-3"><a href="#cb58-3"></a><span class="cf">if</span> (species <span class="sc">==</span> <span class="st">"doug-fir"</span>) {</span>
+<span id="cb58-4"><a href="#cb58-4"></a>  <span class="fu">print</span>(<span class="st">"evergreen!"</span>)</span>
+<span id="cb58-5"><a href="#cb58-5"></a>} <span class="cf">else</span> {</span>
+<span id="cb58-6"><a href="#cb58-6"></a>  <span class="fu">print</span>(<span class="st">":-("</span>)</span>
+<span id="cb58-7"><a href="#cb58-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "evergreen!"</code></pre>
+</div>
+</div>
+</section>
+<section id="conditional-statement-example-2" class="slide level2">
 <h2>Conditional statement example</h2>
 <p>What will this print?</p>
 <div class="cell">
@@ -769,6 +756,30 @@ Practical Computing and Data Science Tools
 <span id="cb60-8"><a href="#cb60-8"></a>} <span class="cf">else</span> {</span>
 <span id="cb60-9"><a href="#cb60-9"></a>  <span class="fu">print</span>(<span class="st">":-("</span>)</span>
 <span id="cb60-10"><a href="#cb60-10"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_d6509d23" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="conditional-statement-example-3" class="slide level2">
+<h2>Conditional statement example</h2>
+<p>What will this print?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a>species <span class="ot">&lt;-</span> <span class="st">"doug-fir"</span></span>
+<span id="cb61-2"><a href="#cb61-2"></a>dbh <span class="ot">&lt;-</span> <span class="dv">22</span></span>
+<span id="cb61-3"><a href="#cb61-3"></a></span>
+<span id="cb61-4"><a href="#cb61-4"></a><span class="cf">if</span> (species <span class="sc">==</span> <span class="st">"doug-fir"</span>) {</span>
+<span id="cb61-5"><a href="#cb61-5"></a>  <span class="fu">print</span>(<span class="st">"evergreen!"</span>)</span>
+<span id="cb61-6"><a href="#cb61-6"></a>} <span class="cf">else</span> <span class="cf">if</span> (dbh <span class="sc">&gt;</span> <span class="dv">20</span>) {</span>
+<span id="cb61-7"><a href="#cb61-7"></a>  <span class="fu">print</span>(<span class="st">"big tree!"</span>)</span>
+<span id="cb61-8"><a href="#cb61-8"></a>} <span class="cf">else</span> {</span>
+<span id="cb61-9"><a href="#cb61-9"></a>  <span class="fu">print</span>(<span class="st">":-("</span>)</span>
+<span id="cb61-10"><a href="#cb61-10"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "evergreen!"</code></pre>
 </div>
@@ -778,21 +789,21 @@ Practical Computing and Data Science Tools
 <h2>Conditional statement example</h2>
 <p>What will this print?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a>species <span class="ot">&lt;-</span> <span class="st">"doug-fir"</span></span>
-<span id="cb62-2"><a href="#cb62-2"></a>dbh <span class="ot">&lt;-</span> <span class="dv">22</span></span>
-<span id="cb62-3"><a href="#cb62-3"></a></span>
-<span id="cb62-4"><a href="#cb62-4"></a><span class="cf">if</span> (species <span class="sc">==</span> <span class="st">"doug-fir"</span>) {</span>
-<span id="cb62-5"><a href="#cb62-5"></a>  <span class="fu">print</span>(<span class="st">"evergreen!"</span>)</span>
-<span id="cb62-6"><a href="#cb62-6"></a>}  </span>
-<span id="cb62-7"><a href="#cb62-7"></a><span class="cf">if</span> (dbh <span class="sc">&gt;</span> <span class="dv">20</span>) {</span>
-<span id="cb62-8"><a href="#cb62-8"></a>  <span class="fu">print</span>(<span class="st">"big tree!"</span>)</span>
-<span id="cb62-9"><a href="#cb62-9"></a>} <span class="cf">else</span> {</span>
-<span id="cb62-10"><a href="#cb62-10"></a>  <span class="fu">print</span>(<span class="st">":-("</span>)</span>
-<span id="cb62-11"><a href="#cb62-11"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a>species <span class="ot">&lt;-</span> <span class="st">"doug-fir"</span></span>
+<span id="cb63-2"><a href="#cb63-2"></a>dbh <span class="ot">&lt;-</span> <span class="dv">22</span></span>
+<span id="cb63-3"><a href="#cb63-3"></a></span>
+<span id="cb63-4"><a href="#cb63-4"></a><span class="cf">if</span> (species <span class="sc">==</span> <span class="st">"doug-fir"</span>) {</span>
+<span id="cb63-5"><a href="#cb63-5"></a>  <span class="fu">print</span>(<span class="st">"evergreen!"</span>)</span>
+<span id="cb63-6"><a href="#cb63-6"></a>}  </span>
+<span id="cb63-7"><a href="#cb63-7"></a><span class="cf">if</span> (dbh <span class="sc">&gt;</span> <span class="dv">20</span>) {</span>
+<span id="cb63-8"><a href="#cb63-8"></a>  <span class="fu">print</span>(<span class="st">"big tree!"</span>)</span>
+<span id="cb63-9"><a href="#cb63-9"></a>} <span class="cf">else</span> {</span>
+<span id="cb63-10"><a href="#cb63-10"></a>  <span class="fu">print</span>(<span class="st">":-("</span>)</span>
+<span id="cb63-11"><a href="#cb63-11"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_e6ccc27e" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_f5581088" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
@@ -803,20 +814,20 @@ Practical Computing and Data Science Tools
 <h2>Conditional statement example</h2>
 <p>What will this print?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a>species <span class="ot">&lt;-</span> <span class="st">"doug-fir"</span></span>
-<span id="cb63-2"><a href="#cb63-2"></a>dbh <span class="ot">&lt;-</span> <span class="dv">22</span></span>
-<span id="cb63-3"><a href="#cb63-3"></a></span>
-<span id="cb63-4"><a href="#cb63-4"></a><span class="cf">if</span> (species <span class="sc">==</span> <span class="st">"doug-fir"</span>) {</span>
-<span id="cb63-5"><a href="#cb63-5"></a>  <span class="fu">print</span>(<span class="st">"evergreen!"</span>)</span>
-<span id="cb63-6"><a href="#cb63-6"></a>}  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a>species <span class="ot">&lt;-</span> <span class="st">"doug-fir"</span></span>
+<span id="cb64-2"><a href="#cb64-2"></a>dbh <span class="ot">&lt;-</span> <span class="dv">22</span></span>
+<span id="cb64-3"><a href="#cb64-3"></a></span>
+<span id="cb64-4"><a href="#cb64-4"></a><span class="cf">if</span> (species <span class="sc">==</span> <span class="st">"doug-fir"</span>) {</span>
+<span id="cb64-5"><a href="#cb64-5"></a>  <span class="fu">print</span>(<span class="st">"evergreen!"</span>)</span>
+<span id="cb64-6"><a href="#cb64-6"></a>}  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "evergreen!"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a><span class="cf">if</span> (dbh <span class="sc">&gt;</span> <span class="dv">20</span>) {</span>
-<span id="cb65-2"><a href="#cb65-2"></a>  <span class="fu">print</span>(<span class="st">"big tree!"</span>)</span>
-<span id="cb65-3"><a href="#cb65-3"></a>} <span class="cf">else</span> {</span>
-<span id="cb65-4"><a href="#cb65-4"></a>  <span class="fu">print</span>(<span class="st">":-("</span>)</span>
-<span id="cb65-5"><a href="#cb65-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a><span class="cf">if</span> (dbh <span class="sc">&gt;</span> <span class="dv">20</span>) {</span>
+<span id="cb66-2"><a href="#cb66-2"></a>  <span class="fu">print</span>(<span class="st">"big tree!"</span>)</span>
+<span id="cb66-3"><a href="#cb66-3"></a>} <span class="cf">else</span> {</span>
+<span id="cb66-4"><a href="#cb66-4"></a>  <span class="fu">print</span>(<span class="st">":-("</span>)</span>
+<span id="cb66-5"><a href="#cb66-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "big tree!"</code></pre>
 </div>
@@ -835,24 +846,7 @@ Practical Computing and Data Science Tools
 <li><p>It might look something like this:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a>my_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) {</span>
-<span id="cb67-2"><a href="#cb67-2"></a>  <span class="cf">if</span> (na.rm) {</span>
-<span id="cb67-3"><a href="#cb67-3"></a>    x <span class="ot">&lt;-</span> x[<span class="sc">!</span><span class="fu">is.na</span>(x)]</span>
-<span id="cb67-4"><a href="#cb67-4"></a>  }</span>
-<span id="cb67-5"><a href="#cb67-5"></a>  </span>
-<span id="cb67-6"><a href="#cb67-6"></a>  average <span class="ot">&lt;-</span> <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span>
-<span id="cb67-7"><a href="#cb67-7"></a>  <span class="fu">return</span>(average)</span>
-<span id="cb67-8"><a href="#cb67-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="conditional-statements-in-a-function-2" class="slide level2">
-<h2>Conditional statements in a function</h2>
-<ul>
-<li><p>Let’s say you’re tired of <code>R</code> defaulting <code>na.rm = FALSE</code> when you take the mean of a variable. You could write a function with a different default!</p></li>
-<li><p>It might look something like this:</p></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb68" data-code-line-numbers="1,8|2,3,4|6,7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a>my_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) {</span>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a>my_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) {</span>
 <span id="cb68-2"><a href="#cb68-2"></a>  <span class="cf">if</span> (na.rm) {</span>
 <span id="cb68-3"><a href="#cb68-3"></a>    x <span class="ot">&lt;-</span> x[<span class="sc">!</span><span class="fu">is.na</span>(x)]</span>
 <span id="cb68-4"><a href="#cb68-4"></a>  }</span>
@@ -862,19 +856,36 @@ Practical Computing and Data Science Tools
 <span id="cb68-8"><a href="#cb68-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="conditional-statements-in-a-function-2" class="slide level2">
+<h2>Conditional statements in a function</h2>
+<ul>
+<li><p>Let’s say you’re tired of <code>R</code> defaulting <code>na.rm = FALSE</code> when you take the mean of a variable. You could write a function with a different default!</p></li>
+<li><p>It might look something like this:</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb69" data-code-line-numbers="1,8|2,3,4|6,7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a>my_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb69-2"><a href="#cb69-2"></a>  <span class="cf">if</span> (na.rm) {</span>
+<span id="cb69-3"><a href="#cb69-3"></a>    x <span class="ot">&lt;-</span> x[<span class="sc">!</span><span class="fu">is.na</span>(x)]</span>
+<span id="cb69-4"><a href="#cb69-4"></a>  }</span>
+<span id="cb69-5"><a href="#cb69-5"></a>  </span>
+<span id="cb69-6"><a href="#cb69-6"></a>  average <span class="ot">&lt;-</span> <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span>
+<span id="cb69-7"><a href="#cb69-7"></a>  <span class="fu">return</span>(average)</span>
+<span id="cb69-8"><a href="#cb69-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 <section id="conditional-statements-in-a-function-3" class="slide level2">
 <h2>Conditional statements in a function</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a>nums <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="cn">NA</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
-<span id="cb69-2"><a href="#cb69-2"></a><span class="fu">my_mean</span>(<span class="at">x =</span> nums)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a>nums <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="cn">NA</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb70-2"><a href="#cb70-2"></a><span class="fu">my_mean</span>(<span class="at">x =</span> nums)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a><span class="fu">mean</span>(<span class="at">x =</span> nums)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a><span class="fu">mean</span>(<span class="at">x =</span> nums)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a><span class="fu">mean</span>(<span class="at">x =</span> nums, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a><span class="fu">mean</span>(<span class="at">x =</span> nums, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.4</code></pre>
 </div>
@@ -883,36 +894,36 @@ Practical Computing and Data Science Tools
 <section id="a-cautious-mean" class="slide level2">
 <h2>A cautious mean</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb75" data-code-line-numbers="1,13|2,9|3,4,5,6,7|8|11,12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1"></a>my_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) {</span>
-<span id="cb75-2"><a href="#cb75-2"></a>  <span class="cf">if</span> (na.rm) {</span>
-<span id="cb75-3"><a href="#cb75-3"></a>    <span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">is.na</span>(x))) {</span>
-<span id="cb75-4"><a href="#cb75-4"></a>      <span class="fu">print</span>(<span class="st">"Watch out, you are removing NAs"</span>)</span>
-<span id="cb75-5"><a href="#cb75-5"></a>    } <span class="cf">else</span> {</span>
-<span id="cb75-6"><a href="#cb75-6"></a>      <span class="fu">print</span>(<span class="st">"We didn't remove any NAs"</span>)</span>
-<span id="cb75-7"><a href="#cb75-7"></a>    }</span>
-<span id="cb75-8"><a href="#cb75-8"></a>    x <span class="ot">&lt;-</span> x[<span class="sc">!</span><span class="fu">is.na</span>(x)]</span>
-<span id="cb75-9"><a href="#cb75-9"></a>  } </span>
-<span id="cb75-10"><a href="#cb75-10"></a>  </span>
-<span id="cb75-11"><a href="#cb75-11"></a>  average <span class="ot">&lt;-</span> <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span>
-<span id="cb75-12"><a href="#cb75-12"></a>  <span class="fu">return</span>(average)</span>
-<span id="cb75-13"><a href="#cb75-13"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76" data-code-line-numbers="1,13|2,9|3,4,5,6,7|8|11,12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a>my_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb76-2"><a href="#cb76-2"></a>  <span class="cf">if</span> (na.rm) {</span>
+<span id="cb76-3"><a href="#cb76-3"></a>    <span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">is.na</span>(x))) {</span>
+<span id="cb76-4"><a href="#cb76-4"></a>      <span class="fu">print</span>(<span class="st">"Watch out, you are removing NAs"</span>)</span>
+<span id="cb76-5"><a href="#cb76-5"></a>    } <span class="cf">else</span> {</span>
+<span id="cb76-6"><a href="#cb76-6"></a>      <span class="fu">print</span>(<span class="st">"We didn't remove any NAs"</span>)</span>
+<span id="cb76-7"><a href="#cb76-7"></a>    }</span>
+<span id="cb76-8"><a href="#cb76-8"></a>    x <span class="ot">&lt;-</span> x[<span class="sc">!</span><span class="fu">is.na</span>(x)]</span>
+<span id="cb76-9"><a href="#cb76-9"></a>  } </span>
+<span id="cb76-10"><a href="#cb76-10"></a>  </span>
+<span id="cb76-11"><a href="#cb76-11"></a>  average <span class="ot">&lt;-</span> <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span>
+<span id="cb76-12"><a href="#cb76-12"></a>  <span class="fu">return</span>(average)</span>
+<span id="cb76-13"><a href="#cb76-13"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="a-cautious-mean-1" class="slide level2">
 <h2>A cautious mean</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a>nums <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="cn">NA</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
-<span id="cb76-2"><a href="#cb76-2"></a>primes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">23</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1"></a>nums <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="cn">NA</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb77-2"><a href="#cb77-2"></a>primes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">23</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>What will</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1"></a><span class="fu">my_mean</span>(<span class="at">x =</span> nums)</span>
-<span id="cb77-2"><a href="#cb77-2"></a><span class="fu">my_mean</span>(<span class="at">x =</span> primes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1"></a><span class="fu">my_mean</span>(<span class="at">x =</span> nums)</span>
+<span id="cb78-2"><a href="#cb78-2"></a><span class="fu">my_mean</span>(<span class="at">x =</span> primes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>output?</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_933480cf" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_f5de0452" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -922,14 +933,14 @@ Practical Computing and Data Science Tools
 <section id="a-cautious-mean-2" class="slide level2">
 <h2>A cautious mean</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1"></a><span class="fu">my_mean</span>(<span class="at">x =</span> nums)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1"></a><span class="fu">my_mean</span>(<span class="at">x =</span> nums)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Watch out, you are removing NAs"</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a><span class="fu">my_mean</span>(<span class="at">x =</span> primes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1"></a><span class="fu">my_mean</span>(<span class="at">x =</span> primes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "We didn't remove any NAs"</code></pre>
 </div>
@@ -941,22 +952,22 @@ Practical Computing and Data Science Tools
 <section id="a-cautious-mean-3" class="slide level2">
 <h2>A cautious mean</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1"></a><span class="fu">my_mean</span>(<span class="at">x =</span> nums)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1"></a><span class="fu">my_mean</span>(<span class="at">x =</span> nums)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Watch out, you are removing NAs"</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1"></a><span class="fu">my_mean</span>(<span class="at">x =</span> primes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1"></a><span class="fu">my_mean</span>(<span class="at">x =</span> primes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "We didn't remove any NAs"</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 11.11111</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1"></a><span class="co"># What about `prime_mean`? </span></span>
-<span id="cb90-2"><a href="#cb90-2"></a>prime_mean <span class="ot">&lt;-</span> <span class="fu">my_mean</span>(<span class="at">x =</span> primes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1"></a><span class="co"># What about `prime_mean`? </span></span>
+<span id="cb91-2"><a href="#cb91-2"></a>prime_mean <span class="ot">&lt;-</span> <span class="fu">my_mean</span>(<span class="at">x =</span> primes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "We didn't remove any NAs"</code></pre>
 </div>
@@ -965,35 +976,63 @@ Practical Computing and Data Science Tools
 <section id="a-cautious-mean-4" class="slide level2">
 <h2>A cautious mean</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1"></a><span class="fu">my_mean</span>(<span class="at">x =</span> nums)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1"></a><span class="fu">my_mean</span>(<span class="at">x =</span> nums)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Watch out, you are removing NAs"</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1"></a><span class="fu">my_mean</span>(<span class="at">x =</span> primes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1"></a><span class="fu">my_mean</span>(<span class="at">x =</span> primes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "We didn't remove any NAs"</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 11.11111</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1"></a><span class="co"># What about `prime_mean`? </span></span>
-<span id="cb98-2"><a href="#cb98-2"></a>prime_mean <span class="ot">&lt;-</span> <span class="fu">my_mean</span>(<span class="at">x =</span> primes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1"></a><span class="co"># What about `prime_mean`? </span></span>
+<span id="cb99-2"><a href="#cb99-2"></a>prime_mean <span class="ot">&lt;-</span> <span class="fu">my_mean</span>(<span class="at">x =</span> primes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "We didn't remove any NAs"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1"></a>prime_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1"></a>prime_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 11.11111</code></pre>
 </div>
 </div>
 </section>
+<section id="activity" class="slide level2">
+<h2>Activity</h2>
+<p>Write a function that takes two numbers as arguments (inputs) and does the following:</p>
+<p>if the input’s sum is positive or 0, take the square root of their sum (recall the <code>sqrt()</code>) function; otherwise take the absolute value (recall <code>abs()</code>) of their sum. Throughout the function, <code>print()</code> some informative messages. Name this function <code>abs_sqrt_sum()</code>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_83ca1c27" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="activity-possible-solution" class="slide level2">
+<h2>Activity: possible solution</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1"></a>abs_sqrt_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb103-2"><a href="#cb103-2"></a>  <span class="cf">if</span> (a <span class="sc">+</span> b <span class="sc">&gt;=</span> <span class="dv">0</span>) {</span>
+<span id="cb103-3"><a href="#cb103-3"></a>    <span class="fu">print</span>(<span class="st">"positive sum"</span>)</span>
+<span id="cb103-4"><a href="#cb103-4"></a>    <span class="fu">return</span>(<span class="fu">sqrt</span>(a <span class="sc">+</span> b))</span>
+<span id="cb103-5"><a href="#cb103-5"></a>  } <span class="cf">else</span> {</span>
+<span id="cb103-6"><a href="#cb103-6"></a>    <span class="fu">print</span>(<span class="st">"negative sum"</span>)</span>
+<span id="cb103-7"><a href="#cb103-7"></a>    <span class="fu">return</span>(<span class="fu">sqrt</span>(<span class="fu">abs</span>(a <span class="sc">+</span> b)))</span>
+<span id="cb103-8"><a href="#cb103-8"></a>  }</span>
+<span id="cb103-9"><a href="#cb103-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 <section id="next-time" class="slide level2">
 <h2>Next time</h2>
 <ul>
-<li>Loops!</li>
+<li>Loops</li>
+<li>More advanced functions</li>
 <li>Review Quarto</li>
 </ul>
 

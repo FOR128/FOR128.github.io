@@ -125,7 +125,21 @@ new_pow <- function(x, v) {
 }
 ```
 
--   Note the syntax of `stopifnot()`
+## Informative Error Messages
+
+```{r}
+#| echo: true
+#| code-line-numbers: "2,3,4,5"
+new_pow <- function(x, v) {
+  stopifnot(
+    "The x argument value should be numeric." = is.numeric(x),
+    "The v argument value should be numeric." = is.numeric(v)
+  )
+  
+  result <- x^v
+  return(result)
+}
+```
 
 ## Testing `pow()` vs. `new_pow()`
 
@@ -500,11 +514,39 @@ prime_mean <- my_mean(x = primes)
 prime_mean
 ```
 
+## Activity
+
+Write a function that takes two numbers as arguments (inputs) and does the following: 
+
+if the input's sum is positive or 0, take the square root of their sum (recall the `sqrt()`) function; otherwise take the absolute value (recall `abs()`) of their sum. Throughout the function, `print()` some informative messages. Name this function `abs_sqrt_sum()`. 
+
+```{r}
+countdown::countdown(5)
+```
+
+
+## Activity: possible solution
+
+
+```{r}
+#| echo: true
+abs_sqrt_sum <- function(a, b) {
+  if (a + b >= 0) {
+    print("positive sum")
+    return(sqrt(a + b))
+  } else {
+    print("negative sum")
+    return(sqrt(abs(a + b)))
+  }
+}
+```
+
 
 
 ## Next time
 
--   Loops!
+-   Loops
+-   More advanced functions
 -   Review Quarto
 
 
