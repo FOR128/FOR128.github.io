@@ -25,3 +25,5 @@ Week 4, day 2: *Review of data structures & intro to functions*. Available [here
 
 Week 5, day 1: *Functions and conditionals*. Available [here](https://mediaspace.msu.edu/media/Week+5+Day+1/1_ocxl3noi).
 
+Week 5, day 2: *Functions*. NOTE: audio issues. Available [here](https://mediaspace.msu.edu/media/Week+5+Day+2/1_yjtv1zs0).
+
