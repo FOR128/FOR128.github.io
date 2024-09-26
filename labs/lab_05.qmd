@@ -1,0 +1,98 @@
+---
+title: "Writing Functions"
+subtitle: "FOR 128: Lab 5"
+author: "Insert Your Name Here"
+date: "10/2/2024"
+format:
+  pdf: default
+editor: 
+  mode: source
+---
+
+## Welcome
+
+Welcome to Lab 5! Today, we'll focus on writing our own custom functiuons. 
+
+### Learning objectives
+
+-   Get comfortable writing functions in `R`.
+-   Specify multiple functionarguments and function argument defaults.
+-   Create informative error messages with input checks. 
+-   Use conditional statements within functions. 
+
+### Deliverables (i.e., what to put in the lab drop box)
+
+Upload your rendered PDF (`lab_05.pdf`) **and** Quarto (`lab_05.qmd`) document to the lab drop box. Make sure the Quarto document properly renders to PDF.
+
+### Collaborator(s)
+
+List any collaborators you worked with below. 
+
+
+
+## Exercise 1
+
+Write a function that takes the absolute value of the difference of the mean and median of a vector. You function should allow the user to choose to remove NAs or not. Make sure to add a check in your function that the vector is numeric, as well. 
+
+```{r}
+
+```
+
+
+## Exercise 2
+
+Do Exercise 5.1 from IFDAR
+
+```{r}
+
+```
+
+
+## Exercise 3
+
+Do Exercise 5.2 from IFDAR
+
+```{r}
+
+```
+
+
+## Exercise 4
+
+Do Exercise 5.3 from IFDAR
+
+```{r}
+
+```
+
+
+## Exercise 5
+
+Do Exercise 5.4 from IFDAR
+
+```{r}
+
+```
+
+
+## Exercise 6
+
+Do Exercise 5.5 from IFDAR
+
+```{r}
+
+```
+
+
+## Exercise 7
+
+Do Exercise 5.6 from IFDAR
+
+```{r}
+
+```
+
+
+# Wrap up
+
+Congratulations! You've made it to the end of Lab 5. Make sure to render your final document and submit both the .pdf and .qmd file to D2L.

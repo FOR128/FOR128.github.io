@@ -480,14 +480,14 @@
     "href": "slides/w2d2.html#reading-data-5",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n[1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n[5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\""
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n[1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n[5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\"      \n[9] \"lab_05.qmd\""
   },
   {
     "objectID": "slides/w2d2.html#reading-data-6",
     "href": "slides/w2d2.html#reading-data-6",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n[1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n[5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\"      \n\n\nNow, given our working directory and datasets location, we specify a relative path and load in the data:\n\nfef &lt;- read.csv(file = \"../labs/datasets/FEF_trees.csv\")"
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n[1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n[5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\"      \n[9] \"lab_05.qmd\"      \n\n\nNow, given our working directory and datasets location, we specify a relative path and load in the data:\n\nfef &lt;- read.csv(file = \"../labs/datasets/FEF_trees.csv\")"
   },
   {
     "objectID": "slides/w2d2.html#reading-data-7",
@@ -571,7 +571,7 @@
     "href": "slides/w2d2.html#writing-data-1",
     "title": "Reading and Writing Data",
     "section": "Writing data",
-    "text": "Writing data\nFirst, we look at the files in my “labs” folder\n\nlist.files(\"../labs\")\n\n[1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n[5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\""
+    "text": "Writing data\nFirst, we look at the files in my “labs” folder\n\nlist.files(\"../labs\")\n\n[1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n[5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\"      \n[9] \"lab_05.qmd\""
   },
   {
     "objectID": "slides/w2d2.html#writing-data-2",
@@ -585,7 +585,7 @@
     "href": "slides/w2d2.html#writing-data-3",
     "title": "Reading and Writing Data",
     "section": "Writing data",
-    "text": "Writing data\nNext, we can write the fef object to a .csv file.\n\nwrite.csv(x = fef,\n          file = \"../labs/my_fef.csv\")\n\nNow, we can see that the file is written.\n\nlist.files(\"../labs\")\n\n[1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n[5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\"      \n[9] \"my_fef.csv\""
+    "text": "Writing data\nNext, we can write the fef object to a .csv file.\n\nwrite.csv(x = fef,\n          file = \"../labs/my_fef.csv\")\n\nNow, we can see that the file is written.\n\nlist.files(\"../labs\")\n\n [1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n [5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\"      \n [9] \"lab_05.qmd\"       \"my_fef.csv\""
   },
   {
     "objectID": "slides/w2d2.html#next-week",
@@ -1363,13 +1363,6 @@
     "title": "Functions",
     "section": "Calculating basal area",
     "text": "Calculating basal area\nBasal area in square feet per acre: \\[\n\\text{BA} = \\frac{\\pi}{144} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 144} \\cdot \\text{DBH}^2\n\\] Basal area in square meters per hectare: \\[\n\\text{BA} = \\frac{\\pi}{10000} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 10000} \\cdot \\text{DBH}^2\n\\] There are 2.54 centimeters in an inch."
-  },
-  {
-    "objectID": "slides/w5d2.html#basal_area-by-the-book.",
-    "href": "slides/w5d2.html#basal_area-by-the-book.",
-    "title": "Functions",
-    "section": "basal_area(), by the book.",
-    "text": "basal_area(), by the book.\n\nbasal_area &lt;- function(dbh,\n                       dbh_units = \"in\",\n                       ba_units = \"sq_ft\") {\n  # Some input checks.\n  stopifnot(\n    \"dbh should be numeric.\" = is.numeric(dbh),\n    \"dbh_units should be either 'in' or 'cm'.\" = dbh_units %in% c(\"in\", \"cm\"),\n    \"ba_units should be either 'sq_ft' or 'sq_m'.\" = ba_units %in% c(\"sq_ft\", \"sq_m\")\n  )\n  # Define c.\n  if (ba_units == \"sq_ft\") {\n    c &lt;- pi / (4 * 144)\n  } else{ # ba_units == \"sq_m\" \n    c &lt;- pi / (4 * 10000)\n  }\n  # Compute ba and return.\n  if (dbh_units == \"in\" & ba_units == \"sq_ft\") {\n    ba &lt;- c * dbh ^ 2\n  } else if (dbh_units == \"in\" &\n             ba_units == \"sq_m\") {\n    ba &lt;- c * (2.54 * dbh) ^ 2\n  } else if (dbh_units == \"cm\" & ba_units == \"sq_m\") {\n    ba &lt;- c * dbh ^ 2\n  } else{ # dbh_units == \"cm\" & ba_units == \"sq_ft\" \n    ba &lt;- c * (dbh / 2.54)^2\n  }\n  return(ba)\n}"
   },
   {
     "objectID": "slides/w5d2.html#next-time",

@@ -270,44 +270,11 @@ There are 2.54 centimeters in an inch.
 
 ```
 
+---
 
+```{webr-r}
 
-## `basal_area()`, by the book.
-
-```{r}
-#| echo: true
-basal_area <- function(dbh,
-                       dbh_units = "in",
-                       ba_units = "sq_ft") {
-  # Some input checks.
-  stopifnot(
-    "dbh should be numeric." = is.numeric(dbh),
-    "dbh_units should be either 'in' or 'cm'." = dbh_units %in% c("in", "cm"),
-    "ba_units should be either 'sq_ft' or 'sq_m'." = ba_units %in% c("sq_ft", "sq_m")
-  )
-  # Define c.
-  if (ba_units == "sq_ft") {
-    c <- pi / (4 * 144)
-  } else{ # ba_units == "sq_m" 
-    c <- pi / (4 * 10000)
-  }
-  # Compute ba and return.
-  if (dbh_units == "in" & ba_units == "sq_ft") {
-    ba <- c * dbh ^ 2
-  } else if (dbh_units == "in" &
-             ba_units == "sq_m") {
-    ba <- c * (2.54 * dbh) ^ 2
-  } else if (dbh_units == "cm" & ba_units == "sq_m") {
-    ba <- c * dbh ^ 2
-  } else{ # dbh_units == "cm" & ba_units == "sq_ft" 
-    ba <- c * (dbh / 2.54)^2
-  }
-  return(ba)
-}
 ```
-
-
-
 
 ## Next time
 
