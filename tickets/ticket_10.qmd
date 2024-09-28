@@ -1,0 +1,22 @@
+---
+title: "Lecture Ticket 10"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read the following sections of IFDAR.
+
+-   Chapter 6
+
+
+## Questions
+
+1. What is a `tibble`? How does it relate to a `data.frame`?
+
+2. Why do we prefer reading in data with `readr` over base `R`? 
+
+3. Are all `tibble`s `data.frame`s? Are all `data.frame`s `tibble`s? 
+
+
