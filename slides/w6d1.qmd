@@ -1,0 +1,164 @@
+---
+title: "Welcome to the `tidyverse`"
+editor: 
+  mode: source
+webr:
+  show-startup-message: false
+filters:
+  - webr
+engine: knitr
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+---
+
+## Annoucements
+
+-   Midterm 1 is this Thursday, Oct 3, during lab time. 
+
+## Agenda
+
+-   Midterm format overview
+-   Intro to the `tidyverse`
+-   Quiz + group activity
+
+# Generative AI Tools {background-color="#00817c"} 
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/elephant.png")
+```
+
+## Reminder from the syllabus
+
+Artificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.
+
+Violations of this policy are considered academic misconduct.
+
+## Midterm I overview
+
+::: incremental
+
+-   The test will be taken in person, in lab. 
+-   5 questions, all equally weighted. You only have to answer 4 of 5 questions. If you answer 5, I will count the 4 you did the best on.
+-   There will be a paper test with the questions on it, but you will answer them in a Quarto document (similar to your labs). 
+-   Lecture slides and previous labs/quizzes are your best resource for success. 
+-   Questions cover material from chapters 1 - 5 of IFDAR, or Week 5 Day 2. 
+
+:::
+
+# Welcome to the `tidyverse` {background-color="#00817c"} 
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/tidyverse.png")
+```
+
+## What is the `tidyverse`
+
+::: incremental
+
+-   A collection of `R` packages that work together to provide extensive and intuitive data analysis functions. 
+-   In this class, we will focus on 5 `tidyverse` packages:
+    -   `tibble`, to improve on the data.frame,
+    -   `readr`, to improve reading and writing data,
+    -   `dplyr`, to manipulate and summarize data "data plyers",
+    -   `tidyr`, to clean and reshape data, and
+    -   `ggplot2`, to produce beautiful graphics with intuitive syntax "the grammer of graphics".
+
+:::
+
+---
+
+::: columns
+::: {.column width="20%"}
+
+![](figs/tibble.svg)
+:::
+
+::: {.column width="20%"}
+
+![](figs/readr.png)
+
+:::
+
+::: {.column width="20%"}
+
+![](figs/dplyr.png)
+
+:::
+
+::: {.column width="20%"}
+
+![](figs/tidyr.png)
+
+:::
+
+::: {.column width="20%"}
+
+![](figs/ggplot2.png)
+
+:::
+
+:::
+
+::: incremental 
+
+-   Next week, we will begin to talk in-depth about using the `tidyverse` to perform data analysis. 
+-   For now, I just want you all to have a concept of where we are going. 
+
+:::
+
+## A note on the course
+
+::: incremental
+
+-   So far, we have almost entirely focused on `R` in its "base" form. That is, `R` with only built-in functions.
+-   Base `R` has many advantages: especially in being fast and reliable.
+-   However, I believe that the `tidyverse` can provide a more intuitive approach to data analysis. 
+
+:::
+
+# Quiz {background-color="#00817c"} 
+
+```{r}
+countdown::countdown(15)
+```
+
+# Group activity {background-color="#00817c"} 
+
+```{r}
+countdown::countdown(15)
+```
+
+## Next time
+
+-   Review day. We will discuss any questions about the material for the midterm.
+-   Come ready to ask any last minute questions, discuss approaches to problems, etc.
+
+
+
+
+
+
+
+
+
+
+
