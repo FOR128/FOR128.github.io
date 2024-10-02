@@ -1,0 +1,14 @@
+---
+title: "Midterm I"
+subtitle: "FOR 128: Practical Computing and Data Science Tools, Fall 2024"
+editor: 
+  mode: source
+---
+
+## Files
+
+The midterm files will be available below:
+
+<!-- -   [midterm_01.qmd](midterms/midterm_01.qmd) -->
+<!-- -   [Loblolly.csv](in_class/Loblolly.csv) -->
+

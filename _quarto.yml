@@ -54,6 +54,8 @@ website:
         text: Assignments
       - href: recordings.qmd
         text: Lecture Recordings
+      - href: midterm.qmd
+        text: Midterm I
       - href: https://www.finley-lab.com/files/ifdar/
         target: "_blank"
         rel: "noopener noreferrer"
