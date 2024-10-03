@@ -12,3 +12,4 @@ The midterm files are available below:
 -   [midterm_01.qmd](midterms/midterm_01.qmd)
 -   [Loblolly.csv](in_class/Loblolly.csv)
 
+![](pets.png)
