@@ -1,0 +1,98 @@
+---
+title: "`readr` and `tibble`"
+editor: 
+  mode: source
+webr:
+  show-startup-message: false
+filters:
+  - webr
+engine: knitr
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+---
+
+## Announcements
+
+-   Midterm 1 + Lab 5 grades will be released by the end of the weekend. 
+
+## Agenda
+
+-   Intro to the `tidyverse`
+-   `readr`
+-   `tibble`
+-   Sneak peak at `dplyr`
+
+# Welcome to the `tidyverse` {background-color="#00817c"} 
+
+```{r}
+#| fig-align: 'center'
+knitr::include_graphics("figs/tidyverse.png")
+```
+
+## What is the `tidyverse`
+
+::: incremental
+
+-   A collection of `R` packages that work together to provide extensive and intuitive data analysis functions. 
+-   In this class, we will focus on 5 `tidyverse` packages:
+    -   `tibble`, to improve on the data.frame,
+    -   `readr`, to improve reading and writing data,
+    -   `dplyr`, to manipulate and summarize data "data plyers",
+    -   `tidyr`, to clean and reshape data, and
+    -   `ggplot2`, to produce beautiful graphics with intuitive syntax "the grammer of graphics".
+
+:::
+
+## Today: `tibble` and `readr`
+
+::: columns
+::: {.column width="40%"}
+
+![](figs/tibble.svg)
+:::
+
+::: {.column width="20%"}
+
+:::
+
+::: {.column width="40%"}
+
+![](figs/readr.png)
+
+:::
+
+:::
+
+
+## Next time
+
+-   `dplyr`
+
+
+
+
+
+
+
+
+
+
+
+ 

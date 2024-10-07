@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.5.56">
 
   <meta name="author" content="Practical Computing and Data Science Tools">
-  <title>FOR 128 – Data Structures: Vectors</title>
+  <title>FOR 128 – readr and tibble</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -327,7 +327,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="../assets/for128-hex.png" data-background-position="50% 20%" data-background-size="20%" class="quarto-title-block center">
-  <h1 class="title">Data Structures: Vectors</h1>
+  <h1 class="title"><code>readr</code> and <code>tibble</code></h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -338,60 +338,57 @@ Practical Computing and Data Science Tools
 </div>
 
 </section>
+<section id="announcements" class="slide level2">
+<h2>Announcements</h2>
+<ul>
+<li>Midterm 1 + Lab 5 grades will be released by the end of the weekend.</li>
+</ul>
+</section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ul>
-<li>Overview of data structures</li>
-<li>A tour of vectors</li>
+<li>Intro to the <code>tidyverse</code></li>
+<li><code>readr</code></li>
+<li><code>tibble</code></li>
+<li>Sneak peak at <code>dplyr</code></li>
 </ul>
 </section>
-<section id="data-structures" class="slide level2">
-<h2>Data structures</h2>
+<section>
+<section id="welcome-to-the-tidyverse" class="title-slide slide level1 center" data-background-color="#00817c">
+<h1>Welcome to the <code>tidyverse</code></h1>
+
+<img data-src="figs/tidyverse.png" class="quarto-figure quarto-figure-center r-stretch" width="369"></section>
+<section id="what-is-the-tidyverse" class="slide level2">
+<h2>What is the <code>tidyverse</code></h2>
+<div>
 <ul>
-<li><p>A <span style="color:#4267B2;">data structure</span> is a format for organizing and storing data. The structure is designed so that data can be accessed and worked with in specific ways.</p></li>
-<li><p>Structures are either <span style="color:#4267B2;">homogeneous</span> or <span style="color:#4267B2;">heterogeneous</span>, which describes the data types they hold (one type versus multiple types).</p></li>
-<li><p>Structures can also be characterized by their dimensionality, see Table <a href="#/data-structures" class="quarto-xref">Table&nbsp;1</a>.</p></li>
+<li class="fragment">A collection of <code>R</code> packages that work together to provide extensive and intuitive data analysis functions.</li>
+<li class="fragment">In this class, we will focus on 5 <code>tidyverse</code> packages:
+<ul>
+<li class="fragment"><code>tibble</code>, to improve on the data.frame,</li>
+<li class="fragment"><code>readr</code>, to improve reading and writing data,</li>
+<li class="fragment"><code>dplyr</code>, to manipulate and summarize data “data plyers”,</li>
+<li class="fragment"><code>tidyr</code>, to clean and reshape data, and</li>
+<li class="fragment"><code>ggplot2</code>, to produce beautiful graphics with intuitive syntax “the grammer of graphics”.</li>
+</ul></li>
 </ul>
-<div id="tbl-str" class="quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-tbl">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-str-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Dimension and type content of base data structures in R.
-</figcaption>
-<div aria-describedby="tbl-str-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Dimension</th>
-<th>Homogeneous</th>
-<th>Heterogeneous</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Atomic vector</td>
-<td>List</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Matrix</td>
-<td>Data frame</td>
-</tr>
-<tr class="odd">
-<td>N</td>
-<td>Array</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
 </div>
 </section>
-<section id="data-structures-1" class="slide level2">
-<h2>Data structures</h2>
+<section id="today-tibble-and-readr" class="slide level2">
+<h2>Today: <code>tibble</code> and <code>readr</code></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="figs/tibble.svg"></p>
+</div><div class="column" style="width:20%;">
+
+</div><div class="column" style="width:40%;">
+<p><img data-src="figs/readr.png"></p>
+</div></div>
+</section>
+<section id="next-time" class="slide level2">
+<h2>Next time</h2>
 <ul>
-<li>Let’s take a look at vectors.qmd.</li>
+<li><code>dplyr</code></li>
 </ul>
 
 <div class="quarto-auto-generated-content">
@@ -399,7 +396,7 @@ Table&nbsp;1: Dimension and type content of base data structures in R.
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -610,6 +607,44 @@ Table&nbsp;1: Dimension and type content of base data structures in R.
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
