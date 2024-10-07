@@ -1,0 +1,21 @@
+---
+title: "Lecture Ticket 12"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read the following sections of IFDAR.
+
+-   Review Chapter 6
+-   Begin Chapter 7 (read the introduction and 7.1)
+
+
+## Questions
+
+1. You want to read in a file called "my_data.csv" on your computer and assign it to an object called `dat` in `R`. Now, we've learned two approaches to reading in data (base and `tidyverse`). How would you read it into `R` (a) with base and (b) with `tidyverse`? 
+
+2. What are the `dplyr` verbs that we will learn in Chapter 7? What do each of them do? 
+
+
