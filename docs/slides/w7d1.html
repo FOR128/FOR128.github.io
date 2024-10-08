@@ -9,7 +9,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.56">
+  <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Practical Computing and Data Science Tools">
   <title>FOR 128 – readr and tibble</title>
@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -348,8 +413,8 @@ Practical Computing and Data Science Tools
 <h2>Agenda</h2>
 <ul>
 <li>Intro to the <code>tidyverse</code></li>
-<li><code>readr</code></li>
-<li><code>tibble</code></li>
+<li><code>tibble</code>: improved data frames</li>
+<li><code>readr</code>: tidy reading and writing data</li>
 <li>Sneak peak at <code>dplyr</code></li>
 </ul>
 </section>
@@ -369,10 +434,23 @@ Practical Computing and Data Science Tools
 <li class="fragment"><code>readr</code>, to improve reading and writing data,</li>
 <li class="fragment"><code>dplyr</code>, to manipulate and summarize data “data plyers”,</li>
 <li class="fragment"><code>tidyr</code>, to clean and reshape data, and</li>
-<li class="fragment"><code>ggplot2</code>, to produce beautiful graphics with intuitive syntax “the grammer of graphics”.</li>
+<li class="fragment"><code>ggplot2</code>, to produce beautiful graphics with intuitive syntax “the grammar of graphics”.</li>
 </ul></li>
 </ul>
 </div>
+</section>
+<section id="how-do-we-use-install-the-tidyverse" class="slide level2">
+<h2>How do we use / install the <code>tidyverse</code>?</h2>
+<p>To install <code>tidyverse</code>, you must run this code on your computer.</p>
+<p>NOTE: you only have to do this once.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This will take a few minutes to run on your computer. After it’s done, you can load all the <code>tidyverse</code> packages with the <code>library()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>NOTE: you’ll load the <code>tidyverse</code> with <code>library()</code> on each project (e.g.&nbsp;lab, midterm, project) towards the top of your Quarto document.</p>
 </section>
 <section id="today-tibble-and-readr" class="slide level2">
 <h2>Today: <code>tibble</code> and <code>readr</code></h2>
@@ -383,6 +461,468 @@ Practical Computing and Data Science Tools
 
 </div><div class="column" style="width:40%;">
 <p><img data-src="figs/readr.png"></p>
+</div></div>
+</section></section>
+<section>
+<section id="tibble-improved-data-frames" class="title-slide slide level1 center" data-background-color="#00817c">
+<h1><code>tibble</code>: improved data frames</h1>
+<div class="columns">
+<div class="column" style="width:30%;">
+
+</div><div class="column" style="width:40%;">
+<p><img data-src="figs/tibble.svg"></p>
+</div><div class="column" style="width:30%;">
+
+</div></div>
+</section>
+<section id="tibbles-improved-data-frames" class="slide level2">
+<h2><code>tibble</code>s: improved data frames</h2>
+<p>Recall the pets data frame:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>pets_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-2"><a></a>  <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"Dude"</span>, <span class="st">"Pickle"</span>, <span class="st">"Kyle"</span>, <span class="st">"Nubs"</span>),</span>
+<span id="cb3-3"><a></a>  <span class="at">ages =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">11</span>),</span>
+<span id="cb3-4"><a></a>  <span class="at">is_dog =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb3-5"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="tibbles-improved-data-frames-1" class="slide level2">
+<h2><code>tibble</code>s: improved data frames</h2>
+<p>Recall the pets data frame:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>pets_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-2"><a></a>  <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"Dude"</span>, <span class="st">"Pickle"</span>, <span class="st">"Kyle"</span>, <span class="st">"Nubs"</span>),</span>
+<span id="cb4-3"><a></a>  <span class="at">ages =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">11</span>),</span>
+<span id="cb4-4"><a></a>  <span class="at">is_dog =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb4-5"><a></a>)</span>
+<span id="cb4-6"><a></a><span class="fu">class</span>(pets_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "data.frame"</code></pre>
+</div>
+</div>
+</section>
+<section id="tibbles-improved-data-frames-2" class="slide level2">
+<h2><code>tibble</code>s: improved data frames</h2>
+<p>Recall the pets data frame:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>pets_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-2"><a></a>  <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"Dude"</span>, <span class="st">"Pickle"</span>, <span class="st">"Kyle"</span>, <span class="st">"Nubs"</span>),</span>
+<span id="cb6-3"><a></a>  <span class="at">ages =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">11</span>),</span>
+<span id="cb6-4"><a></a>  <span class="at">is_dog =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb6-5"><a></a>)</span>
+<span id="cb6-6"><a></a>pets_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   names ages is_dog
+1   Dude    6   TRUE
+2 Pickle    5  FALSE
+3   Kyle    3  FALSE
+4   Nubs   11  FALSE</code></pre>
+</div>
+</div>
+</section>
+<section id="tibbles-improved-data-frames-3" class="slide level2">
+<h2><code>tibble</code>s: improved data frames</h2>
+<p>We can improve on this data structure by created a <code>tibble</code> rather than a <code>data.frame</code>. The syntax is almost exactly the same:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>pets_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb8-2"><a></a>  <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"Dude"</span>, <span class="st">"Pickle"</span>, <span class="st">"Kyle"</span>, <span class="st">"Nubs"</span>),</span>
+<span id="cb8-3"><a></a>  <span class="at">ages =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">11</span>),</span>
+<span id="cb8-4"><a></a>  <span class="at">is_dog =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb8-5"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="tibbles-improved-data-frames-4" class="slide level2">
+<h2><code>tibble</code>s: improved data frames</h2>
+<p>We can improve on this data structure by created a <code>tibble</code> rather than a <code>data.frame</code>. The syntax is almost exactly the same:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb9-2"><a></a>pets_tbl <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb9-3"><a></a>  <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"Dude"</span>, <span class="st">"Pickle"</span>, <span class="st">"Kyle"</span>, <span class="st">"Nubs"</span>),</span>
+<span id="cb9-4"><a></a>  <span class="at">ages =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">11</span>),</span>
+<span id="cb9-5"><a></a>  <span class="at">is_dog =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb9-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="tibbles-improved-data-frames-5" class="slide level2">
+<h2><code>tibble</code>s: improved data frames</h2>
+<p>We can improve on this data structure by created a <code>tibble</code> rather than a <code>data.frame</code>. The syntax is almost exactly the same:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb10-2"><a></a>pets_tbl <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb10-3"><a></a>  <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"Dude"</span>, <span class="st">"Pickle"</span>, <span class="st">"Kyle"</span>, <span class="st">"Nubs"</span>),</span>
+<span id="cb10-4"><a></a>  <span class="at">ages =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">11</span>),</span>
+<span id="cb10-5"><a></a>  <span class="at">is_dog =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb10-6"><a></a>)</span>
+<span id="cb10-7"><a></a><span class="fu">class</span>(pets_tbl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "tbl_df"     "tbl"        "data.frame"</code></pre>
+</div>
+</div>
+</section>
+<section id="tibbles-improved-data-frames-6" class="slide level2">
+<h2><code>tibble</code>s: improved data frames</h2>
+<p>We can improve on this data structure by created a <code>tibble</code> rather than a <code>data.frame</code>. The syntax is almost exactly the same:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb12-2"><a></a>pets_tbl <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb12-3"><a></a>  <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"Dude"</span>, <span class="st">"Pickle"</span>, <span class="st">"Kyle"</span>, <span class="st">"Nubs"</span>),</span>
+<span id="cb12-4"><a></a>  <span class="at">ages =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">11</span>),</span>
+<span id="cb12-5"><a></a>  <span class="at">is_dog =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb12-6"><a></a>)</span>
+<span id="cb12-7"><a></a>pets_tbl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  names   ages is_dog
+  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; 
+1 Dude       6 TRUE  
+2 Pickle     5 FALSE 
+3 Kyle       3 FALSE 
+4 Nubs      11 FALSE </code></pre>
+</div>
+</div>
+</section>
+<section id="tibbles-improved-data-frames-7" class="slide level2">
+<h2><code>tibble</code>s: improved data frames</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>pets_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   names ages is_dog
+1   Dude    6   TRUE
+2 Pickle    5  FALSE
+3   Kyle    3  FALSE
+4   Nubs   11  FALSE</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>pets_tbl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  names   ages is_dog
+  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; 
+1 Dude       6 TRUE  
+2 Pickle     5 FALSE 
+3 Kyle       3 FALSE 
+4 Nubs      11 FALSE </code></pre>
+</div>
+</div>
+</div></div>
+<div>
+<ul>
+<li class="fragment"><code>tibble</code>s give us some nice information when printed: dimensions and column class.</li>
+</ul>
+</div>
+</section>
+<section id="converting-tibbles-and-data.frames" class="slide level2">
+<h2>Converting <code>tibble</code>s and <code>data.frame</code>s</h2>
+<p>We can convert existing <code>data.frame</code>s into <code>tibble</code>s:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>new_pets_tbl <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(pets_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Note that <code>new_pets_tbl</code> is a <code>tibble</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">is_tibble</span>(new_pets_tbl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+<p>but is of course still a <code>data.frame</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">is.data.frame</span>(new_pets_tbl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="figs/square_rectangle.png" class="r-stretch"><div>
+<ul>
+<li class="fragment">All <code>tibble</code>s are <code>data.frame</code>s, but not all <code>data.frame</code>s are <code>tibble</code>s.</li>
+</ul>
+</div>
+</section>
+<section id="a-note-on-subsetting" class="slide level2">
+<h2>A note on subsetting</h2>
+<p>In the past, when we have wanted the values from one column of a data frame, we are returned a vector. For example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="co"># the names of the pets in pets_df</span></span>
+<span id="cb23-2"><a></a>pets_df[, <span class="dv">1</span>] <span class="co"># returns a vector</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Dude"   "Pickle" "Kyle"   "Nubs"  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>pets_df[, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)] <span class="co"># returns a data.frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   names ages
+1   Dude    6
+2 Pickle    5
+3   Kyle    3
+4   Nubs   11</code></pre>
+</div>
+</div>
+<div>
+<ul>
+<li class="fragment">Inconsistent!</li>
+</ul>
+</div>
+</section>
+<section id="a-note-on-subsetting-1" class="slide level2">
+<h2>A note on subsetting</h2>
+<p><code>tibble</code>s fix this inconsistency</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="co"># the names of the pets in pets_df</span></span>
+<span id="cb27-2"><a></a>pets_tbl[, <span class="dv">1</span>] <span class="co"># returns a tibble / data.frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 1
+  names 
+  &lt;chr&gt; 
+1 Dude  
+2 Pickle
+3 Kyle  
+4 Nubs  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>pets_tbl[, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)] <span class="co"># returns a tibble / data.frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+  names   ages
+  &lt;chr&gt;  &lt;dbl&gt;
+1 Dude       6
+2 Pickle     5
+3 Kyle       3
+4 Nubs      11</code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="readr-tidy-reading-and-writing" class="title-slide slide level1 center" data-background-color="#00817c">
+<h1><code>readr</code>: tidy reading and writing</h1>
+<div class="columns">
+<div class="column" style="width:30%;">
+
+</div><div class="column" style="width:40%;">
+<p><img data-src="figs/readr.png"></p>
+</div><div class="column" style="width:30%;">
+
+</div></div>
+</section>
+<section id="reading-data" class="slide level2">
+<h2>Reading data</h2>
+<p>So far, we have primarily used the built-in <code>read.csv()</code> and <code>read.table()</code> functions to read data into <code>R</code>. Example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>fef <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">"../labs/datasets/FEF_trees.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Recall:</p>
+<div>
+<ul>
+<li class="fragment">We start with the <code>read.csv()</code> function,</li>
+<li class="fragment">We specify a relative path with <code>file = "../labs/datasets/FEF_trees.csv"</code>,</li>
+<li class="fragment">We assign this read-in data with the assignment arrow <code>&lt;-</code> to an object in <code>R</code> call <code>fef</code>.</li>
+</ul>
+</div>
+</section>
+<section id="reading-data-with-readr" class="slide level2">
+<h2>Reading data with <code>readr</code></h2>
+<p>The <code>readr</code> package includes analogous <code>read_csv()</code>, <code>read_table()</code>, <code>read_delim()</code>, and even more <code>read_*()</code> functions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>fef_tidy <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"../labs/datasets/FEF_trees.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div>
+<ul>
+<li class="fragment">Note that we now are using <code>read_csv()</code> with an underscore (<code>_</code>) rather than the base <code>R</code> option of <code>read.csv()</code>.</li>
+<li class="fragment">We must first load the <code>tidyverse</code> to run this function, unless we call the package name before the function name like so: <code>readr::read_csv(file = "../labs/datasets/FEF_trees.csv")</code></li>
+<li class="fragment">Using the <code>readr</code> functions can have up to 100x speed increase compared to base <code>R</code>, depending on your dataset.</li>
+</ul>
+</div>
+</section>
+<section id="comparing-base-and-tidy-data-reading" class="slide level2">
+<h2>Comparing base and tidy data reading:</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">dim</span>(fef)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 88 18</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">dim</span>(fef_tidy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 88 18</code></pre>
+</div>
+</div>
+</section>
+<section id="comparing-base-and-tidy-data-reading-1" class="slide level2">
+<h2>Comparing base and tidy data reading:</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">head</span>(fef)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  watershed year plot     species dbh_in height_ft stem_green_kg top_green_kg
+1         3 1991   29 Acer rubrum    6.0        48          92.2         13.1
+2         3 1991   33 Acer rubrum    6.9        48         102.3         23.1
+3         3 1991   35 Acer rubrum    6.4        48         124.4          8.7
+4         3 1991   39 Acer rubrum    6.5        49          91.7         39.0
+5         3 1991   44 Acer rubrum    7.2        51         186.2          8.9
+6         3 1992   26 Acer rubrum    3.1        40          20.8          0.9
+  smbranch_green_kg lgbranch_green_kg allwoody_green_kg leaves_green_kg
+1              30.5              48.4             184.2            16.1
+2              23.5              57.7             206.6            12.9
+3              22.3              44.1             199.5            16.5
+4              22.5              35.5             188.7            12.0
+5              25.4              65.1             285.6            22.4
+6               1.9               1.5              25.1             0.9
+  stem_dry_kg top_dry_kg smbranch_dry_kg lgbranch_dry_kg allwoody_dry_kg
+1        54.7        7.1            15.3            28.0           105.1
+2        62.3       12.4            14.8            33.6           123.1
+3        73.3        4.6            11.5            25.1           114.4
+4        53.6       21.3            11.2            19.8           105.9
+5       106.4        4.7            11.7            36.1           159.0
+6        11.7        0.5             1.1             0.9            14.2
+  leaves_dry_kg
+1           6.1
+2           4.6
+3           6.1
+4           4.2
+5           7.9
+6           0.3</code></pre>
+</div>
+</div>
+</section>
+<section id="comparing-base-and-tidy-data-reading-2" class="slide level2">
+<h2>Comparing base and tidy data reading:</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">head</span>(fef_tidy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 18
+  watershed  year  plot species     dbh_in height_ft stem_green_kg top_green_kg
+      &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;        &lt;dbl&gt;
+1         3  1991    29 Acer rubrum    6          48          92.2         13.1
+2         3  1991    33 Acer rubrum    6.9        48         102.          23.1
+3         3  1991    35 Acer rubrum    6.4        48         124.           8.7
+4         3  1991    39 Acer rubrum    6.5        49          91.7         39  
+5         3  1991    44 Acer rubrum    7.2        51         186.           8.9
+6         3  1992    26 Acer rubrum    3.1        40          20.8          0.9
+# ℹ 10 more variables: smbranch_green_kg &lt;dbl&gt;, lgbranch_green_kg &lt;dbl&gt;,
+#   allwoody_green_kg &lt;dbl&gt;, leaves_green_kg &lt;dbl&gt;, stem_dry_kg &lt;dbl&gt;,
+#   top_dry_kg &lt;dbl&gt;, smbranch_dry_kg &lt;dbl&gt;, lgbranch_dry_kg &lt;dbl&gt;,
+#   allwoody_dry_kg &lt;dbl&gt;, leaves_dry_kg &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="comparing-base-and-tidy-data-reading-3" class="slide level2">
+<h2>Comparing base and tidy data reading:</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a><span class="fu">class</span>(fef)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "data.frame"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="fu">class</span>(fef_tidy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "spec_tbl_df" "tbl_df"      "tbl"         "data.frame" </code></pre>
+</div>
+</div>
+<div>
+<ul>
+<li class="fragment"><code>R</code>’s built-in <code>read.csv()</code> function reads in data as a <code>data.frame</code>, but <code>readr::read_csv()</code> reads in data as a <code>tibble</code>. Neat!</li>
+</ul>
+</div>
+</section>
+<section id="reading-data-options" class="slide level2">
+<h2>Reading data options</h2>
+<p>We can specify some nifty options with the <code>read_*()</code> functions from <code>readr</code>. We can specify column types:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>fef_tidy_cols <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
+<span id="cb45-2"><a></a>  <span class="at">file =</span> <span class="st">"../labs/datasets/FEF_trees.csv"</span>,</span>
+<span id="cb45-3"><a></a>  <span class="at">col_types =</span> <span class="fu">list</span>(</span>
+<span id="cb45-4"><a></a>    <span class="at">watershed =</span> <span class="fu">col_integer</span>(),</span>
+<span id="cb45-5"><a></a>    <span class="at">year =</span> <span class="fu">col_integer</span>(),</span>
+<span id="cb45-6"><a></a>    <span class="at">plot =</span> <span class="fu">col_integer</span>()</span>
+<span id="cb45-7"><a></a>  )</span>
+<span id="cb45-8"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="reading-data-options-1" class="slide level2">
+<h2>Reading data options</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="fu">glimpse</span>(fef_tidy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 88
+Columns: 18
+$ watershed         &lt;dbl&gt; 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3…
+$ year              &lt;dbl&gt; 1991, 1991, 1991, 1991, 1991, 1992, 1992, 1992, 1992…
+$ plot              &lt;dbl&gt; 29, 33, 35, 39, 44, 26, 26, 26, 48, 48, 48, 29, 33, …
+$ species           &lt;chr&gt; "Acer rubrum", "Acer rubrum", "Acer rubrum", "Acer r…
+$ dbh_in            &lt;dbl&gt; 6.0, 6.9, 6.4, 6.5, 7.2, 3.1, 2.0, 4.1, 2.4, 2.7, 3.…
+$ height_ft         &lt;dbl&gt; 48.0, 48.0, 48.0, 49.0, 51.0, 40.0, 30.5, 50.0, 28.0…
+$ stem_green_kg     &lt;dbl&gt; 92.2, 102.3, 124.4, 91.7, 186.2, 20.8, 5.6, 54.1, 10…
+$ top_green_kg      &lt;dbl&gt; 13.1, 23.1, 8.7, 39.0, 8.9, 0.9, 0.9, 8.6, 0.7, 5.0,…
+$ smbranch_green_kg &lt;dbl&gt; 30.5, 23.5, 22.3, 22.5, 25.4, 1.9, 2.2, 8.0, 3.7, 3.…
+$ lgbranch_green_kg &lt;dbl&gt; 48.4, 57.7, 44.1, 35.5, 65.1, 1.5, 0.6, 4.0, 0.5, 1.…
+$ allwoody_green_kg &lt;dbl&gt; 184.2, 206.6, 199.5, 188.7, 285.6, 25.1, 9.3, 74.7, …
+$ leaves_green_kg   &lt;dbl&gt; 16.1, 12.9, 16.5, 12.0, 22.4, 0.9, 1.0, 6.1, 2.5, 1.…
+$ stem_dry_kg       &lt;dbl&gt; 54.7, 62.3, 73.3, 53.6, 106.4, 11.7, 3.2, 28.3, 5.5,…
+$ top_dry_kg        &lt;dbl&gt; 7.1, 12.4, 4.6, 21.3, 4.7, 0.5, 0.5, 4.4, 0.4, 2.7, …
+$ smbranch_dry_kg   &lt;dbl&gt; 15.3, 14.8, 11.5, 11.2, 11.7, 1.1, 1.2, 3.6, 1.8, 0.…
+$ lgbranch_dry_kg   &lt;dbl&gt; 28.0, 33.6, 25.1, 19.8, 36.1, 0.9, 0.3, 2.1, 0.3, 1.…
+$ allwoody_dry_kg   &lt;dbl&gt; 105.1, 123.1, 114.4, 105.9, 159.0, 14.2, 5.3, 38.5, …
+$ leaves_dry_kg     &lt;dbl&gt; 6.1, 4.6, 6.1, 4.2, 7.9, 0.3, 0.3, 1.9, 0.8, 0.5, 1.…</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a><span class="fu">glimpse</span>(fef_tidy_cols)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 88
+Columns: 18
+$ watershed         &lt;int&gt; 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3…
+$ year              &lt;int&gt; 1991, 1991, 1991, 1991, 1991, 1992, 1992, 1992, 1992…
+$ plot              &lt;int&gt; 29, 33, 35, 39, 44, 26, 26, 26, 48, 48, 48, 29, 33, …
+$ species           &lt;chr&gt; "Acer rubrum", "Acer rubrum", "Acer rubrum", "Acer r…
+$ dbh_in            &lt;dbl&gt; 6.0, 6.9, 6.4, 6.5, 7.2, 3.1, 2.0, 4.1, 2.4, 2.7, 3.…
+$ height_ft         &lt;dbl&gt; 48.0, 48.0, 48.0, 49.0, 51.0, 40.0, 30.5, 50.0, 28.0…
+$ stem_green_kg     &lt;dbl&gt; 92.2, 102.3, 124.4, 91.7, 186.2, 20.8, 5.6, 54.1, 10…
+$ top_green_kg      &lt;dbl&gt; 13.1, 23.1, 8.7, 39.0, 8.9, 0.9, 0.9, 8.6, 0.7, 5.0,…
+$ smbranch_green_kg &lt;dbl&gt; 30.5, 23.5, 22.3, 22.5, 25.4, 1.9, 2.2, 8.0, 3.7, 3.…
+$ lgbranch_green_kg &lt;dbl&gt; 48.4, 57.7, 44.1, 35.5, 65.1, 1.5, 0.6, 4.0, 0.5, 1.…
+$ allwoody_green_kg &lt;dbl&gt; 184.2, 206.6, 199.5, 188.7, 285.6, 25.1, 9.3, 74.7, …
+$ leaves_green_kg   &lt;dbl&gt; 16.1, 12.9, 16.5, 12.0, 22.4, 0.9, 1.0, 6.1, 2.5, 1.…
+$ stem_dry_kg       &lt;dbl&gt; 54.7, 62.3, 73.3, 53.6, 106.4, 11.7, 3.2, 28.3, 5.5,…
+$ top_dry_kg        &lt;dbl&gt; 7.1, 12.4, 4.6, 21.3, 4.7, 0.5, 0.5, 4.4, 0.4, 2.7, …
+$ smbranch_dry_kg   &lt;dbl&gt; 15.3, 14.8, 11.5, 11.2, 11.7, 1.1, 1.2, 3.6, 1.8, 0.…
+$ lgbranch_dry_kg   &lt;dbl&gt; 28.0, 33.6, 25.1, 19.8, 36.1, 0.9, 0.3, 2.1, 0.3, 1.…
+$ allwoody_dry_kg   &lt;dbl&gt; 105.1, 123.1, 114.4, 105.9, 159.0, 14.2, 5.3, 38.5, …
+$ leaves_dry_kg     &lt;dbl&gt; 6.1, 4.6, 6.1, 4.2, 7.9, 0.3, 0.3, 1.9, 0.8, 0.5, 1.…</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="writing-data" class="slide level2">
+<h2>Writing data</h2>
+<p>Writing data with <code>readr</code> looks very similar to base R. Say we’d like to write <code>pets_tbl</code> to “pets.csv”:</p>
+<p>With base:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a><span class="fu">write.csv</span>(<span class="at">x =</span> pets_tbl, <span class="at">file =</span> <span class="st">"pets.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>With <code>readr</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a><span class="fu">write_csv</span>(<span class="at">x =</span> pets_tbl, <span class="at">file =</span> <span class="st">"pets.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div>
+<ul>
+<li class="fragment">Up to a 2x speed increase with <code>readr::write_csv()</code> compared to <code>write.csv()</code>.</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="dplyr-demo-time-permitting" class="title-slide slide level1 center" data-background-color="#00817c">
+<h1><code>dplyr</code> demo (time permitting)</h1>
+<div class="columns">
+<div class="column" style="width:30%;">
+
+</div><div class="column" style="width:40%;">
+<p><img data-src="figs/dplyr.png"></p>
+</div><div class="column" style="width:30%;">
+
 </div></div>
 </section>
 <section id="next-time" class="slide level2">

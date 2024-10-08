@@ -35,8 +35,8 @@ format:
 ## Agenda
 
 -   Intro to the `tidyverse`
--   `readr`
--   `tibble`
+-   `tibble`: improved data frames
+-   `readr`: tidy reading and writing data 
 -   Sneak peak at `dplyr`
 
 # Welcome to the `tidyverse` {background-color="#00817c"} 
@@ -56,9 +56,31 @@ knitr::include_graphics("figs/tidyverse.png")
     -   `readr`, to improve reading and writing data,
     -   `dplyr`, to manipulate and summarize data "data plyers",
     -   `tidyr`, to clean and reshape data, and
-    -   `ggplot2`, to produce beautiful graphics with intuitive syntax "the grammer of graphics".
+    -   `ggplot2`, to produce beautiful graphics with intuitive syntax "the grammar of graphics".
 
 :::
+
+## How do we use / install the `tidyverse`? 
+
+To install `tidyverse`, you must run this code on your computer.
+
+NOTE: you only have to do this once.
+
+```{r}
+#| echo: true
+#| eval: false
+install.packages("tidyverse")
+```
+
+This will take a few minutes to run on your computer. After it's done, you can load all the `tidyverse` packages with the `library()` function:
+
+```{r}
+#| echo: true
+library(tidyverse)
+```
+
+NOTE: you'll load the `tidyverse` with `library()` on each project (e.g. lab, midterm, project) towards the top of your Quarto document. 
+
 
 ## Today: `tibble` and `readr`
 
@@ -79,6 +101,371 @@ knitr::include_graphics("figs/tidyverse.png")
 :::
 
 :::
+
+# `tibble`: improved data frames {background-color="#00817c"} 
+
+::: columns
+::: {.column width="30%"}
+:::
+::: {.column width="40%"}
+![](figs/tibble.svg)
+:::
+::: {.column width="30%"}
+:::
+:::
+
+
+## `tibble`s: improved data frames
+
+Recall the pets data frame: 
+
+```{r}
+#| echo: true
+pets_df <- data.frame(
+  names = c("Dude", "Pickle", "Kyle", "Nubs"),
+  ages = c(6, 5, 3, 11),
+  is_dog = c(TRUE, FALSE, FALSE, FALSE)
+)
+```
+
+## `tibble`s: improved data frames
+
+Recall the pets data frame: 
+
+```{r}
+#| echo: true
+pets_df <- data.frame(
+  names = c("Dude", "Pickle", "Kyle", "Nubs"),
+  ages = c(6, 5, 3, 11),
+  is_dog = c(TRUE, FALSE, FALSE, FALSE)
+)
+class(pets_df)
+```
+
+## `tibble`s: improved data frames
+
+Recall the pets data frame: 
+
+```{r}
+#| echo: true
+pets_df <- data.frame(
+  names = c("Dude", "Pickle", "Kyle", "Nubs"),
+  ages = c(6, 5, 3, 11),
+  is_dog = c(TRUE, FALSE, FALSE, FALSE)
+)
+pets_df
+```
+
+## `tibble`s: improved data frames
+
+We can improve on this data structure by created a `tibble` rather than a `data.frame`. The syntax is almost exactly the same: 
+
+```{r}
+#| echo: true
+pets_df <- data.frame(
+  names = c("Dude", "Pickle", "Kyle", "Nubs"),
+  ages = c(6, 5, 3, 11),
+  is_dog = c(TRUE, FALSE, FALSE, FALSE)
+)
+```
+
+## `tibble`s: improved data frames
+
+We can improve on this data structure by created a `tibble` rather than a `data.frame`. The syntax is almost exactly the same: 
+
+```{r}
+#| echo: true
+library(tidyverse)
+pets_tbl <- tibble(
+  names = c("Dude", "Pickle", "Kyle", "Nubs"),
+  ages = c(6, 5, 3, 11),
+  is_dog = c(TRUE, FALSE, FALSE, FALSE)
+)
+```
+
+## `tibble`s: improved data frames
+
+We can improve on this data structure by created a `tibble` rather than a `data.frame`. The syntax is almost exactly the same: 
+
+```{r}
+#| echo: true
+library(tidyverse)
+pets_tbl <- tibble(
+  names = c("Dude", "Pickle", "Kyle", "Nubs"),
+  ages = c(6, 5, 3, 11),
+  is_dog = c(TRUE, FALSE, FALSE, FALSE)
+)
+class(pets_tbl)
+```
+
+## `tibble`s: improved data frames
+
+We can improve on this data structure by created a `tibble` rather than a `data.frame`. The syntax is almost exactly the same: 
+
+```{r}
+#| echo: true
+library(tidyverse)
+pets_tbl <- tibble(
+  names = c("Dude", "Pickle", "Kyle", "Nubs"),
+  ages = c(6, 5, 3, 11),
+  is_dog = c(TRUE, FALSE, FALSE, FALSE)
+)
+pets_tbl
+```
+
+## `tibble`s: improved data frames
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: true
+pets_df
+```
+:::
+::: {.column width="50%"}
+```{r}
+#| echo: true
+pets_tbl
+```
+:::
+:::
+
+::: incremental 
+
+-   `tibble`s give us some nice information when printed: dimensions and column class. 
+
+:::
+
+## Converting `tibble`s and `data.frame`s
+
+We can convert existing `data.frame`s into `tibble`s:
+
+```{r}
+#| echo: true
+new_pets_tbl <- as_tibble(pets_df)
+```
+
+Note that `new_pets_tbl` is a `tibble`:
+
+```{r}
+#| echo: true
+is_tibble(new_pets_tbl)
+```
+
+but is of course still a `data.frame`:
+
+```{r}
+#| echo: true
+is.data.frame(new_pets_tbl)
+```
+
+---
+
+![](figs/square_rectangle.png)
+
+::: incremental
+
+-   All `tibble`s are `data.frame`s, but not all `data.frame`s are `tibble`s.
+
+:::
+
+---
+
+## A note on subsetting
+
+In the past, when we have wanted the values from one column of a data frame, we are returned a vector. For example:
+
+```{r}
+#| echo: true
+# the names of the pets in pets_df
+pets_df[, 1] # returns a vector
+pets_df[, c(1,2)] # returns a data.frame
+```
+
+::: incremental
+
+-   Inconsistent!
+
+:::
+
+## A note on subsetting
+
+`tibble`s fix this inconsistency
+
+```{r}
+#| echo: true
+# the names of the pets in pets_df
+pets_tbl[, 1] # returns a tibble / data.frame
+pets_tbl[, c(1, 2)] # returns a tibble / data.frame
+```
+
+
+# `readr`: tidy reading and writing {background-color="#00817c"} 
+
+::: columns
+::: {.column width="30%"}
+:::
+::: {.column width="40%"}
+![](figs/readr.png)
+:::
+::: {.column width="30%"}
+:::
+:::
+
+
+
+## Reading data
+
+So far, we have primarily used the built-in `read.csv()` and `read.table()` functions to read data into `R`. Example:
+
+```{r}
+#| echo: true
+fef <- read.csv(file = "../labs/datasets/FEF_trees.csv")
+```
+
+Recall:
+
+::: incremental
+
+-   We start with the `read.csv()` function,
+-   We specify a relative path with `file = "../labs/datasets/FEF_trees.csv"`,
+-   We assign this read-in data with the assignment arrow `<-` to an object in `R` call `fef`. 
+
+:::
+
+
+## Reading data with `readr`
+
+The `readr` package includes analogous `read_csv()`, `read_table()`, `read_delim()`, and even more `read_*()` functions.
+
+```{r}
+#| echo: true
+fef_tidy <- read_csv(file = "../labs/datasets/FEF_trees.csv")
+```
+
+::: incremental
+
+-   Note that we now are using `read_csv()` with an underscore (`_`) rather than the base `R` option of `read.csv()`.
+-   We must first load the `tidyverse` to run this function, unless we call the package name before the function name like so: `readr::read_csv(file = "../labs/datasets/FEF_trees.csv")`
+-   Using the `readr` functions can have up to 100x speed increase compared to base `R`, depending on your dataset. 
+
+:::
+
+## Comparing base and tidy data reading: 
+
+```{r}
+#| echo: true
+dim(fef)
+dim(fef_tidy)
+```
+
+## Comparing base and tidy data reading: 
+
+```{r}
+#| echo: true
+head(fef)
+```
+
+## Comparing base and tidy data reading: 
+
+```{r}
+#| echo: true
+head(fef_tidy)
+```
+
+
+
+## Comparing base and tidy data reading: 
+
+```{r}
+#| echo: true
+class(fef)
+class(fef_tidy)
+```
+
+::: incremental
+
+-   `R`'s built-in `read.csv()` function reads in data as a `data.frame`, but `readr::read_csv()` reads in data as a `tibble`. Neat!
+
+:::
+
+
+## Reading data options
+
+We can specify some nifty options with the `read_*()` functions from `readr`. We can specify column types: 
+
+```{r}
+#| echo: true
+fef_tidy_cols <- read_csv(
+  file = "../labs/datasets/FEF_trees.csv",
+  col_types = list(
+    watershed = col_integer(),
+    year = col_integer(),
+    plot = col_integer()
+  )
+)
+```
+
+## Reading data options
+
+::: columns
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+glimpse(fef_tidy)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+glimpse(fef_tidy_cols)
+```
+:::
+
+:::
+
+## Writing data
+
+Writing data with `readr` looks very similar to base R. Say we'd like to write `pets_tbl` to "pets.csv":
+
+With base:
+
+```{r}
+#| echo: true
+#| eval: false
+write.csv(x = pets_tbl, file = "pets.csv")
+```
+
+With `readr`
+
+```{r}
+#| echo: true
+#| eval: false
+write_csv(x = pets_tbl, file = "pets.csv")
+```
+
+::: incremental
+
+-   Up to a 2x speed increase with `readr::write_csv()` compared to `write.csv()`. 
+
+:::
+
+
+
+# `dplyr` demo (time permitting) {background-color="#00817c"} 
+
+::: columns
+::: {.column width="30%"}
+:::
+::: {.column width="40%"}
+![](figs/dplyr.png)
+:::
+::: {.column width="30%"}
+:::
+:::
+
 
 
 ## Next time

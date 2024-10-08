@@ -27,5 +27,5 @@ Week 5, day 1: *Functions and conditionals*. Available [here](https://mediaspace
 
 Week 5, day 2: *Functions*. NOTE: audio issues. Available [here](https://mediaspace.msu.edu/media/Week+5+Day+2/1_yjtv1zs0).
 
-Week 6, day 2: *Welcome to the `tidyverse`*. Available [here](https://mediaspace.msu.edu/media/Week+6+Day+1/1_nots601p).
+Week 6, day 1: *Welcome to the `tidyverse`*. Available [here](https://mediaspace.msu.edu/media/Week+6+Day+1/1_nots601p).
 
