@@ -29,3 +29,7 @@ Week 5, day 2: *Functions*. NOTE: audio issues. Available [here](https://mediasp
 
 Week 6, day 1: *Welcome to the `tidyverse`*. Available [here](https://mediaspace.msu.edu/media/Week+6+Day+1/1_nots601p).
 
+Week 6, day 2: *Midterm review day*. No recording. 
+
+Week 7, day 1: *`tibble` and `readr`*. Available [here](https://mediaspace.msu.edu/media/Week+7+Day+1/1_dczpvt0j).
+
