@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Assignments – FOR 128</title>
+<title>Lecture Ticket 13 – FOR 128</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/favicon.ico" rel="icon">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="assets/styles.scss">
+<link rel="stylesheet" href="../assets/styles.scss">
 </head>
 
 <body class="nav-fixed">
@@ -79,8 +113,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets/for128-hex.png" alt="FOR 128 logo" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/for128-hex.png" alt="FOR 128 logo" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -90,11 +124,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./syllabus.html"> 
+    <a class="nav-link" href="../syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -103,61 +137,61 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-slides">    
         <li>
-    <a class="dropdown-item" href="./slides/w1d1.html">
+    <a class="dropdown-item" href="../slides/w1d1.html">
  <span class="dropdown-text">Week 1 Day 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./slides/w1d2.html">
+    <a class="dropdown-item" href="../slides/w1d2.html">
  <span class="dropdown-text">Week 1 Day 2</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./slides/w2d1.html">
+    <a class="dropdown-item" href="../slides/w2d1.html">
  <span class="dropdown-text">Week 2 Day 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./slides/w2d2.html">
+    <a class="dropdown-item" href="../slides/w2d2.html">
  <span class="dropdown-text">Week 2 Day 2</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./slides/w3d1.html">
+    <a class="dropdown-item" href="../slides/w3d1.html">
  <span class="dropdown-text">Week 3 Day 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./slides/w4d1.html">
+    <a class="dropdown-item" href="../slides/w4d1.html">
  <span class="dropdown-text">Week 4 Day 1 (Notes)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./slides/w4d2.html">
+    <a class="dropdown-item" href="../slides/w4d2.html">
  <span class="dropdown-text">Week 4 Day 2</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./slides/w5d1.html">
+    <a class="dropdown-item" href="../slides/w5d1.html">
  <span class="dropdown-text">Week 5 Day 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./slides/w5d2.html">
+    <a class="dropdown-item" href="../slides/w5d2.html">
  <span class="dropdown-text">Week 5 Day 2</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./slides/w6d1.html">
+    <a class="dropdown-item" href="../slides/w6d1.html">
  <span class="dropdown-text">Week 6 Day 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./slides/w7d1.html">
+    <a class="dropdown-item" href="../slides/w7d1.html">
  <span class="dropdown-text">Week 7 Day 1</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="./assignments.html" aria-current="page"> 
+    <a class="nav-link" href="../assignments.html"> 
 <span class="menu-text">Assignments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./recordings.html"> 
+    <a class="nav-link" href="../recordings.html"> 
 <span class="menu-text">Lecture Recordings</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./midterm.html"> 
+    <a class="nav-link" href="../midterm.html"> 
 <span class="menu-text">Midterm I</span></a>
   </li>  
   <li class="nav-item">
@@ -180,8 +214,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#labs" id="toc-labs" class="nav-link active" data-scroll-target="#labs">Labs</a></li>
-  <li><a href="#lecture-tickets" id="toc-lecture-tickets" class="nav-link" data-scroll-target="#lecture-tickets">Lecture Tickets</a></li>
+  <li><a href="#reading" id="toc-reading" class="nav-link active" data-scroll-target="#reading">Reading</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   </ul>
 </nav>
     </div>
@@ -190,8 +224,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Assignments</h1>
-<p class="subtitle lead">FOR 128: Practical Computing and Data Science Tools, Fall 2024</p>
+<h1 class="title">Lecture Ticket 13</h1>
 </div>
 
 
@@ -208,135 +241,36 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="labs" class="level2">
-<h2 class="anchored" data-anchor-id="labs">Labs</h2>
-<p>Labs are turned in on <a href="https://d2l.msu.edu">D2L</a>.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Assignment</th>
-<th>Available</th>
-<th>Due</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="labs/lab_01.qmd">Lab 1</a></td>
-<td>Thursday 8/27 (at lab time)</td>
-<td>Wednesday 9/4 (at 5pm)</td>
-</tr>
-<tr class="even">
-<td><a href="labs/lab_02.qmd">Lab 2</a></td>
-<td>Thursday 9/5 (at lab time)</td>
-<td>Wednesday 9/11 (at 5pm)</td>
-</tr>
-<tr class="odd">
-<td><a href="./labs/lab_03.html">Lab 3</a></td>
-<td>Thursday 9/12 (at lab time)</td>
-<td>Wednesday 9/18 (at 5pm)</td>
-</tr>
-<tr class="even">
-<td><a href="labs/lab_04.qmd">Lab 4</a></td>
-<td>Thursday 9/19 (at lab time)</td>
-<td>Wednesday 9/25 (at 5pm)</td>
-</tr>
-<tr class="odd">
-<td><a href="labs/lab_05.qmd">Lab 5</a></td>
-<td>Thursday 9/26 (at lab time)</td>
-<td>Wednesday 10/2 (at 5pm)</td>
-</tr>
-<tr class="even">
-<td>Lab 6</td>
-<td>Thursday 10/10 (at lab time)</td>
-<td>Wednesday 10/16 (at 5pm)</td>
-</tr>
-</tbody>
-</table>
+<section id="reading" class="level2">
+<h2 class="anchored" data-anchor-id="reading">Reading</h2>
+<p>Read the following sections of IFDAR.</p>
+<ul>
+<li>Chapter 7: sections 7.1 - 7.5</li>
+</ul>
 </section>
-<section id="lecture-tickets" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-tickets">Lecture Tickets</h2>
-<p>Lecture tickets are turned in on a piece of paper in-person at lecture.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Assignment</th>
-<th>Available</th>
-<th>Due</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="./tickets/ticket_01.html">Lecture ticket 1</a></td>
-<td>Tuesday 8/27 (by 5pm)</td>
-<td>Thursday 8/29 (in lecture)</td>
-</tr>
-<tr class="even">
-<td><a href="./tickets/ticket_02.html">Lecture ticket 2</a></td>
-<td>Thursday 8/29 (by 5pm)</td>
-<td>Tuesday 9/3 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td><a href="./tickets/ticket_03.html">Lecture ticket 3</a></td>
-<td>Tuesday 9/3 (by 5pm)</td>
-<td>Thursday 9/5 (in lecture)</td>
-</tr>
-<tr class="even">
-<td><a href="./tickets/ticket_04.html">Lecture ticket 4</a></td>
-<td>Thursday 9/5 (by 5pm)</td>
-<td>Tuesday 9/10 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td><a href="./tickets/ticket_05.html">Lecture ticket 5</a></td>
-<td>Tuesday 9/10 (by 5pm)</td>
-<td>Thursday 9/12 (in lecture)</td>
-</tr>
-<tr class="even">
-<td><a href="./tickets/ticket_06.html">Lecture ticket 6</a></td>
-<td>Thursday 9/12 (by 5pm)</td>
-<td>Tuesday 9/17 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td><a href="./tickets/ticket_07.html">Lecture ticket 7</a></td>
-<td>Tuesday 9/17 (by 5pm)</td>
-<td>Thursday 9/19 (in lecture)</td>
-</tr>
-<tr class="even">
-<td><a href="./tickets/ticket_08.html">Lecture ticket 8</a></td>
-<td>Thursday 9/19 (by 5pm)</td>
-<td>Tuesday 9/24 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td><a href="./tickets/ticket_09.html">Lecture ticket 9</a></td>
-<td>Tuesday 9/24 (by 5pm)</td>
-<td>Thursday 9/26 (in lecture)</td>
-</tr>
-<tr class="even">
-<td><a href="./tickets/ticket_10.html">Lecture ticket 10</a></td>
-<td>Thursday 9/26 (by 5pm)</td>
-<td>Tuesday 10/1 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td><a href="./tickets/ticket_11.html">Lecture ticket 11</a></td>
-<td>Tuesday 10/1 (by 5pm)</td>
-<td>Thursday 10/3 (in lecture)</td>
-</tr>
-<tr class="even">
-<td><a href="./tickets/ticket_12.html">Lecture ticket 12</a></td>
-<td>Thursday 10/3 (by 5pm)</td>
-<td>Tuesday 10/8 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td><a href="./tickets/ticket_13.html">Lecture ticket 13</a></td>
-<td>Tuesday 10/8 (by 5pm)</td>
-<td>Thursday 10/10 (in lecture)</td>
-</tr>
-<tr class="even">
-<td>Lecture ticket 14</td>
-<td>Thursday 10/10 (by 5pm)</td>
-<td>Tuesday 10/15 (in lecture)</td>
-</tr>
-</tbody>
-</table>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<ol type="1">
+<li>Consider the following dataset:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ten_cars <span class="ot">&lt;-</span> <span class="fu">head</span>(mtcars, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>ten_cars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710        22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive    21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+Valiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+Duster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+Merc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+Merc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+Merc 280          19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4</code></pre>
+</div>
+</div>
+<p>How would we use <code>dplyr</code> to filter for rows with horse power (hp) greater than 100? How would we use base <code>R</code> to do the same thing? Which do you prefer?</p>
 
 
 </section>

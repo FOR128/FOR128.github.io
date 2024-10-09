@@ -1,0 +1,28 @@
+---
+title: "Lecture Ticket 13"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read the following sections of IFDAR.
+
+-   Chapter 7: sections 7.1 - 7.5
+
+
+## Questions
+
+1. Consider the following dataset:
+
+```{r}
+ten_cars <- head(mtcars, n = 10)
+ten_cars
+```
+
+How would we use `dplyr` to filter for rows with horse power (hp) greater than 100? How would we use base `R` to do the same thing? Which do you prefer? 
+
+
+
+
+
