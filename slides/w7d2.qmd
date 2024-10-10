@@ -1,0 +1,561 @@
+---
+title: "Intro to `dplyr`"
+editor: 
+  mode: source
+webr:
+  show-startup-message: false
+filters:
+  - webr
+engine: knitr
+execute:
+  echo: true
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+---
+
+## Announcements
+
+-   Midterm 1 were released yesterday.
+-   Lab 5 grades coming soon. 
+
+## Agenda
+
+-   `dplyr` verbs 
+
+# Data Wrangling with `dplyr` {background-color="#00817c"} 
+
+```{r}
+#| fig-align: 'center'
+#| echo: false
+knitr::include_graphics("figs/dplyr.png")
+```
+
+---
+
+```{r}
+#| fig-align: 'center'
+#| echo: false
+knitr::include_graphics("figs/horst/filter.png")
+```
+
+---
+
+## `filter()`
+
+-   Subsets rows of data based on logical conditions related to one **or more** columns in the dataset. 
+
+```{r}
+#| fig-align: 'center'
+#| echo: false
+knitr::include_graphics("figs/ch7/filter.png")
+```
+
+## Data 
+
+-   Consider our favorite toy dataset: 
+
+```{r}
+library(tidyverse)
+pets <- tibble(
+  names = c("Dude", "Pickle", "Kyle", "Nubs"),
+  ages = c(6, 5, 3, 11),
+  is_dog = c(TRUE, FALSE, FALSE, FALSE)
+)
+pets
+```
+
+
+## `filter()` ages greater than 5
+
+```{r}
+filter(pets, ages > 5)
+```
+
+::: incremental
+
+-   Notice the pattern: `filter(dataset, logical statement)`
+-   The first argument in `filter()`, and the other `dplyr` function we will learn, is the dataset we'd like to operate on. 
+
+:::
+
+## `filter()` dogs with ages greater than 5
+
+```{r}
+filter(pets, ages > 5, is_dog)
+```
+
+## `filter()` dogs with ages greater than 5
+
+```{r}
+filter(pets, ages > 5, is_dog)
+```
+
+We can equivalently write: 
+
+```{r}
+filter(pets, ages > 5 & is_dog)
+```
+
+::: incremental
+
+-   In `filter()` the comma between logical statements is the same as `&`. 
+
+:::
+
+## `filter()` for pets named Pickle
+
+```{r}
+filter(pets, names == "Pickle")
+```
+
+## `filter()` for pets named Pickle or Dude
+
+```{r}
+filter(pets, names %in% c("Pickle", "Dude"))
+```
+
+# Your turn! {background-color="#00817c"} 
+
+## `filter()` for non-dogs
+
+```{r}
+#| echo: false
+pets
+countdown::countdown(1)
+```
+
+## `filter()` for non-dogs
+
+```{r}
+filter(pets, !is_dog)
+```
+
+## `filter()` for non-dogs
+
+```{r}
+filter(pets, !is_dog)
+# or
+filter(pets, is_dog == FALSE)
+```
+
+
+## `filter()` for non-dogs with age greater than 10
+
+```{r}
+#| echo: false
+pets
+countdown::countdown(1)
+```
+
+## `filter()` for non-dogs with age greater than 10
+
+```{r}
+filter(pets, !is_dog & ages > 10)
+```
+
+## `filter()` for non-dogs with age greater than 10
+
+```{r}
+filter(pets, !is_dog & ages > 10)
+# or 
+filter(pets, !is_dog, ages > 10)
+```
+
+## `filter()` for non-dogs with age greater than 10
+
+```{r}
+filter(pets, !is_dog & ages > 10)
+# or 
+filter(pets, !is_dog, ages > 10)
+# or 
+filter(pets, is_dog == FALSE, ages > 10) # etc...
+```
+
+<!-- ## Now consider `mn_trees` -->
+
+<!-- ```{r} -->
+<!-- mn_trees <- read_csv("../labs/datasets/mn_trees.csv") -->
+<!-- mn_trees -->
+<!-- ``` -->
+
+<!-- ## `filter()` for species of either "ABBA" or "PIST"  -->
+
+<!-- ```{r} -->
+<!-- #| echo: false -->
+<!-- mn_trees -->
+<!-- countdown::countdown(1) -->
+<!-- ``` -->
+
+<!-- ## `filter()` for species of either "ABBA" or "PIST"  -->
+
+<!-- ```{r} -->
+<!-- filter(mn_trees, species %in% c("ABBA", "PIST")) -->
+<!-- ``` -->
+
+<!-- ## `filter()` for age greater than or equal to 100 years -->
+
+<!-- ```{r} -->
+<!-- #| echo: false -->
+<!-- mn_trees -->
+<!-- countdown::countdown(1) -->
+<!-- ``` -->
+
+<!-- ## `filter()` for age greater than or equal to 100 years -->
+
+<!-- ```{r} -->
+<!-- filter(mn_trees, age >= 100) -->
+<!-- ``` -->
+
+<!-- ## `filter()` for age greater than or equal to 100 years and DBH greater than 50 inches -->
+
+<!-- ```{r} -->
+<!-- #| echo: false -->
+<!-- mn_trees -->
+<!-- countdown::countdown(1) -->
+<!-- ``` -->
+
+<!-- ## `filter()` for age greater than or equal to 100 years and DBH greater than 50 inches -->
+
+<!-- ```{r} -->
+<!-- filter(mn_trees, age >= 100, DBH > 50) -->
+<!-- ``` -->
+
+
+# `slice()` {background-color="#00817c"} 
+
+## `slice()`
+
+There are five variations of `slice()` that we will learn in this course:
+
+::: incremental
+
+-   `slice()`: for getting rows or sets of rows by index,
+-   `slice_head()`: for getting the first few (`n`) rows,
+-   `slice_tail()`: for getting the last few (`n`) rows,
+-   `slice_min()`: for getting the row with the minimum value of some column,
+-   `slice_max()`: for getting the row with the maximum value of some column.
+ 
+:::
+
+## `slice()`
+
+```{r}
+#| fig-align: 'center'
+#| echo: false
+knitr::include_graphics("figs/ch7/slice.png")
+```
+
+## Get the first and third rows of `pets`
+
+```{r}
+slice(pets, 1, 3)
+```
+
+## Get the first and third rows of `pets`
+
+```{r}
+slice(pets, 1, 3)
+# or, equivalently
+slice(pets, c(1,3))
+```
+
+## Get the first two rows of `pets`
+
+```{r}
+slice(pets, 1, 2)
+```
+
+## Get the first two rows of `pets`
+
+```{r}
+slice(pets, 1, 2)
+# or, equivalently
+slice_head(pets, n = 2)
+```
+
+## Get the last row of `pets`
+
+```{r}
+slice_tail(pets)
+```
+
+::: incremental
+
+-   Note that in `slice_tail()` (and `slice_head()`) the default for `n` is 1.
+
+:::
+
+## Get the last row of `pets`
+
+```{r}
+slice_tail(pets)
+```
+
+-   Note that in `slice_tail()` (and `slice_head()`) the default for `n` is 1.
+
+
+```{r}
+slice_tail(pets, n = 1) # exactly the same as above
+```
+
+## Get the pet who is the youngest
+
+```{r}
+slice_min(pets, ages)
+```
+
+## Get the pet who is the oldest
+
+```{r}
+slice_max(pets, ages)
+```
+
+## Get the two youngest pets
+
+```{r}
+slice_min(pets, ages, n = 2)
+```
+
+# `arrange()` {background-color="#00817c"} 
+
+## `arrange()`
+
+::: incremental
+
+-   `arrange()` orders rows based on values in one or more columns.
+-   By default, `arrange()` puts smallest values at the top.
+-   If you'd like largest values at the top, we can use the `desc()` function (named for `desc`ending order)
+-   When we `arrange()` by more than one column, the following columns "break ties" in the prior columns. 
+
+:::
+
+## `arrange()`
+
+```{r}
+#| fig-align: 'center'
+#| echo: false
+knitr::include_graphics("figs/ch7/arrange.png")
+```
+
+## Consider a modifed `pets` dataset
+
+```{r}
+more_pets <- tibble(
+  names = c("Dude", "Pickle", "Kyle", "Nubs", "Marvin", "Figaro", "Slim"),
+  ages = c(6, 5, 3, 11, 11, 3, 6),
+  meals_per_day = c(2, 3, 3, 3, 1, 2, 2),
+  is_dog = c(TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE)  
+)
+more_pets
+```
+
+## `arrange()` `more_pets` by age
+
+```{r}
+arrange(more_pets, ages)
+```
+
+## `arrange()` `more_pets` by age, greatest first
+
+```{r}
+arrange(more_pets, desc(ages))
+```
+
+
+## `arrange()` `more_pets` by age and then meals per day
+
+```{r}
+arrange(more_pets, ages, meals_per_day)
+```
+
+
+## `arrange()` `more_pets` by is_dog
+
+```{r}
+arrange(more_pets, is_dog)
+```
+
+::: incremental
+
+-   When `arrange()`ing with a logical column, `FALSE` is before `TRUE`
+-   We can switch this with `desc()`
+
+:::
+
+## `arrange()` `more_pets` by is_dog, TRUE first
+
+```{r}
+arrange(more_pets, desc(is_dog))
+```
+
+## `arrange()` `more_pets` by names
+
+```{r}
+arrange(more_pets, names)
+```
+
+::: incremental
+
+-   What happened here? 
+-   Alphabetical order!
+-   What will happen if we use `desc()` on names? 
+
+:::
+
+## `arrange()` `more_pets` by names, descending
+
+```{r}
+arrange(more_pets, desc(names))
+```
+
+# `select()` {background-color="#00817c"} 
+
+## `select()`
+
+-   `select()` selects a subset of columns in the dataset. 
+
+
+```{r}
+#| fig-align: 'center'
+#| echo: false
+knitr::include_graphics("figs/ch7/select.png")
+```
+
+
+## `select()` names and ages from `more_pets`
+
+```{r}
+select(more_pets, names, ages)
+```
+
+## remove meals_per_day from `more_pets`
+
+```{r}
+select(more_pets, -meals_per_day, -ages)
+```
+
+::: incremental
+
+-   NOTE: The book uses `!` instead of `-` in `select()`. We prefer `-` and will not use `!`. 
+
+:::
+
+## `select()` columns that end with "s"
+
+```{r}
+select(more_pets, ends_with("s"))
+```
+
+::: incremental
+
+-   NOTE: The `ends_with()` function can be quite useful when selecting columns. 
+
+:::
+
+# `rename()` {background-color="#00817c"} 
+
+---
+
+```{r}
+#| fig-align: 'center'
+#| echo: false
+knitr::include_graphics("figs/horst/rename.png")
+```
+
+---
+
+## `rename()`
+
+-   `rename()` renames columns that are already in your dataset.
+
+```{r}
+#| fig-align: 'center'
+#| echo: false
+knitr::include_graphics("figs/ch7/rename.png")
+```
+
+
+## `rename()` meals_per_day to meals in the `more_pets` tibble
+
+```{r}
+rename(more_pets, meals = meals_per_day)
+```
+
+::: incremental
+
+-   Note the syntax of `new_name = old_name` to rename the `old_name` column with `new_name`. 
+
+:::
+
+## `rename()` meals_per_day to meals and ages to age in the `more_pets` tibble
+
+```{r}
+rename(more_pets, 
+       meals = meals_per_day,
+       age = ages)
+```
+
+## `rename_with()`
+
+-   `rename_with()` allows us to use a function to rename columns. For example, the `toupper()` function. This function takes a character vector and makes it upper case:
+
+```{r}
+toupper("trees")
+```
+
+## `rename_with()`
+
+-   We can use `toupper()` to rename all the columns in `more_pets` to upper case: 
+
+```{r}
+rename_with(more_pets, toupper)
+```
+
+## `rename_with()`
+
+-   Rather than renaming all the columns to upper case, we choose which columns we'd like to change to upper case: 
+
+```{r}
+rename_with(more_pets, toupper, c(names, ages))
+```
+
+::: incremental
+
+-   NOTE: Careful here, we need the `c()` function in this case to choose which columns to rename with `toupper()`
+
+:::
+
+
+## Next time
+
+-   More `dplyr` verbs
+-   Writing a sentence with pipes
+
+
+
+
+
+
+
+
+
+
+
+ 

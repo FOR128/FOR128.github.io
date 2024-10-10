@@ -1,0 +1,65 @@
+---
+title: "Intro to the `tidyverse`"
+subtitle: "FOR 128: Lab 6"
+author: "Insert Your Name Here"
+date: "10/16/2024"
+format:
+  pdf: default
+editor: 
+  mode: source
+---
+
+## Welcome
+
+Welcome to Lab 6! Today, we'll focus on XX. 
+
+### Learning objectives
+
+-   XX
+
+### Deliverables (i.e., what to put in the lab drop box)
+
+Upload your rendered PDF (`lab_06.pdf`) **and** Quarto (`lab_06.qmd`) document to the lab drop box. Make sure the Quarto document properly renders to PDF.
+
+### Collaborator(s)
+
+List any collaborators you worked with below. 
+
+
+## Exercise 1
+
+Do Exercise 6.1 from IFDAR
+
+```{r}
+
+```
+
+
+## Exercise 2
+
+Do Exercise 6.3 from IFDAR
+
+```{r}
+
+```
+
+
+## Exercise 3
+
+Do Exercise 6.4 from IFDAR
+
+```{r}
+
+```
+
+
+
+## Exercise 4
+
+
+
+
+
+# Wrap up
+
+Congratulations! You've made it to the end of Lab 5. Make sure to render your final document and submit both the .pdf and .qmd file to D2L.

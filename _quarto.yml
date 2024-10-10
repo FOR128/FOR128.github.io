@@ -7,6 +7,7 @@ project:
     - "!labs/lab_02.qmd"
     - "!labs/lab_04.qmd"
     - "!labs/lab_05.qmd"
+    - "!labs/lab_06.qmd"
     - "!quizzes/"
     - "!labs/datasets/"
     - "!/in_class/*.qmd"
@@ -52,6 +53,8 @@ website:
             text: "Week 6 Day 1"
           - href: slides/w7d1.qmd
             text: "Week 7 Day 1"
+          - href: slides/w7d2.qmd
+            text: "Week 7 Day 2"
       - href: assignments.qmd
         text: Assignments
       - href: recordings.qmd
