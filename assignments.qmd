@@ -16,7 +16,7 @@ Labs are turned in on [D2L](https://d2l.msu.edu).
 | [Lab 3](labs/lab_03.qmd) | Thursday 9/12 (at lab time)  | Wednesday 9/18 (at 5pm) |
 | [Lab 4](labs/lab_04.qmd) | Thursday 9/19 (at lab time)  | Wednesday 9/25 (at 5pm) |
 | [Lab 5](labs/lab_05.qmd) | Thursday 9/26 (at lab time)  | Wednesday 10/2 (at 5pm) |
-| Lab 6                    | Thursday 10/10 (at lab time)  | Wednesday 10/16 (at 5pm) |
+| [Lab 6](labs/lab_06.qmd) | Thursday 10/10 (at lab time)  | Wednesday 10/16 (at 5pm) |
 | Lab 7                    | Thursday 10/17 (at lab time)  | Wednesday 10/23 (at 5pm) |
 | Lab 8                    | Thursday 10/24 (at lab time)  | Wednesday 10/30 (at 5pm) |
 | Lab 9                    | Thursday 10/31 (at lab time)  | Wednesday 11/6 (at 5pm) |
