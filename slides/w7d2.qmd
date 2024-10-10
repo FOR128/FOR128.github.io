@@ -188,55 +188,6 @@ filter(pets, !is_dog, ages > 10)
 filter(pets, is_dog == FALSE, ages > 10) # etc...
 ```
 
-<!-- ## Now consider `mn_trees` -->
-
-<!-- ```{r} -->
-<!-- mn_trees <- read_csv("../labs/datasets/mn_trees.csv") -->
-<!-- mn_trees -->
-<!-- ``` -->
-
-<!-- ## `filter()` for species of either "ABBA" or "PIST"  -->
-
-<!-- ```{r} -->
-<!-- #| echo: false -->
-<!-- mn_trees -->
-<!-- countdown::countdown(1) -->
-<!-- ``` -->
-
-<!-- ## `filter()` for species of either "ABBA" or "PIST"  -->
-
-<!-- ```{r} -->
-<!-- filter(mn_trees, species %in% c("ABBA", "PIST")) -->
-<!-- ``` -->
-
-<!-- ## `filter()` for age greater than or equal to 100 years -->
-
-<!-- ```{r} -->
-<!-- #| echo: false -->
-<!-- mn_trees -->
-<!-- countdown::countdown(1) -->
-<!-- ``` -->
-
-<!-- ## `filter()` for age greater than or equal to 100 years -->
-
-<!-- ```{r} -->
-<!-- filter(mn_trees, age >= 100) -->
-<!-- ``` -->
-
-<!-- ## `filter()` for age greater than or equal to 100 years and DBH greater than 50 inches -->
-
-<!-- ```{r} -->
-<!-- #| echo: false -->
-<!-- mn_trees -->
-<!-- countdown::countdown(1) -->
-<!-- ``` -->
-
-<!-- ## `filter()` for age greater than or equal to 100 years and DBH greater than 50 inches -->
-
-<!-- ```{r} -->
-<!-- filter(mn_trees, age >= 100, DBH > 50) -->
-<!-- ``` -->
-
 
 # `slice()` {background-color="#00817c"} 
 

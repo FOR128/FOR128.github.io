@@ -11,11 +11,13 @@ editor:
 
 ## Welcome
 
-Welcome to Lab 6! Today, we'll focus on XX. 
+Welcome to Lab 6! Today, we'll focus on reading and writing data with `readr`, using `tibble`s, and taking a peak at some functionality in `dplyr`. 
 
 ### Learning objectives
 
--   XX
+-   Read and write data with `readr`. 
+-   Understand the differences between `tibble`s and `data.frame`s. 
+-   Begin to use `dplyr` verbs such as `filter()` and `slice()` to do basic data analysis. 
 
 ### Deliverables (i.e., what to put in the lab drop box)
 
@@ -25,6 +27,18 @@ Upload your rendered PDF (`lab_06.pdf`) **and** Quarto (`lab_06.qmd`) document t
 
 List any collaborators you worked with below. 
 
+
+# Part 0: Packages
+
+Load any packages you'll need for this lab below.
+
+```{r}
+# this time, I've done it for you :-)
+library(tidyverse)
+```
+
+
+# Part 1: Textbook Questions
 
 ## Exercise 1
 
@@ -53,13 +67,132 @@ Do Exercise 6.4 from IFDAR
 ```
 
 
+# Part 2: Minnesota Trees
+
 
 ## Exercise 4
 
+Using `readr`, load "mn_trees.csv" from the "datasets" folder into `R`. Call the resulting object `mn_trees`.  
+
+```{r}
+
+```
+
+## Exercise 5
+
+Use the appropriate `dplyr` function to filter `mn_trees` to only include trees with DBH larger than 50 inches. 
+
+```{r}
+
+```
+
+## Exercise 6
+
+Use the appropriate `dplyr` function to filter `mn_trees` to only include pine trees (that is, the species with genus Pinus).
+
+Hint: see Table 6.1 in IFDAR to look up the species codes associated with pine trees. 
+
+```{r}
+
+```
+
+## Exercise 7
+
+Use the appropriate `dplyr` function to filter `mn_trees` to only include trees older than 100 years and DBH greater than 50 inches. 
+
+```{r}
+
+```
+
+
+## Exercise 8
+
+Use the appropriate `dplyr` function to get the last 10 rows of `mn_trees`. 
+```{r}
+
+```
+
+## Exercise 9
+
+Use the appropriate `dplyr` function to arrange `mn_trees` by age, least to greatest. 
+
+```{r}
+
+```
+
+
+## Exercise 10
+
+Use the appropriate `dplyr` function to arrange `mn_trees` by age, greatest to least. 
+
+```{r}
+
+```
+
+
+
+## Exercise 11
+
+This exercise introduces the idea of "pipes". Pipes are used in `dplyr` code to string together functions and do longer data analyses. A pipe looks like this: `%>%`. You can read the pipe (`%>%`) as "and then". 
+
+For example, with the built-in `mtcars` dataset we can string together a few `dplyr` functions:
+
+```{r}
+mtcars %>%
+  filter(cyl == 8) %>%
+  arrange(mpg) %>%
+  slice_tail()
+```
+A pipe puts the tibble before it into the first argument of the function following it. So, the code
+
+```{r}
+mtcars %>%
+  filter(cyl == 8)
+```
+
+is equivalent to 
+
+```{r}
+filter(mtcars, cyl == 8)
+```
+
+The fantastic thing about pipes, though, is that we can continue to bring our modified tibble into the next `dplyr` function. We ran 
+
+```{r}
+mtcars %>%
+  filter(cyl == 8) 
+```
+
+which filtered `mtcars` to only include cars with eight cylinder engines, *and then* we used the pipe to put this filtered dataset into the `arrange()` function where we arranged the cars by their miles per gallon:
+
+```{r}
+mtcars %>%
+  filter(cyl == 8) %>%
+  arrange(mpg)
+```
+
+From there, we used `slice_tail()` to get the last row of this filtered and arranged tibble, which corresponds to the 8 cylinder car with the best gas mileage. 
+
+```{r}
+mtcars %>%
+  filter(cyl == 8) %>%
+  arrange(mpg) %>%
+  slice_tail()
+```
+
+So, one could read this code as: "Take `mtcars`, and then filter it for only 8 cylinder cars, and then arrange it by miles per gallon, and then get the last row of the resulting dataset." 
+
+Now that you've learned about pipes, write string some `dplyr` functions together that returns the ten largest red oak (*Quercus rubra*) trees in the `mn_trees` dataset, with rows ordered from youngest to oldest trees. 
+
+Hint: Remember to look at Table 6.1 in IFDAR for species codes
+
+```{r}
+
+```
 
 
 
 
 # Wrap up
 
-Congratulations! You've made it to the end of Lab 5. Make sure to render your final document and submit both the .pdf and .qmd file to D2L.
+Congratulations! You've made it to the end of Lab 6. Make sure to render your final document and submit both the .pdf and .qmd file to D2L.
