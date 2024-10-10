@@ -33,3 +33,5 @@ Week 6, day 2: *Midterm review day*. No recording.
 
 Week 7, day 1: *`tibble` and `readr`*. Available [here](https://mediaspace.msu.edu/media/Week+7+Day+1/1_dczpvt0j).
 
+Week 7, day 2: *Introduction to data wrangling with `dplyr`*. Available [here](https://mediaspace.msu.edu/media/Week+7+Day+2/1_nya16n6e).
+
