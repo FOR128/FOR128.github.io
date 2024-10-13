@@ -1,0 +1,25 @@
+---
+title: "Lecture Ticket 14"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read the following sections of IFDAR.
+
+-   Chapter 7: sections 7.6 - 7.9, 7.12
+
+
+## Questions
+
+1. What do `mutate()` and `transmute()` do? How are they different? 
+
+2. What does the pipe (`%>%`) operator do? 
+
+3. What's your favorite `dplyr` verb we've learned about so far? Why? 
+
+
+
+
+
