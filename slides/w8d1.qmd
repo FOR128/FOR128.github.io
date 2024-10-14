@@ -1,0 +1,250 @@
+---
+title: "Intro to `dplyr`"
+editor: 
+  mode: source
+webr:
+  show-startup-message: false
+filters:
+  - webr
+engine: knitr
+execute:
+  echo: true
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+---
+
+## Announcements
+
+-   Lab 5 grades coming soon. 
+-   Lab 6 is due this Wednesday at 5pm
+    -   Come to office hours or schedule a meeting if you are struggling with Lab 6!
+
+## Agenda
+
+-   Quiz
+-   Review `dplyr` verbs from last time
+-   More `dplyr` verbs and pipes (`%>%`)
+
+---
+
+```{r}
+#| fig-align: 'center'
+#| echo: false
+knitr::include_graphics("figs/horst/filter.png")
+```
+
+---
+
+## `filter()`
+
+-   Subsets rows of data based on logical conditions related to one **or more** columns in the dataset. 
+
+```{r}
+#| fig-align: 'center'
+#| echo: false
+knitr::include_graphics("figs/ch7/filter.png")
+```
+
+## Data 
+
+-   Consider our favorite toy dataset: 
+
+```{r}
+library(tidyverse)
+more_pets <- tibble(
+  names = c("Dude", "Pickle", "Kyle", "Nubs", "Marvin", "Figaro", "Slim"),
+  ages = c(6, 5, 3, 11, 11, 3, 6),
+  meals_per_day = c(2, 3, 3, 3, 1, 2, 2),
+  is_dog = c(TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE)  
+)
+more_pets
+```
+
+
+## `filter()` ages greater than 5
+
+```{r}
+filter(more_pets, ages > 5)
+```
+
+::: incremental
+
+-   Notice the pattern: `filter(dataset, logical statement)`
+-   The first argument in `filter()`, and the other `dplyr` function we will learn, is the dataset we'd like to operate on. 
+
+:::
+
+## `filter()` dogs with ages greater than 5
+
+```{r}
+filter(more_pets, ages > 5, is_dog)
+```
+
+## `filter()` dogs with ages greater than 5
+
+```{r}
+filter(more_pets, ages > 5, is_dog)
+```
+
+We can equivalently write: 
+
+```{r}
+filter(more_pets, ages > 5 & is_dog)
+```
+
+::: incremental
+
+-   In `filter()` the comma between logical statements is the same as `&`. 
+
+:::
+
+
+
+# `slice()` {background-color="#00817c"} 
+
+## `slice()`
+
+There are five variations of `slice()` that we learned about:
+
+-   `slice()`: for getting rows or sets of rows by index,
+-   `slice_head()`: for getting the first few (`n`) rows,
+-   `slice_tail()`: for getting the last few (`n`) rows,
+-   `slice_min()`: for getting the row with the minimum value of some column,
+-   `slice_max()`: for getting the row with the maximum value of some column.
+ 
+
+## `slice()`
+
+```{r}
+#| fig-align: 'center'
+#| echo: false
+knitr::include_graphics("figs/ch7/slice.png")
+```
+
+## Get the first and third rows of `pets`
+
+```{r}
+slice(more_pets, 1, 3)
+```
+
+## Get the first two rows of `pets`
+
+```{r}
+slice_head(more_pets, n = 2)
+```
+
+
+## Get the pet who is the oldest
+
+```{r}
+slice_max(more_pets, ages)
+```
+
+# `arrange()` {background-color="#00817c"} 
+
+## `arrange()`
+
+-   `arrange()` orders rows based on values in one or more columns.
+-   By default, `arrange()` puts smallest values at the top.
+-   If you'd like largest values at the top, we can use the `desc()` function (named for `desc`ending order)
+-   When we `arrange()` by more than one column, the following columns "break ties" in the prior columns. 
+
+
+## `arrange()` `more_pets` by age
+
+```{r}
+arrange(more_pets, ages)
+```
+
+## `arrange()` `more_pets` by age, greatest first
+
+```{r}
+arrange(more_pets, desc(ages))
+```
+
+
+## `arrange()` `more_pets` by age and then meals per day
+
+```{r}
+arrange(more_pets, ages, meals_per_day)
+```
+
+
+# `select()` {background-color="#00817c"} 
+
+## `select()`
+
+-   `select()` selects a subset of columns in the dataset. 
+
+
+```{r}
+#| fig-align: 'center'
+#| echo: false
+knitr::include_graphics("figs/ch7/select.png")
+```
+
+
+## `select()` names and ages from `more_pets`
+
+```{r}
+select(more_pets, names, ages)
+```
+
+## remove meals_per_day from `more_pets`
+
+```{r}
+select(more_pets, -meals_per_day, -ages)
+```
+
+---
+
+```{r}
+#| fig-align: 'center'
+#| echo: false
+knitr::include_graphics("figs/horst/rename.png")
+```
+
+---
+
+## `rename()` meals_per_day to meals in the `more_pets` tibble
+
+```{r}
+rename(more_pets, meals = meals_per_day)
+```
+
+
+-   Note the syntax of `new_name = old_name` to rename the `old_name` column with `new_name`. 
+
+
+## Next time
+
+-   Writing a sentence with pipes
+
+
+
+
+
+
+
+
+
+
+
+ 

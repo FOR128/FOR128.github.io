@@ -386,8 +386,6 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
-  <script src="../site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -408,21 +406,21 @@ Practical Computing and Data Science Tools
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 <ul>
-<li>Midterm 1 were released yesterday.</li>
 <li>Lab 5 grades coming soon.</li>
+<li>Lab 6 is due this Wednesday at 5pm
+<ul>
+<li>Come to office hours or schedule a meeting if you are struggling with Lab 6!</li>
+</ul></li>
 </ul>
 </section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ul>
-<li><code>dplyr</code> verbs</li>
+<li>Quiz</li>
+<li>Review <code>dplyr</code> verbs from last time</li>
+<li>More <code>dplyr</code> verbs and pipes (<code>%&gt;%</code>)</li>
 </ul>
 </section>
-<section>
-<section id="data-wrangling-with-dplyr" class="title-slide slide level1 center" data-background-color="#00817c">
-<h1>Data Wrangling with <code>dplyr</code></h1>
-
-<img data-src="figs/dplyr.png" class="quarto-figure quarto-figure-center r-stretch" width="512"></section>
 <section class="slide level2">
 
 
@@ -441,449 +439,13 @@ Practical Computing and Data Science Tools
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a></a>pets <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb1-3"><a></a>  <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"Dude"</span>, <span class="st">"Pickle"</span>, <span class="st">"Kyle"</span>, <span class="st">"Nubs"</span>),</span>
-<span id="cb1-4"><a></a>  <span class="at">ages =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">11</span>),</span>
-<span id="cb1-5"><a></a>  <span class="at">is_dog =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
-<span id="cb1-6"><a></a>)</span>
-<span id="cb1-7"><a></a>pets</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 3
-  names   ages is_dog
-  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude       6 TRUE  
-2 Pickle     5 FALSE 
-3 Kyle       3 FALSE 
-4 Nubs      11 FALSE </code></pre>
-</div>
-</div>
-</section>
-<section id="filter-ages-greater-than-5" class="slide level2">
-<h2><code>filter()</code> ages greater than 5</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">filter</span>(pets, ages <span class="sc">&gt;</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  names  ages is_dog
-  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude      6 TRUE  
-2 Nubs     11 FALSE </code></pre>
-</div>
-</div>
-<div>
-<ul>
-<li class="fragment">Notice the pattern: <code>filter(dataset, logical statement)</code></li>
-<li class="fragment">The first argument in <code>filter()</code>, and the other <code>dplyr</code> function we will learn, is the dataset we’d like to operate on.</li>
-</ul>
-</div>
-</section>
-<section id="filter-dogs-with-ages-greater-than-5" class="slide level2">
-<h2><code>filter()</code> dogs with ages greater than 5</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">filter</span>(pets, ages <span class="sc">&gt;</span> <span class="dv">5</span>, is_dog)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 3
-  names  ages is_dog
-  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude      6 TRUE  </code></pre>
-</div>
-</div>
-</section>
-<section id="filter-dogs-with-ages-greater-than-5-1" class="slide level2">
-<h2><code>filter()</code> dogs with ages greater than 5</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">filter</span>(pets, ages <span class="sc">&gt;</span> <span class="dv">5</span>, is_dog)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 3
-  names  ages is_dog
-  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude      6 TRUE  </code></pre>
-</div>
-</div>
-<p>We can equivalently write:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">filter</span>(pets, ages <span class="sc">&gt;</span> <span class="dv">5</span> <span class="sc">&amp;</span> is_dog)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 3
-  names  ages is_dog
-  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude      6 TRUE  </code></pre>
-</div>
-</div>
-<div>
-<ul>
-<li class="fragment">In <code>filter()</code> the comma between logical statements is the same as <code>&amp;</code>.</li>
-</ul>
-</div>
-</section>
-<section id="filter-for-pets-named-pickle" class="slide level2">
-<h2><code>filter()</code> for pets named Pickle</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">filter</span>(pets, names <span class="sc">==</span> <span class="st">"Pickle"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 3
-  names   ages is_dog
-  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; 
-1 Pickle     5 FALSE </code></pre>
-</div>
-</div>
-</section>
-<section id="filter-for-pets-named-pickle-or-dude" class="slide level2">
-<h2><code>filter()</code> for pets named Pickle or Dude</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">filter</span>(pets, names <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Pickle"</span>, <span class="st">"Dude"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  names   ages is_dog
-  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude       6 TRUE  
-2 Pickle     5 FALSE </code></pre>
-</div>
-</div>
-</section></section>
-<section>
-<section id="your-turn" class="title-slide slide level1 center" data-background-color="#00817c">
-<h1>Your turn!</h1>
-
-</section>
-<section id="filter-for-non-dogs" class="slide level2">
-<h2><code>filter()</code> for non-dogs</h2>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 3
-  names   ages is_dog
-  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude       6 TRUE  
-2 Pickle     5 FALSE 
-3 Kyle       3 FALSE 
-4 Nubs      11 FALSE </code></pre>
-</div>
-<div class="cell-output-display">
-<div class="countdown" id="timer_535d3e1c" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
-</section>
-<section id="filter-for-non-dogs-1" class="slide level2">
-<h2><code>filter()</code> for non-dogs</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">filter</span>(pets, <span class="sc">!</span>is_dog)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 3
-  names   ages is_dog
-  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; 
-1 Pickle     5 FALSE 
-2 Kyle       3 FALSE 
-3 Nubs      11 FALSE </code></pre>
-</div>
-</div>
-</section>
-<section id="filter-for-non-dogs-2" class="slide level2">
-<h2><code>filter()</code> for non-dogs</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">filter</span>(pets, <span class="sc">!</span>is_dog)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 3
-  names   ages is_dog
-  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; 
-1 Pickle     5 FALSE 
-2 Kyle       3 FALSE 
-3 Nubs      11 FALSE </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="co"># or</span></span>
-<span id="cb20-2"><a></a><span class="fu">filter</span>(pets, is_dog <span class="sc">==</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 3
-  names   ages is_dog
-  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; 
-1 Pickle     5 FALSE 
-2 Kyle       3 FALSE 
-3 Nubs      11 FALSE </code></pre>
-</div>
-</div>
-</section>
-<section id="filter-for-non-dogs-with-age-greater-than-10" class="slide level2">
-<h2><code>filter()</code> for non-dogs with age greater than 10</h2>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 3
-  names   ages is_dog
-  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude       6 TRUE  
-2 Pickle     5 FALSE 
-3 Kyle       3 FALSE 
-4 Nubs      11 FALSE </code></pre>
-</div>
-<div class="cell-output-display">
-<div class="countdown" id="timer_39e893de" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
-</section>
-<section id="filter-for-non-dogs-with-age-greater-than-10-1" class="slide level2">
-<h2><code>filter()</code> for non-dogs with age greater than 10</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">filter</span>(pets, <span class="sc">!</span>is_dog <span class="sc">&amp;</span> ages <span class="sc">&gt;</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 3
-  names  ages is_dog
-  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Nubs     11 FALSE </code></pre>
-</div>
-</div>
-</section>
-<section id="filter-for-non-dogs-with-age-greater-than-10-2" class="slide level2">
-<h2><code>filter()</code> for non-dogs with age greater than 10</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">filter</span>(pets, <span class="sc">!</span>is_dog <span class="sc">&amp;</span> ages <span class="sc">&gt;</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 3
-  names  ages is_dog
-  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Nubs     11 FALSE </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="co"># or </span></span>
-<span id="cb27-2"><a></a><span class="fu">filter</span>(pets, <span class="sc">!</span>is_dog, ages <span class="sc">&gt;</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 3
-  names  ages is_dog
-  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Nubs     11 FALSE </code></pre>
-</div>
-</div>
-</section>
-<section id="filter-for-non-dogs-with-age-greater-than-10-3" class="slide level2">
-<h2><code>filter()</code> for non-dogs with age greater than 10</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">filter</span>(pets, <span class="sc">!</span>is_dog <span class="sc">&amp;</span> ages <span class="sc">&gt;</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 3
-  names  ages is_dog
-  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Nubs     11 FALSE </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="co"># or </span></span>
-<span id="cb31-2"><a></a><span class="fu">filter</span>(pets, <span class="sc">!</span>is_dog, ages <span class="sc">&gt;</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 3
-  names  ages is_dog
-  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Nubs     11 FALSE </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="co"># or </span></span>
-<span id="cb33-2"><a></a><span class="fu">filter</span>(pets, is_dog <span class="sc">==</span> <span class="cn">FALSE</span>, ages <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="co"># etc...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 3
-  names  ages is_dog
-  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Nubs     11 FALSE </code></pre>
-</div>
-</div>
-</section></section>
-<section>
-<section id="slice" class="title-slide slide level1 center" data-background-color="#00817c">
-<h1><code>slice()</code></h1>
-
-</section>
-<section id="slice-1" class="slide level2">
-<h2><code>slice()</code></h2>
-<p>There are five variations of <code>slice()</code> that we will learn in this course:</p>
-<div>
-<ul>
-<li class="fragment"><code>slice()</code>: for getting rows or sets of rows by index,</li>
-<li class="fragment"><code>slice_head()</code>: for getting the first few (<code>n</code>) rows,</li>
-<li class="fragment"><code>slice_tail()</code>: for getting the last few (<code>n</code>) rows,</li>
-<li class="fragment"><code>slice_min()</code>: for getting the row with the minimum value of some column,</li>
-<li class="fragment"><code>slice_max()</code>: for getting the row with the maximum value of some column.</li>
-</ul>
-</div>
-</section>
-<section id="slice-2" class="slide level2">
-<h2><code>slice()</code></h2>
-
-<img data-src="figs/ch7/slice.png" class="quarto-figure quarto-figure-center r-stretch" width="820"></section>
-<section id="get-the-first-and-third-rows-of-pets" class="slide level2">
-<h2>Get the first and third rows of <code>pets</code></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">slice</span>(pets, <span class="dv">1</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  names  ages is_dog
-  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude      6 TRUE  
-2 Kyle      3 FALSE </code></pre>
-</div>
-</div>
-</section>
-<section id="get-the-first-and-third-rows-of-pets-1" class="slide level2">
-<h2>Get the first and third rows of <code>pets</code></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">slice</span>(pets, <span class="dv">1</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  names  ages is_dog
-  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude      6 TRUE  
-2 Kyle      3 FALSE </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="co"># or, equivalently</span></span>
-<span id="cb39-2"><a></a><span class="fu">slice</span>(pets, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  names  ages is_dog
-  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude      6 TRUE  
-2 Kyle      3 FALSE </code></pre>
-</div>
-</div>
-</section>
-<section id="get-the-first-two-rows-of-pets" class="slide level2">
-<h2>Get the first two rows of <code>pets</code></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a><span class="fu">slice</span>(pets, <span class="dv">1</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  names   ages is_dog
-  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude       6 TRUE  
-2 Pickle     5 FALSE </code></pre>
-</div>
-</div>
-</section>
-<section id="get-the-first-two-rows-of-pets-1" class="slide level2">
-<h2>Get the first two rows of <code>pets</code></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="fu">slice</span>(pets, <span class="dv">1</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  names   ages is_dog
-  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude       6 TRUE  
-2 Pickle     5 FALSE </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="co"># or, equivalently</span></span>
-<span id="cb45-2"><a></a><span class="fu">slice_head</span>(pets, <span class="at">n =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  names   ages is_dog
-  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude       6 TRUE  
-2 Pickle     5 FALSE </code></pre>
-</div>
-</div>
-</section>
-<section id="get-the-last-row-of-pets" class="slide level2">
-<h2>Get the last row of <code>pets</code></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a><span class="fu">slice_tail</span>(pets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 3
-  names  ages is_dog
-  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Nubs     11 FALSE </code></pre>
-</div>
-</div>
-<div>
-<ul>
-<li class="fragment">Note that in <code>slice_tail()</code> (and <code>slice_head()</code>) the default for <code>n</code> is 1.</li>
-</ul>
-</div>
-</section>
-<section id="get-the-last-row-of-pets-1" class="slide level2">
-<h2>Get the last row of <code>pets</code></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a><span class="fu">slice_tail</span>(pets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 3
-  names  ages is_dog
-  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Nubs     11 FALSE </code></pre>
-</div>
-</div>
-<ul>
-<li>Note that in <code>slice_tail()</code> (and <code>slice_head()</code>) the default for <code>n</code> is 1.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a><span class="fu">slice_tail</span>(pets, <span class="at">n =</span> <span class="dv">1</span>) <span class="co"># exactly the same as above</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 3
-  names  ages is_dog
-  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Nubs     11 FALSE </code></pre>
-</div>
-</div>
-</section>
-<section id="get-the-pet-who-is-the-youngest" class="slide level2">
-<h2>Get the pet who is the youngest</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a><span class="fu">slice_min</span>(pets, ages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 3
-  names  ages is_dog
-  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Kyle      3 FALSE </code></pre>
-</div>
-</div>
-</section>
-<section id="get-the-pet-who-is-the-oldest" class="slide level2">
-<h2>Get the pet who is the oldest</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a><span class="fu">slice_max</span>(pets, ages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 3
-  names  ages is_dog
-  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Nubs     11 FALSE </code></pre>
-</div>
-</div>
-</section>
-<section id="get-the-two-youngest-pets" class="slide level2">
-<h2>Get the two youngest pets</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a><span class="fu">slice_min</span>(pets, ages, <span class="at">n =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  names   ages is_dog
-  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; 
-1 Kyle       3 FALSE 
-2 Pickle     5 FALSE </code></pre>
-</div>
-</div>
-</section></section>
-<section>
-<section id="arrange" class="title-slide slide level1 center" data-background-color="#00817c">
-<h1><code>arrange()</code></h1>
-
-</section>
-<section id="arrange-1" class="slide level2">
-<h2><code>arrange()</code></h2>
-<div>
-<ul>
-<li class="fragment"><code>arrange()</code> orders rows based on values in one or more columns.</li>
-<li class="fragment">By default, <code>arrange()</code> puts smallest values at the top.</li>
-<li class="fragment">If you’d like largest values at the top, we can use the <code>desc()</code> function (named for <code>desc</code>ending order)</li>
-<li class="fragment">When we <code>arrange()</code> by more than one column, the following columns “break ties” in the prior columns.</li>
-</ul>
-</div>
-</section>
-<section id="arrange-2" class="slide level2">
-<h2><code>arrange()</code></h2>
-
-<img data-src="figs/ch7/arrange.png" class="quarto-figure quarto-figure-center r-stretch" width="823"></section>
-<section id="consider-a-modifed-pets-dataset" class="slide level2">
-<h2>Consider a modifed <code>pets</code> dataset</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a>more_pets <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb59-2"><a></a>  <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"Dude"</span>, <span class="st">"Pickle"</span>, <span class="st">"Kyle"</span>, <span class="st">"Nubs"</span>, <span class="st">"Marvin"</span>, <span class="st">"Figaro"</span>, <span class="st">"Slim"</span>),</span>
-<span id="cb59-3"><a></a>  <span class="at">ages =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">11</span>, <span class="dv">11</span>, <span class="dv">3</span>, <span class="dv">6</span>),</span>
-<span id="cb59-4"><a></a>  <span class="at">meals_per_day =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>),</span>
-<span id="cb59-5"><a></a>  <span class="at">is_dog =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)  </span>
-<span id="cb59-6"><a></a>)</span>
-<span id="cb59-7"><a></a>more_pets</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a></a>more_pets <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-3"><a></a>  <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"Dude"</span>, <span class="st">"Pickle"</span>, <span class="st">"Kyle"</span>, <span class="st">"Nubs"</span>, <span class="st">"Marvin"</span>, <span class="st">"Figaro"</span>, <span class="st">"Slim"</span>),</span>
+<span id="cb1-4"><a></a>  <span class="at">ages =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">11</span>, <span class="dv">11</span>, <span class="dv">3</span>, <span class="dv">6</span>),</span>
+<span id="cb1-5"><a></a>  <span class="at">meals_per_day =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>),</span>
+<span id="cb1-6"><a></a>  <span class="at">is_dog =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)  </span>
+<span id="cb1-7"><a></a>)</span>
+<span id="cb1-8"><a></a>more_pets</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7 × 4
   names   ages meals_per_day is_dog
@@ -898,10 +460,146 @@ Practical Computing and Data Science Tools
 </div>
 </div>
 </section>
+<section id="filter-ages-greater-than-5" class="slide level2">
+<h2><code>filter()</code> ages greater than 5</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">filter</span>(more_pets, ages <span class="sc">&gt;</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+  names   ages meals_per_day is_dog
+  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; 
+1 Dude       6             2 TRUE  
+2 Nubs      11             3 FALSE 
+3 Marvin    11             1 FALSE 
+4 Slim       6             2 TRUE  </code></pre>
+</div>
+</div>
+<div>
+<ul>
+<li class="fragment">Notice the pattern: <code>filter(dataset, logical statement)</code></li>
+<li class="fragment">The first argument in <code>filter()</code>, and the other <code>dplyr</code> function we will learn, is the dataset we’d like to operate on.</li>
+</ul>
+</div>
+</section>
+<section id="filter-dogs-with-ages-greater-than-5" class="slide level2">
+<h2><code>filter()</code> dogs with ages greater than 5</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">filter</span>(more_pets, ages <span class="sc">&gt;</span> <span class="dv">5</span>, is_dog)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  names  ages meals_per_day is_dog
+  &lt;chr&gt; &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; 
+1 Dude      6             2 TRUE  
+2 Slim      6             2 TRUE  </code></pre>
+</div>
+</div>
+</section>
+<section id="filter-dogs-with-ages-greater-than-5-1" class="slide level2">
+<h2><code>filter()</code> dogs with ages greater than 5</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">filter</span>(more_pets, ages <span class="sc">&gt;</span> <span class="dv">5</span>, is_dog)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  names  ages meals_per_day is_dog
+  &lt;chr&gt; &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; 
+1 Dude      6             2 TRUE  
+2 Slim      6             2 TRUE  </code></pre>
+</div>
+</div>
+<p>We can equivalently write:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">filter</span>(more_pets, ages <span class="sc">&gt;</span> <span class="dv">5</span> <span class="sc">&amp;</span> is_dog)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  names  ages meals_per_day is_dog
+  &lt;chr&gt; &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; 
+1 Dude      6             2 TRUE  
+2 Slim      6             2 TRUE  </code></pre>
+</div>
+</div>
+<div>
+<ul>
+<li class="fragment">In <code>filter()</code> the comma between logical statements is the same as <code>&amp;</code>.</li>
+</ul>
+</div>
+</section>
+<section>
+<section id="slice" class="title-slide slide level1 center" data-background-color="#00817c">
+<h1><code>slice()</code></h1>
+
+</section>
+<section id="slice-1" class="slide level2">
+<h2><code>slice()</code></h2>
+<p>There are five variations of <code>slice()</code> that we learned about:</p>
+<ul>
+<li><code>slice()</code>: for getting rows or sets of rows by index,</li>
+<li><code>slice_head()</code>: for getting the first few (<code>n</code>) rows,</li>
+<li><code>slice_tail()</code>: for getting the last few (<code>n</code>) rows,</li>
+<li><code>slice_min()</code>: for getting the row with the minimum value of some column,</li>
+<li><code>slice_max()</code>: for getting the row with the maximum value of some column.</li>
+</ul>
+</section>
+<section id="slice-2" class="slide level2">
+<h2><code>slice()</code></h2>
+
+<img data-src="figs/ch7/slice.png" class="quarto-figure quarto-figure-center r-stretch" width="820"></section>
+<section id="get-the-first-and-third-rows-of-pets" class="slide level2">
+<h2>Get the first and third rows of <code>pets</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">slice</span>(more_pets, <span class="dv">1</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  names  ages meals_per_day is_dog
+  &lt;chr&gt; &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; 
+1 Dude      6             2 TRUE  
+2 Kyle      3             3 FALSE </code></pre>
+</div>
+</div>
+</section>
+<section id="get-the-first-two-rows-of-pets" class="slide level2">
+<h2>Get the first two rows of <code>pets</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">slice_head</span>(more_pets, <span class="at">n =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  names   ages meals_per_day is_dog
+  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; 
+1 Dude       6             2 TRUE  
+2 Pickle     5             3 FALSE </code></pre>
+</div>
+</div>
+</section>
+<section id="get-the-pet-who-is-the-oldest" class="slide level2">
+<h2>Get the pet who is the oldest</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">slice_max</span>(more_pets, ages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  names   ages meals_per_day is_dog
+  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; 
+1 Nubs      11             3 FALSE 
+2 Marvin    11             1 FALSE </code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="arrange" class="title-slide slide level1 center" data-background-color="#00817c">
+<h1><code>arrange()</code></h1>
+
+</section>
+<section id="arrange-1" class="slide level2">
+<h2><code>arrange()</code></h2>
+<ul>
+<li><code>arrange()</code> orders rows based on values in one or more columns.</li>
+<li>By default, <code>arrange()</code> puts smallest values at the top.</li>
+<li>If you’d like largest values at the top, we can use the <code>desc()</code> function (named for <code>desc</code>ending order)</li>
+<li>When we <code>arrange()</code> by more than one column, the following columns “break ties” in the prior columns.</li>
+</ul>
+</section>
 <section id="arrange-more_pets-by-age" class="slide level2">
 <h2><code>arrange()</code> <code>more_pets</code> by age</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a><span class="fu">arrange</span>(more_pets, ages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">arrange</span>(more_pets, ages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7 × 4
   names   ages meals_per_day is_dog
@@ -919,7 +617,7 @@ Practical Computing and Data Science Tools
 <section id="arrange-more_pets-by-age-greatest-first" class="slide level2">
 <h2><code>arrange()</code> <code>more_pets</code> by age, greatest first</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a><span class="fu">arrange</span>(more_pets, <span class="fu">desc</span>(ages))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">arrange</span>(more_pets, <span class="fu">desc</span>(ages))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7 × 4
   names   ages meals_per_day is_dog
@@ -937,7 +635,7 @@ Practical Computing and Data Science Tools
 <section id="arrange-more_pets-by-age-and-then-meals-per-day" class="slide level2">
 <h2><code>arrange()</code> <code>more_pets</code> by age and then meals per day</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a><span class="fu">arrange</span>(more_pets, ages, meals_per_day)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">arrange</span>(more_pets, ages, meals_per_day)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7 × 4
   names   ages meals_per_day is_dog
@@ -949,91 +647,6 @@ Practical Computing and Data Science Tools
 5 Slim       6             2 TRUE  
 6 Marvin    11             1 FALSE 
 7 Nubs      11             3 FALSE </code></pre>
-</div>
-</div>
-</section>
-<section id="arrange-more_pets-by-is_dog" class="slide level2">
-<h2><code>arrange()</code> <code>more_pets</code> by is_dog</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a><span class="fu">arrange</span>(more_pets, is_dog)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 7 × 4
-  names   ages meals_per_day is_dog
-  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; 
-1 Pickle     5             3 FALSE 
-2 Kyle       3             3 FALSE 
-3 Nubs      11             3 FALSE 
-4 Marvin    11             1 FALSE 
-5 Figaro     3             2 FALSE 
-6 Dude       6             2 TRUE  
-7 Slim       6             2 TRUE  </code></pre>
-</div>
-</div>
-<div>
-<ul>
-<li class="fragment">When <code>arrange()</code>ing with a logical column, <code>FALSE</code> is before <code>TRUE</code></li>
-<li class="fragment">We can switch this with <code>desc()</code></li>
-</ul>
-</div>
-</section>
-<section id="arrange-more_pets-by-is_dog-true-first" class="slide level2">
-<h2><code>arrange()</code> <code>more_pets</code> by is_dog, TRUE first</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a></a><span class="fu">arrange</span>(more_pets, <span class="fu">desc</span>(is_dog))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 7 × 4
-  names   ages meals_per_day is_dog
-  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude       6             2 TRUE  
-2 Slim       6             2 TRUE  
-3 Pickle     5             3 FALSE 
-4 Kyle       3             3 FALSE 
-5 Nubs      11             3 FALSE 
-6 Marvin    11             1 FALSE 
-7 Figaro     3             2 FALSE </code></pre>
-</div>
-</div>
-</section>
-<section id="arrange-more_pets-by-names" class="slide level2">
-<h2><code>arrange()</code> <code>more_pets</code> by names</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a></a><span class="fu">arrange</span>(more_pets, names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 7 × 4
-  names   ages meals_per_day is_dog
-  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude       6             2 TRUE  
-2 Figaro     3             2 FALSE 
-3 Kyle       3             3 FALSE 
-4 Marvin    11             1 FALSE 
-5 Nubs      11             3 FALSE 
-6 Pickle     5             3 FALSE 
-7 Slim       6             2 TRUE  </code></pre>
-</div>
-</div>
-<div>
-<ul>
-<li class="fragment">What happened here?</li>
-<li class="fragment">Alphabetical order!</li>
-<li class="fragment">What will happen if we use <code>desc()</code> on names?</li>
-</ul>
-</div>
-</section>
-<section id="arrange-more_pets-by-names-descending" class="slide level2">
-<h2><code>arrange()</code> <code>more_pets</code> by names, descending</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a></a><span class="fu">arrange</span>(more_pets, <span class="fu">desc</span>(names))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 7 × 4
-  names   ages meals_per_day is_dog
-  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; 
-1 Slim       6             2 TRUE  
-2 Pickle     5             3 FALSE 
-3 Nubs      11             3 FALSE 
-4 Marvin    11             1 FALSE 
-5 Kyle       3             3 FALSE 
-6 Figaro     3             2 FALSE 
-7 Dude       6             2 TRUE  </code></pre>
 </div>
 </div>
 </section></section>
@@ -1052,7 +665,7 @@ Practical Computing and Data Science Tools
 <section id="select-names-and-ages-from-more_pets" class="slide level2">
 <h2><code>select()</code> names and ages from <code>more_pets</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a></a><span class="fu">select</span>(more_pets, names, ages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">select</span>(more_pets, names, ages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7 × 2
   names   ages
@@ -1070,7 +683,7 @@ Practical Computing and Data Science Tools
 <section id="remove-meals_per_day-from-more_pets" class="slide level2">
 <h2>remove meals_per_day from <code>more_pets</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a></a><span class="fu">select</span>(more_pets, <span class="sc">-</span>meals_per_day, <span class="sc">-</span>ages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">select</span>(more_pets, <span class="sc">-</span>meals_per_day, <span class="sc">-</span>ages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7 × 2
   names  is_dog
@@ -1084,55 +697,15 @@ Practical Computing and Data Science Tools
 7 Slim   TRUE  </code></pre>
 </div>
 </div>
-<div>
-<ul>
-<li class="fragment">NOTE: The book uses <code>!</code> instead of <code>-</code> in <code>select()</code>. We prefer <code>-</code> and will not use <code>!</code>.</li>
-</ul>
-</div>
-</section>
-<section id="select-columns-that-end-with-s" class="slide level2">
-<h2><code>select()</code> columns that end with “s”</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a></a><span class="fu">select</span>(more_pets, <span class="fu">ends_with</span>(<span class="st">"s"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 7 × 2
-  names   ages
-  &lt;chr&gt;  &lt;dbl&gt;
-1 Dude       6
-2 Pickle     5
-3 Kyle       3
-4 Nubs      11
-5 Marvin    11
-6 Figaro     3
-7 Slim       6</code></pre>
-</div>
-</div>
-<div>
-<ul>
-<li class="fragment">NOTE: The <code>ends_with()</code> function can be quite useful when selecting columns.</li>
-</ul>
-</div>
-</section></section>
-<section>
-<section id="rename" class="title-slide slide level1 center" data-background-color="#00817c">
-<h1><code>rename()</code></h1>
-
 </section>
 <section class="slide level2">
 
 
 <img data-src="figs/horst/rename.png" class="quarto-figure quarto-figure-center r-stretch" width="2740"></section>
-<section id="rename-1" class="slide level2">
-<h2><code>rename()</code></h2>
-<ul>
-<li><code>rename()</code> renames columns that are already in your dataset.</li>
-</ul>
-
-<img data-src="figs/ch7/rename.png" class="quarto-figure quarto-figure-center r-stretch" width="811"></section>
 <section id="rename-meals_per_day-to-meals-in-the-more_pets-tibble" class="slide level2">
 <h2><code>rename()</code> meals_per_day to meals in the <code>more_pets</code> tibble</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a></a><span class="fu">rename</span>(more_pets, <span class="at">meals =</span> meals_per_day)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">rename</span>(more_pets, <span class="at">meals =</span> meals_per_day)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7 × 4
   names   ages meals is_dog
@@ -1146,95 +719,13 @@ Practical Computing and Data Science Tools
 7 Slim       6     2 TRUE  </code></pre>
 </div>
 </div>
-<div>
 <ul>
-<li class="fragment">Note the syntax of <code>new_name = old_name</code> to rename the <code>old_name</code> column with <code>new_name</code>.</li>
+<li>Note the syntax of <code>new_name = old_name</code> to rename the <code>old_name</code> column with <code>new_name</code>.</li>
 </ul>
-</div>
-</section>
-<section id="rename-meals_per_day-to-meals-and-ages-to-age-in-the-more_pets-tibble" class="slide level2">
-<h2><code>rename()</code> meals_per_day to meals and ages to age in the <code>more_pets</code> tibble</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a></a><span class="fu">rename</span>(more_pets, </span>
-<span id="cb83-2"><a></a>       <span class="at">meals =</span> meals_per_day,</span>
-<span id="cb83-3"><a></a>       <span class="at">age =</span> ages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 7 × 4
-  names    age meals is_dog
-  &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude       6     2 TRUE  
-2 Pickle     5     3 FALSE 
-3 Kyle       3     3 FALSE 
-4 Nubs      11     3 FALSE 
-5 Marvin    11     1 FALSE 
-6 Figaro     3     2 FALSE 
-7 Slim       6     2 TRUE  </code></pre>
-</div>
-</div>
-</section>
-<section id="rename_with" class="slide level2">
-<h2><code>rename_with()</code></h2>
-<ul>
-<li><code>rename_with()</code> allows us to use a function to rename columns. For example, the <code>toupper()</code> function. This function takes a character vector and makes it upper case:</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a></a><span class="fu">toupper</span>(<span class="st">"trees"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "TREES"</code></pre>
-</div>
-</div>
-</section>
-<section id="rename_with-1" class="slide level2">
-<h2><code>rename_with()</code></h2>
-<ul>
-<li>We can use <code>toupper()</code> to rename all the columns in <code>more_pets</code> to upper case:</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a></a><span class="fu">rename_with</span>(more_pets, toupper)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 7 × 4
-  NAMES   AGES MEALS_PER_DAY IS_DOG
-  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude       6             2 TRUE  
-2 Pickle     5             3 FALSE 
-3 Kyle       3             3 FALSE 
-4 Nubs      11             3 FALSE 
-5 Marvin    11             1 FALSE 
-6 Figaro     3             2 FALSE 
-7 Slim       6             2 TRUE  </code></pre>
-</div>
-</div>
-</section>
-<section id="rename_with-2" class="slide level2">
-<h2><code>rename_with()</code></h2>
-<ul>
-<li>Rather than renaming all the columns to upper case, we choose which columns we’d like to change to upper case:</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a></a><span class="fu">rename_with</span>(more_pets, toupper, <span class="fu">c</span>(names, ages))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 7 × 4
-  NAMES   AGES meals_per_day is_dog
-  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; 
-1 Dude       6             2 TRUE  
-2 Pickle     5             3 FALSE 
-3 Kyle       3             3 FALSE 
-4 Nubs      11             3 FALSE 
-5 Marvin    11             1 FALSE 
-6 Figaro     3             2 FALSE 
-7 Slim       6             2 TRUE  </code></pre>
-</div>
-</div>
-<div>
-<ul>
-<li class="fragment">NOTE: Careful here, we need the <code>c()</code> function in this case to choose which columns to rename with <code>toupper()</code></li>
-</ul>
-</div>
 </section>
 <section id="next-time" class="slide level2">
 <h2>Next time</h2>
 <ul>
-<li>More <code>dplyr</code> verbs</li>
 <li>Writing a sentence with pipes</li>
 </ul>
 
