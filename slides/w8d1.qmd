@@ -1,5 +1,5 @@
 ---
-title: "Intro to `dplyr`"
+title: "More data wrangling with `dplyr`"
 editor: 
   mode: source
 webr:
@@ -34,37 +34,31 @@ format:
 
 -   Lab 5 grades coming soon. 
 -   Lab 6 is due this Wednesday at 5pm
-    -   Come to office hours or schedule a meeting if you are struggling with Lab 6!
+-   Come to office hours or schedule a meeting if you are struggling with Lab 6!
 
 ## Agenda
 
--   Quiz
--   Review `dplyr` verbs from last time
+-   Quiz (15 minutes)
 -   More `dplyr` verbs and pipes (`%>%`)
 
----
+
+
+## `dplyr` verbs. 
+
+Recall the standard `dplyr` verb form: 
 
 ```{r}
-#| fig-align: 'center'
-#| echo: false
-knitr::include_graphics("figs/horst/filter.png")
+#| eval: false
+verb(data, action)
 ```
 
----
+::: incremental
 
-## `filter()`
+-   The first argument of any `dplyr` verb is the data (a tibble or data.frame), and the next arguments specify how we are using the `verb()`.
 
--   Subsets rows of data based on logical conditions related to one **or more** columns in the dataset. 
+:::
 
-```{r}
-#| fig-align: 'center'
-#| echo: false
-knitr::include_graphics("figs/ch7/filter.png")
-```
-
-## Data 
-
--   Consider our favorite toy dataset: 
+## And our favorite example dataset
 
 ```{r}
 library(tidyverse)
@@ -77,140 +71,165 @@ more_pets <- tibble(
 more_pets
 ```
 
+We'll use `more_pets` throughout lecture today. 
 
-## `filter()` ages greater than 5
+# More verbs {background-color="#00817c"} 
 
-```{r}
-filter(more_pets, ages > 5)
-```
-
-::: incremental
-
--   Notice the pattern: `filter(dataset, logical statement)`
--   The first argument in `filter()`, and the other `dplyr` function we will learn, is the dataset we'd like to operate on. 
-
-:::
-
-## `filter()` dogs with ages greater than 5
-
-```{r}
-filter(more_pets, ages > 5, is_dog)
-```
-
-## `filter()` dogs with ages greater than 5
-
-```{r}
-filter(more_pets, ages > 5, is_dog)
-```
-
-We can equivalently write: 
-
-```{r}
-filter(more_pets, ages > 5 & is_dog)
-```
-
-::: incremental
-
--   In `filter()` the comma between logical statements is the same as `&`. 
-
-:::
-
-
-
-# `slice()` {background-color="#00817c"} 
-
-## `slice()`
-
-There are five variations of `slice()` that we learned about:
-
--   `slice()`: for getting rows or sets of rows by index,
--   `slice_head()`: for getting the first few (`n`) rows,
--   `slice_tail()`: for getting the last few (`n`) rows,
--   `slice_min()`: for getting the row with the minimum value of some column,
--   `slice_max()`: for getting the row with the maximum value of some column.
- 
-
-## `slice()`
+---
 
 ```{r}
 #| fig-align: 'center'
 #| echo: false
-knitr::include_graphics("figs/ch7/slice.png")
+knitr::include_graphics("figs/horst/relocate.png")
 ```
 
-## Get the first and third rows of `pets`
+---
 
-```{r}
-slice(more_pets, 1, 3)
-```
+## `relocate()`
 
-## Get the first two rows of `pets`
-
-```{r}
-slice_head(more_pets, n = 2)
-```
-
-
-## Get the pet who is the oldest
-
-```{r}
-slice_max(more_pets, ages)
-```
-
-# `arrange()` {background-color="#00817c"} 
-
-## `arrange()`
-
--   `arrange()` orders rows based on values in one or more columns.
--   By default, `arrange()` puts smallest values at the top.
--   If you'd like largest values at the top, we can use the `desc()` function (named for `desc`ending order)
--   When we `arrange()` by more than one column, the following columns "break ties" in the prior columns. 
-
-
-## `arrange()` `more_pets` by age
-
-```{r}
-arrange(more_pets, ages)
-```
-
-## `arrange()` `more_pets` by age, greatest first
-
-```{r}
-arrange(more_pets, desc(ages))
-```
-
-
-## `arrange()` `more_pets` by age and then meals per day
-
-```{r}
-arrange(more_pets, ages, meals_per_day)
-```
-
-
-# `select()` {background-color="#00817c"} 
-
-## `select()`
-
--   `select()` selects a subset of columns in the dataset. 
-
+-   `relocate()` moves columns around in a tibble
 
 ```{r}
 #| fig-align: 'center'
 #| echo: false
-knitr::include_graphics("figs/ch7/select.png")
+knitr::include_graphics("figs/ch7/relocate.png")
 ```
 
 
-## `select()` names and ages from `more_pets`
+## move the `ages` column to the front of the tibble
 
 ```{r}
-select(more_pets, names, ages)
+relocate(more_pets, ages)
 ```
 
-## remove meals_per_day from `more_pets`
+::: incremental
+
+-   Note, this is the default behavior of `relocate()`.
+
+:::
+
+## move the `ages` column to the end of the tibble
+
+Hint: similar to how we removed columns with `select()`. 
+
+## move the `ages` column to the end of the tibble
 
 ```{r}
-select(more_pets, -meals_per_day, -ages)
+relocate(more_pets, -ages)
+```
+
+## put the `names` column after `ages`
+
+```{r}
+more_pets
+```
+
+## put the `names` column after `ages`
+
+```{r}
+relocate(more_pets, names, .after = ages)
+```
+
+::: incremental
+
+-   NOTE: this argument is called `.after` *not* `after`
+
+:::
+
+## put the `is_dog` column before `ages`
+
+```{r}
+more_pets
+```
+
+
+## put the `is_dog` column before `ages`
+
+
+
+```{r}
+relocate(more_pets, is_dog, .before = ages)
+```
+
+
+
+
+---
+
+```{r}
+#| fig-align: 'center'
+#| echo: false
+knitr::include_graphics("figs/horst/mutate.png")
+```
+
+---
+
+## `mutate()`
+
+-   `mutate()` creates new columns and adds them to the right side of an existing tibble.
+
+```{r}
+#| fig-align: 'center'
+#| echo: false
+knitr::include_graphics("figs/ch7/mutate.png")
+```
+
+
+## add a column called `birth_year` to `more_pets`
+
+```{r}
+mutate(more_pets, 
+       birth_year = 2024 - ages)
+```
+
+::: incremental
+
+-   Note this just prints out the new dataset. 
+-   What would we have to do if we wanted to save this column in `more_pets`? 
+
+:::
+
+## Use the assignment operator!
+
+```{r}
+more_pets <- mutate(more_pets, 
+                    birth_year = 2024 - ages)
+# now the column is added to more_pets
+more_pets
+```
+
+## Add a column for meals per year
+
+## Add a column for meals per year
+
+
+```{r}
+mutate(more_pets, meals_per_year = meals_per_day * 365)
+```
+
+## Equivalently, we can use the pipe to add this column
+
+## Equivalently, we can use the pipe to add this column
+
+```{r}
+more_pets %>%
+  mutate(meals_per_year = meals_per_day * 365)
+```
+
+::: incremental
+
+-   The pipe (`%>%`) puts the dataset before it into the first argument of the following function.
+
+:::
+
+# Let's talk about the pipe {background-color="#00817c"}
+
+---
+
+```{r}
+#| fig-align: 'center'
+#| echo: false
+knitr::include_graphics("figs/magritte.jpg")
 ```
 
 ---
@@ -218,24 +237,278 @@ select(more_pets, -meals_per_day, -ages)
 ```{r}
 #| fig-align: 'center'
 #| echo: false
-knitr::include_graphics("figs/horst/rename.png")
+knitr::include_graphics("figs/magrittr.png")
 ```
 
 ---
 
-## `rename()` meals_per_day to meals in the `more_pets` tibble
+## `dplyr`'s pipe (`%>%`)
+
+::: incremental
+
+-   Used to string together "sentences" with `dplyr` verbs. 
+-   Can be read as "and then" 
+
+:::
+
+## `dplyr`'s pipe (`%>%`)
+
+-   Used to string together "sentences" with `dplyr` verbs. 
+-   Can be read as "and then" 
+
+Example:
 
 ```{r}
-rename(more_pets, meals = meals_per_day)
+more_pets %>%
+  mutate(birth_year = 2024 - ages)
+```
+
+## `dplyr`'s pipe (`%>%`)
+
+-   Used to string together "sentences" with `dplyr` verbs. 
+-   Can be read as "and then" 
+
+Example:
+
+```{r}
+more_pets %>%
+  mutate(birth_year = 2024 - ages) %>%
+  filter(birth_year > 2020)
+```
+
+## Saving the resulting tibble: assignment operator!
+
+```{r}
+post_pandemic_pets <- more_pets %>%
+  mutate(birth_year = 2024 - ages) %>%
+  filter(birth_year > 2020)
+
+post_pandemic_pets
+```
+
+## We'll use the pipe throughout the rest of the course
+
+-   As they arise, we will discuss more subtleties of the pipe (these are discussed in Section 7.12 of IFDAR)
+
+# Back to `mutate()`
+
+## A variation of `mutate()`: `transmute()`. 
+
+::: incremental
+
+-   By default, `mutate()` adds a column and keeps all the previous columns from the tibble. 
+-   `transmute()` on the other hand, adds a column and removes all the columns from the tibble. 
+-   Let's try it out!
+
+:::
+
+## use `transmute()` to add a logical column called `age_dogyears` to `more_pets`
+
+## use `transmute()` to add a column called `age_dogyears` to `more_pets`
+
+```{r}
+more_pets %>%
+  transmute(age_dogyears = ages * 7)
+```
+
+## use `transmute()` to add a column called `age_dogyears` to `more_pets`, but keep the `names`.
+
+```{r}
+more_pets %>% 
+  transmute(names, age_dogyears = ages * 7)
+```
+
+## Note what happens when I move names in the function
+
+What do you think will happen? 
+
+```{r}
+#| eval: false
+more_pets %>%
+  transmute(age_dogyears = ages * 7, names)
+```
+
+## Note what happens when I move names in the function
+
+What do you think will happen? 
+
+```{r}
+more_pets %>%
+  transmute(age_dogyears = ages * 7, names)
+```
+
+## Add a column called `post_pandemic` that indicates whether or not a pet was born after 2020. 
+
+```{r}
+more_pets
+```
+
+::: incremental
+
+-   How do we do this? 
+
+:::
+
+## We need a `case_when()`
+
+-   The `case_when()` function allows use to add a column based on logical conditions.
+-   In general, when using a `case_when()` within a `mutate()` the form is something like this:
+
+```{r}
+#| eval: false
+data %>%
+  mutate(new_column = case_when(
+    condition_1 ~ "value",
+    condition_2 ~ "other value"
+    )
+  )
+```
+
+::: incremental
+
+-   where `condition_1` and `condition_2` are logical statements. 
+
+:::
+
+
+## Add a column called `post_pandemic` that indicates whether or not a pet was born after 2020. 
+
+## Add a column called `post_pandemic` that indicates whether or not a pet was born after 2020. 
+
+```{r}
+#| eval: false
+more_pets %>%
+  mutate(post_pandemic = case_when(
+    birth_year > 2020 ~ TRUE,
+    birth_year <= 2020 ~ FALSE
+    )
+  )
+```
+
+## Add a column called `post_pandemic` that indicates whether or not a pet was born after 2020. 
+
+```{r}
+more_pets %>%
+  mutate(post_pandemic = case_when(
+    birth_year > 2020 ~ TRUE,
+    birth_year <= 2020 ~ FALSE
+    )
+  )
+```
+
+## Add a column called `type_of_animal` that tells us what type of animal each of the pets are
+
+
+## Add a column called `type_of_animal` that tells us what type of animal each of the pets are
+
+```{r}
+#| code-line-numbers: 1,2,3,4,5,6,7|2|3|4,5
+more_pets <- more_pets %>%
+  mutate(type_of_animal = case_when(
+    is_dog ~ "dog",
+    names %in% c("Pickle", "Kyle", "Nubs", "Figaro") ~ "cat",
+    names == "Marvin" ~ "sheep/ram"
+    )
+  )
+```
+
+## Add a column called `type_of_animal` that tells us what type of animal each of the pets are
+
+```{r}
+more_pets
 ```
 
 
--   Note the syntax of `new_name = old_name` to rename the `old_name` column with `new_name`. 
+# Summarizing data with `dplyr` {background-color="#00817c"} 
+
+
+## Summarization
+
+::: incremental
+
+-   Data summaries are some of the best ways to learn from the data we have. 
+-   With increasingly large data, it can be very helpful to summarize. 
+-   `dplyr` provides intuitive and powerful ways to summarize data. 
+-   They call their function for summarization, *suprisingly*, 
+-   `summarize()`
+
+:::
+
+## Summarization
+
+-   The `summarize()` function takes a very similar form to the other `dplyr` functions. 
+-   In particular, it is of the form:
+
+```{r}
+#| eval: false
+summarize(data, new_summary_column = summarization_code)
+```
+
+
+## Get the mean value of the pet's ages
+
+
+```{r}
+more_pets %>%
+  summarize(avg_age = mean(ages))
+```
+
+## Get the total years lived by the pets
+
+
+```{r}
+more_pets %>%
+  summarize(years_lived = sum(ages))
+```
+
+## It is common to want to summarize data by group. 
+
+::: incremental
+
+-   For example, one might want to get the average age of pets for each type of animal,
+-   Or, in a more forestry example, the average DBH of different tree species' in a stand. 
+-   We'll do the pets one today. 
+
+:::
+
+## `group_by()`
+
+::: incremental
+
+-   The `group_by()` function allows us to group our tibble by a variable of interest. 
+-   `group_by()` on its own, does not change the rows or columns of the tibble, it just makes it "grouped"
+-   However, when we go to `summarize()` "grouped" data, we get the results for each group.
+-   Let's try it out!
+
+:::
+
+## average age for each type of pet
+
+```{r}
+more_pets
+```
+
+## average age for each type of pet
+
+```{r}
+more_pets %>% 
+  group_by(type_of_animal)
+```
+
+## average age for each type of pet
+
+```{r}
+more_pets %>% 
+  group_by(type_of_animal) %>%
+  summarize(avg_age = mean(ages))
+```
+
+
 
 
 ## Next time
 
--   Writing a sentence with pipes
+-   More advanced `dplyr`
 
 
 
