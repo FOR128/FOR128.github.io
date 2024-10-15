@@ -35,3 +35,5 @@ Week 7, day 1: *`tibble` and `readr`*. Available [here](https://mediaspace.msu.e
 
 Week 7, day 2: *Introduction to data wrangling with `dplyr`*. Available [here](https://mediaspace.msu.edu/media/Week+7+Day+2/1_nya16n6e).
 
+Week 8, day 1: *More data wrangling with `dplyr`*. Available [here](https://mediaspace.msu.edu/media/Week+8+Day+1/1_frf0qumj).
+

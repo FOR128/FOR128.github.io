@@ -20,6 +20,8 @@ Labs are turned in on [D2L](https://d2l.msu.edu).
 | Lab 7                    | Thursday 10/17 (at lab time)  | Wednesday 10/23 (at 5pm) |
 | Lab 8                    | Thursday 10/24 (at lab time)  | Wednesday 10/30 (at 5pm) |
 | Lab 9                    | Thursday 10/31 (at lab time)  | Wednesday 11/6 (at 5pm) |
+| Lab 10                    | Thursday 11/7 (at lab time)  | Wednesday 11/13 (at 5pm) |
+| Lab 11                    | Thursday 11/21 (at lab time)  | Wednesday 11/27 (at 5pm) |
 
 
 
@@ -43,6 +45,17 @@ Lecture tickets are turned in on a piece of paper in-person at lecture.
 | [Lecture ticket 12](tickets/ticket_12.qmd) | Thursday  10/3 (by 5pm) | Tuesday 10/8 (in lecture)  |
 | [Lecture ticket 13](tickets/ticket_13.qmd) | Tuesday  10/8 (by 5pm) | Thursday 10/10 (in lecture)  |
 | [Lecture ticket 14](tickets/ticket_14.qmd) | Thursday  10/10 (by 5pm) | Tuesday 10/15 (in lecture)  |
-
-
+| [Lecture ticket 15](tickets/ticket_15.qmd) | Tuesday  10/15 (by 5pm) | Thursday 10/17 (in lecture)  |
+| Lecture ticket 16 | Thursday  10/17 (by 5pm) | Thursday 10/24 (in lecture)  |
+| Lecture ticket 17 | Thursday  10/24 (by 5pm) | Tuesday 10/29 (in lecture)  |
+| Lecture ticket 18 | Tuesday  10/29 (by 5pm) | Thursday 10/31 (in lecture)  |
+| Lecture ticket 19 | Thursday  10/31 (by 5pm) | Tuesday 11/5 (in lecture)  |
+| Lecture ticket 20 | Tuesday  11/5 (by 5pm) | Thursday 11/7 (in lecture)  |
+| Lecture ticket 21 | Thursday  11/7 (by 5pm) | Tuesday 11/12 (in lecture)  |
+| Lecture ticket 22 | Tuesday  11/12 (by 5pm) | Thursday 11/14 (in lecture)  |
+| Lecture ticket 23 | Thursday  11/14 (by 5pm) | Tuesday 11/19 (in lecture)  |
+| Lecture ticket 24 | Tuesday  11/19 (by 5pm) | Tuesday 11/26 (in lecture)  |
+| Lecture ticket 25 | Tuesday  11/26 (by 5pm) | Thursday 11/28 (in lecture)  |
+| Lecture ticket 26 | Thursday  11/28 (by 5pm) | Tuesday 12/3 (in lecture)  |
+| Lecture ticket 27 | Tuesday  12/3 (by 5pm) | Thursday 12/5 (in lecture)  |
 

@@ -1,0 +1,27 @@
+---
+title: "Lecture Ticket 15"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read the following sections of IFDAR.
+
+-   Chapter 7: sections 7.10 - 7.11, 7.13
+
+
+## Questions
+
+1. What do `n()` and `n_distinct()` do? How are they different? 
+
+2. What two arguments do we always specify when we use `across()`? 
+
+3. When we use `across()`, we use it within a few `dplyr` verbs -- what are those verbs?
+
+3. What concepts in `dplyr` are you confidently understanding? What concepts are you still struggling with?  
+
+
+
+
+

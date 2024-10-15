@@ -473,21 +473,21 @@
     "href": "slides/w2d2.html#reading-data-4",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\""
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/home/grayson/courses/FOR128/FOR128.github.io/slides\""
   },
   {
     "objectID": "slides/w2d2.html#reading-data-5",
     "href": "slides/w2d2.html#reading-data-5",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n [5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\"      \n [9] \"lab_05.qmd\"       \"lab_06.qmd\""
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/home/grayson/courses/FOR128/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\""
   },
   {
     "objectID": "slides/w2d2.html#reading-data-6",
     "href": "slides/w2d2.html#reading-data-6",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n [5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\"      \n [9] \"lab_05.qmd\"       \"lab_06.qmd\"      \n\n\nNow, given our working directory and datasets location, we specify a relative path and load in the data:\n\nfef &lt;- read.csv(file = \"../labs/datasets/FEF_trees.csv\")"
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/home/grayson/courses/FOR128/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\"          \n\n\nNow, given our working directory and datasets location, we specify a relative path and load in the data:\n\nfef &lt;- read.csv(file = \"../labs/datasets/FEF_trees.csv\")"
   },
   {
     "objectID": "slides/w2d2.html#reading-data-7",
@@ -571,7 +571,7 @@
     "href": "slides/w2d2.html#writing-data-1",
     "title": "Reading and Writing Data",
     "section": "Writing data",
-    "text": "Writing data\nFirst, we look at the files in my “labs” folder\n\nlist.files(\"../labs\")\n\n [1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n [5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\"      \n [9] \"lab_05.qmd\"       \"lab_06.qmd\""
+    "text": "Writing data\nFirst, we look at the files in my “labs” folder\n\nlist.files(\"../labs\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\""
   },
   {
     "objectID": "slides/w2d2.html#writing-data-2",
@@ -585,7 +585,7 @@
     "href": "slides/w2d2.html#writing-data-3",
     "title": "Reading and Writing Data",
     "section": "Writing data",
-    "text": "Writing data\nNext, we can write the fef object to a .csv file.\n\nwrite.csv(x = fef,\n          file = \"../labs/my_fef.csv\")\n\nNow, we can see that the file is written.\n\nlist.files(\"../labs\")\n\n [1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n [5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\"      \n [9] \"lab_05.qmd\"       \"lab_06.qmd\"       \"my_fef.csv\""
+    "text": "Writing data\nNext, we can write the fef object to a .csv file.\n\nwrite.csv(x = fef,\n          file = \"../labs/my_fef.csv\")\n\nNow, we can see that the file is written.\n\nlist.files(\"../labs\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\"          \n[13] \"my_fef.csv\""
   },
   {
     "objectID": "slides/w2d2.html#next-week",
@@ -1239,88 +1239,137 @@
     "text": "Next time\n\nRemember, lab 1 is due tomorrow at 5pm on D2L.\nRStudio projects.\nReading and writing data."
   },
   {
-    "objectID": "tickets/ticket_06.html",
-    "href": "tickets/ticket_06.html",
-    "title": "Lecture Ticket 6",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.7, 4.8 and 4.9"
+    "objectID": "slides/w6d1.html#annoucements",
+    "href": "slides/w6d1.html#annoucements",
+    "title": "Welcome to the tidyverse",
+    "section": "Annoucements",
+    "text": "Annoucements\n\nMidterm 1 is this Thursday, Oct 3, during lab time."
   },
   {
-    "objectID": "tickets/ticket_06.html#reading",
-    "href": "tickets/ticket_06.html#reading",
-    "title": "Lecture Ticket 6",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.7, 4.8 and 4.9"
+    "objectID": "slides/w6d1.html#agenda",
+    "href": "slides/w6d1.html#agenda",
+    "title": "Welcome to the tidyverse",
+    "section": "Agenda",
+    "text": "Agenda\n\nMidterm format overview\nIntro to the tidyverse\nQuiz + group activity"
   },
   {
-    "objectID": "tickets/ticket_06.html#questions",
-    "href": "tickets/ticket_06.html#questions",
-    "title": "Lecture Ticket 6",
+    "objectID": "slides/w6d1.html#reminder-from-the-syllabus",
+    "href": "slides/w6d1.html#reminder-from-the-syllabus",
+    "title": "Welcome to the tidyverse",
+    "section": "Reminder from the syllabus",
+    "text": "Reminder from the syllabus\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
+  },
+  {
+    "objectID": "slides/w6d1.html#midterm-i-overview",
+    "href": "slides/w6d1.html#midterm-i-overview",
+    "title": "Welcome to the tidyverse",
+    "section": "Midterm I overview",
+    "text": "Midterm I overview\n\n\nThe test will be taken in person, in lab.\n5 questions, all equally weighted. You only have to answer 4 of 5 questions. If you answer 5, I will count the 4 you did the best on.\nThere will be a paper test with the questions on it, but you will answer them in a Quarto document (similar to your labs).\nLecture slides and previous labs/quizzes are your best resource for success.\nQuestions cover material from chapters 1 - 5 of IFDAR, or Week 5 Day 2."
+  },
+  {
+    "objectID": "slides/w6d1.html#what-is-the-tidyverse",
+    "href": "slides/w6d1.html#what-is-the-tidyverse",
+    "title": "Welcome to the tidyverse",
+    "section": "What is the tidyverse",
+    "text": "What is the tidyverse\n\n\nA collection of R packages that work together to provide extensive and intuitive data analysis functions.\nIn this class, we will focus on 5 tidyverse packages:\n\ntibble, to improve on the data.frame,\nreadr, to improve reading and writing data,\ndplyr, to manipulate and summarize data “data plyers”,\ntidyr, to clean and reshape data, and\nggplot2, to produce beautiful graphics with intuitive syntax “the grammer of graphics”."
+  },
+  {
+    "objectID": "slides/w6d1.html#a-note-on-the-course",
+    "href": "slides/w6d1.html#a-note-on-the-course",
+    "title": "Welcome to the tidyverse",
+    "section": "A note on the course",
+    "text": "A note on the course\n\n\nSo far, we have almost entirely focused on R in its “base” form. That is, R with only built-in functions.\nBase R has many advantages: especially in being fast and reliable.\nHowever, I believe that the tidyverse can provide a more intuitive approach to data analysis."
+  },
+  {
+    "objectID": "slides/w6d1.html#next-time",
+    "href": "slides/w6d1.html#next-time",
+    "title": "Welcome to the tidyverse",
+    "section": "Next time",
+    "text": "Next time\n\nReview day. We will discuss any questions about the material for the midterm.\nCome ready to ask any last minute questions, discuss approaches to problems, etc."
+  },
+  {
+    "objectID": "tickets/ticket_08.html",
+    "href": "tickets/ticket_08.html",
+    "title": "Lecture Ticket 8",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 5"
+  },
+  {
+    "objectID": "tickets/ticket_08.html#reading",
+    "href": "tickets/ticket_08.html#reading",
+    "title": "Lecture Ticket 8",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 5"
+  },
+  {
+    "objectID": "tickets/ticket_08.html#questions",
+    "href": "tickets/ticket_08.html#questions",
+    "title": "Lecture Ticket 8",
     "section": "Questions",
-    "text": "Questions\n\nYou learned about comparison and logical operators in the reading. In R, what is the operator for each of the following:\n\nequality,\ngreater than,\ngreater than or equal to,\nnot equal to,\nor,\nand.\n\nConsider the following vector:\n\n\nx &lt;- 1:10\nx\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nWhat does the following do to x?\n\nx[x &lt; 5] &lt;- 0"
+    "text": "Questions\nConsider the function:\n\nmy_pets &lt;- function(species) {\n  if (species == \"dog\") {\n    return(\"Dude\")\n  } else if (species == \"cat\") {\n    return(c(\"Pickle\", \"Kyle\", \"Nubs\"))\n  } else {\n    return(\"Not my pet\")\n  }\n}\n\n\nWhat would my_pets(species = \"dog\") return?\nWhat would my_pets(species = \"bird\") return?\nWhat would my_pets(species = \"cat\") return?"
   },
   {
-    "objectID": "tickets/ticket_07.html",
-    "href": "tickets/ticket_07.html",
-    "title": "Lecture Ticket 7",
+    "objectID": "tickets/ticket_01.html",
+    "href": "tickets/ticket_01.html",
+    "title": "Lecture Ticket 1",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 5: sections 5.1"
+    "text": "Read the following sections of IFDAR.\n\nChapter 1\nBegin Chapter 2 (STOP at the bottom of page 19)"
   },
   {
-    "objectID": "tickets/ticket_07.html#reading",
-    "href": "tickets/ticket_07.html#reading",
-    "title": "Lecture Ticket 7",
+    "objectID": "tickets/ticket_01.html#reading",
+    "href": "tickets/ticket_01.html#reading",
+    "title": "Lecture Ticket 1",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 5: sections 5.1"
+    "text": "Read the following sections of IFDAR.\n\nChapter 1\nBegin Chapter 2 (STOP at the bottom of page 19)"
   },
   {
-    "objectID": "tickets/ticket_07.html#questions",
-    "href": "tickets/ticket_07.html#questions",
-    "title": "Lecture Ticket 7",
+    "objectID": "tickets/ticket_01.html#tasks",
+    "href": "tickets/ticket_01.html#tasks",
+    "title": "Lecture Ticket 1",
+    "section": "Tasks",
+    "text": "Tasks\n\n1. Install R and RStudio\nAs discussed in IFDAR, go to Posit’s website. Install R first, and then install RStudio.\n\n\n2. Run your first R command\nIn the console, type in the following command and press Enter to run it:\n\nrnorm(1)\n\n\n\n3. Record your result\nCome to class on Thursday with a piece of paper with your name on it that includes the result (it will be a number) from running rnorm(1) in task 2.\nIf you were unable to install R and RStudio and ran into issues, instead come to class with a piece of paper with your name on it that explains the issue you were having with installation."
+  },
+  {
+    "objectID": "tickets/ticket_13.html",
+    "href": "tickets/ticket_13.html",
+    "title": "Lecture Ticket 13",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.1 - 7.5"
+  },
+  {
+    "objectID": "tickets/ticket_13.html#reading",
+    "href": "tickets/ticket_13.html#reading",
+    "title": "Lecture Ticket 13",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.1 - 7.5"
+  },
+  {
+    "objectID": "tickets/ticket_13.html#questions",
+    "href": "tickets/ticket_13.html#questions",
+    "title": "Lecture Ticket 13",
     "section": "Questions",
-    "text": "Questions\nConsider the function:\n\nmy_function &lt;- function(x) {\n  y &lt;- x * 2\n  z &lt;- x + 4\n  return(y + z)\n}\n\n\nWhat would my_function(x = 10) return?\nWhat would my_function(x = 0) return?\nWhat would my_function(x = 5) + 10 return?"
+    "text": "Questions\n\nConsider the following dataset:\n\n\nten_cars &lt;- head(mtcars, n = 10)\nten_cars\n\n                   mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\nDuster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\nMerc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\nMerc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\nMerc 280          19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n\n\nHow would we use dplyr to filter for rows with horse power (hp) greater than 100? How would we use base R to do the same thing? Which do you prefer?"
   },
   {
-    "objectID": "labs/lab_03.html",
-    "href": "labs/lab_03.html",
-    "title": "Vectors and Dataframes",
+    "objectID": "tickets/ticket_15.html",
+    "href": "tickets/ticket_15.html",
+    "title": "Lecture Ticket 15",
     "section": "",
-    "text": "Create, subset, and manipulate vectors and data frames.\nPractice reading data from external files.\nGet some practice writing R scripts.\n\n\n\n\nCreate a new directory called lab_03 within your labs directory (e.g., ~/FOR_128/labs/lab_03). In RStudio set lab_03 as your working directory. Download and move the FEF_trees.csv file from the D2L lab page to your lab_03 directory.\nCreate a new script and save it as lab_03.R (it should save to your working directory).\nNow, use our book, help “man” pages, Google, your intuition, and experimentation to describe the behavior of the code in each of the following questions. For each question, write and execute the code in each question then, using a comment #, add notes above the code to describe/define its behavior (see example script lab_03_example.R in the lab’s D2L page)."
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.10 - 7.11, 7.13"
   },
   {
-    "objectID": "labs/lab_03.html#getting-started",
-    "href": "labs/lab_03.html#getting-started",
-    "title": "Vectors and Dataframes",
+    "objectID": "tickets/ticket_15.html#reading",
+    "href": "tickets/ticket_15.html#reading",
+    "title": "Lecture Ticket 15",
     "section": "",
-    "text": "Create, subset, and manipulate vectors and data frames.\nPractice reading data from external files.\nGet some practice writing R scripts.\n\n\n\n\nCreate a new directory called lab_03 within your labs directory (e.g., ~/FOR_128/labs/lab_03). In RStudio set lab_03 as your working directory. Download and move the FEF_trees.csv file from the D2L lab page to your lab_03 directory.\nCreate a new script and save it as lab_03.R (it should save to your working directory).\nNow, use our book, help “man” pages, Google, your intuition, and experimentation to describe the behavior of the code in each of the following questions. For each question, write and execute the code in each question then, using a comment #, add notes above the code to describe/define its behavior (see example script lab_03_example.R in the lab’s D2L page)."
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.10 - 7.11, 7.13"
   },
   {
-    "objectID": "labs/lab_03.html#questions",
-    "href": "labs/lab_03.html#questions",
-    "title": "Vectors and Dataframes",
+    "objectID": "tickets/ticket_15.html#questions",
+    "href": "tickets/ticket_15.html#questions",
+    "title": "Lecture Ticket 15",
     "section": "Questions",
-    "text": "Questions\n\nFunctions and index subsetting of vectors and data frames\nUse the code below to create the plt data frame.\n\nspp &lt;- c(\"tsugca\", \"tsugca\", \"betual\", \"acerru\", \"pinust\", \"pinust\", \"betual\", \"acerru\")\ndbh &lt;- c(15, 12, 6.6, 9.3, 28.1, 9.23, 15.3, 11.1)\nqual &lt;- c(\"ugs\", \"ags\", \"ags\", \"ugs\", \"ags\", \"ags\", \"ugs\", \"ags\")\nlive &lt;- c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE)\n\nplt &lt;- data.frame(spp, dbh, qual, live)\n\n\nplt \nclass(plt) \nnames(plt) \nnrow(plt) \nncol(plt) \ndim(plt) \nlength(plt) \nplt[2:4,c(1,4)] \nplt[1:3,c(\"spp\", \"dbh\")] \nplt$qual \nclass(plt$qual) \nhead(plt) \ntail(plt) \nhead(plt, n=3) \ntail(plt, n=2) \nplt.cpy &lt;- plt \nplt.cpy[1:3,1] &lt;-  c(\"pinust\", \"pinust\", \"acerru\") \nplt.cpy[1:2,1] &lt;-  c(\"pinust\", \"pinust\", \"acerru\") \nplt.cpy$live[8] &lt;- FALSE \nplt.cpy[8,\"live\"] &lt;- TRUE \nrep(\"ugs\", nrow(plt.cpy)) \nplt.cpy[,\"status\"] &lt;- rep(\"ugs\", nrow(plt.cpy)) \n!TRUE \ncolnames(plt.cpy)[4] &lt;- \"dead\" \nplt.cpy$dead &lt;- !plt$live \nplt.cpy &lt;- plt[-(1:5),] \nplt.cpy &lt;- plt[-1:5,] \nplt.cpy &lt;- rbind(plt, c(\"some new spp\", 100, \"ugs\", FALSE)) \nplt.cpy &lt;- cbind(plt, 1:nrow(plt)) \ncolnames(plt.cpy)[ncol(plt.cpy)] &lt;- \"tree.indx\" \nstr(plt) \n\nRead the external data file FEF_trees.csv into R using the read.csv() function and call the resulting data frame fef.\n\nfef &lt;- read.csv(\"FEF_trees.csv\")\n\n\ndim(fef) \nhead(fef) \ntail(fef) \nsum(fef$height_ft) \nmax(fef$height_ft) \nmin(fef$height_ft) \nwhich.max(fef$height_ft) \nfef[which.max(fef$height_ft), ] \nfef[which.min(fef$height_ft), ] \nIn the previous two labs you did your work in a Quarto document. What are some ways the script you created for this lab are different from the Quarto document?"
-  },
-  {
-    "objectID": "tickets/ticket_04.html",
-    "href": "tickets/ticket_04.html",
-    "title": "Lecture Ticket 4",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.1 and 4.2 (Stop at 4.3 Factors)"
-  },
-  {
-    "objectID": "tickets/ticket_04.html#reading",
-    "href": "tickets/ticket_04.html#reading",
-    "title": "Lecture Ticket 4",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.1 and 4.2 (Stop at 4.3 Factors)"
-  },
-  {
-    "objectID": "tickets/ticket_04.html#questions",
-    "href": "tickets/ticket_04.html#questions",
-    "title": "Lecture Ticket 4",
-    "section": "Questions",
-    "text": "Questions\n\nWhat is a qualitative variable? What about a quantitative variable? How are they different?\nWhat does the c() function do?\nSuppose you have the following vector:\n\n\nheight_in &lt;- c(70, 62, 72, 67)\nheight_in\n\n[1] 70 62 72 67\n\n\nWhat code would you write to replace the second element of height_in with the value 63?"
+    "text": "Questions\n\nWhat do n() and n_distinct() do? How are they different?\nWhat two arguments do we always specify when we use across()?\nWhen we use across(), we use it within a few dplyr verbs – what are those verbs?\nWhat concepts in dplyr are you confidently understanding? What concepts are you still struggling with?"
   },
   {
     "objectID": "tickets/ticket_12.html",
@@ -1446,21 +1495,21 @@
     "href": "assignments.html",
     "title": "Assignments",
     "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)"
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)\n\n\nLab 10\nThursday 11/7 (at lab time)\nWednesday 11/13 (at 5pm)\n\n\nLab 11\nThursday 11/21 (at lab time)\nWednesday 11/27 (at 5pm)"
   },
   {
     "objectID": "assignments.html#labs",
     "href": "assignments.html#labs",
     "title": "Assignments",
     "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)"
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)\n\n\nLab 10\nThursday 11/7 (at lab time)\nWednesday 11/13 (at 5pm)\n\n\nLab 11\nThursday 11/21 (at lab time)\nWednesday 11/27 (at 5pm)"
   },
   {
     "objectID": "assignments.html#lecture-tickets",
     "href": "assignments.html#lecture-tickets",
     "title": "Assignments",
     "section": "Lecture Tickets",
-    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)\n\n\nLecture ticket 3\nTuesday 9/3 (by 5pm)\nThursday 9/5 (in lecture)\n\n\nLecture ticket 4\nThursday 9/5 (by 5pm)\nTuesday 9/10 (in lecture)\n\n\nLecture ticket 5\nTuesday 9/10 (by 5pm)\nThursday 9/12 (in lecture)\n\n\nLecture ticket 6\nThursday 9/12 (by 5pm)\nTuesday 9/17 (in lecture)\n\n\nLecture ticket 7\nTuesday 9/17 (by 5pm)\nThursday 9/19 (in lecture)\n\n\nLecture ticket 8\nThursday 9/19 (by 5pm)\nTuesday 9/24 (in lecture)\n\n\nLecture ticket 9\nTuesday 9/24 (by 5pm)\nThursday 9/26 (in lecture)\n\n\nLecture ticket 10\nThursday 9/26 (by 5pm)\nTuesday 10/1 (in lecture)\n\n\nLecture ticket 11\nTuesday 10/1 (by 5pm)\nThursday 10/3 (in lecture)\n\n\nLecture ticket 12\nThursday 10/3 (by 5pm)\nTuesday 10/8 (in lecture)\n\n\nLecture ticket 13\nTuesday 10/8 (by 5pm)\nThursday 10/10 (in lecture)\n\n\nLecture ticket 14\nThursday 10/10 (by 5pm)\nTuesday 10/15 (in lecture)"
+    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)\n\n\nLecture ticket 3\nTuesday 9/3 (by 5pm)\nThursday 9/5 (in lecture)\n\n\nLecture ticket 4\nThursday 9/5 (by 5pm)\nTuesday 9/10 (in lecture)\n\n\nLecture ticket 5\nTuesday 9/10 (by 5pm)\nThursday 9/12 (in lecture)\n\n\nLecture ticket 6\nThursday 9/12 (by 5pm)\nTuesday 9/17 (in lecture)\n\n\nLecture ticket 7\nTuesday 9/17 (by 5pm)\nThursday 9/19 (in lecture)\n\n\nLecture ticket 8\nThursday 9/19 (by 5pm)\nTuesday 9/24 (in lecture)\n\n\nLecture ticket 9\nTuesday 9/24 (by 5pm)\nThursday 9/26 (in lecture)\n\n\nLecture ticket 10\nThursday 9/26 (by 5pm)\nTuesday 10/1 (in lecture)\n\n\nLecture ticket 11\nTuesday 10/1 (by 5pm)\nThursday 10/3 (in lecture)\n\n\nLecture ticket 12\nThursday 10/3 (by 5pm)\nTuesday 10/8 (in lecture)\n\n\nLecture ticket 13\nTuesday 10/8 (by 5pm)\nThursday 10/10 (in lecture)\n\n\nLecture ticket 14\nThursday 10/10 (by 5pm)\nTuesday 10/15 (in lecture)\n\n\nLecture ticket 15\nTuesday 10/15 (by 5pm)\nThursday 10/17 (in lecture)\n\n\nLecture ticket 16\nThursday 10/17 (by 5pm)\nThursday 10/24 (in lecture)\n\n\nLecture ticket 17\nThursday 10/24 (by 5pm)\nTuesday 10/29 (in lecture)\n\n\nLecture ticket 18\nTuesday 10/29 (by 5pm)\nThursday 10/31 (in lecture)\n\n\nLecture ticket 19\nThursday 10/31 (by 5pm)\nTuesday 11/5 (in lecture)\n\n\nLecture ticket 20\nTuesday 11/5 (by 5pm)\nThursday 11/7 (in lecture)\n\n\nLecture ticket 21\nThursday 11/7 (by 5pm)\nTuesday 11/12 (in lecture)\n\n\nLecture ticket 22\nTuesday 11/12 (by 5pm)\nThursday 11/14 (in lecture)\n\n\nLecture ticket 23\nThursday 11/14 (by 5pm)\nTuesday 11/19 (in lecture)\n\n\nLecture ticket 24\nTuesday 11/19 (by 5pm)\nTuesday 11/26 (in lecture)\n\n\nLecture ticket 25\nTuesday 11/26 (by 5pm)\nThursday 11/28 (in lecture)\n\n\nLecture ticket 26\nThursday 11/28 (by 5pm)\nTuesday 12/3 (in lecture)\n\n\nLecture ticket 27\nTuesday 12/3 (by 5pm)\nThursday 12/5 (in lecture)"
   },
   {
     "objectID": "index.html",
@@ -1516,14 +1565,14 @@
     "href": "recordings.html",
     "title": "Lecture Recordings",
     "section": "",
-    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 1: No recording available.\nWeek 3, day 2: Data structures. Available here.\nWeek 4, day 1: No recording available.\nWeek 4, day 2: Review of data structures & intro to functions. Available here.\nWeek 5, day 1: Functions and conditionals. Available here.\nWeek 5, day 2: Functions. NOTE: audio issues. Available here.\nWeek 6, day 1: Welcome to the tidyverse. Available here.\nWeek 6, day 2: Midterm review day. No recording.\nWeek 7, day 1: tibble and readr. Available here.\nWeek 7, day 2: Introduction to data wrangling with dplyr. Available here."
+    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 1: No recording available.\nWeek 3, day 2: Data structures. Available here.\nWeek 4, day 1: No recording available.\nWeek 4, day 2: Review of data structures & intro to functions. Available here.\nWeek 5, day 1: Functions and conditionals. Available here.\nWeek 5, day 2: Functions. NOTE: audio issues. Available here.\nWeek 6, day 1: Welcome to the tidyverse. Available here.\nWeek 6, day 2: Midterm review day. No recording.\nWeek 7, day 1: tibble and readr. Available here.\nWeek 7, day 2: Introduction to data wrangling with dplyr. Available here.\nWeek 8, day 1: More data wrangling with dplyr. Available here."
   },
   {
     "objectID": "recordings.html#recordings",
     "href": "recordings.html#recordings",
     "title": "Lecture Recordings",
     "section": "",
-    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 1: No recording available.\nWeek 3, day 2: Data structures. Available here.\nWeek 4, day 1: No recording available.\nWeek 4, day 2: Review of data structures & intro to functions. Available here.\nWeek 5, day 1: Functions and conditionals. Available here.\nWeek 5, day 2: Functions. NOTE: audio issues. Available here.\nWeek 6, day 1: Welcome to the tidyverse. Available here.\nWeek 6, day 2: Midterm review day. No recording.\nWeek 7, day 1: tibble and readr. Available here.\nWeek 7, day 2: Introduction to data wrangling with dplyr. Available here."
+    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 1: No recording available.\nWeek 3, day 2: Data structures. Available here.\nWeek 4, day 1: No recording available.\nWeek 4, day 2: Review of data structures & intro to functions. Available here.\nWeek 5, day 1: Functions and conditionals. Available here.\nWeek 5, day 2: Functions. NOTE: audio issues. Available here.\nWeek 6, day 1: Welcome to the tidyverse. Available here.\nWeek 6, day 2: Midterm review day. No recording.\nWeek 7, day 1: tibble and readr. Available here.\nWeek 7, day 2: Introduction to data wrangling with dplyr. Available here.\nWeek 8, day 1: More data wrangling with dplyr. Available here."
   },
   {
     "objectID": "syllabus.html",
@@ -1659,116 +1708,88 @@
     "text": "Questions\n\nWhat do mutate() and transmute() do? How are they different?\nWhat does the pipe (%&gt;%) operator do?\nWhat’s your favorite dplyr verb we’ve learned about so far? Why?"
   },
   {
-    "objectID": "tickets/ticket_13.html",
-    "href": "tickets/ticket_13.html",
-    "title": "Lecture Ticket 13",
+    "objectID": "tickets/ticket_04.html",
+    "href": "tickets/ticket_04.html",
+    "title": "Lecture Ticket 4",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.1 - 7.5"
+    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.1 and 4.2 (Stop at 4.3 Factors)"
   },
   {
-    "objectID": "tickets/ticket_13.html#reading",
-    "href": "tickets/ticket_13.html#reading",
-    "title": "Lecture Ticket 13",
+    "objectID": "tickets/ticket_04.html#reading",
+    "href": "tickets/ticket_04.html#reading",
+    "title": "Lecture Ticket 4",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.1 - 7.5"
+    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.1 and 4.2 (Stop at 4.3 Factors)"
   },
   {
-    "objectID": "tickets/ticket_13.html#questions",
-    "href": "tickets/ticket_13.html#questions",
-    "title": "Lecture Ticket 13",
+    "objectID": "tickets/ticket_04.html#questions",
+    "href": "tickets/ticket_04.html#questions",
+    "title": "Lecture Ticket 4",
     "section": "Questions",
-    "text": "Questions\n\nConsider the following dataset:\n\n\nten_cars &lt;- head(mtcars, n = 10)\nten_cars\n\n                   mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\nDuster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\nMerc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\nMerc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\nMerc 280          19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n\n\nHow would we use dplyr to filter for rows with horse power (hp) greater than 100? How would we use base R to do the same thing? Which do you prefer?"
+    "text": "Questions\n\nWhat is a qualitative variable? What about a quantitative variable? How are they different?\nWhat does the c() function do?\nSuppose you have the following vector:\n\n\nheight_in &lt;- c(70, 62, 72, 67)\nheight_in\n\n[1] 70 62 72 67\n\n\nWhat code would you write to replace the second element of height_in with the value 63?"
   },
   {
-    "objectID": "tickets/ticket_01.html",
-    "href": "tickets/ticket_01.html",
-    "title": "Lecture Ticket 1",
+    "objectID": "labs/lab_03.html",
+    "href": "labs/lab_03.html",
+    "title": "Vectors and Dataframes",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 1\nBegin Chapter 2 (STOP at the bottom of page 19)"
+    "text": "Create, subset, and manipulate vectors and data frames.\nPractice reading data from external files.\nGet some practice writing R scripts.\n\n\n\n\nCreate a new directory called lab_03 within your labs directory (e.g., ~/FOR_128/labs/lab_03). In RStudio set lab_03 as your working directory. Download and move the FEF_trees.csv file from the D2L lab page to your lab_03 directory.\nCreate a new script and save it as lab_03.R (it should save to your working directory).\nNow, use our book, help “man” pages, Google, your intuition, and experimentation to describe the behavior of the code in each of the following questions. For each question, write and execute the code in each question then, using a comment #, add notes above the code to describe/define its behavior (see example script lab_03_example.R in the lab’s D2L page)."
   },
   {
-    "objectID": "tickets/ticket_01.html#reading",
-    "href": "tickets/ticket_01.html#reading",
-    "title": "Lecture Ticket 1",
+    "objectID": "labs/lab_03.html#getting-started",
+    "href": "labs/lab_03.html#getting-started",
+    "title": "Vectors and Dataframes",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 1\nBegin Chapter 2 (STOP at the bottom of page 19)"
+    "text": "Create, subset, and manipulate vectors and data frames.\nPractice reading data from external files.\nGet some practice writing R scripts.\n\n\n\n\nCreate a new directory called lab_03 within your labs directory (e.g., ~/FOR_128/labs/lab_03). In RStudio set lab_03 as your working directory. Download and move the FEF_trees.csv file from the D2L lab page to your lab_03 directory.\nCreate a new script and save it as lab_03.R (it should save to your working directory).\nNow, use our book, help “man” pages, Google, your intuition, and experimentation to describe the behavior of the code in each of the following questions. For each question, write and execute the code in each question then, using a comment #, add notes above the code to describe/define its behavior (see example script lab_03_example.R in the lab’s D2L page)."
   },
   {
-    "objectID": "tickets/ticket_01.html#tasks",
-    "href": "tickets/ticket_01.html#tasks",
-    "title": "Lecture Ticket 1",
-    "section": "Tasks",
-    "text": "Tasks\n\n1. Install R and RStudio\nAs discussed in IFDAR, go to Posit’s website. Install R first, and then install RStudio.\n\n\n2. Run your first R command\nIn the console, type in the following command and press Enter to run it:\n\nrnorm(1)\n\n\n\n3. Record your result\nCome to class on Thursday with a piece of paper with your name on it that includes the result (it will be a number) from running rnorm(1) in task 2.\nIf you were unable to install R and RStudio and ran into issues, instead come to class with a piece of paper with your name on it that explains the issue you were having with installation."
-  },
-  {
-    "objectID": "tickets/ticket_08.html",
-    "href": "tickets/ticket_08.html",
-    "title": "Lecture Ticket 8",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 5"
-  },
-  {
-    "objectID": "tickets/ticket_08.html#reading",
-    "href": "tickets/ticket_08.html#reading",
-    "title": "Lecture Ticket 8",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 5"
-  },
-  {
-    "objectID": "tickets/ticket_08.html#questions",
-    "href": "tickets/ticket_08.html#questions",
-    "title": "Lecture Ticket 8",
+    "objectID": "labs/lab_03.html#questions",
+    "href": "labs/lab_03.html#questions",
+    "title": "Vectors and Dataframes",
     "section": "Questions",
-    "text": "Questions\nConsider the function:\n\nmy_pets &lt;- function(species) {\n  if (species == \"dog\") {\n    return(\"Dude\")\n  } else if (species == \"cat\") {\n    return(c(\"Pickle\", \"Kyle\", \"Nubs\"))\n  } else {\n    return(\"Not my pet\")\n  }\n}\n\n\nWhat would my_pets(species = \"dog\") return?\nWhat would my_pets(species = \"bird\") return?\nWhat would my_pets(species = \"cat\") return?"
+    "text": "Questions\n\nFunctions and index subsetting of vectors and data frames\nUse the code below to create the plt data frame.\n\nspp &lt;- c(\"tsugca\", \"tsugca\", \"betual\", \"acerru\", \"pinust\", \"pinust\", \"betual\", \"acerru\")\ndbh &lt;- c(15, 12, 6.6, 9.3, 28.1, 9.23, 15.3, 11.1)\nqual &lt;- c(\"ugs\", \"ags\", \"ags\", \"ugs\", \"ags\", \"ags\", \"ugs\", \"ags\")\nlive &lt;- c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE)\n\nplt &lt;- data.frame(spp, dbh, qual, live)\n\n\nplt \nclass(plt) \nnames(plt) \nnrow(plt) \nncol(plt) \ndim(plt) \nlength(plt) \nplt[2:4,c(1,4)] \nplt[1:3,c(\"spp\", \"dbh\")] \nplt$qual \nclass(plt$qual) \nhead(plt) \ntail(plt) \nhead(plt, n=3) \ntail(plt, n=2) \nplt.cpy &lt;- plt \nplt.cpy[1:3,1] &lt;-  c(\"pinust\", \"pinust\", \"acerru\") \nplt.cpy[1:2,1] &lt;-  c(\"pinust\", \"pinust\", \"acerru\") \nplt.cpy$live[8] &lt;- FALSE \nplt.cpy[8,\"live\"] &lt;- TRUE \nrep(\"ugs\", nrow(plt.cpy)) \nplt.cpy[,\"status\"] &lt;- rep(\"ugs\", nrow(plt.cpy)) \n!TRUE \ncolnames(plt.cpy)[4] &lt;- \"dead\" \nplt.cpy$dead &lt;- !plt$live \nplt.cpy &lt;- plt[-(1:5),] \nplt.cpy &lt;- plt[-1:5,] \nplt.cpy &lt;- rbind(plt, c(\"some new spp\", 100, \"ugs\", FALSE)) \nplt.cpy &lt;- cbind(plt, 1:nrow(plt)) \ncolnames(plt.cpy)[ncol(plt.cpy)] &lt;- \"tree.indx\" \nstr(plt) \n\nRead the external data file FEF_trees.csv into R using the read.csv() function and call the resulting data frame fef.\n\nfef &lt;- read.csv(\"FEF_trees.csv\")\n\n\ndim(fef) \nhead(fef) \ntail(fef) \nsum(fef$height_ft) \nmax(fef$height_ft) \nmin(fef$height_ft) \nwhich.max(fef$height_ft) \nfef[which.max(fef$height_ft), ] \nfef[which.min(fef$height_ft), ] \nIn the previous two labs you did your work in a Quarto document. What are some ways the script you created for this lab are different from the Quarto document?"
   },
   {
-    "objectID": "slides/w6d1.html#annoucements",
-    "href": "slides/w6d1.html#annoucements",
-    "title": "Welcome to the tidyverse",
-    "section": "Annoucements",
-    "text": "Annoucements\n\nMidterm 1 is this Thursday, Oct 3, during lab time."
+    "objectID": "tickets/ticket_07.html",
+    "href": "tickets/ticket_07.html",
+    "title": "Lecture Ticket 7",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 5: sections 5.1"
   },
   {
-    "objectID": "slides/w6d1.html#agenda",
-    "href": "slides/w6d1.html#agenda",
-    "title": "Welcome to the tidyverse",
-    "section": "Agenda",
-    "text": "Agenda\n\nMidterm format overview\nIntro to the tidyverse\nQuiz + group activity"
+    "objectID": "tickets/ticket_07.html#reading",
+    "href": "tickets/ticket_07.html#reading",
+    "title": "Lecture Ticket 7",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 5: sections 5.1"
   },
   {
-    "objectID": "slides/w6d1.html#reminder-from-the-syllabus",
-    "href": "slides/w6d1.html#reminder-from-the-syllabus",
-    "title": "Welcome to the tidyverse",
-    "section": "Reminder from the syllabus",
-    "text": "Reminder from the syllabus\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
+    "objectID": "tickets/ticket_07.html#questions",
+    "href": "tickets/ticket_07.html#questions",
+    "title": "Lecture Ticket 7",
+    "section": "Questions",
+    "text": "Questions\nConsider the function:\n\nmy_function &lt;- function(x) {\n  y &lt;- x * 2\n  z &lt;- x + 4\n  return(y + z)\n}\n\n\nWhat would my_function(x = 10) return?\nWhat would my_function(x = 0) return?\nWhat would my_function(x = 5) + 10 return?"
   },
   {
-    "objectID": "slides/w6d1.html#midterm-i-overview",
-    "href": "slides/w6d1.html#midterm-i-overview",
-    "title": "Welcome to the tidyverse",
-    "section": "Midterm I overview",
-    "text": "Midterm I overview\n\n\nThe test will be taken in person, in lab.\n5 questions, all equally weighted. You only have to answer 4 of 5 questions. If you answer 5, I will count the 4 you did the best on.\nThere will be a paper test with the questions on it, but you will answer them in a Quarto document (similar to your labs).\nLecture slides and previous labs/quizzes are your best resource for success.\nQuestions cover material from chapters 1 - 5 of IFDAR, or Week 5 Day 2."
+    "objectID": "tickets/ticket_06.html",
+    "href": "tickets/ticket_06.html",
+    "title": "Lecture Ticket 6",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.7, 4.8 and 4.9"
   },
   {
-    "objectID": "slides/w6d1.html#what-is-the-tidyverse",
-    "href": "slides/w6d1.html#what-is-the-tidyverse",
-    "title": "Welcome to the tidyverse",
-    "section": "What is the tidyverse",
-    "text": "What is the tidyverse\n\n\nA collection of R packages that work together to provide extensive and intuitive data analysis functions.\nIn this class, we will focus on 5 tidyverse packages:\n\ntibble, to improve on the data.frame,\nreadr, to improve reading and writing data,\ndplyr, to manipulate and summarize data “data plyers”,\ntidyr, to clean and reshape data, and\nggplot2, to produce beautiful graphics with intuitive syntax “the grammer of graphics”."
+    "objectID": "tickets/ticket_06.html#reading",
+    "href": "tickets/ticket_06.html#reading",
+    "title": "Lecture Ticket 6",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.7, 4.8 and 4.9"
   },
   {
-    "objectID": "slides/w6d1.html#a-note-on-the-course",
-    "href": "slides/w6d1.html#a-note-on-the-course",
-    "title": "Welcome to the tidyverse",
-    "section": "A note on the course",
-    "text": "A note on the course\n\n\nSo far, we have almost entirely focused on R in its “base” form. That is, R with only built-in functions.\nBase R has many advantages: especially in being fast and reliable.\nHowever, I believe that the tidyverse can provide a more intuitive approach to data analysis."
-  },
-  {
-    "objectID": "slides/w6d1.html#next-time",
-    "href": "slides/w6d1.html#next-time",
-    "title": "Welcome to the tidyverse",
-    "section": "Next time",
-    "text": "Next time\n\nReview day. We will discuss any questions about the material for the midterm.\nCome ready to ask any last minute questions, discuss approaches to problems, etc."
+    "objectID": "tickets/ticket_06.html#questions",
+    "href": "tickets/ticket_06.html#questions",
+    "title": "Lecture Ticket 6",
+    "section": "Questions",
+    "text": "Questions\n\nYou learned about comparison and logical operators in the reading. In R, what is the operator for each of the following:\n\nequality,\ngreater than,\ngreater than or equal to,\nnot equal to,\nor,\nand.\n\nConsider the following vector:\n\n\nx &lt;- 1:10\nx\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nWhat does the following do to x?\n\nx[x &lt; 5] &lt;- 0"
   },
   {
     "objectID": "slides/w4d1.html",
