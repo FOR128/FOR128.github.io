@@ -1,5 +1,5 @@
 ---
-title: "More data wrangling with `dplyr`"
+title: "Advanced grouping and summarization"
 editor: 
   mode: source
 webr:

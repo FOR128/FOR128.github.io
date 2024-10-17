@@ -779,252 +779,252 @@
   {
     "objectID": "slides/w8d2.html#agenda",
     "href": "slides/w8d2.html#agenda",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Agenda",
     "text": "Agenda\n\ngroup_by() and summarize() in further detail,\nCounting with n() and n_distinct(),\nWorking across() columns."
   },
   {
     "objectID": "slides/w8d2.html#dplyr-verbs",
     "href": "slides/w8d2.html#dplyr-verbs",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "dplyr verbs",
     "text": "dplyr verbs\nRecall the standard dplyr verb form:\n\nverb(data, action)\n\n\n\nThe first argument of any dplyr verb is the data (a tibble or data.frame), and the next arguments specify how we are using the verb().\nSince the first argument is always the data, dplyr functions can easily be “piped” between to create a pipeline from one verb to another.\nA very common pipeline between verbs occurs between group_by() and summarize()."
   },
   {
     "objectID": "slides/w8d2.html#again-we-will-use-more_pets",
     "href": "slides/w8d2.html#again-we-will-use-more_pets",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Again, we will use more_pets",
     "text": "Again, we will use more_pets\n\nlibrary(tidyverse)\nmore_pets &lt;- tibble(\n  names = c(\"Dude\", \"Pickle\", \"Kyle\", \"Nubs\", \"Marvin\", \"Figaro\", \"Slim\"),\n  ages = c(6, 5, 3, 11, 11, 3, 6),\n  meals_per_day = c(2, 3, 3, 3, 1, 2, 2),\n  type_of_animal = c(\"dog\", rep(\"cat\", 3), \"sheep/ram\", \"cat\", \"dog\")\n)\nmore_pets\n\n# A tibble: 7 × 4\n  names   ages meals_per_day type_of_animal\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;         \n1 Dude       6             2 dog           \n2 Pickle     5             3 cat           \n3 Kyle       3             3 cat           \n4 Nubs      11             3 cat           \n5 Marvin    11             1 sheep/ram     \n6 Figaro     3             2 cat           \n7 Slim       6             2 dog"
   },
   {
     "objectID": "slides/w8d2.html#summarization",
     "href": "slides/w8d2.html#summarization",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Summarization",
     "text": "Summarization\n\n\nData summaries are some of the best ways to learn from the data we have.\nWith increasingly large data, it can be very helpful to summarize.\ndplyr provides intuitive and powerful ways to summarize data.\nRecall: they call their function for summarization, suprisingly, summarize()"
   },
   {
     "objectID": "slides/w8d2.html#summarization-1",
     "href": "slides/w8d2.html#summarization-1",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Summarization",
     "text": "Summarization\n\nThe summarize() function takes a very similar form to the other dplyr functions.\nIn particular, it is of the form:\n\n\nsummarize(data, new_summary_column_name = summarization_code)"
   },
   {
     "objectID": "slides/w8d2.html#get-the-mean-value-of-the-pets-ages",
     "href": "slides/w8d2.html#get-the-mean-value-of-the-pets-ages",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Get the mean value of the pet’s ages",
     "text": "Get the mean value of the pet’s ages\n\nmore_pets %&gt;%\n  summarize(avg_age = mean(ages))\n\n# A tibble: 1 × 1\n  avg_age\n    &lt;dbl&gt;\n1    6.43"
   },
   {
     "objectID": "slides/w8d2.html#get-the-total-years-lived-by-the-pets",
     "href": "slides/w8d2.html#get-the-total-years-lived-by-the-pets",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Get the total years lived by the pets",
     "text": "Get the total years lived by the pets\n\n\n# A tibble: 1 × 1\n  years_lived\n        &lt;dbl&gt;\n1          45"
   },
   {
     "objectID": "slides/w8d2.html#get-the-total-years-lived-by-the-pets-1",
     "href": "slides/w8d2.html#get-the-total-years-lived-by-the-pets-1",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Get the total years lived by the pets",
     "text": "Get the total years lived by the pets\n\nmore_pets %&gt;%\n  summarize(years_lived = sum(ages))\n\n# A tibble: 1 × 1\n  years_lived\n        &lt;dbl&gt;\n1          45"
   },
   {
     "objectID": "slides/w8d2.html#group_by",
     "href": "slides/w8d2.html#group_by",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "group_by()",
     "text": "group_by()\n\n\nThe group_by() function allows us to group our tibble by a variable of interest.\ngroup_by() on its own, does not change the rows or columns of the tibble, it just makes it “grouped”\nHowever, when we go to summarize() “grouped” data, we get the results for each group.\nLet’s try it out!"
   },
   {
     "objectID": "slides/w8d2.html#average-age-for-each-type-of-pet",
     "href": "slides/w8d2.html#average-age-for-each-type-of-pet",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "average age for each type of pet",
     "text": "average age for each type of pet\n\nmore_pets\n\n# A tibble: 7 × 4\n  names   ages meals_per_day type_of_animal\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;         \n1 Dude       6             2 dog           \n2 Pickle     5             3 cat           \n3 Kyle       3             3 cat           \n4 Nubs      11             3 cat           \n5 Marvin    11             1 sheep/ram     \n6 Figaro     3             2 cat           \n7 Slim       6             2 dog"
   },
   {
     "objectID": "slides/w8d2.html#average-age-for-each-type-of-pet-1",
     "href": "slides/w8d2.html#average-age-for-each-type-of-pet-1",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "average age for each type of pet",
     "text": "average age for each type of pet\n\nmore_pets %&gt;% \n  group_by(type_of_animal)\n\n# A tibble: 7 × 4\n# Groups:   type_of_animal [3]\n  names   ages meals_per_day type_of_animal\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;         \n1 Dude       6             2 dog           \n2 Pickle     5             3 cat           \n3 Kyle       3             3 cat           \n4 Nubs      11             3 cat           \n5 Marvin    11             1 sheep/ram     \n6 Figaro     3             2 cat           \n7 Slim       6             2 dog"
   },
   {
     "objectID": "slides/w8d2.html#average-age-for-each-type-of-pet-2",
     "href": "slides/w8d2.html#average-age-for-each-type-of-pet-2",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "average age for each type of pet",
     "text": "average age for each type of pet\n\nmore_pets %&gt;% \n  group_by(type_of_animal) %&gt;%\n  summarize(avg_age = mean(ages))\n\n# A tibble: 3 × 2\n  type_of_animal avg_age\n  &lt;chr&gt;            &lt;dbl&gt;\n1 cat                5.5\n2 dog                6  \n3 sheep/ram         11"
   },
   {
     "objectID": "slides/w8d2.html#how-many-of-each-type-of-animal",
     "href": "slides/w8d2.html#how-many-of-each-type-of-animal",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "How many of each type of animal?",
     "text": "How many of each type of animal?\n\n\n# A tibble: 3 × 2\n  type_of_animal number_of_types\n  &lt;chr&gt;                    &lt;int&gt;\n1 cat                          4\n2 dog                          2\n3 sheep/ram                    1"
   },
   {
     "objectID": "slides/w8d2.html#how-many-of-each-type-of-animal-1",
     "href": "slides/w8d2.html#how-many-of-each-type-of-animal-1",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "How many of each type of animal?",
     "text": "How many of each type of animal?\n\nmore_pets %&gt;% \n  group_by(type_of_animal) %&gt;%\n  summarize(number_of_types = n())\n\n# A tibble: 3 × 2\n  type_of_animal number_of_types\n  &lt;chr&gt;                    &lt;int&gt;\n1 cat                          4\n2 dog                          2\n3 sheep/ram                    1"
   },
   {
     "objectID": "slides/w8d2.html#whats-going-on-with-n",
     "href": "slides/w8d2.html#whats-going-on-with-n",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "What’s going on with n()",
     "text": "What’s going on with n()\n\n\nThe n() function counts for us!\nWhen we use n(), nothing ever goes in the parentheses.\nFor our cases, we will use n() in within a summarize() or mutate() on a grouped dataset. n() counts the rows in each group for us."
   },
   {
     "objectID": "slides/w8d2.html#number-of-other-animals-of-the-same-type",
     "href": "slides/w8d2.html#number-of-other-animals-of-the-same-type",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Number of other animals of the same type",
     "text": "Number of other animals of the same type\n\n\n# A tibble: 7 × 5\n# Groups:   type_of_animal [3]\n  names   ages meals_per_day type_of_animal other_of_same\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;                  &lt;dbl&gt;\n1 Dude       6             2 dog                        1\n2 Pickle     5             3 cat                        3\n3 Kyle       3             3 cat                        3\n4 Nubs      11             3 cat                        3\n5 Marvin    11             1 sheep/ram                  0\n6 Figaro     3             2 cat                        3\n7 Slim       6             2 dog                        1"
   },
   {
     "objectID": "slides/w8d2.html#number-of-other-animals-of-the-same-type-1",
     "href": "slides/w8d2.html#number-of-other-animals-of-the-same-type-1",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Number of other animals of the same type",
     "text": "Number of other animals of the same type\n\nmore_pets %&gt;% \n  group_by(type_of_animal) %&gt;%\n  mutate(other_of_same = n() - 1) \n\n# A tibble: 7 × 5\n# Groups:   type_of_animal [3]\n  names   ages meals_per_day type_of_animal other_of_same\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;                  &lt;dbl&gt;\n1 Dude       6             2 dog                        1\n2 Pickle     5             3 cat                        3\n3 Kyle       3             3 cat                        3\n4 Nubs      11             3 cat                        3\n5 Marvin    11             1 sheep/ram                  0\n6 Figaro     3             2 cat                        3\n7 Slim       6             2 dog                        1"
   },
   {
     "objectID": "slides/w8d2.html#number-of-types-of-animals",
     "href": "slides/w8d2.html#number-of-types-of-animals",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Number of types of animals",
     "text": "Number of types of animals\n\n\n# A tibble: 1 × 1\n  n_types\n    &lt;int&gt;\n1       3"
   },
   {
     "objectID": "slides/w8d2.html#number-of-types-of-animals-1",
     "href": "slides/w8d2.html#number-of-types-of-animals-1",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Number of types of animals",
     "text": "Number of types of animals\n\nmore_pets %&gt;% \n  summarize(n_types = n_distinct(type_of_animal))\n\n# A tibble: 1 × 1\n  n_types\n    &lt;int&gt;\n1       3"
   },
   {
     "objectID": "slides/w8d2.html#the-n_distinct-function",
     "href": "slides/w8d2.html#the-n_distinct-function",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "The n_distinct() function",
     "text": "The n_distinct() function\n\n\nUsed similarly to n(), but takes columns as inputs,\nCounts the number of distinct values in the supplied columns,\nCan be used grouped."
   },
   {
     "objectID": "slides/w8d2.html#number-of-unique-ages-for-each-type-of-animal",
     "href": "slides/w8d2.html#number-of-unique-ages-for-each-type-of-animal",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Number of unique ages for each type of animal",
     "text": "Number of unique ages for each type of animal\n\n\n# A tibble: 3 × 2\n  type_of_animal unique_ages\n  &lt;chr&gt;                &lt;int&gt;\n1 cat                      3\n2 dog                      1\n3 sheep/ram                1"
   },
   {
     "objectID": "slides/w8d2.html#number-of-unique-ages-for-each-type-of-animal-1",
     "href": "slides/w8d2.html#number-of-unique-ages-for-each-type-of-animal-1",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Number of unique ages for each type of animal",
     "text": "Number of unique ages for each type of animal\n\nmore_pets %&gt;%\n  group_by(type_of_animal) %&gt;%\n  summarize(unique_ages = n_distinct(ages))\n\n# A tibble: 3 × 2\n  type_of_animal unique_ages\n  &lt;chr&gt;                &lt;int&gt;\n1 cat                      3\n2 dog                      1\n3 sheep/ram                1"
   },
   {
     "objectID": "slides/w8d2.html#across",
     "href": "slides/w8d2.html#across",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "across()",
     "text": "across()\n\n\nacross() takes two arguments: .cols and .fns\nThe .cols argument specifies the columns we’d like to apply our function, .fns, to.\nIn practice, we use across() within a mutate() or a summarize().\nLet’s try it out!"
   },
   {
     "objectID": "slides/w8d2.html#get-the-mean-of-ages-and-meals_per_day",
     "href": "slides/w8d2.html#get-the-mean-of-ages-and-meals_per_day",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Get the mean of ages and meals_per_day",
     "text": "Get the mean of ages and meals_per_day\n\nmore_pets %&gt;%\n  summarize(\n    across(.cols = c(ages, meals_per_day),\n           .fns = mean)\n  )\n\n# A tibble: 1 × 2\n   ages meals_per_day\n  &lt;dbl&gt;         &lt;dbl&gt;\n1  6.43          2.29"
   },
   {
     "objectID": "slides/w8d2.html#make-the-ages-and-meals_per_day-columns-integers",
     "href": "slides/w8d2.html#make-the-ages-and-meals_per_day-columns-integers",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Make the ages and meals_per_day columns integers",
     "text": "Make the ages and meals_per_day columns integers\n\n\n# A tibble: 7 × 4\n  names   ages meals_per_day type_of_animal\n  &lt;chr&gt;  &lt;int&gt;         &lt;int&gt; &lt;chr&gt;         \n1 Dude       6             2 dog           \n2 Pickle     5             3 cat           \n3 Kyle       3             3 cat           \n4 Nubs      11             3 cat           \n5 Marvin    11             1 sheep/ram     \n6 Figaro     3             2 cat           \n7 Slim       6             2 dog"
   },
   {
     "objectID": "slides/w8d2.html#make-the-ages-and-meals_per_day-columns-integers-1",
     "href": "slides/w8d2.html#make-the-ages-and-meals_per_day-columns-integers-1",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Make the ages and meals_per_day columns integers",
     "text": "Make the ages and meals_per_day columns integers\n\nmore_pets %&gt;%\n  mutate(\n    across(.cols = c(ages, meals_per_day),\n           .fns = as.integer)\n  )\n\n# A tibble: 7 × 4\n  names   ages meals_per_day type_of_animal\n  &lt;chr&gt;  &lt;int&gt;         &lt;int&gt; &lt;chr&gt;         \n1 Dude       6             2 dog           \n2 Pickle     5             3 cat           \n3 Kyle       3             3 cat           \n4 Nubs      11             3 cat           \n5 Marvin    11             1 sheep/ram     \n6 Figaro     3             2 cat           \n7 Slim       6             2 dog"
   },
   {
     "objectID": "slides/w8d2.html#get-the-mean-and-standard-deviation-of-ages-and-meals_per_day",
     "href": "slides/w8d2.html#get-the-mean-and-standard-deviation-of-ages-and-meals_per_day",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Get the mean and standard deviation of ages and meals_per_day",
     "text": "Get the mean and standard deviation of ages and meals_per_day\nBad example\n\nmore_pets %&gt;%\n  summarize(\n    across(.cols = c(ages, meals_per_day),\n           .fns = mean)\n  )\n\n# A tibble: 1 × 2\n   ages meals_per_day\n  &lt;dbl&gt;         &lt;dbl&gt;\n1  6.43          2.29\n\nmore_pets %&gt;%\n  summarize(\n    across(.cols = c(ages, meals_per_day),\n           .fns = sd)\n  )\n\n# A tibble: 1 × 2\n   ages meals_per_day\n  &lt;dbl&gt;         &lt;dbl&gt;\n1  3.36         0.756"
   },
   {
     "objectID": "slides/w8d2.html#get-the-mean-and-standard-deviation-of-ages-and-meals_per_day-1",
     "href": "slides/w8d2.html#get-the-mean-and-standard-deviation-of-ages-and-meals_per_day-1",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Get the mean and standard deviation of ages and meals_per_day",
     "text": "Get the mean and standard deviation of ages and meals_per_day\nBetter\n\nmore_pets %&gt;%\n  summarize(\n    across(.cols = c(ages, meals_per_day),\n           .fns = c(mean, sd))\n  )\n\n# A tibble: 1 × 4\n  ages_1 ages_2 meals_per_day_1 meals_per_day_2\n   &lt;dbl&gt;  &lt;dbl&gt;           &lt;dbl&gt;           &lt;dbl&gt;\n1   6.43   3.36            2.29           0.756"
   },
   {
     "objectID": "slides/w8d2.html#get-the-mean-and-standard-deviation-of-ages-and-meals_per_day-2",
     "href": "slides/w8d2.html#get-the-mean-and-standard-deviation-of-ages-and-meals_per_day-2",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Get the mean and standard deviation of ages and meals_per_day",
     "text": "Get the mean and standard deviation of ages and meals_per_day\nBest\n\nmore_pets %&gt;%\n  summarize(\n    across(.cols = c(ages, meals_per_day),\n           .fns = c(mean = mean, standard_deviation = sd))\n  )\n\n# A tibble: 1 × 4\n  ages_mean ages_standard_deviation meals_per_day_mean meals_per_day_standard_…¹\n      &lt;dbl&gt;                   &lt;dbl&gt;              &lt;dbl&gt;                     &lt;dbl&gt;\n1      6.43                    3.36               2.29                     0.756\n# ℹ abbreviated name: ¹​meals_per_day_standard_deviation"
   },
   {
     "objectID": "slides/w8d2.html#get-the-mean-and-standard-deviation-of-ages-and-meals_per_day-grouped-by-type-of-animal",
     "href": "slides/w8d2.html#get-the-mean-and-standard-deviation-of-ages-and-meals_per_day-grouped-by-type-of-animal",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Get the mean and standard deviation of ages and meals_per_day, grouped by type of animal",
     "text": "Get the mean and standard deviation of ages and meals_per_day, grouped by type of animal\n\nmore_pets %&gt;%\n  group_by(type_of_animal) %&gt;%\n  summarize(\n    across(.cols = c(ages, meals_per_day),\n           .fns = c(mean = mean, standard_deviation = sd))\n  )\n\n# A tibble: 3 × 5\n  type_of_animal ages_mean ages_standard_deviation meals_per_day_mean\n  &lt;chr&gt;              &lt;dbl&gt;                   &lt;dbl&gt;              &lt;dbl&gt;\n1 cat                  5.5                    3.79               2.75\n2 dog                  6                      0                  2   \n3 sheep/ram           11                     NA                  1   \n# ℹ 1 more variable: meals_per_day_standard_deviation &lt;dbl&gt;"
   },
   {
     "objectID": "slides/w8d2.html#specifying-function-arguments-in-calls-to-across",
     "href": "slides/w8d2.html#specifying-function-arguments-in-calls-to-across",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Specifying function arguments in calls to across()",
     "text": "Specifying function arguments in calls to across()\nConsider the toy dataset:\n\ntrees &lt;- tibble(\n  dbh = c(15, 9, NA),\n  height = c(50, 34, 33),\n  spp = c(\"doug-fir\", \"madrone\", \"doug-fir\")\n)\ntrees\n\n# A tibble: 3 × 3\n    dbh height spp     \n  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;   \n1    15     50 doug-fir\n2     9     34 madrone \n3    NA     33 doug-fir"
   },
   {
     "objectID": "slides/w8d2.html#what-if-we-want-the-mean-dbh-and-height",
     "href": "slides/w8d2.html#what-if-we-want-the-mean-dbh-and-height",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "What if we want the mean dbh and height?",
     "text": "What if we want the mean dbh and height?\n\ntrees %&gt;%\n  summarize(\n    across(.cols = c(dbh, height),\n           .fns = mean)\n  )\n\n# A tibble: 1 × 2\n    dbh height\n  &lt;dbl&gt;  &lt;dbl&gt;\n1    NA     39\n\n\n\n\nreturns NA :-("
   },
   {
     "objectID": "slides/w8d2.html#we-need-lambda-syntax",
     "href": "slides/w8d2.html#we-need-lambda-syntax",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "We need “lambda syntax”",
     "text": "We need “lambda syntax”\n\ntrees %&gt;%\n  summarize(\n    across(.cols = c(dbh, height),\n           .fns = ~ mean(.x, na.rm = TRUE))\n  )\n\n# A tibble: 1 × 2\n    dbh height\n  &lt;dbl&gt;  &lt;dbl&gt;\n1    12     39"
   },
   {
     "objectID": "slides/w8d2.html#we-need-lambda-syntax-1",
     "href": "slides/w8d2.html#we-need-lambda-syntax-1",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "We need “lambda syntax”",
     "text": "We need “lambda syntax”\n\ntrees %&gt;%\n  summarize(\n    across(.cols = c(dbh, height),\n           .fns = ~ mean(.x, na.rm = TRUE))\n  )\n\n# A tibble: 1 × 2\n    dbh height\n  &lt;dbl&gt;  &lt;dbl&gt;\n1    12     39\n\n\n\n\nBefore, we had .fns = mean, but with lambda syntax we can specify additional arguments in the newfound parentheses.\nWe use the tilde ~ to specify lambda syntax.\nAfter we’ve specified the ~, we can now put parentheses after the function and specify additional arguments."
   },
   {
     "objectID": "slides/w8d2.html#we-need-lambda-syntax-2",
     "href": "slides/w8d2.html#we-need-lambda-syntax-2",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "We need “lambda syntax”",
     "text": "We need “lambda syntax”\n\ntrees %&gt;%\n  summarize(\n    across(.cols = c(dbh, height),\n           .fns = ~ mean(.x, na.rm = TRUE))\n  )\n\n# A tibble: 1 × 2\n    dbh height\n  &lt;dbl&gt;  &lt;dbl&gt;\n1    12     39\n\n\n\nWe now must specify .x in the place where the columns go (before, this happened implicitly)"
   },
   {
     "objectID": "slides/w8d2.html#next-time",
     "href": "slides/w8d2.html#next-time",
-    "title": "More data wrangling with dplyr",
+    "title": "Advanced grouping and summarization",
     "section": "Next time",
     "text": "Next time\n\nJoining tibbles with dplyr"
   },
