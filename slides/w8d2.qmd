@@ -1,0 +1,454 @@
+---
+title: "More data wrangling with `dplyr`"
+editor: 
+  mode: source
+webr:
+  show-startup-message: false
+filters:
+  - webr
+engine: knitr
+execute:
+  echo: true
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+---
+
+## Agenda
+
+-   `group_by()` and `summarize()` in further detail,
+-   Counting with `n()` and `n_distinct()`,
+-   Working `across()` columns. 
+
+
+## `dplyr` verbs
+
+Recall the standard `dplyr` verb form: 
+
+```{r}
+#| eval: false
+verb(data, action)
+```
+
+::: incremental
+
+-   The first argument of any `dplyr` verb is the data (a tibble or data.frame), and the next arguments specify how we are using the `verb()`.
+-   Since the first argument is always the data, `dplyr` functions can easily be "piped" between to create a pipeline from one verb to another. 
+-   A very common pipeline between verbs occurs between `group_by()` and `summarize()`. 
+
+:::
+
+## Again, we will use `more_pets`
+
+```{r}
+library(tidyverse)
+more_pets <- tibble(
+  names = c("Dude", "Pickle", "Kyle", "Nubs", "Marvin", "Figaro", "Slim"),
+  ages = c(6, 5, 3, 11, 11, 3, 6),
+  meals_per_day = c(2, 3, 3, 3, 1, 2, 2),
+  type_of_animal = c("dog", rep("cat", 3), "sheep/ram", "cat", "dog")
+)
+more_pets
+```
+
+
+# Summarizing data with `dplyr` {background-color="#00817c"} 
+
+
+---
+
+```{r}
+#| fig-align: 'center'
+#| echo: false
+knitr::include_graphics("figs/horst/across.png")
+```
+
+
+## Summarization
+
+::: incremental
+
+-   Data summaries are some of the best ways to learn from the data we have. 
+-   With increasingly large data, it can be very helpful to summarize. 
+-   `dplyr` provides intuitive and powerful ways to summarize data. 
+-   Recall: they call their function for summarization, *suprisingly*, `summarize()`
+
+:::
+
+## Summarization
+
+-   The `summarize()` function takes a very similar form to the other `dplyr` functions. 
+-   In particular, it is of the form:
+
+```{r}
+#| eval: false
+summarize(data, new_summary_column_name = summarization_code)
+```
+
+
+## Get the mean value of the pet's ages
+
+
+```{r}
+more_pets %>%
+  summarize(avg_age = mean(ages))
+```
+
+## Get the total years lived by the pets
+
+```{r}
+#| echo: false
+more_pets %>%
+  summarize(years_lived = sum(ages))
+```
+
+## Get the total years lived by the pets
+
+```{r}
+more_pets %>%
+  summarize(years_lived = sum(ages))
+```
+
+## `group_by()`
+
+::: incremental
+
+-   The `group_by()` function allows us to group our tibble by a variable of interest. 
+-   `group_by()` on its own, does not change the rows or columns of the tibble, it just makes it "grouped"
+-   However, when we go to `summarize()` "grouped" data, we get the results for each group.
+-   Let's try it out!
+
+:::
+
+## average age for each type of pet
+
+```{r}
+more_pets
+```
+
+## average age for each type of pet
+
+```{r}
+more_pets %>% 
+  group_by(type_of_animal)
+```
+
+## average age for each type of pet
+
+```{r}
+more_pets %>% 
+  group_by(type_of_animal) %>%
+  summarize(avg_age = mean(ages))
+```
+
+## How many of each type of animal? 
+
+```{r}
+#| echo: false
+more_pets %>% 
+  group_by(type_of_animal) %>%
+  summarize(number_of_types = n())
+```
+
+## How many of each type of animal? 
+
+```{r}
+more_pets %>% 
+  group_by(type_of_animal) %>%
+  summarize(number_of_types = n())
+```
+
+## What's going on with `n()`
+
+::: incremental 
+
+-   The `n()` function counts for us! 
+-   When we use `n()`, nothing ever goes in the parentheses.
+-   For our cases, we will use `n()` in within a `summarize()` or `mutate()` on a grouped dataset. `n()` counts the rows in each group for us. 
+
+:::
+
+## Number of other animals of the same type
+
+```{r}
+#| echo: false
+more_pets %>% 
+  group_by(type_of_animal) %>%
+  mutate(other_of_same = n() - 1) 
+```
+
+## Number of other animals of the same type
+
+```{r}
+#| code-line-numbers: "1|2|3"
+more_pets %>% 
+  group_by(type_of_animal) %>%
+  mutate(other_of_same = n() - 1) 
+```
+
+
+## Number of types of animals 
+
+```{r}
+#| echo: false
+more_pets %>% 
+  summarize(n_types = n_distinct(type_of_animal))
+```
+
+## Number of types of animals 
+
+```{r}
+more_pets %>% 
+  summarize(n_types = n_distinct(type_of_animal))
+```
+
+## The `n_distinct()` function
+
+::: incremental
+
+-   Used similarly to `n()`, but takes columns as inputs,
+-   Counts the number of distinct values in the supplied columns,
+-   Can be used grouped.
+
+:::
+
+## Number of unique ages for each type of animal
+
+```{r}
+#| echo: false
+more_pets %>%
+  group_by(type_of_animal) %>%
+  summarize(unique_ages = n_distinct(ages))
+```
+
+## Number of unique ages for each type of animal
+
+```{r}
+more_pets %>%
+  group_by(type_of_animal) %>%
+  summarize(unique_ages = n_distinct(ages))
+```
+
+
+# Working `across()` columns {background-color="#00817c"}
+
+---
+
+```{r}
+#| fig-align: 'center'
+#| echo: false
+knitr::include_graphics("figs/horst/across.png")
+```
+
+---
+
+## `across()`
+
+::: incremental
+
+-   `across()` takes two arguments: `.cols` and `.fns`
+-   The `.cols` argument specifies the columns we'd like to apply our function, `.fns`, to. 
+-   In practice, we use `across()` within a `mutate()` or a `summarize()`.
+-   Let's try it out!
+
+:::
+
+
+## Get the mean of ages and meals_per_day
+
+```{r}
+more_pets %>%
+  summarize(
+    across(.cols = c(ages, meals_per_day),
+           .fns = mean)
+  )
+```
+
+## Make the ages and meals_per_day columns integers
+
+```{r}
+#| echo: false
+more_pets %>%
+  mutate(
+    across(.cols = c(ages, meals_per_day),
+           .fns = as.integer)
+  )
+```
+
+## Make the ages and meals_per_day columns integers
+
+```{r}
+more_pets %>%
+  mutate(
+    across(.cols = c(ages, meals_per_day),
+           .fns = as.integer)
+  )
+```
+
+
+## Get the mean and standard deviation of ages and meals_per_day
+
+**Bad example**
+
+```{r}
+more_pets %>%
+  summarize(
+    across(.cols = c(ages, meals_per_day),
+           .fns = mean)
+  )
+
+more_pets %>%
+  summarize(
+    across(.cols = c(ages, meals_per_day),
+           .fns = sd)
+  )
+```
+
+## Get the mean and standard deviation of ages and meals_per_day
+
+**Better**
+
+```{r}
+more_pets %>%
+  summarize(
+    across(.cols = c(ages, meals_per_day),
+           .fns = c(mean, sd))
+  )
+```
+
+## Get the mean and standard deviation of ages and meals_per_day
+
+**Best**
+
+```{r}
+more_pets %>%
+  summarize(
+    across(.cols = c(ages, meals_per_day),
+           .fns = c(mean = mean, standard_deviation = sd))
+  )
+```
+
+## Get the mean and standard deviation of ages and meals_per_day, grouped by type of animal
+
+```{r}
+more_pets %>%
+  group_by(type_of_animal) %>%
+  summarize(
+    across(.cols = c(ages, meals_per_day),
+           .fns = c(mean = mean, standard_deviation = sd))
+  )
+```
+
+
+## Specifying function arguments in calls to `across()`
+
+Consider the toy dataset: 
+
+```{r}
+trees <- tibble(
+  dbh = c(15, 9, NA),
+  height = c(50, 34, 33),
+  spp = c("doug-fir", "madrone", "doug-fir")
+)
+trees
+```
+
+## What if we want the mean dbh and height? 
+
+```{r}
+trees %>%
+  summarize(
+    across(.cols = c(dbh, height),
+           .fns = mean)
+  )
+```
+
+::: incremental
+
+-   returns `NA` :-(
+
+:::
+
+## We need "lambda syntax" 
+
+```{r}
+trees %>%
+  summarize(
+    across(.cols = c(dbh, height),
+           .fns = ~ mean(.x, na.rm = TRUE))
+  )
+```
+
+## We need "lambda syntax" 
+
+
+```{r}
+#| code-line-numbers: "4"
+trees %>%
+  summarize(
+    across(.cols = c(dbh, height),
+           .fns = ~ mean(.x, na.rm = TRUE))
+  )
+```
+
+::: incremental
+
+-   Before, we had `.fns = mean`, but with lambda syntax we can specify additional arguments in the newfound parentheses. 
+-   We use the tilde `~` to specify lambda syntax.
+-   After we've specified the `~`, we can now put parentheses after the function and specify additional arguments.
+
+
+:::
+
+## We need "lambda syntax" 
+
+
+```{r}
+#| code-line-numbers: "4"
+trees %>%
+  summarize(
+    across(.cols = c(dbh, height),
+           .fns = ~ mean(.x, na.rm = TRUE))
+  )
+```
+
+
+-   We now must specify `.x` in the place where the columns go (before, this happened implicitly)
+
+
+# Let's take a look at Lab 7 {background-color="#00817c"} 
+
+[https://www.for128.org](https://www.for128.org)
+
+
+## Next time
+
+-   Joining tibbles with `dplyr`
+
+
+
+
+
+
+
+
+
+
+
+ 

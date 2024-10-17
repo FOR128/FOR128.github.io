@@ -1,0 +1,207 @@
+---
+title: "Data Wrangling with `dplyr`"
+subtitle: "FOR 128: Lab 7"
+date: "10/17/2024"
+format:
+  html: default
+editor: 
+  mode: source
+---
+
+## Welcome
+
+Welcome to Lab 7! Today, we'll focus on writing `dplyr` code. In particular, "writing a sentence" with the verbs by stringing them together with pipes. 
+
+### Learning objectives
+
+-   Use `dplyr` verbs together with pipes. 
+
+### Deliverables (i.e., what to put in the lab drop box)
+
+Upload your rendered PDF (`lab_07.pdf`) **and** Quarto (`lab_07.qmd`) document to the lab drop box. Make sure the Quarto document properly renders to PDF.
+
+### Collaborator(s)
+
+List any collaborators you worked with below. 
+
+
+## Exercise 0
+
+Load any packages you'll need for this lab below.
+
+```{r}
+
+```
+
+
+## Exercise 1
+
+Create the `plots` dataset shown in the online rendering of the lab. 
+
+```{r}
+
+```
+
+
+
+## Exercise 2
+
+Write some code to figure out the follow features of `plots`:
+
+  a. How many rows and columns?
+  b. What are the column names?
+  c. What is the data type of each column?
+  d. Are there any `NA` values? If so, in which column?
+  
+```{r}
+
+```
+
+  
+## Exercise 3
+
+Use a `dplyr` function to print all trees in plot 2. 
+
+```{r}
+
+```
+
+### Exercise 4
+
+Use a `dplyr` function to print all trees in plot 2 that have dbh less than or equal 10. 
+
+```{r}
+
+```
+
+### Exercise 5
+
+Use a `dplyr` function to print the tree with the largest dbh. 
+
+```{r}
+
+```
+
+### Exercise 6
+
+Use a series of piped `dplyr` functions to find the largest dbh tree on plot 2.
+
+```{r}
+
+```
+
+### Exercise 7
+
+Use a series of piped `dplyr` functions to find the largest dbh live tree on plot 2. 
+
+```{r}
+
+```
+
+### Exercise 8
+
+Use a series of piped `dplyr` functions to find the largest dbh dead tree on plot 2. 
+
+```{r}
+
+```
+
+### Exercise 9
+
+Use a series of piped `dplyr` functions to find the largest dbh live tree on plot 2 of type D. 
+
+```{r}
+
+```
+
+### Exercise 10
+
+Use a series of piped `dplyr` functions to find the smallest dbh tree on plot 1. 
+
+```{r}
+
+```
+
+### Exercise 11
+
+Use a `dplyr` function to add a new column to `plots` to hold each tree's basal area (ft$^2$). This new column should be called `ba` with values equal to `0.005454*dbh^2` (assuming dbh is in inches).
+
+```{r}
+
+```
+
+### Exercise 12
+
+Use a `dplyr` function to move your newly created column `ba` to between the `dbh` and `logs` columns.
+
+```{r}
+
+```
+
+### Exercise 13
+
+Use a series of piped `dplyr` functions to compute the mean dbh for trees on plots 1 and 2. Note, I called my mean `mean_dbh`.
+
+```{r}
+
+```
+
+### Exercise 14
+
+Use a series of piped `dplyr` functions to compute plot specific mean dbh and logs for trees. Exclude `NA` values from the mean calculations (hint, use the `na.rm` argument in `mean()`). Note, I called my mean `mean_dbh` and `mean_logs`.
+
+```{r}
+
+```
+
+### Exercise 15
+
+Use a series of piped `dplyr` functions to compute plot specific mean dbh and logs for *live* trees. Note, I called my mean `mean_dbh` and `mean_logs`. Why did only plot 2 mean dbh change from the your solution to Exercise 14?
+
+```{r}
+
+```
+
+### Exercise 16
+
+Sort `plots` by increasing plot number and increasing dbh within plot. Hint, use the `arrange()` function.
+```{r}
+
+```
+
+### Exercise 17
+
+The type column holds values "D" and "C" which stand for deciduous and conifer, respectively. Use `mutate()` and the `case_when()` function to change values in the type column from "D" and "C" to "deciduous" and "conifer". 
+```{r}
+
+```
+
+
+### Exercise 18
+
+Use a series of piped `dplyr` functions to compute type specific mean dbh and logs. More specifically, I want you to use a grouped `summarize()`, where you group by type. Note, I called my mean `mean_dbh` and `mean_logs`.
+
+```{r}
+
+```
+
+### Exercise 19
+
+Use a series of piped `dplyr` functions to count the number of trees by type. Hint, use the `n()` within a grouped `summarize()`. I called my count `n_trees`.
+
+```{r}
+
+```
+
+### Exercise 20
+
+Use a series of piped `dplyr` functions to print the trees with the largest basal area within each plot. Hint, use a grouped `slice_max()`.
+
+```{r}
+
+```
+
+
+# Wrap up
+
+Congratulations! You've made it to the end of Lab 7. Make sure to render your final document and submit both the .pdf and .qmd file to D2L.
