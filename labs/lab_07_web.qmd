@@ -10,7 +10,7 @@ editor:
 
 ## Welcome
 
-Welcome to Lab 7! Today, we'll focus on writing `dplyr` code. In particular, "writing a sentence" with the verbs by stringing them together with pipes. 
+Welcome to Lab 7! Today, we'll focus on writing `dplyr` code. In particular, we will both use the verbs individually and "write a sentence" with the verbs by stringing them together with pipes. 
 
 ### Learning objectives
 
@@ -197,7 +197,8 @@ plots %>% filter(live) %>% group_by(plot) %>% summarise(mean_dbh = mean(dbh), me
 
 ### Exercise 16
 
-Sort `plots` by increasing plot number and increasing dbh within plot. Hint, use the `arrange()` function.
+Sort `plots` by increasing plot number and increasing dbh within plot. 
+
 ```{r}
 #| echo: false
 #| message: false
@@ -241,7 +242,7 @@ plots %>% group_by(type) %>% summarise(n_trees = n())
 
 ### Exercise 20
 
-Use a series of piped `dplyr` functions to print the trees with the largest basal area within each plot. Hint, use a grouped `slice_max()`.
+Use a series of piped `dplyr` functions to print the trees with the largest basal area within each plot. 
 
 ```{r}
 #| echo: false

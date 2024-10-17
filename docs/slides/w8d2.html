@@ -517,6 +517,39 @@ Practical Computing and Data Science Tools
 </div>
 </div>
 </section>
+<section id="custom-functions-in-summarize" class="slide level2">
+<h2>Custom functions in <code>summarize()</code></h2>
+<p>Recall the quadratic mean:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>quad_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb10-2"><a></a>  <span class="fu">return</span>(<span class="fu">sqrt</span>(<span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)) <span class="sc">/</span> <span class="fu">length</span>(x))</span>
+<span id="cb10-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="custom-functions-in-summarize-1" class="slide level2">
+<h2>Custom functions in <code>summarize()</code></h2>
+<p>Recall the quadratic mean:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>quad_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb11-2"><a></a>  <span class="fu">return</span>(<span class="fu">sqrt</span>(<span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)) <span class="sc">/</span> <span class="fu">length</span>(x))</span>
+<span id="cb11-3"><a></a>}</span>
+<span id="cb11-4"><a></a></span>
+<span id="cb11-5"><a></a>more_pets <span class="sc">%&gt;%</span></span>
+<span id="cb11-6"><a></a>  <span class="fu">summarize</span>(<span class="at">q_mean =</span> <span class="fu">quad_mean</span>(ages),</span>
+<span id="cb11-7"><a></a>            <span class="at">a_mean =</span> <span class="fu">mean</span>(ages))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  q_mean a_mean
+   &lt;dbl&gt;  &lt;dbl&gt;
+1   2.70   6.43</code></pre>
+</div>
+</div>
+<div>
+<ul>
+<li class="fragment">We can use our own functions within a summarize!</li>
+</ul>
+</div>
+</section>
 <section id="group_by" class="slide level2">
 <h2><code>group_by()</code></h2>
 <div>
@@ -531,7 +564,7 @@ Practical Computing and Data Science Tools
 <section id="average-age-for-each-type-of-pet" class="slide level2">
 <h2>average age for each type of pet</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>more_pets</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>more_pets</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7 × 4
   names   ages meals_per_day type_of_animal
@@ -549,8 +582,8 @@ Practical Computing and Data Science Tools
 <section id="average-age-for-each-type-of-pet-1" class="slide level2">
 <h2>average age for each type of pet</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>more_pets <span class="sc">%&gt;%</span> </span>
-<span id="cb12-2"><a></a>  <span class="fu">group_by</span>(type_of_animal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>more_pets <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a></a>  <span class="fu">group_by</span>(type_of_animal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7 × 4
 # Groups:   type_of_animal [3]
@@ -569,9 +602,9 @@ Practical Computing and Data Science Tools
 <section id="average-age-for-each-type-of-pet-2" class="slide level2">
 <h2>average age for each type of pet</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>more_pets <span class="sc">%&gt;%</span> </span>
-<span id="cb14-2"><a></a>  <span class="fu">group_by</span>(type_of_animal) <span class="sc">%&gt;%</span></span>
-<span id="cb14-3"><a></a>  <span class="fu">summarize</span>(<span class="at">avg_age =</span> <span class="fu">mean</span>(ages))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>more_pets <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a></a>  <span class="fu">group_by</span>(type_of_animal) <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a></a>  <span class="fu">summarize</span>(<span class="at">avg_age =</span> <span class="fu">mean</span>(ages))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   type_of_animal avg_age
@@ -598,9 +631,9 @@ Practical Computing and Data Science Tools
 <section id="how-many-of-each-type-of-animal-1" class="slide level2">
 <h2>How many of each type of animal?</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>more_pets <span class="sc">%&gt;%</span> </span>
-<span id="cb17-2"><a></a>  <span class="fu">group_by</span>(type_of_animal) <span class="sc">%&gt;%</span></span>
-<span id="cb17-3"><a></a>  <span class="fu">summarize</span>(<span class="at">number_of_types =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>more_pets <span class="sc">%&gt;%</span> </span>
+<span id="cb20-2"><a></a>  <span class="fu">group_by</span>(type_of_animal) <span class="sc">%&gt;%</span></span>
+<span id="cb20-3"><a></a>  <span class="fu">summarize</span>(<span class="at">number_of_types =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   type_of_animal number_of_types
@@ -642,9 +675,9 @@ Practical Computing and Data Science Tools
 <section id="number-of-other-animals-of-the-same-type-1" class="slide level2">
 <h2>Number of other animals of the same type</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20" data-code-line-numbers="1|2|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>more_pets <span class="sc">%&gt;%</span> </span>
-<span id="cb20-2"><a></a>  <span class="fu">group_by</span>(type_of_animal) <span class="sc">%&gt;%</span></span>
-<span id="cb20-3"><a></a>  <span class="fu">mutate</span>(<span class="at">other_of_same =</span> <span class="fu">n</span>() <span class="sc">-</span> <span class="dv">1</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23" data-code-line-numbers="1|2|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>more_pets <span class="sc">%&gt;%</span> </span>
+<span id="cb23-2"><a></a>  <span class="fu">group_by</span>(type_of_animal) <span class="sc">%&gt;%</span></span>
+<span id="cb23-3"><a></a>  <span class="fu">mutate</span>(<span class="at">other_of_same =</span> <span class="fu">n</span>() <span class="sc">-</span> <span class="dv">1</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7 × 5
 # Groups:   type_of_animal [3]
@@ -674,8 +707,8 @@ Practical Computing and Data Science Tools
 <section id="number-of-types-of-animals-1" class="slide level2">
 <h2>Number of types of animals</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>more_pets <span class="sc">%&gt;%</span> </span>
-<span id="cb23-2"><a></a>  <span class="fu">summarize</span>(<span class="at">n_types =</span> <span class="fu">n_distinct</span>(type_of_animal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>more_pets <span class="sc">%&gt;%</span> </span>
+<span id="cb26-2"><a></a>  <span class="fu">summarize</span>(<span class="at">n_types =</span> <span class="fu">n_distinct</span>(type_of_animal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   n_types
@@ -710,9 +743,9 @@ Practical Computing and Data Science Tools
 <section id="number-of-unique-ages-for-each-type-of-animal-1" class="slide level2">
 <h2>Number of unique ages for each type of animal</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>more_pets <span class="sc">%&gt;%</span></span>
-<span id="cb26-2"><a></a>  <span class="fu">group_by</span>(type_of_animal) <span class="sc">%&gt;%</span></span>
-<span id="cb26-3"><a></a>  <span class="fu">summarize</span>(<span class="at">unique_ages =</span> <span class="fu">n_distinct</span>(ages))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>more_pets <span class="sc">%&gt;%</span></span>
+<span id="cb29-2"><a></a>  <span class="fu">group_by</span>(type_of_animal) <span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a></a>  <span class="fu">summarize</span>(<span class="at">unique_ages =</span> <span class="fu">n_distinct</span>(ages))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   type_of_animal unique_ages
@@ -746,11 +779,11 @@ Practical Computing and Data Science Tools
 <section id="get-the-mean-of-ages-and-meals_per_day" class="slide level2">
 <h2>Get the mean of ages and meals_per_day</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>more_pets <span class="sc">%&gt;%</span></span>
-<span id="cb28-2"><a></a>  <span class="fu">summarize</span>(</span>
-<span id="cb28-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(ages, meals_per_day),</span>
-<span id="cb28-4"><a></a>           <span class="at">.fns =</span> mean)</span>
-<span id="cb28-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>more_pets <span class="sc">%&gt;%</span></span>
+<span id="cb31-2"><a></a>  <span class="fu">summarize</span>(</span>
+<span id="cb31-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(ages, meals_per_day),</span>
+<span id="cb31-4"><a></a>           <span class="at">.fns =</span> mean)</span>
+<span id="cb31-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
    ages meals_per_day
@@ -779,11 +812,11 @@ Practical Computing and Data Science Tools
 <section id="make-the-ages-and-meals_per_day-columns-integers-1" class="slide level2">
 <h2>Make the ages and meals_per_day columns integers</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>more_pets <span class="sc">%&gt;%</span></span>
-<span id="cb31-2"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb31-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(ages, meals_per_day),</span>
-<span id="cb31-4"><a></a>           <span class="at">.fns =</span> as.integer)</span>
-<span id="cb31-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>more_pets <span class="sc">%&gt;%</span></span>
+<span id="cb34-2"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb34-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(ages, meals_per_day),</span>
+<span id="cb34-4"><a></a>           <span class="at">.fns =</span> as.integer)</span>
+<span id="cb34-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7 × 4
   names   ages meals_per_day type_of_animal
@@ -802,22 +835,22 @@ Practical Computing and Data Science Tools
 <h2>Get the mean and standard deviation of ages and meals_per_day</h2>
 <p><strong>Bad example</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>more_pets <span class="sc">%&gt;%</span></span>
-<span id="cb33-2"><a></a>  <span class="fu">summarize</span>(</span>
-<span id="cb33-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(ages, meals_per_day),</span>
-<span id="cb33-4"><a></a>           <span class="at">.fns =</span> mean)</span>
-<span id="cb33-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>more_pets <span class="sc">%&gt;%</span></span>
+<span id="cb36-2"><a></a>  <span class="fu">summarize</span>(</span>
+<span id="cb36-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(ages, meals_per_day),</span>
+<span id="cb36-4"><a></a>           <span class="at">.fns =</span> mean)</span>
+<span id="cb36-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
    ages meals_per_day
   &lt;dbl&gt;         &lt;dbl&gt;
 1  6.43          2.29</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>more_pets <span class="sc">%&gt;%</span></span>
-<span id="cb35-2"><a></a>  <span class="fu">summarize</span>(</span>
-<span id="cb35-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(ages, meals_per_day),</span>
-<span id="cb35-4"><a></a>           <span class="at">.fns =</span> sd)</span>
-<span id="cb35-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>more_pets <span class="sc">%&gt;%</span></span>
+<span id="cb38-2"><a></a>  <span class="fu">summarize</span>(</span>
+<span id="cb38-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(ages, meals_per_day),</span>
+<span id="cb38-4"><a></a>           <span class="at">.fns =</span> sd)</span>
+<span id="cb38-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
    ages meals_per_day
@@ -830,11 +863,11 @@ Practical Computing and Data Science Tools
 <h2>Get the mean and standard deviation of ages and meals_per_day</h2>
 <p><strong>Better</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>more_pets <span class="sc">%&gt;%</span></span>
-<span id="cb37-2"><a></a>  <span class="fu">summarize</span>(</span>
-<span id="cb37-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(ages, meals_per_day),</span>
-<span id="cb37-4"><a></a>           <span class="at">.fns =</span> <span class="fu">c</span>(mean, sd))</span>
-<span id="cb37-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>more_pets <span class="sc">%&gt;%</span></span>
+<span id="cb40-2"><a></a>  <span class="fu">summarize</span>(</span>
+<span id="cb40-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(ages, meals_per_day),</span>
+<span id="cb40-4"><a></a>           <span class="at">.fns =</span> <span class="fu">c</span>(mean, sd))</span>
+<span id="cb40-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 4
   ages_1 ages_2 meals_per_day_1 meals_per_day_2
@@ -847,11 +880,11 @@ Practical Computing and Data Science Tools
 <h2>Get the mean and standard deviation of ages and meals_per_day</h2>
 <p><strong>Best</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>more_pets <span class="sc">%&gt;%</span></span>
-<span id="cb39-2"><a></a>  <span class="fu">summarize</span>(</span>
-<span id="cb39-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(ages, meals_per_day),</span>
-<span id="cb39-4"><a></a>           <span class="at">.fns =</span> <span class="fu">c</span>(<span class="at">mean =</span> mean, <span class="at">standard_deviation =</span> sd))</span>
-<span id="cb39-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>more_pets <span class="sc">%&gt;%</span></span>
+<span id="cb42-2"><a></a>  <span class="fu">summarize</span>(</span>
+<span id="cb42-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(ages, meals_per_day),</span>
+<span id="cb42-4"><a></a>           <span class="at">.fns =</span> <span class="fu">c</span>(<span class="at">mean =</span> mean, <span class="at">standard_deviation =</span> sd))</span>
+<span id="cb42-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 4
   ages_mean ages_standard_deviation meals_per_day_mean meals_per_day_standard_…¹
@@ -864,12 +897,12 @@ Practical Computing and Data Science Tools
 <section id="get-the-mean-and-standard-deviation-of-ages-and-meals_per_day-grouped-by-type-of-animal" class="slide level2">
 <h2>Get the mean and standard deviation of ages and meals_per_day, grouped by type of animal</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>more_pets <span class="sc">%&gt;%</span></span>
-<span id="cb41-2"><a></a>  <span class="fu">group_by</span>(type_of_animal) <span class="sc">%&gt;%</span></span>
-<span id="cb41-3"><a></a>  <span class="fu">summarize</span>(</span>
-<span id="cb41-4"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(ages, meals_per_day),</span>
-<span id="cb41-5"><a></a>           <span class="at">.fns =</span> <span class="fu">c</span>(<span class="at">mean =</span> mean, <span class="at">standard_deviation =</span> sd))</span>
-<span id="cb41-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>more_pets <span class="sc">%&gt;%</span></span>
+<span id="cb44-2"><a></a>  <span class="fu">group_by</span>(type_of_animal) <span class="sc">%&gt;%</span></span>
+<span id="cb44-3"><a></a>  <span class="fu">summarize</span>(</span>
+<span id="cb44-4"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(ages, meals_per_day),</span>
+<span id="cb44-5"><a></a>           <span class="at">.fns =</span> <span class="fu">c</span>(<span class="at">mean =</span> mean, <span class="at">standard_deviation =</span> sd))</span>
+<span id="cb44-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 5
   type_of_animal ages_mean ages_standard_deviation meals_per_day_mean
@@ -885,12 +918,12 @@ Practical Computing and Data Science Tools
 <h2>Specifying function arguments in calls to <code>across()</code></h2>
 <p>Consider the toy dataset:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>trees <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb43-2"><a></a>  <span class="at">dbh =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">9</span>, <span class="cn">NA</span>),</span>
-<span id="cb43-3"><a></a>  <span class="at">height =</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">34</span>, <span class="dv">33</span>),</span>
-<span id="cb43-4"><a></a>  <span class="at">spp =</span> <span class="fu">c</span>(<span class="st">"doug-fir"</span>, <span class="st">"madrone"</span>, <span class="st">"doug-fir"</span>)</span>
-<span id="cb43-5"><a></a>)</span>
-<span id="cb43-6"><a></a>trees</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a>trees <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb46-2"><a></a>  <span class="at">dbh =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">9</span>, <span class="cn">NA</span>),</span>
+<span id="cb46-3"><a></a>  <span class="at">height =</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">34</span>, <span class="dv">33</span>),</span>
+<span id="cb46-4"><a></a>  <span class="at">spp =</span> <span class="fu">c</span>(<span class="st">"doug-fir"</span>, <span class="st">"madrone"</span>, <span class="st">"doug-fir"</span>)</span>
+<span id="cb46-5"><a></a>)</span>
+<span id="cb46-6"><a></a>trees</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
     dbh height spp     
@@ -904,11 +937,11 @@ Practical Computing and Data Science Tools
 <section id="what-if-we-want-the-mean-dbh-and-height" class="slide level2">
 <h2>What if we want the mean dbh and height?</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>trees <span class="sc">%&gt;%</span></span>
-<span id="cb45-2"><a></a>  <span class="fu">summarize</span>(</span>
-<span id="cb45-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(dbh, height),</span>
-<span id="cb45-4"><a></a>           <span class="at">.fns =</span> mean)</span>
-<span id="cb45-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>trees <span class="sc">%&gt;%</span></span>
+<span id="cb48-2"><a></a>  <span class="fu">summarize</span>(</span>
+<span id="cb48-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(dbh, height),</span>
+<span id="cb48-4"><a></a>           <span class="at">.fns =</span> mean)</span>
+<span id="cb48-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
     dbh height
@@ -925,11 +958,11 @@ Practical Computing and Data Science Tools
 <section id="we-need-lambda-syntax" class="slide level2">
 <h2>We need “lambda syntax”</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>trees <span class="sc">%&gt;%</span></span>
-<span id="cb47-2"><a></a>  <span class="fu">summarize</span>(</span>
-<span id="cb47-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(dbh, height),</span>
-<span id="cb47-4"><a></a>           <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb47-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a>trees <span class="sc">%&gt;%</span></span>
+<span id="cb50-2"><a></a>  <span class="fu">summarize</span>(</span>
+<span id="cb50-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(dbh, height),</span>
+<span id="cb50-4"><a></a>           <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb50-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
     dbh height
@@ -941,11 +974,11 @@ Practical Computing and Data Science Tools
 <section id="we-need-lambda-syntax-1" class="slide level2">
 <h2>We need “lambda syntax”</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>trees <span class="sc">%&gt;%</span></span>
-<span id="cb49-2"><a></a>  <span class="fu">summarize</span>(</span>
-<span id="cb49-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(dbh, height),</span>
-<span id="cb49-4"><a></a>           <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb49-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a>trees <span class="sc">%&gt;%</span></span>
+<span id="cb52-2"><a></a>  <span class="fu">summarize</span>(</span>
+<span id="cb52-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(dbh, height),</span>
+<span id="cb52-4"><a></a>           <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb52-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
     dbh height
@@ -964,11 +997,11 @@ Practical Computing and Data Science Tools
 <section id="we-need-lambda-syntax-2" class="slide level2">
 <h2>We need “lambda syntax”</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>trees <span class="sc">%&gt;%</span></span>
-<span id="cb51-2"><a></a>  <span class="fu">summarize</span>(</span>
-<span id="cb51-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(dbh, height),</span>
-<span id="cb51-4"><a></a>           <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb51-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a>trees <span class="sc">%&gt;%</span></span>
+<span id="cb54-2"><a></a>  <span class="fu">summarize</span>(</span>
+<span id="cb54-3"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(dbh, height),</span>
+<span id="cb54-4"><a></a>           <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb54-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
     dbh height

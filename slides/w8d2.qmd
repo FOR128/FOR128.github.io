@@ -125,6 +125,37 @@ more_pets %>%
   summarize(years_lived = sum(ages))
 ```
 
+## Custom functions in `summarize()`
+
+Recall the quadratic mean:
+
+```{r}
+quad_mean <- function(x) {
+  return(sqrt(sum(x^2)) / length(x))
+}
+```
+
+## Custom functions in `summarize()`
+
+Recall the quadratic mean:
+
+```{r}
+quad_mean <- function(x) {
+  return(sqrt(sum(x^2)) / length(x))
+}
+
+more_pets %>%
+  summarize(q_mean = quad_mean(ages),
+            a_mean = mean(ages))
+```
+
+::: incremental
+
+-   We can use our own functions within a summarize! 
+
+:::
+
+
 ## `group_by()`
 
 ::: incremental
