@@ -2868,5 +2868,432 @@
     "title": "Functions and conditionals",
     "section": "Next time",
     "text": "Next time\n\nLoops\nMore advanced functions\nReview Quarto"
+  },
+  {
+    "objectID": "slides/w9d1.html#agenda",
+    "href": "slides/w9d1.html#agenda",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Agenda",
+    "text": "Agenda\n\nCombining tibbles (i.e. data joins)\nApplications of data joins to forestry\nQuiz (in lab!)"
+  },
+  {
+    "objectID": "slides/w9d1.html#data-joins-in-r",
+    "href": "slides/w9d1.html#data-joins-in-r",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Data Joins in R",
+    "text": "Data Joins in R\nToday, we’ll talk about joining tibbles in R with dplyr.\n\nArtwork by Allison Horst."
+  },
+  {
+    "objectID": "slides/w9d1.html#data-joins-in-r-1",
+    "href": "slides/w9d1.html#data-joins-in-r-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Data Joins in R",
+    "text": "Data Joins in R\nRecall that the dplyr package, short for “data pliers”, is an R package all about wrangling data.\n\nToday, we will explore it’s tools for joining data tables (i.e. “tibbles”)."
+  },
+  {
+    "objectID": "slides/w9d1.html#data-joins-in-r-2",
+    "href": "slides/w9d1.html#data-joins-in-r-2",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Data Joins in R",
+    "text": "Data Joins in R\nIn particular, we’ll look at a few ways to join the following tables x and y:"
+  },
+  {
+    "objectID": "slides/w9d1.html#motivation",
+    "href": "slides/w9d1.html#motivation",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Motivation",
+    "text": "Motivation\n\n\nIt is common in forestry, and in particular forest inventory, to have multiple tibbles where data are stored due to a variety of factors.\nIn order to perform most statistical analyses, you must have the necessary data in one tibble.\nExample: the US Forest Service, Forest Inventory & Analysis stores plot-level, tree-level, subplot-level, … data in one database. Researchers must combine these data into a singular table to do analyses."
+  },
+  {
+    "objectID": "slides/w9d1.html#types-of-data-joins",
+    "href": "slides/w9d1.html#types-of-data-joins",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Types of Data Joins",
+    "text": "Types of Data Joins\nThe dplyr package, which is part of the tidyverse, includes functions for two general types of joins:\n\n\nMutating joins, which combine the columns of tibbles x and y, and\nFiltering joins, which match the rows of tibbles x and y."
+  },
+  {
+    "objectID": "slides/w9d1.html#example-data",
+    "href": "slides/w9d1.html#example-data",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Example Data",
+    "text": "Example Data\nFor the following examples of data joins, we will use the tibbles from the first slide. We can load this data into R:\n\nlibrary(tidyverse)\nx &lt;- tibble(spp_code = c(\"ABBA\", \"BEPA\", \"PIST\"),\n            common_name = c(\"balsum fir\", \"paper birch\", \"white pine\"))\n\ny &lt;- tibble(spp_code = c(\"ABBA\", \"BEPA\", \"LALA\"),\n            latin_name = c(\"Abies balsamea\", \n                           \"Betula papyrifera\",\n                           \"Larix laricina\"))"
+  },
+  {
+    "objectID": "slides/w9d1.html#mutating-joins",
+    "href": "slides/w9d1.html#mutating-joins",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Mutating Joins",
+    "text": "Mutating Joins\ndplyr contains four mutating joins:\n\nleft_join(x, y) keeps all rows of x, but if a row in y does not match to x, an NA is assigned to that row in the new columns."
+  },
+  {
+    "objectID": "slides/w9d1.html#mutating-joins-1",
+    "href": "slides/w9d1.html#mutating-joins-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Mutating Joins",
+    "text": "Mutating Joins\ndplyr contains four mutating joins:\n\nleft_join(x, y) keeps all rows of x, but if a row in y does not match to x, an NA is assigned to that row in the new columns.\nright_join(x, y) is equivalent to left_join(y, x), except for column order."
+  },
+  {
+    "objectID": "slides/w9d1.html#mutating-joins-2",
+    "href": "slides/w9d1.html#mutating-joins-2",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Mutating Joins",
+    "text": "Mutating Joins\ndplyr contains four mutating joins:\n\nleft_join(x, y) keeps all rows of x, but if a row in y does not match to x, an NA is assigned to that row in the new columns.\nright_join(x, y) is equivalent to left_join(y, x), except for column order.\n\ninner_join(x, y) keeps only the rows matched between x and y."
+  },
+  {
+    "objectID": "slides/w9d1.html#mutating-joins-3",
+    "href": "slides/w9d1.html#mutating-joins-3",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Mutating Joins",
+    "text": "Mutating Joins\ndplyr contains four mutating joins:\n\nleft_join(x, y) keeps all rows of x, but if a row in y does not match to x, an NA is assigned to that row in the new columns.\nright_join(x, y) is equivalent to left_join(y, x), except for column order.\n\ninner_join(x, y) keeps only the rows matched between x and y.\nfull_join(x, y) keeps all rows of both x and y."
+  },
+  {
+    "objectID": "slides/w9d1.html#examples-mutating-joins",
+    "href": "slides/w9d1.html#examples-mutating-joins",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Examples: Mutating Joins",
+    "text": "Examples: Mutating Joins\nRecall our example data\n\nx\n\n# A tibble: 3 × 2\n  spp_code common_name\n  &lt;chr&gt;    &lt;chr&gt;      \n1 ABBA     balsum fir \n2 BEPA     paper birch\n3 PIST     white pine \n\ny\n\n# A tibble: 3 × 2\n  spp_code latin_name       \n  &lt;chr&gt;    &lt;chr&gt;            \n1 ABBA     Abies balsamea   \n2 BEPA     Betula papyrifera\n3 LALA     Larix laricina"
+  },
+  {
+    "objectID": "slides/w9d1.html#left_join",
+    "href": "slides/w9d1.html#left_join",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "left_join()",
+    "text": "left_join()\n\nleft_join(x, y)\n\nJoining with `by = join_by(spp_code)`\n\n\n# A tibble: 3 × 3\n  spp_code common_name latin_name       \n  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;            \n1 ABBA     balsum fir  Abies balsamea   \n2 BEPA     paper birch Betula papyrifera\n3 PIST     white pine  &lt;NA&gt;"
+  },
+  {
+    "objectID": "slides/w9d1.html#left_join-1",
+    "href": "slides/w9d1.html#left_join-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "left_join()",
+    "text": "left_join()\n\nleft_join(x, y)\n\nJoining with `by = join_by(spp_code)`\n\n\n# A tibble: 3 × 3\n  spp_code common_name latin_name       \n  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;            \n1 ABBA     balsum fir  Abies balsamea   \n2 BEPA     paper birch Betula papyrifera\n3 PIST     white pine  &lt;NA&gt;             \n\n\nBut what’s that message about?\n\"Joining with `by = join_by(spp_code)`\""
+  },
+  {
+    "objectID": "slides/w9d1.html#we-need-to-specify-a-key",
+    "href": "slides/w9d1.html#we-need-to-specify-a-key",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "We need to specify a key 🔑",
+    "text": "We need to specify a key 🔑\nA key is can just be thought of the name(s) of the column(s) you’re joining by. In the left_join() from the last slide, R assumed we were joining by the column spp_code since both x and y have a column with that name."
+  },
+  {
+    "objectID": "slides/w9d1.html#we-need-to-specify-a-key-1",
+    "href": "slides/w9d1.html#we-need-to-specify-a-key-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "We need to specify a key 🔑",
+    "text": "We need to specify a key 🔑\nA key is can just be thought of the name(s) of the column(s) you’re joining by. In the left_join() from the last slide, R assumed we were joining by the column spp_code since both x and y have a column with that name.\nKeys are important, especially when the columns you are joining by have different names, or you are joining by multiple columns."
+  },
+  {
+    "objectID": "slides/w9d1.html#left_join-with-a",
+    "href": "slides/w9d1.html#left_join-with-a",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "left_join(), with a 🔑",
+    "text": "left_join(), with a 🔑\n\nleft_join(x, y, by = \"spp_code\")\n\n# A tibble: 3 × 3\n  spp_code common_name latin_name       \n  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;            \n1 ABBA     balsum fir  Abies balsamea   \n2 BEPA     paper birch Betula papyrifera\n3 PIST     white pine  &lt;NA&gt;             \n\n\n\nNotice that we specify this key with the by argument. This is the same for all joins in dplyr."
+  },
+  {
+    "objectID": "slides/w9d1.html#right_join",
+    "href": "slides/w9d1.html#right_join",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "right_join()",
+    "text": "right_join()\n\nright_join(y, x, by = \"spp_code\")\n\n# A tibble: 3 × 3\n  spp_code latin_name        common_name\n  &lt;chr&gt;    &lt;chr&gt;             &lt;chr&gt;      \n1 ABBA     Abies balsamea    balsum fir \n2 BEPA     Betula papyrifera paper birch\n3 PIST     &lt;NA&gt;              white pine"
+  },
+  {
+    "objectID": "slides/w9d1.html#right_join-1",
+    "href": "slides/w9d1.html#right_join-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "right_join()",
+    "text": "right_join()\n\nright_join(y, x, by = \"spp_code\")\n\n# A tibble: 3 × 3\n  spp_code latin_name        common_name\n  &lt;chr&gt;    &lt;chr&gt;             &lt;chr&gt;      \n1 ABBA     Abies balsamea    balsum fir \n2 BEPA     Betula papyrifera paper birch\n3 PIST     &lt;NA&gt;              white pine \n\n\nNotice that this is the same as our previous left_join().\nWhat happens if we try switching the order of x and y?\n\nright_join(x, y, by = \"spp_code\")"
+  },
+  {
+    "objectID": "slides/w9d1.html#right_join-2",
+    "href": "slides/w9d1.html#right_join-2",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "right_join()",
+    "text": "right_join()\n\nright_join(y, x, by = \"spp_code\")\n\n# A tibble: 3 × 3\n  spp_code latin_name        common_name\n  &lt;chr&gt;    &lt;chr&gt;             &lt;chr&gt;      \n1 ABBA     Abies balsamea    balsum fir \n2 BEPA     Betula papyrifera paper birch\n3 PIST     &lt;NA&gt;              white pine \n\n\nNotice that this is the same as our previous left_join().\nWhat happens if we try switching the order of x and y?\n\nright_join(x, y, by = \"spp_code\")\n\n# A tibble: 3 × 3\n  spp_code common_name latin_name       \n  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;            \n1 ABBA     balsum fir  Abies balsamea   \n2 BEPA     paper birch Betula papyrifera\n3 LALA     &lt;NA&gt;        Larix laricina"
+  },
+  {
+    "objectID": "slides/w9d1.html#inner_join",
+    "href": "slides/w9d1.html#inner_join",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "inner_join()",
+    "text": "inner_join()\nHow many rows will the output have?\n\ninner_join(x, y, by = \"spp_code\")"
+  },
+  {
+    "objectID": "slides/w9d1.html#inner_join-1",
+    "href": "slides/w9d1.html#inner_join-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "inner_join()",
+    "text": "inner_join()\nHow many rows will the output have?\n\ninner_join(x, y, by = \"spp_code\")\n\n# A tibble: 2 × 3\n  spp_code common_name latin_name       \n  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;            \n1 ABBA     balsum fir  Abies balsamea   \n2 BEPA     paper birch Betula papyrifera\n\n\nWhy is this the result?"
+  },
+  {
+    "objectID": "slides/w9d1.html#full_join",
+    "href": "slides/w9d1.html#full_join",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "full_join()",
+    "text": "full_join()\nHow many rows will the output have?\n\nfull_join(x, y, by = \"spp_code\")"
+  },
+  {
+    "objectID": "slides/w9d1.html#full_join-1",
+    "href": "slides/w9d1.html#full_join-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "full_join()",
+    "text": "full_join()\nHow many rows will the output have?\n\nfull_join(x, y, by = \"spp_code\")\n\n# A tibble: 4 × 3\n  spp_code common_name latin_name       \n  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;            \n1 ABBA     balsum fir  Abies balsamea   \n2 BEPA     paper birch Betula papyrifera\n3 PIST     white pine  &lt;NA&gt;             \n4 LALA     &lt;NA&gt;        Larix laricina   \n\n\nWhy is this the result?"
+  },
+  {
+    "objectID": "slides/w9d1.html#filtering-joins",
+    "href": "slides/w9d1.html#filtering-joins",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Filtering Joins",
+    "text": "Filtering Joins\ndplyr contains two filtering joins:\n\nsemi_join(x, y) keeps all the rows in x that have a match in y."
+  },
+  {
+    "objectID": "slides/w9d1.html#filtering-joins-1",
+    "href": "slides/w9d1.html#filtering-joins-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Filtering Joins",
+    "text": "Filtering Joins\ndplyr contains two filtering joins:\n\nsemi_join(x, y) keeps all the rows in x that have a match in y.\nanti_join(x, y) removes all the rows in x that have a match in y.\n\nNote: Unlike mutating joins, filtering joins do not add any columns to the data."
+  },
+  {
+    "objectID": "slides/w9d1.html#semi_join",
+    "href": "slides/w9d1.html#semi_join",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "semi_join()",
+    "text": "semi_join()\nHow many rows will this semi_join return? How many columns?\n\nsemi_join(x, y, by = \"spp_code\")"
+  },
+  {
+    "objectID": "slides/w9d1.html#semi_join-1",
+    "href": "slides/w9d1.html#semi_join-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "semi_join()",
+    "text": "semi_join()\nHow many rows will this semi_join return? How many columns?\n\nsemi_join(x, y, by = \"spp_code\")\n\n# A tibble: 2 × 2\n  spp_code common_name\n  &lt;chr&gt;    &lt;chr&gt;      \n1 ABBA     balsum fir \n2 BEPA     paper birch"
+  },
+  {
+    "objectID": "slides/w9d1.html#semi_join-2",
+    "href": "slides/w9d1.html#semi_join-2",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "semi_join()",
+    "text": "semi_join()\nWhat about this semi_join? Will it be the same as semi_join(x, y)?\n\nsemi_join(y, x, by = \"spp_code\")"
+  },
+  {
+    "objectID": "slides/w9d1.html#semi_join-3",
+    "href": "slides/w9d1.html#semi_join-3",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "semi_join()",
+    "text": "semi_join()\nWhat about this semi_join? Will it be the same as semi_join(x, y)?\n\nsemi_join(y, x, by = \"spp_code\")\n\n# A tibble: 2 × 2\n  spp_code latin_name       \n  &lt;chr&gt;    &lt;chr&gt;            \n1 ABBA     Abies balsamea   \n2 BEPA     Betula papyrifera"
+  },
+  {
+    "objectID": "slides/w9d1.html#anti_join",
+    "href": "slides/w9d1.html#anti_join",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "anti_join()",
+    "text": "anti_join()\nLet’s see what anti_join does:\n\nanti_join(x, y, by = \"spp_code\")"
+  },
+  {
+    "objectID": "slides/w9d1.html#anti_join-1",
+    "href": "slides/w9d1.html#anti_join-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "anti_join()",
+    "text": "anti_join()\nLet’s see what anti_join does:\n\nanti_join(x, y, by = \"spp_code\")\n\n# A tibble: 1 × 2\n  spp_code common_name\n  &lt;chr&gt;    &lt;chr&gt;      \n1 PIST     white pine \n\n\nWhy do we get this output?"
+  },
+  {
+    "objectID": "slides/w9d1.html#anti_join-2",
+    "href": "slides/w9d1.html#anti_join-2",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "anti_join()",
+    "text": "anti_join()\nWhat happens if we switch the order of x and y?\n\nanti_join(y, x, by = \"spp_code\")"
+  },
+  {
+    "objectID": "slides/w9d1.html#anti_join-3",
+    "href": "slides/w9d1.html#anti_join-3",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "anti_join()",
+    "text": "anti_join()\nWhat happens if we switch the order of x and y?\n\nanti_join(y, x, by = \"spp_code\")\n\n# A tibble: 1 × 2\n  spp_code latin_name    \n  &lt;chr&gt;    &lt;chr&gt;         \n1 LALA     Larix laricina"
+  },
+  {
+    "objectID": "slides/w9d1.html#an-important-subtlety-column-names",
+    "href": "slides/w9d1.html#an-important-subtlety-column-names",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "An Important Subtlety: Column Names",
+    "text": "An Important Subtlety: Column Names\nSo far, we have joined x and y by the spp_code column.\nBut what if y had the same column named differently:\n\ny &lt;- y %&gt;%\n  rename(species_code = spp_code)\ny\n\n# A tibble: 3 × 2\n  species_code latin_name       \n  &lt;chr&gt;        &lt;chr&gt;            \n1 ABBA         Abies balsamea   \n2 BEPA         Betula papyrifera\n3 LALA         Larix laricina"
+  },
+  {
+    "objectID": "slides/w9d1.html#how-do-we-join-x-and-y",
+    "href": "slides/w9d1.html#how-do-we-join-x-and-y",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "How Do We Join x and y?",
+    "text": "How Do We Join x and y?\n\nleft_join(x, y)\n\nError in `left_join()`:\n! `by` must be supplied when `x` and `y` have no common variables.\nℹ Use `cross_join()` to perform a cross-join.\n\n\nLooks like we need to specify by (our 🔑)"
+  },
+  {
+    "objectID": "slides/w9d1.html#how-do-we-join-x-and-y-1",
+    "href": "slides/w9d1.html#how-do-we-join-x-and-y-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "How Do We Join x and y?",
+    "text": "How Do We Join x and y?\n\nleft_join(x, y)\n\nError in `left_join()`:\n! `by` must be supplied when `x` and `y` have no common variables.\nℹ Use `cross_join()` to perform a cross-join.\n\n\nLooks like we need to specify by (our 🔑)\n\nleft_join(x, y, by = \"spp_code\")\n\nError in `left_join()`:\n! Join columns in `y` must be present in the data.\n✖ Problem with `spp_code`.\n\n\nStill not working!"
+  },
+  {
+    "objectID": "slides/w9d1.html#how-do-we-join-x-and-y-2",
+    "href": "slides/w9d1.html#how-do-we-join-x-and-y-2",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "How Do We Join x and y?",
+    "text": "How Do We Join x and y?\n\nleft_join(x, y)\n\nError in `left_join()`:\n! `by` must be supplied when `x` and `y` have no common variables.\nℹ Use `cross_join()` to perform a cross-join.\n\n\nLooks like we need to specify by (our 🔑)\n\nleft_join(x, y, by = \"spp_code\")\n\nError in `left_join()`:\n! Join columns in `y` must be present in the data.\n✖ Problem with `spp_code`.\n\n\nStill not working!\n\nleft_join(x, y, by = c(\"spp_code\" = \"species_code\"))\n\n# A tibble: 3 × 3\n  spp_code common_name latin_name       \n  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;            \n1 ABBA     balsum fir  Abies balsamea   \n2 BEPA     paper birch Betula papyrifera\n3 PIST     white pine  &lt;NA&gt;"
+  },
+  {
+    "objectID": "slides/w9d1.html#next-time",
+    "href": "slides/w9d1.html#next-time",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Next time",
+    "text": "Next time\n\nMore advanced dplyr"
+  },
+  {
+    "objectID": "slides/w9d1.html#types-of-data-joins-1",
+    "href": "slides/w9d1.html#types-of-data-joins-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Types of Data Joins",
+    "text": "Types of Data Joins\nThe dplyr package, which is part of the tidyverse, includes functions for two general types of joins:\n\nMutating joins, which combine the columns of tibbles x and y, and\nFiltering joins, which match the rows of tibbles x and y.\n\nThink of how mutate() adds columns to a tibble, while filter() removes rows."
+  },
+  {
+    "objectID": "slides/w9d1.html#today-applying-allometric-equations-using-joins",
+    "href": "slides/w9d1.html#today-applying-allometric-equations-using-joins",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Today: Applying Allometric Equations Using Joins",
+    "text": "Today: Applying Allometric Equations Using Joins\nAllometric equations are regression equations that relate measurements like species, DBH, and perhaps height to more difficult and expensive to measure quantities such as stem volume or biomass."
+  },
+  {
+    "objectID": "slides/w9d1.html#today-applying-allometric-equations-using-joins-1",
+    "href": "slides/w9d1.html#today-applying-allometric-equations-using-joins-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Today: Applying Allometric Equations Using Joins",
+    "text": "Today: Applying Allometric Equations Using Joins\nAllometric equations are regression equations that relate measurements like species, DBH, and perhaps height to more difficult and expensive to measure quantities such as stem volume or biomass.\n\nAllometric equations take the inexpensive measurements as input (e.g., species and DBH) and return estimates of the expensive quantity (e.g., height, volume, biomass)"
+  },
+  {
+    "objectID": "slides/w9d1.html#today-applying-allometric-equations-using-joins-2",
+    "href": "slides/w9d1.html#today-applying-allometric-equations-using-joins-2",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Today: Applying Allometric Equations Using Joins",
+    "text": "Today: Applying Allometric Equations Using Joins\nAllometric equations are regression equations that relate measurements like species, DBH, and perhaps height to more difficult and expensive to measure quantities such as stem volume or biomass.\n\nAllometric equations take the inexpensive measurements as input (e.g., species and DBH) and return estimates of the expensive quantity (e.g., height, volume, biomass)\nToday, we’ll focus on calculating tree height based on DBH and species."
+  },
+  {
+    "objectID": "slides/w9d1.html#the-model",
+    "href": "slides/w9d1.html#the-model",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "The Model",
+    "text": "The Model\nThe model we’ll use to calculate height is as follows \\[\n\\text{height} = 4.5 + \\exp\\left( \\beta_1 + \\frac{\\beta_2}{\\text{DBH} + 1.0} \\right)\n\\] where \\(\\beta_1\\), \\(\\beta_2\\) are stored in “datasets/FVS_NE_coefficients.csv” and are different for each forest vegetation code.\nWe’ll access data from a few tibbles in order to create our final height calculation."
+  },
+  {
+    "objectID": "slides/w9d1.html#the-data-stands",
+    "href": "slides/w9d1.html#the-data-stands",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "The Data: stands",
+    "text": "The Data: stands\n\nlibrary(tidyverse)\nstands &lt;- read_csv(\"../labs/datasets/two_stands_wo_ht_vol.csv\")\nhead(stands)\n\n# A tibble: 6 × 4\n  stand_id plot_id scientific_name   DBH_in\n     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt;\n1        1       1 Abies balsamea      11.3\n2        1       1 Pinus strobus        9.8\n3        1       1 Pinus strobus       10.7\n4        1       3 Betula papyrifera   15.4\n5        1       3 Pinus strobus       13.1\n6        2       1 Larix laricina       7.1\n\ndim(stands)\n\n[1] 15  4"
+  },
+  {
+    "objectID": "slides/w9d1.html#the-data-stands-1",
+    "href": "slides/w9d1.html#the-data-stands-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "The Data: stands",
+    "text": "The Data: stands\n\nlibrary(tidyverse)\nstands &lt;- read_csv(\"../labs/datasets/two_stands_wo_ht_vol.csv\")\nhead(stands)\n\n# A tibble: 6 × 4\n  stand_id plot_id scientific_name   DBH_in\n     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt;\n1        1       1 Abies balsamea      11.3\n2        1       1 Pinus strobus        9.8\n3        1       1 Pinus strobus       10.7\n4        1       3 Betula papyrifera   15.4\n5        1       3 Pinus strobus       13.1\n6        2       1 Larix laricina       7.1\n\ndim(stands)\n\n[1] 15  4\n\n\nBig Picture: We’d like to calculate tree height for each row of this tibble. To do so, we’ll need to load another tibble."
+  },
+  {
+    "objectID": "slides/w9d1.html#the-data-fvs-coefficients-our-betas",
+    "href": "slides/w9d1.html#the-data-fvs-coefficients-our-betas",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "The Data: FVS Coefficients (our \\(\\beta\\)’s)",
+    "text": "The Data: FVS Coefficients (our \\(\\beta\\)’s)\n\nht_coeffs &lt;- read_csv(\"../labs/datasets/FVS_NE_coefficients.csv\")\nht_coeffs\n\n# A tibble: 108 × 3\n   USFS_FVS_code beta_1 beta_2\n   &lt;chr&gt;          &lt;dbl&gt;  &lt;dbl&gt;\n 1 BF              4.51  -6.01\n 2 TA              4.51  -6.01\n 3 WS              4.51  -6.01\n 4 RS              4.51  -6.01\n 5 NS              4.51  -6.01\n 6 BS              4.51  -6.01\n 7 PI              4.51  -6.01\n 8 RN              4.51  -6.01\n 9 WP              4.61  -6.19\n10 LP              4.69  -6.88\n# ℹ 98 more rows"
+  },
+  {
+    "objectID": "slides/w9d1.html#q-how-can-we-join-these-tibbles",
+    "href": "slides/w9d1.html#q-how-can-we-join-these-tibbles",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Q: How can we join these tibbles?",
+    "text": "Q: How can we join these tibbles?\n\nhead(stands)\n\n# A tibble: 6 × 4\n  stand_id plot_id scientific_name   DBH_in\n     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt;\n1        1       1 Abies balsamea      11.3\n2        1       1 Pinus strobus        9.8\n3        1       1 Pinus strobus       10.7\n4        1       3 Betula papyrifera   15.4\n5        1       3 Pinus strobus       13.1\n6        2       1 Larix laricina       7.1\n\nhead(ht_coeffs)\n\n# A tibble: 6 × 3\n  USFS_FVS_code beta_1 beta_2\n  &lt;chr&gt;          &lt;dbl&gt;  &lt;dbl&gt;\n1 BF              4.51  -6.01\n2 TA              4.51  -6.01\n3 WS              4.51  -6.01\n4 RS              4.51  -6.01\n5 NS              4.51  -6.01\n6 BS              4.51  -6.01"
+  },
+  {
+    "objectID": "slides/w9d1.html#a-we-need-another-tibble",
+    "href": "slides/w9d1.html#a-we-need-another-tibble",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "A: We need another tibble!",
+    "text": "A: We need another tibble!"
+  },
+  {
+    "objectID": "slides/w9d1.html#a-we-need-another-tibble-1",
+    "href": "slides/w9d1.html#a-we-need-another-tibble-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "A: We need another tibble!",
+    "text": "A: We need another tibble!\nThe “spp_codes” tibble contains the columns needed to be able to link “stands” and “ht_coeffs”.\n\nspp_codes &lt;- read_csv(\"../labs/datasets/USFS_species_codes.csv\")\nhead(spp_codes)\n\n# A tibble: 6 × 5\n  common_name   scientific_name USFS_FVS_code USFS_FIA_code PLANTS_code\n  &lt;chr&gt;         &lt;chr&gt;           &lt;chr&gt;                 &lt;dbl&gt; &lt;chr&gt;      \n1 balsam fir    Abies balsamea  BF                       12 ABBA       \n2 tamarack      Larix laricina  TA                       71 LALA       \n3 white spruce  Picea glauca    WS                       94 PIGL       \n4 red spruce    Picea rubens    RS                       97 PIRU       \n5 Norway spruce Picea abies     NS                       91 PIAB       \n6 black spruce  Picea mariana   BS                       95 PIMA"
+  },
+  {
+    "objectID": "slides/w9d1.html#now-we-can-join-our-data",
+    "href": "slides/w9d1.html#now-we-can-join-our-data",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Now We Can Join Our Data",
+    "text": "Now We Can Join Our Data\n\nhead(stands, n = 3)\n\n# A tibble: 3 × 4\n  stand_id plot_id scientific_name DBH_in\n     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;\n1        1       1 Abies balsamea    11.3\n2        1       1 Pinus strobus      9.8\n3        1       1 Pinus strobus     10.7\n\nstands &lt;- stands %&gt;%\n  left_join(spp_codes, by = \"scientific_name\") %&gt;%\n  select(-common_name, -USFS_FIA_code, -PLANTS_code) # remove unecessary columns\nhead(stands, n = 3)\n\n# A tibble: 3 × 5\n  stand_id plot_id scientific_name DBH_in USFS_FVS_code\n     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;        \n1        1       1 Abies balsamea    11.3 BF           \n2        1       1 Pinus strobus      9.8 WP           \n3        1       1 Pinus strobus     10.7 WP           \n\n\n\nNow, “stands” contains the USFS_FVS_code column"
+  },
+  {
+    "objectID": "slides/w9d1.html#q-why-did-we-use-a-left_join-in-the-last-slide",
+    "href": "slides/w9d1.html#q-why-did-we-use-a-left_join-in-the-last-slide",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Q: Why did we use a left_join() in the last slide?",
+    "text": "Q: Why did we use a left_join() in the last slide?"
+  },
+  {
+    "objectID": "slides/w9d1.html#q-why-did-we-use-a-left_join-in-the-last-slide-1",
+    "href": "slides/w9d1.html#q-why-did-we-use-a-left_join-in-the-last-slide-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Q: Why did we use a left_join() in the last slide?",
+    "text": "Q: Why did we use a left_join() in the last slide?\nA: We want to retain all the rows of “stands”, but only the rows in “spp_codes” that match in “stands”."
+  },
+  {
+    "objectID": "slides/w9d1.html#q-how-can-we-check-if-all-rows-had-a-scientific_name-match",
+    "href": "slides/w9d1.html#q-how-can-we-check-if-all-rows-had-a-scientific_name-match",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Q: How can we check if all rows had a scientific_name match?",
+    "text": "Q: How can we check if all rows had a scientific_name match?"
+  },
+  {
+    "objectID": "slides/w9d1.html#q-how-can-we-check-if-all-rows-had-a-scientific_name-match-1",
+    "href": "slides/w9d1.html#q-how-can-we-check-if-all-rows-had-a-scientific_name-match-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Q: How can we check if all rows had a scientific_name match?",
+    "text": "Q: How can we check if all rows had a scientific_name match?\nA: Use anti_join()!"
+  },
+  {
+    "objectID": "slides/w9d1.html#q-how-can-we-check-if-all-rows-had-a-scientific_name-match-2",
+    "href": "slides/w9d1.html#q-how-can-we-check-if-all-rows-had-a-scientific_name-match-2",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Q: How can we check if all rows had a scientific_name match?",
+    "text": "Q: How can we check if all rows had a scientific_name match?\nA: Use anti_join()!\n\nanti_join(stands, spp_codes, by = \"scientific_name\")\n\n# A tibble: 0 × 5\n# ℹ 5 variables: stand_id &lt;dbl&gt;, plot_id &lt;dbl&gt;, scientific_name &lt;chr&gt;,\n#   DBH_in &lt;dbl&gt;, USFS_FVS_code &lt;chr&gt;"
+  },
+  {
+    "objectID": "slides/w9d1.html#join-betas-to-stands",
+    "href": "slides/w9d1.html#join-betas-to-stands",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Join \\(\\beta\\)’s to “stands”",
+    "text": "Join \\(\\beta\\)’s to “stands”"
+  },
+  {
+    "objectID": "slides/w9d1.html#join-betas-to-stands-1",
+    "href": "slides/w9d1.html#join-betas-to-stands-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Join \\(\\beta\\)’s to “stands”",
+    "text": "Join \\(\\beta\\)’s to “stands”\nQ: What type of join should we use?"
+  },
+  {
+    "objectID": "slides/w9d1.html#join-betas-to-stands-2",
+    "href": "slides/w9d1.html#join-betas-to-stands-2",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Join \\(\\beta\\)’s to “stands”",
+    "text": "Join \\(\\beta\\)’s to “stands”\nQ: What type of join should we use?\nA: A left_join() (or a right_join(), if you’d like)\n\nstands &lt;- left_join(stands, ht_coeffs, by = \"USFS_FVS_code\")\n\n# or alternatively\n# stands &lt;- right_join(ht_coeffs, stands, by = \"USFS_FVS_code\")\n\nhead(stands)\n\n# A tibble: 6 × 7\n  stand_id plot_id scientific_name   DBH_in USFS_FVS_code beta_1 beta_2\n     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;  &lt;dbl&gt;\n1        1       1 Abies balsamea      11.3 BF              4.51  -6.01\n2        1       1 Pinus strobus        9.8 WP              4.61  -6.19\n3        1       1 Pinus strobus       10.7 WP              4.61  -6.19\n4        1       3 Betula papyrifera   15.4 PB              4.44  -4.09\n5        1       3 Pinus strobus       13.1 WP              4.61  -6.19\n6        2       1 Larix laricina       7.1 TA              4.51  -6.01"
+  },
+  {
+    "objectID": "slides/w9d1.html#now-we-can-make-our-calculation",
+    "href": "slides/w9d1.html#now-we-can-make-our-calculation",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Now We Can Make Our Calculation!",
+    "text": "Now We Can Make Our Calculation!\nRecall the equation for height: \\[\n\\text{height} = 4.5 + \\exp\\left( \\beta_1 + \\frac{\\beta_2}{\\text{DBH} + 1.0} \\right)\n\\]"
+  },
+  {
+    "objectID": "slides/w9d1.html#now-we-can-make-our-calculation-1",
+    "href": "slides/w9d1.html#now-we-can-make-our-calculation-1",
+    "title": "Combining multiple tibbles with dplyr",
+    "section": "Now We Can Make Our Calculation!",
+    "text": "Now We Can Make Our Calculation!\nRecall the equation for height: \\[\n\\text{height} = 4.5 + \\exp\\left( \\beta_1 + \\frac{\\beta_2}{\\text{DBH} + 1.0} \\right)\n\\]\n\nstands &lt;- stands %&gt;%\n  mutate(height_ft = 4.5 + exp( beta_1 + beta_2 / (DBH_in + 1) ) ) %&gt;%\n  select(-beta_1, -beta_2) # Don't need these anymore\nhead(stands)\n\n# A tibble: 6 × 6\n  stand_id plot_id scientific_name   DBH_in USFS_FVS_code height_ft\n     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;\n1        1       1 Abies balsamea      11.3 BF                 60.2\n2        1       1 Pinus strobus        9.8 WP                 61.1\n3        1       1 Pinus strobus       10.7 WP                 63.6\n4        1       3 Betula papyrifera   15.4 PB                 70.5\n5        1       3 Pinus strobus       13.1 WP                 69.2\n6        2       1 Larix laricina       7.1 TA                 47.7"
   }
 ]
