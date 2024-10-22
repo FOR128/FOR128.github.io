@@ -1,0 +1,557 @@
+---
+title: "Combining multiple tibbles with `dplyr`"
+editor: 
+  mode: source
+webr:
+  show-startup-message: false
+filters:
+  - webr
+engine: knitr
+execute:
+  echo: true
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+revealjs-plugins:
+  - revealjs-text-resizer
+---
+
+## Agenda
+
+-   Combining tibbles (i.e. data joins)
+-   Applications of data joins to forestry
+-   Quiz (in lab!)
+
+## Data Joins in `R`
+
+Today, we'll talk about joining tibbles in `R` with `dplyr`.
+
+```{r, fig.align='center', echo = FALSE}
+knitr::include_graphics("figs/horst/dplyr.png")
+```
+
+Artwork by Allison Horst.
+
+# Combining tibbles {background-color="#00817c"}
+
+## Data Joins in `R`
+
+Recall that the `dplyr` package, short for "data pliers", is an `R` package all about wrangling data.
+
+```{r, fig.align='center', echo=FALSE}
+knitr::include_graphics("figs/dplyr.png")
+```
+
+Today, we will explore it's tools for joining data tables (i.e. "tibbles").
+
+## Data Joins in `R`
+
+In particular, we'll look at a few ways to join the following tables `x` and `y`:
+
+```{r, echo=FALSE}
+knitr::include_graphics("figs/tibbles.png")
+```
+
+## Motivation
+
+::: incremental
+
+-   It is common in forestry, and in particular forest inventory, to have **multiple tibbles** where data are stored due to a variety of factors.
+-   In order to perform most statistical analyses, you must have the necessary data in **one tibble**.
+-   Example: the US Forest Service, Forest Inventory & Analysis stores plot-level, tree-level, subplot-level, ... data in one database. Researchers must combine these data into a singular table to do analyses. 
+
+:::
+
+## Types of Data Joins
+
+The `dplyr` package, which is part of the `tidyverse`, includes functions for two general types of joins:
+
+::: incremental
+
+-   *Mutating joins*, which combine the **columns** of tibbles `x` and `y`, and
+-   *Filtering joins*, which match the **rows** of tibbles `x` and `y`.
+
+:::
+
+## Types of Data Joins
+
+The `dplyr` package, which is part of the `tidyverse`, includes functions for two general types of joins:
+
+-   *Mutating joins*, which combine the **columns** of tibbles `x` and `y`, and
+-   *Filtering joins*, which match the **rows** of tibbles `x` and `y`.
+
+Think of how `mutate()` adds columns to a tibble, while `filter()` removes rows.
+
+## Example Data
+
+For the following examples of data joins, we will use the tibbles from the first slide. We can load this data into `R`:
+
+```{r, echo = TRUE}
+library(tidyverse)
+x <- tibble(spp_code = c("ABBA", "BEPA", "PIST"),
+            common_name = c("balsum fir", "paper birch", "white pine"))
+
+y <- tibble(spp_code = c("ABBA", "BEPA", "LALA"),
+            latin_name = c("Abies balsamea", 
+                           "Betula papyrifera",
+                           "Larix laricina"))
+```
+
+## Mutating Joins
+
+`dplyr` contains four mutating joins:
+
+1.  `left_join(x, y)` keeps all rows of `x`, but if a row in `y` does not match to `x`, an `NA` is assigned to that row in the new columns.
+
+## Mutating Joins
+
+`dplyr` contains four mutating joins:
+
+1.  `left_join(x, y)` keeps all rows of `x`, but if a row in `y` does not match to `x`, an `NA` is assigned to that row in the new columns.
+2.  `right_join(x, y)` is equivalent to `left_join(y, x)`, except for column order.
+
+## Mutating Joins
+
+`dplyr` contains four mutating joins:
+
+1.  `left_join(x, y)` keeps all rows of `x`, but if a row in `y` does not match to `x`, an `NA` is assigned to that row in the new columns.
+2.  `right_join(x, y)` is equivalent to `left_join(y, x)`, except for column order.\
+3.  `inner_join(x, y)` keeps only the rows matched between `x` and `y`.
+
+## Mutating Joins
+
+`dplyr` contains four mutating joins:
+
+1.  `left_join(x, y)` keeps all rows of `x`, but if a row in `y` does not match to `x`, an `NA` is assigned to that row in the new columns.
+2.  `right_join(x, y)` is equivalent to `left_join(y, x)`, except for column order.\
+3.  `inner_join(x, y)` keeps only the rows matched between `x` and `y`.
+4.  `full_join(x, y)` keeps all rows of both `x` and `y`.
+
+## Examples: Mutating Joins
+
+Recall our example data
+
+```{r, echo = TRUE}
+x
+y
+```
+
+## `left_join()`
+
+```{r, echo = TRUE, message = TRUE}
+left_join(x, y)
+```
+
+## `left_join()`
+
+```{r, echo = TRUE, message = TRUE}
+left_join(x, y)
+```
+
+But what's that message about?
+
+```         
+"Joining with `by = join_by(spp_code)`"
+```
+
+## We need to specify a *key* `r emo::ji("key")`
+
+A *key* is can just be thought of the name(s) of the column(s) you're joining by. In the `left_join()` from the last slide, `R` assumed we were joining by the column `spp_code` since both `x` and `y` have a column with that name.
+
+## We need to specify a *key* `r emo::ji("key")`
+
+A *key* is can just be thought of the name(s) of the column(s) you're joining by. In the `left_join()` from the last slide, `R` assumed we were joining by the column `spp_code` since both `x` and `y` have a column with that name.
+
+Keys are important, especially when the columns you are joining by have different names, or you are joining by multiple columns.
+
+## `left_join()`, with a `r emo::ji("key")`
+
+```{r, echo = TRUE, message = TRUE}
+left_join(x, y, by = "spp_code")
+```
+
+-   Notice that we specify this key with the `by` argument. This is the same for all joins in `dplyr`.
+
+## `right_join()`
+
+```{r, echo = TRUE, message = TRUE}
+right_join(y, x, by = "spp_code")
+```
+
+## `right_join()`
+
+```{r, echo = TRUE, message = TRUE}
+right_join(y, x, by = "spp_code")
+```
+
+Notice that this is the same as our previous `left_join()`.
+
+What happens if we try switching the order of `x` and `y`?
+
+```{r, output = FALSE, echo = TRUE}
+right_join(x, y, by = "spp_code")
+```
+
+## `right_join()`
+
+```{r, echo = TRUE, message = TRUE}
+right_join(y, x, by = "spp_code")
+```
+
+Notice that this is the same as our previous `left_join()`.
+
+What happens if we try switching the order of `x` and `y`?
+
+```{r, echo = TRUE}
+right_join(x, y, by = "spp_code")
+```
+
+## `inner_join()`
+
+How many rows will the output have?
+
+```{r, echo = TRUE, output = FALSE}
+inner_join(x, y, by = "spp_code")
+```
+
+## `inner_join()`
+
+How many rows will the output have?
+
+```{r, echo = TRUE}
+inner_join(x, y, by = "spp_code")
+```
+
+Why is this the result?
+
+## `full_join()`
+
+How many rows will the output have?
+
+```{r, echo = TRUE, output = FALSE}
+full_join(x, y, by = "spp_code")
+```
+
+## `full_join()`
+
+How many rows will the output have?
+
+```{r, echo = TRUE}
+full_join(x, y, by = "spp_code")
+```
+
+Why is this the result?
+
+## Filtering Joins
+
+`dplyr` contains two filtering joins:
+
+1.  `semi_join(x, y)` keeps all the rows in `x` that have a match in `y`.
+
+## Filtering Joins
+
+`dplyr` contains two filtering joins:
+
+1.  `semi_join(x, y)` keeps all the rows in `x` that have a match in `y`.
+2.  `anti_join(x, y)` removes all the rows in `x` that have a match in `y`.
+
+**Note**: Unlike mutating joins, filtering joins do not add any columns to the data.
+
+## `semi_join()`
+
+How many rows will this `semi_join` return? How many columns?
+
+```{r, output = F, echo = T}
+semi_join(x, y, by = "spp_code")
+```
+
+## `semi_join()`
+
+How many rows will this `semi_join` return? How many columns?
+
+```{r, echo = TRUE}
+semi_join(x, y, by = "spp_code")
+```
+
+## `semi_join()`
+
+What about this `semi_join`? Will it be the same as `semi_join(x, y)`?
+
+```{r, echo = T, output = F}
+semi_join(y, x, by = "spp_code")
+```
+
+## `semi_join()`
+
+What about this `semi_join`? Will it be the same as `semi_join(x, y)`?
+
+```{r, echo = TRUE}
+semi_join(y, x, by = "spp_code")
+```
+
+## `anti_join()`
+
+Let's see what `anti_join` does:
+
+```{r, echo = TRUE, output = F}
+anti_join(x, y, by = "spp_code")
+```
+
+## `anti_join()`
+
+Let's see what `anti_join` does:
+
+```{r, echo = TRUE, output = T}
+anti_join(x, y, by = "spp_code")
+```
+
+Why do we get this output?
+
+## `anti_join()`
+
+What happens if we switch the order of `x` and `y`?
+
+```{r, echo = TRUE, output = F}
+anti_join(y, x, by = "spp_code")
+```
+
+## `anti_join()`
+
+What happens if we switch the order of `x` and `y`?
+
+```{r, echo = TRUE, output = T}
+anti_join(y, x, by = "spp_code")
+```
+
+## An Important Subtlety: Column Names
+
+So far, we have joined `x` and `y` by the `spp_code` column.
+
+But what if `y` had the same column named differently:
+
+```{r, echo=T, output=T}
+y <- y %>%
+  rename(species_code = spp_code)
+y
+```
+
+## How Do We Join `x` and `y`?
+
+```{r, output=T, echo=T, error = T}
+left_join(x, y)
+```
+
+Looks like we need to specify `by` (our `r emo::ji("key")`)
+
+## How Do We Join `x` and `y`?
+
+```{r, output=T, echo=T, error = T}
+left_join(x, y)
+```
+
+Looks like we need to specify `by` (our `r emo::ji("key")`)
+
+```{r, output=T, echo=T, error = T}
+left_join(x, y, by = "spp_code")
+```
+
+Still not working!
+
+## How Do We Join `x` and `y`?
+
+```{r, output=T, echo=T, error = T}
+left_join(x, y)
+```
+
+Looks like we need to specify `by` (our `r emo::ji("key")`)
+
+```{r, output=T, echo=T, error = T}
+left_join(x, y, by = "spp_code")
+```
+
+Still not working!
+
+```{r, output=T, echo=T}
+left_join(x, y, by = c("spp_code" = "species_code"))
+```
+
+
+# Applications of data joins in forestry {background-color="#00817c"}
+
+## Today: Applying Allometric Equations Using Joins
+
+*Allometric equations* are regression equations that relate measurements like species, DBH, and perhaps height to more difficult and expensive to measure quantities such as stem volume or biomass.
+
+## Today: Applying Allometric Equations Using Joins
+
+*Allometric equations* are regression equations that relate measurements like species, DBH, and perhaps height to more difficult and expensive to measure quantities such as stem volume or biomass.
+
+-   Allometric equations take the inexpensive measurements as input (e.g., species and DBH) and return estimates of the expensive quantity (e.g., height, volume, biomass)
+
+## Today: Applying Allometric Equations Using Joins
+
+*Allometric equations* are regression equations that relate measurements like species, DBH, and perhaps height to more difficult and expensive to measure quantities such as stem volume or biomass.
+
+-   Allometric equations take the inexpensive measurements as input (e.g., species and DBH) and return estimates of the expensive quantity (e.g., height, volume, biomass)
+
+-   Today, we'll focus on calculating tree height based on DBH and species.
+
+## The Model
+
+The model we'll use to calculate height is as follows $$
+\text{height} = 4.5 + \exp\left( \beta_1 + \frac{\beta_2}{\text{DBH} + 1.0} \right)
+$$ where $\beta_1$, $\beta_2$ are stored in "datasets/FVS_NE_coefficients.csv" and are different for each forest vegetation code.
+
+We'll access data from a few tibbles in order to create our final height calculation.
+
+## The Data: stands
+
+```{r, echo = TRUE}
+library(tidyverse)
+stands <- read_csv("../labs/datasets/two_stands_wo_ht_vol.csv")
+head(stands)
+dim(stands)
+```
+
+## The Data: stands
+
+```{r, echo = TRUE}
+library(tidyverse)
+stands <- read_csv("../labs/datasets/two_stands_wo_ht_vol.csv")
+head(stands)
+dim(stands)
+```
+
+**Big Picture**: We'd like to calculate tree height for each row of this tibble. To do so, we'll need to load another tibble.
+
+## The Data: FVS Coefficients (our $\beta$'s)
+
+```{r, echo = TRUE}
+ht_coeffs <- read_csv("../labs/datasets/FVS_NE_coefficients.csv")
+ht_coeffs
+```
+
+## Q: How can we join these tibbles?
+
+```{r, echo=TRUE}
+head(stands)
+head(ht_coeffs)
+```
+
+## A: We need another tibble!
+
+## A: We need another tibble!
+
+The "spp_codes" tibble contains the columns needed to be able to link "stands" and "ht_coeffs".
+
+```{r, echo=TRUE}
+spp_codes <- read_csv("../labs/datasets/USFS_species_codes.csv")
+head(spp_codes)
+```
+
+## Now We Can Join Our Data
+
+```{r, echo = TRUE}
+head(stands, n = 3)
+stands <- stands %>%
+  left_join(spp_codes, by = "scientific_name") %>%
+  select(-common_name, -USFS_FIA_code, -PLANTS_code) # remove unecessary columns
+head(stands, n = 3)
+```
+
+-   Now, "stands" contains the USFS_FVS_code column
+
+## Q: Why did we use a `left_join()` in the last slide?
+
+## Q: Why did we use a `left_join()` in the last slide?
+
+A: We want to retain all the rows of "stands", but only the rows in "spp_codes" that match in "stands".
+
+## Q: How can we check if all rows had a scientific_name match?
+
+## Q: How can we check if all rows had a scientific_name match?
+
+A: Use `anti_join()`!
+
+## Q: How can we check if all rows had a scientific_name match?
+
+A: Use `anti_join()`!
+
+```{r, echo = TRUE}
+anti_join(stands, spp_codes, by = "scientific_name")
+```
+
+## Join $\beta$'s to "stands"
+
+## Join $\beta$'s to "stands"
+
+Q: What type of join should we use?
+
+## Join $\beta$'s to "stands"
+
+Q: What type of join should we use?
+
+A: A `left_join()` (or a `right_join()`, if you'd like)
+
+```{r, echo = TRUE}
+stands <- left_join(stands, ht_coeffs, by = "USFS_FVS_code")
+
+# or alternatively
+# stands <- right_join(ht_coeffs, stands, by = "USFS_FVS_code")
+
+head(stands)
+```
+
+## Now We Can Make Our Calculation!
+
+Recall the equation for height:
+$$
+\text{height} = 4.5 + \exp\left( \beta_1 + \frac{\beta_2}{\text{DBH} + 1.0} \right)
+$$
+
+## Now We Can Make Our Calculation!
+
+Recall the equation for height:
+$$
+\text{height} = 4.5 + \exp\left( \beta_1 + \frac{\beta_2}{\text{DBH} + 1.0} \right)
+$$
+
+```{r, echo = TRUE}
+stands <- stands %>%
+  mutate(height_ft = 4.5 + exp( beta_1 + beta_2 / (DBH_in + 1) ) ) %>%
+  select(-beta_1, -beta_2) # Don't need these anymore
+head(stands)
+```
+
+
+## Next time
+
+-   Reshaping data with `tidyr`
+
+
+
+
+
+
+
+
+
+
+
+ 
