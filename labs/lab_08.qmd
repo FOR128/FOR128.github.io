@@ -1,0 +1,42 @@
+---
+title: "Advanced Data Wrangling with `dplyr`"
+subtitle: "FOR 128: Lab 8"
+author: ""
+date: "10/30/2024"
+format:
+  pdf: default
+editor: 
+  mode: source
+---
+
+## Welcome
+
+Welcome to Lab 8! Today, we'll focus on writing extensive `dplyr` code on larger data. We will both use the verbs individually and "write a sentence" with the verbs by stringing them together with pipes. 
+
+### Learning objectives
+
+-   Use `dplyr` verbs together with pipes on larger datasets. 
+
+### Deliverables (i.e., what to put in the lab drop box)
+
+Upload your rendered PDF (`lab_08.pdf`) **and** Quarto (`lab_08.qmd`) document to the lab drop box. Make sure the Quarto document properly renders to PDF.
+
+### Collaborator(s)
+
+List any collaborators you worked with below. 
+
+
+## Exercise 0
+
+Load any packages you'll need for this lab below.
+
+```{r}
+
+```
+
+
+# Part 1: `pdxTrees`
+
+# Wrap up
+
+Congratulations! You've made it to the end of Lab 8. Make sure to render your final document and submit both the .pdf and .qmd file to D2L.
