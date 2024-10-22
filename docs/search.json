@@ -473,21 +473,21 @@
     "href": "slides/w2d2.html#reading-data-4",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/home/grayson/courses/FOR128/FOR128.github.io/slides\""
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\""
   },
   {
     "objectID": "slides/w2d2.html#reading-data-5",
     "href": "slides/w2d2.html#reading-data-5",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/home/grayson/courses/FOR128/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\""
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n [5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\"      \n [9] \"lab_05.qmd\"       \"lab_06.qmd\"       \"lab_07_web.html\"  \"lab_07_web.qmd\"  \n[13] \"lab_07.qmd\""
   },
   {
     "objectID": "slides/w2d2.html#reading-data-6",
     "href": "slides/w2d2.html#reading-data-6",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/home/grayson/courses/FOR128/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\"          \n\n\nNow, given our working directory and datasets location, we specify a relative path and load in the data:\n\nfef &lt;- read.csv(file = \"../labs/datasets/FEF_trees.csv\")"
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n [5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\"      \n [9] \"lab_05.qmd\"       \"lab_06.qmd\"       \"lab_07_web.html\"  \"lab_07_web.qmd\"  \n[13] \"lab_07.qmd\"      \n\n\nNow, given our working directory and datasets location, we specify a relative path and load in the data:\n\nfef &lt;- read.csv(file = \"../labs/datasets/FEF_trees.csv\")"
   },
   {
     "objectID": "slides/w2d2.html#reading-data-7",
@@ -571,7 +571,7 @@
     "href": "slides/w2d2.html#writing-data-1",
     "title": "Reading and Writing Data",
     "section": "Writing data",
-    "text": "Writing data\nFirst, we look at the files in my “labs” folder\n\nlist.files(\"../labs\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\""
+    "text": "Writing data\nFirst, we look at the files in my “labs” folder\n\nlist.files(\"../labs\")\n\n [1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n [5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\"      \n [9] \"lab_05.qmd\"       \"lab_06.qmd\"       \"lab_07_web.html\"  \"lab_07_web.qmd\"  \n[13] \"lab_07.qmd\""
   },
   {
     "objectID": "slides/w2d2.html#writing-data-2",
@@ -585,7 +585,7 @@
     "href": "slides/w2d2.html#writing-data-3",
     "title": "Reading and Writing Data",
     "section": "Writing data",
-    "text": "Writing data\nNext, we can write the fef object to a .csv file.\n\nwrite.csv(x = fef,\n          file = \"../labs/my_fef.csv\")\n\nNow, we can see that the file is written.\n\nlist.files(\"../labs\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\"          \n[13] \"my_fef.csv\""
+    "text": "Writing data\nNext, we can write the fef object to a .csv file.\n\nwrite.csv(x = fef,\n          file = \"../labs/my_fef.csv\")\n\nNow, we can see that the file is written.\n\nlist.files(\"../labs\")\n\n [1] \"datasets\"         \"FEF_trees.csv\"    \"lab_01.qmd\"       \"lab_02.qmd\"      \n [5] \"lab_03_example.R\" \"lab_03.html\"      \"lab_03.qmd\"       \"lab_04.qmd\"      \n [9] \"lab_05.qmd\"       \"lab_06.qmd\"       \"lab_07_web.html\"  \"lab_07_web.qmd\"  \n[13] \"lab_07.qmd\"       \"my_fef.csv\""
   },
   {
     "objectID": "slides/w2d2.html#next-week",
@@ -777,200 +777,312 @@
     "text": "Next time\n\ndplyr"
   },
   {
-    "objectID": "slides/w1d2.html#agenda",
-    "href": "slides/w1d2.html#agenda",
-    "title": "Tools for Data Science",
+    "objectID": "slides/w8d2.html#agenda",
+    "href": "slides/w8d2.html#agenda",
+    "title": "Advanced grouping and summarization",
     "section": "Agenda",
-    "text": "Agenda\nToday, we’ll introduce a few important data science tools:\n\nThe R programming language\nThe RStudio IDE\nQuarto, for reproducible reports"
+    "text": "Agenda\n\ngroup_by() and summarize() in further detail,\nCounting with n() and n_distinct(),\nWorking across() columns."
   },
   {
-    "objectID": "slides/w1d2.html#the-r-programming-language-overview",
-    "href": "slides/w1d2.html#the-r-programming-language-overview",
-    "title": "Tools for Data Science",
-    "section": "The R programming language: overview",
-    "text": "The R programming language: overview\n\n\nR is an open source and freely available programming language with fully featured graphics.\nR is a quite popular language, especially for scientific programming (but it does have lots of industry popularity, as well!).\nR is somewhat similar to python in syntax, and is a great first programming language to learn."
+    "objectID": "slides/w8d2.html#dplyr-verbs",
+    "href": "slides/w8d2.html#dplyr-verbs",
+    "title": "Advanced grouping and summarization",
+    "section": "dplyr verbs",
+    "text": "dplyr verbs\nRecall the standard dplyr verb form:\n\nverb(data, action)\n\n\n\nThe first argument of any dplyr verb is the data (a tibble or data.frame), and the next arguments specify how we are using the verb().\nSince the first argument is always the data, dplyr functions can easily be “piped” between to create a pipeline from one verb to another.\nA very common pipeline between verbs occurs between group_by() and summarize()."
   },
   {
-    "objectID": "slides/w1d2.html#the-r-programming-language-history",
-    "href": "slides/w1d2.html#the-r-programming-language-history",
-    "title": "Tools for Data Science",
-    "section": "The R programming language: history",
-    "text": "The R programming language: history\n\n\nInitially, there was S. Developed by Bell Laboratories in the mid-70s.\nJohn Chambers, one of S’s primary developers described its purpose as follows: “to turn ideas into software, quickly and faithfully”.\nR was developed in the early 90’s and deals with many of the memory problems that existed in S.\nUnder the hood, R calls routines from the lower-level FORTRAN and C languages."
+    "objectID": "slides/w8d2.html#again-we-will-use-more_pets",
+    "href": "slides/w8d2.html#again-we-will-use-more_pets",
+    "title": "Advanced grouping and summarization",
+    "section": "Again, we will use more_pets",
+    "text": "Again, we will use more_pets\n\nlibrary(tidyverse)\nmore_pets &lt;- tibble(\n  names = c(\"Dude\", \"Pickle\", \"Kyle\", \"Nubs\", \"Marvin\", \"Figaro\", \"Slim\"),\n  ages = c(6, 5, 3, 11, 11, 3, 6),\n  meals_per_day = c(2, 3, 3, 3, 1, 2, 2),\n  type_of_animal = c(\"dog\", rep(\"cat\", 3), \"sheep/ram\", \"cat\", \"dog\")\n)\nmore_pets\n\n# A tibble: 7 × 4\n  names   ages meals_per_day type_of_animal\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;         \n1 Dude       6             2 dog           \n2 Pickle     5             3 cat           \n3 Kyle       3             3 cat           \n4 Nubs      11             3 cat           \n5 Marvin    11             1 sheep/ram     \n6 Figaro     3             2 cat           \n7 Slim       6             2 dog"
   },
   {
-    "objectID": "slides/w1d2.html#rstudio",
-    "href": "slides/w1d2.html#rstudio",
-    "title": "Tools for Data Science",
-    "section": "RStudio",
-    "text": "RStudio\n\n\nRStudio, or the RStudio Integrated Development Environment (IDE), is a tool we’ll use to run R code, edit reproducible reports, and even navigate our file system.\nRStudio was initially released in 2011, and is the most popular IDE for R programming.\nLargely, RStudio is a tool to code efficiently and reproducibly in the R programming language.\nLet’s take a look at it!"
+    "objectID": "slides/w8d2.html#summarization",
+    "href": "slides/w8d2.html#summarization",
+    "title": "Advanced grouping and summarization",
+    "section": "Summarization",
+    "text": "Summarization\n\n\nData summaries are some of the best ways to learn from the data we have.\nWith increasingly large data, it can be very helpful to summarize.\ndplyr provides intuitive and powerful ways to summarize data.\nRecall: they call their function for summarization, suprisingly, summarize()"
   },
   {
-    "objectID": "slides/w1d2.html#rstudio-1",
-    "href": "slides/w1d2.html#rstudio-1",
-    "title": "Tools for Data Science",
-    "section": "RStudio",
-    "text": "RStudio\n\nRStudio has four panes: source, console, environment, and file manager."
+    "objectID": "slides/w8d2.html#summarization-1",
+    "href": "slides/w8d2.html#summarization-1",
+    "title": "Advanced grouping and summarization",
+    "section": "Summarization",
+    "text": "Summarization\n\nThe summarize() function takes a very similar form to the other dplyr functions.\nIn particular, it is of the form:\n\n\nsummarize(data, new_summary_column_name = summarization_code)"
   },
   {
-    "objectID": "slides/w1d2.html#whats-going-on-here",
-    "href": "slides/w1d2.html#whats-going-on-here",
-    "title": "Tools for Data Science",
-    "section": "What’s going on here?",
-    "text": "What’s going on here?\n\nrnorm(1)\n\n\n\nrnorm() is a function.\n1 is the value we gave to one of it’s arguments.\nWe can type ?rnorm() for more information about the rnorm() function.\nLet’s check it out!"
+    "objectID": "slides/w8d2.html#get-the-mean-value-of-the-pets-ages",
+    "href": "slides/w8d2.html#get-the-mean-value-of-the-pets-ages",
+    "title": "Advanced grouping and summarization",
+    "section": "Get the mean value of the pet’s ages",
+    "text": "Get the mean value of the pet’s ages\n\nmore_pets %&gt;%\n  summarize(avg_age = mean(ages))\n\n# A tibble: 1 × 1\n  avg_age\n    &lt;dbl&gt;\n1    6.43"
   },
   {
-    "objectID": "slides/w1d2.html#what-have-we-learned",
-    "href": "slides/w1d2.html#what-have-we-learned",
-    "title": "Tools for Data Science",
-    "section": "What have we learned?",
-    "text": "What have we learned?\n\n\nThe rnorm() function takes n random draws from a normal distribution with a center (mean) and spread (sd).\n\nThese statistical details are not necessary for this class."
+    "objectID": "slides/w8d2.html#get-the-total-years-lived-by-the-pets",
+    "href": "slides/w8d2.html#get-the-total-years-lived-by-the-pets",
+    "title": "Advanced grouping and summarization",
+    "section": "Get the total years lived by the pets",
+    "text": "Get the total years lived by the pets\n\n\n# A tibble: 1 × 1\n  years_lived\n        &lt;dbl&gt;\n1          45"
   },
   {
-    "objectID": "slides/w1d2.html#what-have-we-learned-1",
-    "href": "slides/w1d2.html#what-have-we-learned-1",
-    "title": "Tools for Data Science",
-    "section": "What have we learned?",
-    "text": "What have we learned?\n\nThe rnorm() function takes n random draws from a normal distribution with a center (mean) and spread (sd).\n\nThese statistical details are not necessary for this class.\n\n\nWe could have written:\n\nrnorm(n = 1)"
+    "objectID": "slides/w8d2.html#get-the-total-years-lived-by-the-pets-1",
+    "href": "slides/w8d2.html#get-the-total-years-lived-by-the-pets-1",
+    "title": "Advanced grouping and summarization",
+    "section": "Get the total years lived by the pets",
+    "text": "Get the total years lived by the pets\n\nmore_pets %&gt;%\n  summarize(years_lived = sum(ages))\n\n# A tibble: 1 × 1\n  years_lived\n        &lt;dbl&gt;\n1          45"
   },
   {
-    "objectID": "slides/w1d2.html#what-have-we-learned-2",
-    "href": "slides/w1d2.html#what-have-we-learned-2",
-    "title": "Tools for Data Science",
-    "section": "What have we learned?",
-    "text": "What have we learned?\n\nThe rnorm() function takes n random draws from a normal distribution with a center (mean) and spread (sd).\n\nThese statistical details are not necessary for this class.\n\n\nWe could have written:\n\nrnorm(n = 1)\n\nOr even:\n\nrnorm(n = 1, mean = 0, sd = 1)"
+    "objectID": "slides/w8d2.html#custom-functions-in-summarize",
+    "href": "slides/w8d2.html#custom-functions-in-summarize",
+    "title": "Advanced grouping and summarization",
+    "section": "Custom functions in summarize()",
+    "text": "Custom functions in summarize()\nRecall the quadratic mean:\n\nquad_mean &lt;- function(x) {\n  return(sqrt(sum(x^2)) / length(x))\n}"
   },
   {
-    "objectID": "slides/w1d2.html#arguments",
-    "href": "slides/w1d2.html#arguments",
-    "title": "Tools for Data Science",
-    "section": "Arguments",
-    "text": "Arguments\n\nrnorm(n = 1, mean = 0, sd = 1)\n\n\n\nn must be specified for rnorm() to run\nmean and sd are optional, but if you don’t specify them, R will choose for you (in this case, the defaults are 0 and 1)."
+    "objectID": "slides/w8d2.html#custom-functions-in-summarize-1",
+    "href": "slides/w8d2.html#custom-functions-in-summarize-1",
+    "title": "Advanced grouping and summarization",
+    "section": "Custom functions in summarize()",
+    "text": "Custom functions in summarize()\nRecall the quadratic mean:\n\nquad_mean &lt;- function(x) {\n  return(sqrt(sum(x^2)) / length(x))\n}\n\nmore_pets %&gt;%\n  summarize(q_mean = quad_mean(ages),\n            a_mean = mean(ages))\n\n# A tibble: 1 × 2\n  q_mean a_mean\n   &lt;dbl&gt;  &lt;dbl&gt;\n1   2.70   6.43\n\n\n\n\nWe can use our own functions within a summarize!"
   },
   {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-1",
-    "href": "slides/w1d2.html#r-as-a-calculator-1",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
+    "objectID": "slides/w8d2.html#group_by",
+    "href": "slides/w8d2.html#group_by",
+    "title": "Advanced grouping and summarization",
+    "section": "group_by()",
+    "text": "group_by()\n\n\nThe group_by() function allows us to group our tibble by a variable of interest.\ngroup_by() on its own, does not change the rows or columns of the tibble, it just makes it “grouped”\nHowever, when we go to summarize() “grouped” data, we get the results for each group.\nLet’s try it out!"
   },
   {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-2",
-    "href": "slides/w1d2.html#r-as-a-calculator-2",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
+    "objectID": "slides/w8d2.html#average-age-for-each-type-of-pet",
+    "href": "slides/w8d2.html#average-age-for-each-type-of-pet",
+    "title": "Advanced grouping and summarization",
+    "section": "average age for each type of pet",
+    "text": "average age for each type of pet\n\nmore_pets\n\n# A tibble: 7 × 4\n  names   ages meals_per_day type_of_animal\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;         \n1 Dude       6             2 dog           \n2 Pickle     5             3 cat           \n3 Kyle       3             3 cat           \n4 Nubs      11             3 cat           \n5 Marvin    11             1 sheep/ram     \n6 Figaro     3             2 cat           \n7 Slim       6             2 dog"
   },
   {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-3",
-    "href": "slides/w1d2.html#r-as-a-calculator-3",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
+    "objectID": "slides/w8d2.html#average-age-for-each-type-of-pet-1",
+    "href": "slides/w8d2.html#average-age-for-each-type-of-pet-1",
+    "title": "Advanced grouping and summarization",
+    "section": "average age for each type of pet",
+    "text": "average age for each type of pet\n\nmore_pets %&gt;% \n  group_by(type_of_animal)\n\n# A tibble: 7 × 4\n# Groups:   type_of_animal [3]\n  names   ages meals_per_day type_of_animal\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;         \n1 Dude       6             2 dog           \n2 Pickle     5             3 cat           \n3 Kyle       3             3 cat           \n4 Nubs      11             3 cat           \n5 Marvin    11             1 sheep/ram     \n6 Figaro     3             2 cat           \n7 Slim       6             2 dog"
   },
   {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-4",
-    "href": "slides/w1d2.html#r-as-a-calculator-4",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
+    "objectID": "slides/w8d2.html#average-age-for-each-type-of-pet-2",
+    "href": "slides/w8d2.html#average-age-for-each-type-of-pet-2",
+    "title": "Advanced grouping and summarization",
+    "section": "average age for each type of pet",
+    "text": "average age for each type of pet\n\nmore_pets %&gt;% \n  group_by(type_of_animal) %&gt;%\n  summarize(avg_age = mean(ages))\n\n# A tibble: 3 × 2\n  type_of_animal avg_age\n  &lt;chr&gt;            &lt;dbl&gt;\n1 cat                5.5\n2 dog                6  \n3 sheep/ram         11"
   },
   {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-5",
-    "href": "slides/w1d2.html#r-as-a-calculator-5",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
+    "objectID": "slides/w8d2.html#how-many-of-each-type-of-animal",
+    "href": "slides/w8d2.html#how-many-of-each-type-of-animal",
+    "title": "Advanced grouping and summarization",
+    "section": "How many of each type of animal?",
+    "text": "How many of each type of animal?\n\n\n# A tibble: 3 × 2\n  type_of_animal number_of_types\n  &lt;chr&gt;                    &lt;int&gt;\n1 cat                          4\n2 dog                          2\n3 sheep/ram                    1"
   },
   {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-6",
-    "href": "slides/w1d2.html#r-as-a-calculator-6",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
+    "objectID": "slides/w8d2.html#how-many-of-each-type-of-animal-1",
+    "href": "slides/w8d2.html#how-many-of-each-type-of-animal-1",
+    "title": "Advanced grouping and summarization",
+    "section": "How many of each type of animal?",
+    "text": "How many of each type of animal?\n\nmore_pets %&gt;% \n  group_by(type_of_animal) %&gt;%\n  summarize(number_of_types = n())\n\n# A tibble: 3 × 2\n  type_of_animal number_of_types\n  &lt;chr&gt;                    &lt;int&gt;\n1 cat                          4\n2 dog                          2\n3 sheep/ram                    1"
   },
   {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-7",
-    "href": "slides/w1d2.html#r-as-a-calculator-7",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
+    "objectID": "slides/w8d2.html#whats-going-on-with-n",
+    "href": "slides/w8d2.html#whats-going-on-with-n",
+    "title": "Advanced grouping and summarization",
+    "section": "What’s going on with n()",
+    "text": "What’s going on with n()\n\n\nThe n() function counts for us!\nWhen we use n(), nothing ever goes in the parentheses.\nFor our cases, we will use n() in within a summarize() or mutate() on a grouped dataset. n() counts the rows in each group for us."
   },
   {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-8",
-    "href": "slides/w1d2.html#r-as-a-calculator-8",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
+    "objectID": "slides/w8d2.html#number-of-other-animals-of-the-same-type",
+    "href": "slides/w8d2.html#number-of-other-animals-of-the-same-type",
+    "title": "Advanced grouping and summarization",
+    "section": "Number of other animals of the same type",
+    "text": "Number of other animals of the same type\n\n\n# A tibble: 7 × 5\n# Groups:   type_of_animal [3]\n  names   ages meals_per_day type_of_animal other_of_same\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;                  &lt;dbl&gt;\n1 Dude       6             2 dog                        1\n2 Pickle     5             3 cat                        3\n3 Kyle       3             3 cat                        3\n4 Nubs      11             3 cat                        3\n5 Marvin    11             1 sheep/ram                  0\n6 Figaro     3             2 cat                        3\n7 Slim       6             2 dog                        1"
   },
   {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-9",
-    "href": "slides/w1d2.html#r-as-a-calculator-9",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nFunctions can be nested in each other\n\n\nlog(exp(7))\n\n[1] 7"
+    "objectID": "slides/w8d2.html#number-of-other-animals-of-the-same-type-1",
+    "href": "slides/w8d2.html#number-of-other-animals-of-the-same-type-1",
+    "title": "Advanced grouping and summarization",
+    "section": "Number of other animals of the same type",
+    "text": "Number of other animals of the same type\n\nmore_pets %&gt;% \n  group_by(type_of_animal) %&gt;%\n  mutate(other_of_same = n() - 1) \n\n# A tibble: 7 × 5\n# Groups:   type_of_animal [3]\n  names   ages meals_per_day type_of_animal other_of_same\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;                  &lt;dbl&gt;\n1 Dude       6             2 dog                        1\n2 Pickle     5             3 cat                        3\n3 Kyle       3             3 cat                        3\n4 Nubs      11             3 cat                        3\n5 Marvin    11             1 sheep/ram                  0\n6 Figaro     3             2 cat                        3\n7 Slim       6             2 dog                        1"
   },
   {
-    "objectID": "slides/w1d2.html#r-as-a-calculator-10",
-    "href": "slides/w1d2.html#r-as-a-calculator-10",
-    "title": "Tools for Data Science",
-    "section": "R as a calculator",
-    "text": "R as a calculator\n\nExponents with ^: 2^3 means \\(2^3\\)\n\n\n2^3\n\n[1] 8"
+    "objectID": "slides/w8d2.html#number-of-types-of-animals",
+    "href": "slides/w8d2.html#number-of-types-of-animals",
+    "title": "Advanced grouping and summarization",
+    "section": "Number of types of animals",
+    "text": "Number of types of animals\n\n\n# A tibble: 1 × 1\n  n_types\n    &lt;int&gt;\n1       3"
   },
   {
-    "objectID": "slides/w1d2.html#quarto-1",
-    "href": "slides/w1d2.html#quarto-1",
-    "title": "Tools for Data Science",
-    "section": "Quarto",
-    "text": "Quarto\n\n\nQuarto is a markdown language, released in 2022.\nAllows you to include code and text in the same document.\nDocuments output or “Render” to PDF or HTML (web) documents.\nThese slides (and the course website!) are made with Quarto."
+    "objectID": "slides/w8d2.html#number-of-types-of-animals-1",
+    "href": "slides/w8d2.html#number-of-types-of-animals-1",
+    "title": "Advanced grouping and summarization",
+    "section": "Number of types of animals",
+    "text": "Number of types of animals\n\nmore_pets %&gt;% \n  summarize(n_types = n_distinct(type_of_animal))\n\n# A tibble: 1 × 1\n  n_types\n    &lt;int&gt;\n1       3"
   },
   {
-    "objectID": "slides/w1d2.html#quarto-for-reproducible-reports",
-    "href": "slides/w1d2.html#quarto-for-reproducible-reports",
-    "title": "Tools for Data Science",
-    "section": "Quarto for reproducible reports",
-    "text": "Quarto for reproducible reports\n\n\nQuarto is a great tool to help us do reproducible science.\nWhat does reproducibility mean?\nreproducibility \\(\\neq\\) replicability / repeatability"
+    "objectID": "slides/w8d2.html#the-n_distinct-function",
+    "href": "slides/w8d2.html#the-n_distinct-function",
+    "title": "Advanced grouping and summarization",
+    "section": "The n_distinct() function",
+    "text": "The n_distinct() function\n\n\nUsed similarly to n(), but takes columns as inputs,\nCounts the number of distinct values in the supplied columns,\nCan be used grouped."
   },
   {
-    "objectID": "slides/w1d2.html#a-project-is-reproducible-if-another-person-could-take-your-code-and-data-run-the-code-and-get-the-exact-same-answer.",
-    "href": "slides/w1d2.html#a-project-is-reproducible-if-another-person-could-take-your-code-and-data-run-the-code-and-get-the-exact-same-answer.",
-    "title": "Tools for Data Science",
-    "section": "A project is reproducible if another person could take your code and data, run the code, and get the exact same answer.",
-    "text": "A project is reproducible if another person could take your code and data, run the code, and get the exact same answer."
+    "objectID": "slides/w8d2.html#number-of-unique-ages-for-each-type-of-animal",
+    "href": "slides/w8d2.html#number-of-unique-ages-for-each-type-of-animal",
+    "title": "Advanced grouping and summarization",
+    "section": "Number of unique ages for each type of animal",
+    "text": "Number of unique ages for each type of animal\n\n\n# A tibble: 3 × 2\n  type_of_animal unique_ages\n  &lt;chr&gt;                &lt;int&gt;\n1 cat                      3\n2 dog                      1\n3 sheep/ram                1"
   },
   {
-    "objectID": "slides/w1d2.html#a-project-is-replicable-repeatable-if-another-person-could-take-the-steps-to-do-your-project-again-in-their-own-setting.",
-    "href": "slides/w1d2.html#a-project-is-replicable-repeatable-if-another-person-could-take-the-steps-to-do-your-project-again-in-their-own-setting.",
-    "title": "Tools for Data Science",
-    "section": "A project is replicable / repeatable if another person could take the steps to do your project again in their own setting.",
-    "text": "A project is replicable / repeatable if another person could take the steps to do your project again in their own setting."
+    "objectID": "slides/w8d2.html#number-of-unique-ages-for-each-type-of-animal-1",
+    "href": "slides/w8d2.html#number-of-unique-ages-for-each-type-of-animal-1",
+    "title": "Advanced grouping and summarization",
+    "section": "Number of unique ages for each type of animal",
+    "text": "Number of unique ages for each type of animal\n\nmore_pets %&gt;%\n  group_by(type_of_animal) %&gt;%\n  summarize(unique_ages = n_distinct(ages))\n\n# A tibble: 3 × 2\n  type_of_animal unique_ages\n  &lt;chr&gt;                &lt;int&gt;\n1 cat                      3\n2 dog                      1\n3 sheep/ram                1"
   },
   {
-    "objectID": "slides/w1d2.html#objects-in-r",
-    "href": "slides/w1d2.html#objects-in-r",
-    "title": "Tools for Data Science",
-    "section": "Objects in R",
-    "text": "Objects in R\n\nR can store objects for use later in what we call an environment.\n\n\ndbh_in &lt;- 40 # store tree diameter (inches)"
+    "objectID": "slides/w8d2.html#across",
+    "href": "slides/w8d2.html#across",
+    "title": "Advanced grouping and summarization",
+    "section": "across()",
+    "text": "across()\n\n\nacross() takes two arguments: .cols and .fns\nThe .cols argument specifies the columns we’d like to apply our function, .fns, to.\nIn practice, we use across() within a mutate() or a summarize().\nLet’s try it out!"
   },
   {
-    "objectID": "slides/w1d2.html#objects-in-r-1",
-    "href": "slides/w1d2.html#objects-in-r-1",
-    "title": "Tools for Data Science",
-    "section": "Objects in R",
-    "text": "Objects in R\n\nR can store objects for use later in what we call an environment.\nHere, we stored dbh_in in our environment, and printed it out to see its value.\n\n\ndbh_in\n\n[1] 40"
+    "objectID": "slides/w8d2.html#get-the-mean-of-ages-and-meals_per_day",
+    "href": "slides/w8d2.html#get-the-mean-of-ages-and-meals_per_day",
+    "title": "Advanced grouping and summarization",
+    "section": "Get the mean of ages and meals_per_day",
+    "text": "Get the mean of ages and meals_per_day\n\nmore_pets %&gt;%\n  summarize(\n    across(.cols = c(ages, meals_per_day),\n           .fns = mean)\n  )\n\n# A tibble: 1 × 2\n   ages meals_per_day\n  &lt;dbl&gt;         &lt;dbl&gt;\n1  6.43          2.29"
   },
   {
-    "objectID": "slides/w1d2.html#objects-in-r-2",
-    "href": "slides/w1d2.html#objects-in-r-2",
-    "title": "Tools for Data Science",
-    "section": "Objects in R",
-    "text": "Objects in R\n\nR can store objects for use later in what we call an environment.\nHere, we stored dbh_in in our environment, and printed it out to see its value.\nWe can use R as a calculator to compute the tree’s basal area.\n\n\nBA_in2 &lt;- pi * (dbh_in / 2)^2 # compute tree basal area\nBA_in2\n\n[1] 1256.637"
+    "objectID": "slides/w8d2.html#make-the-ages-and-meals_per_day-columns-integers",
+    "href": "slides/w8d2.html#make-the-ages-and-meals_per_day-columns-integers",
+    "title": "Advanced grouping and summarization",
+    "section": "Make the ages and meals_per_day columns integers",
+    "text": "Make the ages and meals_per_day columns integers\n\n\n# A tibble: 7 × 4\n  names   ages meals_per_day type_of_animal\n  &lt;chr&gt;  &lt;int&gt;         &lt;int&gt; &lt;chr&gt;         \n1 Dude       6             2 dog           \n2 Pickle     5             3 cat           \n3 Kyle       3             3 cat           \n4 Nubs      11             3 cat           \n5 Marvin    11             1 sheep/ram     \n6 Figaro     3             2 cat           \n7 Slim       6             2 dog"
   },
   {
-    "objectID": "slides/w1d2.html#next-time",
-    "href": "slides/w1d2.html#next-time",
-    "title": "Tools for Data Science",
+    "objectID": "slides/w8d2.html#make-the-ages-and-meals_per_day-columns-integers-1",
+    "href": "slides/w8d2.html#make-the-ages-and-meals_per_day-columns-integers-1",
+    "title": "Advanced grouping and summarization",
+    "section": "Make the ages and meals_per_day columns integers",
+    "text": "Make the ages and meals_per_day columns integers\n\nmore_pets %&gt;%\n  mutate(\n    across(.cols = c(ages, meals_per_day),\n           .fns = as.integer)\n  )\n\n# A tibble: 7 × 4\n  names   ages meals_per_day type_of_animal\n  &lt;chr&gt;  &lt;int&gt;         &lt;int&gt; &lt;chr&gt;         \n1 Dude       6             2 dog           \n2 Pickle     5             3 cat           \n3 Kyle       3             3 cat           \n4 Nubs      11             3 cat           \n5 Marvin    11             1 sheep/ram     \n6 Figaro     3             2 cat           \n7 Slim       6             2 dog"
+  },
+  {
+    "objectID": "slides/w8d2.html#get-the-mean-and-standard-deviation-of-ages-and-meals_per_day",
+    "href": "slides/w8d2.html#get-the-mean-and-standard-deviation-of-ages-and-meals_per_day",
+    "title": "Advanced grouping and summarization",
+    "section": "Get the mean and standard deviation of ages and meals_per_day",
+    "text": "Get the mean and standard deviation of ages and meals_per_day\nBad example\n\nmore_pets %&gt;%\n  summarize(\n    across(.cols = c(ages, meals_per_day),\n           .fns = mean)\n  )\n\n# A tibble: 1 × 2\n   ages meals_per_day\n  &lt;dbl&gt;         &lt;dbl&gt;\n1  6.43          2.29\n\nmore_pets %&gt;%\n  summarize(\n    across(.cols = c(ages, meals_per_day),\n           .fns = sd)\n  )\n\n# A tibble: 1 × 2\n   ages meals_per_day\n  &lt;dbl&gt;         &lt;dbl&gt;\n1  3.36         0.756"
+  },
+  {
+    "objectID": "slides/w8d2.html#get-the-mean-and-standard-deviation-of-ages-and-meals_per_day-1",
+    "href": "slides/w8d2.html#get-the-mean-and-standard-deviation-of-ages-and-meals_per_day-1",
+    "title": "Advanced grouping and summarization",
+    "section": "Get the mean and standard deviation of ages and meals_per_day",
+    "text": "Get the mean and standard deviation of ages and meals_per_day\nBetter\n\nmore_pets %&gt;%\n  summarize(\n    across(.cols = c(ages, meals_per_day),\n           .fns = c(mean, sd))\n  )\n\n# A tibble: 1 × 4\n  ages_1 ages_2 meals_per_day_1 meals_per_day_2\n   &lt;dbl&gt;  &lt;dbl&gt;           &lt;dbl&gt;           &lt;dbl&gt;\n1   6.43   3.36            2.29           0.756"
+  },
+  {
+    "objectID": "slides/w8d2.html#get-the-mean-and-standard-deviation-of-ages-and-meals_per_day-2",
+    "href": "slides/w8d2.html#get-the-mean-and-standard-deviation-of-ages-and-meals_per_day-2",
+    "title": "Advanced grouping and summarization",
+    "section": "Get the mean and standard deviation of ages and meals_per_day",
+    "text": "Get the mean and standard deviation of ages and meals_per_day\nBest\n\nmore_pets %&gt;%\n  summarize(\n    across(.cols = c(ages, meals_per_day),\n           .fns = c(mean = mean, standard_deviation = sd))\n  )\n\n# A tibble: 1 × 4\n  ages_mean ages_standard_deviation meals_per_day_mean meals_per_day_standard_…¹\n      &lt;dbl&gt;                   &lt;dbl&gt;              &lt;dbl&gt;                     &lt;dbl&gt;\n1      6.43                    3.36               2.29                     0.756\n# ℹ abbreviated name: ¹​meals_per_day_standard_deviation"
+  },
+  {
+    "objectID": "slides/w8d2.html#get-the-mean-and-standard-deviation-of-ages-and-meals_per_day-grouped-by-type-of-animal",
+    "href": "slides/w8d2.html#get-the-mean-and-standard-deviation-of-ages-and-meals_per_day-grouped-by-type-of-animal",
+    "title": "Advanced grouping and summarization",
+    "section": "Get the mean and standard deviation of ages and meals_per_day, grouped by type of animal",
+    "text": "Get the mean and standard deviation of ages and meals_per_day, grouped by type of animal\n\nmore_pets %&gt;%\n  group_by(type_of_animal) %&gt;%\n  summarize(\n    across(.cols = c(ages, meals_per_day),\n           .fns = c(mean = mean, standard_deviation = sd))\n  )\n\n# A tibble: 3 × 5\n  type_of_animal ages_mean ages_standard_deviation meals_per_day_mean\n  &lt;chr&gt;              &lt;dbl&gt;                   &lt;dbl&gt;              &lt;dbl&gt;\n1 cat                  5.5                    3.79               2.75\n2 dog                  6                      0                  2   \n3 sheep/ram           11                     NA                  1   \n# ℹ 1 more variable: meals_per_day_standard_deviation &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/w8d2.html#specifying-function-arguments-in-calls-to-across",
+    "href": "slides/w8d2.html#specifying-function-arguments-in-calls-to-across",
+    "title": "Advanced grouping and summarization",
+    "section": "Specifying function arguments in calls to across()",
+    "text": "Specifying function arguments in calls to across()\nConsider the toy dataset:\n\ntrees &lt;- tibble(\n  dbh = c(15, 9, NA),\n  height = c(50, 34, 33),\n  spp = c(\"doug-fir\", \"madrone\", \"doug-fir\")\n)\ntrees\n\n# A tibble: 3 × 3\n    dbh height spp     \n  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;   \n1    15     50 doug-fir\n2     9     34 madrone \n3    NA     33 doug-fir"
+  },
+  {
+    "objectID": "slides/w8d2.html#what-if-we-want-the-mean-dbh-and-height",
+    "href": "slides/w8d2.html#what-if-we-want-the-mean-dbh-and-height",
+    "title": "Advanced grouping and summarization",
+    "section": "What if we want the mean dbh and height?",
+    "text": "What if we want the mean dbh and height?\n\ntrees %&gt;%\n  summarize(\n    across(.cols = c(dbh, height),\n           .fns = mean)\n  )\n\n# A tibble: 1 × 2\n    dbh height\n  &lt;dbl&gt;  &lt;dbl&gt;\n1    NA     39\n\n\n\n\nreturns NA :-("
+  },
+  {
+    "objectID": "slides/w8d2.html#we-need-lambda-syntax",
+    "href": "slides/w8d2.html#we-need-lambda-syntax",
+    "title": "Advanced grouping and summarization",
+    "section": "We need “lambda syntax”",
+    "text": "We need “lambda syntax”\n\ntrees %&gt;%\n  summarize(\n    across(.cols = c(dbh, height),\n           .fns = ~ mean(.x, na.rm = TRUE))\n  )\n\n# A tibble: 1 × 2\n    dbh height\n  &lt;dbl&gt;  &lt;dbl&gt;\n1    12     39"
+  },
+  {
+    "objectID": "slides/w8d2.html#we-need-lambda-syntax-1",
+    "href": "slides/w8d2.html#we-need-lambda-syntax-1",
+    "title": "Advanced grouping and summarization",
+    "section": "We need “lambda syntax”",
+    "text": "We need “lambda syntax”\n\ntrees %&gt;%\n  summarize(\n    across(.cols = c(dbh, height),\n           .fns = ~ mean(.x, na.rm = TRUE))\n  )\n\n# A tibble: 1 × 2\n    dbh height\n  &lt;dbl&gt;  &lt;dbl&gt;\n1    12     39\n\n\n\n\nBefore, we had .fns = mean, but with lambda syntax we can specify additional arguments in the newfound parentheses.\nWe use the tilde ~ to specify lambda syntax.\nAfter we’ve specified the ~, we can now put parentheses after the function and specify additional arguments."
+  },
+  {
+    "objectID": "slides/w8d2.html#we-need-lambda-syntax-2",
+    "href": "slides/w8d2.html#we-need-lambda-syntax-2",
+    "title": "Advanced grouping and summarization",
+    "section": "We need “lambda syntax”",
+    "text": "We need “lambda syntax”\n\ntrees %&gt;%\n  summarize(\n    across(.cols = c(dbh, height),\n           .fns = ~ mean(.x, na.rm = TRUE))\n  )\n\n# A tibble: 1 × 2\n    dbh height\n  &lt;dbl&gt;  &lt;dbl&gt;\n1    12     39\n\n\n\nWe now must specify .x in the place where the columns go (before, this happened implicitly)"
+  },
+  {
+    "objectID": "slides/w8d2.html#next-time",
+    "href": "slides/w8d2.html#next-time",
+    "title": "Advanced grouping and summarization",
     "section": "Next time",
-    "text": "Next time\n\n\nWe’ll talk about file systems, paths, folders, and navigating your computer.\nMore advanced features of R as well: basic data structures, variable naming and code formatting, reading/writing data, and more!"
+    "text": "Next time\n\nJoining tibbles with dplyr"
+  },
+  {
+    "objectID": "labs/lab_07_web.html",
+    "href": "labs/lab_07_web.html",
+    "title": "Data Wrangling with dplyr",
+    "section": "",
+    "text": "Welcome to Lab 7! Today, we’ll focus on writing dplyr code. In particular, we will both use the verbs individually and “write a sentence” with the verbs by stringing them together with pipes.\n\n\n\nUse dplyr verbs together with pipes.\n\n\n\n\nUpload your rendered PDF (lab_07.pdf) and Quarto (lab_07.qmd) document to the lab drop box. Make sure the Quarto document properly renders to PDF."
+  },
+  {
+    "objectID": "labs/lab_07_web.html#welcome",
+    "href": "labs/lab_07_web.html#welcome",
+    "title": "Data Wrangling with dplyr",
+    "section": "",
+    "text": "Welcome to Lab 7! Today, we’ll focus on writing dplyr code. In particular, we will both use the verbs individually and “write a sentence” with the verbs by stringing them together with pipes.\n\n\n\nUse dplyr verbs together with pipes.\n\n\n\n\nUpload your rendered PDF (lab_07.pdf) and Quarto (lab_07.qmd) document to the lab drop box. Make sure the Quarto document properly renders to PDF."
+  },
+  {
+    "objectID": "labs/lab_07_web.html#exercise-0",
+    "href": "labs/lab_07_web.html#exercise-0",
+    "title": "Data Wrangling with dplyr",
+    "section": "Exercise 0",
+    "text": "Exercise 0\nLoad any packages you’ll need for this lab below."
+  },
+  {
+    "objectID": "labs/lab_07_web.html#exercise-1",
+    "href": "labs/lab_07_web.html#exercise-1",
+    "title": "Data Wrangling with dplyr",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nCreate the following dataset and call it plots. The resulting tibble should look like this when printed:\n\nplots\n\n# A tibble: 5 × 6\n   plot  tree   dbh  logs type  live \n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;\n1     1     1  20.2   2   D     TRUE \n2     1     2  10.4   1   D     TRUE \n3     2     1   5     0.5 D     TRUE \n4     2     2  18    NA   C     FALSE\n5     2     3  10.5   1.5 C     TRUE"
+  },
+  {
+    "objectID": "labs/lab_07_web.html#exercise-2",
+    "href": "labs/lab_07_web.html#exercise-2",
+    "title": "Data Wrangling with dplyr",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nWrite some code to figure out the follow features of plots:\n\nHow many rows and columns?\nWhat are the column names?\nWhat is the data type of each column?\nAre there any NA values? If so, in which column?"
+  },
+  {
+    "objectID": "labs/lab_07_web.html#exercise-3",
+    "href": "labs/lab_07_web.html#exercise-3",
+    "title": "Data Wrangling with dplyr",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nUse a dplyr function to print all trees in plot 2.\n\n\n# A tibble: 3 × 6\n   plot  tree   dbh  logs type  live \n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;\n1     2     1   5     0.5 D     TRUE \n2     2     2  18    NA   C     FALSE\n3     2     3  10.5   1.5 C     TRUE \n\n\n\nExercise 4\nUse a dplyr function to print all trees in plot 2 that have dbh less than or equal 10.\n\n\n# A tibble: 1 × 6\n   plot  tree   dbh  logs type  live \n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;\n1     2     1     5   0.5 D     TRUE \n\n\n\n\nExercise 5\nUse a dplyr function to print the tree with the largest dbh.\n\n\n# A tibble: 1 × 6\n   plot  tree   dbh  logs type  live \n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;\n1     1     1  20.2     2 D     TRUE \n\n\n\n\nExercise 6\nUse a series of piped dplyr functions to find the largest dbh tree on plot 2.\n\n\n# A tibble: 1 × 6\n   plot  tree   dbh  logs type  live \n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;\n1     2     2    18    NA C     FALSE\n\n\n\n\nExercise 7\nUse a series of piped dplyr functions to find the largest dbh live tree on plot 2.\n\n\n# A tibble: 1 × 6\n   plot  tree   dbh  logs type  live \n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;\n1     2     3  10.5   1.5 C     TRUE \n\n\n\n\nExercise 8\nUse a series of piped dplyr functions to find the largest dbh dead tree on plot 2.\n\n\n# A tibble: 1 × 6\n   plot  tree   dbh  logs type  live \n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;\n1     2     2    18    NA C     FALSE\n\n\n\n\nExercise 9\nUse a series of piped dplyr functions to find the largest dbh live tree on plot 2 of type D.\n\n\n# A tibble: 1 × 6\n   plot  tree   dbh  logs type  live \n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;\n1     2     1     5   0.5 D     TRUE \n\n\n\n\nExercise 10\nUse a series of piped dplyr functions to find the smallest dbh tree on plot 1.\n\n\n# A tibble: 1 × 6\n   plot  tree   dbh  logs type  live \n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;\n1     1     2  10.4     1 D     TRUE \n\n\n\n\nExercise 11\nUse a dplyr function to add a new column to plots to hold each tree’s basal area (ft\\(^2\\)). This new column should be called ba with values equal to 0.005454*dbh^2 (assuming dbh is in inches).\n\n\n# A tibble: 5 × 7\n   plot  tree   dbh  logs type  live     ba\n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt; &lt;dbl&gt;\n1     1     1  20.2   2   D     TRUE  2.23 \n2     1     2  10.4   1   D     TRUE  0.590\n3     2     1   5     0.5 D     TRUE  0.136\n4     2     2  18    NA   C     FALSE 1.77 \n5     2     3  10.5   1.5 C     TRUE  0.601\n\n\n\n\nExercise 12\nUse a dplyr function to move your newly created column ba to between the dbh and logs columns.\n\n\n# A tibble: 5 × 7\n   plot  tree   dbh    ba  logs type  live \n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;\n1     1     1  20.2 2.23    2   D     TRUE \n2     1     2  10.4 0.590   1   D     TRUE \n3     2     1   5   0.136   0.5 D     TRUE \n4     2     2  18   1.77   NA   C     FALSE\n5     2     3  10.5 0.601   1.5 C     TRUE \n\n\n\n\nExercise 13\nUse a series of piped dplyr functions to compute the mean dbh for trees on plots 1 and 2. Note, I called my mean mean_dbh.\n\n\n# A tibble: 2 × 2\n   plot mean_dbh\n  &lt;dbl&gt;    &lt;dbl&gt;\n1     1     15.3\n2     2     11.2\n\n\n\n\nExercise 14\nUse a series of piped dplyr functions to compute plot specific mean dbh and logs for trees. Exclude NA values from the mean calculations (hint, use the na.rm argument in mean()). Note, I called my mean mean_dbh and mean_logs.\n\n\n# A tibble: 2 × 3\n   plot mean_dbh mean_logs\n  &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1     1     15.3       1.5\n2     2     11.2       1  \n\n\n\n\nExercise 15\nUse a series of piped dplyr functions to compute plot specific mean dbh and logs for live trees. Note, I called my mean mean_dbh and mean_logs. Why did only plot 2 mean dbh change from the your solution to Exercise 14?\n\n\n# A tibble: 2 × 3\n   plot mean_dbh mean_logs\n  &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1     1    15.3        1.5\n2     2     7.75       1  \n\n\n\n\nExercise 16\nSort plots by increasing plot number and increasing dbh within plot.\n\n\n# A tibble: 5 × 7\n   plot  tree   dbh    ba  logs type  live \n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;\n1     1     2  10.4 0.590   1   D     TRUE \n2     1     1  20.2 2.23    2   D     TRUE \n3     2     1   5   0.136   0.5 D     TRUE \n4     2     3  10.5 0.601   1.5 C     TRUE \n5     2     2  18   1.77   NA   C     FALSE\n\n\n\n\nExercise 17\nThe type column holds values “D” and “C” which stand for deciduous and conifer, respectively. Use mutate() and the case_when() function to change values in the type column from “D” and “C” to “deciduous” and “conifer”.\n\nplots\n\n# A tibble: 5 × 7\n   plot  tree   dbh    ba  logs type      live \n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     &lt;lgl&gt;\n1     1     1  20.2 2.23    2   deciduous TRUE \n2     1     2  10.4 0.590   1   deciduous TRUE \n3     2     1   5   0.136   0.5 deciduous TRUE \n4     2     2  18   1.77   NA   conifer   FALSE\n5     2     3  10.5 0.601   1.5 conifer   TRUE \n\n\n\n\nExercise 18\nUse a series of piped dplyr functions to compute type specific mean dbh and logs. More specifically, I want you to use a grouped summarize(), where you group by type. Note, I called my mean mean_dbh and mean_logs.\n\n\n# A tibble: 2 × 3\n  type      mean_dbh mean_logs\n  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;\n1 conifer       14.2      1.5 \n2 deciduous     11.9      1.17\n\n\n\n\nExercise 19\nUse a series of piped dplyr functions to count the number of trees by type. Hint, use the n() within a grouped summarize(). I called my count n_trees.\n\n\n# A tibble: 2 × 2\n  type      n_trees\n  &lt;chr&gt;       &lt;int&gt;\n1 conifer         2\n2 deciduous       3\n\n\n\n\nExercise 20\nUse a series of piped dplyr functions to print the trees with the largest basal area within each plot.\n\n\n# A tibble: 2 × 7\n# Groups:   plot [2]\n   plot  tree   dbh    ba  logs type      live \n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     &lt;lgl&gt;\n1     1     1  20.2  2.23     2 deciduous TRUE \n2     2     2  18    1.77    NA conifer   FALSE"
   },
   {
     "objectID": "slides/w5d2.html#annoucements",
@@ -1239,116 +1351,88 @@
     "text": "Next time\n\nRemember, lab 1 is due tomorrow at 5pm on D2L.\nRStudio projects.\nReading and writing data."
   },
   {
-    "objectID": "slides/w6d1.html#annoucements",
-    "href": "slides/w6d1.html#annoucements",
-    "title": "Welcome to the tidyverse",
-    "section": "Annoucements",
-    "text": "Annoucements\n\nMidterm 1 is this Thursday, Oct 3, during lab time."
-  },
-  {
-    "objectID": "slides/w6d1.html#agenda",
-    "href": "slides/w6d1.html#agenda",
-    "title": "Welcome to the tidyverse",
-    "section": "Agenda",
-    "text": "Agenda\n\nMidterm format overview\nIntro to the tidyverse\nQuiz + group activity"
-  },
-  {
-    "objectID": "slides/w6d1.html#reminder-from-the-syllabus",
-    "href": "slides/w6d1.html#reminder-from-the-syllabus",
-    "title": "Welcome to the tidyverse",
-    "section": "Reminder from the syllabus",
-    "text": "Reminder from the syllabus\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
-  },
-  {
-    "objectID": "slides/w6d1.html#midterm-i-overview",
-    "href": "slides/w6d1.html#midterm-i-overview",
-    "title": "Welcome to the tidyverse",
-    "section": "Midterm I overview",
-    "text": "Midterm I overview\n\n\nThe test will be taken in person, in lab.\n5 questions, all equally weighted. You only have to answer 4 of 5 questions. If you answer 5, I will count the 4 you did the best on.\nThere will be a paper test with the questions on it, but you will answer them in a Quarto document (similar to your labs).\nLecture slides and previous labs/quizzes are your best resource for success.\nQuestions cover material from chapters 1 - 5 of IFDAR, or Week 5 Day 2."
-  },
-  {
-    "objectID": "slides/w6d1.html#what-is-the-tidyverse",
-    "href": "slides/w6d1.html#what-is-the-tidyverse",
-    "title": "Welcome to the tidyverse",
-    "section": "What is the tidyverse",
-    "text": "What is the tidyverse\n\n\nA collection of R packages that work together to provide extensive and intuitive data analysis functions.\nIn this class, we will focus on 5 tidyverse packages:\n\ntibble, to improve on the data.frame,\nreadr, to improve reading and writing data,\ndplyr, to manipulate and summarize data “data plyers”,\ntidyr, to clean and reshape data, and\nggplot2, to produce beautiful graphics with intuitive syntax “the grammer of graphics”."
-  },
-  {
-    "objectID": "slides/w6d1.html#a-note-on-the-course",
-    "href": "slides/w6d1.html#a-note-on-the-course",
-    "title": "Welcome to the tidyverse",
-    "section": "A note on the course",
-    "text": "A note on the course\n\n\nSo far, we have almost entirely focused on R in its “base” form. That is, R with only built-in functions.\nBase R has many advantages: especially in being fast and reliable.\nHowever, I believe that the tidyverse can provide a more intuitive approach to data analysis."
-  },
-  {
-    "objectID": "slides/w6d1.html#next-time",
-    "href": "slides/w6d1.html#next-time",
-    "title": "Welcome to the tidyverse",
-    "section": "Next time",
-    "text": "Next time\n\nReview day. We will discuss any questions about the material for the midterm.\nCome ready to ask any last minute questions, discuss approaches to problems, etc."
-  },
-  {
-    "objectID": "tickets/ticket_08.html",
-    "href": "tickets/ticket_08.html",
-    "title": "Lecture Ticket 8",
+    "objectID": "tickets/ticket_06.html",
+    "href": "tickets/ticket_06.html",
+    "title": "Lecture Ticket 6",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 5"
+    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.7, 4.8 and 4.9"
   },
   {
-    "objectID": "tickets/ticket_08.html#reading",
-    "href": "tickets/ticket_08.html#reading",
-    "title": "Lecture Ticket 8",
+    "objectID": "tickets/ticket_06.html#reading",
+    "href": "tickets/ticket_06.html#reading",
+    "title": "Lecture Ticket 6",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 5"
+    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.7, 4.8 and 4.9"
   },
   {
-    "objectID": "tickets/ticket_08.html#questions",
-    "href": "tickets/ticket_08.html#questions",
-    "title": "Lecture Ticket 8",
+    "objectID": "tickets/ticket_06.html#questions",
+    "href": "tickets/ticket_06.html#questions",
+    "title": "Lecture Ticket 6",
     "section": "Questions",
-    "text": "Questions\nConsider the function:\n\nmy_pets &lt;- function(species) {\n  if (species == \"dog\") {\n    return(\"Dude\")\n  } else if (species == \"cat\") {\n    return(c(\"Pickle\", \"Kyle\", \"Nubs\"))\n  } else {\n    return(\"Not my pet\")\n  }\n}\n\n\nWhat would my_pets(species = \"dog\") return?\nWhat would my_pets(species = \"bird\") return?\nWhat would my_pets(species = \"cat\") return?"
+    "text": "Questions\n\nYou learned about comparison and logical operators in the reading. In R, what is the operator for each of the following:\n\nequality,\ngreater than,\ngreater than or equal to,\nnot equal to,\nor,\nand.\n\nConsider the following vector:\n\n\nx &lt;- 1:10\nx\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nWhat does the following do to x?\n\nx[x &lt; 5] &lt;- 0"
   },
   {
-    "objectID": "tickets/ticket_01.html",
-    "href": "tickets/ticket_01.html",
-    "title": "Lecture Ticket 1",
+    "objectID": "tickets/ticket_07.html",
+    "href": "tickets/ticket_07.html",
+    "title": "Lecture Ticket 7",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 1\nBegin Chapter 2 (STOP at the bottom of page 19)"
+    "text": "Read the following sections of IFDAR.\n\nChapter 5: sections 5.1"
   },
   {
-    "objectID": "tickets/ticket_01.html#reading",
-    "href": "tickets/ticket_01.html#reading",
-    "title": "Lecture Ticket 1",
+    "objectID": "tickets/ticket_07.html#reading",
+    "href": "tickets/ticket_07.html#reading",
+    "title": "Lecture Ticket 7",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 1\nBegin Chapter 2 (STOP at the bottom of page 19)"
+    "text": "Read the following sections of IFDAR.\n\nChapter 5: sections 5.1"
   },
   {
-    "objectID": "tickets/ticket_01.html#tasks",
-    "href": "tickets/ticket_01.html#tasks",
-    "title": "Lecture Ticket 1",
-    "section": "Tasks",
-    "text": "Tasks\n\n1. Install R and RStudio\nAs discussed in IFDAR, go to Posit’s website. Install R first, and then install RStudio.\n\n\n2. Run your first R command\nIn the console, type in the following command and press Enter to run it:\n\nrnorm(1)\n\n\n\n3. Record your result\nCome to class on Thursday with a piece of paper with your name on it that includes the result (it will be a number) from running rnorm(1) in task 2.\nIf you were unable to install R and RStudio and ran into issues, instead come to class with a piece of paper with your name on it that explains the issue you were having with installation."
-  },
-  {
-    "objectID": "tickets/ticket_13.html",
-    "href": "tickets/ticket_13.html",
-    "title": "Lecture Ticket 13",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.1 - 7.5"
-  },
-  {
-    "objectID": "tickets/ticket_13.html#reading",
-    "href": "tickets/ticket_13.html#reading",
-    "title": "Lecture Ticket 13",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.1 - 7.5"
-  },
-  {
-    "objectID": "tickets/ticket_13.html#questions",
-    "href": "tickets/ticket_13.html#questions",
-    "title": "Lecture Ticket 13",
+    "objectID": "tickets/ticket_07.html#questions",
+    "href": "tickets/ticket_07.html#questions",
+    "title": "Lecture Ticket 7",
     "section": "Questions",
-    "text": "Questions\n\nConsider the following dataset:\n\n\nten_cars &lt;- head(mtcars, n = 10)\nten_cars\n\n                   mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\nDuster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\nMerc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\nMerc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\nMerc 280          19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n\n\nHow would we use dplyr to filter for rows with horse power (hp) greater than 100? How would we use base R to do the same thing? Which do you prefer?"
+    "text": "Questions\nConsider the function:\n\nmy_function &lt;- function(x) {\n  y &lt;- x * 2\n  z &lt;- x + 4\n  return(y + z)\n}\n\n\nWhat would my_function(x = 10) return?\nWhat would my_function(x = 0) return?\nWhat would my_function(x = 5) + 10 return?"
+  },
+  {
+    "objectID": "labs/lab_03.html",
+    "href": "labs/lab_03.html",
+    "title": "Vectors and Dataframes",
+    "section": "",
+    "text": "Create, subset, and manipulate vectors and data frames.\nPractice reading data from external files.\nGet some practice writing R scripts.\n\n\n\n\nCreate a new directory called lab_03 within your labs directory (e.g., ~/FOR_128/labs/lab_03). In RStudio set lab_03 as your working directory. Download and move the FEF_trees.csv file from the D2L lab page to your lab_03 directory.\nCreate a new script and save it as lab_03.R (it should save to your working directory).\nNow, use our book, help “man” pages, Google, your intuition, and experimentation to describe the behavior of the code in each of the following questions. For each question, write and execute the code in each question then, using a comment #, add notes above the code to describe/define its behavior (see example script lab_03_example.R in the lab’s D2L page)."
+  },
+  {
+    "objectID": "labs/lab_03.html#getting-started",
+    "href": "labs/lab_03.html#getting-started",
+    "title": "Vectors and Dataframes",
+    "section": "",
+    "text": "Create, subset, and manipulate vectors and data frames.\nPractice reading data from external files.\nGet some practice writing R scripts.\n\n\n\n\nCreate a new directory called lab_03 within your labs directory (e.g., ~/FOR_128/labs/lab_03). In RStudio set lab_03 as your working directory. Download and move the FEF_trees.csv file from the D2L lab page to your lab_03 directory.\nCreate a new script and save it as lab_03.R (it should save to your working directory).\nNow, use our book, help “man” pages, Google, your intuition, and experimentation to describe the behavior of the code in each of the following questions. For each question, write and execute the code in each question then, using a comment #, add notes above the code to describe/define its behavior (see example script lab_03_example.R in the lab’s D2L page)."
+  },
+  {
+    "objectID": "labs/lab_03.html#questions",
+    "href": "labs/lab_03.html#questions",
+    "title": "Vectors and Dataframes",
+    "section": "Questions",
+    "text": "Questions\n\nFunctions and index subsetting of vectors and data frames\nUse the code below to create the plt data frame.\n\nspp &lt;- c(\"tsugca\", \"tsugca\", \"betual\", \"acerru\", \"pinust\", \"pinust\", \"betual\", \"acerru\")\ndbh &lt;- c(15, 12, 6.6, 9.3, 28.1, 9.23, 15.3, 11.1)\nqual &lt;- c(\"ugs\", \"ags\", \"ags\", \"ugs\", \"ags\", \"ags\", \"ugs\", \"ags\")\nlive &lt;- c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE)\n\nplt &lt;- data.frame(spp, dbh, qual, live)\n\n\nplt \nclass(plt) \nnames(plt) \nnrow(plt) \nncol(plt) \ndim(plt) \nlength(plt) \nplt[2:4,c(1,4)] \nplt[1:3,c(\"spp\", \"dbh\")] \nplt$qual \nclass(plt$qual) \nhead(plt) \ntail(plt) \nhead(plt, n=3) \ntail(plt, n=2) \nplt.cpy &lt;- plt \nplt.cpy[1:3,1] &lt;-  c(\"pinust\", \"pinust\", \"acerru\") \nplt.cpy[1:2,1] &lt;-  c(\"pinust\", \"pinust\", \"acerru\") \nplt.cpy$live[8] &lt;- FALSE \nplt.cpy[8,\"live\"] &lt;- TRUE \nrep(\"ugs\", nrow(plt.cpy)) \nplt.cpy[,\"status\"] &lt;- rep(\"ugs\", nrow(plt.cpy)) \n!TRUE \ncolnames(plt.cpy)[4] &lt;- \"dead\" \nplt.cpy$dead &lt;- !plt$live \nplt.cpy &lt;- plt[-(1:5),] \nplt.cpy &lt;- plt[-1:5,] \nplt.cpy &lt;- rbind(plt, c(\"some new spp\", 100, \"ugs\", FALSE)) \nplt.cpy &lt;- cbind(plt, 1:nrow(plt)) \ncolnames(plt.cpy)[ncol(plt.cpy)] &lt;- \"tree.indx\" \nstr(plt) \n\nRead the external data file FEF_trees.csv into R using the read.csv() function and call the resulting data frame fef.\n\nfef &lt;- read.csv(\"FEF_trees.csv\")\n\n\ndim(fef) \nhead(fef) \ntail(fef) \nsum(fef$height_ft) \nmax(fef$height_ft) \nmin(fef$height_ft) \nwhich.max(fef$height_ft) \nfef[which.max(fef$height_ft), ] \nfef[which.min(fef$height_ft), ] \nIn the previous two labs you did your work in a Quarto document. What are some ways the script you created for this lab are different from the Quarto document?"
+  },
+  {
+    "objectID": "tickets/ticket_04.html",
+    "href": "tickets/ticket_04.html",
+    "title": "Lecture Ticket 4",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.1 and 4.2 (Stop at 4.3 Factors)"
+  },
+  {
+    "objectID": "tickets/ticket_04.html#reading",
+    "href": "tickets/ticket_04.html#reading",
+    "title": "Lecture Ticket 4",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.1 and 4.2 (Stop at 4.3 Factors)"
+  },
+  {
+    "objectID": "tickets/ticket_04.html#questions",
+    "href": "tickets/ticket_04.html#questions",
+    "title": "Lecture Ticket 4",
+    "section": "Questions",
+    "text": "Questions\n\nWhat is a qualitative variable? What about a quantitative variable? How are they different?\nWhat does the c() function do?\nSuppose you have the following vector:\n\n\nheight_in &lt;- c(70, 62, 72, 67)\nheight_in\n\n[1] 70 62 72 67\n\n\nWhat code would you write to replace the second element of height_in with the value 63?"
   },
   {
     "objectID": "tickets/ticket_15.html",
@@ -1495,14 +1579,14 @@
     "href": "assignments.html",
     "title": "Assignments",
     "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)\n\n\nLab 10\nThursday 11/7 (at lab time)\nWednesday 11/13 (at 5pm)\n\n\nLab 11\nThursday 11/21 (at lab time)\nWednesday 11/27 (at 5pm)"
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7, Instructions & Output\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)\n\n\nLab 10\nThursday 11/7 (at lab time)\nWednesday 11/13 (at 5pm)\n\n\nLab 11\nThursday 11/21 (at lab time)\nWednesday 11/27 (at 5pm)"
   },
   {
     "objectID": "assignments.html#labs",
     "href": "assignments.html#labs",
     "title": "Assignments",
     "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)\n\n\nLab 10\nThursday 11/7 (at lab time)\nWednesday 11/13 (at 5pm)\n\n\nLab 11\nThursday 11/21 (at lab time)\nWednesday 11/27 (at 5pm)"
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7, Instructions & Output\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)\n\n\nLab 10\nThursday 11/7 (at lab time)\nWednesday 11/13 (at 5pm)\n\n\nLab 11\nThursday 11/21 (at lab time)\nWednesday 11/27 (at 5pm)"
   },
   {
     "objectID": "assignments.html#lecture-tickets",
@@ -1708,88 +1792,137 @@
     "text": "Questions\n\nWhat do mutate() and transmute() do? How are they different?\nWhat does the pipe (%&gt;%) operator do?\nWhat’s your favorite dplyr verb we’ve learned about so far? Why?"
   },
   {
-    "objectID": "tickets/ticket_04.html",
-    "href": "tickets/ticket_04.html",
-    "title": "Lecture Ticket 4",
+    "objectID": "tickets/ticket_16.html",
+    "href": "tickets/ticket_16.html",
+    "title": "Lecture Ticket 16",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.1 and 4.2 (Stop at 4.3 Factors)"
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.14 - 7.15"
   },
   {
-    "objectID": "tickets/ticket_04.html#reading",
-    "href": "tickets/ticket_04.html#reading",
-    "title": "Lecture Ticket 4",
+    "objectID": "tickets/ticket_16.html#reading",
+    "href": "tickets/ticket_16.html#reading",
+    "title": "Lecture Ticket 16",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.1 and 4.2 (Stop at 4.3 Factors)"
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.14 - 7.15"
   },
   {
-    "objectID": "tickets/ticket_04.html#questions",
-    "href": "tickets/ticket_04.html#questions",
-    "title": "Lecture Ticket 4",
+    "objectID": "tickets/ticket_16.html#questions",
+    "href": "tickets/ticket_16.html#questions",
+    "title": "Lecture Ticket 16",
     "section": "Questions",
-    "text": "Questions\n\nWhat is a qualitative variable? What about a quantitative variable? How are they different?\nWhat does the c() function do?\nSuppose you have the following vector:\n\n\nheight_in &lt;- c(70, 62, 72, 67)\nheight_in\n\n[1] 70 62 72 67\n\n\nWhat code would you write to replace the second element of height_in with the value 63?"
+    "text": "Questions\n\nWhat are the two major types of joins that we read about? What differentiates them?\nWe read about six joins. What are they? What do each of them do?\nWhich two joins are the most similar to each other?\nWhat is your favorite join? Why?"
   },
   {
-    "objectID": "labs/lab_03.html",
-    "href": "labs/lab_03.html",
-    "title": "Vectors and Dataframes",
+    "objectID": "tickets/ticket_13.html",
+    "href": "tickets/ticket_13.html",
+    "title": "Lecture Ticket 13",
     "section": "",
-    "text": "Create, subset, and manipulate vectors and data frames.\nPractice reading data from external files.\nGet some practice writing R scripts.\n\n\n\n\nCreate a new directory called lab_03 within your labs directory (e.g., ~/FOR_128/labs/lab_03). In RStudio set lab_03 as your working directory. Download and move the FEF_trees.csv file from the D2L lab page to your lab_03 directory.\nCreate a new script and save it as lab_03.R (it should save to your working directory).\nNow, use our book, help “man” pages, Google, your intuition, and experimentation to describe the behavior of the code in each of the following questions. For each question, write and execute the code in each question then, using a comment #, add notes above the code to describe/define its behavior (see example script lab_03_example.R in the lab’s D2L page)."
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.1 - 7.5"
   },
   {
-    "objectID": "labs/lab_03.html#getting-started",
-    "href": "labs/lab_03.html#getting-started",
-    "title": "Vectors and Dataframes",
+    "objectID": "tickets/ticket_13.html#reading",
+    "href": "tickets/ticket_13.html#reading",
+    "title": "Lecture Ticket 13",
     "section": "",
-    "text": "Create, subset, and manipulate vectors and data frames.\nPractice reading data from external files.\nGet some practice writing R scripts.\n\n\n\n\nCreate a new directory called lab_03 within your labs directory (e.g., ~/FOR_128/labs/lab_03). In RStudio set lab_03 as your working directory. Download and move the FEF_trees.csv file from the D2L lab page to your lab_03 directory.\nCreate a new script and save it as lab_03.R (it should save to your working directory).\nNow, use our book, help “man” pages, Google, your intuition, and experimentation to describe the behavior of the code in each of the following questions. For each question, write and execute the code in each question then, using a comment #, add notes above the code to describe/define its behavior (see example script lab_03_example.R in the lab’s D2L page)."
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.1 - 7.5"
   },
   {
-    "objectID": "labs/lab_03.html#questions",
-    "href": "labs/lab_03.html#questions",
-    "title": "Vectors and Dataframes",
+    "objectID": "tickets/ticket_13.html#questions",
+    "href": "tickets/ticket_13.html#questions",
+    "title": "Lecture Ticket 13",
     "section": "Questions",
-    "text": "Questions\n\nFunctions and index subsetting of vectors and data frames\nUse the code below to create the plt data frame.\n\nspp &lt;- c(\"tsugca\", \"tsugca\", \"betual\", \"acerru\", \"pinust\", \"pinust\", \"betual\", \"acerru\")\ndbh &lt;- c(15, 12, 6.6, 9.3, 28.1, 9.23, 15.3, 11.1)\nqual &lt;- c(\"ugs\", \"ags\", \"ags\", \"ugs\", \"ags\", \"ags\", \"ugs\", \"ags\")\nlive &lt;- c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE)\n\nplt &lt;- data.frame(spp, dbh, qual, live)\n\n\nplt \nclass(plt) \nnames(plt) \nnrow(plt) \nncol(plt) \ndim(plt) \nlength(plt) \nplt[2:4,c(1,4)] \nplt[1:3,c(\"spp\", \"dbh\")] \nplt$qual \nclass(plt$qual) \nhead(plt) \ntail(plt) \nhead(plt, n=3) \ntail(plt, n=2) \nplt.cpy &lt;- plt \nplt.cpy[1:3,1] &lt;-  c(\"pinust\", \"pinust\", \"acerru\") \nplt.cpy[1:2,1] &lt;-  c(\"pinust\", \"pinust\", \"acerru\") \nplt.cpy$live[8] &lt;- FALSE \nplt.cpy[8,\"live\"] &lt;- TRUE \nrep(\"ugs\", nrow(plt.cpy)) \nplt.cpy[,\"status\"] &lt;- rep(\"ugs\", nrow(plt.cpy)) \n!TRUE \ncolnames(plt.cpy)[4] &lt;- \"dead\" \nplt.cpy$dead &lt;- !plt$live \nplt.cpy &lt;- plt[-(1:5),] \nplt.cpy &lt;- plt[-1:5,] \nplt.cpy &lt;- rbind(plt, c(\"some new spp\", 100, \"ugs\", FALSE)) \nplt.cpy &lt;- cbind(plt, 1:nrow(plt)) \ncolnames(plt.cpy)[ncol(plt.cpy)] &lt;- \"tree.indx\" \nstr(plt) \n\nRead the external data file FEF_trees.csv into R using the read.csv() function and call the resulting data frame fef.\n\nfef &lt;- read.csv(\"FEF_trees.csv\")\n\n\ndim(fef) \nhead(fef) \ntail(fef) \nsum(fef$height_ft) \nmax(fef$height_ft) \nmin(fef$height_ft) \nwhich.max(fef$height_ft) \nfef[which.max(fef$height_ft), ] \nfef[which.min(fef$height_ft), ] \nIn the previous two labs you did your work in a Quarto document. What are some ways the script you created for this lab are different from the Quarto document?"
+    "text": "Questions\n\nConsider the following dataset:\n\n\nten_cars &lt;- head(mtcars, n = 10)\nten_cars\n\n                   mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\nDuster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\nMerc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\nMerc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\nMerc 280          19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n\n\nHow would we use dplyr to filter for rows with horse power (hp) greater than 100? How would we use base R to do the same thing? Which do you prefer?"
   },
   {
-    "objectID": "tickets/ticket_07.html",
-    "href": "tickets/ticket_07.html",
-    "title": "Lecture Ticket 7",
+    "objectID": "tickets/ticket_01.html",
+    "href": "tickets/ticket_01.html",
+    "title": "Lecture Ticket 1",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 5: sections 5.1"
+    "text": "Read the following sections of IFDAR.\n\nChapter 1\nBegin Chapter 2 (STOP at the bottom of page 19)"
   },
   {
-    "objectID": "tickets/ticket_07.html#reading",
-    "href": "tickets/ticket_07.html#reading",
-    "title": "Lecture Ticket 7",
+    "objectID": "tickets/ticket_01.html#reading",
+    "href": "tickets/ticket_01.html#reading",
+    "title": "Lecture Ticket 1",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 5: sections 5.1"
+    "text": "Read the following sections of IFDAR.\n\nChapter 1\nBegin Chapter 2 (STOP at the bottom of page 19)"
   },
   {
-    "objectID": "tickets/ticket_07.html#questions",
-    "href": "tickets/ticket_07.html#questions",
-    "title": "Lecture Ticket 7",
+    "objectID": "tickets/ticket_01.html#tasks",
+    "href": "tickets/ticket_01.html#tasks",
+    "title": "Lecture Ticket 1",
+    "section": "Tasks",
+    "text": "Tasks\n\n1. Install R and RStudio\nAs discussed in IFDAR, go to Posit’s website. Install R first, and then install RStudio.\n\n\n2. Run your first R command\nIn the console, type in the following command and press Enter to run it:\n\nrnorm(1)\n\n\n\n3. Record your result\nCome to class on Thursday with a piece of paper with your name on it that includes the result (it will be a number) from running rnorm(1) in task 2.\nIf you were unable to install R and RStudio and ran into issues, instead come to class with a piece of paper with your name on it that explains the issue you were having with installation."
+  },
+  {
+    "objectID": "tickets/ticket_08.html",
+    "href": "tickets/ticket_08.html",
+    "title": "Lecture Ticket 8",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 5"
+  },
+  {
+    "objectID": "tickets/ticket_08.html#reading",
+    "href": "tickets/ticket_08.html#reading",
+    "title": "Lecture Ticket 8",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 5"
+  },
+  {
+    "objectID": "tickets/ticket_08.html#questions",
+    "href": "tickets/ticket_08.html#questions",
+    "title": "Lecture Ticket 8",
     "section": "Questions",
-    "text": "Questions\nConsider the function:\n\nmy_function &lt;- function(x) {\n  y &lt;- x * 2\n  z &lt;- x + 4\n  return(y + z)\n}\n\n\nWhat would my_function(x = 10) return?\nWhat would my_function(x = 0) return?\nWhat would my_function(x = 5) + 10 return?"
+    "text": "Questions\nConsider the function:\n\nmy_pets &lt;- function(species) {\n  if (species == \"dog\") {\n    return(\"Dude\")\n  } else if (species == \"cat\") {\n    return(c(\"Pickle\", \"Kyle\", \"Nubs\"))\n  } else {\n    return(\"Not my pet\")\n  }\n}\n\n\nWhat would my_pets(species = \"dog\") return?\nWhat would my_pets(species = \"bird\") return?\nWhat would my_pets(species = \"cat\") return?"
   },
   {
-    "objectID": "tickets/ticket_06.html",
-    "href": "tickets/ticket_06.html",
-    "title": "Lecture Ticket 6",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.7, 4.8 and 4.9"
+    "objectID": "slides/w6d1.html#annoucements",
+    "href": "slides/w6d1.html#annoucements",
+    "title": "Welcome to the tidyverse",
+    "section": "Annoucements",
+    "text": "Annoucements\n\nMidterm 1 is this Thursday, Oct 3, during lab time."
   },
   {
-    "objectID": "tickets/ticket_06.html#reading",
-    "href": "tickets/ticket_06.html#reading",
-    "title": "Lecture Ticket 6",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.7, 4.8 and 4.9"
+    "objectID": "slides/w6d1.html#agenda",
+    "href": "slides/w6d1.html#agenda",
+    "title": "Welcome to the tidyverse",
+    "section": "Agenda",
+    "text": "Agenda\n\nMidterm format overview\nIntro to the tidyverse\nQuiz + group activity"
   },
   {
-    "objectID": "tickets/ticket_06.html#questions",
-    "href": "tickets/ticket_06.html#questions",
-    "title": "Lecture Ticket 6",
-    "section": "Questions",
-    "text": "Questions\n\nYou learned about comparison and logical operators in the reading. In R, what is the operator for each of the following:\n\nequality,\ngreater than,\ngreater than or equal to,\nnot equal to,\nor,\nand.\n\nConsider the following vector:\n\n\nx &lt;- 1:10\nx\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nWhat does the following do to x?\n\nx[x &lt; 5] &lt;- 0"
+    "objectID": "slides/w6d1.html#reminder-from-the-syllabus",
+    "href": "slides/w6d1.html#reminder-from-the-syllabus",
+    "title": "Welcome to the tidyverse",
+    "section": "Reminder from the syllabus",
+    "text": "Reminder from the syllabus\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
+  },
+  {
+    "objectID": "slides/w6d1.html#midterm-i-overview",
+    "href": "slides/w6d1.html#midterm-i-overview",
+    "title": "Welcome to the tidyverse",
+    "section": "Midterm I overview",
+    "text": "Midterm I overview\n\n\nThe test will be taken in person, in lab.\n5 questions, all equally weighted. You only have to answer 4 of 5 questions. If you answer 5, I will count the 4 you did the best on.\nThere will be a paper test with the questions on it, but you will answer them in a Quarto document (similar to your labs).\nLecture slides and previous labs/quizzes are your best resource for success.\nQuestions cover material from chapters 1 - 5 of IFDAR, or Week 5 Day 2."
+  },
+  {
+    "objectID": "slides/w6d1.html#what-is-the-tidyverse",
+    "href": "slides/w6d1.html#what-is-the-tidyverse",
+    "title": "Welcome to the tidyverse",
+    "section": "What is the tidyverse",
+    "text": "What is the tidyverse\n\n\nA collection of R packages that work together to provide extensive and intuitive data analysis functions.\nIn this class, we will focus on 5 tidyverse packages:\n\ntibble, to improve on the data.frame,\nreadr, to improve reading and writing data,\ndplyr, to manipulate and summarize data “data plyers”,\ntidyr, to clean and reshape data, and\nggplot2, to produce beautiful graphics with intuitive syntax “the grammer of graphics”."
+  },
+  {
+    "objectID": "slides/w6d1.html#a-note-on-the-course",
+    "href": "slides/w6d1.html#a-note-on-the-course",
+    "title": "Welcome to the tidyverse",
+    "section": "A note on the course",
+    "text": "A note on the course\n\n\nSo far, we have almost entirely focused on R in its “base” form. That is, R with only built-in functions.\nBase R has many advantages: especially in being fast and reliable.\nHowever, I believe that the tidyverse can provide a more intuitive approach to data analysis."
+  },
+  {
+    "objectID": "slides/w6d1.html#next-time",
+    "href": "slides/w6d1.html#next-time",
+    "title": "Welcome to the tidyverse",
+    "section": "Next time",
+    "text": "Next time\n\nReview day. We will discuss any questions about the material for the midterm.\nCome ready to ask any last minute questions, discuss approaches to problems, etc."
   },
   {
     "objectID": "slides/w4d1.html",
@@ -1930,6 +2063,202 @@
     "title": "Welcome to FOR 128!",
     "section": "Next time:",
     "text": "Next time:\n\nCome to class with a laptop\nComplete Lecture Ticket 1 before lecture on Thursday."
+  },
+  {
+    "objectID": "slides/w1d2.html#agenda",
+    "href": "slides/w1d2.html#agenda",
+    "title": "Tools for Data Science",
+    "section": "Agenda",
+    "text": "Agenda\nToday, we’ll introduce a few important data science tools:\n\nThe R programming language\nThe RStudio IDE\nQuarto, for reproducible reports"
+  },
+  {
+    "objectID": "slides/w1d2.html#the-r-programming-language-overview",
+    "href": "slides/w1d2.html#the-r-programming-language-overview",
+    "title": "Tools for Data Science",
+    "section": "The R programming language: overview",
+    "text": "The R programming language: overview\n\n\nR is an open source and freely available programming language with fully featured graphics.\nR is a quite popular language, especially for scientific programming (but it does have lots of industry popularity, as well!).\nR is somewhat similar to python in syntax, and is a great first programming language to learn."
+  },
+  {
+    "objectID": "slides/w1d2.html#the-r-programming-language-history",
+    "href": "slides/w1d2.html#the-r-programming-language-history",
+    "title": "Tools for Data Science",
+    "section": "The R programming language: history",
+    "text": "The R programming language: history\n\n\nInitially, there was S. Developed by Bell Laboratories in the mid-70s.\nJohn Chambers, one of S’s primary developers described its purpose as follows: “to turn ideas into software, quickly and faithfully”.\nR was developed in the early 90’s and deals with many of the memory problems that existed in S.\nUnder the hood, R calls routines from the lower-level FORTRAN and C languages."
+  },
+  {
+    "objectID": "slides/w1d2.html#rstudio",
+    "href": "slides/w1d2.html#rstudio",
+    "title": "Tools for Data Science",
+    "section": "RStudio",
+    "text": "RStudio\n\n\nRStudio, or the RStudio Integrated Development Environment (IDE), is a tool we’ll use to run R code, edit reproducible reports, and even navigate our file system.\nRStudio was initially released in 2011, and is the most popular IDE for R programming.\nLargely, RStudio is a tool to code efficiently and reproducibly in the R programming language.\nLet’s take a look at it!"
+  },
+  {
+    "objectID": "slides/w1d2.html#rstudio-1",
+    "href": "slides/w1d2.html#rstudio-1",
+    "title": "Tools for Data Science",
+    "section": "RStudio",
+    "text": "RStudio\n\nRStudio has four panes: source, console, environment, and file manager."
+  },
+  {
+    "objectID": "slides/w1d2.html#whats-going-on-here",
+    "href": "slides/w1d2.html#whats-going-on-here",
+    "title": "Tools for Data Science",
+    "section": "What’s going on here?",
+    "text": "What’s going on here?\n\nrnorm(1)\n\n\n\nrnorm() is a function.\n1 is the value we gave to one of it’s arguments.\nWe can type ?rnorm() for more information about the rnorm() function.\nLet’s check it out!"
+  },
+  {
+    "objectID": "slides/w1d2.html#what-have-we-learned",
+    "href": "slides/w1d2.html#what-have-we-learned",
+    "title": "Tools for Data Science",
+    "section": "What have we learned?",
+    "text": "What have we learned?\n\n\nThe rnorm() function takes n random draws from a normal distribution with a center (mean) and spread (sd).\n\nThese statistical details are not necessary for this class."
+  },
+  {
+    "objectID": "slides/w1d2.html#what-have-we-learned-1",
+    "href": "slides/w1d2.html#what-have-we-learned-1",
+    "title": "Tools for Data Science",
+    "section": "What have we learned?",
+    "text": "What have we learned?\n\nThe rnorm() function takes n random draws from a normal distribution with a center (mean) and spread (sd).\n\nThese statistical details are not necessary for this class.\n\n\nWe could have written:\n\nrnorm(n = 1)"
+  },
+  {
+    "objectID": "slides/w1d2.html#what-have-we-learned-2",
+    "href": "slides/w1d2.html#what-have-we-learned-2",
+    "title": "Tools for Data Science",
+    "section": "What have we learned?",
+    "text": "What have we learned?\n\nThe rnorm() function takes n random draws from a normal distribution with a center (mean) and spread (sd).\n\nThese statistical details are not necessary for this class.\n\n\nWe could have written:\n\nrnorm(n = 1)\n\nOr even:\n\nrnorm(n = 1, mean = 0, sd = 1)"
+  },
+  {
+    "objectID": "slides/w1d2.html#arguments",
+    "href": "slides/w1d2.html#arguments",
+    "title": "Tools for Data Science",
+    "section": "Arguments",
+    "text": "Arguments\n\nrnorm(n = 1, mean = 0, sd = 1)\n\n\n\nn must be specified for rnorm() to run\nmean and sd are optional, but if you don’t specify them, R will choose for you (in this case, the defaults are 0 and 1)."
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-1",
+    "href": "slides/w1d2.html#r-as-a-calculator-1",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-2",
+    "href": "slides/w1d2.html#r-as-a-calculator-2",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-3",
+    "href": "slides/w1d2.html#r-as-a-calculator-3",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-4",
+    "href": "slides/w1d2.html#r-as-a-calculator-4",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nR includes many mathematical operations, and is a great calculator.\n\n\n2 + 3 # addition\n2 * 3 # multiplication\n2 / 3 # division\n2 - 3 # subtraction"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-5",
+    "href": "slides/w1d2.html#r-as-a-calculator-5",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-6",
+    "href": "slides/w1d2.html#r-as-a-calculator-6",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-7",
+    "href": "slides/w1d2.html#r-as-a-calculator-7",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-8",
+    "href": "slides/w1d2.html#r-as-a-calculator-8",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nFunctions exists for more complex mathematical operations\n\n\nlog(7) # the natural logarithm\nlog(7, base = 10) # log base 10\nexp(7) # the exponential function\nsqrt(7) # the square root function\nabs(10 - 17) # absolute value"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-9",
+    "href": "slides/w1d2.html#r-as-a-calculator-9",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nFunctions can be nested in each other\n\n\nlog(exp(7))\n\n[1] 7"
+  },
+  {
+    "objectID": "slides/w1d2.html#r-as-a-calculator-10",
+    "href": "slides/w1d2.html#r-as-a-calculator-10",
+    "title": "Tools for Data Science",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nExponents with ^: 2^3 means \\(2^3\\)\n\n\n2^3\n\n[1] 8"
+  },
+  {
+    "objectID": "slides/w1d2.html#quarto-1",
+    "href": "slides/w1d2.html#quarto-1",
+    "title": "Tools for Data Science",
+    "section": "Quarto",
+    "text": "Quarto\n\n\nQuarto is a markdown language, released in 2022.\nAllows you to include code and text in the same document.\nDocuments output or “Render” to PDF or HTML (web) documents.\nThese slides (and the course website!) are made with Quarto."
+  },
+  {
+    "objectID": "slides/w1d2.html#quarto-for-reproducible-reports",
+    "href": "slides/w1d2.html#quarto-for-reproducible-reports",
+    "title": "Tools for Data Science",
+    "section": "Quarto for reproducible reports",
+    "text": "Quarto for reproducible reports\n\n\nQuarto is a great tool to help us do reproducible science.\nWhat does reproducibility mean?\nreproducibility \\(\\neq\\) replicability / repeatability"
+  },
+  {
+    "objectID": "slides/w1d2.html#a-project-is-reproducible-if-another-person-could-take-your-code-and-data-run-the-code-and-get-the-exact-same-answer.",
+    "href": "slides/w1d2.html#a-project-is-reproducible-if-another-person-could-take-your-code-and-data-run-the-code-and-get-the-exact-same-answer.",
+    "title": "Tools for Data Science",
+    "section": "A project is reproducible if another person could take your code and data, run the code, and get the exact same answer.",
+    "text": "A project is reproducible if another person could take your code and data, run the code, and get the exact same answer."
+  },
+  {
+    "objectID": "slides/w1d2.html#a-project-is-replicable-repeatable-if-another-person-could-take-the-steps-to-do-your-project-again-in-their-own-setting.",
+    "href": "slides/w1d2.html#a-project-is-replicable-repeatable-if-another-person-could-take-the-steps-to-do-your-project-again-in-their-own-setting.",
+    "title": "Tools for Data Science",
+    "section": "A project is replicable / repeatable if another person could take the steps to do your project again in their own setting.",
+    "text": "A project is replicable / repeatable if another person could take the steps to do your project again in their own setting."
+  },
+  {
+    "objectID": "slides/w1d2.html#objects-in-r",
+    "href": "slides/w1d2.html#objects-in-r",
+    "title": "Tools for Data Science",
+    "section": "Objects in R",
+    "text": "Objects in R\n\nR can store objects for use later in what we call an environment.\n\n\ndbh_in &lt;- 40 # store tree diameter (inches)"
+  },
+  {
+    "objectID": "slides/w1d2.html#objects-in-r-1",
+    "href": "slides/w1d2.html#objects-in-r-1",
+    "title": "Tools for Data Science",
+    "section": "Objects in R",
+    "text": "Objects in R\n\nR can store objects for use later in what we call an environment.\nHere, we stored dbh_in in our environment, and printed it out to see its value.\n\n\ndbh_in\n\n[1] 40"
+  },
+  {
+    "objectID": "slides/w1d2.html#objects-in-r-2",
+    "href": "slides/w1d2.html#objects-in-r-2",
+    "title": "Tools for Data Science",
+    "section": "Objects in R",
+    "text": "Objects in R\n\nR can store objects for use later in what we call an environment.\nHere, we stored dbh_in in our environment, and printed it out to see its value.\nWe can use R as a calculator to compute the tree’s basal area.\n\n\nBA_in2 &lt;- pi * (dbh_in / 2)^2 # compute tree basal area\nBA_in2\n\n[1] 1256.637"
+  },
+  {
+    "objectID": "slides/w1d2.html#next-time",
+    "href": "slides/w1d2.html#next-time",
+    "title": "Tools for Data Science",
+    "section": "Next time",
+    "text": "Next time\n\n\nWe’ll talk about file systems, paths, folders, and navigating your computer.\nMore advanced features of R as well: basic data structures, variable naming and code formatting, reading/writing data, and more!"
   },
   {
     "objectID": "slides/w8d1.html#announcements",

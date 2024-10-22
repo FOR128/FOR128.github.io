@@ -1,0 +1,27 @@
+---
+title: "Lecture Ticket 16"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read the following sections of IFDAR.
+
+-   Chapter 7: sections 7.14 - 7.15
+
+
+## Questions
+
+1. What are the two major types of joins that we read about? What differentiates them?  
+
+2. We read about six joins. What are they? What do each of them do? 
+
+3. Which two joins are the most similar to each other? 
+
+4. What is your favorite join? Why? 
+
+
+
+
+
