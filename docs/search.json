@@ -473,21 +473,21 @@
     "href": "slides/w2d2.html#reading-data-4",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/home/grayson/courses/FOR128/FOR128.github.io/slides\""
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\""
   },
   {
     "objectID": "slides/w2d2.html#reading-data-5",
     "href": "slides/w2d2.html#reading-data-5",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/home/grayson/courses/FOR128/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\"          \n[13] \"lab_07_web.html\"      \"lab_07_web.qmd\"       \"lab_07.qmd\"          \n[16] \"lab_08.pdf\"           \"lab_08.qmd\""
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\"          \n[13] \"lab_07_web.html\"      \"lab_07_web.qmd\"       \"lab_07.qmd\"          \n[16] \"lab_08.pdf\"           \"lab_08.qmd\""
   },
   {
     "objectID": "slides/w2d2.html#reading-data-6",
     "href": "slides/w2d2.html#reading-data-6",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/home/grayson/courses/FOR128/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\"          \n[13] \"lab_07_web.html\"      \"lab_07_web.qmd\"       \"lab_07.qmd\"          \n[16] \"lab_08.pdf\"           \"lab_08.qmd\"          \n\n\nNow, given our working directory and datasets location, we specify a relative path and load in the data:\n\nfef &lt;- read.csv(file = \"../labs/datasets/FEF_trees.csv\")"
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\"          \n[13] \"lab_07_web.html\"      \"lab_07_web.qmd\"       \"lab_07.qmd\"          \n[16] \"lab_08.pdf\"           \"lab_08.qmd\"          \n\n\nNow, given our working directory and datasets location, we specify a relative path and load in the data:\n\nfef &lt;- read.csv(file = \"../labs/datasets/FEF_trees.csv\")"
   },
   {
     "objectID": "slides/w2d2.html#reading-data-7",
@@ -1481,7 +1481,14 @@
     "href": "index.html",
     "title": "Practical Computing   and Data Science Tools",
     "section": "",
-    "text": "For 128 Michigan State University\nFall 2024\n\n\n\n\n\n\n\n\n\nMidterm I this week.\n\n\n\n\nExtra office hours this week:\n\nMonday 9/23: 10:30am - 11:30am\nTuesday 9/24: 10am - 11am (note the 30 minute change)\nWednesday 9/25: 12:30pm - 2pm\nThursday 9/26: 1:30pm - 2:30pm (regular time)\n\n\n\n\n\n\n\nThe lecture notes are available.\n\n\n\n\n\n\n\n\nWe’ll go through vectors.qmd in class.\n\n\n\n\n\nLecture materials:\n\nIn-class work: vectors_dataframes.qmd\nData for in-class work: Loblolly.csv\n\nSupplementary lab materials:\n\nExample R script lab setup: lab_03_example.R\nLab 3 data: FEF_trees.csv\n\n\n\n\n\n\n\n\n\nOffice hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L.\n\n\n\n\n\n\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+    "text": "For 128 Michigan State University\nFall 2024\n\n\n\nWednesday office hours: 12:30 - 2:30\n\n\n\n\n\n\n\n\n\n\n\nMidterm I this week.\n\n\n\n\nExtra office hours this week:\n\nMonday 9/23: 10:30am - 11:30am\nTuesday 9/24: 10am - 11am (note the 30 minute change)\nWednesday 9/25: 12:30pm - 2pm\nThursday 9/26: 1:30pm - 2:30pm (regular time)\n\n\n\n\n\n\n\nThe lecture notes are available.\n\n\n\n\n\n\n\n\nWe’ll go through vectors.qmd in class.\n\n\n\n\n\nLecture materials:\n\nIn-class work: vectors_dataframes.qmd\nData for in-class work: Loblolly.csv\n\nSupplementary lab materials:\n\nExample R script lab setup: lab_03_example.R\nLab 3 data: FEF_trees.csv\n\n\n\n\n\n\n\n\n\nOffice hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L.\n\n\n\n\n\n\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+  },
+  {
+    "objectID": "index.html#week-9-october-20---26",
+    "href": "index.html#week-9-october-20---26",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "Wednesday office hours: 12:30 - 2:30"
   },
   {
     "objectID": "index.html#week-6-september-29---october-5",
