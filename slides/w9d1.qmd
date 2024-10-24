@@ -36,7 +36,6 @@ revealjs-plugins:
 
 -   Combining tibbles (i.e. data joins)
 -   Applications of data joins to forestry
--   Quiz (in lab!)
 
 ## Data Joins in `R`
 

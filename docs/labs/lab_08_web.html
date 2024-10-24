@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-10-17">
+<meta name="author" content="">
+<meta name="dcterms.date" content="2024-10-30">
 
-<title>Data Wrangling with dplyr – FOR 128</title>
+<title>Advanced Data Wrangling with dplyr – FOR 128</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,35 +104,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../assets/styles.scss">
 </head>
@@ -260,29 +232,33 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
   <li><a href="#deliverables-i.e.-what-to-put-in-the-lab-drop-box" id="toc-deliverables-i.e.-what-to-put-in-the-lab-drop-box" class="nav-link" data-scroll-target="#deliverables-i.e.-what-to-put-in-the-lab-drop-box">Deliverables (i.e., what to put in the lab drop box)</a></li>
+  <li><a href="#collaborators" id="toc-collaborators" class="nav-link" data-scroll-target="#collaborators">Collaborator(s)</a></li>
   </ul></li>
-  <li><a href="#exercise-0" id="toc-exercise-0" class="nav-link" data-scroll-target="#exercise-0">Exercise 0</a></li>
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
-  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
+  <li><a href="#data-pdxtrees" id="toc-data-pdxtrees" class="nav-link" data-scroll-target="#data-pdxtrees">Data: <code>pdxTrees</code></a></li>
+  <li><a href="#methods-dplyr" id="toc-methods-dplyr" class="nav-link" data-scroll-target="#methods-dplyr">Methods: <code>dplyr</code></a></li>
+  <li><a href="#exercise-0" id="toc-exercise-0" class="nav-link" data-scroll-target="#exercise-0">Exercise 0</a></li>
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a>
+  <ul class="collapse">
+  <li><a href="#part-a" id="toc-part-a" class="nav-link" data-scroll-target="#part-a">Part (a)</a></li>
+  <li><a href="#part-b" id="toc-part-b" class="nav-link" data-scroll-target="#part-b">Part (b)</a></li>
+  </ul></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
   <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
   <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
   <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
-  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
-  <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
-  <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
-  <li><a href="#exercise-10" id="toc-exercise-10" class="nav-link" data-scroll-target="#exercise-10">Exercise 10</a></li>
-  <li><a href="#exercise-11" id="toc-exercise-11" class="nav-link" data-scroll-target="#exercise-11">Exercise 11</a></li>
-  <li><a href="#exercise-12" id="toc-exercise-12" class="nav-link" data-scroll-target="#exercise-12">Exercise 12</a></li>
-  <li><a href="#exercise-13" id="toc-exercise-13" class="nav-link" data-scroll-target="#exercise-13">Exercise 13</a></li>
-  <li><a href="#exercise-14" id="toc-exercise-14" class="nav-link" data-scroll-target="#exercise-14">Exercise 14</a></li>
-  <li><a href="#exercise-15" id="toc-exercise-15" class="nav-link" data-scroll-target="#exercise-15">Exercise 15</a></li>
-  <li><a href="#exercise-16" id="toc-exercise-16" class="nav-link" data-scroll-target="#exercise-16">Exercise 16</a></li>
-  <li><a href="#exercise-17" id="toc-exercise-17" class="nav-link" data-scroll-target="#exercise-17">Exercise 17</a></li>
-  <li><a href="#exercise-18" id="toc-exercise-18" class="nav-link" data-scroll-target="#exercise-18">Exercise 18</a></li>
-  <li><a href="#exercise-19" id="toc-exercise-19" class="nav-link" data-scroll-target="#exercise-19">Exercise 19</a></li>
-  <li><a href="#exercise-20" id="toc-exercise-20" class="nav-link" data-scroll-target="#exercise-20">Exercise 20</a></li>
+  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a>
+  <ul class="collapse">
+  <li><a href="#part-a-1" id="toc-part-a-1" class="nav-link" data-scroll-target="#part-a-1">Part (a)</a></li>
+  <li><a href="#part-b-1" id="toc-part-b-1" class="nav-link" data-scroll-target="#part-b-1">Part (b)</a></li>
+  <li><a href="#part-c" id="toc-part-c" class="nav-link" data-scroll-target="#part-c">Part (c)</a></li>
+  <li><a href="#part-d" id="toc-part-d" class="nav-link" data-scroll-target="#part-d">Part (d)</a></li>
+  <li><a href="#part-e" id="toc-part-e" class="nav-link" data-scroll-target="#part-e">Part (e)</a></li>
+  <li><a href="#part-f" id="toc-part-f" class="nav-link" data-scroll-target="#part-f">Part (f)</a></li>
+  <li><a href="#part-g" id="toc-part-g" class="nav-link" data-scroll-target="#part-g">Part (g)</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up">Wrap up</a></li>
   </ul>
@@ -293,8 +269,8 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Wrangling with <code>dplyr</code></h1>
-<p class="subtitle lead">FOR 128: Lab 7</p>
+<h1 class="title">Advanced Data Wrangling with <code>dplyr</code></h1>
+<p class="subtitle lead">FOR 128: Lab 8</p>
 </div>
 
 
@@ -305,7 +281,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 17, 2024</p>
+      <p class="date">October 30, 2024</p>
     </div>
   </div>
   
@@ -319,294 +295,360 @@ window.Quarto = {
 
 <section id="welcome" class="level2">
 <h2 class="anchored" data-anchor-id="welcome">Welcome</h2>
-<p>Welcome to Lab 7! Today, we’ll focus on writing <code>dplyr</code> code. In particular, we will both use the verbs individually and “write a sentence” with the verbs by stringing them together with pipes.</p>
+<p>Welcome to Lab 8! Today, we’ll focus on writing extensive <code>dplyr</code> code on larger data. We will both use the verbs individually and “write a sentence” with the verbs by stringing them together with pipes.</p>
 <section id="learning-objectives" class="level3">
 <h3 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h3>
 <ul>
-<li>Use <code>dplyr</code> verbs together with pipes.</li>
+<li>Use <code>dplyr</code> verbs together with pipes on larger datasets.</li>
 </ul>
 </section>
 <section id="deliverables-i.e.-what-to-put-in-the-lab-drop-box" class="level3">
 <h3 class="anchored" data-anchor-id="deliverables-i.e.-what-to-put-in-the-lab-drop-box">Deliverables (i.e., what to put in the lab drop box)</h3>
-<p>Upload your rendered PDF (<code>lab_07.pdf</code>) <strong>and</strong> Quarto (<code>lab_07.qmd</code>) document to the lab drop box. Make sure the Quarto document properly renders to PDF.</p>
+<p>Upload your rendered PDF (<code>lab_08.pdf</code>) <strong>and</strong> Quarto (<code>lab_08.qmd</code>) document to the lab drop box. Make sure the Quarto document properly renders to PDF.</p>
 </section>
+<section id="collaborators" class="level3">
+<h3 class="anchored" data-anchor-id="collaborators">Collaborator(s)</h3>
+<p>List any collaborators you worked with below.</p>
+</section>
+</section>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<section id="data-pdxtrees" class="level2">
+<h2 class="anchored" data-anchor-id="data-pdxtrees">Data: <code>pdxTrees</code></h2>
+<p>The <code>pdxTrees</code> R package contains measurements of every tree in the Portland, Oregon metro area. In particular, it contains two datasets, which we will call <code>parks</code> and <code>streets</code>. The <code>parks</code> dataset contains all of the trees in 174 parks in Portland. The <code>streets</code> dataset contains all the trees on the streets of Portland. The hex sticker for <code>pdxTrees</code> (as seen below) contains a fun easter egg from the city of Portland, as its graphics are done in a similar fashion to the famous airport carpet.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://mcconville.rbind.io/pdxHexSticker.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:3in"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="methods-dplyr" class="level2">
+<h2 class="anchored" data-anchor-id="methods-dplyr">Methods: <code>dplyr</code></h2>
+<p>Use <code>dplyr</code> function that we’ve learned over the past few weeks to answer the questions in this lab.</p>
 </section>
 <section id="exercise-0" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-0">Exercise 0</h2>
-<p>Load any packages you’ll need for this lab below.</p>
+<p>Load any packages you’ll need for this lab below. Note, you’ll need to install <code>pdxTrees</code> with <code>install.packages("pdxTrees")</code> before you can load it with <code>library(pdxTrees)</code>.</p>
 </section>
 <section id="exercise-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<p>Create the following dataset and call it <code>plots</code>. The resulting tibble should look like this when printed:</p>
+<section id="part-a" class="level3">
+<h3 class="anchored" data-anchor-id="part-a">Part (a)</h3>
+<p>Load the data. For this lab, we will load both the <code>parks</code> and <code>streets</code> datasets. To do so, run the <code>get_pdxTrees_parks()</code> and <code>get_pdxTrees_streets()</code> functions (note, you don’t need to specify any arguments for these functions) and assign them to <code>parks</code> and <code>streets</code>, respectively.</p>
+<p>Your datasets should look like this when you print <code>parks</code> and <code>streets</code> as follows:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>plots</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>parks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 6
-   plot  tree   dbh  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     1     1  20.2   2   D     TRUE 
-2     1     2  10.4   1   D     TRUE 
-3     2     1   5     0.5 D     TRUE 
-4     2     2  18    NA   C     FALSE
-5     2     3  10.5   1.5 C     TRUE </code></pre>
+<pre><code># A tibble: 25,534 × 34
+   Longitude Latitude UserID Genus      Family   DBH Inventory_Date      Species
+       &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;  &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;  
+ 1     -123.     45.6 1      Pseudotsu… Pinac…  37.4 2017-05-09 00:00:00 PSME   
+ 2     -123.     45.6 2      Pseudotsu… Pinac…  32.5 2017-05-09 00:00:00 PSME   
+ 3     -123.     45.6 3      Crataegus  Rosac…   9.7 2017-05-09 00:00:00 CRLA   
+ 4     -123.     45.6 4      Quercus    Fagac…  10.3 2017-05-09 00:00:00 QURU   
+ 5     -123.     45.6 5      Pseudotsu… Pinac…  33.2 2017-05-09 00:00:00 PSME   
+ 6     -123.     45.6 6      Pseudotsu… Pinac…  32.1 2017-05-09 00:00:00 PSME   
+ 7     -123.     45.6 7      Pseudotsu… Pinac…  28.4 2017-05-09 00:00:00 PSME   
+ 8     -123.     45.6 8      Pseudotsu… Pinac…  27.2 2017-05-09 00:00:00 PSME   
+ 9     -123.     45.6 9      Pseudotsu… Pinac…  35.2 2017-05-09 00:00:00 PSME   
+10     -123.     45.6 10     Pseudotsu… Pinac…  32.4 2017-05-09 00:00:00 PSME   
+# ℹ 25,524 more rows
+# ℹ 26 more variables: Common_Name &lt;chr&gt;, Condition &lt;chr&gt;, Tree_Height &lt;dbl&gt;,
+#   Crown_Width_NS &lt;dbl&gt;, Crown_Width_EW &lt;dbl&gt;, Crown_Base_Height &lt;dbl&gt;,
+#   Collected_By &lt;chr&gt;, Park &lt;chr&gt;, Scientific_Name &lt;chr&gt;,
+#   Functional_Type &lt;chr&gt;, Mature_Size &lt;fct&gt;, Native &lt;chr&gt;, Edible &lt;chr&gt;,
+#   Nuisance &lt;chr&gt;, Structural_Value &lt;dbl&gt;, Carbon_Storage_lb &lt;dbl&gt;,
+#   Carbon_Storage_value &lt;dbl&gt;, Carbon_Sequestration_lb &lt;dbl&gt;, …</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>streets</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 218,602 × 23
+   UserID Inventory_Date      Species   DBH Condition Site_Type Site_Width Wires
+   &lt;chr&gt;  &lt;dttm&gt;              &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;
+ 1 1      2010-08-21 00:00:00 PRPL     6.10 Good      &lt;NA&gt;               9 High…
+ 2 2      2010-08-21 00:00:00 ACMA    36.3  Poor      &lt;NA&gt;               9 High…
+ 3 3      2010-08-21 00:00:00 PLAC    20.5  Fair      &lt;NA&gt;               9 No HV
+ 4 4      2010-08-21 00:00:00 CO       8.20 Fair      &lt;NA&gt;               9 No HV
+ 5 5      2010-08-21 00:00:00 ACMA    55.7  Good      &lt;NA&gt;               9 No HV
+ 6 6      2010-08-21 00:00:00 ACPL    18.6  Good      &lt;NA&gt;               9 No HV
+ 7 7      2010-08-21 00:00:00 ACPL    18.8  Good      &lt;NA&gt;               9 No HV
+ 8 8      2010-08-21 00:00:00 ACPL    16    Good      &lt;NA&gt;               9 No HV
+ 9 9      2010-08-21 00:00:00 QU       6.20 Good      &lt;NA&gt;               9 No HV
+10 10     2010-08-21 00:00:00 ACPL    19.3  Fair      &lt;NA&gt;               9 No HV
+# ℹ 218,592 more rows
+# ℹ 15 more variables: Site_Development &lt;chr&gt;, Site_Size &lt;chr&gt;, Notes &lt;chr&gt;,
+#   Address &lt;chr&gt;, Neighborhood &lt;chr&gt;, Collected_By &lt;chr&gt;, Scientific &lt;chr&gt;,
+#   Family &lt;chr&gt;, Genus &lt;chr&gt;, Common_Name &lt;chr&gt;, Functional_Type &lt;chr&gt;,
+#   Edible &lt;chr&gt;, Longitude &lt;dbl&gt;, Latitude &lt;dbl&gt;, Mature_Size &lt;fct&gt;</code></pre>
 </div>
 </div>
+</section>
+<section id="part-b" class="level3">
+<h3 class="anchored" data-anchor-id="part-b">Part (b)</h3>
+<p>Take a look at the documentation by running <code>?get_pdxTrees_parks</code> and <code>?get_pdxTrees_streets</code> in your console, and tell me about two columns (what are their names? what do they measure? units? factor levels? etc.) from each of the datasets (four total).</p>
+</section>
 </section>
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>Write some code to figure out the follow features of <code>plots</code>:</p>
-<ol type="a">
-<li>How many rows and columns?</li>
-<li>What are the column names?</li>
-<li>What is the data type of each column?</li>
-<li>Are there any <code>NA</code> values? If so, in which column?</li>
-</ol>
+<p>Find the top 8 most common species (use the common name column for species here and throughout the lab) in the <code>parks</code> dataset, along with how many of that species are in the dataset. Notice I’ve called the number of trees <code>num_trees</code>.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 2
+  Common_Name               num_trees
+  &lt;chr&gt;                         &lt;int&gt;
+1 Douglas-Fir                    6783
+2 Norway Maple                   1502
+3 Western Redcedar                964
+4 Northern Red Oak                736
+5 Pin Oak                         619
+6 Incense Cedar                   507
+7 Bigleaf Maple                   490
+8 Japanese Flowering Cherry       418</code></pre>
+</div>
+</div>
 </section>
 <section id="exercise-3" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<p>Use a <code>dplyr</code> function to print all trees in plot 2.</p>
+<p>A staple of Portland living in the springtime is to go out and see the Japanese Flowering Cherry trees beginning to bloom. Find the park with the most Japanese Flowering Cherry trees, and how many there are in that park.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 6
-   plot  tree   dbh  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     2     1   5     0.5 D     TRUE 
-2     2     2  18    NA   C     FALSE
-3     2     3  10.5   1.5 C     TRUE </code></pre>
-</div>
-</div>
-<section id="exercise-4" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
-<p>Use a <code>dplyr</code> function to print all trees in plot 2 that have dbh less than or equal 10.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 6
-   plot  tree   dbh  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     2     1     5   0.5 D     TRUE </code></pre>
+<pre><code># A tibble: 1 × 2
+  Park                               n
+  &lt;chr&gt;                          &lt;int&gt;
+1 Gov Tom McCall Waterfront Park   104</code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-5" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
-<p>Use a <code>dplyr</code> function to print the tree with the largest dbh.</p>
+<section id="exercise-4" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+<p>Find the top 5 parks with the most total DBH (i.e.&nbsp;the sum of all the trees DBH in those parks).</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 6
-   plot  tree   dbh  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     1     1  20.2     2 D     TRUE </code></pre>
+<pre><code># A tibble: 5 × 2
+  Park             total_DBH
+  &lt;chr&gt;                &lt;dbl&gt;
+1 Mt Tabor Park       31965.
+2 Columbia Park       26952.
+3 Laurelhurst Park    26890.
+4 Washington Park     16081.
+5 John Luby Park      14519.</code></pre>
+</div>
+</div>
+<p>Mt. Tabor Park is one of my personal favorites in Portland, I used to live just a few blocks away. It is a wonderful place to watch the sun set over the West hills of the city. Not only does it have the most DBH in all of the parks in Portland, but Portland’s drinking water is stored in giant reservoirs at that park!</p>
+</section>
+<section id="exercise-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
+<p>There is a column in the <code>parks</code> dataset that represents the amount of carbon (in lbs) each tree has sequestered. Find the park with the highest carbon sequestration.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>parks <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Park) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">carbon_sequestered =</span> <span class="fu">sum</span>(Carbon_Sequestration_lb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(carbon_sequestered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  Park          carbon_sequestered
+  &lt;chr&gt;                      &lt;dbl&gt;
+1 Mt Tabor Park             36515.</code></pre>
+</div>
+</div>
+<p>Nice job, Mt. Tabor!</p>
+</section>
+<section id="exercise-6" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
+<p>The <code>parks</code> dataset has a wide variety of numeric columns measuring things from DBH to pollution removal value of a given tree. Take the mean of all of these numeric columns, grouped by park. Make sure to remove NAs in the <code>mean()</code> function.</p>
+<p>HINT: In <code>across()</code> you can set <code>.cols = where(is.numeric)</code> to apply a function across all numeric columns.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 174 × 18
+   Park       Longitude Latitude   DBH Tree_Height Crown_Width_NS Crown_Width_EW
+   &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;
+ 1 Albert Ke…     -123.     45.5  20.5        83.7           32.3           31.8
+ 2 Alberta P…     -123.     45.6  28.4        96.6           45.5           43.4
+ 3 Ankeny Pl…     -123.     45.5  30.8        69             62             62.2
+ 4 April Hil…     -123.     45.5  18.9        47.9           34.0           33  
+ 5 Arbor Lod…     -123.     45.6  19.2        49.4           39.8           39.7
+ 6 Argay Park     -123.     45.6  19.6        46.2           35.3           35.3
+ 7 Berkeley …     -123.     45.5  26.7        72.9           44.9           47.7
+ 8 Berrydale…     -123.     45.5  23.6        69.8           41.3           39.3
+ 9 Bloomingt…     -123.     45.5  24.1        62.6           47.9           48.2
+10 Brentwood…     -123.     45.5  17.4        40.8           29.7           30.8
+# ℹ 164 more rows
+# ℹ 11 more variables: Crown_Base_Height &lt;dbl&gt;, Structural_Value &lt;dbl&gt;,
+#   Carbon_Storage_lb &lt;dbl&gt;, Carbon_Storage_value &lt;dbl&gt;,
+#   Carbon_Sequestration_lb &lt;dbl&gt;, Carbon_Sequestration_value &lt;dbl&gt;,
+#   Stormwater_ft &lt;dbl&gt;, Stormwater_value &lt;dbl&gt;, Pollution_Removal_value &lt;dbl&gt;,
+#   Pollution_Removal_oz &lt;dbl&gt;, Total_Annual_Services &lt;dbl&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-6" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
-<p>Use a series of piped <code>dplyr</code> functions to find the largest dbh tree on plot 2.</p>
+<section id="exercise-7" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
+<p>For this exercise, consider the <code>streets</code> dataset.</p>
+<section id="part-a-1" class="level3">
+<h3 class="anchored" data-anchor-id="part-a-1">Part (a)</h3>
+<p>There is a column delineating the edibility of the trees in the dataset. Find the possible values for this column and how many trees correspond to each value.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 6
-   plot  tree   dbh  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     2     2    18    NA C     FALSE</code></pre>
+<pre><code># A tibble: 3 × 2
+  Edible n_rows
+  &lt;chr&gt;   &lt;int&gt;
+1 fruit    3649
+2 no     211954
+3 nut      2999</code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-7" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-7">Exercise 7</h3>
-<p>Use a series of piped <code>dplyr</code> functions to find the largest dbh live tree on plot 2.</p>
+<section id="part-b-1" class="level3">
+<h3 class="anchored" data-anchor-id="part-b-1">Part (b)</h3>
+<p>Create a new tibble called <code>forager</code> that contains all rows of the <code>streets</code> with edible fruits or nuts but only the columns denoting the common name, neighborhood, condition, and edibility.</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>forager</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 6
-   plot  tree   dbh  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     2     3  10.5   1.5 C     TRUE </code></pre>
+<pre><code># A tibble: 6,648 × 4
+   Common_Name Neighborhood Condition Edible
+   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt; 
+ 1 Persimmon   Concordia    Good      fruit 
+ 2 Walnut      Concordia    Fair      nut   
+ 3 Walnut      Concordia    Fair      nut   
+ 4 Walnut      Concordia    Fair      nut   
+ 5 Walnut      Concordia    Good      nut   
+ 6 Walnut      Concordia    Fair      nut   
+ 7 Walnut      Concordia    Fair      nut   
+ 8 Walnut      Concordia    Poor      nut   
+ 9 Walnut      Concordia    Fair      nut   
+10 Fig         Concordia    Poor      fruit 
+# ℹ 6,638 more rows</code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-8" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-8">Exercise 8</h3>
-<p>Use a series of piped <code>dplyr</code> functions to find the largest dbh dead tree on plot 2.</p>
+<section id="part-c" class="level3">
+<h3 class="anchored" data-anchor-id="part-c">Part (c)</h3>
+<p>Create a new logical column and save it in the <code>forager</code> dataset. Name it <code>fruit_edible</code>. The values in this columns should be <code>TRUE</code> or <code>FALSE</code> depending on if the given tree has edible fruits or not</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>forager</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 6
-   plot  tree   dbh  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     2     2    18    NA C     FALSE</code></pre>
+<pre><code># A tibble: 6,648 × 5
+   Common_Name Neighborhood Condition Edible fruit_edible
+   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;  &lt;lgl&gt;       
+ 1 Persimmon   Concordia    Good      fruit  TRUE        
+ 2 Walnut      Concordia    Fair      nut    FALSE       
+ 3 Walnut      Concordia    Fair      nut    FALSE       
+ 4 Walnut      Concordia    Fair      nut    FALSE       
+ 5 Walnut      Concordia    Good      nut    FALSE       
+ 6 Walnut      Concordia    Fair      nut    FALSE       
+ 7 Walnut      Concordia    Fair      nut    FALSE       
+ 8 Walnut      Concordia    Poor      nut    FALSE       
+ 9 Walnut      Concordia    Fair      nut    FALSE       
+10 Fig         Concordia    Poor      fruit  TRUE        
+# ℹ 6,638 more rows</code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-9" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-9">Exercise 9</h3>
-<p>Use a series of piped <code>dplyr</code> functions to find the largest dbh live tree on plot 2 of type D.</p>
+<section id="part-d" class="level3">
+<h3 class="anchored" data-anchor-id="part-d">Part (d)</h3>
+<p>Arrange the forager dataset by the column you just created in (c), so that the <code>TRUE</code> values are at the top, and save this change to the <code>forager</code> dataset.</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>forager</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 6
-   plot  tree   dbh  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     2     1     5   0.5 D     TRUE </code></pre>
+<pre><code># A tibble: 6,648 × 5
+   Common_Name Neighborhood Condition Edible fruit_edible
+   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;  &lt;lgl&gt;       
+ 1 Persimmon   Concordia    Good      fruit  TRUE        
+ 2 Fig         Concordia    Poor      fruit  TRUE        
+ 3 Fig         Concordia    Good      fruit  TRUE        
+ 4 Fig         Concordia    Fair      fruit  TRUE        
+ 5 Fig         Concordia    Poor      fruit  TRUE        
+ 6 Fig         Concordia    Good      fruit  TRUE        
+ 7 Fig         Concordia    Fair      fruit  TRUE        
+ 8 Persimmon   Concordia    Good      fruit  TRUE        
+ 9 Persimmon   Concordia    Fair      fruit  TRUE        
+10 Persimmon   Concordia    Fair      fruit  TRUE        
+# ℹ 6,638 more rows</code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-10" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-10">Exercise 10</h3>
-<p>Use a series of piped <code>dplyr</code> functions to find the smallest dbh tree on plot 1.</p>
+<section id="part-e" class="level3">
+<h3 class="anchored" data-anchor-id="part-e">Part (e)</h3>
+<p>The <code>Edible</code> column in named in a bit of a funny way. Rename the column to <code>Edible_Component</code> and save this change to the <code>forager</code> dataset.</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>forager</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 6
-   plot  tree   dbh  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     1     2  10.4     1 D     TRUE </code></pre>
+<pre><code># A tibble: 6,648 × 5
+   Common_Name Neighborhood Condition Edible_Component fruit_edible
+   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;            &lt;lgl&gt;       
+ 1 Persimmon   Concordia    Good      fruit            TRUE        
+ 2 Fig         Concordia    Poor      fruit            TRUE        
+ 3 Fig         Concordia    Good      fruit            TRUE        
+ 4 Fig         Concordia    Fair      fruit            TRUE        
+ 5 Fig         Concordia    Poor      fruit            TRUE        
+ 6 Fig         Concordia    Good      fruit            TRUE        
+ 7 Fig         Concordia    Fair      fruit            TRUE        
+ 8 Persimmon   Concordia    Good      fruit            TRUE        
+ 9 Persimmon   Concordia    Fair      fruit            TRUE        
+10 Persimmon   Concordia    Fair      fruit            TRUE        
+# ℹ 6,638 more rows</code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-11" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-11">Exercise 11</h3>
-<p>Use a <code>dplyr</code> function to add a new column to <code>plots</code> to hold each tree’s basal area (ft<span class="math inline">\(^2\)</span>). This new column should be called <code>ba</code> with values equal to <code>0.005454*dbh^2</code> (assuming dbh is in inches).</p>
+<section id="part-f" class="level3">
+<h3 class="anchored" data-anchor-id="part-f">Part (f)</h3>
+<p>Which five neighborhoods would a fruit loving forager most like to live (in other words, what are the five neighborhoods with the most trees with edible fruit)?</p>
+<p>HINT: using the <code>sum()</code> function on logical data will make all the <code>TRUE</code>s <code>1</code>s and all the <code>FALSE</code>s <code>0</code>s.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 7
-   plot  tree   dbh  logs type  live     ba
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt; &lt;dbl&gt;
-1     1     1  20.2   2   D     TRUE  2.23 
-2     1     2  10.4   1   D     TRUE  0.590
-3     2     1   5     0.5 D     TRUE  0.136
-4     2     2  18    NA   C     FALSE 1.77 
-5     2     3  10.5   1.5 C     TRUE  0.601</code></pre>
+<pre><code># A tibble: 5 × 2
+  Neighborhood      n_edible_fruit_trees
+  &lt;chr&gt;                            &lt;int&gt;
+1 Montavilla                         166
+2 Sellwood-Moreland                  154
+3 Richmond                           148
+4 Rose City Park                     127
+5 Woodstock                          125</code></pre>
+</div>
+</div>
+<p>The Sellwood-Moreland and Woodstock neighborhoods are the heart of southeast Portland (in my opinion). The <code>pdxTrees</code> R package was written primarily in the Woodstock neighborhood, as a matter of fact. Sellwood-Moreland sits just to the west of Woodstock and has a variety of top-tier coffee shops, along with a gorgeous riverfront park with off-leash dogs allowed. Quite the place to be if you are a fruit forager, too!</p>
+</section>
+<section id="part-g" class="level3">
+<h3 class="anchored" data-anchor-id="part-g">Part (g)</h3>
+<p>Of the five neighborhoods found in part (e), what are the conditions of the edible fruit bearing trees (in other words, how many are in Good condition, Fair condition, etc., grouped by these five neighborhoods).</p>
+<p>HINT: you can use <code>group_by()</code> to group by multiple groups at once. Example: <code>group_by(group1, group2)</code>.</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'Neighborhood'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 3
+# Groups:   Neighborhood [5]
+   Neighborhood      Condition num_fruit_trees
+   &lt;chr&gt;             &lt;chr&gt;               &lt;int&gt;
+ 1 Montavilla        Fair                  189
+ 2 Montavilla        Good                   80
+ 3 Montavilla        Poor                   18
+ 4 Richmond          Fair                   80
+ 5 Richmond          Good                  179
+ 6 Richmond          Poor                   19
+ 7 Rose City Park    Fair                  170
+ 8 Rose City Park    Good                   61
+ 9 Rose City Park    Poor                   14
+10 Sellwood-Moreland Fair                   90
+11 Sellwood-Moreland Good                  150
+12 Sellwood-Moreland Poor                   22
+13 Woodstock         Fair                   72
+14 Woodstock         Good                  131
+15 Woodstock         Poor                   12</code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-12" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-12">Exercise 12</h3>
-<p>Use a <code>dplyr</code> function to move your newly created column <code>ba</code> to between the <code>dbh</code> and <code>logs</code> columns.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 7
-   plot  tree   dbh    ba  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     1     1  20.2 2.23    2   D     TRUE 
-2     1     2  10.4 0.590   1   D     TRUE 
-3     2     1   5   0.136   0.5 D     TRUE 
-4     2     2  18   1.77   NA   C     FALSE
-5     2     3  10.5 0.601   1.5 C     TRUE </code></pre>
-</div>
-</div>
-</section>
-<section id="exercise-13" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-13">Exercise 13</h3>
-<p>Use a series of piped <code>dplyr</code> functions to compute the mean dbh for trees on plots 1 and 2. Note, I called my mean <code>mean_dbh</code>.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 2
-   plot mean_dbh
-  &lt;dbl&gt;    &lt;dbl&gt;
-1     1     15.3
-2     2     11.2</code></pre>
-</div>
-</div>
-</section>
-<section id="exercise-14" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-14">Exercise 14</h3>
-<p>Use a series of piped <code>dplyr</code> functions to compute plot specific mean dbh and logs for trees. Exclude <code>NA</code> values from the mean calculations (hint, use the <code>na.rm</code> argument in <code>mean()</code>). Note, I called my mean <code>mean_dbh</code> and <code>mean_logs</code>.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-   plot mean_dbh mean_logs
-  &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-1     1     15.3       1.5
-2     2     11.2       1  </code></pre>
-</div>
-</div>
-</section>
-<section id="exercise-15" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-15">Exercise 15</h3>
-<p>Use a series of piped <code>dplyr</code> functions to compute plot specific mean dbh and logs for <em>live</em> trees. Note, I called my mean <code>mean_dbh</code> and <code>mean_logs</code>. Why did only plot 2 mean dbh change from the your solution to Exercise 14?</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-   plot mean_dbh mean_logs
-  &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-1     1    15.3        1.5
-2     2     7.75       1  </code></pre>
-</div>
-</div>
-</section>
-<section id="exercise-16" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-16">Exercise 16</h3>
-<p>Sort <code>plots</code> by increasing plot number and increasing dbh within plot.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 7
-   plot  tree   dbh    ba  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     1     2  10.4 0.590   1   D     TRUE 
-2     1     1  20.2 2.23    2   D     TRUE 
-3     2     1   5   0.136   0.5 D     TRUE 
-4     2     3  10.5 0.601   1.5 C     TRUE 
-5     2     2  18   1.77   NA   C     FALSE</code></pre>
-</div>
-</div>
-</section>
-<section id="exercise-17" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-17">Exercise 17</h3>
-<p>The type column holds values “D” and “C” which stand for deciduous and conifer, respectively. Use <code>mutate()</code> and the <code>case_when()</code> function to change values in the type column from “D” and “C” to “deciduous” and “conifer”.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>plots</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 7
-   plot  tree   dbh    ba  logs type      live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     &lt;lgl&gt;
-1     1     1  20.2 2.23    2   deciduous TRUE 
-2     1     2  10.4 0.590   1   deciduous TRUE 
-3     2     1   5   0.136   0.5 deciduous TRUE 
-4     2     2  18   1.77   NA   conifer   FALSE
-5     2     3  10.5 0.601   1.5 conifer   TRUE </code></pre>
-</div>
-</div>
-</section>
-<section id="exercise-18" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-18">Exercise 18</h3>
-<p>Use a series of piped <code>dplyr</code> functions to compute type specific mean dbh and logs. More specifically, I want you to use a grouped <code>summarize()</code>, where you group by type. Note, I called my mean <code>mean_dbh</code> and <code>mean_logs</code>.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  type      mean_dbh mean_logs
-  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;
-1 conifer       14.2      1.5 
-2 deciduous     11.9      1.17</code></pre>
-</div>
-</div>
-</section>
-<section id="exercise-19" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-19">Exercise 19</h3>
-<p>Use a series of piped <code>dplyr</code> functions to count the number of trees by type. Hint, use the <code>n()</code> within a grouped <code>summarize()</code>. I called my count <code>n_trees</code>.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 2
-  type      n_trees
-  &lt;chr&gt;       &lt;int&gt;
-1 conifer         2
-2 deciduous       3</code></pre>
-</div>
-</div>
-</section>
-<section id="exercise-20" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-20">Exercise 20</h3>
-<p>Use a series of piped <code>dplyr</code> functions to print the trees with the largest basal area within each plot.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 7
-# Groups:   plot [2]
-   plot  tree   dbh    ba  logs type      live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     &lt;lgl&gt;
-1     1     1  20.2  2.23     2 deciduous TRUE 
-2     2     2  18    1.77    NA conifer   FALSE</code></pre>
-</div>
-</div>
 </section>
 </section>
 <section id="wrap-up" class="level1">
 <h1>Wrap up</h1>
-<p>Congratulations! You’ve made it to the end of Lab 7. Make sure to render your final document and submit both the .pdf and .qmd file to D2L.</p>
+<p>Congratulations! You’ve made it to the end of Lab 8. Make sure to render your final document and submit both the .pdf and .qmd file to D2L.</p>
 
 
 </section>
