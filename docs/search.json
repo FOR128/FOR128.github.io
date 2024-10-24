@@ -480,14 +480,14 @@
     "href": "slides/w2d2.html#reading-data-5",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\"          \n[13] \"lab_07_web.html\"      \"lab_07_web.qmd\"       \"lab_07.qmd\"          \n[16] \"lab_08_web.html\"      \"lab_08_web.qmd\"       \"lab_08.pdf\"          \n[19] \"lab_08.qmd\""
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\"          \n[13] \"lab_07_web.html\"      \"lab_07_web.qmd\"       \"lab_07.qmd\"          \n[16] \"lab_08_web.html\"      \"lab_08_web.qmd\"       \"lab_08.qmd\""
   },
   {
     "objectID": "slides/w2d2.html#reading-data-6",
     "href": "slides/w2d2.html#reading-data-6",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\"          \n[13] \"lab_07_web.html\"      \"lab_07_web.qmd\"       \"lab_07.qmd\"          \n[16] \"lab_08_web.html\"      \"lab_08_web.qmd\"       \"lab_08.pdf\"          \n[19] \"lab_08.qmd\"          \n\n\nNow, given our working directory and datasets location, we specify a relative path and load in the data:\n\nfef &lt;- read.csv(file = \"../labs/datasets/FEF_trees.csv\")"
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\"          \n[13] \"lab_07_web.html\"      \"lab_07_web.qmd\"       \"lab_07.qmd\"          \n[16] \"lab_08_web.html\"      \"lab_08_web.qmd\"       \"lab_08.qmd\"          \n\n\nNow, given our working directory and datasets location, we specify a relative path and load in the data:\n\nfef &lt;- read.csv(file = \"../labs/datasets/FEF_trees.csv\")"
   },
   {
     "objectID": "slides/w2d2.html#reading-data-7",
@@ -571,7 +571,7 @@
     "href": "slides/w2d2.html#writing-data-1",
     "title": "Reading and Writing Data",
     "section": "Writing data",
-    "text": "Writing data\nFirst, we look at the files in my “labs” folder\n\nlist.files(\"../labs\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\"          \n[13] \"lab_07_web.html\"      \"lab_07_web.qmd\"       \"lab_07.qmd\"          \n[16] \"lab_08_web.html\"      \"lab_08_web.qmd\"       \"lab_08.pdf\"          \n[19] \"lab_08.qmd\""
+    "text": "Writing data\nFirst, we look at the files in my “labs” folder\n\nlist.files(\"../labs\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\"          \n[13] \"lab_07_web.html\"      \"lab_07_web.qmd\"       \"lab_07.qmd\"          \n[16] \"lab_08_web.html\"      \"lab_08_web.qmd\"       \"lab_08.qmd\""
   },
   {
     "objectID": "slides/w2d2.html#writing-data-2",
@@ -585,7 +585,7 @@
     "href": "slides/w2d2.html#writing-data-3",
     "title": "Reading and Writing Data",
     "section": "Writing data",
-    "text": "Writing data\nNext, we can write the fef object to a .csv file.\n\nwrite.csv(x = fef,\n          file = \"../labs/my_fef.csv\")\n\nNow, we can see that the file is written.\n\nlist.files(\"../labs\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\"          \n[13] \"lab_07_web.html\"      \"lab_07_web.qmd\"       \"lab_07.qmd\"          \n[16] \"lab_08_web.html\"      \"lab_08_web.qmd\"       \"lab_08.pdf\"          \n[19] \"lab_08.qmd\"           \"my_fef.csv\""
+    "text": "Writing data\nNext, we can write the fef object to a .csv file.\n\nwrite.csv(x = fef,\n          file = \"../labs/my_fef.csv\")\n\nNow, we can see that the file is written.\n\nlist.files(\"../labs\")\n\n [1] \"datasets\"             \"FEF_trees.csv\"        \"lab_01_solutions.pdf\"\n [4] \"lab_01_solutions.qmd\" \"lab_01.qmd\"           \"lab_02.qmd\"          \n [7] \"lab_03_example.R\"     \"lab_03.html\"          \"lab_03.qmd\"          \n[10] \"lab_04.qmd\"           \"lab_05.qmd\"           \"lab_06.qmd\"          \n[13] \"lab_07_web.html\"      \"lab_07_web.qmd\"       \"lab_07.qmd\"          \n[16] \"lab_08_web.html\"      \"lab_08_web.qmd\"       \"lab_08.qmd\"          \n[19] \"my_fef.csv\""
   },
   {
     "objectID": "slides/w2d2.html#next-week",
@@ -1131,28 +1131,28 @@
     "href": "labs/lab_08_web.html#exercise-2",
     "title": "Advanced Data Wrangling with dplyr",
     "section": "Exercise 2",
-    "text": "Exercise 2\nFind the top 8 most common species (use the common name column for species here and throughout the lab) in the parks dataset, along with how many of that species are in the dataset. Notice I’ve called the number of trees num_trees.\n\n\n# A tibble: 8 × 2\n  Common_Name               num_trees\n  &lt;chr&gt;                         &lt;int&gt;\n1 Douglas-Fir                    6783\n2 Norway Maple                   1502\n3 Western Redcedar                964\n4 Northern Red Oak                736\n5 Pin Oak                         619\n6 Incense Cedar                   507\n7 Bigleaf Maple                   490\n8 Japanese Flowering Cherry       418"
+    "text": "Exercise 2\nFind how many trees of each species (use the common name column for species here and throughout the lab) are in the parks dataset, and order the data from greatest number of trees in a species to least. Notice I’ve called the number of trees num_trees.\n\n\n# A tibble: 304 × 2\n   Common_Name               num_trees\n   &lt;chr&gt;                         &lt;int&gt;\n 1 Douglas-Fir                    6783\n 2 Norway Maple                   1502\n 3 Western Redcedar                964\n 4 Northern Red Oak                736\n 5 Pin Oak                         619\n 6 Incense Cedar                   507\n 7 Bigleaf Maple                   490\n 8 Japanese Flowering Cherry       418\n 9 American Elm                    379\n10 Giant Sequoia                   349\n# ℹ 294 more rows"
   },
   {
     "objectID": "labs/lab_08_web.html#exercise-3",
     "href": "labs/lab_08_web.html#exercise-3",
     "title": "Advanced Data Wrangling with dplyr",
     "section": "Exercise 3",
-    "text": "Exercise 3\nA staple of Portland living in the springtime is to go out and see the Japanese Flowering Cherry trees beginning to bloom. Find the park with the most Japanese Flowering Cherry trees, and how many there are in that park.\n\n\n# A tibble: 1 × 2\n  Park                               n\n  &lt;chr&gt;                          &lt;int&gt;\n1 Gov Tom McCall Waterfront Park   104"
+    "text": "Exercise 3\nA staple of Portland living in the springtime is to go out and see the Japanese Flowering Cherry trees beginning to bloom. Find the park with the most Japanese Flowering Cherry trees, and how many there are in that park.\n\n\n# A tibble: 1 × 2\n  Park                           num_cherries\n  &lt;chr&gt;                                 &lt;int&gt;\n1 Gov Tom McCall Waterfront Park          104"
   },
   {
     "objectID": "labs/lab_08_web.html#exercise-4",
     "href": "labs/lab_08_web.html#exercise-4",
     "title": "Advanced Data Wrangling with dplyr",
     "section": "Exercise 4",
-    "text": "Exercise 4\nFind the top 5 parks with the most total DBH (i.e. the sum of all the trees DBH in those parks).\n\n\n# A tibble: 5 × 2\n  Park             total_DBH\n  &lt;chr&gt;                &lt;dbl&gt;\n1 Mt Tabor Park       31965.\n2 Columbia Park       26952.\n3 Laurelhurst Park    26890.\n4 Washington Park     16081.\n5 John Luby Park      14519.\n\n\nMt. Tabor Park is one of my personal favorites in Portland, I used to live just a few blocks away. It is a wonderful place to watch the sun set over the West hills of the city. Not only does it have the most DBH in all of the parks in Portland, but Portland’s drinking water is stored in giant reservoirs at that park!"
+    "text": "Exercise 4\n\nPart (a)\nFind the top 5 parks with the most total DBH (i.e. the sum of all the trees DBH in those parks).\n\n\n# A tibble: 5 × 2\n  Park             total_DBH\n  &lt;chr&gt;                &lt;dbl&gt;\n1 Mt Tabor Park       31965.\n2 Columbia Park       26952.\n3 Laurelhurst Park    26890.\n4 Washington Park     16081.\n5 John Luby Park      14519.\n\n\nMt. Tabor Park is one of my personal favorites in Portland, I used to live just a few blocks away. It is a wonderful place to watch the sun set over the West hills of the city. Not only does it have the most DBH in all of the parks in Portland, but Portland’s drinking water is stored in giant reservoirs at that park!\n\n\nPart (b)\nFind the top 5 parks with the highest DBH per tree (in other words, the 5 highest mean DBHs), along with how many trees are in those parks.\n\n\n# A tibble: 5 × 3\n  Park               mean_DBH number_of_trees\n  &lt;chr&gt;                 &lt;dbl&gt;           &lt;int&gt;\n1 Heritage Tree Park     59                 1\n2 Johnswood Property     43.1              18\n3 Patton Square Park     37.0              13\n4 Hancock Park           32.5             104\n5 Laurelwood Park        31.2              13\n\n\nWow! Heritage Tree Park has one giant tree!"
   },
   {
     "objectID": "labs/lab_08_web.html#exercise-5",
     "href": "labs/lab_08_web.html#exercise-5",
     "title": "Advanced Data Wrangling with dplyr",
     "section": "Exercise 5",
-    "text": "Exercise 5\nThere is a column in the parks dataset that represents the amount of carbon (in lbs) each tree has sequestered. Find the park with the highest carbon sequestration.\n\nparks %&gt;%\n  group_by(Park) %&gt;%\n  summarize(carbon_sequestered = sum(Carbon_Sequestration_lb, na.rm = TRUE)) %&gt;%\n  slice_max(carbon_sequestered)\n\n# A tibble: 1 × 2\n  Park          carbon_sequestered\n  &lt;chr&gt;                      &lt;dbl&gt;\n1 Mt Tabor Park             36515.\n\n\nNice job, Mt. Tabor!"
+    "text": "Exercise 5\nThere is a column in the parks dataset that represents the amount of carbon (in lbs) each tree has sequestered. Find the park with the highest carbon sequestration.\n\n\n# A tibble: 1 × 2\n  Park          carbon_sequestered\n  &lt;chr&gt;                      &lt;dbl&gt;\n1 Mt Tabor Park             36515.\n\n\nNice job, Mt. Tabor!"
   },
   {
     "objectID": "labs/lab_08_web.html#exercise-6",
@@ -1166,623 +1166,133 @@
     "href": "labs/lab_08_web.html#exercise-7",
     "title": "Advanced Data Wrangling with dplyr",
     "section": "Exercise 7",
-    "text": "Exercise 7\nFor this exercise, consider the streets dataset.\n\nPart (a)\nThere is a column delineating the edibility of the trees in the dataset. Find the possible values for this column and how many trees correspond to each value.\n\n\n# A tibble: 3 × 2\n  Edible n_rows\n  &lt;chr&gt;   &lt;int&gt;\n1 fruit    3649\n2 no     211954\n3 nut      2999\n\n\n\n\nPart (b)\nCreate a new tibble called forager that contains all rows of the streets with edible fruits or nuts but only the columns denoting the common name, neighborhood, condition, and edibility.\n\nforager\n\n# A tibble: 6,648 × 4\n   Common_Name Neighborhood Condition Edible\n   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt; \n 1 Persimmon   Concordia    Good      fruit \n 2 Walnut      Concordia    Fair      nut   \n 3 Walnut      Concordia    Fair      nut   \n 4 Walnut      Concordia    Fair      nut   \n 5 Walnut      Concordia    Good      nut   \n 6 Walnut      Concordia    Fair      nut   \n 7 Walnut      Concordia    Fair      nut   \n 8 Walnut      Concordia    Poor      nut   \n 9 Walnut      Concordia    Fair      nut   \n10 Fig         Concordia    Poor      fruit \n# ℹ 6,638 more rows\n\n\n\n\nPart (c)\nCreate a new logical column and save it in the forager dataset. Name it fruit_edible. The values in this columns should be TRUE or FALSE depending on if the given tree has edible fruits or not\n\nforager\n\n# A tibble: 6,648 × 5\n   Common_Name Neighborhood Condition Edible fruit_edible\n   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;  &lt;lgl&gt;       \n 1 Persimmon   Concordia    Good      fruit  TRUE        \n 2 Walnut      Concordia    Fair      nut    FALSE       \n 3 Walnut      Concordia    Fair      nut    FALSE       \n 4 Walnut      Concordia    Fair      nut    FALSE       \n 5 Walnut      Concordia    Good      nut    FALSE       \n 6 Walnut      Concordia    Fair      nut    FALSE       \n 7 Walnut      Concordia    Fair      nut    FALSE       \n 8 Walnut      Concordia    Poor      nut    FALSE       \n 9 Walnut      Concordia    Fair      nut    FALSE       \n10 Fig         Concordia    Poor      fruit  TRUE        \n# ℹ 6,638 more rows\n\n\n\n\nPart (d)\nArrange the forager dataset by the column you just created in (c), so that the TRUE values are at the top, and save this change to the forager dataset.\n\nforager\n\n# A tibble: 6,648 × 5\n   Common_Name Neighborhood Condition Edible fruit_edible\n   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;  &lt;lgl&gt;       \n 1 Persimmon   Concordia    Good      fruit  TRUE        \n 2 Fig         Concordia    Poor      fruit  TRUE        \n 3 Fig         Concordia    Good      fruit  TRUE        \n 4 Fig         Concordia    Fair      fruit  TRUE        \n 5 Fig         Concordia    Poor      fruit  TRUE        \n 6 Fig         Concordia    Good      fruit  TRUE        \n 7 Fig         Concordia    Fair      fruit  TRUE        \n 8 Persimmon   Concordia    Good      fruit  TRUE        \n 9 Persimmon   Concordia    Fair      fruit  TRUE        \n10 Persimmon   Concordia    Fair      fruit  TRUE        \n# ℹ 6,638 more rows\n\n\n\n\nPart (e)\nThe Edible column in named in a bit of a funny way. Rename the column to Edible_Component and save this change to the forager dataset.\n\nforager\n\n# A tibble: 6,648 × 5\n   Common_Name Neighborhood Condition Edible_Component fruit_edible\n   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;            &lt;lgl&gt;       \n 1 Persimmon   Concordia    Good      fruit            TRUE        \n 2 Fig         Concordia    Poor      fruit            TRUE        \n 3 Fig         Concordia    Good      fruit            TRUE        \n 4 Fig         Concordia    Fair      fruit            TRUE        \n 5 Fig         Concordia    Poor      fruit            TRUE        \n 6 Fig         Concordia    Good      fruit            TRUE        \n 7 Fig         Concordia    Fair      fruit            TRUE        \n 8 Persimmon   Concordia    Good      fruit            TRUE        \n 9 Persimmon   Concordia    Fair      fruit            TRUE        \n10 Persimmon   Concordia    Fair      fruit            TRUE        \n# ℹ 6,638 more rows\n\n\n\n\nPart (f)\nWhich five neighborhoods would a fruit loving forager most like to live (in other words, what are the five neighborhoods with the most trees with edible fruit)?\nHINT: using the sum() function on logical data will make all the TRUEs 1s and all the FALSEs 0s.\n\n\n# A tibble: 5 × 2\n  Neighborhood      n_edible_fruit_trees\n  &lt;chr&gt;                            &lt;int&gt;\n1 Montavilla                         166\n2 Sellwood-Moreland                  154\n3 Richmond                           148\n4 Rose City Park                     127\n5 Woodstock                          125\n\n\nThe Sellwood-Moreland and Woodstock neighborhoods are the heart of southeast Portland (in my opinion). The pdxTrees R package was written primarily in the Woodstock neighborhood, as a matter of fact. Sellwood-Moreland sits just to the west of Woodstock and has a variety of top-tier coffee shops, along with a gorgeous riverfront park with off-leash dogs allowed. Quite the place to be if you are a fruit forager, too!\n\n\nPart (g)\nOf the five neighborhoods found in part (e), what are the conditions of the edible fruit bearing trees (in other words, how many are in Good condition, Fair condition, etc., grouped by these five neighborhoods).\nHINT: you can use group_by() to group by multiple groups at once. Example: group_by(group1, group2).\n\n\n`summarise()` has grouped output by 'Neighborhood'. You can override using the\n`.groups` argument.\n\n\n# A tibble: 15 × 3\n# Groups:   Neighborhood [5]\n   Neighborhood      Condition num_fruit_trees\n   &lt;chr&gt;             &lt;chr&gt;               &lt;int&gt;\n 1 Montavilla        Fair                  189\n 2 Montavilla        Good                   80\n 3 Montavilla        Poor                   18\n 4 Richmond          Fair                   80\n 5 Richmond          Good                  179\n 6 Richmond          Poor                   19\n 7 Rose City Park    Fair                  170\n 8 Rose City Park    Good                   61\n 9 Rose City Park    Poor                   14\n10 Sellwood-Moreland Fair                   90\n11 Sellwood-Moreland Good                  150\n12 Sellwood-Moreland Poor                   22\n13 Woodstock         Fair                   72\n14 Woodstock         Good                  131\n15 Woodstock         Poor                   12"
+    "text": "Exercise 7\nFor this exercise, consider the streets dataset.\n\nPart (a)\nThere is a column delineating the edibility of the trees in the dataset. Find the possible values for this column and how many trees correspond to each value.\n\n\n# A tibble: 3 × 2\n  Edible n_rows\n  &lt;chr&gt;   &lt;int&gt;\n1 fruit    3649\n2 no     211954\n3 nut      2999\n\n\n\n\nPart (b)\nCreate a new tibble called forager that contains all rows of the streets with edible fruits or nuts but only the columns denoting the common name, neighborhood, condition, and edibility.\n\nforager\n\n# A tibble: 6,648 × 4\n   Common_Name Neighborhood Condition Edible\n   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt; \n 1 Persimmon   Concordia    Good      fruit \n 2 Walnut      Concordia    Fair      nut   \n 3 Walnut      Concordia    Fair      nut   \n 4 Walnut      Concordia    Fair      nut   \n 5 Walnut      Concordia    Good      nut   \n 6 Walnut      Concordia    Fair      nut   \n 7 Walnut      Concordia    Fair      nut   \n 8 Walnut      Concordia    Poor      nut   \n 9 Walnut      Concordia    Fair      nut   \n10 Fig         Concordia    Poor      fruit \n# ℹ 6,638 more rows\n\n\n\n\nPart (c)\nCreate a new logical column and save it in the forager dataset. Name it fruit_edible. The values in this columns should be TRUE or FALSE depending on if the given tree has edible fruits or not\n\nforager\n\n# A tibble: 6,648 × 5\n   Common_Name Neighborhood Condition Edible fruit_edible\n   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;  &lt;lgl&gt;       \n 1 Persimmon   Concordia    Good      fruit  TRUE        \n 2 Walnut      Concordia    Fair      nut    FALSE       \n 3 Walnut      Concordia    Fair      nut    FALSE       \n 4 Walnut      Concordia    Fair      nut    FALSE       \n 5 Walnut      Concordia    Good      nut    FALSE       \n 6 Walnut      Concordia    Fair      nut    FALSE       \n 7 Walnut      Concordia    Fair      nut    FALSE       \n 8 Walnut      Concordia    Poor      nut    FALSE       \n 9 Walnut      Concordia    Fair      nut    FALSE       \n10 Fig         Concordia    Poor      fruit  TRUE        \n# ℹ 6,638 more rows\n\n\n\n\nPart (d)\nArrange the forager dataset by the column you just created in (c), so that the TRUE values are at the top, and save this change to the forager dataset.\n\nforager\n\n# A tibble: 6,648 × 5\n   Common_Name Neighborhood Condition Edible fruit_edible\n   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;  &lt;lgl&gt;       \n 1 Persimmon   Concordia    Good      fruit  TRUE        \n 2 Fig         Concordia    Poor      fruit  TRUE        \n 3 Fig         Concordia    Good      fruit  TRUE        \n 4 Fig         Concordia    Fair      fruit  TRUE        \n 5 Fig         Concordia    Poor      fruit  TRUE        \n 6 Fig         Concordia    Good      fruit  TRUE        \n 7 Fig         Concordia    Fair      fruit  TRUE        \n 8 Persimmon   Concordia    Good      fruit  TRUE        \n 9 Persimmon   Concordia    Fair      fruit  TRUE        \n10 Persimmon   Concordia    Fair      fruit  TRUE        \n# ℹ 6,638 more rows\n\n\n\n\nPart (e)\nThe Edible column in named in a bit of a funny way. Rename the column to Edible_Component and save this change to the forager dataset.\n\nforager\n\n# A tibble: 6,648 × 5\n   Common_Name Neighborhood Condition Edible_Component fruit_edible\n   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;            &lt;lgl&gt;       \n 1 Persimmon   Concordia    Good      fruit            TRUE        \n 2 Fig         Concordia    Poor      fruit            TRUE        \n 3 Fig         Concordia    Good      fruit            TRUE        \n 4 Fig         Concordia    Fair      fruit            TRUE        \n 5 Fig         Concordia    Poor      fruit            TRUE        \n 6 Fig         Concordia    Good      fruit            TRUE        \n 7 Fig         Concordia    Fair      fruit            TRUE        \n 8 Persimmon   Concordia    Good      fruit            TRUE        \n 9 Persimmon   Concordia    Fair      fruit            TRUE        \n10 Persimmon   Concordia    Fair      fruit            TRUE        \n# ℹ 6,638 more rows\n\n\n\n\nPart (f)\nWhich five neighborhoods would a fruit loving forager most like to live (in other words, what are the five neighborhoods with the most trees with edible fruit)?\nHINT: using the sum() function on logical data will make all the TRUEs 1s and all the FALSEs 0s.\n\n\n# A tibble: 5 × 2\n  Neighborhood      n_edible_fruit_trees\n  &lt;chr&gt;                            &lt;int&gt;\n1 Montavilla                         166\n2 Sellwood-Moreland                  154\n3 Richmond                           148\n4 Rose City Park                     127\n5 Woodstock                          125\n\n\nThe Sellwood-Moreland and Woodstock neighborhoods are the heart of southeast Portland (in my opinion). The pdxTrees R package was written primarily in the Woodstock neighborhood, as a matter of fact. Sellwood-Moreland sits just to the west of Woodstock and has a variety of top-tier coffee shops, along with a gorgeous riverfront park with off-leash dogs allowed. Quite the place to be if you are a fruit forager, too!\n\n\nPart (g)\nOf the five neighborhoods found in part (e), what are the conditions of the edible fruit bearing trees (in other words, how many are in Good condition, Fair condition, etc., grouped by these five neighborhoods).\nHINT: you can use group_by() to group by multiple groups at once. Example: group_by(column1, column2).\n\n\n`summarise()` has grouped output by 'Neighborhood'. You can override using the\n`.groups` argument.\n\n\n# A tibble: 15 × 3\n# Groups:   Neighborhood [5]\n   Neighborhood      Condition num_fruit_trees\n   &lt;chr&gt;             &lt;chr&gt;               &lt;int&gt;\n 1 Montavilla        Fair                  189\n 2 Montavilla        Good                   80\n 3 Montavilla        Poor                   18\n 4 Richmond          Fair                   80\n 5 Richmond          Good                  179\n 6 Richmond          Poor                   19\n 7 Rose City Park    Fair                  170\n 8 Rose City Park    Good                   61\n 9 Rose City Park    Poor                   14\n10 Sellwood-Moreland Fair                   90\n11 Sellwood-Moreland Good                  150\n12 Sellwood-Moreland Poor                   22\n13 Woodstock         Fair                   72\n14 Woodstock         Good                  131\n15 Woodstock         Poor                   12"
   },
   {
-    "objectID": "slides/w4d1.html",
-    "href": "slides/w4d1.html",
-    "title": "Logical subsetting vectors and data frames",
-    "section": "",
-    "text": "create, subset, and manipulate vectors and data frames\nuse comparison and logical operators\npractice combining logical tests to extract information from vectors and data frames\nstart thinking “inside out”"
-  },
-  {
-    "objectID": "slides/w4d1.html#learning-objectives",
-    "href": "slides/w4d1.html#learning-objectives",
-    "title": "Logical subsetting vectors and data frames",
-    "section": "",
-    "text": "create, subset, and manipulate vectors and data frames\nuse comparison and logical operators\npractice combining logical tests to extract information from vectors and data frames\nstart thinking “inside out”"
-  },
-  {
-    "objectID": "slides/w4d1.html#logical-subsetting",
-    "href": "slides/w4d1.html#logical-subsetting",
-    "title": "Logical subsetting vectors and data frames",
-    "section": "Logical subsetting",
-    "text": "Logical subsetting\nSo far we have directly specified the elements of vectors that we want to extract, for example spp[1] or dbh[length(dbh)] or spp[c(1,3,5)]. We have also subsetted data frame rows and columns, for example, plt[c(2,5),], plt[nrow(plt),], plt[,1:2], or plt[,c(\"spp\",\"dbh\")]. More commonly we want to extract elements that meet a condition, such as all trees greater than some minimum DBH or all trees of a given species. For this we use subsetting with logical vectors, see Section 6.6 in the course book.\nHere are the comparison operators:\n\nEqual: ==\nNot equal: !=\nGreater than: &gt;\nLess than: &lt;\nGreater than or equal to: &gt;=\nLess than or equal to: &lt;=\n\nLet’s give these operators a spin using the plt data frame.\nFirst on a single column, i.e., a vector subset operation.\n\nplt$qual[plt$qual == \"ags\"] # Understand this statement from the inside out!\n\n[1] \"ags\" \"ags\" \"ags\" \"ags\" \"ags\"\n\n\nGet all trees (i.e., rows) for species acerru.\n\nplt[plt$spp == \"acerru\", ]\n\n     spp  dbh qual  live\n4 acerru  9.3  ugs FALSE\n8 acerru 11.1  ags  TRUE\n\n\nGet all trees (i.e., rows) but for acerru.\n\nplt[plt$spp != \"acerru\", ]\n\n     spp   dbh qual  live\n1 tsugca 15.00  ugs  TRUE\n2 tsugca 12.00  ags  TRUE\n3 betual  6.60  ags  TRUE\n5 pinust 28.10  ags  TRUE\n6 pinust  9.23  ags  TRUE\n7 betual 15.30  ugs FALSE\n\n\nGet all trees (i.e., rows) with DBH greater than 10.\n\nplt[plt$dbh &gt; 10, ]\n\n     spp  dbh qual  live\n1 tsugca 15.0  ugs  TRUE\n2 tsugca 12.0  ags  TRUE\n5 pinust 28.1  ags  TRUE\n7 betual 15.3  ugs FALSE\n8 acerru 11.1  ags  TRUE\n\n\nGet all tree species with DBH greater than 10.\n\nplt[plt$dbh &gt; 10, \"spp\"]\n\n[1] \"tsugca\" \"tsugca\" \"pinust\" \"betual\" \"acerru\"\n\n\nFind all live trees. Note, why do I have plt$live and not plt$live == TRUE in the code below?\n\nplt[plt$live, ]\n\n     spp   dbh qual live\n1 tsugca 15.00  ugs TRUE\n2 tsugca 12.00  ags TRUE\n3 betual  6.60  ags TRUE\n5 pinust 28.10  ags TRUE\n6 pinust  9.23  ags TRUE\n8 acerru 11.10  ags TRUE"
-  },
-  {
-    "objectID": "slides/w4d1.html#a-bit-on-logical-operators-and-subsetting",
-    "href": "slides/w4d1.html#a-bit-on-logical-operators-and-subsetting",
-    "title": "Logical subsetting vectors and data frames",
-    "section": "A bit on logical operators and subsetting",
-    "text": "A bit on logical operators and subsetting\nThere are some logical operators we haven’t seen yet, including the “and” operator and the “or” operator.\n\nand: &\nor: |\n\nThe & operator compares vector elements on its left and right to see if they match. If they are both TRUE, then & returns TRUE, otherwise FALSE. The | operator compares vector elements on its left and right to see if either of them are TRUE. If at least one is TRUE then | returns TRUE, otherwise if both are FALSE then FALSE is returned. These operations are applied for each element pair along the vectors. For example:\n\nc(FALSE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)\n\n[1]  TRUE  TRUE FALSE\n\nc(FALSE, TRUE, FALSE) & c(TRUE, TRUE, FALSE)\n\n[1] FALSE  TRUE FALSE\n\n\nSo, say you want all acerru with DBH greater than 10.\n\nplt[plt$spp == \"acerru\" & plt$dbh &gt; 10, ]\n\n     spp  dbh qual live\n8 acerru 11.1  ags TRUE\n\n\nAnother useful logical operator is the ! (i.e., the exclamation point, referred to as the “bang” in coding slang) which negates or flips the logical value, so for example !FALSE is TRUE and !TRUE is FALSE (or !“I know what I’m talking about”).\nYet another very handy operator is %in% which is used to identify if an element occurs in a second vector. Or a substitute for a series of “or” statements. Consider the example below and consult the manual page via help(\"%in%\").\n\ndbh == 15 | dbh == 6 | dbh == 11\n\n[1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n\ndbh %in% c(15, 6, 11)\n\n[1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n\n\n\nletters\n\n [1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\" \"k\" \"l\" \"m\" \"n\" \"o\" \"p\" \"q\" \"r\" \"s\"\n[20] \"t\" \"u\" \"v\" \"w\" \"x\" \"y\" \"z\"\n\nletters %in% c(\"a\", \"m\", \"q\", \"s\")\n\n [1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n[13]  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE\n[25] FALSE FALSE\n\n# letters == \"a\" | letters == \"m\" | letters = \"q\" | letters == \"s\" ## Find the error.\n\nSay you want acerru and tsugca with DBH greater than 10.\n\nplt[plt$spp %in% c(\"acerru\", \"tsugca\") & plt$dbh &gt; 10,]\n\n     spp  dbh qual live\n1 tsugca 15.0  ugs TRUE\n2 tsugca 12.0  ags TRUE\n8 acerru 11.1  ags TRUE\n\n\nNow, say you want acerru and tsugca with DBH greater than 10 and acceptable growing stock.\n\nplt[plt$spp %in% c(\"acerru\", \"tsugca\") & plt$dbh &gt; 10 & plt$qual == \"ags\",]\n\n     spp  dbh qual live\n2 tsugca 12.0  ags TRUE\n8 acerru 11.1  ags TRUE"
-  },
-  {
-    "objectID": "slides/w4d1.html#your-turn",
-    "href": "slides/w4d1.html#your-turn",
-    "title": "Logical subsetting vectors and data frames",
-    "section": "Your turn!",
-    "text": "Your turn!\n\nFind all trees with DBH less than 9.5.\nFind all trees that are not tsugca (hint use the !).\nFind all dead trees (hint use the !).\nFind all live trees of unacceptable growing stock.\nFind all live betual and acerru that are of acceptable growing stock.\nMake up your own subsetting criteria."
-  },
-  {
-    "objectID": "tickets/ticket_06.html",
-    "href": "tickets/ticket_06.html",
-    "title": "Lecture Ticket 6",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.7, 4.8 and 4.9"
-  },
-  {
-    "objectID": "tickets/ticket_06.html#reading",
-    "href": "tickets/ticket_06.html#reading",
-    "title": "Lecture Ticket 6",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.7, 4.8 and 4.9"
-  },
-  {
-    "objectID": "tickets/ticket_06.html#questions",
-    "href": "tickets/ticket_06.html#questions",
-    "title": "Lecture Ticket 6",
-    "section": "Questions",
-    "text": "Questions\n\nYou learned about comparison and logical operators in the reading. In R, what is the operator for each of the following:\n\nequality,\ngreater than,\ngreater than or equal to,\nnot equal to,\nor,\nand.\n\nConsider the following vector:\n\n\nx &lt;- 1:10\nx\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nWhat does the following do to x?\n\nx[x &lt; 5] &lt;- 0"
-  },
-  {
-    "objectID": "tickets/ticket_07.html",
-    "href": "tickets/ticket_07.html",
-    "title": "Lecture Ticket 7",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 5: sections 5.1"
-  },
-  {
-    "objectID": "tickets/ticket_07.html#reading",
-    "href": "tickets/ticket_07.html#reading",
-    "title": "Lecture Ticket 7",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 5: sections 5.1"
-  },
-  {
-    "objectID": "tickets/ticket_07.html#questions",
-    "href": "tickets/ticket_07.html#questions",
-    "title": "Lecture Ticket 7",
-    "section": "Questions",
-    "text": "Questions\nConsider the function:\n\nmy_function &lt;- function(x) {\n  y &lt;- x * 2\n  z &lt;- x + 4\n  return(y + z)\n}\n\n\nWhat would my_function(x = 10) return?\nWhat would my_function(x = 0) return?\nWhat would my_function(x = 5) + 10 return?"
-  },
-  {
-    "objectID": "labs/lab_03.html",
-    "href": "labs/lab_03.html",
-    "title": "Vectors and Dataframes",
-    "section": "",
-    "text": "Create, subset, and manipulate vectors and data frames.\nPractice reading data from external files.\nGet some practice writing R scripts.\n\n\n\n\nCreate a new directory called lab_03 within your labs directory (e.g., ~/FOR_128/labs/lab_03). In RStudio set lab_03 as your working directory. Download and move the FEF_trees.csv file from the D2L lab page to your lab_03 directory.\nCreate a new script and save it as lab_03.R (it should save to your working directory).\nNow, use our book, help “man” pages, Google, your intuition, and experimentation to describe the behavior of the code in each of the following questions. For each question, write and execute the code in each question then, using a comment #, add notes above the code to describe/define its behavior (see example script lab_03_example.R in the lab’s D2L page)."
-  },
-  {
-    "objectID": "labs/lab_03.html#getting-started",
-    "href": "labs/lab_03.html#getting-started",
-    "title": "Vectors and Dataframes",
-    "section": "",
-    "text": "Create, subset, and manipulate vectors and data frames.\nPractice reading data from external files.\nGet some practice writing R scripts.\n\n\n\n\nCreate a new directory called lab_03 within your labs directory (e.g., ~/FOR_128/labs/lab_03). In RStudio set lab_03 as your working directory. Download and move the FEF_trees.csv file from the D2L lab page to your lab_03 directory.\nCreate a new script and save it as lab_03.R (it should save to your working directory).\nNow, use our book, help “man” pages, Google, your intuition, and experimentation to describe the behavior of the code in each of the following questions. For each question, write and execute the code in each question then, using a comment #, add notes above the code to describe/define its behavior (see example script lab_03_example.R in the lab’s D2L page)."
-  },
-  {
-    "objectID": "labs/lab_03.html#questions",
-    "href": "labs/lab_03.html#questions",
-    "title": "Vectors and Dataframes",
-    "section": "Questions",
-    "text": "Questions\n\nFunctions and index subsetting of vectors and data frames\nUse the code below to create the plt data frame.\n\nspp &lt;- c(\"tsugca\", \"tsugca\", \"betual\", \"acerru\", \"pinust\", \"pinust\", \"betual\", \"acerru\")\ndbh &lt;- c(15, 12, 6.6, 9.3, 28.1, 9.23, 15.3, 11.1)\nqual &lt;- c(\"ugs\", \"ags\", \"ags\", \"ugs\", \"ags\", \"ags\", \"ugs\", \"ags\")\nlive &lt;- c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE)\n\nplt &lt;- data.frame(spp, dbh, qual, live)\n\n\nplt \nclass(plt) \nnames(plt) \nnrow(plt) \nncol(plt) \ndim(plt) \nlength(plt) \nplt[2:4,c(1,4)] \nplt[1:3,c(\"spp\", \"dbh\")] \nplt$qual \nclass(plt$qual) \nhead(plt) \ntail(plt) \nhead(plt, n=3) \ntail(plt, n=2) \nplt.cpy &lt;- plt \nplt.cpy[1:3,1] &lt;-  c(\"pinust\", \"pinust\", \"acerru\") \nplt.cpy[1:2,1] &lt;-  c(\"pinust\", \"pinust\", \"acerru\") \nplt.cpy$live[8] &lt;- FALSE \nplt.cpy[8,\"live\"] &lt;- TRUE \nrep(\"ugs\", nrow(plt.cpy)) \nplt.cpy[,\"status\"] &lt;- rep(\"ugs\", nrow(plt.cpy)) \n!TRUE \ncolnames(plt.cpy)[4] &lt;- \"dead\" \nplt.cpy$dead &lt;- !plt$live \nplt.cpy &lt;- plt[-(1:5),] \nplt.cpy &lt;- plt[-1:5,] \nplt.cpy &lt;- rbind(plt, c(\"some new spp\", 100, \"ugs\", FALSE)) \nplt.cpy &lt;- cbind(plt, 1:nrow(plt)) \ncolnames(plt.cpy)[ncol(plt.cpy)] &lt;- \"tree.indx\" \nstr(plt) \n\nRead the external data file FEF_trees.csv into R using the read.csv() function and call the resulting data frame fef.\n\nfef &lt;- read.csv(\"FEF_trees.csv\")\n\n\ndim(fef) \nhead(fef) \ntail(fef) \nsum(fef$height_ft) \nmax(fef$height_ft) \nmin(fef$height_ft) \nwhich.max(fef$height_ft) \nfef[which.max(fef$height_ft), ] \nfef[which.min(fef$height_ft), ] \nIn the previous two labs you did your work in a Quarto document. What are some ways the script you created for this lab are different from the Quarto document?"
-  },
-  {
-    "objectID": "tickets/ticket_04.html",
-    "href": "tickets/ticket_04.html",
-    "title": "Lecture Ticket 4",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.1 and 4.2 (Stop at 4.3 Factors)"
-  },
-  {
-    "objectID": "tickets/ticket_04.html#reading",
-    "href": "tickets/ticket_04.html#reading",
-    "title": "Lecture Ticket 4",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.1 and 4.2 (Stop at 4.3 Factors)"
-  },
-  {
-    "objectID": "tickets/ticket_04.html#questions",
-    "href": "tickets/ticket_04.html#questions",
-    "title": "Lecture Ticket 4",
-    "section": "Questions",
-    "text": "Questions\n\nWhat is a qualitative variable? What about a quantitative variable? How are they different?\nWhat does the c() function do?\nSuppose you have the following vector:\n\n\nheight_in &lt;- c(70, 62, 72, 67)\nheight_in\n\n[1] 70 62 72 67\n\n\nWhat code would you write to replace the second element of height_in with the value 63?"
-  },
-  {
-    "objectID": "tickets/ticket_15.html",
-    "href": "tickets/ticket_15.html",
-    "title": "Lecture Ticket 15",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.10 - 7.11, 7.13"
-  },
-  {
-    "objectID": "tickets/ticket_15.html#reading",
-    "href": "tickets/ticket_15.html#reading",
-    "title": "Lecture Ticket 15",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.10 - 7.11, 7.13"
-  },
-  {
-    "objectID": "tickets/ticket_15.html#questions",
-    "href": "tickets/ticket_15.html#questions",
-    "title": "Lecture Ticket 15",
-    "section": "Questions",
-    "text": "Questions\n\nWhat do n() and n_distinct() do? How are they different?\nWhat two arguments do we always specify when we use across()?\nWhen we use across(), we use it within a few dplyr verbs – what are those verbs?\nWhat concepts in dplyr are you confidently understanding? What concepts are you still struggling with?"
-  },
-  {
-    "objectID": "tickets/ticket_12.html",
-    "href": "tickets/ticket_12.html",
-    "title": "Lecture Ticket 12",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nReview Chapter 6\nBegin Chapter 7 (read the introduction and 7.1)"
-  },
-  {
-    "objectID": "tickets/ticket_12.html#reading",
-    "href": "tickets/ticket_12.html#reading",
-    "title": "Lecture Ticket 12",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nReview Chapter 6\nBegin Chapter 7 (read the introduction and 7.1)"
-  },
-  {
-    "objectID": "tickets/ticket_12.html#questions",
-    "href": "tickets/ticket_12.html#questions",
-    "title": "Lecture Ticket 12",
-    "section": "Questions",
-    "text": "Questions\n\nYou want to read in a file called “my_data.csv” on your computer and assign it to an object called dat in R. Now, we’ve learned two approaches to reading in data (base and tidyverse). How would you read it into R (a) with base and (b) with tidyverse?\nWhat are the dplyr verbs that we will learn in Chapter 7? What do each of them do?"
-  },
-  {
-    "objectID": "tickets/ticket_10.html",
-    "href": "tickets/ticket_10.html",
-    "title": "Lecture Ticket 10",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 6"
-  },
-  {
-    "objectID": "tickets/ticket_10.html#reading",
-    "href": "tickets/ticket_10.html#reading",
-    "title": "Lecture Ticket 10",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 6"
-  },
-  {
-    "objectID": "tickets/ticket_10.html#questions",
-    "href": "tickets/ticket_10.html#questions",
-    "title": "Lecture Ticket 10",
-    "section": "Questions",
-    "text": "Questions\n\nWhat is a tibble? How does it relate to a data.frame?\nWhy do we prefer reading in data with readr over base R?\nAre all tibbles data.frames? Are all data.frames tibbles?"
-  },
-  {
-    "objectID": "tickets/ticket_05.html",
-    "href": "tickets/ticket_05.html",
-    "title": "Lecture Ticket 5",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.3, 4.4 and 4.5 (Stop at 4.6)"
-  },
-  {
-    "objectID": "tickets/ticket_05.html#reading",
-    "href": "tickets/ticket_05.html#reading",
-    "title": "Lecture Ticket 5",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.3, 4.4 and 4.5 (Stop at 4.6)"
-  },
-  {
-    "objectID": "tickets/ticket_05.html#questions",
-    "href": "tickets/ticket_05.html#questions",
-    "title": "Lecture Ticket 5",
-    "section": "Questions",
-    "text": "Questions\n\nHow many dimensions do dataframes have?\nConsider the dataframe treedat. How would you access the element in the second row and third column of treedat?"
-  },
-  {
-    "objectID": "tickets/ticket_02.html",
-    "href": "tickets/ticket_02.html",
-    "title": "Lecture Ticket 2",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 2\nChapter 3: read through section 3.3.1 (STOP at 3.3.2 External data)"
-  },
-  {
-    "objectID": "tickets/ticket_02.html#reading",
-    "href": "tickets/ticket_02.html#reading",
-    "title": "Lecture Ticket 2",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 2\nChapter 3: read through section 3.3.1 (STOP at 3.3.2 External data)"
-  },
-  {
-    "objectID": "tickets/ticket_02.html#questions",
-    "href": "tickets/ticket_02.html#questions",
-    "title": "Lecture Ticket 2",
-    "section": "Questions",
-    "text": "Questions\n\nWhat are the two main operators used in R for assignment?\nWhat code would you write to assign the value 37 to the object favorite_number?\nOpen RStudio and check your working directory by entering a command into the R console. What is your working directory? Example: /Users/graysonwhite/Documents/"
-  },
-  {
-    "objectID": "slides/w3d1.html#agenda",
-    "href": "slides/w3d1.html#agenda",
-    "title": "Data Structures: Vectors",
-    "section": "Agenda",
-    "text": "Agenda\n\nOverview of data structures\nA tour of vectors"
-  },
-  {
-    "objectID": "slides/w3d1.html#data-structures",
-    "href": "slides/w3d1.html#data-structures",
-    "title": "Data Structures: Vectors",
-    "section": "Data structures",
-    "text": "Data structures\n\nA data structure is a format for organizing and storing data. The structure is designed so that data can be accessed and worked with in specific ways.\nStructures are either homogeneous or heterogeneous, which describes the data types they hold (one type versus multiple types).\nStructures can also be characterized by their dimensionality, see Table Table 1.\n\n\n\n\nTable 1: Dimension and type content of base data structures in R.\n\n\n\n\n\nDimension\nHomogeneous\nHeterogeneous\n\n\n\n\n1\nAtomic vector\nList\n\n\n2\nMatrix\nData frame\n\n\nN\nArray"
-  },
-  {
-    "objectID": "slides/w3d1.html#data-structures-1",
-    "href": "slides/w3d1.html#data-structures-1",
-    "title": "Data Structures: Vectors",
-    "section": "Data structures",
-    "text": "Data structures\n\nLet’s take a look at vectors.qmd."
-  },
-  {
-    "objectID": "midterm.html",
-    "href": "midterm.html",
-    "title": "Midterm I",
-    "section": "",
-    "text": "The midterm files are available below:\n\nmidterm_01.qmd\nLoblolly.csv"
-  },
-  {
-    "objectID": "midterm.html#files",
-    "href": "midterm.html#files",
-    "title": "Midterm I",
-    "section": "",
-    "text": "The midterm files are available below:\n\nmidterm_01.qmd\nLoblolly.csv"
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7, Instructions & Output\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)\n\n\nLab 10\nThursday 11/7 (at lab time)\nWednesday 11/13 (at 5pm)\n\n\nLab 11\nThursday 11/21 (at lab time)\nWednesday 11/27 (at 5pm)"
-  },
-  {
-    "objectID": "assignments.html#labs",
-    "href": "assignments.html#labs",
-    "title": "Assignments",
-    "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7, Instructions & Output\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)\n\n\nLab 10\nThursday 11/7 (at lab time)\nWednesday 11/13 (at 5pm)\n\n\nLab 11\nThursday 11/21 (at lab time)\nWednesday 11/27 (at 5pm)"
-  },
-  {
-    "objectID": "assignments.html#lecture-tickets",
-    "href": "assignments.html#lecture-tickets",
-    "title": "Assignments",
-    "section": "Lecture Tickets",
-    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)\n\n\nLecture ticket 3\nTuesday 9/3 (by 5pm)\nThursday 9/5 (in lecture)\n\n\nLecture ticket 4\nThursday 9/5 (by 5pm)\nTuesday 9/10 (in lecture)\n\n\nLecture ticket 5\nTuesday 9/10 (by 5pm)\nThursday 9/12 (in lecture)\n\n\nLecture ticket 6\nThursday 9/12 (by 5pm)\nTuesday 9/17 (in lecture)\n\n\nLecture ticket 7\nTuesday 9/17 (by 5pm)\nThursday 9/19 (in lecture)\n\n\nLecture ticket 8\nThursday 9/19 (by 5pm)\nTuesday 9/24 (in lecture)\n\n\nLecture ticket 9\nTuesday 9/24 (by 5pm)\nThursday 9/26 (in lecture)\n\n\nLecture ticket 10\nThursday 9/26 (by 5pm)\nTuesday 10/1 (in lecture)\n\n\nLecture ticket 11\nTuesday 10/1 (by 5pm)\nThursday 10/3 (in lecture)\n\n\nLecture ticket 12\nThursday 10/3 (by 5pm)\nTuesday 10/8 (in lecture)\n\n\nLecture ticket 13\nTuesday 10/8 (by 5pm)\nThursday 10/10 (in lecture)\n\n\nLecture ticket 14\nThursday 10/10 (by 5pm)\nTuesday 10/15 (in lecture)\n\n\nLecture ticket 15\nTuesday 10/15 (by 5pm)\nThursday 10/17 (in lecture)\n\n\nLecture ticket 16\nThursday 10/17 (by 5pm)\nThursday 10/24 (in lecture)\n\n\nLecture ticket 17\nThursday 10/24 (by 5pm)\nTuesday 10/29 (in lecture)\n\n\nLecture ticket 18\nTuesday 10/29 (by 5pm)\nThursday 10/31 (in lecture)\n\n\nLecture ticket 19\nThursday 10/31 (by 5pm)\nTuesday 11/5 (in lecture)\n\n\nLecture ticket 20\nTuesday 11/5 (by 5pm)\nThursday 11/7 (in lecture)\n\n\nLecture ticket 21\nThursday 11/7 (by 5pm)\nTuesday 11/12 (in lecture)\n\n\nLecture ticket 22\nTuesday 11/12 (by 5pm)\nThursday 11/14 (in lecture)\n\n\nLecture ticket 23\nThursday 11/14 (by 5pm)\nTuesday 11/19 (in lecture)\n\n\nLecture ticket 24\nTuesday 11/19 (by 5pm)\nTuesday 11/26 (in lecture)\n\n\nLecture ticket 25\nTuesday 11/26 (by 5pm)\nThursday 11/28 (in lecture)\n\n\nLecture ticket 26\nThursday 11/28 (by 5pm)\nTuesday 12/3 (in lecture)\n\n\nLecture ticket 27\nTuesday 12/3 (by 5pm)\nThursday 12/5 (in lecture)"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "For 128 Michigan State University\nFall 2024\n\n\n\nWednesday office hours: 12:30 - 2:30\n\n\n\n\n\n\n\n\n\n\n\nMidterm I this week.\n\n\n\n\nExtra office hours this week:\n\nMonday 9/23: 10:30am - 11:30am\nTuesday 9/24: 10am - 11am (note the 30 minute change)\nWednesday 9/25: 12:30pm - 2pm\nThursday 9/26: 1:30pm - 2:30pm (regular time)\n\n\n\n\n\n\n\nThe lecture notes are available.\n\n\n\n\n\n\n\n\nWe’ll go through vectors.qmd in class.\n\n\n\n\n\nLecture materials:\n\nIn-class work: vectors_dataframes.qmd\nData for in-class work: Loblolly.csv\n\nSupplementary lab materials:\n\nExample R script lab setup: lab_03_example.R\nLab 3 data: FEF_trees.csv\n\n\n\n\n\n\n\n\n\nOffice hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L.\n\n\n\n\n\n\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
-  },
-  {
-    "objectID": "index.html#week-9-october-20---26",
-    "href": "index.html#week-9-october-20---26",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "Wednesday office hours: 12:30 - 2:30"
-  },
-  {
-    "objectID": "index.html#week-6-september-29---october-5",
-    "href": "index.html#week-6-september-29---october-5",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "Midterm I this week."
-  },
-  {
-    "objectID": "index.html#week-5-september-22---28",
-    "href": "index.html#week-5-september-22---28",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "Extra office hours this week:\n\nMonday 9/23: 10:30am - 11:30am\nTuesday 9/24: 10am - 11am (note the 30 minute change)\nWednesday 9/25: 12:30pm - 2pm\nThursday 9/26: 1:30pm - 2:30pm (regular time)"
-  },
-  {
-    "objectID": "index.html#week-4-september-15---21",
-    "href": "index.html#week-4-september-15---21",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "The lecture notes are available."
-  },
-  {
-    "objectID": "index.html#week-3-september-8---14",
-    "href": "index.html#week-3-september-8---14",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "We’ll go through vectors.qmd in class.\n\n\n\n\n\nLecture materials:\n\nIn-class work: vectors_dataframes.qmd\nData for in-class work: Loblolly.csv\n\nSupplementary lab materials:\n\nExample R script lab setup: lab_03_example.R\nLab 3 data: FEF_trees.csv"
-  },
-  {
-    "objectID": "index.html#week-2-september-1---7",
-    "href": "index.html#week-2-september-1---7",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "Office hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L."
-  },
-  {
-    "objectID": "index.html#week-1-august-25---31",
-    "href": "index.html#week-1-august-25---31",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
-  },
-  {
-    "objectID": "recordings.html",
-    "href": "recordings.html",
-    "title": "Lecture Recordings",
-    "section": "",
-    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 1: No recording available.\nWeek 3, day 2: Data structures. Available here.\nWeek 4, day 1: No recording available.\nWeek 4, day 2: Review of data structures & intro to functions. Available here.\nWeek 5, day 1: Functions and conditionals. Available here.\nWeek 5, day 2: Functions. NOTE: audio issues. Available here.\nWeek 6, day 1: Welcome to the tidyverse. Available here.\nWeek 6, day 2: Midterm review day. No recording.\nWeek 7, day 1: tibble and readr. Available here.\nWeek 7, day 2: Introduction to data wrangling with dplyr. Available here.\nWeek 8, day 1: More data wrangling with dplyr. Available here."
-  },
-  {
-    "objectID": "recordings.html#recordings",
-    "href": "recordings.html#recordings",
-    "title": "Lecture Recordings",
-    "section": "",
-    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 1: No recording available.\nWeek 3, day 2: Data structures. Available here.\nWeek 4, day 1: No recording available.\nWeek 4, day 2: Review of data structures & intro to functions. Available here.\nWeek 5, day 1: Functions and conditionals. Available here.\nWeek 5, day 2: Functions. NOTE: audio issues. Available here.\nWeek 6, day 1: Welcome to the tidyverse. Available here.\nWeek 6, day 2: Midterm review day. No recording.\nWeek 7, day 1: tibble and readr. Available here.\nWeek 7, day 2: Introduction to data wrangling with dplyr. Available here.\nWeek 8, day 1: More data wrangling with dplyr. Available here."
-  },
-  {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "Instructor: Andrew Finley (finleya@msu.edu, Room 211 Natural Resources Building)\nResearch Assistant: Grayson White (whitegra@msu.edu, Room 211 Natural Resources Building)\nEmails: Direct all email inquiries regarding the course and material covered to both the Instructor and Research Assistant, Andrew Finley and Grayson White (both as recipient, or CC’d).\nLinks:\n\nThe course website, www.for128.org, for course information, lecture slides, and course materials.\nD2L, for course feedback and non-public course materials.\n\nCourse Description:\nThis course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences."
-  },
-  {
-    "objectID": "syllabus.html#useful-information",
-    "href": "syllabus.html#useful-information",
-    "title": "Syllabus",
-    "section": "",
-    "text": "Instructor: Andrew Finley (finleya@msu.edu, Room 211 Natural Resources Building)\nResearch Assistant: Grayson White (whitegra@msu.edu, Room 211 Natural Resources Building)\nEmails: Direct all email inquiries regarding the course and material covered to both the Instructor and Research Assistant, Andrew Finley and Grayson White (both as recipient, or CC’d).\nLinks:\n\nThe course website, www.for128.org, for course information, lecture slides, and course materials.\nD2L, for course feedback and non-public course materials.\n\nCourse Description:\nThis course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences."
-  },
-  {
-    "objectID": "syllabus.html#learning-outcomes",
-    "href": "syllabus.html#learning-outcomes",
-    "title": "Syllabus",
-    "section": "Learning Outcomes",
-    "text": "Learning Outcomes\nUpon completion of this course students should be able to:\n\napply best practices for naming and organizing files within a directory structure to facilitate an efficient and reproducible workflow,\ntransform raw data into more readily used formats, i.e., perform key “data wrangling” tasks such as data cleaning, structuring, enriching, and validating,\nconduct basic Exploratory Data Analysis (EDA), i.e., apply built-in and costume written functions to explore data characteristics and communicate findings using summary tables, graphics, and basic summary statistics."
-  },
-  {
-    "objectID": "syllabus.html#learning-materials-tools",
-    "href": "syllabus.html#learning-materials-tools",
-    "title": "Syllabus",
-    "section": "Learning Materials & Tools",
-    "text": "Learning Materials & Tools\nTextbook: Introduction to Forestry Data Analysis with R, by Andrew O. Finley and Jeffrey W. Doser. Available free, online: www.finley-lab.com/files/ifdar/\nR and RStudio: R is a free and open source programming language, and RStudio is an Integrated Development Environment (IDE) which allows for streamlined use of the R programming language. Both are free to install, and installation instructions will be provided in this course. A laptop that can run R and RStudio is required for this course."
-  },
-  {
-    "objectID": "syllabus.html#meetings-office-hours",
-    "href": "syllabus.html#meetings-office-hours",
-    "title": "Syllabus",
-    "section": "Meetings & Office Hours",
-    "text": "Meetings & Office Hours\nWe’ll have a lecture-style meeting twice a week, and a lab meeting once a week.\n\nLectures are on Tuesdays and Thursdays, 9:10am - 10am, Natural Resources Building, Room 152.\nLabs are on Thursdays, 10:20am - 12:10pm, Natural Resources Building, Room 223.\n\nOutside of lectures and labs, I will also hold office hours.\n\nOffice hours will be held Tuesdays (10:30am - 11:30am) and Thursdays (1:30pm - 2:30pm), Natural Resources Building, Room 211.\nIf these times do not work for you, we also hold office hours by appointment. Please email to set up a time to meet.\n\nOffice hours are a great way to get help on assignments you are stuck on, ask questions you didn’t get a chance to ask in class, familiarize yourself with the instructor and course expectations, and much more! Further, office hours can be a very helpful tool for your success in this course and beyond in college. Attending office hours is a great habit!"
-  },
-  {
-    "objectID": "syllabus.html#assessments",
-    "href": "syllabus.html#assessments",
-    "title": "Syllabus",
-    "section": "Assessments",
-    "text": "Assessments\nIn this course, you’ll be assessed based on your work and participation. In particular:\n\nLab reports (40%)\n\nLab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on D2L. We will have a lab each week (except for the week of the midterm exam).\nThe lowest lab grade is dropped.\n\nMidterm Exams (20%)\n\nThere will be two midterm exams, one on week 6 and one on week 12. Each midterm is worth 10% of the final grade.\n\nFinal Project (15%)\n\nRather than a final exam, we will have a final group project with project presentations during the final exam time period. More details to come as the semester goes on.\n\nIn-class quizzes (15%)\n\nIn-class quizzes do not have a regular schedule and will occur based on the material we get through.\nThe lowest in-class quiz grade is dropped.\n\nLecture tickets (10%)\n\nLecture tickets are due at the beginning of every lecture, handed in in-person, by you.\nThe lowest three (3) lecture ticket grades will be dropped.\n\n\nGrades are calculated on a four point scale and correspond to the following grade percent:\n\n\n\nGrade percent\nGrade points\n\n\n\n\n90% - 100%\n4.0\n\n\n85.0% - 89.9%\n3.5\n\n\n80.0% - 84.9%\n3.0\n\n\n75.0% - 79.9%\n2.5\n\n\n70.0% - 74.9%\n2.0\n\n\n65.0% - 69.9%\n1.5\n\n\n60.0 - 64.9%\n1.0\n\n\n0% - 60%\n0.0"
-  },
-  {
-    "objectID": "syllabus.html#late-work-policy",
-    "href": "syllabus.html#late-work-policy",
-    "title": "Syllabus",
-    "section": "Late work policy",
-    "text": "Late work policy\n\nLabs turned in after the deadline will not be accepted unless an extension was granted by the Instructor and/or Research Assistant prior to the deadline. Note though that one (1) lab will be dropped and not counted towards your grade.\nIf you anticipate not being able to make a midterm, reach out to the Instructor and/or Research Assistant at least a week in advance. Note that midterms will occur during lab time on weeks 6 and 12.\nLate lecture tickets will not be accepted. Note though that three (3) lecture tickets will be dropped and not counted towards your grade.\nIn-class quizzes cannot be made up outside of class. Note though that one (1) in-class quiz will be dropped and not counted towards your grade.\nThe final project must be turned in on time."
-  },
-  {
-    "objectID": "syllabus.html#collaboration-policy-for-for-128",
-    "href": "syllabus.html#collaboration-policy-for-for-128",
-    "title": "Syllabus",
-    "section": "Collaboration Policy for FOR 128",
-    "text": "Collaboration Policy for FOR 128\nWorking with your classmates on difficult and interesting problems can not only help your learning, but help you get to know each other. Therefore, we allow and encourage collaboration on lab reports and lecture tickets. However, collaboration on exams and quizzes is strictly prohibited and will be considered academic misconduct.\nIf you choose to collaborate with a classmate, please add their name to the top of your assignment, and list them as a collaborator, e.g.:\nCollaborator(s): Elliot Shannon, Romain Boutelet\nBut what is collaboration?\nFor FOR 128, collaboration can look like: working with classmates together on a given problem, doing scratch work, helping each other get un-stuck on a part of a problem, and even coming to a solution. However, you must write up your own problem solutions individually and cannot copy other’s solutions (even those who you have collaborated with). Further, copying code from a collaborator, classmate, or generative AI tool (see the following section) is strictly prohibited and will be considered academic misconduct."
-  },
-  {
-    "objectID": "syllabus.html#ai-policy-for-for-128",
-    "href": "syllabus.html#ai-policy-for-for-128",
-    "title": "Syllabus",
-    "section": "AI Policy for FOR 128",
-    "text": "AI Policy for FOR 128\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
-  },
-  {
-    "objectID": "tickets/ticket_03.html",
-    "href": "tickets/ticket_03.html",
-    "title": "Lecture Ticket 3",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 3"
-  },
-  {
-    "objectID": "tickets/ticket_03.html#reading",
-    "href": "tickets/ticket_03.html#reading",
-    "title": "Lecture Ticket 3",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 3"
-  },
-  {
-    "objectID": "tickets/ticket_03.html#questions",
-    "href": "tickets/ticket_03.html#questions",
-    "title": "Lecture Ticket 3",
-    "section": "Questions",
-    "text": "Questions\n\nWhat function is used to set a working directory in R? How about to get your current working directory?\nWhat is the difference between a relative and absolute path?\nConsider the following absolute path:\n\n/home/grayson/courses/for128/lab_01.qmd\nIf the working directory is /home/grayson/courses/, what is the relative path to lab_01.qmd?"
-  },
-  {
-    "objectID": "tickets/ticket_09.html",
-    "href": "tickets/ticket_09.html",
-    "title": "Lecture Ticket 9",
-    "section": "",
-    "text": "No reading this time."
-  },
-  {
-    "objectID": "tickets/ticket_09.html#reading",
-    "href": "tickets/ticket_09.html#reading",
-    "title": "Lecture Ticket 9",
-    "section": "",
-    "text": "No reading this time."
-  },
-  {
-    "objectID": "tickets/ticket_09.html#questions",
-    "href": "tickets/ticket_09.html#questions",
-    "title": "Lecture Ticket 9",
-    "section": "Questions",
-    "text": "Questions\n\nWhat concepts from this course do you feel confident about?\nWhat concepts from this course are you struggling with?"
-  },
-  {
-    "objectID": "tickets/ticket_11.html",
-    "href": "tickets/ticket_11.html",
-    "title": "Lecture Ticket 11",
-    "section": "",
-    "text": "No lecture ticket today. Come to lecture with any last minute questions you might have about the midterm!"
-  },
-  {
-    "objectID": "tickets/ticket_14.html",
-    "href": "tickets/ticket_14.html",
-    "title": "Lecture Ticket 14",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.6 - 7.9, 7.12"
-  },
-  {
-    "objectID": "tickets/ticket_14.html#reading",
-    "href": "tickets/ticket_14.html#reading",
-    "title": "Lecture Ticket 14",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.6 - 7.9, 7.12"
-  },
-  {
-    "objectID": "tickets/ticket_14.html#questions",
-    "href": "tickets/ticket_14.html#questions",
-    "title": "Lecture Ticket 14",
-    "section": "Questions",
-    "text": "Questions\n\nWhat do mutate() and transmute() do? How are they different?\nWhat does the pipe (%&gt;%) operator do?\nWhat’s your favorite dplyr verb we’ve learned about so far? Why?"
-  },
-  {
-    "objectID": "tickets/ticket_16.html",
-    "href": "tickets/ticket_16.html",
-    "title": "Lecture Ticket 16",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.14 - 7.15"
-  },
-  {
-    "objectID": "tickets/ticket_16.html#reading",
-    "href": "tickets/ticket_16.html#reading",
-    "title": "Lecture Ticket 16",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.14 - 7.15"
-  },
-  {
-    "objectID": "tickets/ticket_16.html#questions",
-    "href": "tickets/ticket_16.html#questions",
-    "title": "Lecture Ticket 16",
-    "section": "Questions",
-    "text": "Questions\n\nWhat are the two major types of joins that we read about? What differentiates them?\nWe read about six joins. What are they? What do each of them do?\nWhich two joins are the most similar to each other?\nWhat is your favorite join? Why?"
-  },
-  {
-    "objectID": "tickets/ticket_13.html",
-    "href": "tickets/ticket_13.html",
-    "title": "Lecture Ticket 13",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.1 - 7.5"
-  },
-  {
-    "objectID": "tickets/ticket_13.html#reading",
-    "href": "tickets/ticket_13.html#reading",
-    "title": "Lecture Ticket 13",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.1 - 7.5"
-  },
-  {
-    "objectID": "tickets/ticket_13.html#questions",
-    "href": "tickets/ticket_13.html#questions",
-    "title": "Lecture Ticket 13",
-    "section": "Questions",
-    "text": "Questions\n\nConsider the following dataset:\n\n\nten_cars &lt;- head(mtcars, n = 10)\nten_cars\n\n                   mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\nDuster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\nMerc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\nMerc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\nMerc 280          19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n\n\nHow would we use dplyr to filter for rows with horse power (hp) greater than 100? How would we use base R to do the same thing? Which do you prefer?"
-  },
-  {
-    "objectID": "tickets/ticket_01.html",
-    "href": "tickets/ticket_01.html",
-    "title": "Lecture Ticket 1",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 1\nBegin Chapter 2 (STOP at the bottom of page 19)"
-  },
-  {
-    "objectID": "tickets/ticket_01.html#reading",
-    "href": "tickets/ticket_01.html#reading",
-    "title": "Lecture Ticket 1",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 1\nBegin Chapter 2 (STOP at the bottom of page 19)"
-  },
-  {
-    "objectID": "tickets/ticket_01.html#tasks",
-    "href": "tickets/ticket_01.html#tasks",
-    "title": "Lecture Ticket 1",
-    "section": "Tasks",
-    "text": "Tasks\n\n1. Install R and RStudio\nAs discussed in IFDAR, go to Posit’s website. Install R first, and then install RStudio.\n\n\n2. Run your first R command\nIn the console, type in the following command and press Enter to run it:\n\nrnorm(1)\n\n\n\n3. Record your result\nCome to class on Thursday with a piece of paper with your name on it that includes the result (it will be a number) from running rnorm(1) in task 2.\nIf you were unable to install R and RStudio and ran into issues, instead come to class with a piece of paper with your name on it that explains the issue you were having with installation."
-  },
-  {
-    "objectID": "tickets/ticket_08.html",
-    "href": "tickets/ticket_08.html",
-    "title": "Lecture Ticket 8",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 5"
-  },
-  {
-    "objectID": "tickets/ticket_08.html#reading",
-    "href": "tickets/ticket_08.html#reading",
-    "title": "Lecture Ticket 8",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 5"
-  },
-  {
-    "objectID": "tickets/ticket_08.html#questions",
-    "href": "tickets/ticket_08.html#questions",
-    "title": "Lecture Ticket 8",
-    "section": "Questions",
-    "text": "Questions\nConsider the function:\n\nmy_pets &lt;- function(species) {\n  if (species == \"dog\") {\n    return(\"Dude\")\n  } else if (species == \"cat\") {\n    return(c(\"Pickle\", \"Kyle\", \"Nubs\"))\n  } else {\n    return(\"Not my pet\")\n  }\n}\n\n\nWhat would my_pets(species = \"dog\") return?\nWhat would my_pets(species = \"bird\") return?\nWhat would my_pets(species = \"cat\") return?"
-  },
-  {
-    "objectID": "slides/w6d1.html#annoucements",
-    "href": "slides/w6d1.html#annoucements",
-    "title": "Welcome to the tidyverse",
+    "objectID": "slides/w5d2.html#annoucements",
+    "href": "slides/w5d2.html#annoucements",
+    "title": "Functions",
     "section": "Annoucements",
-    "text": "Annoucements\n\nMidterm 1 is this Thursday, Oct 3, during lab time."
+    "text": "Annoucements\n\nMidterm 1 is in one week, Oct 3, during lab time.\nLab 3 grades coming soon.\nLab 4 grades by end of weekend."
   },
   {
-    "objectID": "slides/w6d1.html#agenda",
-    "href": "slides/w6d1.html#agenda",
-    "title": "Welcome to the tidyverse",
+    "objectID": "slides/w5d2.html#agenda",
+    "href": "slides/w5d2.html#agenda",
+    "title": "Functions",
     "section": "Agenda",
-    "text": "Agenda\n\nMidterm format overview\nIntro to the tidyverse\nQuiz + group activity"
+    "text": "Agenda\n\nWarm-up\nLoops\nForestry functions\nQuarto practice"
   },
   {
-    "objectID": "slides/w6d1.html#reminder-from-the-syllabus",
-    "href": "slides/w6d1.html#reminder-from-the-syllabus",
-    "title": "Welcome to the tidyverse",
-    "section": "Reminder from the syllabus",
-    "text": "Reminder from the syllabus\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
+    "objectID": "slides/w5d2.html#warm-up-activity",
+    "href": "slides/w5d2.html#warm-up-activity",
+    "title": "Functions",
+    "section": "Warm-up activity",
+    "text": "Warm-up activity\nWrite a function that takes two vectors as arguments (inputs) and does the following:\nTakes the difference of the vectors’ means. In other words, take the mean() of each input and subtract the first input’s mean() from the second input’s mean(). Make sure to handle NA values that might exist in the vectors. Name this function diff_in_means().\nBonus: (only do if you have time) add a requirement that a and b are the same length vector.\n\n\n\n−+\n05:00"
   },
   {
-    "objectID": "slides/w6d1.html#midterm-i-overview",
-    "href": "slides/w6d1.html#midterm-i-overview",
-    "title": "Welcome to the tidyverse",
-    "section": "Midterm I overview",
-    "text": "Midterm I overview\n\n\nThe test will be taken in person, in lab.\n5 questions, all equally weighted. You only have to answer 4 of 5 questions. If you answer 5, I will count the 4 you did the best on.\nThere will be a paper test with the questions on it, but you will answer them in a Quarto document (similar to your labs).\nLecture slides and previous labs/quizzes are your best resource for success.\nQuestions cover material from chapters 1 - 5 of IFDAR, or Week 5 Day 2."
+    "objectID": "slides/w5d2.html#warm-up-activity-possible-solution",
+    "href": "slides/w5d2.html#warm-up-activity-possible-solution",
+    "title": "Functions",
+    "section": "Warm-up activity: possible solution",
+    "text": "Warm-up activity: possible solution\n\ndiff_in_means &lt;- function(a, b, na.rm = FALSE) {\n  if (na.rm) {\n    a &lt;- a[!is.na(a)]\n    b &lt;- b[!is.na[b]]\n  }\n  \n  a_mean &lt;- mean(a)\n  b_mean &lt;- mean(b)\n  \n  return(a_mean - b_mean)\n}"
   },
   {
-    "objectID": "slides/w6d1.html#what-is-the-tidyverse",
-    "href": "slides/w6d1.html#what-is-the-tidyverse",
-    "title": "Welcome to the tidyverse",
-    "section": "What is the tidyverse",
-    "text": "What is the tidyverse\n\n\nA collection of R packages that work together to provide extensive and intuitive data analysis functions.\nIn this class, we will focus on 5 tidyverse packages:\n\ntibble, to improve on the data.frame,\nreadr, to improve reading and writing data,\ndplyr, to manipulate and summarize data “data plyers”,\ntidyr, to clean and reshape data, and\nggplot2, to produce beautiful graphics with intuitive syntax “the grammer of graphics”."
+    "objectID": "slides/w5d2.html#warm-up-activity-possible-solution-with-bonus",
+    "href": "slides/w5d2.html#warm-up-activity-possible-solution-with-bonus",
+    "title": "Functions",
+    "section": "Warm-up activity: possible solution with bonus",
+    "text": "Warm-up activity: possible solution with bonus\n\ndiff_in_means &lt;- function(a, b, na.rm = FALSE) {\n  stopifnot(\n    \"Arguments `a` and `b` must be the same length.\" = length(a) == length(b)\n  )\n  \n  if (na.rm) {\n    a &lt;- a[!is.na(a)]\n    b &lt;- b[!is.na(b)]\n  }\n  \n  a_mean &lt;- mean(a)\n  b_mean &lt;- mean(b)\n  \n  return(a_mean - b_mean)\n}"
   },
   {
-    "objectID": "slides/w6d1.html#a-note-on-the-course",
-    "href": "slides/w6d1.html#a-note-on-the-course",
-    "title": "Welcome to the tidyverse",
-    "section": "A note on the course",
-    "text": "A note on the course\n\n\nSo far, we have almost entirely focused on R in its “base” form. That is, R with only built-in functions.\nBase R has many advantages: especially in being fast and reliable.\nHowever, I believe that the tidyverse can provide a more intuitive approach to data analysis."
+    "objectID": "slides/w5d2.html#loops-1",
+    "href": "slides/w5d2.html#loops-1",
+    "title": "Functions",
+    "section": "Loops",
+    "text": "Loops\n\n\nLoops are important to R and many other programming languages.\nUnderstanding how to read, write, and utilize loops are key skills for data scientists.\nWe’ll introduce two types of loops in R: while and for loops"
   },
   {
-    "objectID": "slides/w6d1.html#next-time",
-    "href": "slides/w6d1.html#next-time",
-    "title": "Welcome to the tidyverse",
+    "objectID": "slides/w5d2.html#while-loops",
+    "href": "slides/w5d2.html#while-loops",
+    "title": "Functions",
+    "section": "while loops",
+    "text": "while loops\n\nwhile loops look as follows:\n\n\nwhile (condition is true) {\n  run this code until condition is false\n}"
+  },
+  {
+    "objectID": "slides/w5d2.html#while-loops-1",
+    "href": "slides/w5d2.html#while-loops-1",
+    "title": "Functions",
+    "section": "while loops",
+    "text": "while loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/w5d2.html#for-loops",
+    "href": "slides/w5d2.html#for-loops",
+    "title": "Functions",
+    "section": "for loops",
+    "text": "for loops\n\nfor loops look as follows:\n\n\nfor (variable in vector) {\n  run this code until through each element of the vector\n}"
+  },
+  {
+    "objectID": "slides/w5d2.html#for-loops-1",
+    "href": "slides/w5d2.html#for-loops-1",
+    "title": "Functions",
+    "section": "for loops",
+    "text": "for loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/w5d2.html#for-loops-2",
+    "href": "slides/w5d2.html#for-loops-2",
+    "title": "Functions",
+    "section": "for loops",
+    "text": "for loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/w5d2.html#for-loop-in-a-function",
+    "href": "slides/w5d2.html#for-loop-in-a-function",
+    "title": "Functions",
+    "section": "for loop in a function",
+    "text": "for loop in a function\n\nmy_mean &lt;- function(x) {\n  total &lt;- 0\n  \n  for (i in 1:length(x)) {\n    total &lt;- total + x[i]\n  }\n  \n  average &lt;- total / length(x)\n  \n  return(average)\n}"
+  },
+  {
+    "objectID": "slides/w5d2.html#basal-area",
+    "href": "slides/w5d2.html#basal-area",
+    "title": "Functions",
+    "section": "Basal area",
+    "text": "Basal area\n\n\n\n\nBasal area is the measurement of a tree’s cross-sectional area at breast height, and is derived from the diameter at breast height measurement.\nOftentimes, we care about the basal area in a given stand and want to report basal area on a per-unit-area basis (e.g. square feet per acre or square meters per hectare), but we only have DBH measurements."
+  },
+  {
+    "objectID": "slides/w5d2.html#calculating-basal-area",
+    "href": "slides/w5d2.html#calculating-basal-area",
+    "title": "Functions",
+    "section": "Calculating basal area",
+    "text": "Calculating basal area\nBasal area in square feet per acre: \\[\n\\text{BA} = \\frac{\\pi}{144} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 144} \\cdot \\text{DBH}^2\n\\] Basal area in square meters per hectare: \\[\n\\text{BA} = \\frac{\\pi}{10000} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 10000} \\cdot \\text{DBH}^2\n\\] Basal area is of the form:\n\\(\\text{forester's constant} \\times \\text{DBH}^2\\)"
+  },
+  {
+    "objectID": "slides/w5d2.html#implementation-in-r",
+    "href": "slides/w5d2.html#implementation-in-r",
+    "title": "Functions",
+    "section": "Implementation in R",
+    "text": "Implementation in R\nWhat we want: A function that\n\n\nhas sensible input checks,\ncomputes basal area in either square feet per acre or square meters per hectare, and\nis flexible enough to allow for DBH measurements to be in inches or centimeters."
+  },
+  {
+    "objectID": "slides/w5d2.html#implementation-in-r-1",
+    "href": "slides/w5d2.html#implementation-in-r-1",
+    "title": "Functions",
+    "section": "Implementation in R",
+    "text": "Implementation in R\nHow we’ll do it:\n\n\nDefine the forester’s constant for whichever units DBH measurements are in,\nConvert inches to centimeters or vise versa to satisfy our formula for basal area,\nCompute basal area based on our formula,\nGo back and add some sensible input checks."
+  },
+  {
+    "objectID": "slides/w5d2.html#calculating-basal-area-1",
+    "href": "slides/w5d2.html#calculating-basal-area-1",
+    "title": "Functions",
+    "section": "Calculating basal area",
+    "text": "Calculating basal area\nBasal area in square feet per acre: \\[\n\\text{BA} = \\frac{\\pi}{144} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 144} \\cdot \\text{DBH}^2\n\\] Basal area in square meters per hectare: \\[\n\\text{BA} = \\frac{\\pi}{10000} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 10000} \\cdot \\text{DBH}^2\n\\] There are 2.54 centimeters in an inch."
+  },
+  {
+    "objectID": "slides/w5d2.html#next-time",
+    "href": "slides/w5d2.html#next-time",
+    "title": "Functions",
     "section": "Next time",
-    "text": "Next time\n\nReview day. We will discuss any questions about the material for the midterm.\nCome ready to ask any last minute questions, discuss approaches to problems, etc."
+    "text": "Next time\n\nIntroduction to the tidyverse"
   },
   {
     "objectID": "slides/w2d1.html#agenda",
@@ -1925,130 +1435,620 @@
     "text": "Next time\n\nRemember, lab 1 is due tomorrow at 5pm on D2L.\nRStudio projects.\nReading and writing data."
   },
   {
-    "objectID": "slides/w5d2.html#annoucements",
-    "href": "slides/w5d2.html#annoucements",
-    "title": "Functions",
+    "objectID": "slides/w6d1.html#annoucements",
+    "href": "slides/w6d1.html#annoucements",
+    "title": "Welcome to the tidyverse",
     "section": "Annoucements",
-    "text": "Annoucements\n\nMidterm 1 is in one week, Oct 3, during lab time.\nLab 3 grades coming soon.\nLab 4 grades by end of weekend."
+    "text": "Annoucements\n\nMidterm 1 is this Thursday, Oct 3, during lab time."
   },
   {
-    "objectID": "slides/w5d2.html#agenda",
-    "href": "slides/w5d2.html#agenda",
-    "title": "Functions",
+    "objectID": "slides/w6d1.html#agenda",
+    "href": "slides/w6d1.html#agenda",
+    "title": "Welcome to the tidyverse",
     "section": "Agenda",
-    "text": "Agenda\n\nWarm-up\nLoops\nForestry functions\nQuarto practice"
+    "text": "Agenda\n\nMidterm format overview\nIntro to the tidyverse\nQuiz + group activity"
   },
   {
-    "objectID": "slides/w5d2.html#warm-up-activity",
-    "href": "slides/w5d2.html#warm-up-activity",
-    "title": "Functions",
-    "section": "Warm-up activity",
-    "text": "Warm-up activity\nWrite a function that takes two vectors as arguments (inputs) and does the following:\nTakes the difference of the vectors’ means. In other words, take the mean() of each input and subtract the first input’s mean() from the second input’s mean(). Make sure to handle NA values that might exist in the vectors. Name this function diff_in_means().\nBonus: (only do if you have time) add a requirement that a and b are the same length vector.\n\n\n\n−+\n05:00"
+    "objectID": "slides/w6d1.html#reminder-from-the-syllabus",
+    "href": "slides/w6d1.html#reminder-from-the-syllabus",
+    "title": "Welcome to the tidyverse",
+    "section": "Reminder from the syllabus",
+    "text": "Reminder from the syllabus\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
   },
   {
-    "objectID": "slides/w5d2.html#warm-up-activity-possible-solution",
-    "href": "slides/w5d2.html#warm-up-activity-possible-solution",
-    "title": "Functions",
-    "section": "Warm-up activity: possible solution",
-    "text": "Warm-up activity: possible solution\n\ndiff_in_means &lt;- function(a, b, na.rm = FALSE) {\n  if (na.rm) {\n    a &lt;- a[!is.na(a)]\n    b &lt;- b[!is.na[b]]\n  }\n  \n  a_mean &lt;- mean(a)\n  b_mean &lt;- mean(b)\n  \n  return(a_mean - b_mean)\n}"
+    "objectID": "slides/w6d1.html#midterm-i-overview",
+    "href": "slides/w6d1.html#midterm-i-overview",
+    "title": "Welcome to the tidyverse",
+    "section": "Midterm I overview",
+    "text": "Midterm I overview\n\n\nThe test will be taken in person, in lab.\n5 questions, all equally weighted. You only have to answer 4 of 5 questions. If you answer 5, I will count the 4 you did the best on.\nThere will be a paper test with the questions on it, but you will answer them in a Quarto document (similar to your labs).\nLecture slides and previous labs/quizzes are your best resource for success.\nQuestions cover material from chapters 1 - 5 of IFDAR, or Week 5 Day 2."
   },
   {
-    "objectID": "slides/w5d2.html#warm-up-activity-possible-solution-with-bonus",
-    "href": "slides/w5d2.html#warm-up-activity-possible-solution-with-bonus",
-    "title": "Functions",
-    "section": "Warm-up activity: possible solution with bonus",
-    "text": "Warm-up activity: possible solution with bonus\n\ndiff_in_means &lt;- function(a, b, na.rm = FALSE) {\n  stopifnot(\n    \"Arguments `a` and `b` must be the same length.\" = length(a) == length(b)\n  )\n  \n  if (na.rm) {\n    a &lt;- a[!is.na(a)]\n    b &lt;- b[!is.na(b)]\n  }\n  \n  a_mean &lt;- mean(a)\n  b_mean &lt;- mean(b)\n  \n  return(a_mean - b_mean)\n}"
+    "objectID": "slides/w6d1.html#what-is-the-tidyverse",
+    "href": "slides/w6d1.html#what-is-the-tidyverse",
+    "title": "Welcome to the tidyverse",
+    "section": "What is the tidyverse",
+    "text": "What is the tidyverse\n\n\nA collection of R packages that work together to provide extensive and intuitive data analysis functions.\nIn this class, we will focus on 5 tidyverse packages:\n\ntibble, to improve on the data.frame,\nreadr, to improve reading and writing data,\ndplyr, to manipulate and summarize data “data plyers”,\ntidyr, to clean and reshape data, and\nggplot2, to produce beautiful graphics with intuitive syntax “the grammer of graphics”."
   },
   {
-    "objectID": "slides/w5d2.html#loops-1",
-    "href": "slides/w5d2.html#loops-1",
-    "title": "Functions",
-    "section": "Loops",
-    "text": "Loops\n\n\nLoops are important to R and many other programming languages.\nUnderstanding how to read, write, and utilize loops are key skills for data scientists.\nWe’ll introduce two types of loops in R: while and for loops"
+    "objectID": "slides/w6d1.html#a-note-on-the-course",
+    "href": "slides/w6d1.html#a-note-on-the-course",
+    "title": "Welcome to the tidyverse",
+    "section": "A note on the course",
+    "text": "A note on the course\n\n\nSo far, we have almost entirely focused on R in its “base” form. That is, R with only built-in functions.\nBase R has many advantages: especially in being fast and reliable.\nHowever, I believe that the tidyverse can provide a more intuitive approach to data analysis."
   },
   {
-    "objectID": "slides/w5d2.html#while-loops",
-    "href": "slides/w5d2.html#while-loops",
-    "title": "Functions",
-    "section": "while loops",
-    "text": "while loops\n\nwhile loops look as follows:\n\n\nwhile (condition is true) {\n  run this code until condition is false\n}"
-  },
-  {
-    "objectID": "slides/w5d2.html#while-loops-1",
-    "href": "slides/w5d2.html#while-loops-1",
-    "title": "Functions",
-    "section": "while loops",
-    "text": "while loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "slides/w5d2.html#for-loops",
-    "href": "slides/w5d2.html#for-loops",
-    "title": "Functions",
-    "section": "for loops",
-    "text": "for loops\n\nfor loops look as follows:\n\n\nfor (variable in vector) {\n  run this code until through each element of the vector\n}"
-  },
-  {
-    "objectID": "slides/w5d2.html#for-loops-1",
-    "href": "slides/w5d2.html#for-loops-1",
-    "title": "Functions",
-    "section": "for loops",
-    "text": "for loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "slides/w5d2.html#for-loops-2",
-    "href": "slides/w5d2.html#for-loops-2",
-    "title": "Functions",
-    "section": "for loops",
-    "text": "for loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "slides/w5d2.html#for-loop-in-a-function",
-    "href": "slides/w5d2.html#for-loop-in-a-function",
-    "title": "Functions",
-    "section": "for loop in a function",
-    "text": "for loop in a function\n\nmy_mean &lt;- function(x) {\n  total &lt;- 0\n  \n  for (i in 1:length(x)) {\n    total &lt;- total + x[i]\n  }\n  \n  average &lt;- total / length(x)\n  \n  return(average)\n}"
-  },
-  {
-    "objectID": "slides/w5d2.html#basal-area",
-    "href": "slides/w5d2.html#basal-area",
-    "title": "Functions",
-    "section": "Basal area",
-    "text": "Basal area\n\n\n\n\nBasal area is the measurement of a tree’s cross-sectional area at breast height, and is derived from the diameter at breast height measurement.\nOftentimes, we care about the basal area in a given stand and want to report basal area on a per-unit-area basis (e.g. square feet per acre or square meters per hectare), but we only have DBH measurements."
-  },
-  {
-    "objectID": "slides/w5d2.html#calculating-basal-area",
-    "href": "slides/w5d2.html#calculating-basal-area",
-    "title": "Functions",
-    "section": "Calculating basal area",
-    "text": "Calculating basal area\nBasal area in square feet per acre: \\[\n\\text{BA} = \\frac{\\pi}{144} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 144} \\cdot \\text{DBH}^2\n\\] Basal area in square meters per hectare: \\[\n\\text{BA} = \\frac{\\pi}{10000} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 10000} \\cdot \\text{DBH}^2\n\\] Basal area is of the form:\n\\(\\text{forester's constant} \\times \\text{DBH}^2\\)"
-  },
-  {
-    "objectID": "slides/w5d2.html#implementation-in-r",
-    "href": "slides/w5d2.html#implementation-in-r",
-    "title": "Functions",
-    "section": "Implementation in R",
-    "text": "Implementation in R\nWhat we want: A function that\n\n\nhas sensible input checks,\ncomputes basal area in either square feet per acre or square meters per hectare, and\nis flexible enough to allow for DBH measurements to be in inches or centimeters."
-  },
-  {
-    "objectID": "slides/w5d2.html#implementation-in-r-1",
-    "href": "slides/w5d2.html#implementation-in-r-1",
-    "title": "Functions",
-    "section": "Implementation in R",
-    "text": "Implementation in R\nHow we’ll do it:\n\n\nDefine the forester’s constant for whichever units DBH measurements are in,\nConvert inches to centimeters or vise versa to satisfy our formula for basal area,\nCompute basal area based on our formula,\nGo back and add some sensible input checks."
-  },
-  {
-    "objectID": "slides/w5d2.html#calculating-basal-area-1",
-    "href": "slides/w5d2.html#calculating-basal-area-1",
-    "title": "Functions",
-    "section": "Calculating basal area",
-    "text": "Calculating basal area\nBasal area in square feet per acre: \\[\n\\text{BA} = \\frac{\\pi}{144} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 144} \\cdot \\text{DBH}^2\n\\] Basal area in square meters per hectare: \\[\n\\text{BA} = \\frac{\\pi}{10000} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 10000} \\cdot \\text{DBH}^2\n\\] There are 2.54 centimeters in an inch."
-  },
-  {
-    "objectID": "slides/w5d2.html#next-time",
-    "href": "slides/w5d2.html#next-time",
-    "title": "Functions",
+    "objectID": "slides/w6d1.html#next-time",
+    "href": "slides/w6d1.html#next-time",
+    "title": "Welcome to the tidyverse",
     "section": "Next time",
-    "text": "Next time\n\nIntroduction to the tidyverse"
+    "text": "Next time\n\nReview day. We will discuss any questions about the material for the midterm.\nCome ready to ask any last minute questions, discuss approaches to problems, etc."
+  },
+  {
+    "objectID": "tickets/ticket_08.html",
+    "href": "tickets/ticket_08.html",
+    "title": "Lecture Ticket 8",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 5"
+  },
+  {
+    "objectID": "tickets/ticket_08.html#reading",
+    "href": "tickets/ticket_08.html#reading",
+    "title": "Lecture Ticket 8",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 5"
+  },
+  {
+    "objectID": "tickets/ticket_08.html#questions",
+    "href": "tickets/ticket_08.html#questions",
+    "title": "Lecture Ticket 8",
+    "section": "Questions",
+    "text": "Questions\nConsider the function:\n\nmy_pets &lt;- function(species) {\n  if (species == \"dog\") {\n    return(\"Dude\")\n  } else if (species == \"cat\") {\n    return(c(\"Pickle\", \"Kyle\", \"Nubs\"))\n  } else {\n    return(\"Not my pet\")\n  }\n}\n\n\nWhat would my_pets(species = \"dog\") return?\nWhat would my_pets(species = \"bird\") return?\nWhat would my_pets(species = \"cat\") return?"
+  },
+  {
+    "objectID": "tickets/ticket_01.html",
+    "href": "tickets/ticket_01.html",
+    "title": "Lecture Ticket 1",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 1\nBegin Chapter 2 (STOP at the bottom of page 19)"
+  },
+  {
+    "objectID": "tickets/ticket_01.html#reading",
+    "href": "tickets/ticket_01.html#reading",
+    "title": "Lecture Ticket 1",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 1\nBegin Chapter 2 (STOP at the bottom of page 19)"
+  },
+  {
+    "objectID": "tickets/ticket_01.html#tasks",
+    "href": "tickets/ticket_01.html#tasks",
+    "title": "Lecture Ticket 1",
+    "section": "Tasks",
+    "text": "Tasks\n\n1. Install R and RStudio\nAs discussed in IFDAR, go to Posit’s website. Install R first, and then install RStudio.\n\n\n2. Run your first R command\nIn the console, type in the following command and press Enter to run it:\n\nrnorm(1)\n\n\n\n3. Record your result\nCome to class on Thursday with a piece of paper with your name on it that includes the result (it will be a number) from running rnorm(1) in task 2.\nIf you were unable to install R and RStudio and ran into issues, instead come to class with a piece of paper with your name on it that explains the issue you were having with installation."
+  },
+  {
+    "objectID": "tickets/ticket_13.html",
+    "href": "tickets/ticket_13.html",
+    "title": "Lecture Ticket 13",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.1 - 7.5"
+  },
+  {
+    "objectID": "tickets/ticket_13.html#reading",
+    "href": "tickets/ticket_13.html#reading",
+    "title": "Lecture Ticket 13",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.1 - 7.5"
+  },
+  {
+    "objectID": "tickets/ticket_13.html#questions",
+    "href": "tickets/ticket_13.html#questions",
+    "title": "Lecture Ticket 13",
+    "section": "Questions",
+    "text": "Questions\n\nConsider the following dataset:\n\n\nten_cars &lt;- head(mtcars, n = 10)\nten_cars\n\n                   mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\nDuster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\nMerc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\nMerc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\nMerc 280          19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n\n\nHow would we use dplyr to filter for rows with horse power (hp) greater than 100? How would we use base R to do the same thing? Which do you prefer?"
+  },
+  {
+    "objectID": "tickets/ticket_16.html",
+    "href": "tickets/ticket_16.html",
+    "title": "Lecture Ticket 16",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.14 - 7.15"
+  },
+  {
+    "objectID": "tickets/ticket_16.html#reading",
+    "href": "tickets/ticket_16.html#reading",
+    "title": "Lecture Ticket 16",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.14 - 7.15"
+  },
+  {
+    "objectID": "tickets/ticket_16.html#questions",
+    "href": "tickets/ticket_16.html#questions",
+    "title": "Lecture Ticket 16",
+    "section": "Questions",
+    "text": "Questions\n\nWhat are the two major types of joins that we read about? What differentiates them?\nWe read about six joins. What are they? What do each of them do?\nWhich two joins are the most similar to each other?\nWhat is your favorite join? Why?"
+  },
+  {
+    "objectID": "tickets/ticket_14.html",
+    "href": "tickets/ticket_14.html",
+    "title": "Lecture Ticket 14",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.6 - 7.9, 7.12"
+  },
+  {
+    "objectID": "tickets/ticket_14.html#reading",
+    "href": "tickets/ticket_14.html#reading",
+    "title": "Lecture Ticket 14",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.6 - 7.9, 7.12"
+  },
+  {
+    "objectID": "tickets/ticket_14.html#questions",
+    "href": "tickets/ticket_14.html#questions",
+    "title": "Lecture Ticket 14",
+    "section": "Questions",
+    "text": "Questions\n\nWhat do mutate() and transmute() do? How are they different?\nWhat does the pipe (%&gt;%) operator do?\nWhat’s your favorite dplyr verb we’ve learned about so far? Why?"
+  },
+  {
+    "objectID": "tickets/ticket_11.html",
+    "href": "tickets/ticket_11.html",
+    "title": "Lecture Ticket 11",
+    "section": "",
+    "text": "No lecture ticket today. Come to lecture with any last minute questions you might have about the midterm!"
+  },
+  {
+    "objectID": "tickets/ticket_09.html",
+    "href": "tickets/ticket_09.html",
+    "title": "Lecture Ticket 9",
+    "section": "",
+    "text": "No reading this time."
+  },
+  {
+    "objectID": "tickets/ticket_09.html#reading",
+    "href": "tickets/ticket_09.html#reading",
+    "title": "Lecture Ticket 9",
+    "section": "",
+    "text": "No reading this time."
+  },
+  {
+    "objectID": "tickets/ticket_09.html#questions",
+    "href": "tickets/ticket_09.html#questions",
+    "title": "Lecture Ticket 9",
+    "section": "Questions",
+    "text": "Questions\n\nWhat concepts from this course do you feel confident about?\nWhat concepts from this course are you struggling with?"
+  },
+  {
+    "objectID": "tickets/ticket_03.html",
+    "href": "tickets/ticket_03.html",
+    "title": "Lecture Ticket 3",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 3"
+  },
+  {
+    "objectID": "tickets/ticket_03.html#reading",
+    "href": "tickets/ticket_03.html#reading",
+    "title": "Lecture Ticket 3",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 3"
+  },
+  {
+    "objectID": "tickets/ticket_03.html#questions",
+    "href": "tickets/ticket_03.html#questions",
+    "title": "Lecture Ticket 3",
+    "section": "Questions",
+    "text": "Questions\n\nWhat function is used to set a working directory in R? How about to get your current working directory?\nWhat is the difference between a relative and absolute path?\nConsider the following absolute path:\n\n/home/grayson/courses/for128/lab_01.qmd\nIf the working directory is /home/grayson/courses/, what is the relative path to lab_01.qmd?"
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Instructor: Andrew Finley (finleya@msu.edu, Room 211 Natural Resources Building)\nResearch Assistant: Grayson White (whitegra@msu.edu, Room 211 Natural Resources Building)\nEmails: Direct all email inquiries regarding the course and material covered to both the Instructor and Research Assistant, Andrew Finley and Grayson White (both as recipient, or CC’d).\nLinks:\n\nThe course website, www.for128.org, for course information, lecture slides, and course materials.\nD2L, for course feedback and non-public course materials.\n\nCourse Description:\nThis course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences."
+  },
+  {
+    "objectID": "syllabus.html#useful-information",
+    "href": "syllabus.html#useful-information",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Instructor: Andrew Finley (finleya@msu.edu, Room 211 Natural Resources Building)\nResearch Assistant: Grayson White (whitegra@msu.edu, Room 211 Natural Resources Building)\nEmails: Direct all email inquiries regarding the course and material covered to both the Instructor and Research Assistant, Andrew Finley and Grayson White (both as recipient, or CC’d).\nLinks:\n\nThe course website, www.for128.org, for course information, lecture slides, and course materials.\nD2L, for course feedback and non-public course materials.\n\nCourse Description:\nThis course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences."
+  },
+  {
+    "objectID": "syllabus.html#learning-outcomes",
+    "href": "syllabus.html#learning-outcomes",
+    "title": "Syllabus",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nUpon completion of this course students should be able to:\n\napply best practices for naming and organizing files within a directory structure to facilitate an efficient and reproducible workflow,\ntransform raw data into more readily used formats, i.e., perform key “data wrangling” tasks such as data cleaning, structuring, enriching, and validating,\nconduct basic Exploratory Data Analysis (EDA), i.e., apply built-in and costume written functions to explore data characteristics and communicate findings using summary tables, graphics, and basic summary statistics."
+  },
+  {
+    "objectID": "syllabus.html#learning-materials-tools",
+    "href": "syllabus.html#learning-materials-tools",
+    "title": "Syllabus",
+    "section": "Learning Materials & Tools",
+    "text": "Learning Materials & Tools\nTextbook: Introduction to Forestry Data Analysis with R, by Andrew O. Finley and Jeffrey W. Doser. Available free, online: www.finley-lab.com/files/ifdar/\nR and RStudio: R is a free and open source programming language, and RStudio is an Integrated Development Environment (IDE) which allows for streamlined use of the R programming language. Both are free to install, and installation instructions will be provided in this course. A laptop that can run R and RStudio is required for this course."
+  },
+  {
+    "objectID": "syllabus.html#meetings-office-hours",
+    "href": "syllabus.html#meetings-office-hours",
+    "title": "Syllabus",
+    "section": "Meetings & Office Hours",
+    "text": "Meetings & Office Hours\nWe’ll have a lecture-style meeting twice a week, and a lab meeting once a week.\n\nLectures are on Tuesdays and Thursdays, 9:10am - 10am, Natural Resources Building, Room 152.\nLabs are on Thursdays, 10:20am - 12:10pm, Natural Resources Building, Room 223.\n\nOutside of lectures and labs, I will also hold office hours.\n\nOffice hours will be held Tuesdays (10:30am - 11:30am) and Thursdays (1:30pm - 2:30pm), Natural Resources Building, Room 211.\nIf these times do not work for you, we also hold office hours by appointment. Please email to set up a time to meet.\n\nOffice hours are a great way to get help on assignments you are stuck on, ask questions you didn’t get a chance to ask in class, familiarize yourself with the instructor and course expectations, and much more! Further, office hours can be a very helpful tool for your success in this course and beyond in college. Attending office hours is a great habit!"
+  },
+  {
+    "objectID": "syllabus.html#assessments",
+    "href": "syllabus.html#assessments",
+    "title": "Syllabus",
+    "section": "Assessments",
+    "text": "Assessments\nIn this course, you’ll be assessed based on your work and participation. In particular:\n\nLab reports (40%)\n\nLab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on D2L. We will have a lab each week (except for the week of the midterm exam).\nThe lowest lab grade is dropped.\n\nMidterm Exams (20%)\n\nThere will be two midterm exams, one on week 6 and one on week 12. Each midterm is worth 10% of the final grade.\n\nFinal Project (15%)\n\nRather than a final exam, we will have a final group project with project presentations during the final exam time period. More details to come as the semester goes on.\n\nIn-class quizzes (15%)\n\nIn-class quizzes do not have a regular schedule and will occur based on the material we get through.\nThe lowest in-class quiz grade is dropped.\n\nLecture tickets (10%)\n\nLecture tickets are due at the beginning of every lecture, handed in in-person, by you.\nThe lowest three (3) lecture ticket grades will be dropped.\n\n\nGrades are calculated on a four point scale and correspond to the following grade percent:\n\n\n\nGrade percent\nGrade points\n\n\n\n\n90% - 100%\n4.0\n\n\n85.0% - 89.9%\n3.5\n\n\n80.0% - 84.9%\n3.0\n\n\n75.0% - 79.9%\n2.5\n\n\n70.0% - 74.9%\n2.0\n\n\n65.0% - 69.9%\n1.5\n\n\n60.0 - 64.9%\n1.0\n\n\n0% - 60%\n0.0"
+  },
+  {
+    "objectID": "syllabus.html#late-work-policy",
+    "href": "syllabus.html#late-work-policy",
+    "title": "Syllabus",
+    "section": "Late work policy",
+    "text": "Late work policy\n\nLabs turned in after the deadline will not be accepted unless an extension was granted by the Instructor and/or Research Assistant prior to the deadline. Note though that one (1) lab will be dropped and not counted towards your grade.\nIf you anticipate not being able to make a midterm, reach out to the Instructor and/or Research Assistant at least a week in advance. Note that midterms will occur during lab time on weeks 6 and 12.\nLate lecture tickets will not be accepted. Note though that three (3) lecture tickets will be dropped and not counted towards your grade.\nIn-class quizzes cannot be made up outside of class. Note though that one (1) in-class quiz will be dropped and not counted towards your grade.\nThe final project must be turned in on time."
+  },
+  {
+    "objectID": "syllabus.html#collaboration-policy-for-for-128",
+    "href": "syllabus.html#collaboration-policy-for-for-128",
+    "title": "Syllabus",
+    "section": "Collaboration Policy for FOR 128",
+    "text": "Collaboration Policy for FOR 128\nWorking with your classmates on difficult and interesting problems can not only help your learning, but help you get to know each other. Therefore, we allow and encourage collaboration on lab reports and lecture tickets. However, collaboration on exams and quizzes is strictly prohibited and will be considered academic misconduct.\nIf you choose to collaborate with a classmate, please add their name to the top of your assignment, and list them as a collaborator, e.g.:\nCollaborator(s): Elliot Shannon, Romain Boutelet\nBut what is collaboration?\nFor FOR 128, collaboration can look like: working with classmates together on a given problem, doing scratch work, helping each other get un-stuck on a part of a problem, and even coming to a solution. However, you must write up your own problem solutions individually and cannot copy other’s solutions (even those who you have collaborated with). Further, copying code from a collaborator, classmate, or generative AI tool (see the following section) is strictly prohibited and will be considered academic misconduct."
+  },
+  {
+    "objectID": "syllabus.html#ai-policy-for-for-128",
+    "href": "syllabus.html#ai-policy-for-for-128",
+    "title": "Syllabus",
+    "section": "AI Policy for FOR 128",
+    "text": "AI Policy for FOR 128\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
+  },
+  {
+    "objectID": "recordings.html",
+    "href": "recordings.html",
+    "title": "Lecture Recordings",
+    "section": "",
+    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 1: No recording available.\nWeek 3, day 2: Data structures. Available here.\nWeek 4, day 1: No recording available.\nWeek 4, day 2: Review of data structures & intro to functions. Available here.\nWeek 5, day 1: Functions and conditionals. Available here.\nWeek 5, day 2: Functions. NOTE: audio issues. Available here.\nWeek 6, day 1: Welcome to the tidyverse. Available here.\nWeek 6, day 2: Midterm review day. No recording.\nWeek 7, day 1: tibble and readr. Available here.\nWeek 7, day 2: Introduction to data wrangling with dplyr. Available here.\nWeek 8, day 1: More data wrangling with dplyr. Available here."
+  },
+  {
+    "objectID": "recordings.html#recordings",
+    "href": "recordings.html#recordings",
+    "title": "Lecture Recordings",
+    "section": "",
+    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 1: No recording available.\nWeek 3, day 2: Data structures. Available here.\nWeek 4, day 1: No recording available.\nWeek 4, day 2: Review of data structures & intro to functions. Available here.\nWeek 5, day 1: Functions and conditionals. Available here.\nWeek 5, day 2: Functions. NOTE: audio issues. Available here.\nWeek 6, day 1: Welcome to the tidyverse. Available here.\nWeek 6, day 2: Midterm review day. No recording.\nWeek 7, day 1: tibble and readr. Available here.\nWeek 7, day 2: Introduction to data wrangling with dplyr. Available here.\nWeek 8, day 1: More data wrangling with dplyr. Available here."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "For 128 Michigan State University\nFall 2024\n\n\n\nWednesday office hours: 12:30 - 2:30\n\n\n\n\n\n\n\n\n\n\n\nMidterm I this week.\n\n\n\n\nExtra office hours this week:\n\nMonday 9/23: 10:30am - 11:30am\nTuesday 9/24: 10am - 11am (note the 30 minute change)\nWednesday 9/25: 12:30pm - 2pm\nThursday 9/26: 1:30pm - 2:30pm (regular time)\n\n\n\n\n\n\n\nThe lecture notes are available.\n\n\n\n\n\n\n\n\nWe’ll go through vectors.qmd in class.\n\n\n\n\n\nLecture materials:\n\nIn-class work: vectors_dataframes.qmd\nData for in-class work: Loblolly.csv\n\nSupplementary lab materials:\n\nExample R script lab setup: lab_03_example.R\nLab 3 data: FEF_trees.csv\n\n\n\n\n\n\n\n\n\nOffice hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L.\n\n\n\n\n\n\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+  },
+  {
+    "objectID": "index.html#week-9-october-20---26",
+    "href": "index.html#week-9-october-20---26",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "Wednesday office hours: 12:30 - 2:30"
+  },
+  {
+    "objectID": "index.html#week-6-september-29---october-5",
+    "href": "index.html#week-6-september-29---october-5",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "Midterm I this week."
+  },
+  {
+    "objectID": "index.html#week-5-september-22---28",
+    "href": "index.html#week-5-september-22---28",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "Extra office hours this week:\n\nMonday 9/23: 10:30am - 11:30am\nTuesday 9/24: 10am - 11am (note the 30 minute change)\nWednesday 9/25: 12:30pm - 2pm\nThursday 9/26: 1:30pm - 2:30pm (regular time)"
+  },
+  {
+    "objectID": "index.html#week-4-september-15---21",
+    "href": "index.html#week-4-september-15---21",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "The lecture notes are available."
+  },
+  {
+    "objectID": "index.html#week-3-september-8---14",
+    "href": "index.html#week-3-september-8---14",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "We’ll go through vectors.qmd in class.\n\n\n\n\n\nLecture materials:\n\nIn-class work: vectors_dataframes.qmd\nData for in-class work: Loblolly.csv\n\nSupplementary lab materials:\n\nExample R script lab setup: lab_03_example.R\nLab 3 data: FEF_trees.csv"
+  },
+  {
+    "objectID": "index.html#week-2-september-1---7",
+    "href": "index.html#week-2-september-1---7",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "Office hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L."
+  },
+  {
+    "objectID": "index.html#week-1-august-25---31",
+    "href": "index.html#week-1-august-25---31",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7, Instructions & Output\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8, Instructions & Output\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)\n\n\nLab 10\nThursday 11/7 (at lab time)\nWednesday 11/13 (at 5pm)\n\n\nLab 11\nThursday 11/21 (at lab time)\nWednesday 11/27 (at 5pm)"
+  },
+  {
+    "objectID": "assignments.html#labs",
+    "href": "assignments.html#labs",
+    "title": "Assignments",
+    "section": "",
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7, Instructions & Output\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8, Instructions & Output\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)\n\n\nLab 10\nThursday 11/7 (at lab time)\nWednesday 11/13 (at 5pm)\n\n\nLab 11\nThursday 11/21 (at lab time)\nWednesday 11/27 (at 5pm)"
+  },
+  {
+    "objectID": "assignments.html#lecture-tickets",
+    "href": "assignments.html#lecture-tickets",
+    "title": "Assignments",
+    "section": "Lecture Tickets",
+    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)\n\n\nLecture ticket 3\nTuesday 9/3 (by 5pm)\nThursday 9/5 (in lecture)\n\n\nLecture ticket 4\nThursday 9/5 (by 5pm)\nTuesday 9/10 (in lecture)\n\n\nLecture ticket 5\nTuesday 9/10 (by 5pm)\nThursday 9/12 (in lecture)\n\n\nLecture ticket 6\nThursday 9/12 (by 5pm)\nTuesday 9/17 (in lecture)\n\n\nLecture ticket 7\nTuesday 9/17 (by 5pm)\nThursday 9/19 (in lecture)\n\n\nLecture ticket 8\nThursday 9/19 (by 5pm)\nTuesday 9/24 (in lecture)\n\n\nLecture ticket 9\nTuesday 9/24 (by 5pm)\nThursday 9/26 (in lecture)\n\n\nLecture ticket 10\nThursday 9/26 (by 5pm)\nTuesday 10/1 (in lecture)\n\n\nLecture ticket 11\nTuesday 10/1 (by 5pm)\nThursday 10/3 (in lecture)\n\n\nLecture ticket 12\nThursday 10/3 (by 5pm)\nTuesday 10/8 (in lecture)\n\n\nLecture ticket 13\nTuesday 10/8 (by 5pm)\nThursday 10/10 (in lecture)\n\n\nLecture ticket 14\nThursday 10/10 (by 5pm)\nTuesday 10/15 (in lecture)\n\n\nLecture ticket 15\nTuesday 10/15 (by 5pm)\nThursday 10/17 (in lecture)\n\n\nLecture ticket 16\nThursday 10/17 (by 5pm)\nThursday 10/24 (in lecture)\n\n\nLecture ticket 17\nThursday 10/24 (by 5pm)\nTuesday 10/29 (in lecture)\n\n\nLecture ticket 18\nTuesday 10/29 (by 5pm)\nThursday 10/31 (in lecture)\n\n\nLecture ticket 19\nThursday 10/31 (by 5pm)\nTuesday 11/5 (in lecture)\n\n\nLecture ticket 20\nTuesday 11/5 (by 5pm)\nThursday 11/7 (in lecture)\n\n\nLecture ticket 21\nThursday 11/7 (by 5pm)\nTuesday 11/12 (in lecture)\n\n\nLecture ticket 22\nTuesday 11/12 (by 5pm)\nThursday 11/14 (in lecture)\n\n\nLecture ticket 23\nThursday 11/14 (by 5pm)\nTuesday 11/19 (in lecture)\n\n\nLecture ticket 24\nTuesday 11/19 (by 5pm)\nTuesday 11/26 (in lecture)\n\n\nLecture ticket 25\nTuesday 11/26 (by 5pm)\nThursday 11/28 (in lecture)\n\n\nLecture ticket 26\nThursday 11/28 (by 5pm)\nTuesday 12/3 (in lecture)\n\n\nLecture ticket 27\nTuesday 12/3 (by 5pm)\nThursday 12/5 (in lecture)"
+  },
+  {
+    "objectID": "midterm.html",
+    "href": "midterm.html",
+    "title": "Midterm I",
+    "section": "",
+    "text": "The midterm files are available below:\n\nmidterm_01.qmd\nLoblolly.csv"
+  },
+  {
+    "objectID": "midterm.html#files",
+    "href": "midterm.html#files",
+    "title": "Midterm I",
+    "section": "",
+    "text": "The midterm files are available below:\n\nmidterm_01.qmd\nLoblolly.csv"
+  },
+  {
+    "objectID": "slides/w3d1.html#agenda",
+    "href": "slides/w3d1.html#agenda",
+    "title": "Data Structures: Vectors",
+    "section": "Agenda",
+    "text": "Agenda\n\nOverview of data structures\nA tour of vectors"
+  },
+  {
+    "objectID": "slides/w3d1.html#data-structures",
+    "href": "slides/w3d1.html#data-structures",
+    "title": "Data Structures: Vectors",
+    "section": "Data structures",
+    "text": "Data structures\n\nA data structure is a format for organizing and storing data. The structure is designed so that data can be accessed and worked with in specific ways.\nStructures are either homogeneous or heterogeneous, which describes the data types they hold (one type versus multiple types).\nStructures can also be characterized by their dimensionality, see Table Table 1.\n\n\n\n\nTable 1: Dimension and type content of base data structures in R.\n\n\n\n\n\nDimension\nHomogeneous\nHeterogeneous\n\n\n\n\n1\nAtomic vector\nList\n\n\n2\nMatrix\nData frame\n\n\nN\nArray"
+  },
+  {
+    "objectID": "slides/w3d1.html#data-structures-1",
+    "href": "slides/w3d1.html#data-structures-1",
+    "title": "Data Structures: Vectors",
+    "section": "Data structures",
+    "text": "Data structures\n\nLet’s take a look at vectors.qmd."
+  },
+  {
+    "objectID": "tickets/ticket_02.html",
+    "href": "tickets/ticket_02.html",
+    "title": "Lecture Ticket 2",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 2\nChapter 3: read through section 3.3.1 (STOP at 3.3.2 External data)"
+  },
+  {
+    "objectID": "tickets/ticket_02.html#reading",
+    "href": "tickets/ticket_02.html#reading",
+    "title": "Lecture Ticket 2",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 2\nChapter 3: read through section 3.3.1 (STOP at 3.3.2 External data)"
+  },
+  {
+    "objectID": "tickets/ticket_02.html#questions",
+    "href": "tickets/ticket_02.html#questions",
+    "title": "Lecture Ticket 2",
+    "section": "Questions",
+    "text": "Questions\n\nWhat are the two main operators used in R for assignment?\nWhat code would you write to assign the value 37 to the object favorite_number?\nOpen RStudio and check your working directory by entering a command into the R console. What is your working directory? Example: /Users/graysonwhite/Documents/"
+  },
+  {
+    "objectID": "tickets/ticket_05.html",
+    "href": "tickets/ticket_05.html",
+    "title": "Lecture Ticket 5",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.3, 4.4 and 4.5 (Stop at 4.6)"
+  },
+  {
+    "objectID": "tickets/ticket_05.html#reading",
+    "href": "tickets/ticket_05.html#reading",
+    "title": "Lecture Ticket 5",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.3, 4.4 and 4.5 (Stop at 4.6)"
+  },
+  {
+    "objectID": "tickets/ticket_05.html#questions",
+    "href": "tickets/ticket_05.html#questions",
+    "title": "Lecture Ticket 5",
+    "section": "Questions",
+    "text": "Questions\n\nHow many dimensions do dataframes have?\nConsider the dataframe treedat. How would you access the element in the second row and third column of treedat?"
+  },
+  {
+    "objectID": "tickets/ticket_10.html",
+    "href": "tickets/ticket_10.html",
+    "title": "Lecture Ticket 10",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 6"
+  },
+  {
+    "objectID": "tickets/ticket_10.html#reading",
+    "href": "tickets/ticket_10.html#reading",
+    "title": "Lecture Ticket 10",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 6"
+  },
+  {
+    "objectID": "tickets/ticket_10.html#questions",
+    "href": "tickets/ticket_10.html#questions",
+    "title": "Lecture Ticket 10",
+    "section": "Questions",
+    "text": "Questions\n\nWhat is a tibble? How does it relate to a data.frame?\nWhy do we prefer reading in data with readr over base R?\nAre all tibbles data.frames? Are all data.frames tibbles?"
+  },
+  {
+    "objectID": "tickets/ticket_12.html",
+    "href": "tickets/ticket_12.html",
+    "title": "Lecture Ticket 12",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nReview Chapter 6\nBegin Chapter 7 (read the introduction and 7.1)"
+  },
+  {
+    "objectID": "tickets/ticket_12.html#reading",
+    "href": "tickets/ticket_12.html#reading",
+    "title": "Lecture Ticket 12",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nReview Chapter 6\nBegin Chapter 7 (read the introduction and 7.1)"
+  },
+  {
+    "objectID": "tickets/ticket_12.html#questions",
+    "href": "tickets/ticket_12.html#questions",
+    "title": "Lecture Ticket 12",
+    "section": "Questions",
+    "text": "Questions\n\nYou want to read in a file called “my_data.csv” on your computer and assign it to an object called dat in R. Now, we’ve learned two approaches to reading in data (base and tidyverse). How would you read it into R (a) with base and (b) with tidyverse?\nWhat are the dplyr verbs that we will learn in Chapter 7? What do each of them do?"
+  },
+  {
+    "objectID": "tickets/ticket_15.html",
+    "href": "tickets/ticket_15.html",
+    "title": "Lecture Ticket 15",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.10 - 7.11, 7.13"
+  },
+  {
+    "objectID": "tickets/ticket_15.html#reading",
+    "href": "tickets/ticket_15.html#reading",
+    "title": "Lecture Ticket 15",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.10 - 7.11, 7.13"
+  },
+  {
+    "objectID": "tickets/ticket_15.html#questions",
+    "href": "tickets/ticket_15.html#questions",
+    "title": "Lecture Ticket 15",
+    "section": "Questions",
+    "text": "Questions\n\nWhat do n() and n_distinct() do? How are they different?\nWhat two arguments do we always specify when we use across()?\nWhen we use across(), we use it within a few dplyr verbs – what are those verbs?\nWhat concepts in dplyr are you confidently understanding? What concepts are you still struggling with?"
+  },
+  {
+    "objectID": "tickets/ticket_04.html",
+    "href": "tickets/ticket_04.html",
+    "title": "Lecture Ticket 4",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.1 and 4.2 (Stop at 4.3 Factors)"
+  },
+  {
+    "objectID": "tickets/ticket_04.html#reading",
+    "href": "tickets/ticket_04.html#reading",
+    "title": "Lecture Ticket 4",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.1 and 4.2 (Stop at 4.3 Factors)"
+  },
+  {
+    "objectID": "tickets/ticket_04.html#questions",
+    "href": "tickets/ticket_04.html#questions",
+    "title": "Lecture Ticket 4",
+    "section": "Questions",
+    "text": "Questions\n\nWhat is a qualitative variable? What about a quantitative variable? How are they different?\nWhat does the c() function do?\nSuppose you have the following vector:\n\n\nheight_in &lt;- c(70, 62, 72, 67)\nheight_in\n\n[1] 70 62 72 67\n\n\nWhat code would you write to replace the second element of height_in with the value 63?"
+  },
+  {
+    "objectID": "labs/lab_03.html",
+    "href": "labs/lab_03.html",
+    "title": "Vectors and Dataframes",
+    "section": "",
+    "text": "Create, subset, and manipulate vectors and data frames.\nPractice reading data from external files.\nGet some practice writing R scripts.\n\n\n\n\nCreate a new directory called lab_03 within your labs directory (e.g., ~/FOR_128/labs/lab_03). In RStudio set lab_03 as your working directory. Download and move the FEF_trees.csv file from the D2L lab page to your lab_03 directory.\nCreate a new script and save it as lab_03.R (it should save to your working directory).\nNow, use our book, help “man” pages, Google, your intuition, and experimentation to describe the behavior of the code in each of the following questions. For each question, write and execute the code in each question then, using a comment #, add notes above the code to describe/define its behavior (see example script lab_03_example.R in the lab’s D2L page)."
+  },
+  {
+    "objectID": "labs/lab_03.html#getting-started",
+    "href": "labs/lab_03.html#getting-started",
+    "title": "Vectors and Dataframes",
+    "section": "",
+    "text": "Create, subset, and manipulate vectors and data frames.\nPractice reading data from external files.\nGet some practice writing R scripts.\n\n\n\n\nCreate a new directory called lab_03 within your labs directory (e.g., ~/FOR_128/labs/lab_03). In RStudio set lab_03 as your working directory. Download and move the FEF_trees.csv file from the D2L lab page to your lab_03 directory.\nCreate a new script and save it as lab_03.R (it should save to your working directory).\nNow, use our book, help “man” pages, Google, your intuition, and experimentation to describe the behavior of the code in each of the following questions. For each question, write and execute the code in each question then, using a comment #, add notes above the code to describe/define its behavior (see example script lab_03_example.R in the lab’s D2L page)."
+  },
+  {
+    "objectID": "labs/lab_03.html#questions",
+    "href": "labs/lab_03.html#questions",
+    "title": "Vectors and Dataframes",
+    "section": "Questions",
+    "text": "Questions\n\nFunctions and index subsetting of vectors and data frames\nUse the code below to create the plt data frame.\n\nspp &lt;- c(\"tsugca\", \"tsugca\", \"betual\", \"acerru\", \"pinust\", \"pinust\", \"betual\", \"acerru\")\ndbh &lt;- c(15, 12, 6.6, 9.3, 28.1, 9.23, 15.3, 11.1)\nqual &lt;- c(\"ugs\", \"ags\", \"ags\", \"ugs\", \"ags\", \"ags\", \"ugs\", \"ags\")\nlive &lt;- c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE)\n\nplt &lt;- data.frame(spp, dbh, qual, live)\n\n\nplt \nclass(plt) \nnames(plt) \nnrow(plt) \nncol(plt) \ndim(plt) \nlength(plt) \nplt[2:4,c(1,4)] \nplt[1:3,c(\"spp\", \"dbh\")] \nplt$qual \nclass(plt$qual) \nhead(plt) \ntail(plt) \nhead(plt, n=3) \ntail(plt, n=2) \nplt.cpy &lt;- plt \nplt.cpy[1:3,1] &lt;-  c(\"pinust\", \"pinust\", \"acerru\") \nplt.cpy[1:2,1] &lt;-  c(\"pinust\", \"pinust\", \"acerru\") \nplt.cpy$live[8] &lt;- FALSE \nplt.cpy[8,\"live\"] &lt;- TRUE \nrep(\"ugs\", nrow(plt.cpy)) \nplt.cpy[,\"status\"] &lt;- rep(\"ugs\", nrow(plt.cpy)) \n!TRUE \ncolnames(plt.cpy)[4] &lt;- \"dead\" \nplt.cpy$dead &lt;- !plt$live \nplt.cpy &lt;- plt[-(1:5),] \nplt.cpy &lt;- plt[-1:5,] \nplt.cpy &lt;- rbind(plt, c(\"some new spp\", 100, \"ugs\", FALSE)) \nplt.cpy &lt;- cbind(plt, 1:nrow(plt)) \ncolnames(plt.cpy)[ncol(plt.cpy)] &lt;- \"tree.indx\" \nstr(plt) \n\nRead the external data file FEF_trees.csv into R using the read.csv() function and call the resulting data frame fef.\n\nfef &lt;- read.csv(\"FEF_trees.csv\")\n\n\ndim(fef) \nhead(fef) \ntail(fef) \nsum(fef$height_ft) \nmax(fef$height_ft) \nmin(fef$height_ft) \nwhich.max(fef$height_ft) \nfef[which.max(fef$height_ft), ] \nfef[which.min(fef$height_ft), ] \nIn the previous two labs you did your work in a Quarto document. What are some ways the script you created for this lab are different from the Quarto document?"
+  },
+  {
+    "objectID": "tickets/ticket_07.html",
+    "href": "tickets/ticket_07.html",
+    "title": "Lecture Ticket 7",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 5: sections 5.1"
+  },
+  {
+    "objectID": "tickets/ticket_07.html#reading",
+    "href": "tickets/ticket_07.html#reading",
+    "title": "Lecture Ticket 7",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 5: sections 5.1"
+  },
+  {
+    "objectID": "tickets/ticket_07.html#questions",
+    "href": "tickets/ticket_07.html#questions",
+    "title": "Lecture Ticket 7",
+    "section": "Questions",
+    "text": "Questions\nConsider the function:\n\nmy_function &lt;- function(x) {\n  y &lt;- x * 2\n  z &lt;- x + 4\n  return(y + z)\n}\n\n\nWhat would my_function(x = 10) return?\nWhat would my_function(x = 0) return?\nWhat would my_function(x = 5) + 10 return?"
+  },
+  {
+    "objectID": "tickets/ticket_06.html",
+    "href": "tickets/ticket_06.html",
+    "title": "Lecture Ticket 6",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.7, 4.8 and 4.9"
+  },
+  {
+    "objectID": "tickets/ticket_06.html#reading",
+    "href": "tickets/ticket_06.html#reading",
+    "title": "Lecture Ticket 6",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.7, 4.8 and 4.9"
+  },
+  {
+    "objectID": "tickets/ticket_06.html#questions",
+    "href": "tickets/ticket_06.html#questions",
+    "title": "Lecture Ticket 6",
+    "section": "Questions",
+    "text": "Questions\n\nYou learned about comparison and logical operators in the reading. In R, what is the operator for each of the following:\n\nequality,\ngreater than,\ngreater than or equal to,\nnot equal to,\nor,\nand.\n\nConsider the following vector:\n\n\nx &lt;- 1:10\nx\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nWhat does the following do to x?\n\nx[x &lt; 5] &lt;- 0"
+  },
+  {
+    "objectID": "slides/w4d1.html",
+    "href": "slides/w4d1.html",
+    "title": "Logical subsetting vectors and data frames",
+    "section": "",
+    "text": "create, subset, and manipulate vectors and data frames\nuse comparison and logical operators\npractice combining logical tests to extract information from vectors and data frames\nstart thinking “inside out”"
+  },
+  {
+    "objectID": "slides/w4d1.html#learning-objectives",
+    "href": "slides/w4d1.html#learning-objectives",
+    "title": "Logical subsetting vectors and data frames",
+    "section": "",
+    "text": "create, subset, and manipulate vectors and data frames\nuse comparison and logical operators\npractice combining logical tests to extract information from vectors and data frames\nstart thinking “inside out”"
+  },
+  {
+    "objectID": "slides/w4d1.html#logical-subsetting",
+    "href": "slides/w4d1.html#logical-subsetting",
+    "title": "Logical subsetting vectors and data frames",
+    "section": "Logical subsetting",
+    "text": "Logical subsetting\nSo far we have directly specified the elements of vectors that we want to extract, for example spp[1] or dbh[length(dbh)] or spp[c(1,3,5)]. We have also subsetted data frame rows and columns, for example, plt[c(2,5),], plt[nrow(plt),], plt[,1:2], or plt[,c(\"spp\",\"dbh\")]. More commonly we want to extract elements that meet a condition, such as all trees greater than some minimum DBH or all trees of a given species. For this we use subsetting with logical vectors, see Section 6.6 in the course book.\nHere are the comparison operators:\n\nEqual: ==\nNot equal: !=\nGreater than: &gt;\nLess than: &lt;\nGreater than or equal to: &gt;=\nLess than or equal to: &lt;=\n\nLet’s give these operators a spin using the plt data frame.\nFirst on a single column, i.e., a vector subset operation.\n\nplt$qual[plt$qual == \"ags\"] # Understand this statement from the inside out!\n\n[1] \"ags\" \"ags\" \"ags\" \"ags\" \"ags\"\n\n\nGet all trees (i.e., rows) for species acerru.\n\nplt[plt$spp == \"acerru\", ]\n\n     spp  dbh qual  live\n4 acerru  9.3  ugs FALSE\n8 acerru 11.1  ags  TRUE\n\n\nGet all trees (i.e., rows) but for acerru.\n\nplt[plt$spp != \"acerru\", ]\n\n     spp   dbh qual  live\n1 tsugca 15.00  ugs  TRUE\n2 tsugca 12.00  ags  TRUE\n3 betual  6.60  ags  TRUE\n5 pinust 28.10  ags  TRUE\n6 pinust  9.23  ags  TRUE\n7 betual 15.30  ugs FALSE\n\n\nGet all trees (i.e., rows) with DBH greater than 10.\n\nplt[plt$dbh &gt; 10, ]\n\n     spp  dbh qual  live\n1 tsugca 15.0  ugs  TRUE\n2 tsugca 12.0  ags  TRUE\n5 pinust 28.1  ags  TRUE\n7 betual 15.3  ugs FALSE\n8 acerru 11.1  ags  TRUE\n\n\nGet all tree species with DBH greater than 10.\n\nplt[plt$dbh &gt; 10, \"spp\"]\n\n[1] \"tsugca\" \"tsugca\" \"pinust\" \"betual\" \"acerru\"\n\n\nFind all live trees. Note, why do I have plt$live and not plt$live == TRUE in the code below?\n\nplt[plt$live, ]\n\n     spp   dbh qual live\n1 tsugca 15.00  ugs TRUE\n2 tsugca 12.00  ags TRUE\n3 betual  6.60  ags TRUE\n5 pinust 28.10  ags TRUE\n6 pinust  9.23  ags TRUE\n8 acerru 11.10  ags TRUE"
+  },
+  {
+    "objectID": "slides/w4d1.html#a-bit-on-logical-operators-and-subsetting",
+    "href": "slides/w4d1.html#a-bit-on-logical-operators-and-subsetting",
+    "title": "Logical subsetting vectors and data frames",
+    "section": "A bit on logical operators and subsetting",
+    "text": "A bit on logical operators and subsetting\nThere are some logical operators we haven’t seen yet, including the “and” operator and the “or” operator.\n\nand: &\nor: |\n\nThe & operator compares vector elements on its left and right to see if they match. If they are both TRUE, then & returns TRUE, otherwise FALSE. The | operator compares vector elements on its left and right to see if either of them are TRUE. If at least one is TRUE then | returns TRUE, otherwise if both are FALSE then FALSE is returned. These operations are applied for each element pair along the vectors. For example:\n\nc(FALSE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)\n\n[1]  TRUE  TRUE FALSE\n\nc(FALSE, TRUE, FALSE) & c(TRUE, TRUE, FALSE)\n\n[1] FALSE  TRUE FALSE\n\n\nSo, say you want all acerru with DBH greater than 10.\n\nplt[plt$spp == \"acerru\" & plt$dbh &gt; 10, ]\n\n     spp  dbh qual live\n8 acerru 11.1  ags TRUE\n\n\nAnother useful logical operator is the ! (i.e., the exclamation point, referred to as the “bang” in coding slang) which negates or flips the logical value, so for example !FALSE is TRUE and !TRUE is FALSE (or !“I know what I’m talking about”).\nYet another very handy operator is %in% which is used to identify if an element occurs in a second vector. Or a substitute for a series of “or” statements. Consider the example below and consult the manual page via help(\"%in%\").\n\ndbh == 15 | dbh == 6 | dbh == 11\n\n[1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n\ndbh %in% c(15, 6, 11)\n\n[1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n\n\n\nletters\n\n [1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\" \"k\" \"l\" \"m\" \"n\" \"o\" \"p\" \"q\" \"r\" \"s\"\n[20] \"t\" \"u\" \"v\" \"w\" \"x\" \"y\" \"z\"\n\nletters %in% c(\"a\", \"m\", \"q\", \"s\")\n\n [1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n[13]  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE\n[25] FALSE FALSE\n\n# letters == \"a\" | letters == \"m\" | letters = \"q\" | letters == \"s\" ## Find the error.\n\nSay you want acerru and tsugca with DBH greater than 10.\n\nplt[plt$spp %in% c(\"acerru\", \"tsugca\") & plt$dbh &gt; 10,]\n\n     spp  dbh qual live\n1 tsugca 15.0  ugs TRUE\n2 tsugca 12.0  ags TRUE\n8 acerru 11.1  ags TRUE\n\n\nNow, say you want acerru and tsugca with DBH greater than 10 and acceptable growing stock.\n\nplt[plt$spp %in% c(\"acerru\", \"tsugca\") & plt$dbh &gt; 10 & plt$qual == \"ags\",]\n\n     spp  dbh qual live\n2 tsugca 12.0  ags TRUE\n8 acerru 11.1  ags TRUE"
+  },
+  {
+    "objectID": "slides/w4d1.html#your-turn",
+    "href": "slides/w4d1.html#your-turn",
+    "title": "Logical subsetting vectors and data frames",
+    "section": "Your turn!",
+    "text": "Your turn!\n\nFind all trees with DBH less than 9.5.\nFind all trees that are not tsugca (hint use the !).\nFind all dead trees (hint use the !).\nFind all live trees of unacceptable growing stock.\nFind all live betual and acerru that are of acceptable growing stock.\nMake up your own subsetting criteria."
   },
   {
     "objectID": "slides/w1d1.html#agenda",

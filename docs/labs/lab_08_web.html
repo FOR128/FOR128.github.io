@@ -246,13 +246,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
   <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
-  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a>
+  <ul class="collapse">
+  <li><a href="#part-a-1" id="toc-part-a-1" class="nav-link" data-scroll-target="#part-a-1">Part (a)</a></li>
+  <li><a href="#part-b-1" id="toc-part-b-1" class="nav-link" data-scroll-target="#part-b-1">Part (b)</a></li>
+  </ul></li>
   <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
   <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
   <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a>
   <ul class="collapse">
-  <li><a href="#part-a-1" id="toc-part-a-1" class="nav-link" data-scroll-target="#part-a-1">Part (a)</a></li>
-  <li><a href="#part-b-1" id="toc-part-b-1" class="nav-link" data-scroll-target="#part-b-1">Part (b)</a></li>
+  <li><a href="#part-a-2" id="toc-part-a-2" class="nav-link" data-scroll-target="#part-a-2">Part (a)</a></li>
+  <li><a href="#part-b-2" id="toc-part-b-2" class="nav-link" data-scroll-target="#part-b-2">Part (b)</a></li>
   <li><a href="#part-c" id="toc-part-c" class="nav-link" data-scroll-target="#part-c">Part (c)</a></li>
   <li><a href="#part-d" id="toc-part-d" class="nav-link" data-scroll-target="#part-d">Part (d)</a></li>
   <li><a href="#part-e" id="toc-part-e" class="nav-link" data-scroll-target="#part-e">Part (e)</a></li>
@@ -394,20 +398,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>Find the top 8 most common species (use the common name column for species here and throughout the lab) in the <code>parks</code> dataset, along with how many of that species are in the dataset. Notice I’ve called the number of trees <code>num_trees</code>.</p>
+<p>Find how many trees of each species (use the common name column for species here and throughout the lab) are in the <code>parks</code> dataset, and order the data from greatest number of trees in a species to least. Notice I’ve called the number of trees <code>num_trees</code>.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 8 × 2
-  Common_Name               num_trees
-  &lt;chr&gt;                         &lt;int&gt;
-1 Douglas-Fir                    6783
-2 Norway Maple                   1502
-3 Western Redcedar                964
-4 Northern Red Oak                736
-5 Pin Oak                         619
-6 Incense Cedar                   507
-7 Bigleaf Maple                   490
-8 Japanese Flowering Cherry       418</code></pre>
+<pre><code># A tibble: 304 × 2
+   Common_Name               num_trees
+   &lt;chr&gt;                         &lt;int&gt;
+ 1 Douglas-Fir                    6783
+ 2 Norway Maple                   1502
+ 3 Western Redcedar                964
+ 4 Northern Red Oak                736
+ 5 Pin Oak                         619
+ 6 Incense Cedar                   507
+ 7 Bigleaf Maple                   490
+ 8 Japanese Flowering Cherry       418
+ 9 American Elm                    379
+10 Giant Sequoia                   349
+# ℹ 294 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -417,14 +424,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
-  Park                               n
-  &lt;chr&gt;                          &lt;int&gt;
-1 Gov Tom McCall Waterfront Park   104</code></pre>
+  Park                           num_cherries
+  &lt;chr&gt;                                 &lt;int&gt;
+1 Gov Tom McCall Waterfront Park          104</code></pre>
 </div>
 </div>
 </section>
 <section id="exercise-4" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+<section id="part-a-1" class="level3">
+<h3 class="anchored" data-anchor-id="part-a-1">Part (a)</h3>
 <p>Find the top 5 parks with the most total DBH (i.e.&nbsp;the sum of all the trees DBH in those parks).</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -438,16 +447,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 5 John Luby Park      14519.</code></pre>
 </div>
 </div>
-<p>Mt. Tabor Park is one of my personal favorites in Portland, I used to live just a few blocks away. It is a wonderful place to watch the sun set over the West hills of the city. Not only does it have the most DBH in all of the parks in Portland, but Portland’s drinking water is stored in giant reservoirs at that park!</p>
+<p><em>Mt. Tabor Park is one of my personal favorites in Portland, I used to live just a few blocks away. It is a wonderful place to watch the sun set over the West hills of the city. Not only does it have the most DBH in all of the parks in Portland, but Portland’s drinking water is stored in giant reservoirs at that park!</em></p>
+</section>
+<section id="part-b-1" class="level3">
+<h3 class="anchored" data-anchor-id="part-b-1">Part (b)</h3>
+<p>Find the top 5 parks with the highest DBH per tree (in other words, the 5 highest mean DBHs), along with how many trees are in those parks.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+  Park               mean_DBH number_of_trees
+  &lt;chr&gt;                 &lt;dbl&gt;           &lt;int&gt;
+1 Heritage Tree Park     59                 1
+2 Johnswood Property     43.1              18
+3 Patton Square Park     37.0              13
+4 Hancock Park           32.5             104
+5 Laurelwood Park        31.2              13</code></pre>
+</div>
+</div>
+<p><em>Wow! Heritage Tree Park has one giant tree!</em></p>
+</section>
 </section>
 <section id="exercise-5" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
 <p>There is a column in the <code>parks</code> dataset that represents the amount of carbon (in lbs) each tree has sequestered. Find the park with the highest carbon sequestration.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>parks <span class="sc">%&gt;%</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Park) <span class="sc">%&gt;%</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">carbon_sequestered =</span> <span class="fu">sum</span>(Carbon_Sequestration_lb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(carbon_sequestered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
   Park          carbon_sequestered
@@ -455,7 +478,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 1 Mt Tabor Park             36515.</code></pre>
 </div>
 </div>
-<p>Nice job, Mt. Tabor!</p>
+<p><em>Nice job, Mt. Tabor!</em></p>
 </section>
 <section id="exercise-6" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
@@ -488,8 +511,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exercise-7" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
 <p>For this exercise, consider the <code>streets</code> dataset.</p>
-<section id="part-a-1" class="level3">
-<h3 class="anchored" data-anchor-id="part-a-1">Part (a)</h3>
+<section id="part-a-2" class="level3">
+<h3 class="anchored" data-anchor-id="part-a-2">Part (a)</h3>
 <p>There is a column delineating the edibility of the trees in the dataset. Find the possible values for this column and how many trees correspond to each value.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -502,8 +525,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="part-b-1" class="level3">
-<h3 class="anchored" data-anchor-id="part-b-1">Part (b)</h3>
+<section id="part-b-2" class="level3">
+<h3 class="anchored" data-anchor-id="part-b-2">Part (b)</h3>
 <p>Create a new tibble called <code>forager</code> that contains all rows of the <code>streets</code> with edible fruits or nuts but only the columns denoting the common name, neighborhood, condition, and edibility.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>forager</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -610,12 +633,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 5 Woodstock                          125</code></pre>
 </div>
 </div>
-<p>The Sellwood-Moreland and Woodstock neighborhoods are the heart of southeast Portland (in my opinion). The <code>pdxTrees</code> R package was written primarily in the Woodstock neighborhood, as a matter of fact. Sellwood-Moreland sits just to the west of Woodstock and has a variety of top-tier coffee shops, along with a gorgeous riverfront park with off-leash dogs allowed. Quite the place to be if you are a fruit forager, too!</p>
+<p><em>The Sellwood-Moreland and Woodstock neighborhoods are the heart of southeast Portland (in my opinion). The <code>pdxTrees</code> R package was written primarily in the Woodstock neighborhood, as a matter of fact. Sellwood-Moreland sits just to the west of Woodstock and has a variety of top-tier coffee shops, along with a gorgeous riverfront park with off-leash dogs allowed. Quite the place to be if you are a fruit forager, too!</em></p>
 </section>
 <section id="part-g" class="level3">
 <h3 class="anchored" data-anchor-id="part-g">Part (g)</h3>
 <p>Of the five neighborhoods found in part (e), what are the conditions of the edible fruit bearing trees (in other words, how many are in Good condition, Fair condition, etc., grouped by these five neighborhoods).</p>
-<p>HINT: you can use <code>group_by()</code> to group by multiple groups at once. Example: <code>group_by(group1, group2)</code>.</p>
+<p>HINT: you can use <code>group_by()</code> to group by multiple groups at once. Example: <code>group_by(column1, column2)</code>.</p>
 <div class="cell">
 <div class="cell-output cell-output-stderr">
 <pre><code>`summarise()` has grouped output by 'Neighborhood'. You can override using the

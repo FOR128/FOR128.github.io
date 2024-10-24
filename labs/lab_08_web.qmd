@@ -86,14 +86,14 @@ Take a look at the documentation by running `?get_pdxTrees_parks` and `?get_pdxT
 
 ## Exercise 2
 
-Find the top 8 most common species (use the common name column for species here and throughout the lab) in the `parks` dataset, along with how many of that species are in the dataset. Notice I've called the number of trees `num_trees`. 
+Find how many trees of each species (use the common name column for species here and throughout the lab) are in the `parks` dataset, and order the data from greatest number of trees in a species to least. Notice I've called the number of trees `num_trees`. 
 
 ```{r}
 #| echo: false
 parks %>%
   group_by(Common_Name) %>%
   summarize(num_trees = n()) %>%
-  slice_max(num_trees, n = 8)
+  arrange(desc(num_trees))
 ```
 
 ## Exercise 3
@@ -105,11 +105,13 @@ A staple of Portland living in the springtime is to go out and see the Japanese 
 parks %>%
   filter(Common_Name == "Japanese Flowering Cherry") %>%
   group_by(Park) %>%
-  summarize(n = n()) %>%
-  slice_max(n)
+  summarize(num_cherries = n()) %>%
+  slice_max(num_cherries)
 ```
 
 ## Exercise 4
+
+### Part (a)
 
 Find the top 5 parks with the most total DBH (i.e. the sum of all the trees DBH in those parks).
 
@@ -121,20 +123,36 @@ parks %>%
   slice_max(total_DBH, n = 5)
 ```
 
-Mt. Tabor Park is one of my personal favorites in Portland, I used to live just a few blocks away. It is a wonderful place to watch the sun set over the West hills of the city. Not only does it have the most DBH in all of the parks in Portland, but Portland's drinking water is stored in giant reservoirs at that park! 
+*Mt. Tabor Park is one of my personal favorites in Portland, I used to live just a few blocks away. It is a wonderful place to watch the sun set over the West hills of the city. Not only does it have the most DBH in all of the parks in Portland, but Portland's drinking water is stored in giant reservoirs at that park!*
+
+### Part (b)
+
+Find the top 5 parks with the highest DBH per tree (in other words, the 5 highest mean DBHs), along with how many trees are in those parks. 
+
+```{r}
+#| echo: false
+parks %>%
+  group_by(Park) %>%
+  summarize(mean_DBH = mean(DBH), number_of_trees = n()) %>%
+  slice_max(mean_DBH, n = 5)
+```
+
+*Wow! Heritage Tree Park has one giant tree!*
+
 
 ## Exercise 5
 
 There is a column in the `parks` dataset that represents the amount of carbon (in lbs) each tree has sequestered. Find the park with the highest carbon sequestration.
 
 ```{r}
+#| echo: false
 parks %>%
   group_by(Park) %>%
   summarize(carbon_sequestered = sum(Carbon_Sequestration_lb, na.rm = TRUE)) %>%
   slice_max(carbon_sequestered)
 ```
 
-Nice job, Mt. Tabor!
+*Nice job, Mt. Tabor!*
 
 
 ## Exercise 6
@@ -248,14 +266,14 @@ forager %>%
   slice_max(n_edible_fruit_trees, n = 5)
 ```
 
-The Sellwood-Moreland and Woodstock neighborhoods are the heart of southeast Portland  (in my opinion). The `pdxTrees` R package was written primarily in the Woodstock neighborhood, as a matter of fact. Sellwood-Moreland sits just to the west of Woodstock and has a variety of top-tier coffee shops, along with a gorgeous riverfront park with off-leash dogs allowed. Quite the place to be if you are a fruit forager, too! 
+*The Sellwood-Moreland and Woodstock neighborhoods are the heart of southeast Portland  (in my opinion). The `pdxTrees` R package was written primarily in the Woodstock neighborhood, as a matter of fact. Sellwood-Moreland sits just to the west of Woodstock and has a variety of top-tier coffee shops, along with a gorgeous riverfront park with off-leash dogs allowed. Quite the place to be if you are a fruit forager, too!*
 
 
 ### Part (g)
 
 Of the five neighborhoods found in part (e), what are the conditions of the edible fruit bearing trees (in other words, how many are in Good condition, Fair condition, etc., grouped by these five neighborhoods).
 
-HINT: you can use `group_by()` to group by multiple groups at once. Example: `group_by(group1, group2)`. 
+HINT: you can use `group_by()` to group by multiple groups at once. Example: `group_by(column1, column2)`. 
 
 ```{r}
 #| echo: false
@@ -265,21 +283,6 @@ forager %>%
   group_by(Neighborhood, Condition) %>%
   summarize(num_fruit_trees = n())
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
