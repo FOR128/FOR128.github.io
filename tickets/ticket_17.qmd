@@ -1,0 +1,25 @@
+---
+title: "Lecture Ticket 17"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read the following sections of IFDAR.
+
+-   Chapter 8
+
+
+## Questions
+
+1. What makes data tidy?
+
+2. What do `pivot_longer()` and `pivot_wider()` do?
+
+3. What does `unite()` do? 
+
+
+
+
+

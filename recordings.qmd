@@ -37,3 +37,7 @@ Week 7, day 2: *Introduction to data wrangling with `dplyr`*. Available [here](h
 
 Week 8, day 1: *More data wrangling with `dplyr`*. Available [here](https://mediaspace.msu.edu/media/Week+8+Day+1/1_frf0qumj).
 
+Week 8, day 2: *Advanced grouping and summarizing*. Available [here](https://mediaspace.msu.edu/media/Week+8+Day+2/1_b1tbbqza).
+
+Week 9, day 1: *Combining multiple tibbles*. Available [here](https://mediaspace.msu.edu/media/Week+9+Day+1/1_rbv1djpc).
+
