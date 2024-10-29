@@ -1,0 +1,509 @@
+---
+title: "Reshaping data with `tidyr`"
+editor: 
+  mode: source
+webr:
+  show-startup-message: false
+filters:
+  - webr
+engine: knitr
+execute:
+  echo: true
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+revealjs-plugins:
+  - revealjs-text-resizer
+---
+
+## Annoucements
+
+-   Midterm II is Thursday, November 14th.
+-   Material on the midterm will include all material through Week 11. 
+
+
+## Agenda
+
+-   Continuation and review of combining tibbles (i.e. data joins)
+-   Reshaping data with `tidyr`
+
+# Data Joins {background-color="#00817c"}
+
+## Data Joins in `R`
+
+Recall the `x` and `y` tibbles from last time.
+
+```{r, echo=FALSE}
+knitr::include_graphics("figs/tibbles.png")
+```
+
+## Types of Data Joins
+
+The `dplyr` package includes functions for two general types of joins:
+
+-   *Mutating joins*, which combine the **columns** of tibbles `x` and `y`, and
+-   *Filtering joins*, which match the **rows** of tibbles `x` and `y`.
+
+Think of how `mutate()` adds columns to a tibble, while `filter()` removes rows.
+
+## Mutating Joins
+
+`dplyr` contains four mutating joins:
+
+1.  `left_join(x, y)` keeps all rows of `x`, but if a row in `y` does not match to `x`, an `NA` is assigned to that row in the new columns.
+2.  `right_join(x, y)` is equivalent to `left_join(y, x)`, except for column order.
+3.  `inner_join(x, y)` keeps only the rows matched between `x` and `y`.
+4.  `full_join(x, y)` keeps all rows of both `x` and `y`.
+
+
+## Filtering Joins
+
+`dplyr` contains two filtering joins:
+
+1.  `semi_join(x, y)` keeps all the rows in `x` that have a match in `y`.
+2.  `anti_join(x, y)` removes all the rows in `x` that have a match in `y`.
+
+**Note**: Unlike mutating joins, filtering joins do not add any columns to the data.
+
+## Loading data
+
+We'll create the `x` and `y` tibbles in `R`:
+
+```{r, echo = TRUE}
+library(tidyverse)
+x <- tibble(spp_code = c("ABBA", "BEPA", "PIST"),
+            common_name = c("balsum fir", "paper birch", "white pine"))
+
+y <- tibble(spp_code = c("ABBA", "BEPA", "LALA"),
+            latin_name = c("Abies balsamea", 
+                           "Betula papyrifera",
+                           "Larix laricina"))
+```
+
+## Loading data
+
+We'll create the `x` and `y` tibbles in `R`:
+
+```{r, echo = TRUE}
+x
+y
+```
+
+## Q1. Write the code to get this output
+
+```{r}
+#| echo: false
+left_join(x, y, by = "spp_code")
+countdown::countdown(1)
+```
+
+## Q1. Write the code to get this output
+
+```{r}
+left_join(x, y, by = "spp_code")
+```
+
+## Q2. Write the code to get this output
+
+```{r}
+#| echo: false
+full_join(x, y, by = "spp_code")
+countdown::countdown(1)
+```
+
+## Q2. Write the code to get this output
+
+```{r}
+full_join(x, y, by = "spp_code")
+```
+
+## Q3. Write the code to get this output
+
+```{r}
+#| echo: false
+left_join(y, x, by = "spp_code")
+countdown::countdown(1)
+```
+
+## Q3. Write the code to get this output
+
+```{r}
+left_join(y, x, by = "spp_code")
+```
+
+## Q4. Write the code to get this output
+
+```{r}
+#| echo: false
+right_join(x, y, by = "spp_code")
+countdown::countdown(1)
+```
+
+## Q4. Write the code to get this output
+
+```{r}
+right_join(x, y, by = "spp_code")
+```
+
+## Q5. Write the code to get this output
+
+```{r}
+#| echo: false
+inner_join(x, y, by = "spp_code")
+countdown::countdown(1)
+```
+
+## Q5. Write the code to get this output
+
+```{r}
+inner_join(x, y, by = "spp_code")
+```
+
+## Q6. Write the code to get this output
+
+```{r}
+#| echo: false
+full_join(y, x, by = "spp_code")
+countdown::countdown(1)
+```
+
+## Q6. Write the code to get this output
+
+```{r}
+full_join(y, x, by = "spp_code")
+```
+
+## Consider a third tibble, `z`:
+
+```{r}
+z <- x %>%
+  rename(species_code = spp_code)
+z
+```
+
+
+## Q7. Write the code to get this output
+
+```{r}
+#| echo: false
+left_join(z, y, by = c("species_code" = "spp_code"))
+countdown::countdown(1)
+```
+
+## Q7. Write the code to get this output
+
+```{r}
+left_join(z, y, by = c("species_code" = "spp_code"))
+```
+
+
+## Q8. Write the code to get this output (hint: use a filtering join)
+
+```{r}
+#| echo: false
+semi_join(y, x, by = "spp_code")
+countdown::countdown(1)
+```
+
+
+## Q8. Write the code to get this output (hint: use a filtering join)
+
+```{r}
+semi_join(y, x, by = "spp_code")
+```
+
+
+## Q9. Write the code to get this output (hint: use a filtering join)
+
+```{r}
+#| echo: false
+anti_join(z, y, by = c("species_code" = "spp_code"))
+countdown::countdown(1)
+```
+
+
+## Q9. Write the code to get this output (hint: use a filtering join)
+
+```{r}
+anti_join(z, y, by = c("species_code" = "spp_code"))
+```
+
+## Q10. Write the code to get this output (hint: use a filtering join)
+
+```{r}
+#| echo: false
+anti_join(y, x, by = "spp_code")
+countdown::countdown(1)
+```
+
+
+## Q10. Write the code to get this output (hint: use a filtering join)
+
+```{r}
+anti_join(y, x, by = "spp_code")
+# or 
+anti_join(y, z, by = c("spp_code" = "species_code"))
+```
+
+
+# Reshaping Data {background-color="#00817c"}
+
+## The `tidyr` package
+
+::: incremental
+
+-   The `tidyr` package allows us to *transform* data from long to wide formats, and back.
+-   A key use of the `tidyr` package is getting data in *tidy format*.
+-   But what is *tidy format*? 
+
+:::
+
+## Tidy data
+
+"Tidy data" or "tidy format" is a formal concept of how we organize data for analyses, in particular, with tidy data:
+
+::: incremental
+
+-   Each row of the data correspond to a single observation, and
+-   Each column of the data correspond to a variable. 
+
+:::
+
+## Tidy data
+
+"Tidy data" or "tidy format" is a formal concept of how we organize data for analyses, in particular, with tidy data:
+
+-   Each row of the data correspond to a single observation, and
+-   Each column of the data correspond to a variable. 
+
+Let's take a look at a [blog post](https://openscapes.org/blog/2020-10-12-tidy-data/) from Julie Lowndes and Allison Horst about tidy data
+
+## Tidying data with `tidyr`
+
+Consider the `face` dataset from IFDAR:
+
+```{r}
+face <- read_csv("../labs/datasets/FACE/FACE_aspen_core_growth.csv") %>%
+  select(Rep, Treat, Clone, ID = `ID #`,
+        contains(as.character(2001:2005)) & contains("Height"))
+face
+```
+
+## Tidying data with `tidyr`
+
+Is this data tidy? If so, what does a row represent? What does a column represent? 
+
+```{r}
+face
+```
+
+## How do we make this data tidy? `r emo::ji("thinking")`
+
+```{r}
+face
+```
+::: incremental
+
+-   Each row should represent a measurement for a given rep, treatment, clone, and ID. But currently, we have multiple measurements on the same row. 
+
+-   Further, we have multiple columns for the "height" variable.
+
+-   Not tidy! 
+
+:::
+
+
+## We need to pivot the data into a longer format! 
+
+Enter, `pivot_longer()`. 
+
+`pivot_longer()`, a function from `tidyr` takes four key arguments:
+
+::: incremental
+
+-   `.data`: the data (tibble) you'd like to pivot, 
+-   `cols`: the columns you'd like to pivot,
+-   `names_to`: the new column that will be created which takes the column names from `cols` as values, and
+-   `values_to`: the new column that will be created which takes the column values from `cols` as values.
+
+:::
+
+## Why the long `face`?
+
+```{r}
+face_long <- face %>%
+  pivot_longer(
+    cols = c("2001_Height", "2002_Height", "2003_Height", 
+             "2004_Height", "2005_Height"),
+    names_to = "Year_Type",
+    values_to = "Height_cm")
+```
+
+
+## Why the long `face`?
+
+```{r}
+#| code-line-numbers: 3,4|5|6|3,4
+face_long <- face %>%
+  pivot_longer(
+    cols = c("2001_Height", "2002_Height", "2003_Height", 
+             "2004_Height", "2005_Height"),
+    names_to = "Year_Type",
+    values_to = "Height_cm")
+```
+
+## Why the long `face`?
+
+```{r}
+#| code-line-numbers: "3"
+face_long <- face %>%
+  pivot_longer(
+    cols = contains("Height"),
+    names_to = "Year_Type",
+    values_to = "Height_cm")
+```
+
+-   A cleaner way to select these columns is to use `dplyr`'s `contains()` function.
+
+## Why the long `face`?
+
+```{r}
+face_long
+```
+
+-   To get tidy data! 
+
+## Going (back) to wide data
+
+::: incremental
+
+-   Sometimes, we need to "widen" a dataset to get it into tidy format. 
+-   For this example, we will just widen the `face_long` dataset back to its original form. 
+-   `tidyr` has an aptly named function, `pivot_wider()`.
+-   Key arguments of `pivot_wider()`:
+    -   `.data`: the tibble to widen,
+    -   `names_from`: the column that contains values which will be assigned as the new column names,
+    -   `values_from`: the column that contains 
+
+:::
+
+## Pivoting wider
+
+```{r}
+face_wide <- face_long %>%
+  pivot_wider(names_from = "Year_Type", values_from = "Height_cm")
+
+all_equal(face, face_wide)
+```
+
+::: incremental
+
+-   This results in the same tibble that we started with! 
+
+:::
+
+## Other useful `tidyr` functions
+
+::: incremental
+
+-   `unite()` for pasteing column values together with specified seperators,
+-   The `separate_wider_*()` family: for splitting columns into multiple new columns:
+    - `separate_wider_delim()`: separate by delimiter
+    - `separate_wider_position()`: separate by position
+    - `separate_wider_regex()`: separate by regular expression
+  
+:::
+
+## `unite()`: examples
+
+```{r}
+face_long
+```
+
+
+## `unite()`: examples
+
+```{r}
+face_long %>%
+  unite(col = "Design", Rep, Treat, Clone, sep = "_")
+```
+
+## `unite()`: examples
+
+```{r}
+face_long %>%
+  unite(col = "Design", Rep, Treat, Clone, sep = ".")
+```
+
+## `unite()`: examples
+
+```{r}
+face_long_abc <- face_long %>%
+  unite(col = "Design", Rep, Treat, Clone, sep = "abc")
+face_long_abc
+```
+
+## `separate_wider_delim()` examples
+
+```{r}
+face_long_abc
+```
+
+
+## `separate_wider_delim()` examples
+
+```{r}
+face_long_abc %>%
+  separate_wider_delim(cols = "Design", 
+                       delim = "abc",
+                       names = c("Rep", "Treat", "Clone"))
+```
+
+## `separate_wider_delim()` examples
+
+```{r}
+face_long
+```
+
+```{r}
+face_long %>%
+  separate_wider_delim(cols = "Year_Type", 
+                       delim = "_",
+                       names = c("Year", NA))
+```
+
+
+
+
+
+## Next time
+
+-   More reshaping data with `tidyr`
+
+
+
+
+
+
+
+
+
+
+
+ 
