@@ -1,0 +1,23 @@
+---
+title: "Lecture Ticket 18"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read the following sections of IFDAR.
+
+-   Review Chapter 8
+
+
+## Questions
+
+1. What are each of the arguments to `pivot_longer()` and `pivot_wider()` that we will use? What must be specified for each of those arguments?
+
+2. What about the "FACE" dataset made it not tidy?
+
+
+
+
+
