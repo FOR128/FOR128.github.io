@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-10-17">
+<meta name="author" content="">
+<meta name="dcterms.date" content="2024-11-06">
 
-<title>Data Wrangling with dplyr – FOR 128</title>
+<title>Joining and Reshaping Data – FOR 128</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,35 +104,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../assets/styles.scss">
 </head>
@@ -264,30 +236,32 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
   <li><a href="#deliverables-i.e.-what-to-put-in-the-lab-drop-box" id="toc-deliverables-i.e.-what-to-put-in-the-lab-drop-box" class="nav-link" data-scroll-target="#deliverables-i.e.-what-to-put-in-the-lab-drop-box">Deliverables (i.e., what to put in the lab drop box)</a></li>
+  <li><a href="#collaborators" id="toc-collaborators" class="nav-link" data-scroll-target="#collaborators">Collaborator(s)</a></li>
   </ul></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#motivating-data" id="toc-motivating-data" class="nav-link" data-scroll-target="#motivating-data">Motivating Data</a></li>
+  <li><a href="#methods-dplyr-and-tidyr" id="toc-methods-dplyr-and-tidyr" class="nav-link" data-scroll-target="#methods-dplyr-and-tidyr">Methods: <code>dplyr</code> and <code>tidyr</code></a></li>
   <li><a href="#exercise-0" id="toc-exercise-0" class="nav-link" data-scroll-target="#exercise-0">Exercise 0</a></li>
+  </ul></li>
+  <li><a href="#part-1-toy-data" id="toc-part-1-toy-data" class="nav-link" data-scroll-target="#part-1-toy-data">Part 1: Toy Data</a>
+  <ul class="collapse">
   <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
-  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a>
-  <ul class="collapse">
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
   <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
   <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  </ul></li>
+  <li><a href="#part-2-fia-data" id="toc-part-2-fia-data" class="nav-link" data-scroll-target="#part-2-fia-data">Part 2: FIA Data</a>
+  <ul class="collapse">
   <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
   <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
   <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
   <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
   <li><a href="#exercise-10" id="toc-exercise-10" class="nav-link" data-scroll-target="#exercise-10">Exercise 10</a></li>
   <li><a href="#exercise-11" id="toc-exercise-11" class="nav-link" data-scroll-target="#exercise-11">Exercise 11</a></li>
-  <li><a href="#exercise-12" id="toc-exercise-12" class="nav-link" data-scroll-target="#exercise-12">Exercise 12</a></li>
-  <li><a href="#exercise-13" id="toc-exercise-13" class="nav-link" data-scroll-target="#exercise-13">Exercise 13</a></li>
-  <li><a href="#exercise-14" id="toc-exercise-14" class="nav-link" data-scroll-target="#exercise-14">Exercise 14</a></li>
-  <li><a href="#exercise-15" id="toc-exercise-15" class="nav-link" data-scroll-target="#exercise-15">Exercise 15</a></li>
-  <li><a href="#exercise-16" id="toc-exercise-16" class="nav-link" data-scroll-target="#exercise-16">Exercise 16</a></li>
-  <li><a href="#exercise-17" id="toc-exercise-17" class="nav-link" data-scroll-target="#exercise-17">Exercise 17</a></li>
-  <li><a href="#exercise-18" id="toc-exercise-18" class="nav-link" data-scroll-target="#exercise-18">Exercise 18</a></li>
-  <li><a href="#exercise-19" id="toc-exercise-19" class="nav-link" data-scroll-target="#exercise-19">Exercise 19</a></li>
-  <li><a href="#exercise-20" id="toc-exercise-20" class="nav-link" data-scroll-target="#exercise-20">Exercise 20</a></li>
   </ul></li>
+  <li><a href="#part-3-reshaping-data" id="toc-part-3-reshaping-data" class="nav-link" data-scroll-target="#part-3-reshaping-data">Part 3: Reshaping Data</a></li>
   <li><a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up">Wrap up</a></li>
   </ul>
 </nav>
@@ -297,8 +271,8 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Wrangling with <code>dplyr</code></h1>
-<p class="subtitle lead">FOR 128: Lab 7</p>
+<h1 class="title">Joining and Reshaping Data</h1>
+<p class="subtitle lead">FOR 128: Lab 9</p>
 </div>
 
 
@@ -309,7 +283,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 17, 2024</p>
+      <p class="date">November 6, 2024</p>
     </div>
   </div>
   
@@ -323,294 +297,303 @@ window.Quarto = {
 
 <section id="welcome" class="level2">
 <h2 class="anchored" data-anchor-id="welcome">Welcome</h2>
-<p>Welcome to Lab 7! Today, we’ll focus on writing <code>dplyr</code> code. In particular, we will both use the verbs individually and “write a sentence” with the verbs by stringing them together with pipes.</p>
+<p>Welcome to Lab 9! Today, we’ll focus on data joins and reshaping data. Parts 1 and 2 of this lab focuses on building your <code>dplyr</code> skills, especially in relation to joins. However, you’ll need to use some other <code>dplyr</code> functions along the way. In Part 3 of the lab, we’ll focus on reshaping data with <code>tidyr</code>.</p>
 <section id="learning-objectives" class="level3">
 <h3 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h3>
 <ul>
-<li>Use <code>dplyr</code> verbs together with pipes.</li>
+<li>Use <code>dplyr</code> joins</li>
+<li>Use <code>tidyr</code> to reshape data</li>
 </ul>
 </section>
 <section id="deliverables-i.e.-what-to-put-in-the-lab-drop-box" class="level3">
 <h3 class="anchored" data-anchor-id="deliverables-i.e.-what-to-put-in-the-lab-drop-box">Deliverables (i.e., what to put in the lab drop box)</h3>
-<p>Upload your rendered PDF (<code>lab_07.pdf</code>) <strong>and</strong> Quarto (<code>lab_07.qmd</code>) document to the lab drop box. Make sure the Quarto document properly renders to PDF.</p>
+<p>Upload your rendered PDF (<code>lab_09.pdf</code>) <strong>and</strong> Quarto (<code>lab_09.qmd</code>) document to the lab drop box. Make sure the Quarto document properly renders to PDF.</p>
 </section>
+<section id="collaborators" class="level3">
+<h3 class="anchored" data-anchor-id="collaborators">Collaborator(s)</h3>
+<p>List any collaborators you worked with below.</p>
+</section>
+</section>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<section id="motivating-data" class="level2">
+<h2 class="anchored" data-anchor-id="motivating-data">Motivating Data</h2>
+<p>For this lab, you’ll first work with the small datasets <code>x</code> and <code>y</code> presented in class to get started with joins. After a few exercises, you’ll move to some real data from the US Forest Service Forest Inventory &amp; Analysis (FIA) program to gain more experience joining complex datasets.</p>
+<p>The four FIA datasets of interest are available on D2L in the Lab 8 module. The <code>plot_biomass.csv</code> dataset contains information on the unique FIA plot ID (<code>PLT_CN</code>) and a measurement of aboveground biomass for each plot. The <code>plot_locations.csv</code> dataset contains location information for each of those same plots, along with the unique identifier (<code>PLT_CN</code>). Notably, <code>plot_locations.csv</code> has columns denoting the state and county the plot resides in. However, we don’t have the actual state and county names for each plot, just their unique code. We will have to do some data joins with the <code>state_reference.csv</code> and <code>county_reference.csv</code> datasets to find out where these plots are.</p>
+</section>
+<section id="methods-dplyr-and-tidyr" class="level2">
+<h2 class="anchored" data-anchor-id="methods-dplyr-and-tidyr">Methods: <code>dplyr</code> and <code>tidyr</code></h2>
+<p>Use <code>dplyr</code> and <code>tidyr</code> functions that we’ve learned over the past few weeks to answer the questions in this lab.</p>
 </section>
 <section id="exercise-0" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-0">Exercise 0</h2>
 <p>Load any packages you’ll need for this lab below.</p>
 </section>
+</section>
+<section id="part-1-toy-data" class="level1">
+<h1>Part 1: Toy Data</h1>
 <section id="exercise-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<p>Create the following dataset and call it <code>plots</code>. The resulting tibble should look like this when printed:</p>
+<p>Create the <code>x</code> and <code>y</code> datasets that we have used over the lectures related to data joins using the <code>tibble()</code> function. These datasets are shown below for your convenience.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>plots</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="../slides/figs/tibbles.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In R, your resulting tibbles should look as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 6
-   plot  tree   dbh  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     1     1  20.2   2   D     TRUE 
-2     1     2  10.4   1   D     TRUE 
-3     2     1   5     0.5 D     TRUE 
-4     2     2  18    NA   C     FALSE
-5     2     3  10.5   1.5 C     TRUE </code></pre>
+<pre><code># A tibble: 3 × 2
+  spp_code common_name
+  &lt;chr&gt;    &lt;chr&gt;      
+1 ABBA     balsum fir 
+2 BEPA     paper birch
+3 PIST     white pine </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  spp_code latin_name       
+  &lt;chr&gt;    &lt;chr&gt;            
+1 ABBA     Abies balsamea   
+2 BEPA     Betula papyrifera
+3 LALA     Larix laricina   </code></pre>
 </div>
 </div>
 </section>
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>Write some code to figure out the follow features of <code>plots</code>:</p>
-<ol type="a">
-<li>How many rows and columns?</li>
-<li>What are the column names?</li>
-<li>What is the data type of each column?</li>
-<li>Are there any <code>NA</code> values? If so, in which column?</li>
-</ol>
+<p>Create a dataset called <code>z</code> by joining <code>x</code> and <code>y</code> by their species code. Retain only the rows in <code>x</code> and <code>y</code> that have matching species codes. Print your resulting tibble <code>z</code>. Justify which join you used.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  spp_code common_name latin_name       
+  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;            
+1 ABBA     balsum fir  Abies balsamea   
+2 BEPA     paper birch Betula papyrifera</code></pre>
+</div>
+</div>
 </section>
 <section id="exercise-3" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<p>Use a <code>dplyr</code> function to print all trees in plot 2.</p>
+<p>Now, create a dataset called <code>w</code> that contains all the rows in <code>x</code>, but only the rows in <code>y</code> that have a species code that match to <code>x</code> by joining <code>x</code> and <code>y</code>. Make sure the column order is <code>spp_code</code>, <code>common_name</code>, <code>latin_name</code> Justify which join you used.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 6
-   plot  tree   dbh  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     2     1   5     0.5 D     TRUE 
-2     2     2  18    NA   C     FALSE
-3     2     3  10.5   1.5 C     TRUE </code></pre>
-</div>
-</div>
-<section id="exercise-4" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
-<p>Use a <code>dplyr</code> function to print all trees in plot 2 that have dbh less than or equal 10.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 6
-   plot  tree   dbh  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     2     1     5   0.5 D     TRUE </code></pre>
+<pre><code># A tibble: 3 × 3
+  spp_code common_name latin_name       
+  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;            
+1 ABBA     balsum fir  Abies balsamea   
+2 BEPA     paper birch Betula papyrifera
+3 PIST     white pine  &lt;NA&gt;             </code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-5" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
-<p>Use a <code>dplyr</code> function to print the tree with the largest dbh.</p>
+<section id="exercise-4" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+<p>Next, with another join of <code>x</code> and <code>y</code>, create a dataset called <code>w_clone</code> with the same rows, columns, and values as <code>w</code>, but that has the <code>latin_name</code> column before <code>common_name</code>. Justify which join you used.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 6
-   plot  tree   dbh  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     1     1  20.2     2 D     TRUE </code></pre>
+<pre><code># A tibble: 3 × 3
+  spp_code latin_name        common_name
+  &lt;chr&gt;    &lt;chr&gt;             &lt;chr&gt;      
+1 ABBA     Abies balsamea    balsum fir 
+2 BEPA     Betula papyrifera paper birch
+3 PIST     &lt;NA&gt;              white pine </code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-6" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
-<p>Use a series of piped <code>dplyr</code> functions to find the largest dbh tree on plot 2.</p>
+<section id="exercise-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
+<p>Use a <em>filtering</em> join to check if there are any species codes in <code>y</code> that do not exist in <code>x</code>. Are there any? If so, what is the species code?</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 6
-   plot  tree   dbh  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     2     2    18    NA C     FALSE</code></pre>
+<pre><code># A tibble: 1 × 2
+  spp_code latin_name    
+  &lt;chr&gt;    &lt;chr&gt;         
+1 LALA     Larix laricina</code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-7" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-7">Exercise 7</h3>
-<p>Use a series of piped <code>dplyr</code> functions to find the largest dbh live tree on plot 2.</p>
+</section>
+<section id="part-2-fia-data" class="level1">
+<h1>Part 2: FIA Data</h1>
+<section id="exercise-6" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
+<p>Load in the four datasets included in the posting of Lab 9 on the course website. Name each of them the same as they are named as files, without the <code>.csv</code> extension. For example, for the “plot_biomass.csv” file, name the object <code>plot_biomass</code>, etc. Take a look at these datasets and try to understand them. What does a row represent in each one?</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plot_biomass</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 6
-   plot  tree   dbh  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     2     3  10.5   1.5 C     TRUE </code></pre>
+<pre><code># A tibble: 191 × 2
+    PLT_CN DRYBIO_AG_TPA
+     &lt;dbl&gt;         &lt;dbl&gt;
+ 1 1.75e14        122.  
+ 2 1.75e14         76.2 
+ 3 1.75e14          4.21
+ 4 1.75e14         13.2 
+ 5 1.75e14         90.9 
+ 6 1.75e14         96.2 
+ 7 1.75e14        397.  
+ 8 1.75e14          2.54
+ 9 1.75e14        290.  
+10 2.17e14        182.  
+# ℹ 181 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plot_locations</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 191 × 5
+    PLT_CN STATECD COUNTYFIPS LON_PUBLIC LAT_PUBLIC
+     &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+ 1 3.08e13      41      41051      -122.       45.6
+ 2 4.12e14      41      41009      -123.       45.9
+ 3 4.85e14      41      41009      -123.       45.8
+ 4 3.08e13      41      41009      -123.       45.8
+ 5 2.17e14      41      41009      -123.       46.0
+ 6 4.85e14      41      41009      -123.       46.1
+ 7 4.12e14      41      41051      -122.       45.5
+ 8 3.08e13      41      41009      -123.       45.8
+ 9 2.17e14      41      41009      -123.       45.9
+10 5.59e14      41      41009      -123.       45.9
+# ℹ 181 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>state_reference</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 59 × 3
+   state_cd state_name           state_abbr
+      &lt;dbl&gt; &lt;chr&gt;                &lt;chr&gt;     
+ 1        1 Alabama              AL        
+ 2        2 Alaska               AK        
+ 3        4 Arizona              AZ        
+ 4        5 Arkansas             AR        
+ 5        6 California           CA        
+ 6        8 Colorado             CO        
+ 7        9 Connecticut          CT        
+ 8       10 Delaware             DE        
+ 9       11 District of Columbia DC        
+10       12 Florida              FL        
+# ℹ 49 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>county_reference</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,233 × 3
+   STATENM      COUNTYNM   COUNTYFIPS
+   &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt;     
+ 1 Ohio         Highland   39071     
+ 2 California   Alpine     06003     
+ 3 Florida      Escambia   12033     
+ 4 Illinois     Lawrence   17101     
+ 5 Mississippi  Wayne      28153     
+ 6 Mississippi  Tishomingo 28141     
+ 7 Montana      Sanders    30089     
+ 8 New York     Albany     36001     
+ 9 Pennsylvania Potter     42105     
+10 Missouri     Greene     29077     
+# ℹ 3,223 more rows</code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-8" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-8">Exercise 8</h3>
-<p>Use a series of piped <code>dplyr</code> functions to find the largest dbh dead tree on plot 2.</p>
+<section id="exercise-7" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
+<p>Now that you’ve got a sense of the data, join two datasets together to get both plot locations and plot biomass in the same tibble. Call this new tibble <code>plots</code>. Make sure to specify what you are joining by, and justify which join you used. Your new dataset should have 191 rows and 6 columns. Take a <code>glimpse()</code> at your new tibble.</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(plots)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 6
-   plot  tree   dbh  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     2     2    18    NA C     FALSE</code></pre>
+<pre><code>Rows: 191
+Columns: 6
+$ PLT_CN        &lt;dbl&gt; 1.747633e+14, 1.747635e+14, 1.747635e+14, 1.747636e+14, …
+$ DRYBIO_AG_TPA &lt;dbl&gt; 122.36957, 76.15349, 4.20973, 13.23662, 90.90198, 96.228…
+$ STATECD       &lt;dbl&gt; 41, 53, 53, 53, 53, 41, 41, 53, 41, 41, 41, 41, 41, 41, …
+$ COUNTYFIPS    &lt;dbl&gt; 41051, 53013, 53013, 53013, 53013, 41051, 41051, 53013, …
+$ LON_PUBLIC    &lt;dbl&gt; -121.9465, -117.8284, -117.6408, -117.7454, -117.7872, -…
+$ LAT_PUBLIC    &lt;dbl&gt; 45.63014, 46.08317, 46.24816, 46.22776, 46.10631, 45.530…</code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-9" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-9">Exercise 9</h3>
-<p>Use a series of piped <code>dplyr</code> functions to find the largest dbh live tree on plot 2 of type D.</p>
+<section id="exercise-8" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
+<p>Now you have your plot location information and plot biomass measurements in one tibble, but we still don’t know <em>where</em> these plots are. Add some columns to <code>plots</code> by joining it with <code>state_reference</code> in a way such that each row of <code>plots</code> now has a state name and abbreviation associated with it. Use <code>dplyr</code> to figure out what state(s) are these plots in?</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>plots</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 6
-   plot  tree   dbh  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     2     1     5   0.5 D     TRUE </code></pre>
+<pre><code># A tibble: 191 × 8
+    PLT_CN DRYBIO_AG_TPA STATECD COUNTYFIPS LON_PUBLIC LAT_PUBLIC state_name
+     &lt;dbl&gt;         &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;     
+ 1 1.75e14        122.        41      41051      -122.       45.6 Oregon    
+ 2 1.75e14         76.2       53      53013      -118.       46.1 Washington
+ 3 1.75e14          4.21      53      53013      -118.       46.2 Washington
+ 4 1.75e14         13.2       53      53013      -118.       46.2 Washington
+ 5 1.75e14         90.9       53      53013      -118.       46.1 Washington
+ 6 1.75e14         96.2       41      41051      -122.       45.5 Oregon    
+ 7 1.75e14        397.        41      41051      -122.       45.5 Oregon    
+ 8 1.75e14          2.54      53      53013      -118.       46.3 Washington
+ 9 1.75e14        290.        41      41051      -122.       45.5 Oregon    
+10 2.17e14        182.        41      41051      -122.       45.6 Oregon    
+# ℹ 181 more rows
+# ℹ 1 more variable: state_abbr &lt;chr&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-10" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-10">Exercise 10</h3>
-<p>Use a series of piped <code>dplyr</code> functions to find the smallest dbh tree on plot 1.</p>
+<section id="exercise-9" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
+<p>Use a filtering join to see if any rows of <code>plots</code> do not have a match in <code>state_reference</code>. Are there any? If so, how many?</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 6
-   plot  tree   dbh  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     1     2  10.4     1 D     TRUE </code></pre>
+<pre><code># A tibble: 0 × 8
+# ℹ 8 variables: PLT_CN &lt;dbl&gt;, DRYBIO_AG_TPA &lt;dbl&gt;, STATECD &lt;dbl&gt;,
+#   COUNTYFIPS &lt;dbl&gt;, LON_PUBLIC &lt;dbl&gt;, LAT_PUBLIC &lt;dbl&gt;, state_name &lt;chr&gt;,
+#   state_abbr &lt;chr&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-11" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-11">Exercise 11</h3>
-<p>Use a <code>dplyr</code> function to add a new column to <code>plots</code> to hold each tree’s basal area (ft<span class="math inline">\(^2\)</span>). This new column should be called <code>ba</code> with values equal to <code>0.005454*dbh^2</code> (assuming dbh is in inches).</p>
+<section id="exercise-10" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-10">Exercise 10</h2>
+<p>Now you’ve added biomass and state information to your plot data. Great job! We have one more dataset to join. Join the <code>county_reference</code> tibble to <code>plots</code> so you can see what county each FIA plot is in. Hint: you might get an error here. Make sure to check the column classes you are joining by and change them as needed. You should have 191 rows and 10 columns in <code>plots</code> after this join. What counties are these plots in?</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>plots</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 7
-   plot  tree   dbh  logs type  live     ba
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt; &lt;dbl&gt;
-1     1     1  20.2   2   D     TRUE  2.23 
-2     1     2  10.4   1   D     TRUE  0.590
-3     2     1   5     0.5 D     TRUE  0.136
-4     2     2  18    NA   C     FALSE 1.77 
-5     2     3  10.5   1.5 C     TRUE  0.601</code></pre>
+<pre><code># A tibble: 191 × 10
+    PLT_CN DRYBIO_AG_TPA STATECD COUNTYFIPS LON_PUBLIC LAT_PUBLIC state_name
+     &lt;dbl&gt;         &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;     
+ 1 1.75e14        122.        41 41051           -122.       45.6 Oregon    
+ 2 1.75e14         76.2       53 53013           -118.       46.1 Washington
+ 3 1.75e14          4.21      53 53013           -118.       46.2 Washington
+ 4 1.75e14         13.2       53 53013           -118.       46.2 Washington
+ 5 1.75e14         90.9       53 53013           -118.       46.1 Washington
+ 6 1.75e14         96.2       41 41051           -122.       45.5 Oregon    
+ 7 1.75e14        397.        41 41051           -122.       45.5 Oregon    
+ 8 1.75e14          2.54      53 53013           -118.       46.3 Washington
+ 9 1.75e14        290.        41 41051           -122.       45.5 Oregon    
+10 2.17e14        182.        41 41051           -122.       45.6 Oregon    
+# ℹ 181 more rows
+# ℹ 3 more variables: state_abbr &lt;chr&gt;, STATENM &lt;chr&gt;, COUNTYNM &lt;chr&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-12" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-12">Exercise 12</h3>
-<p>Use a <code>dplyr</code> function to move your newly created column <code>ba</code> to between the <code>dbh</code> and <code>logs</code> columns.</p>
+<section id="exercise-11" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-11">Exercise 11</h2>
+<p>Now you’ve wrangled all your data into one tibble. Great job! Use a series of piped <code>dplyr</code> functions to compute the average biomass in each county.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 7
-   plot  tree   dbh    ba  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     1     1  20.2 2.23    2   D     TRUE 
-2     1     2  10.4 0.590   1   D     TRUE 
-3     2     1   5   0.136   0.5 D     TRUE 
-4     2     2  18   1.77   NA   C     FALSE
-5     2     3  10.5 0.601   1.5 C     TRUE </code></pre>
+<pre><code># A tibble: 3 × 2
+  COUNTYNM  avg_bio
+  &lt;chr&gt;       &lt;dbl&gt;
+1 Clark        92.4
+2 Columbia     60.6
+3 Multnomah   187. </code></pre>
 </div>
 </div>
 </section>
-<section id="exercise-13" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-13">Exercise 13</h3>
-<p>Use a series of piped <code>dplyr</code> functions to compute the mean dbh for trees on plots 1 and 2. Note, I called my mean <code>mean_dbh</code>.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 2
-   plot mean_dbh
-  &lt;dbl&gt;    &lt;dbl&gt;
-1     1     15.3
-2     2     11.2</code></pre>
-</div>
-</div>
 </section>
-<section id="exercise-14" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-14">Exercise 14</h3>
-<p>Use a series of piped <code>dplyr</code> functions to compute plot specific mean dbh and logs for trees. Exclude <code>NA</code> values from the mean calculations (hint, use the <code>na.rm</code> argument in <code>mean()</code>). Note, I called my mean <code>mean_dbh</code> and <code>mean_logs</code>.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-   plot mean_dbh mean_logs
-  &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-1     1     15.3       1.5
-2     2     11.2       1  </code></pre>
-</div>
-</div>
-</section>
-<section id="exercise-15" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-15">Exercise 15</h3>
-<p>Use a series of piped <code>dplyr</code> functions to compute plot specific mean dbh and logs for <em>live</em> trees. Note, I called my mean <code>mean_dbh</code> and <code>mean_logs</code>. Why did only plot 2 mean dbh change from the your solution to Exercise 14?</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-   plot mean_dbh mean_logs
-  &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-1     1    15.3        1.5
-2     2     7.75       1  </code></pre>
-</div>
-</div>
-</section>
-<section id="exercise-16" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-16">Exercise 16</h3>
-<p>Sort <code>plots</code> by increasing plot number and increasing dbh within plot.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 7
-   plot  tree   dbh    ba  logs type  live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt;
-1     1     2  10.4 0.590   1   D     TRUE 
-2     1     1  20.2 2.23    2   D     TRUE 
-3     2     1   5   0.136   0.5 D     TRUE 
-4     2     3  10.5 0.601   1.5 C     TRUE 
-5     2     2  18   1.77   NA   C     FALSE</code></pre>
-</div>
-</div>
-</section>
-<section id="exercise-17" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-17">Exercise 17</h3>
-<p>The type column holds values “D” and “C” which stand for deciduous and conifer, respectively. Use <code>mutate()</code> and the <code>case_when()</code> function to change values in the type column from “D” and “C” to “deciduous” and “conifer”.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>plots</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 7
-   plot  tree   dbh    ba  logs type      live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     &lt;lgl&gt;
-1     1     1  20.2 2.23    2   deciduous TRUE 
-2     1     2  10.4 0.590   1   deciduous TRUE 
-3     2     1   5   0.136   0.5 deciduous TRUE 
-4     2     2  18   1.77   NA   conifer   FALSE
-5     2     3  10.5 0.601   1.5 conifer   TRUE </code></pre>
-</div>
-</div>
-</section>
-<section id="exercise-18" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-18">Exercise 18</h3>
-<p>Use a series of piped <code>dplyr</code> functions to compute type specific mean dbh and logs. More specifically, I want you to use a grouped <code>summarize()</code>, where you group by type. Note, I called my mean <code>mean_dbh</code> and <code>mean_logs</code>.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  type      mean_dbh mean_logs
-  &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;
-1 conifer       14.2      1.5 
-2 deciduous     11.9      1.17</code></pre>
-</div>
-</div>
-</section>
-<section id="exercise-19" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-19">Exercise 19</h3>
-<p>Use a series of piped <code>dplyr</code> functions to count the number of trees by type. Hint, use the <code>n()</code> within a grouped <code>summarize()</code>. I called my count <code>n_trees</code>.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 2
-  type      n_trees
-  &lt;chr&gt;       &lt;int&gt;
-1 conifer         2
-2 deciduous       3</code></pre>
-</div>
-</div>
-</section>
-<section id="exercise-20" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-20">Exercise 20</h3>
-<p>Use a series of piped <code>dplyr</code> functions to print the trees with the largest basal area within each plot.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 7
-# Groups:   plot [2]
-   plot  tree   dbh    ba  logs type      live 
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     &lt;lgl&gt;
-1     1     1  20.2  2.23     2 deciduous TRUE 
-2     2     2  18    1.77    NA conifer   FALSE</code></pre>
-</div>
-</div>
-</section>
+<section id="part-3-reshaping-data" class="level1">
+<h1>Part 3: Reshaping Data</h1>
 </section>
 <section id="wrap-up" class="level1">
 <h1>Wrap up</h1>
-<p>Congratulations! You’ve made it to the end of Lab 7. Make sure to render your final document and submit both the .pdf and .qmd file to D2L.</p>
+<p>Congratulations! You’ve made it to the end of Lab 9. Make sure to render your final document and submit both the .pdf and .qmd file to D2L.</p>
 
 
 </section>
