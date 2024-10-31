@@ -1,0 +1,214 @@
+---
+title: "Joining and Reshaping Data"
+subtitle: "FOR 128: Lab 9"
+author: "Insert Your Name Here"
+date: "11/6/2024"
+format:
+  pdf: default
+editor: 
+  mode: source
+---
+
+## Welcome
+
+Welcome to Lab 9! Today, we'll focus on data joins and reshaping data. Parts 1 and 2 of this lab focuses on building your `dplyr` skills, especially in relation to joins. However, you'll need to use some other `dplyr` functions along the way. In Part 3 of the lab, we'll focus on reshaping data with `tidyr`. 
+
+### Learning objectives
+
+-   Use `dplyr` joins
+-   Use `tidyr` to reshape data
+
+### Deliverables (i.e., what to put in the lab drop box)
+
+Upload your rendered PDF (`lab_09.pdf`) **and** Quarto (`lab_09.qmd`) document to the lab drop box. Make sure the Quarto document properly renders to PDF.
+
+### Collaborator(s)
+
+List any collaborators you worked with below. 
+
+
+
+
+## Exercise 0
+
+Load any packages you'll need for this lab below.
+
+```{r}
+
+```
+
+# Part 1: Toy Data
+
+For this part, you'll first work with the small datasets `x` and `y` presented in class to get started with joins. After a few exercises, you'll move to some real data from the US Forest Service Forest Inventory & Analysis (FIA) program to gain more experience joining complex datasets. 
+
+## Exercise 1
+
+Create the `x` and `y` datasets that we have used over the lectures related to data joins using the `tibble()` function. These datasets are shown below for your convenience. 
+
+```{r}
+
+```
+
+
+## Exercise 2
+
+Create a dataset called `z` by joining `x` and `y` by their species code. Retain only the rows in `x` and `y` that have matching species codes. Print your resulting tibble `z`. Justify which join you used. 
+
+```{r}
+
+```
+
+
+## Exercise 3
+
+Now, create a dataset called `w` that contains all the rows in `x`, but only the rows in `y` that have a species code that match to `x` by joining `x` and `y`. Make sure the column order is `spp_code`, `common_name`, `latin_name` Justify which join you used.
+
+```{r}
+
+```
+
+
+## Exercise 4
+
+Next, with another join of `x` and `y`, create a dataset called `w_clone` with the same rows, columns, and values as `w`, but that has the `latin_name` column before `common_name`. Justify which join you used. 
+
+```{r}
+
+```
+
+
+## Exercise 5
+
+Use a *filtering* join to check if there are any species codes in `y` that do not exist in `x`. Are there any? If so, what is the species code?
+
+```{r}
+
+```
+
+
+# Part 2: FIA Data
+
+For this part, you'll use four dataset from the Forest Inventory & Analysis Program (FIA). These data are available on the course website in the "data_lab9.zip" file. The `plot_biomass.csv` dataset contains information on the unique FIA plot ID (`PLT_CN`) and a measurement of aboveground biomass for each plot. The `plot_locations.csv` dataset contains location information for each of those same plots, along with the unique identifier (`PLT_CN`). Notably, `plot_locations.csv` has columns denoting the state and county the plot resides in. However, we don't have the actual state and county names for each plot, just their unique code. We will have to do some data joins with the `state_reference.csv` and `county_reference.csv` datasets to find out where these plots are.  
+
+
+## Exercise 6
+
+Load in the four datasets included in the posting of Lab 9 on the course website. Name each of them the same as they are named as files, without the `.csv` extension. For example, for the "plot_biomass.csv" file, name the object `plot_biomass`, etc. Take a look at these datasets and try to understand them. What does a row represent in each one? 
+
+```{r}
+
+```
+
+
+## Exercise 7
+
+Now that you've got a sense of the data, join two datasets together to get both plot locations and plot biomass in the same tibble. Call this new tibble `plots`. Make sure to specify what you are joining by, and justify which join you used. Your new dataset should have 191 rows and 6 columns. Take a `glimpse()` at your new tibble. 
+
+```{r}
+
+```
+
+
+## Exercise 8
+
+Now you have your plot location information and plot biomass measurements in one tibble, but we still don't know *where* these plots are. Add some columns to `plots` by joining it with `state_reference` in a way such that each row of `plots` now has a state name and abbreviation associated with it. Use `dplyr` to figure out what state(s) are these plots in?
+
+```{r}
+
+```
+
+
+
+## Exercise  9
+
+Use a filtering join to see if any rows of `plots` do not have a match in `state_reference`. Are there any? If so, how many? 
+
+```{r}
+
+```
+
+
+## Exercise 10
+
+Now you've added biomass and state information to your plot data. Great job! We have one more dataset to join. Join the `county_reference` tibble to `plots` so you can see what county each FIA plot is in. Hint: you might get an error here. Make sure to check the column classes you are joining by and change them as needed. You should have 191 rows and 10 columns in `plots` after this join. What counties are these plots in? 
+
+```{r}
+
+```
+
+
+## Exercise 11
+
+Now you've wrangled all your data into one tibble. Great job! Use a series of piped `dplyr` functions to compute the average biomass in each county.
+
+```{r}
+
+```
+
+
+
+# Part 3: Reshaping Data
+
+You'll find the "example_plot_data.csv" data file in the "data_lab9.zip" file on the course website. It holds tree data measured on 2 1/20-th acre plots.
+
+Your goal is to make a stand table with species as rows and 4-inch DBH classes as columns and values of trees per acre. These trees per acre values will be an average from the per acre values recorded for each plot. This average is our best estimate for the trees per acre for the area sampled using the two plots.
+
+
+## Exercise 12
+
+Read in the "example_plot_data.csv" into a tibble called `example_plots`.
+
+```{r}
+
+```
+
+
+## Exercise 13
+
+Add two new columns to the `example_plots` tibble. The first `dbh_4in` holds the 4-inch DBH class the given tree falls in. The second `TF` holds the tree factor for each tree (i.e., how many trees per acre that one tree represents). Add both columns with a single call to `mutate()`.
+
+Note that since these are 20 acre plots, the tree factor should be 20 for each tree.
+
+HINT: When creating the `dbh_4in` column, you can use `cut_width()` from `ggplot2` or a `case_when()` inside of a `mutate()`. 
+
+
+```{r}
+
+```
+
+
+## Exercise 14
+
+Compute a stand table for `plot` 1 and 2. They should look like the tables below.
+
+#### Plot 1
+```{r}
+
+```
+
+#### Plot 2
+```{r}
+
+```
+
+
+## Exercise 15
+
+The stand table estimate we want combines information from each plot stand table by averaging their cell values. For example, plot 1 has 40 Basswood in the [2,6] in DBH class, and Plot 2 has 20 Basswood in the [2,6] in DBH class. So, best estimate of Basswood in the [2,6] in DBH class should be an average of 40 and 20 (i.e., `mean(c(40,20))`) which is 30.
+
+The code below computes the desired stand table estimate (i.e., averages across plots) all at once. Your job is to study this code and convince yourself you understand it and can replicate it for different data. Take it apart. Run it bit by bit. Reverse engineer it to understand how it works. Use math by hand to confirm the average from the two tables above are the values you see in the table below.
+
+```{r}
+example_plots %>% 
+  complete(plot_id, species, dbh_4in, fill = list(tf = 0)) %>%
+  group_by(plot_id, species, dbh_4in) %>%
+  summarize(tf_plot_level = sum(tf)) %>% ## Plot-level summary of trees per acre.
+  group_by(species, dbh_4in) %>% 
+  summarise(mean_tpa = mean(tf_plot_level)) %>% ## Forest-level mean of trees per acre.
+  pivot_wider(names_from = dbh_4in, values_from = mean_tpa)
+```
+
+
+# Wrap up
+
+Congratulations! You've made it to the end of Lab 9. Make sure to render your final document and submit both the .pdf and .qmd file to D2L.
