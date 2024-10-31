@@ -1,0 +1,23 @@
+---
+title: "Lecture Ticket 19"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read the following article: [A Layered Grammar of Graphics](https://doi.org/10.1198/jcgs.2009.07098).
+
+
+## Questions
+
+1. What is a geometry? What are some examples of geometries? 
+
+2. What is an aesthetic? What are some examples of aesthetics? 
+
+3. What is a scale? How do scales differ between continuous and categorical variables?
+
+
+
+
+
