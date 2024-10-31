@@ -1,10 +1,10 @@
 ---
 title: "Joining and Reshaping Data"
 subtitle: "FOR 128: Lab 9"
-author: ""
+author: "Insert Your Name Here"
 date: "11/6/2024"
 format:
-  html: default
+  pdf: default
 editor: 
   mode: source
 ---
@@ -37,12 +37,6 @@ Load any packages you'll need for this lab below.
 
 ```
 
-```{r}
-#| echo: false
-#| message: false
-library(tidyverse)
-```
-
 # Part 1: Toy Data
 
 For this part, you'll first work with the small datasets `x` and `y` presented in class to get started with joins. After a few exercises, you'll move to some real data from the US Forest Service Forest Inventory & Analysis (FIA) program to gain more experience joining complex datasets. 
@@ -55,25 +49,6 @@ Create the `x` and `y` datasets that we have used over the lectures related to d
 
 ```
 
-```{r}
-#| echo: false
-#| message: false
-knitr::include_graphics("../slides/figs/tibbles.png")
-x <- tibble(spp_code = c("ABBA", "BEPA", "PIST"),
-            common_name = c("balsum fir", "paper birch", "white pine"))
-
-y <- tibble(spp_code = c("ABBA", "BEPA", "LALA"),
-            latin_name = c("Abies balsamea", 
-                           "Betula papyrifera",
-                           "Larix laricina"))
-```
-
-In R, your resulting tibbles should look as follows:
-```{r}
-x
-y
-```
-
 
 ## Exercise 2
 
@@ -83,12 +58,6 @@ Create a dataset called `z` by joining `x` and `y` by their species code. Retain
 
 ```
 
-```{r}
-#| echo: false
-#| message: false
-z <- inner_join(x, y, by = "spp_code")
-z
-```
 
 ## Exercise 3
 
@@ -99,13 +68,6 @@ Now, create a dataset called `w` that contains all the rows in `x`, but only the
 ```
 
 
-```{r}
-#| echo: false
-#| message: false
-w <- left_join(x, y, by = "spp_code")
-w
-```
-
 ## Exercise 4
 
 Next, with another join of `x` and `y`, create a dataset called `w_clone` with the same rows, columns, and values as `w`, but that has the `latin_name` column before `common_name`. Justify which join you used. 
@@ -114,12 +76,6 @@ Next, with another join of `x` and `y`, create a dataset called `w_clone` with t
 
 ```
 
-```{r}
-#| echo: false
-#| message: false
-w_clone <- right_join(y, x, by = "spp_code")
-w_clone
-```
 
 ## Exercise 5
 
@@ -129,12 +85,6 @@ Use a *filtering* join to check if there are any species codes in `y` that do no
 
 ```
 
-
-```{r}
-#| echo: false
-#| message: false
-anti_join(y, x, by = "spp_code")
-```
 
 # Part 2: FIA Data
 
@@ -150,28 +100,6 @@ Load in the four datasets included in the posting of Lab 9 on the course website
 ```
 
 
-```{r}
-#| echo: false
-#| message: false
-plot_biomass <- read_csv("data_lab9/plot_biomass.csv")
-plot_locations <- read_csv("data_lab9/plot_locations.csv")
-state_reference <- read_csv("data_lab9/state_reference.csv")
-county_reference <- read_csv("data_lab9/county_reference.csv")
-
-# plot_biomass: each row is an FIA plot
-# plot_locations: each row is an FIA plot
-# state_reference: each row is a state
-# county_reference: each row is a county-state combination
-```
-
-```{r}
-plot_biomass
-plot_locations
-state_reference
-county_reference
-```
-
-
 ## Exercise 7
 
 Now that you've got a sense of the data, join two datasets together to get both plot locations and plot biomass in the same tibble. Call this new tibble `plots`. Make sure to specify what you are joining by, and justify which join you used. Your new dataset should have 191 rows and 6 columns. Take a `glimpse()` at your new tibble. 
@@ -181,38 +109,12 @@ Now that you've got a sense of the data, join two datasets together to get both 
 ```
 
 
-```{r}
-#| echo: false
-#| message: false
-plots <- plot_biomass %>%
-  left_join(plot_locations, by = "PLT_CN")
-```
-
-```{r}
-glimpse(plots)
-```
-
-
 ## Exercise 8
 
 Now you have your plot location information and plot biomass measurements in one tibble, but we still don't know *where* these plots are. Add some columns to `plots` by joining it with `state_reference` in a way such that each row of `plots` now has a state name and abbreviation associated with it. Use `dplyr` to figure out what state(s) are these plots in?
 
 ```{r}
 
-```
-
-
-```{r}
-#| echo: false
-#| message: false
-plots <- plots %>%
-  left_join(state_reference, by = c("STATECD" = "state_cd"))
-
-# Washington and Oregon
-```
-
-```{r}
-plots
 ```
 
 
@@ -226,30 +128,12 @@ Use a filtering join to see if any rows of `plots` do not have a match in `state
 ```
 
 
-```{r}
-#| echo: false
-#| message: false
-anti_join(plots, state_reference, by = c("STATECD" = "state_cd"))
-
-# no
-```
-
 ## Exercise 10
 
 Now you've added biomass and state information to your plot data. Great job! We have one more dataset to join. Join the `county_reference` tibble to `plots` so you can see what county each FIA plot is in. Hint: you might get an error here. Make sure to check the column classes you are joining by and change them as needed. You should have 191 rows and 10 columns in `plots` after this join. What counties are these plots in? 
 
 ```{r}
-#| echo: false
-#| message: false
-plots <- plots %>%
-  mutate(COUNTYFIPS = as.character(COUNTYFIPS)) %>%
-  left_join(county_reference, by = "COUNTYFIPS") 
 
-# Clark, Columbia, Multnomah
-```
-
-```{r}
-plots
 ```
 
 
@@ -258,12 +142,10 @@ plots
 Now you've wrangled all your data into one tibble. Great job! Use a series of piped `dplyr` functions to compute the average biomass in each county.
 
 ```{r}
-#| echo: false
-#| message: false
-plots %>%
-  group_by(COUNTYNM) %>%
-  summarize(avg_bio = mean(DRYBIO_AG_TPA))
+
 ```
+
+
 
 # Part 3: Reshaping Data
 
@@ -281,16 +163,6 @@ Read in the "example_plot_data.csv" into a tibble called `example_plots`.
 ```
 
 
-```{r}
-#| echo: false
-#| message: false
-example_plots <- read_csv("data_lab9/example_plot_data.csv")
-```
-```{r}
-example_plots
-```
-
-
 ## Exercise 13
 
 Add two new columns to the `example_plots` tibble. The first `dbh_4in` holds the 4-inch DBH class the given tree falls in. The second `TF` holds the tree factor for each tree (i.e., how many trees per acre that one tree represents). Add both columns with a single call to `mutate()`.
@@ -301,13 +173,7 @@ HINT: When creating the `dbh_4in` column, you can use `cut_width()` from `ggplot
 
 
 ```{r}
-#| echo: false
-#| message: false
-example_plots <- example_plots %>%
-  mutate(tf = 20, dbh_4in = cut_width(dbh_in, width = 4))
-```
-```{r}
-example_plots
+
 ```
 
 
@@ -317,26 +183,12 @@ Compute a stand table for `plot` 1 and 2. They should look like the tables below
 
 #### Plot 1
 ```{r}
-#| echo: false
-#| message: false
-plt_1  <- example_plots %>% filter(plot_id == 1)
 
-plt_1 %>% complete(species, dbh_4in, fill = list(tf = 0)) %>%
-    group_by(species, dbh_4in) %>% 
-    summarise(tpa = sum(tf)) %>% 
-    pivot_wider(names_from = dbh_4in, values_from = tpa)
 ```
 
 #### Plot 2
 ```{r}
-#| echo: false
-#| message: false
-plt_2  <- example_plots %>% filter(plot_id == 2)
 
-plt_2 %>% complete(species, dbh_4in, fill = list(tf = 0)) %>%
-    group_by(species, dbh_4in) %>% 
-    summarise(tpa = sum(tf)) %>% 
-    pivot_wider(names_from = dbh_4in, values_from = tpa)
 ```
 
 

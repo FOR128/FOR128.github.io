@@ -202,6 +202,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="../slides/w10d1.html">
  <span class="dropdown-text">Week 10 Day 1</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../slides/w10d2.html">
+ <span class="dropdown-text">Week 10 Day 2</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -238,12 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#deliverables-i.e.-what-to-put-in-the-lab-drop-box" id="toc-deliverables-i.e.-what-to-put-in-the-lab-drop-box" class="nav-link" data-scroll-target="#deliverables-i.e.-what-to-put-in-the-lab-drop-box">Deliverables (i.e., what to put in the lab drop box)</a></li>
   <li><a href="#collaborators" id="toc-collaborators" class="nav-link" data-scroll-target="#collaborators">Collaborator(s)</a></li>
   </ul></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
-  <ul class="collapse">
-  <li><a href="#motivating-data" id="toc-motivating-data" class="nav-link" data-scroll-target="#motivating-data">Motivating Data</a></li>
-  <li><a href="#methods-dplyr-and-tidyr" id="toc-methods-dplyr-and-tidyr" class="nav-link" data-scroll-target="#methods-dplyr-and-tidyr">Methods: <code>dplyr</code> and <code>tidyr</code></a></li>
   <li><a href="#exercise-0" id="toc-exercise-0" class="nav-link" data-scroll-target="#exercise-0">Exercise 0</a></li>
-  </ul></li>
   <li><a href="#part-1-toy-data" id="toc-part-1-toy-data" class="nav-link" data-scroll-target="#part-1-toy-data">Part 1: Toy Data</a>
   <ul class="collapse">
   <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
@@ -261,7 +260,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercise-10" id="toc-exercise-10" class="nav-link" data-scroll-target="#exercise-10">Exercise 10</a></li>
   <li><a href="#exercise-11" id="toc-exercise-11" class="nav-link" data-scroll-target="#exercise-11">Exercise 11</a></li>
   </ul></li>
-  <li><a href="#part-3-reshaping-data" id="toc-part-3-reshaping-data" class="nav-link" data-scroll-target="#part-3-reshaping-data">Part 3: Reshaping Data</a></li>
+  <li><a href="#part-3-reshaping-data" id="toc-part-3-reshaping-data" class="nav-link" data-scroll-target="#part-3-reshaping-data">Part 3: Reshaping Data</a>
+  <ul class="collapse">
+  <li><a href="#exercise-12" id="toc-exercise-12" class="nav-link" data-scroll-target="#exercise-12">Exercise 12</a></li>
+  <li><a href="#exercise-13" id="toc-exercise-13" class="nav-link" data-scroll-target="#exercise-13">Exercise 13</a></li>
+  <li><a href="#exercise-14" id="toc-exercise-14" class="nav-link" data-scroll-target="#exercise-14">Exercise 14</a></li>
+  <li><a href="#exercise-15" id="toc-exercise-15" class="nav-link" data-scroll-target="#exercise-15">Exercise 15</a></li>
+  </ul></li>
   <li><a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up">Wrap up</a></li>
   </ul>
 </nav>
@@ -314,24 +319,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>List any collaborators you worked with below.</p>
 </section>
 </section>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<section id="motivating-data" class="level2">
-<h2 class="anchored" data-anchor-id="motivating-data">Motivating Data</h2>
-<p>For this lab, you’ll first work with the small datasets <code>x</code> and <code>y</code> presented in class to get started with joins. After a few exercises, you’ll move to some real data from the US Forest Service Forest Inventory &amp; Analysis (FIA) program to gain more experience joining complex datasets.</p>
-<p>The four FIA datasets of interest are available on D2L in the Lab 8 module. The <code>plot_biomass.csv</code> dataset contains information on the unique FIA plot ID (<code>PLT_CN</code>) and a measurement of aboveground biomass for each plot. The <code>plot_locations.csv</code> dataset contains location information for each of those same plots, along with the unique identifier (<code>PLT_CN</code>). Notably, <code>plot_locations.csv</code> has columns denoting the state and county the plot resides in. However, we don’t have the actual state and county names for each plot, just their unique code. We will have to do some data joins with the <code>state_reference.csv</code> and <code>county_reference.csv</code> datasets to find out where these plots are.</p>
-</section>
-<section id="methods-dplyr-and-tidyr" class="level2">
-<h2 class="anchored" data-anchor-id="methods-dplyr-and-tidyr">Methods: <code>dplyr</code> and <code>tidyr</code></h2>
-<p>Use <code>dplyr</code> and <code>tidyr</code> functions that we’ve learned over the past few weeks to answer the questions in this lab.</p>
-</section>
 <section id="exercise-0" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-0">Exercise 0</h2>
 <p>Load any packages you’ll need for this lab below.</p>
 </section>
-</section>
 <section id="part-1-toy-data" class="level1">
 <h1>Part 1: Toy Data</h1>
+<p>For this part, you’ll first work with the small datasets <code>x</code> and <code>y</code> presented in class to get started with joins. After a few exercises, you’ll move to some real data from the US Forest Service Forest Inventory &amp; Analysis (FIA) program to gain more experience joining complex datasets.</p>
 <section id="exercise-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
 <p>Create the <code>x</code> and <code>y</code> datasets that we have used over the lectures related to data joins using the <code>tibble()</code> function. These datasets are shown below for your convenience.</p>
@@ -339,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="../slides/figs/tibbles.png" class="img-fluid figure-img"></p>
+<p><img src="../slides/figs/tibbles.png" class="img-fluid figure-img" width="474"></p>
 </figure>
 </div>
 </div>
@@ -422,6 +416,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="part-2-fia-data" class="level1">
 <h1>Part 2: FIA Data</h1>
+<p>For this part, you’ll use four dataset from the Forest Inventory &amp; Analysis Program (FIA). These data are available on the course website in the “data_lab9.zip” file. The <code>plot_biomass.csv</code> dataset contains information on the unique FIA plot ID (<code>PLT_CN</code>) and a measurement of aboveground biomass for each plot. The <code>plot_locations.csv</code> dataset contains location information for each of those same plots, along with the unique identifier (<code>PLT_CN</code>). Notably, <code>plot_locations.csv</code> has columns denoting the state and county the plot resides in. However, we don’t have the actual state and county names for each plot, just their unique code. We will have to do some data joins with the <code>state_reference.csv</code> and <code>county_reference.csv</code> datasets to find out where these plots are.</p>
 <section id="exercise-6" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
 <p>Load in the four datasets included in the posting of Lab 9 on the course website. Name each of them the same as they are named as files, without the <code>.csv</code> extension. For example, for the “plot_biomass.csv” file, name the object <code>plot_biomass</code>, etc. Take a look at these datasets and try to understand them. What does a row represent in each one?</p>
@@ -590,6 +585,111 @@ $ LAT_PUBLIC    &lt;dbl&gt; 45.63014, 46.08317, 46.24816, 46.22776, 46.10631, 45
 </section>
 <section id="part-3-reshaping-data" class="level1">
 <h1>Part 3: Reshaping Data</h1>
+<p>You’ll find the “example_plot_data.csv” data file in the “data_lab9.zip” file on the course website. It holds tree data measured on 2 1/20-th acre plots.</p>
+<p>Your goal is to make a stand table with species as rows and 4-inch DBH classes as columns and values of trees per acre. These trees per acre values will be an average from the per acre values recorded for each plot. This average is our best estimate for the trees per acre for the area sampled using the two plots.</p>
+<section id="exercise-12" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-12">Exercise 12</h2>
+<p>Read in the “example_plot_data.csv” into a tibble called <code>example_plots</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>example_plots</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 3
+  plot_id species  dbh_in
+    &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;
+1       1 Basswood    5.1
+2       1 Basswood    5.5
+3       1 Beech      10.1
+4       1 Red oak     5  
+5       2 Beech      11.5
+6       2 Beech      12.2
+7       2 Basswood    6  
+8       2 Red oak    10  </code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-13" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-13">Exercise 13</h2>
+<p>Add two new columns to the <code>example_plots</code> tibble. The first <code>dbh_4in</code> holds the 4-inch DBH class the given tree falls in. The second <code>TF</code> holds the tree factor for each tree (i.e., how many trees per acre that one tree represents). Add both columns with a single call to <code>mutate()</code>.</p>
+<p>Note that since these are 20 acre plots, the tree factor should be 20 for each tree.</p>
+<p>HINT: When creating the <code>dbh_4in</code> column, you can use <code>cut_width()</code> from <code>ggplot2</code> or a <code>case_when()</code> inside of a <code>mutate()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>example_plots</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 5
+  plot_id species  dbh_in    tf dbh_4in
+    &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;  
+1       1 Basswood    5.1    20 [2,6]  
+2       1 Basswood    5.5    20 [2,6]  
+3       1 Beech      10.1    20 (10,14]
+4       1 Red oak     5      20 [2,6]  
+5       2 Beech      11.5    20 (10,14]
+6       2 Beech      12.2    20 (10,14]
+7       2 Basswood    6      20 [2,6]  
+8       2 Red oak    10      20 (6,10] </code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-14" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-14">Exercise 14</h2>
+<p>Compute a stand table for <code>plot</code> 1 and 2. They should look like the tables below.</p>
+<section id="plot-1" class="level4">
+<h4 class="anchored" data-anchor-id="plot-1">Plot 1</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+# Groups:   species [3]
+  species  `[2,6]` `(6,10]` `(10,14]`
+  &lt;chr&gt;      &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+1 Basswood      40        0         0
+2 Beech          0        0        20
+3 Red oak       20        0         0</code></pre>
+</div>
+</div>
+</section>
+<section id="plot-2" class="level4">
+<h4 class="anchored" data-anchor-id="plot-2">Plot 2</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+# Groups:   species [3]
+  species  `[2,6]` `(6,10]` `(10,14]`
+  &lt;chr&gt;      &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+1 Basswood      20        0         0
+2 Beech          0        0        40
+3 Red oak        0       20         0</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="exercise-15" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-15">Exercise 15</h2>
+<p>The stand table estimate we want combines information from each plot stand table by averaging their cell values. For example, plot 1 has 40 Basswood in the [2,6] in DBH class, and Plot 2 has 20 Basswood in the [2,6] in DBH class. So, best estimate of Basswood in the [2,6] in DBH class should be an average of 40 and 20 (i.e., <code>mean(c(40,20))</code>) which is 30.</p>
+<p>The code below computes the desired stand table estimate (i.e., averages across plots) all at once. Your job is to study this code and convince yourself you understand it and can replicate it for different data. Take it apart. Run it bit by bit. Reverse engineer it to understand how it works. Use math by hand to confirm the average from the two tables above are the values you see in the table below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>example_plots <span class="sc">%&gt;%</span> </span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">complete</span>(plot_id, species, dbh_4in, <span class="at">fill =</span> <span class="fu">list</span>(<span class="at">tf =</span> <span class="dv">0</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(plot_id, species, dbh_4in) <span class="sc">%&gt;%</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">tf_plot_level =</span> <span class="fu">sum</span>(tf)) <span class="sc">%&gt;%</span> <span class="do">## Plot-level summary of trees per acre.</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, dbh_4in) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_tpa =</span> <span class="fu">mean</span>(tf_plot_level)) <span class="sc">%&gt;%</span> <span class="do">## Forest-level mean of trees per acre.</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> dbh_4in, <span class="at">values_from =</span> mean_tpa)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'plot_id', 'species'. You can override
+using the `.groups` argument.
+`summarise()` has grouped output by 'species'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+# Groups:   species [3]
+  species  `[2,6]` `(6,10]` `(10,14]`
+  &lt;chr&gt;      &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+1 Basswood      30        0         0
+2 Beech          0        0        30
+3 Red oak       10       10         0</code></pre>
+</div>
+</div>
+</section>
 </section>
 <section id="wrap-up" class="level1">
 <h1>Wrap up</h1>

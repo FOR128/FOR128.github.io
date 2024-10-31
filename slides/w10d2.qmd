@@ -1,0 +1,478 @@
+---
+title: "Reshaping data with `tidyr`, part 2"
+editor: 
+  mode: source
+webr:
+  show-startup-message: false
+filters:
+  - webr
+engine: knitr
+execute:
+  echo: true
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+revealjs-plugins:
+  - revealjs-text-resizer
+---
+
+## Annoucements
+
+-   Midterm II is Thursday, November 14th.
+-   Material on the midterm will include all material through Week 11. 
+
+
+## Agenda
+
+-   Reshaping data with `tidyr`
+    - `pivot_longer()` and `pivot_wider()`
+    - `unite()`
+    - `separate_wider_delim()`
+    - `complete()`
+-   Application: stand and stock tables
+
+
+# Reshaping Data {background-color="#00817c"}
+
+## The `tidyr` package
+
+::: incremental
+
+-   The `tidyr` package allows us to *transform* data from long to wide formats, and back.
+-   A key use of the `tidyr` package is getting data in *tidy format*.
+-   But what is *tidy format*? 
+
+:::
+
+## Tidy data
+
+"Tidy data" or "tidy format" is a formal concept of how we organize data for analyses, in particular, with tidy data:
+
+::: incremental
+
+-   Each row of the data correspond to a single observation, and
+-   Each column of the data correspond to a variable. 
+
+:::
+
+## Tidying data with `tidyr`
+
+Consider the `face` dataset from IFDAR:
+
+```{r}
+library(tidyverse)
+face <- read_csv("../labs/datasets/FACE/FACE_aspen_core_growth.csv") %>%
+  select(Rep, Treat, Clone, ID = `ID #`,
+        contains(as.character(2001:2005)) & contains("Height"))
+face
+```
+
+
+
+## Why the long `face`?
+
+```{r}
+face_long <- face %>%
+  pivot_longer(
+    cols = c("2001_Height", "2002_Height", "2003_Height", 
+             "2004_Height", "2005_Height"),
+    names_to = "Year_Type",
+    values_to = "Height_cm")
+```
+
+
+## Why the long `face`?
+
+```{r}
+#| code-line-numbers: 3,4|5|6|3,4
+face_long <- face %>%
+  pivot_longer(
+    cols = c("2001_Height", "2002_Height", "2003_Height", 
+             "2004_Height", "2005_Height"),
+    names_to = "Year_Type",
+    values_to = "Height_cm")
+```
+
+## Why the long `face`?
+
+```{r}
+#| code-line-numbers: "3"
+face_long <- face %>%
+  pivot_longer(
+    cols = contains("Height"),
+    names_to = "Year_Type",
+    values_to = "Height_cm")
+```
+
+-   A cleaner way to select these columns is to use `dplyr`'s `contains()` function.
+
+## Why the long `face`?
+
+```{r}
+face_long
+```
+
+-   To get tidy data! 
+
+## Going (back) to wide data
+
+::: incremental
+
+-   Sometimes, we need to "widen" a dataset to get it into tidy format. 
+-   For this example, we will just widen the `face_long` dataset back to its original form. 
+-   `tidyr` has an aptly named function, `pivot_wider()`.
+-   Key arguments of `pivot_wider()`:
+    -   `.data`: the tibble to widen,
+    -   `names_from`: the column that contains values which will be assigned as the new column names,
+    -   `values_from`: the column that contains values which will be assigned as the new column values. 
+
+:::
+
+## Pivoting wider
+
+```{r}
+face_wide <- face_long %>%
+  pivot_wider(names_from = "Year_Type", values_from = "Height_cm")
+
+all_equal(face, face_wide)
+```
+
+::: incremental
+
+-   This results in the same tibble that we started with! 
+
+:::
+
+## Other useful `tidyr` functions
+
+::: incremental
+
+-   `unite()` for pasteing column values together with specified seperators,
+-   The `separate_wider_*()` family: for splitting columns into multiple new columns:
+    - `separate_wider_delim()`: separate by delimiter
+    - `separate_wider_position()`: separate by position
+    - `separate_wider_regex()`: separate by regular expression
+  
+:::
+
+## `unite()`: examples
+
+```{r}
+face_long
+```
+
+
+## `unite()`: examples
+
+```{r}
+face_long %>%
+  unite(col = "Design", Rep, Treat, Clone, sep = "_")
+```
+
+## `unite()`: examples
+
+```{r}
+face_long %>%
+  unite(col = "Design", Rep, Treat, Clone, sep = ".")
+```
+
+## `unite()`: examples
+
+```{r}
+face_long_abc <- face_long %>%
+  unite(col = "Design", Rep, Treat, Clone, sep = "abc")
+face_long_abc
+```
+
+## `separate_wider_delim()` examples
+
+```{r}
+face_long_abc
+```
+
+
+## `separate_wider_delim()` examples
+
+```{r}
+face_long_abc %>%
+  separate_wider_delim(cols = "Design", 
+                       delim = "abc",
+                       names = c("Rep", "Treat", "Clone"))
+```
+
+## `separate_wider_delim()` examples
+
+```{r}
+face_long
+```
+
+```{r}
+face_long %>%
+  separate_wider_delim(cols = "Year_Type", 
+                       delim = "_",
+                       names = c("Year", NA))
+```
+
+## The `complete()` function
+
+The `complete()` function is used for filling in values that are not explicitly in the dataset. Let's consider some toy data for an example:
+
+```{r}
+trees <- tibble(
+  plot = c(1,1,1,2,2,2,3,3),
+  species = c("douglas-fir", "western red-cedar", "pacific madrone",
+              "douglas-fir", "douglas-fir", "douglas-fir",
+              "douglas-fir", "western red-cedar"),
+  dbh = c(10, 12, 6, 13, 10, 8, 9, 14)
+)
+trees
+```
+
+## Compute total DBH by species and plot
+
+```{r}
+trees %>%
+  group_by(plot, species) %>%
+  summarize(total_DBH = sum(dbh))
+```
+
+::: incremental
+
+-   What's the problem here?
+-   Every possible species-plot observation doesn't exist! 
+-   example: what should total DBH of western red-cedars be on plot 2?
+
+:::
+
+## We have to `complete()` the dataset!
+
+```{r}
+trees %>%
+  complete(plot, species) 
+```
+
+::: incremental
+
+-   Now there is a row for every species-plot combination,
+-   But by default, `complete()` filled the values as `NA`. 
+-   We can change that!
+
+:::
+
+
+## We have to `complete()` the dataset!
+
+```{r}
+trees %>%
+  complete(plot, species,
+           fill = list(dbh = 0))
+```
+
+## Now we can compute totals for each combination!
+
+```{r}
+trees %>%
+  complete(plot, species,
+           fill = list(dbh = 0)) %>%
+  group_by(plot, species) %>%
+  summarize(total_DBH = sum(dbh))
+```
+
+
+
+# Application: stand and stock tables {background-color="#00817c"}
+
+## Stand and Stock tables
+
+Stand tables:
+
+::: incremental
+
+- Summarize a quantitative discrete variable (e.g., stem count) 
+- Summaries are shown grouped by one or more categorical variable (e.g., size class or species).
+
+:::
+
+Stock tables:
+
+::: incremental
+
+- Summarizes a quantitative continuous variable (e.g., volume, weight, or basal area)
+- Summaries are shown grouped by one or more categorical variable (e.g., size class or species).
+
+:::
+
+## Common Stand/Stock tables in forestry
+
+In forestry applications, stand and stock tables are most often grouped by DBH class and species. 
+
+
+## Data used to create stand and stock tables in forestry
+
+In forestry applications, stand and stock tables are most often grouped by DBH class and species. 
+
+![](figs/tab81.png){fig-align="center"}
+
+## Stand table derived from the data
+
+In forestry applications, stand and stock tables are most often grouped by DBH class and species. 
+
+![](figs/tab82.png){fig-align="center"}
+
+::: incremental
+
+-   Is this table tidy? 
+
+:::
+
+## Stock table derived from the data
+
+In forestry applications, stand and stock tables are most often grouped by DBH class and species. 
+
+![](figs/tab83.png){fig-align="center"}
+
+::: incremental
+
+-   Is this table tidy? 
+
+:::
+
+## Building these stand and stock tables in `R`
+
+We load the data:
+
+```{r}
+trees <- tibble(
+  species = c("Abies balsamea", "Betula papyrifera", 
+              "Betula papyrifera", "Pinus strobus",
+              "Pinus strobus", "Pinus strobus"),
+  DBH_in = c(11.3, 14.8, 15.4, 9.8, 10.7, 13.1),
+  trees_ac = 8,
+  vol_cu_ft_ac = c(142.8, 269.6, 293.7, 116.3, 143.6, 231.9)
+)
+trees
+```
+
+## Adding DBH class
+
+```{r}
+ests <- trees %>%
+  mutate(DBH_class = cut_width(DBH_in, width = 4))
+ests
+```
+
+## `complete()` the data
+
+```{r}
+ests <- ests %>%
+  complete(species, DBH_class, 
+           fill = list(trees_ac = 0, vol_cu_ft_ac = 0))
+ests
+```
+
+::: incremental
+
+-   What happened here?
+-   Now each species/DBH_class combination has a row associated with it
+
+:::
+
+## Compute our variables of interest
+
+```{r}
+ests <- ests %>% 
+  group_by(species, DBH_class) %>%
+  summarize(sum_trees_ac = sum(trees_ac),
+            sum_vol_cu_ft_ac = sum(vol_cu_ft_ac))
+ests
+```
+
+## Make the stand table
+
+```{r}
+stand <- ests %>% 
+  pivot_wider(id_cols = species, 
+              names_from = DBH_class,
+              values_from = sum_trees_ac)
+
+stand
+```
+
+## Make the stock table
+
+```{r}
+stock <- ests %>% 
+  pivot_wider(id_cols = species, 
+              names_from = DBH_class,
+              values_from = sum_vol_cu_ft_ac)
+
+stock
+```
+
+## All at once: stand table
+
+```{r}
+#| code-line-numbers: 1|2|3,4|5,6,7|8,9,10|10
+trees %>%
+  mutate(DBH_class = cut_width(DBH_in, width = 4)) %>%
+  complete(species, DBH_class, 
+           fill = list(trees_ac = 0, vol_cu_ft_ac = 0)) %>%
+  group_by(species, DBH_class) %>%
+  summarize(sum_trees_ac = sum(trees_ac),
+            sum_vol_cu_ft_ac = sum(vol_cu_ft_ac)) %>%
+  pivot_wider(id_cols = species, 
+              names_from = DBH_class,
+              values_from = sum_trees_ac)
+```
+
+## All at once: stock table
+
+```{r}
+#| code-line-numbers: "10"
+trees %>%
+  mutate(DBH_class = cut_width(DBH_in, width = 4)) %>%
+  complete(species, DBH_class, 
+           fill = list(trees_ac = 0, vol_cu_ft_ac = 0)) %>%
+  group_by(species, DBH_class) %>%
+  summarize(sum_trees_ac = sum(trees_ac),
+            sum_vol_cu_ft_ac = sum(vol_cu_ft_ac)) %>%
+  pivot_wider(id_cols = species, 
+              names_from = DBH_class,
+              values_from = sum_vol_cu_ft_ac)
+```
+
+
+
+
+
+## Next time
+
+-   The grammar of graphics
+
+
+
+
+
+
+
+
+
+
+
+ 
