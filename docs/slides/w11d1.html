@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Practical Computing and Data Science Tools">
-  <title>FOR 128 – Reading and Writing Data</title>
+  <title>FOR 128 – Creating graphics with ggplot2</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -386,15 +386,13 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
-  <script src="../site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" data-background-image="../assets/for128-hex.png" data-background-position="50% 20%" data-background-size="20%" class="quarto-title-block center">
-  <h1 class="title">Reading and Writing Data</h1>
+  <h1 class="title">Creating graphics with <code>ggplot2</code></h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -405,374 +403,390 @@ Practical Computing and Data Science Tools
 </div>
 
 </section>
+<section id="annoucements" class="slide level2">
+<h2>Annoucements</h2>
+<ul>
+<li>Midterm II is Thursday, November 14th, during lab time.</li>
+<li>Material on the midterm will include all material through Week 11 (this week!).</li>
+<li>The midterm will be of similar form to the last midterm.</li>
+<li>Closed materials, but you are allowed one 8.5” x 11” sheet of paper, double-sided, hand-written note sheet.</li>
+</ul>
+</section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ul>
-<li>Quiz 1 review</li>
-<li>Navigating your computer</li>
-<li>Reading and writing data</li>
+<li>Components of a graphic (i.e.&nbsp;the grammar of graphics)</li>
+<li>Composing a graphic</li>
 </ul>
 </section>
-<section id="quiz-review" class="title-slide slide level1 center" data-background-color="#00817c">
-<h1>Quiz Review</h1>
-
-</section>
-
 <section>
-<section id="navigating-your-computer" class="title-slide slide level1 center" data-background-color="#00817c">
-<h1>Navigating your computer</h1>
+<section id="components-of-a-graphic" class="title-slide slide level1 center" data-background-color="#00817c">
+<h1>Components of a graphic</h1>
 
 </section>
-<section id="recall-your-computers-file-system" class="slide level2">
-<h2>Recall your computer’s file system</h2>
+<section id="what-is-a-graphic-made-up-of" class="slide level2">
+<h2>What is a graphic made up of?</h2>
 
-<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="what-is-the-root-directory" class="slide level2">
-<h2>What is the root directory? <div class="countdown" id="timer_3fbb90cb" data-update-every="1" tabindex="0" style="right:0;bottom:0;"> <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div> <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code> </div></h2>
-
-<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="what-is-the-root-directory-1" class="slide level2">
-<h2>What is the root directory?</h2>
-
-<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch"><h3 id="c"><code>C:/</code></h3>
-</section>
-<section id="what-is-the-home-directory" class="slide level2">
-<h2>What is the home directory? <div class="countdown" id="timer_50db1439" data-update-every="1" tabindex="0" style="right:0;bottom:0;"> <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div> <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code> </div></h2>
-
-<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="what-is-the-home-directory-1" class="slide level2">
-<h2>What is the home directory?</h2>
-
-<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch"><h3 id="cuserssarah"><code>C:/Users/Sarah</code></h3>
-</section>
-<section id="how-do-we-specify-the-absolute-path-to-file_1.csv" class="slide level2">
-<h2>How do we specify the absolute path to <code>File_1.csv</code>? <div class="countdown" id="timer_e3dee9f0" data-update-every="1" tabindex="0" style="right:0;bottom:0;"> <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div> <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code> </div></h2>
-
-<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="how-do-we-specify-the-absolute-path-to-file_1.csv-1" class="slide level2">
-<h2>How do we specify the absolute path to <code>File_1.csv</code>?</h2>
-
-<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch"><h3 id="cuserssaraharchivedatafile_1.csv"><code>C:/Users/Sarah/Archive/Data/File_1.csv</code></h3>
-</section>
-<section id="how-do-we-specify-the-relative-path-to-file_1.csv-if-sarahs-home-directory-is-her-working-directory" class="slide level2">
-<h2>How do we specify the relative path to <code>File_1.csv</code>, if Sarah’s home directory is her working directory? <div class="countdown" id="timer_a7a38857" data-update-every="1" tabindex="0" style="right:0;bottom:0;"> <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div> <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code> </div></h2>
-
-<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="how-do-we-specify-the-relative-path-to-file_1.csv-if-sarahs-home-directory-is-her-working-directory-1" class="slide level2">
-<h2>How do we specify the relative path to <code>File_1.csv</code>, if Sarah’s home directory is her working directory?</h2>
-
-<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch"><h3 id="archivedatafile_1.csv"><code>Archive/Data/File_1.csv</code></h3>
-</section>
-<section id="how-do-we-specify-the-relative-path-to-file_1.csv-if-sarahs-home-directory-is-cuserssarahdocuments" class="slide level2">
-<h2>How do we specify the relative path to <code>File_1.csv</code>, if Sarah’s home directory is <code>C:/Users/Sarah/Documents</code>? <div class="countdown" id="timer_c4198b06" data-update-every="1" tabindex="0" style="right:0;bottom:0;"> <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div> <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code> </div></h2>
-
-<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="how-do-we-specify-the-relative-path-to-file_1.csv-if-sarahs-home-directory-is-cuserssarahdocuments-1" class="slide level2">
-<h2>How do we specify the relative path to <code>File_1.csv</code>, if Sarah’s home directory is <code>C:/Users/Sarah/Documents</code>?</h2>
-
-<img data-src="figs/directory-example.png" class="quarto-figure quarto-figure-center r-stretch"><h3 id="archivedatafile_1.csv-1"><code>../Archive/Data/File_1.csv</code></h3>
-</section>
-<section id="whats-going-on-with-those-two-dots-.." class="slide level2">
-<h2>What’s going on with those two dots? (<code>../</code>) <div class="countdown" id="timer_78234c87" data-update-every="1" tabindex="0" style="right:0;bottom:0;"> <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div> <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code> </div></h2>
+<img data-src="figs/voter-turnout-rate-by-age-usa.png" class="r-stretch"></section>
+<section id="what-is-a-graphic-made-up-of-1" class="slide level2">
+<h2>What is a graphic made up of?</h2>
 <div>
 <ul>
-<li class="fragment"><p>Using <code>..</code> in a file path means “go back a level”</p></li>
-<li class="fragment"><p>Example: Say I want to access a file on my desktop:</p>
-<ul>
-<li class="fragment"><code>/home/grayson/Desktop/important_file.pdf</code></li>
-</ul></li>
-<li class="fragment"><p>But, my working directory is as follows:</p>
-<ul>
-<li class="fragment"><code>/home/grayson/Documents</code></li>
-</ul></li>
-<li class="fragment"><p>Q: What is the relative path to the important file on my desktop?</p></li>
-<li class="fragment"><p>A: <code>../Desktop/important_file.pdf</code></p></li>
+<li class="fragment">Data, and</li>
+<li class="fragment">Mappings</li>
 </ul>
 </div>
 </section>
-<section id="now-consider-a-different-computer" class="slide level2">
-<h2>Now consider a different computer <div class="countdown" id="timer_b75a9512" data-update-every="1" tabindex="0" style="right:0;bottom:0;"> <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div> <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code> </div></h2>
+<section id="data" class="slide level2">
+<h2>Data</h2>
+<p>That graphics we will create use data in the same form as we have seen thus far in the course.</p>
+<p>In other words, we will use tibbles to create graphics</p>
+</section>
+<section id="data-1" class="slide level2">
+<h2>Data</h2>
+<p>What might the rows and columns of the tibble used to create this graphic be?</p>
+
+<img data-src="figs/voter-turnout-rate-by-age-usa.png" class="r-stretch"></section>
+<section id="mappings" class="slide level2">
+<h2>Mappings</h2>
+<p>In order to create a graphic, one must choose how to <strong>map</strong> the variables of the data to the <strong>aes</strong>thetic attributes of the plot.</p>
+<p>Mappings can be a variety of components:</p>
 <div>
 <ul>
-<li class="fragment"><p>We have an absolute path to <code>lab_01.qmd</code>:</p>
-<ul>
-<li class="fragment"><code>/home/elliot/Documents/for128/lab_01.qmd</code></li>
-</ul></li>
-<li class="fragment"><p>Say Elliot is using the following working directory:</p>
-<ul>
-<li class="fragment"><code>/home/elliot/research/spatio_temporal</code></li>
-</ul></li>
-<li class="fragment"><p>Q1: What operating system might Elliot be using?</p></li>
-<li class="fragment"><p>Q2: What is the relative path to <code>lab_01.qmd</code>?</p></li>
-<li class="fragment"><p>A1: macOS or Linux</p></li>
-<li class="fragment"><p>A2: <code>../../for128/lab_01.qmd</code></p></li>
+<li class="fragment">layers (either geometric elements or statistical transformations),</li>
+<li class="fragment">scales,</li>
+<li class="fragment">coordinate systems,</li>
+<li class="fragment">facets,</li>
+<li class="fragment">themes.</li>
 </ul>
 </div>
-</section></section>
+</section>
+<section id="layers" class="slide level2">
+<h2>Layers</h2>
+<p>A layer is a collection of geometric elements and statistical transformations. Geometric elements, geoms for short, represent what you actually see in the plot: points, lines, polygons, etc. Statistical transformations, stats for short, summarise the data: for example, binning and counting observations to create a histogram, or fitting a linear model.<sup>1</sup></p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Source: <a href="https://ggplot2-book.org/introduction">https://ggplot2-book.org/introduction</a></p></li></ol></aside></section>
+<section id="scales" class="slide level2">
+<h2>Scales</h2>
+<p>Scales map values in the data space to values in the aesthetic space. This includes the use of colour, shape or size. Scales also draw the legend and axes, which make it possible to read the original data values from the plot (an inverse mapping).<sup>1</sup></p>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Source: <a href="https://ggplot2-book.org/introduction">https://ggplot2-book.org/introduction</a></p></li></ol></aside></section>
+<section id="coordinate-systems" class="slide level2">
+<h2>Coordinate systems</h2>
+<p>A coord, or coordinate system, describes how data coordinates are mapped to the plane of the graphic. It also provides axes and gridlines to help read the graph. We normally use the Cartesian coordinate system, but a number of others are available, including polar coordinates and map projections.<sup>1</sup></p>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>Source: <a href="https://ggplot2-book.org/introduction">https://ggplot2-book.org/introduction</a></p></li></ol></aside></section>
+<section id="facets" class="slide level2">
+<h2>Facets</h2>
+<p>A facet specifies how to break up and display subsets of data as small multiples. This is also known as conditioning or latticing/trellising.<sup>1</sup></p>
+<aside><ol class="aside-footnotes"><li id="fn4"><p>Source: <a href="https://ggplot2-book.org/introduction">https://ggplot2-book.org/introduction</a></p></li></ol></aside></section>
+<section id="themes" class="slide level2">
+<h2>Themes</h2>
+<p>A theme controls the finer points of display, like the font size and background colour. While the defaults in ggplot2 have been chosen with care, you may need to consult other references to create an attractive plot. A good starting place is Tufte’s early works.<sup>1</sup></p>
+<aside><ol class="aside-footnotes"><li id="fn5"><p>Source: <a href="https://ggplot2-book.org/introduction">https://ggplot2-book.org/introduction</a></p></li></ol></aside></section>
+<section id="mappings-1" class="slide level2">
+<h2>Mappings</h2>
+<p>What are the mappings used in this graphic?</p>
+
+<img data-src="figs/voter-turnout-rate-by-age-usa.png" class="r-stretch"></section></section>
 <section>
-<section id="reading-and-writing-data" class="title-slide slide level1 center" data-background-color="#00817c">
-<h1>Reading and writing data</h1>
+<section id="composing-a-graphic" class="title-slide slide level1 center" data-background-color="#00817c">
+<h1>Composing a graphic</h1>
 
 </section>
-<section id="reading-data" class="slide level2">
-<h2>Reading data</h2>
-<p>In this course, we’ll focus on reading 2-dimensional data (things that look like spreadsheets) into <code>R</code>.</p>
+<section id="consider-the-fef-dataset" class="slide level2">
+<h2>Consider the <code>fef</code> dataset</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a></a>fef <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../labs/datasets/FEF_trees.csv"</span>)</span>
+<span id="cb1-3"><a></a>fef</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 88 × 18
+   watershed  year  plot species     dbh_in height_ft stem_green_kg top_green_kg
+       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;        &lt;dbl&gt;
+ 1         3  1991    29 Acer rubrum    6        48            92.2         13.1
+ 2         3  1991    33 Acer rubrum    6.9      48           102.          23.1
+ 3         3  1991    35 Acer rubrum    6.4      48           124.           8.7
+ 4         3  1991    39 Acer rubrum    6.5      49            91.7         39  
+ 5         3  1991    44 Acer rubrum    7.2      51           186.           8.9
+ 6         3  1992    26 Acer rubrum    3.1      40            20.8          0.9
+ 7         3  1992    26 Acer rubrum    2        30.5           5.6          0.9
+ 8         3  1992    26 Acer rubrum    4.1      50            54.1          8.6
+ 9         3  1992    48 Acer rubrum    2.4      28            10.2          0.7
+10         3  1992    48 Acer rubrum    2.7      40.4          20.2          5  
+# ℹ 78 more rows
+# ℹ 10 more variables: smbranch_green_kg &lt;dbl&gt;, lgbranch_green_kg &lt;dbl&gt;,
+#   allwoody_green_kg &lt;dbl&gt;, leaves_green_kg &lt;dbl&gt;, stem_dry_kg &lt;dbl&gt;,
+#   top_dry_kg &lt;dbl&gt;, smbranch_dry_kg &lt;dbl&gt;, lgbranch_dry_kg &lt;dbl&gt;,
+#   allwoody_dry_kg &lt;dbl&gt;, leaves_dry_kg &lt;dbl&gt;</code></pre>
+</div>
+</div>
 </section>
-<section id="reading-data-1" class="slide level2">
-<h2>Reading data</h2>
+<section id="lets-create-a-plot" class="slide level2">
+<h2>Let’s create a plot</h2>
+<p>First, our canvas:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<img data-src="figs/data-raw.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="reading-data-2" class="slide level2">
-<h2>Reading data</h2>
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="lets-create-a-plot-1" class="slide level2">
+<h2>Let’s create a plot</h2>
+<p>Then, we specify the data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<img data-src="figs/data-rstudio.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="reading-data-3" class="slide level2">
-<h2>Reading data</h2>
-<p><code>R</code> includes a variety of functions for reading data efficiently. One of the most common is <code>read.csv()</code>.</p>
-</section>
-<section id="reading-data-4" class="slide level2">
-<h2>Reading data</h2>
-<p><code>R</code> includes a variety of functions for reading data efficiently. One of the most common is <code>read.csv()</code>.</p>
-<p>To read data, we first may want to check our working directory:</p>
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="lets-create-a-plot-2" class="slide level2">
+<h2>Let’s create a plot</h2>
+<p>Question: why is this still blank?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "/home/grayson/courses/FOR128/FOR128.github.io/slides"</code></pre>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
-</div>
-</section>
-<section id="reading-data-5" class="slide level2">
-<h2>Reading data</h2>
-<p><code>R</code> includes a variety of functions for reading data efficiently. One of the most common is <code>read.csv()</code>.</p>
-<p>To read data, we first may want to check our working directory:</p>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="lets-create-a-plot-3" class="slide level2">
+<h2>Let’s create a plot</h2>
+<p>Answer: we need to specify aesthetic mappings!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "/home/grayson/courses/FOR128/FOR128.github.io/slides"</code></pre>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> dbh_in))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
-</div>
-<p>Then we can find the datasets folder. I’ve kept mine with my labs:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">list.files</span>(<span class="st">"../labs/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "data_lab9"            "data_lab9.zip"        "datasets"            
- [4] "FEF_trees.csv"        "lab_01_solutions.pdf" "lab_01_solutions.qmd"
- [7] "lab_01.qmd"           "lab_02.qmd"           "lab_03_example.R"    
-[10] "lab_03.html"          "lab_03.qmd"           "lab_04.qmd"          
-[13] "lab_05.qmd"           "lab_06.qmd"           "lab_07_web.html"     
-[16] "lab_07_web.qmd"       "lab_07.qmd"           "lab_08_web.html"     
-[19] "lab_08_web.qmd"       "lab_08.qmd"           "lab_09_web.html"     
-[22] "lab_09_web.qmd"       "lab_09.qmd"          </code></pre>
-</div>
-</div>
-</section>
-<section id="reading-data-6" class="slide level2">
-<h2>Reading data</h2>
-<p><code>R</code> includes a variety of functions for reading data efficiently. One of the most common is <code>read.csv()</code>.</p>
-<p>To read data, we first may want to check our working directory:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "/home/grayson/courses/FOR128/FOR128.github.io/slides"</code></pre>
-</div>
-</div>
-<p>Then we can find the datasets folder. I’ve kept mine with my labs:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">list.files</span>(<span class="st">"../labs/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "data_lab9"            "data_lab9.zip"        "datasets"            
- [4] "FEF_trees.csv"        "lab_01_solutions.pdf" "lab_01_solutions.qmd"
- [7] "lab_01.qmd"           "lab_02.qmd"           "lab_03_example.R"    
-[10] "lab_03.html"          "lab_03.qmd"           "lab_04.qmd"          
-[13] "lab_05.qmd"           "lab_06.qmd"           "lab_07_web.html"     
-[16] "lab_07_web.qmd"       "lab_07.qmd"           "lab_08_web.html"     
-[19] "lab_08_web.qmd"       "lab_08.qmd"           "lab_09_web.html"     
-[22] "lab_09_web.qmd"       "lab_09.qmd"          </code></pre>
-</div>
-</div>
-<p>Now, given our working directory and datasets location, we specify a relative path and load in the data:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>fef <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">"../labs/datasets/FEF_trees.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="reading-data-7" class="slide level2">
-<h2>Reading data</h2>
-<p>We can take a look at our dataset in <code>R</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">dim</span>(fef) <span class="co"># dimensions (rows columns) of fef</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 88 18</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">head</span>(fef) <span class="co"># first few rows of fef</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  watershed year plot     species dbh_in height_ft stem_green_kg top_green_kg
-1         3 1991   29 Acer rubrum    6.0        48          92.2         13.1
-2         3 1991   33 Acer rubrum    6.9        48         102.3         23.1
-3         3 1991   35 Acer rubrum    6.4        48         124.4          8.7
-4         3 1991   39 Acer rubrum    6.5        49          91.7         39.0
-5         3 1991   44 Acer rubrum    7.2        51         186.2          8.9
-6         3 1992   26 Acer rubrum    3.1        40          20.8          0.9
-  smbranch_green_kg lgbranch_green_kg allwoody_green_kg leaves_green_kg
-1              30.5              48.4             184.2            16.1
-2              23.5              57.7             206.6            12.9
-3              22.3              44.1             199.5            16.5
-4              22.5              35.5             188.7            12.0
-5              25.4              65.1             285.6            22.4
-6               1.9               1.5              25.1             0.9
-  stem_dry_kg top_dry_kg smbranch_dry_kg lgbranch_dry_kg allwoody_dry_kg
-1        54.7        7.1            15.3            28.0           105.1
-2        62.3       12.4            14.8            33.6           123.1
-3        73.3        4.6            11.5            25.1           114.4
-4        53.6       21.3            11.2            19.8           105.9
-5       106.4        4.7            11.7            36.1           159.0
-6        11.7        0.5             1.1             0.9            14.2
-  leaves_dry_kg
-1           6.1
-2           4.6
-3           6.1
-4           4.2
-5           7.9
-6           0.3</code></pre>
-</div>
-</div>
-</section>
-<section id="reading-data-8" class="slide level2">
-<h2>Reading data</h2>
-<p><code>read.csv()</code> reads comma separated value (csv) files, but <code>R</code> has the ability to read a massive variety of file types:</p>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section id="lets-create-a-plot-4" class="slide level2">
+<h2>Let’s create a plot</h2>
+<p>We’ve now specified that “species” will be mapped to the x-axis, and “dbh_in” will be mapped to the y-axis.</p>
 <div>
 <ul>
-<li class="fragment"><code>read.table()</code> allows you to read file types with different separators like tabs and spaces, rather than just commas.</li>
+<li class="fragment">But we still haven’t specified what <strong>geometry</strong> to map these <strong>aesthetic attributes</strong> to.</li>
 </ul>
 </div>
-</section>
-<section id="reading-data-9" class="slide level2">
-<h2>Reading data</h2>
-<p>If we wanted to use <code>read.table()</code> to load in <code>FEF_trees.csv</code>, we would run the following code:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>fef <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">"../labs/datasets/FEF_trees.csv"</span>,</span>
-<span id="cb16-2"><a></a>                  <span class="at">header =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb16-3"><a></a>                  <span class="at">sep =</span> <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="reading-data-10" class="slide level2">
-<h2>Reading data</h2>
-<p>If we wanted to use <code>read.table()</code> to load in <code>FEF_trees.csv</code>, we would run the following code:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>fef <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">"../labs/datasets/FEF_trees.csv"</span>,</span>
-<span id="cb17-2"><a></a>                  <span class="at">header =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb17-3"><a></a>                  <span class="at">sep =</span> <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="reading-data-11" class="slide level2">
-<h2>Reading data</h2>
-<p>If we wanted to use <code>read.table()</code> to load in <code>FEF_trees.csv</code>, we would run the following code:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>fef <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">"../labs/datasets/FEF_trees.csv"</span>,</span>
-<span id="cb18-2"><a></a>                  <span class="at">header =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb18-3"><a></a>                  <span class="at">sep =</span> <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="reading-data-tab-separated" class="slide level2">
-<h2>Reading data: tab separated</h2>
-<p>We also have the file <code>FEF_trees.tsv</code>, which looks a bit different than <code>FEF_trees.csv</code>.</p>
-</section>
-<section id="fef_trees.csv" class="slide level2">
-<h2><code>FEF_trees.csv</code></h2>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> dbh_in))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<img data-src="figs/data-raw.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="fef_trees.tsv" class="slide level2">
-<h2><code>FEF_trees.tsv</code></h2>
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<section id="lets-create-a-plot-5" class="slide level2">
+<h2>Let’s create a plot</h2>
+<p>We’ve now specified that we will map these aesthetics to “points”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> dbh_in)) <span class="sc">+</span></span>
+<span id="cb8-2"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<img data-src="figs/data-tsv.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="reading-fef_trees.tsv-into-r" class="slide level2">
-<h2>Reading <code>FEF_trees.tsv</code> into <code>R</code></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>fef <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">"../labs/datasets/FEF_trees.tsv"</span>,</span>
-<span id="cb19-2"><a></a>                  <span class="at">header =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb19-3"><a></a>                  <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="reading-fef_trees.tsv-into-r-1" class="slide level2">
-<h2>Reading <code>FEF_trees.tsv</code> into <code>R</code></h2>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
+<section id="lets-create-a-plot-6" class="slide level2">
+<h2>Let’s create a plot</h2>
+<p>You can also specify the aesthetic mapping in the geometry layer:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>fef <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">"../labs/datasets/FEF_trees.tsv"</span>,</span>
-<span id="cb20-2"><a></a>                  <span class="at">header =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb20-3"><a></a>                  <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef) <span class="sc">+</span></span>
+<span id="cb9-2"><a></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> dbh_in))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
-</section>
-<section id="writing-data" class="slide level2">
-<h2>Writing data</h2>
-<div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<section id="lets-create-a-plot-7" class="slide level2">
+<h2>Let’s create a plot</h2>
+<p>Let’s take a look at other geometric objects we could map aesthetics to:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef) <span class="sc">+</span></span>
+<span id="cb10-2"><a></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> dbh_in))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<section id="lets-create-a-plot-8" class="slide level2">
+<h2>Let’s create a plot</h2>
+<p>Let’s take a look at other geometric objects we could map aesthetics to:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef) <span class="sc">+</span></span>
+<span id="cb11-2"><a></a>  <span class="fu">geom_boxplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> dbh_in))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<section id="lets-create-a-plot-9" class="slide level2">
+<h2>Let’s create a plot</h2>
+<p>Let’s take a look at other geometric objects we could map aesthetics to:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef) <span class="sc">+</span></span>
+<span id="cb12-2"><a></a>  <span class="fu">geom_violin</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> dbh_in))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<section id="lets-create-a-plot-10" class="slide level2">
+<h2>Let’s create a plot</h2>
+<p>We can also add layers on top of each other</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> dbh_in)) <span class="sc">+</span></span>
+<span id="cb13-2"><a></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb13-3"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<section id="lets-create-a-plot-11" class="slide level2">
+<h2>Let’s create a plot</h2>
+<p>Note here that I moved the mapping back to <code>ggplot()</code>: “inheriting aesthetics”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> dbh_in)) <span class="sc">+</span></span>
+<span id="cb14-2"><a></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb14-3"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
+<section id="a-different-plot-what-are-the-mappings" class="slide level2">
+<h2>A different plot: what are the mappings?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> dbh_in, <span class="at">y =</span> height_ft)) <span class="sc">+</span></span>
+<span id="cb15-2"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
+<section id="a-different-plot-what-are-the-mappings-1" class="slide level2">
+<h2>A different plot: what are the mappings?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> dbh_in,</span>
+<span id="cb16-2"><a></a>                                 <span class="at">y =</span> height_ft,</span>
+<span id="cb16-3"><a></a>                                 <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb16-4"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
+<section id="modifying-the-scale-changing-colors" class="slide level2">
+<h2>Modifying the scale: changing colors</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> dbh_in,</span>
+<span id="cb17-2"><a></a>                                 <span class="at">y =</span> height_ft,</span>
+<span id="cb17-3"><a></a>                                 <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb17-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb17-5"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"firebrick"</span>, <span class="st">"plum"</span>,<span class="st">"aquamarine"</span>, <span class="st">"steelblue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section>
+<section id="modifying-the-scale-changing-colors-1" class="slide level2">
+<h2>Modifying the scale: changing colors</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> dbh_in,</span>
+<span id="cb18-2"><a></a>                                 <span class="at">y =</span> height_ft,</span>
+<span id="cb18-3"><a></a>                                 <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb18-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb18-5"><a></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch"></section>
+<section id="adding-another-layer-smoothing-line" class="slide level2">
+<h2>Adding another layer: smoothing line</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> dbh_in,</span>
+<span id="cb19-2"><a></a>                                 <span class="at">y =</span> height_ft,</span>
+<span id="cb19-3"><a></a>                                 <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb19-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb19-5"><a></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
+<span id="cb19-6"><a></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch"></section>
+<section id="adding-another-layer-smoothing-line-1" class="slide level2">
+<h2>Adding another layer: smoothing line</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> dbh_in,</span>
+<span id="cb20-2"><a></a>                                 <span class="at">y =</span> height_ft,</span>
+<span id="cb20-3"><a></a>                                 <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb20-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb20-5"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb20-6"><a></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch"></section>
+<section id="a-different-way-to-look-by-species-facets" class="slide level2">
+<h2>A different way to look by species: facets</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> dbh_in,</span>
+<span id="cb21-2"><a></a>                                 <span class="at">y =</span> height_ft)) <span class="sc">+</span></span>
+<span id="cb21-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb21-4"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"></section>
+<section id="changing-the-number-of-rows-of-facets" class="slide level2">
+<h2>Changing the number of rows of facets</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> dbh_in,</span>
+<span id="cb22-2"><a></a>                                 <span class="at">y =</span> height_ft)) <span class="sc">+</span></span>
+<span id="cb22-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb22-4"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"></section>
+<section id="adding-a-smoothing-line" class="slide level2">
+<h2>Adding a smoothing line</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> dbh_in,</span>
+<span id="cb23-2"><a></a>                                 <span class="at">y =</span> height_ft)) <span class="sc">+</span></span>
+<span id="cb23-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb23-4"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb23-5"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-22-1.png" width="960" class="r-stretch"></section>
+<section id="color-aesthetic-mapping-facet-by-species." class="slide level2">
+<h2>Color aesthetic mapping + facet by species.</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> dbh_in,</span>
+<span id="cb24-2"><a></a>                                 <span class="at">y =</span> height_ft,</span>
+<span id="cb24-3"><a></a>                                 <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb24-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb24-5"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb24-6"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section>
+<section id="new-color-scale" class="slide level2">
+<h2>New color scale</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> dbh_in,</span>
+<span id="cb25-2"><a></a>                                 <span class="at">y =</span> height_ft,</span>
+<span id="cb25-3"><a></a>                                 <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb25-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb25-5"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb25-6"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb25-7"><a></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section>
+<section id="specifying-a-theme" class="slide level2">
+<h2>Specifying a theme</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fef, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> dbh_in,</span>
+<span id="cb26-2"><a></a>                                 <span class="at">y =</span> height_ft,</span>
+<span id="cb26-3"><a></a>                                 <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb26-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb26-5"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb26-6"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb26-7"><a></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>) <span class="sc">+</span></span>
+<span id="cb26-8"><a></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="w11d1_files/figure-revealjs/unnamed-chunk-25-1.png" width="960" class="r-stretch"></section>
+<section id="questions-to-consider" class="slide level2">
+<h2>Questions to consider</h2>
 <ul>
-<li class="fragment"><p>Similar to <code>read.csv()</code> and <code>read.table()</code>, <code>R</code> includes <code>write.csv()</code> and <code>write.table()</code> functions.</p></li>
-<li class="fragment"><p>These functions allow you to create (or “write”) your own files with an R object.</p></li>
-<li class="fragment"><p>Let’s take a look!</p></li>
+<li>How should we depict the species in these graphics? What is best? (hint: it depends)</li>
+<li>What separates a good graphic from a bad one? From a great one?</li>
 </ul>
-</div>
 </section>
-<section id="writing-data-1" class="slide level2">
-<h2>Writing data</h2>
-<p>First, we look at the files in my “labs” folder</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">list.files</span>(<span class="st">"../labs"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "data_lab9"            "data_lab9.zip"        "datasets"            
- [4] "FEF_trees.csv"        "lab_01_solutions.pdf" "lab_01_solutions.qmd"
- [7] "lab_01.qmd"           "lab_02.qmd"           "lab_03_example.R"    
-[10] "lab_03.html"          "lab_03.qmd"           "lab_04.qmd"          
-[13] "lab_05.qmd"           "lab_06.qmd"           "lab_07_web.html"     
-[16] "lab_07_web.qmd"       "lab_07.qmd"           "lab_08_web.html"     
-[19] "lab_08_web.qmd"       "lab_08.qmd"           "lab_09_web.html"     
-[22] "lab_09_web.qmd"       "lab_09.qmd"          </code></pre>
-</div>
-</div>
-</section>
-<section id="writing-data-2" class="slide level2">
-<h2>Writing data</h2>
-<p>Next, we can write the <code>fef</code> object to a .csv file.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">write.csv</span>(<span class="at">x =</span> fef,</span>
-<span id="cb23-2"><a></a>          <span class="at">file =</span> <span class="st">"../labs/my_fef.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="writing-data-3" class="slide level2">
-<h2>Writing data</h2>
-<p>Next, we can write the <code>fef</code> object to a .csv file.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">write.csv</span>(<span class="at">x =</span> fef,</span>
-<span id="cb24-2"><a></a>          <span class="at">file =</span> <span class="st">"../labs/my_fef.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Now, we can see that the file is written.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">list.files</span>(<span class="st">"../labs"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "data_lab9"            "data_lab9.zip"        "datasets"            
- [4] "FEF_trees.csv"        "lab_01_solutions.pdf" "lab_01_solutions.qmd"
- [7] "lab_01.qmd"           "lab_02.qmd"           "lab_03_example.R"    
-[10] "lab_03.html"          "lab_03.qmd"           "lab_04.qmd"          
-[13] "lab_05.qmd"           "lab_06.qmd"           "lab_07_web.html"     
-[16] "lab_07_web.qmd"       "lab_07.qmd"           "lab_08_web.html"     
-[19] "lab_08_web.qmd"       "lab_08.qmd"           "lab_09_web.html"     
-[22] "lab_09_web.qmd"       "lab_09.qmd"           "my_fef.csv"          </code></pre>
-</div>
-</div>
-</section>
-<section id="next-week" class="slide level2">
-<h2>Next Week</h2>
+<section id="next-time" class="slide level2">
+<h2>Next time</h2>
 <ul>
-<li>Andy will deliver lecture and lab through Tuesday 9/17.</li>
-<li>Main focuses: Chapter 4 (Data Structures).</li>
+<li>More plotting with <code>ggplot2</code>!
+<ul>
+<li>histograms and bar plots</li>
+<li>careful considerations when making plots</li>
+</ul></li>
 </ul>
-</section></section>
-<section id="see-you-upstairs-in-lab" class="title-slide slide level1 center" data-background-color="#00817c">
-<h1>See you upstairs in lab!</h1>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section>
+</section></section>
+
     </div>
   </div>
 
@@ -783,6 +797,7 @@ Practical Computing and Data Science Tools
   <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-text-resizer/revealjs-text-resizer.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -974,7 +989,7 @@ Practical Computing and Data Science Tools
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealTextResizer, QuartoSupport,
 
           RevealMath,
           RevealNotes,

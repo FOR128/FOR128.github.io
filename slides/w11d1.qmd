@@ -1,0 +1,398 @@
+---
+title: "Creating graphics with `ggplot2`"
+editor: 
+  mode: source
+webr:
+  show-startup-message: false
+filters:
+  - webr
+engine: knitr
+execute:
+  echo: true
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+revealjs-plugins:
+  - revealjs-text-resizer
+---
+
+## Annoucements
+
+-   Midterm II is Thursday, November 14th, during lab time.
+-   Material on the midterm will include all material through Week 11 (this week!). 
+-   The midterm will be of similar form to the last midterm.
+-   Closed materials, but you are allowed one 8.5" x 11" sheet of paper, double-sided, hand-written note sheet. 
+
+## Agenda
+
+-   Components of a graphic (i.e. the grammar of graphics)
+-   Composing a graphic
+
+
+# Components of a graphic {background-color="#00817c"}
+
+## What is a graphic made up of?
+
+![](figs/voter-turnout-rate-by-age-usa.png)
+
+## What is a graphic made up of? 
+
+::: incremental
+
+-   Data, and
+-   Mappings
+
+:::
+
+
+## Data
+
+That graphics we will create use data in the same form as we have seen thus far in the course.
+
+In other words, we will use tibbles to create graphics
+
+
+## Data
+
+What might the rows and columns of the tibble used to create this graphic be? 
+
+![](figs/voter-turnout-rate-by-age-usa.png)
+
+
+## Mappings
+
+In order to create a graphic, one must choose how to **map** the variables of the data to the **aes**thetic attributes of the plot. 
+
+Mappings can be a variety of components:
+
+::: incremental
+
+-   layers (either geometric elements or statistical transformations),
+-   scales,
+-   coordinate systems,
+-   facets,
+-   themes.
+
+:::
+
+## Layers
+
+A layer is a collection of geometric elements and statistical transformations. Geometric elements, geoms for short, represent what you actually see in the plot: points, lines, polygons, etc. Statistical transformations, stats for short, summarise the data: for example, binning and counting observations to create a histogram, or fitting a linear model.[^1]
+
+[^1]: Source: [https://ggplot2-book.org/introduction](https://ggplot2-book.org/introduction)
+
+## Scales
+
+Scales map values in the data space to values in the aesthetic space. This includes the use of colour, shape or size. Scales also draw the legend and axes, which make it possible to read the original data values from the plot (an inverse mapping).[^1]
+
+[^1]: Source: [https://ggplot2-book.org/introduction](https://ggplot2-book.org/introduction)
+
+## Coordinate systems
+
+A coord, or coordinate system, describes how data coordinates are mapped to the plane of the graphic. It also provides axes and gridlines to help read the graph. We normally use the Cartesian coordinate system, but a number of others are available, including polar coordinates and map projections.[^1]
+
+[^1]: Source: [https://ggplot2-book.org/introduction](https://ggplot2-book.org/introduction)
+
+## Facets
+
+A facet specifies how to break up and display subsets of data as small multiples. This is also known as conditioning or latticing/trellising.[^1]
+
+[^1]: Source: [https://ggplot2-book.org/introduction](https://ggplot2-book.org/introduction)
+
+## Themes
+
+A theme controls the finer points of display, like the font size and background colour. While the defaults in ggplot2 have been chosen with care, you may need to consult other references to create an attractive plot. A good starting place is Tufte's early works.[^1]
+
+[^1]: Source: [https://ggplot2-book.org/introduction](https://ggplot2-book.org/introduction)
+
+## Mappings
+
+What are the mappings used in this graphic?
+
+![](figs/voter-turnout-rate-by-age-usa.png)
+
+
+# Composing a graphic {background-color="#00817c"}
+
+
+## Consider the `fef` dataset
+
+```{r}
+library(tidyverse)
+fef <- read_csv("../labs/datasets/FEF_trees.csv")
+fef
+```
+
+## Let's create a plot
+
+First, our canvas: 
+
+```{r}
+ggplot()
+```
+
+## Let's create a plot
+
+Then, we specify the data:
+
+```{r}
+ggplot(data = fef)
+```
+
+
+## Let's create a plot
+
+Question: why is this still blank?
+
+```{r}
+ggplot(data = fef)
+```
+
+## Let's create a plot
+
+Answer: we need to specify aesthetic mappings!
+
+```{r}
+ggplot(data = fef, mapping = aes(x = species, y = dbh_in))
+```
+
+## Let's create a plot
+
+We've now specified that "species" will be mapped to the x-axis, and "dbh_in" will be mapped to the y-axis. 
+
+::: incremental
+
+-   But we still haven't specified what **geometry** to map these **aesthetic attributes** to. 
+
+:::
+
+```{r}
+ggplot(data = fef, mapping = aes(x = species, y = dbh_in))
+```
+
+## Let's create a plot
+
+We've now specified that we will map these aesthetics to "points".
+
+```{r}
+ggplot(data = fef, mapping = aes(x = species, y = dbh_in)) +
+  geom_point()
+```
+
+## Let's create a plot
+
+You can also specify the aesthetic mapping in the geometry layer: 
+
+```{r}
+ggplot(data = fef) +
+  geom_point(mapping = aes(x = species, y = dbh_in))
+```
+
+## Let's create a plot
+
+Let's take a look at other geometric objects we could map aesthetics to: 
+
+```{r}
+ggplot(data = fef) +
+  geom_point(mapping = aes(x = species, y = dbh_in))
+```
+
+## Let's create a plot
+
+Let's take a look at other geometric objects we could map aesthetics to: 
+
+```{r}
+ggplot(data = fef) +
+  geom_boxplot(mapping = aes(x = species, y = dbh_in))
+```
+
+## Let's create a plot
+
+Let's take a look at other geometric objects we could map aesthetics to: 
+
+```{r}
+ggplot(data = fef) +
+  geom_violin(mapping = aes(x = species, y = dbh_in))
+```
+
+## Let's create a plot
+
+We can also add layers on top of each other
+
+```{r}
+ggplot(data = fef, mapping = aes(x = species, y = dbh_in)) +
+  geom_violin() +
+  geom_point()
+```
+
+## Let's create a plot
+
+Note here that I moved the mapping back to `ggplot()`: "inheriting aesthetics"
+
+```{r}
+ggplot(data = fef, mapping = aes(x = species, y = dbh_in)) +
+  geom_violin() +
+  geom_point()
+```
+
+
+## A different plot: what are the mappings? 
+
+```{r}
+ggplot(data = fef, mapping = aes(x = dbh_in, y = height_ft)) +
+  geom_point()
+```
+
+## A different plot: what are the mappings? 
+
+```{r}
+ggplot(data = fef, mapping = aes(x = dbh_in,
+                                 y = height_ft,
+                                 color = species)) +
+  geom_point()
+```
+
+## Modifying the scale: changing colors
+
+```{r}
+ggplot(data = fef, mapping = aes(x = dbh_in,
+                                 y = height_ft,
+                                 color = species)) +
+  geom_point() + 
+  scale_color_manual(values = c("firebrick", "plum","aquamarine", "steelblue"))
+```
+
+## Modifying the scale: changing colors
+
+```{r}
+ggplot(data = fef, mapping = aes(x = dbh_in,
+                                 y = height_ft,
+                                 color = species)) +
+  geom_point() + 
+  scale_color_brewer(palette = "Set2")
+```
+
+## Adding another layer: smoothing line
+
+```{r}
+ggplot(data = fef, mapping = aes(x = dbh_in,
+                                 y = height_ft,
+                                 color = species)) +
+  geom_point() + 
+  geom_smooth() +
+  scale_color_brewer(palette = "Set2")
+```
+
+## Adding another layer: smoothing line
+
+```{r}
+ggplot(data = fef, mapping = aes(x = dbh_in,
+                                 y = height_ft,
+                                 color = species)) +
+  geom_point() + 
+  geom_smooth(se = FALSE) +
+  scale_color_brewer(palette = "Set2")
+```
+
+## A different way to look by species: facets 
+
+```{r}
+ggplot(data = fef, mapping = aes(x = dbh_in,
+                                 y = height_ft)) +
+  geom_point() +
+  facet_wrap(~species)
+```
+
+## Changing the number of rows of facets 
+
+```{r}
+ggplot(data = fef, mapping = aes(x = dbh_in,
+                                 y = height_ft)) +
+  geom_point() +
+  facet_wrap(~species, nrow = 1)
+```
+
+## Adding a smoothing line
+
+```{r}
+ggplot(data = fef, mapping = aes(x = dbh_in,
+                                 y = height_ft)) +
+  geom_point() +
+  geom_smooth(se = FALSE) + 
+  facet_wrap(~species, nrow = 1)
+```
+
+## Color aesthetic mapping + facet by species. 
+
+```{r}
+ggplot(data = fef, mapping = aes(x = dbh_in,
+                                 y = height_ft,
+                                 color = species)) +
+  geom_point() +
+  geom_smooth(se = FALSE) + 
+  facet_wrap(~species, nrow = 1)
+```
+
+## New color scale
+
+```{r}
+ggplot(data = fef, mapping = aes(x = dbh_in,
+                                 y = height_ft,
+                                 color = species)) +
+  geom_point() +
+  geom_smooth(se = FALSE) + 
+  facet_wrap(~species, nrow = 1) +
+  scale_color_brewer(palette = "Set1")
+```
+
+## Specifying a theme
+
+```{r}
+ggplot(data = fef, mapping = aes(x = dbh_in,
+                                 y = height_ft,
+                                 color = species)) +
+  geom_point() +
+  geom_smooth(se = FALSE) + 
+  facet_wrap(~species, nrow = 1) +
+  scale_color_brewer(palette = "Set1") +
+  theme_bw()
+```
+
+## Questions to consider
+
+-   How should we depict the species in these graphics? What is best? (hint: it depends) 
+-   What separates a good graphic from a bad one? From a great one? 
+
+## Next time
+
+-   More plotting with `ggplot2`! 
+    - histograms and bar plots
+    - careful considerations when making plots
+
+
+
+
+
+
+
+
+
+
+
+ 
