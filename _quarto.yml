@@ -68,6 +68,8 @@ website:
             text: "Week 10 Day 1"
           - href: slides/w10d2.qmd
             text: "Week 10 Day 2"
+          - href: slides/w11d1.qmd
+            text: "Week 11 Day 1"
       - href: assignments.qmd
         text: Assignments
       - href: recordings.qmd

@@ -56,7 +56,7 @@ revealjs-plugins:
 ::: incremental
 
 -   Data, and
--   Mappings
+-   Visual components
 
 :::
 
@@ -75,55 +75,31 @@ What might the rows and columns of the tibble used to create this graphic be?
 ![](figs/voter-turnout-rate-by-age-usa.png)
 
 
-## Mappings
+## Visual components
 
-In order to create a graphic, one must choose how to **map** the variables of the data to the **aes**thetic attributes of the plot. 
+In order to create a graphic or "plot", one must choose visualize the variables of the data to the attributes of the plot. Further, one must choose the cosmetic properties of the plot. 
 
-Mappings can be a variety of components:
+Layers can be specified as a variety of components:
 
 ::: incremental
 
--   layers (either geometric elements or statistical transformations),
--   scales,
--   coordinate systems,
--   facets,
--   themes.
+-   **geom**: the geometric shape that the data are mapped to,
+    - Examples: point, line, bar, text, path, ...
+-   **aes**thetics: The visual properties of the **geom**. 
+    - Examples: x-position, y-position, color, fill, shape
+-   **coord**: coordinate system,
+    - Examples: Cartesian, polar, lon/lat projection
+-   **scale**: how data are mapped to certain aesthetics. 
+    - Example: which colors or shapes to use?  
+-   **facet**: a technique to split plots into multiple panels,
+-   **themes**: the cosmetic attributes of the plot.
 
 :::
 
-## Layers
 
-A layer is a collection of geometric elements and statistical transformations. Geometric elements, geoms for short, represent what you actually see in the plot: points, lines, polygons, etc. Statistical transformations, stats for short, summarise the data: for example, binning and counting observations to create a histogram, or fitting a linear model.[^1]
+## Visual components
 
-[^1]: Source: [https://ggplot2-book.org/introduction](https://ggplot2-book.org/introduction)
-
-## Scales
-
-Scales map values in the data space to values in the aesthetic space. This includes the use of colour, shape or size. Scales also draw the legend and axes, which make it possible to read the original data values from the plot (an inverse mapping).[^1]
-
-[^1]: Source: [https://ggplot2-book.org/introduction](https://ggplot2-book.org/introduction)
-
-## Coordinate systems
-
-A coord, or coordinate system, describes how data coordinates are mapped to the plane of the graphic. It also provides axes and gridlines to help read the graph. We normally use the Cartesian coordinate system, but a number of others are available, including polar coordinates and map projections.[^1]
-
-[^1]: Source: [https://ggplot2-book.org/introduction](https://ggplot2-book.org/introduction)
-
-## Facets
-
-A facet specifies how to break up and display subsets of data as small multiples. This is also known as conditioning or latticing/trellising.[^1]
-
-[^1]: Source: [https://ggplot2-book.org/introduction](https://ggplot2-book.org/introduction)
-
-## Themes
-
-A theme controls the finer points of display, like the font size and background colour. While the defaults in ggplot2 have been chosen with care, you may need to consult other references to create an attractive plot. A good starting place is Tufte's early works.[^1]
-
-[^1]: Source: [https://ggplot2-book.org/introduction](https://ggplot2-book.org/introduction)
-
-## Mappings
-
-What are the mappings used in this graphic?
+What are the visual components used in this graphic? (geoms, aesthetics, coords, scale, facets, themes)
 
 ![](figs/voter-turnout-rate-by-age-usa.png)
 
@@ -310,6 +286,28 @@ ggplot(data = fef, mapping = aes(x = dbh_in,
   scale_color_brewer(palette = "Set2")
 ```
 
+## Changing the size mapping
+
+```{r}
+ggplot(data = fef, mapping = aes(x = dbh_in,
+                                 y = height_ft,
+                                 color = species)) +
+  geom_point(size = 3) + 
+  geom_smooth(se = FALSE) +
+  scale_color_brewer(palette = "Set2")
+```
+
+## Changing the size mapping
+
+```{r}
+ggplot(data = fef, mapping = aes(x = dbh_in,
+                                 y = height_ft,
+                                 color = species)) +
+  geom_point() + 
+  geom_smooth(se = FALSE, linewidth = 3) +
+  scale_color_brewer(palette = "Set2")
+```
+
 ## A different way to look by species: facets 
 
 ```{r}
@@ -373,6 +371,160 @@ ggplot(data = fef, mapping = aes(x = dbh_in,
   scale_color_brewer(palette = "Set1") +
   theme_bw()
 ```
+
+## Specifying a theme
+
+```{r}
+ggplot(data = fef, mapping = aes(x = dbh_in,
+                                 y = height_ft,
+                                 color = species)) +
+  geom_point() +
+  geom_smooth(se = FALSE) + 
+  facet_wrap(~species, nrow = 1) +
+  scale_color_brewer(palette = "Set1") +
+  theme_minimal()
+```
+
+## Specifying a theme
+
+```{r}
+ggplot(data = fef, mapping = aes(x = dbh_in,
+                                 y = height_ft,
+                                 color = species)) +
+  geom_point() +
+  geom_smooth(se = FALSE) + 
+  facet_wrap(~species, nrow = 1) +
+  scale_color_brewer(palette = "Set1") +
+  theme_dark()
+```
+
+## Specifying a theme
+
+```{r}
+library(ggthemes)
+ggplot(data = fef, mapping = aes(x = dbh_in,
+                                 y = height_ft,
+                                 color = species)) +
+  geom_point() +
+  geom_smooth(se = FALSE) + 
+  facet_wrap(~species, nrow = 1) +
+  scale_color_brewer(palette = "Set1") +
+  theme_fivethirtyeight()
+```
+
+## Specifying a theme
+
+```{r}
+ggplot(data = fef, mapping = aes(x = dbh_in,
+                                 y = height_ft,
+                                 color = species)) +
+  geom_point() +
+  geom_smooth(se = FALSE) + 
+  facet_wrap(~species, nrow = 1) +
+  scale_color_brewer(palette = "Set1") +
+  theme_economist()
+```
+
+## Specifying a theme
+
+```{r}
+ggplot(data = fef, mapping = aes(x = dbh_in,
+                                 y = height_ft,
+                                 color = species)) +
+  geom_point() +
+  geom_smooth(se = FALSE) + 
+  facet_wrap(~species, nrow = 1) +
+  scale_color_brewer(palette = "Set1") +
+  theme_solarized()
+```
+
+## Napoleon's march on Moscow
+
+![](figs/napoleon.jpg)
+
+## Napoleon's march on Moscow: in R
+
+```{r}
+cities <- read_table("minard-cities.txt")
+troops <- read_table("minard-troops.txt")
+```
+
+## Napoleon's march on Moscow: in R
+
+```{r}
+cities
+```
+
+## Napoleon's march on Moscow: in R
+
+```{r}
+troops
+```
+
+## Napoleon's march on Moscow: in R
+
+```{r}
+ggplot(data = troops, mapping = aes(long, lat)) 
+```
+
+## Napoleon's march on Moscow: in R
+
+```{r}
+ggplot(mapping = aes(long, lat)) +
+  geom_path(data = troops, aes(size = survivors, color = direction, group = group))
+```
+
+## Napoleon's march on Moscow: in R
+
+```{r}
+ggplot(mapping = aes(long, lat)) +
+  geom_path(data = troops, aes(size = survivors, color = direction, group = group)) + 
+  geom_text(data = cities, mapping = aes(label = city), size = 4)
+```
+
+## Napoleon's march on Moscow: in R
+
+```{r}
+ggplot(mapping = aes(long, lat)) +
+  geom_path(data = troops, aes(size = survivors, color = direction, group = group)) + 
+  geom_text(data = cities, mapping = aes(label = city), size = 4) + 
+  scale_color_manual(values = c("darkgoldenrod","grey50"))
+```
+
+## Napoleon's march on Moscow: in R
+
+```{r}
+ggplot(mapping = aes(long, lat)) +
+  geom_path(data = troops, aes(size = survivors, color = direction, group = group)) + 
+  geom_text(data = cities, mapping = aes(label = city), size = 4) + 
+  scale_color_manual(values = c("darkgoldenrod","grey50")) +
+  labs(x = "", y = "")
+```
+
+## Napoleon's march on Moscow: in R
+
+```{r}
+ggplot(mapping = aes(long, lat)) +
+  geom_path(data = troops, aes(size = survivors, color = direction, group = group)) + 
+  geom_text(data = cities, mapping = aes(label = city), size = 4) + 
+  scale_color_manual(values = c("darkgoldenrod","grey50")) +
+  labs(x = "", y = "") + 
+  theme_solarized()
+```
+
+## Napoleon's march on Moscow: in R
+
+```{r}
+ggplot(mapping = aes(long, lat)) +
+  geom_path(data = troops, aes(size = survivors, color = direction, group = group)) + 
+  geom_text(data = cities, mapping = aes(label = city), size = 4) + 
+  scale_color_manual(values = c("darkgoldenrod","grey50")) +
+  labs(x = "", y = "") + 
+  theme_solarized() +
+  theme(legend.position = "none")
+```
+
+
 
 ## Questions to consider
 
