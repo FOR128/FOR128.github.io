@@ -1,0 +1,35 @@
+---
+title: "Final Project"
+subtitle: "FOR 128: Practical Computing and Data Science Tools, Fall 2024"
+editor: 
+  mode: source
+---
+
+## Description
+
+In this class, we've learned how to analyze data in the `R` programming language. From reading in the data, to tidying and reshaping, to wrangling, and finally to plotting. The final project asks you to find a dataset that is interesting to you and analyze it with the tools we've learned in class. The dataset you use for the class should be environmental in some sense. It could relate to forestry, water and water quality, animals, climate, etc. We will include some datasets that could be a good choice for this project, but you are not limited to these datasets. 
+
+This is a group project, with groups of 3-5 people. You can choose your groups, but if you are having trouble finding a group or your group is too small (< 3 people), please let Grayson or Andy know and we will combine you or your group with others. 
+
+## Components
+
+The final project will be composed of four components: a group member submission, a proposal, a blog post, and a presentation. For each component, your group will submit one document via D2L.
+
+### The group member submission
+
+**Due date:** Tuesday, November 12th, 5pm.
+
+### The proposal
+
+**Due date:** Tuesday, November 19th, 5pm. 
+
+### The blog post
+
+**Due date:** Tuesday, December 10th, 5pm. 
+
+### The presentation
+
+**Due date:** Thursday, December 12th, in class. 
+
+
+## Evaluation
