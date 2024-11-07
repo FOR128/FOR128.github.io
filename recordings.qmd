@@ -47,3 +47,5 @@ Week 10, day 2: *Reshaping data with `tidyr`, part 2*. Available [here](https://
 
 Week 11, day 1: *The grammar of graphics*. Available [here](https://mediaspace.msu.edu/media/Week+11+Day+1/1_6us37ay8).
 
+Week 11, day 2: *Final project explanation and more plotting with `ggplot2`*. Available [here](https://mediaspace.msu.edu/media/Week+11+Day+2/1_5meoynmd).
+
