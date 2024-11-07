@@ -1,0 +1,190 @@
+---
+title: "Plotting with `ggplot2`"
+subtitle: "FOR 128: Lab 10"
+author: ""
+date: "11/13/2024"
+format:
+  html: default
+editor: 
+  mode: source
+---
+
+## Welcome
+
+Welcome to Lab 10! Today, we'll focus on the grammar of graphics and plotting with `ggplot2`. Part 1 shows you some plots created in `ggplot2` and asks about their aesthetics, geometries, coordinate systems, scales, facets, and themes. Part 2 asks you to create some plots with `ggplot2`.
+
+### Learning objectives
+
+-   Understand and be able to identify the components of a plot
+-   Create beautiful graphics with `ggplot2`. 
+
+### Deliverables (i.e., what to put in the lab drop box)
+
+Upload your rendered PDF (`lab_10.pdf`) **and** Quarto (`lab_10.qmd`) document to the lab drop box. Make sure the Quarto document properly renders to PDF.
+
+### Collaborator(s)
+
+List any collaborators you worked with below. 
+
+
+
+
+## Exercise 0
+
+Load any packages you'll need for this lab below.
+
+```{r}
+
+```
+
+```{r}
+#| echo: false
+#| message: false
+library(tidyverse)
+library(pdxTrees)
+library(ggthemes)
+parks <- get_pdxTrees_parks() %>%
+  filter(Park %in% c("Irving Park", "Sewallcrest Park",
+                     "Sellwood Riverfront Park"))
+```
+
+# Part 1: Interpreting plots
+
+For this part, we'll consider some data from the `pdxTrees` R package. In particular, we will look at data across a few parks (Irving Park, Sewallcrest Park, and Sellwood Riverfront Park) in Portland, Oregon. 
+
+## Exercise 1
+
+For each plot presented in each part of this exercise, answer the following questions:
+
+-   What are the geometries used?
+-   What are the aesthetics used? 
+-   What values (i.e. variables) are mapped each aesthetic? 
+-   What coordinate system is used?
+-   What, if any, scales are used? 
+-   Are there any facets? If so, what variable(s) are used to facet?
+-   What, if any, themes are used? 
+
+### Part (a)
+
+```{r}
+#| echo: false
+#| message: false
+ggplot(parks) + 
+  geom_point(aes(x = DBH, y = Tree_Height))
+```
+
+### Part (b)
+
+```{r}
+#| echo: false
+#| message: false
+ggplot(parks) + 
+  geom_boxplot(aes(x = Park, y = DBH)) +
+  labs(y = "Diameter at breast height",)
+```
+
+### Part (c)
+
+```{r}
+#| echo: false
+#| message: false
+ggplot(parks) + 
+  geom_point(aes(x = DBH, y = Tree_Height, color = Park)) + 
+  scale_color_manual(values = c("goldenrod", "steelblue", "forestgreen")) +
+  theme_bw() +
+  theme(legend.position = "bottom")
+```
+
+
+### Part (d)
+
+```{r}
+#| echo: false
+#| message: false
+ggplot(parks, aes(x = DBH, y = Tree_Height)) + 
+  geom_point() +
+  geom_smooth(se = F) + 
+  facet_wrap(~Park)
+```
+
+### Part (e)
+
+```{r}
+#| echo: false
+#| message: false
+ggplot(parks) + 
+  geom_bar(aes(x = Park, fill = Condition))
+```
+
+### Part (f)
+
+```{r}
+#| echo: false
+#| message: false
+ggplot(parks) + 
+  geom_histogram(aes(x = DBH), bins = 20) + 
+  theme_solarized() + 
+  labs(title = "Distribution of DBH across parks")
+```
+
+### Part (g)
+
+```{r}
+#| echo: false
+#| message: false
+parks %>%
+  filter(Park == "Sewallcrest Park") %>%
+  ggplot() + 
+  geom_point(aes(x = Longitude, y = Latitude, color = Common_Name, size = DBH)) + 
+  labs(title = "Trees in Sewallcrest Park")
+```
+
+
+# Part 2: Creating plots
+
+Again, we'll consider some data from the `pdxTrees` R package: data across a few parks (Irving Park, Sewallcrest Park, and Sellwood Riverfront Park) in Portland, Oregon. 
+
+## Exercise 2
+
+Use the `pdxTrees` package to get the data for all parks in Portland. Then, filter the dataset to only contain rows that correspond to Irving Park, Sewallcrest Park, and Sellwood Riverfront Park. Call the resulting tibble `parks`. Hint: you can either call `get_pdxTrees_parks()` and then use a `dplyr` function to filter for only the parks we are interested in, or specify the `park` argument of `get_pdxTrees_parks()` when you call the function. Your resulting tibble should have 314 rows and 34 columns. 
+
+```{r}
+parks
+```
+
+## Exercise 3
+
+Recreate the plots from Exercise 1. 
+
+### Part (a)
+
+### Part (b)
+
+### Part (c)
+
+HINT: the colors used were "goldenrod", "steelblue", and "forestgreen". 
+
+### Part (d)
+
+### Part (e)
+
+HINT: you can fill a bar plot by another variable by specifying a fill aesthetic mapping. 
+
+### Part (f)
+
+HINT: the theme used here is from the `ggthemes` package.
+
+### Part (g)
+
+HINT: you'll need to filter the data for a particular park. 
+
+
+## Exercise 4
+
+Create your own plot from the parks data. Your plot should, at a minimum, map at least three variables to geometries, label its aesthetics nicely, have a title, and have a theme different from `ggplot2`'s default. Have fun with it! Feel free to choose different parks as well if you'd like.  
+
+
+
+# Wrap up
+
+Congratulations! You've made it to the end of Lab 9. Make sure to render your final document and submit both the .pdf and .qmd file to D2L.

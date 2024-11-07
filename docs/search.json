@@ -480,14 +480,14 @@
     "href": "slides/w2d2.html#reading-data-5",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"data_lab9\"            \"data_lab9.zip\"        \"datasets\"            \n [4] \"FEF_trees.csv\"        \"lab_01_solutions.pdf\" \"lab_01_solutions.qmd\"\n [7] \"lab_01.qmd\"           \"lab_02.qmd\"           \"lab_03_example.R\"    \n[10] \"lab_03.html\"          \"lab_03.qmd\"           \"lab_04.qmd\"          \n[13] \"lab_05.qmd\"           \"lab_06.qmd\"           \"lab_07_web.html\"     \n[16] \"lab_07_web.qmd\"       \"lab_07.qmd\"           \"lab_08_web.html\"     \n[19] \"lab_08_web.qmd\"       \"lab_08.qmd\"           \"lab_09_web.html\"     \n[22] \"lab_09_web.qmd\"       \"lab_09.qmd\""
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"data_lab9\"            \"data_lab9.zip\"        \"datasets\"            \n [4] \"FEF_trees.csv\"        \"lab_01_solutions.pdf\" \"lab_01_solutions.qmd\"\n [7] \"lab_01.qmd\"           \"lab_02.qmd\"           \"lab_03_example.R\"    \n[10] \"lab_03.html\"          \"lab_03.qmd\"           \"lab_04.qmd\"          \n[13] \"lab_05.qmd\"           \"lab_06.qmd\"           \"lab_07_web.html\"     \n[16] \"lab_07_web.qmd\"       \"lab_07.qmd\"           \"lab_08_web.html\"     \n[19] \"lab_08_web.qmd\"       \"lab_08.qmd\"           \"lab_09_web.html\"     \n[22] \"lab_09_web.qmd\"       \"lab_09.qmd\"           \"lab_10_web_files\"    \n[25] \"lab_10_web.html\"      \"lab_10_web.qmd\""
   },
   {
     "objectID": "slides/w2d2.html#reading-data-6",
     "href": "slides/w2d2.html#reading-data-6",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"data_lab9\"            \"data_lab9.zip\"        \"datasets\"            \n [4] \"FEF_trees.csv\"        \"lab_01_solutions.pdf\" \"lab_01_solutions.qmd\"\n [7] \"lab_01.qmd\"           \"lab_02.qmd\"           \"lab_03_example.R\"    \n[10] \"lab_03.html\"          \"lab_03.qmd\"           \"lab_04.qmd\"          \n[13] \"lab_05.qmd\"           \"lab_06.qmd\"           \"lab_07_web.html\"     \n[16] \"lab_07_web.qmd\"       \"lab_07.qmd\"           \"lab_08_web.html\"     \n[19] \"lab_08_web.qmd\"       \"lab_08.qmd\"           \"lab_09_web.html\"     \n[22] \"lab_09_web.qmd\"       \"lab_09.qmd\"          \n\n\nNow, given our working directory and datasets location, we specify a relative path and load in the data:\n\nfef &lt;- read.csv(file = \"../labs/datasets/FEF_trees.csv\")"
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"data_lab9\"            \"data_lab9.zip\"        \"datasets\"            \n [4] \"FEF_trees.csv\"        \"lab_01_solutions.pdf\" \"lab_01_solutions.qmd\"\n [7] \"lab_01.qmd\"           \"lab_02.qmd\"           \"lab_03_example.R\"    \n[10] \"lab_03.html\"          \"lab_03.qmd\"           \"lab_04.qmd\"          \n[13] \"lab_05.qmd\"           \"lab_06.qmd\"           \"lab_07_web.html\"     \n[16] \"lab_07_web.qmd\"       \"lab_07.qmd\"           \"lab_08_web.html\"     \n[19] \"lab_08_web.qmd\"       \"lab_08.qmd\"           \"lab_09_web.html\"     \n[22] \"lab_09_web.qmd\"       \"lab_09.qmd\"           \"lab_10_web_files\"    \n[25] \"lab_10_web.html\"      \"lab_10_web.qmd\"      \n\n\nNow, given our working directory and datasets location, we specify a relative path and load in the data:\n\nfef &lt;- read.csv(file = \"../labs/datasets/FEF_trees.csv\")"
   },
   {
     "objectID": "slides/w2d2.html#reading-data-7",
@@ -571,7 +571,7 @@
     "href": "slides/w2d2.html#writing-data-1",
     "title": "Reading and Writing Data",
     "section": "Writing data",
-    "text": "Writing data\nFirst, we look at the files in my “labs” folder\n\nlist.files(\"../labs\")\n\n [1] \"data_lab9\"            \"data_lab9.zip\"        \"datasets\"            \n [4] \"FEF_trees.csv\"        \"lab_01_solutions.pdf\" \"lab_01_solutions.qmd\"\n [7] \"lab_01.qmd\"           \"lab_02.qmd\"           \"lab_03_example.R\"    \n[10] \"lab_03.html\"          \"lab_03.qmd\"           \"lab_04.qmd\"          \n[13] \"lab_05.qmd\"           \"lab_06.qmd\"           \"lab_07_web.html\"     \n[16] \"lab_07_web.qmd\"       \"lab_07.qmd\"           \"lab_08_web.html\"     \n[19] \"lab_08_web.qmd\"       \"lab_08.qmd\"           \"lab_09_web.html\"     \n[22] \"lab_09_web.qmd\"       \"lab_09.qmd\""
+    "text": "Writing data\nFirst, we look at the files in my “labs” folder\n\nlist.files(\"../labs\")\n\n [1] \"data_lab9\"            \"data_lab9.zip\"        \"datasets\"            \n [4] \"FEF_trees.csv\"        \"lab_01_solutions.pdf\" \"lab_01_solutions.qmd\"\n [7] \"lab_01.qmd\"           \"lab_02.qmd\"           \"lab_03_example.R\"    \n[10] \"lab_03.html\"          \"lab_03.qmd\"           \"lab_04.qmd\"          \n[13] \"lab_05.qmd\"           \"lab_06.qmd\"           \"lab_07_web.html\"     \n[16] \"lab_07_web.qmd\"       \"lab_07.qmd\"           \"lab_08_web.html\"     \n[19] \"lab_08_web.qmd\"       \"lab_08.qmd\"           \"lab_09_web.html\"     \n[22] \"lab_09_web.qmd\"       \"lab_09.qmd\"           \"lab_10_web_files\"    \n[25] \"lab_10_web.html\"      \"lab_10_web.qmd\""
   },
   {
     "objectID": "slides/w2d2.html#writing-data-2",
@@ -585,7 +585,7 @@
     "href": "slides/w2d2.html#writing-data-3",
     "title": "Reading and Writing Data",
     "section": "Writing data",
-    "text": "Writing data\nNext, we can write the fef object to a .csv file.\n\nwrite.csv(x = fef,\n          file = \"../labs/my_fef.csv\")\n\nNow, we can see that the file is written.\n\nlist.files(\"../labs\")\n\n [1] \"data_lab9\"            \"data_lab9.zip\"        \"datasets\"            \n [4] \"FEF_trees.csv\"        \"lab_01_solutions.pdf\" \"lab_01_solutions.qmd\"\n [7] \"lab_01.qmd\"           \"lab_02.qmd\"           \"lab_03_example.R\"    \n[10] \"lab_03.html\"          \"lab_03.qmd\"           \"lab_04.qmd\"          \n[13] \"lab_05.qmd\"           \"lab_06.qmd\"           \"lab_07_web.html\"     \n[16] \"lab_07_web.qmd\"       \"lab_07.qmd\"           \"lab_08_web.html\"     \n[19] \"lab_08_web.qmd\"       \"lab_08.qmd\"           \"lab_09_web.html\"     \n[22] \"lab_09_web.qmd\"       \"lab_09.qmd\"           \"my_fef.csv\""
+    "text": "Writing data\nNext, we can write the fef object to a .csv file.\n\nwrite.csv(x = fef,\n          file = \"../labs/my_fef.csv\")\n\nNow, we can see that the file is written.\n\nlist.files(\"../labs\")\n\n [1] \"data_lab9\"            \"data_lab9.zip\"        \"datasets\"            \n [4] \"FEF_trees.csv\"        \"lab_01_solutions.pdf\" \"lab_01_solutions.qmd\"\n [7] \"lab_01.qmd\"           \"lab_02.qmd\"           \"lab_03_example.R\"    \n[10] \"lab_03.html\"          \"lab_03.qmd\"           \"lab_04.qmd\"          \n[13] \"lab_05.qmd\"           \"lab_06.qmd\"           \"lab_07_web.html\"     \n[16] \"lab_07_web.qmd\"       \"lab_07.qmd\"           \"lab_08_web.html\"     \n[19] \"lab_08_web.qmd\"       \"lab_08.qmd\"           \"lab_09_web.html\"     \n[22] \"lab_09_web.qmd\"       \"lab_09.qmd\"           \"lab_10_web_files\"    \n[25] \"lab_10_web.html\"      \"lab_10_web.qmd\"       \"my_fef.csv\""
   },
   {
     "objectID": "slides/w2d2.html#next-week",
@@ -1967,270 +1967,193 @@
     "text": "Next time\n\nReshaping data with tidyr"
   },
   {
-    "objectID": "slides/w10d2.html#annoucements",
-    "href": "slides/w10d2.html#annoucements",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Annoucements",
-    "text": "Annoucements\n\nMidterm II is Thursday, November 14th.\nMaterial on the midterm will include all material through Week 11."
+    "objectID": "labs/lab_08_web.html",
+    "href": "labs/lab_08_web.html",
+    "title": "Advanced Data Wrangling with dplyr",
+    "section": "",
+    "text": "Welcome to Lab 8! Today, we’ll focus on writing extensive dplyr code on larger data. We will both use the verbs individually and “write a sentence” with the verbs by stringing them together with pipes.\n\n\n\nUse dplyr verbs together with pipes on larger datasets.\n\n\n\n\nUpload your rendered PDF (lab_08.pdf) and Quarto (lab_08.qmd) document to the lab drop box. Make sure the Quarto document properly renders to PDF.\n\n\n\nList any collaborators you worked with below."
   },
   {
-    "objectID": "slides/w10d2.html#agenda",
-    "href": "slides/w10d2.html#agenda",
-    "title": "Reshaping data with tidyr, part 2",
+    "objectID": "labs/lab_08_web.html#welcome",
+    "href": "labs/lab_08_web.html#welcome",
+    "title": "Advanced Data Wrangling with dplyr",
+    "section": "",
+    "text": "Welcome to Lab 8! Today, we’ll focus on writing extensive dplyr code on larger data. We will both use the verbs individually and “write a sentence” with the verbs by stringing them together with pipes.\n\n\n\nUse dplyr verbs together with pipes on larger datasets.\n\n\n\n\nUpload your rendered PDF (lab_08.pdf) and Quarto (lab_08.qmd) document to the lab drop box. Make sure the Quarto document properly renders to PDF.\n\n\n\nList any collaborators you worked with below."
+  },
+  {
+    "objectID": "labs/lab_08_web.html#data-pdxtrees",
+    "href": "labs/lab_08_web.html#data-pdxtrees",
+    "title": "Advanced Data Wrangling with dplyr",
+    "section": "Data: pdxTrees",
+    "text": "Data: pdxTrees\nThe pdxTrees R package contains measurements of every tree in the Portland, Oregon metro area. In particular, it contains two datasets, which we will call parks and streets. The parks dataset contains all of the trees in 174 parks in Portland. The streets dataset contains all the trees on the streets of Portland. The hex sticker for pdxTrees (as seen below) contains a fun easter egg from the city of Portland, as its graphics are done in a similar fashion to the famous airport carpet."
+  },
+  {
+    "objectID": "labs/lab_08_web.html#methods-dplyr",
+    "href": "labs/lab_08_web.html#methods-dplyr",
+    "title": "Advanced Data Wrangling with dplyr",
+    "section": "Methods: dplyr",
+    "text": "Methods: dplyr\nUse dplyr function that we’ve learned over the past few weeks to answer the questions in this lab."
+  },
+  {
+    "objectID": "labs/lab_08_web.html#exercise-0",
+    "href": "labs/lab_08_web.html#exercise-0",
+    "title": "Advanced Data Wrangling with dplyr",
+    "section": "Exercise 0",
+    "text": "Exercise 0\nLoad any packages you’ll need for this lab below. Note, you’ll need to install pdxTrees with install.packages(\"pdxTrees\") before you can load it with library(pdxTrees)."
+  },
+  {
+    "objectID": "labs/lab_08_web.html#exercise-1",
+    "href": "labs/lab_08_web.html#exercise-1",
+    "title": "Advanced Data Wrangling with dplyr",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nPart (a)\nLoad the data. For this lab, we will load both the parks and streets datasets. To do so, run the get_pdxTrees_parks() and get_pdxTrees_streets() functions (note, you don’t need to specify any arguments for these functions) and assign them to parks and streets, respectively.\nYour datasets should look like this when you print parks and streets as follows:\n\nparks\n\n# A tibble: 25,534 × 34\n   Longitude Latitude UserID Genus      Family   DBH Inventory_Date      Species\n       &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;  &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;  \n 1     -123.     45.6 1      Pseudotsu… Pinac…  37.4 2017-05-09 00:00:00 PSME   \n 2     -123.     45.6 2      Pseudotsu… Pinac…  32.5 2017-05-09 00:00:00 PSME   \n 3     -123.     45.6 3      Crataegus  Rosac…   9.7 2017-05-09 00:00:00 CRLA   \n 4     -123.     45.6 4      Quercus    Fagac…  10.3 2017-05-09 00:00:00 QURU   \n 5     -123.     45.6 5      Pseudotsu… Pinac…  33.2 2017-05-09 00:00:00 PSME   \n 6     -123.     45.6 6      Pseudotsu… Pinac…  32.1 2017-05-09 00:00:00 PSME   \n 7     -123.     45.6 7      Pseudotsu… Pinac…  28.4 2017-05-09 00:00:00 PSME   \n 8     -123.     45.6 8      Pseudotsu… Pinac…  27.2 2017-05-09 00:00:00 PSME   \n 9     -123.     45.6 9      Pseudotsu… Pinac…  35.2 2017-05-09 00:00:00 PSME   \n10     -123.     45.6 10     Pseudotsu… Pinac…  32.4 2017-05-09 00:00:00 PSME   \n# ℹ 25,524 more rows\n# ℹ 26 more variables: Common_Name &lt;chr&gt;, Condition &lt;chr&gt;, Tree_Height &lt;dbl&gt;,\n#   Crown_Width_NS &lt;dbl&gt;, Crown_Width_EW &lt;dbl&gt;, Crown_Base_Height &lt;dbl&gt;,\n#   Collected_By &lt;chr&gt;, Park &lt;chr&gt;, Scientific_Name &lt;chr&gt;,\n#   Functional_Type &lt;chr&gt;, Mature_Size &lt;fct&gt;, Native &lt;chr&gt;, Edible &lt;chr&gt;,\n#   Nuisance &lt;chr&gt;, Structural_Value &lt;dbl&gt;, Carbon_Storage_lb &lt;dbl&gt;,\n#   Carbon_Storage_value &lt;dbl&gt;, Carbon_Sequestration_lb &lt;dbl&gt;, …\n\nstreets\n\n# A tibble: 218,602 × 23\n   UserID Inventory_Date      Species   DBH Condition Site_Type Site_Width Wires\n   &lt;chr&gt;  &lt;dttm&gt;              &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;\n 1 1      2010-08-21 00:00:00 PRPL     6.10 Good      &lt;NA&gt;               9 High…\n 2 2      2010-08-21 00:00:00 ACMA    36.3  Poor      &lt;NA&gt;               9 High…\n 3 3      2010-08-21 00:00:00 PLAC    20.5  Fair      &lt;NA&gt;               9 No HV\n 4 4      2010-08-21 00:00:00 CO       8.20 Fair      &lt;NA&gt;               9 No HV\n 5 5      2010-08-21 00:00:00 ACMA    55.7  Good      &lt;NA&gt;               9 No HV\n 6 6      2010-08-21 00:00:00 ACPL    18.6  Good      &lt;NA&gt;               9 No HV\n 7 7      2010-08-21 00:00:00 ACPL    18.8  Good      &lt;NA&gt;               9 No HV\n 8 8      2010-08-21 00:00:00 ACPL    16    Good      &lt;NA&gt;               9 No HV\n 9 9      2010-08-21 00:00:00 QU       6.20 Good      &lt;NA&gt;               9 No HV\n10 10     2010-08-21 00:00:00 ACPL    19.3  Fair      &lt;NA&gt;               9 No HV\n# ℹ 218,592 more rows\n# ℹ 15 more variables: Site_Development &lt;chr&gt;, Site_Size &lt;chr&gt;, Notes &lt;chr&gt;,\n#   Address &lt;chr&gt;, Neighborhood &lt;chr&gt;, Collected_By &lt;chr&gt;, Scientific &lt;chr&gt;,\n#   Family &lt;chr&gt;, Genus &lt;chr&gt;, Common_Name &lt;chr&gt;, Functional_Type &lt;chr&gt;,\n#   Edible &lt;chr&gt;, Longitude &lt;dbl&gt;, Latitude &lt;dbl&gt;, Mature_Size &lt;fct&gt;\n\n\n\n\nPart (b)\nTake a look at the documentation by running ?get_pdxTrees_parks and ?get_pdxTrees_streets in your console, and tell me about two columns (what are their names? what do they measure? units? factor levels? etc.) from each of the datasets (four total)."
+  },
+  {
+    "objectID": "labs/lab_08_web.html#exercise-2",
+    "href": "labs/lab_08_web.html#exercise-2",
+    "title": "Advanced Data Wrangling with dplyr",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nFind how many trees of each species (use the common name column for species here and throughout the lab) are in the parks dataset, and order the data from greatest number of trees in a species to least. Notice I’ve called the number of trees num_trees.\n\n\n# A tibble: 304 × 2\n   Common_Name               num_trees\n   &lt;chr&gt;                         &lt;int&gt;\n 1 Douglas-Fir                    6783\n 2 Norway Maple                   1502\n 3 Western Redcedar                964\n 4 Northern Red Oak                736\n 5 Pin Oak                         619\n 6 Incense Cedar                   507\n 7 Bigleaf Maple                   490\n 8 Japanese Flowering Cherry       418\n 9 American Elm                    379\n10 Giant Sequoia                   349\n# ℹ 294 more rows"
+  },
+  {
+    "objectID": "labs/lab_08_web.html#exercise-3",
+    "href": "labs/lab_08_web.html#exercise-3",
+    "title": "Advanced Data Wrangling with dplyr",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nA staple of Portland living in the springtime is to go out and see the Japanese Flowering Cherry trees beginning to bloom. Find the park with the most Japanese Flowering Cherry trees, and how many there are in that park.\n\n\n# A tibble: 1 × 2\n  Park                           num_cherries\n  &lt;chr&gt;                                 &lt;int&gt;\n1 Gov Tom McCall Waterfront Park          104"
+  },
+  {
+    "objectID": "labs/lab_08_web.html#exercise-4",
+    "href": "labs/lab_08_web.html#exercise-4",
+    "title": "Advanced Data Wrangling with dplyr",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\nPart (a)\nFind the top 5 parks with the most total DBH (i.e. the sum of all the trees DBH in those parks).\n\n\n# A tibble: 5 × 2\n  Park             total_DBH\n  &lt;chr&gt;                &lt;dbl&gt;\n1 Mt Tabor Park       31965.\n2 Columbia Park       26952.\n3 Laurelhurst Park    26890.\n4 Washington Park     16081.\n5 John Luby Park      14519.\n\n\nMt. Tabor Park is one of my personal favorites in Portland, I used to live just a few blocks away. It is a wonderful place to watch the sun set over the West hills of the city. Not only does it have the most DBH in all of the parks in Portland, but Portland’s drinking water is stored in giant reservoirs at that park!\n\n\nPart (b)\nFind the top 5 parks with the highest DBH per tree (in other words, the 5 highest mean DBHs), along with how many trees are in those parks.\n\n\n# A tibble: 5 × 3\n  Park               mean_DBH number_of_trees\n  &lt;chr&gt;                 &lt;dbl&gt;           &lt;int&gt;\n1 Heritage Tree Park     59                 1\n2 Johnswood Property     43.1              18\n3 Patton Square Park     37.0              13\n4 Hancock Park           32.5             104\n5 Laurelwood Park        31.2              13\n\n\nWow! Heritage Tree Park has one giant tree!"
+  },
+  {
+    "objectID": "labs/lab_08_web.html#exercise-5",
+    "href": "labs/lab_08_web.html#exercise-5",
+    "title": "Advanced Data Wrangling with dplyr",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nThere is a column in the parks dataset that represents the amount of carbon (in lbs) each tree has sequestered. Find the park with the highest carbon sequestration.\n\n\n# A tibble: 1 × 2\n  Park          carbon_sequestered\n  &lt;chr&gt;                      &lt;dbl&gt;\n1 Mt Tabor Park             36515.\n\n\nNice job, Mt. Tabor!"
+  },
+  {
+    "objectID": "labs/lab_08_web.html#exercise-6",
+    "href": "labs/lab_08_web.html#exercise-6",
+    "title": "Advanced Data Wrangling with dplyr",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nThe parks dataset has a wide variety of numeric columns measuring things from DBH to pollution removal value of a given tree. Take the mean of all of these numeric columns, grouped by park. Make sure to remove NAs in the mean() function.\nHINT: In across() you can set .cols = where(is.numeric) to apply a function across all numeric columns.\n\n\n# A tibble: 174 × 18\n   Park       Longitude Latitude   DBH Tree_Height Crown_Width_NS Crown_Width_EW\n   &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;\n 1 Albert Ke…     -123.     45.5  20.5        83.7           32.3           31.8\n 2 Alberta P…     -123.     45.6  28.4        96.6           45.5           43.4\n 3 Ankeny Pl…     -123.     45.5  30.8        69             62             62.2\n 4 April Hil…     -123.     45.5  18.9        47.9           34.0           33  \n 5 Arbor Lod…     -123.     45.6  19.2        49.4           39.8           39.7\n 6 Argay Park     -123.     45.6  19.6        46.2           35.3           35.3\n 7 Berkeley …     -123.     45.5  26.7        72.9           44.9           47.7\n 8 Berrydale…     -123.     45.5  23.6        69.8           41.3           39.3\n 9 Bloomingt…     -123.     45.5  24.1        62.6           47.9           48.2\n10 Brentwood…     -123.     45.5  17.4        40.8           29.7           30.8\n# ℹ 164 more rows\n# ℹ 11 more variables: Crown_Base_Height &lt;dbl&gt;, Structural_Value &lt;dbl&gt;,\n#   Carbon_Storage_lb &lt;dbl&gt;, Carbon_Storage_value &lt;dbl&gt;,\n#   Carbon_Sequestration_lb &lt;dbl&gt;, Carbon_Sequestration_value &lt;dbl&gt;,\n#   Stormwater_ft &lt;dbl&gt;, Stormwater_value &lt;dbl&gt;, Pollution_Removal_value &lt;dbl&gt;,\n#   Pollution_Removal_oz &lt;dbl&gt;, Total_Annual_Services &lt;dbl&gt;"
+  },
+  {
+    "objectID": "labs/lab_08_web.html#exercise-7",
+    "href": "labs/lab_08_web.html#exercise-7",
+    "title": "Advanced Data Wrangling with dplyr",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nFor this exercise, consider the streets dataset.\n\nPart (a)\nThere is a column delineating the edibility of the trees in the dataset. Find the possible values for this column and how many trees correspond to each value.\n\n\n# A tibble: 3 × 2\n  Edible n_rows\n  &lt;chr&gt;   &lt;int&gt;\n1 fruit    3649\n2 no     211954\n3 nut      2999\n\n\n\n\nPart (b)\nCreate a new tibble called forager that contains all rows of the streets with edible fruits or nuts but only the columns denoting the common name, neighborhood, condition, and edibility.\n\nforager\n\n# A tibble: 6,648 × 4\n   Common_Name Neighborhood Condition Edible\n   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt; \n 1 Persimmon   Concordia    Good      fruit \n 2 Walnut      Concordia    Fair      nut   \n 3 Walnut      Concordia    Fair      nut   \n 4 Walnut      Concordia    Fair      nut   \n 5 Walnut      Concordia    Good      nut   \n 6 Walnut      Concordia    Fair      nut   \n 7 Walnut      Concordia    Fair      nut   \n 8 Walnut      Concordia    Poor      nut   \n 9 Walnut      Concordia    Fair      nut   \n10 Fig         Concordia    Poor      fruit \n# ℹ 6,638 more rows\n\n\n\n\nPart (c)\nCreate a new logical column and save it in the forager dataset. Name it fruit_edible. The values in this columns should be TRUE or FALSE depending on if the given tree has edible fruits or not\n\nforager\n\n# A tibble: 6,648 × 5\n   Common_Name Neighborhood Condition Edible fruit_edible\n   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;  &lt;lgl&gt;       \n 1 Persimmon   Concordia    Good      fruit  TRUE        \n 2 Walnut      Concordia    Fair      nut    FALSE       \n 3 Walnut      Concordia    Fair      nut    FALSE       \n 4 Walnut      Concordia    Fair      nut    FALSE       \n 5 Walnut      Concordia    Good      nut    FALSE       \n 6 Walnut      Concordia    Fair      nut    FALSE       \n 7 Walnut      Concordia    Fair      nut    FALSE       \n 8 Walnut      Concordia    Poor      nut    FALSE       \n 9 Walnut      Concordia    Fair      nut    FALSE       \n10 Fig         Concordia    Poor      fruit  TRUE        \n# ℹ 6,638 more rows\n\n\n\n\nPart (d)\nArrange the forager dataset by the column you just created in (c), so that the TRUE values are at the top, and save this change to the forager dataset.\n\nforager\n\n# A tibble: 6,648 × 5\n   Common_Name Neighborhood Condition Edible fruit_edible\n   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;  &lt;lgl&gt;       \n 1 Persimmon   Concordia    Good      fruit  TRUE        \n 2 Fig         Concordia    Poor      fruit  TRUE        \n 3 Fig         Concordia    Good      fruit  TRUE        \n 4 Fig         Concordia    Fair      fruit  TRUE        \n 5 Fig         Concordia    Poor      fruit  TRUE        \n 6 Fig         Concordia    Good      fruit  TRUE        \n 7 Fig         Concordia    Fair      fruit  TRUE        \n 8 Persimmon   Concordia    Good      fruit  TRUE        \n 9 Persimmon   Concordia    Fair      fruit  TRUE        \n10 Persimmon   Concordia    Fair      fruit  TRUE        \n# ℹ 6,638 more rows\n\n\n\n\nPart (e)\nThe Edible column in named in a bit of a funny way. Rename the column to Edible_Component and save this change to the forager dataset.\n\nforager\n\n# A tibble: 6,648 × 5\n   Common_Name Neighborhood Condition Edible_Component fruit_edible\n   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;            &lt;lgl&gt;       \n 1 Persimmon   Concordia    Good      fruit            TRUE        \n 2 Fig         Concordia    Poor      fruit            TRUE        \n 3 Fig         Concordia    Good      fruit            TRUE        \n 4 Fig         Concordia    Fair      fruit            TRUE        \n 5 Fig         Concordia    Poor      fruit            TRUE        \n 6 Fig         Concordia    Good      fruit            TRUE        \n 7 Fig         Concordia    Fair      fruit            TRUE        \n 8 Persimmon   Concordia    Good      fruit            TRUE        \n 9 Persimmon   Concordia    Fair      fruit            TRUE        \n10 Persimmon   Concordia    Fair      fruit            TRUE        \n# ℹ 6,638 more rows\n\n\n\n\nPart (f)\nWhich five neighborhoods would a fruit loving forager most like to live (in other words, what are the five neighborhoods with the most trees with edible fruit)?\nHINT: using the sum() function on logical data will make all the TRUEs 1s and all the FALSEs 0s.\n\n\n# A tibble: 5 × 2\n  Neighborhood      n_edible_fruit_trees\n  &lt;chr&gt;                            &lt;int&gt;\n1 Montavilla                         166\n2 Sellwood-Moreland                  154\n3 Richmond                           148\n4 Rose City Park                     127\n5 Woodstock                          125\n\n\nThe Sellwood-Moreland and Woodstock neighborhoods are the heart of southeast Portland (in my opinion). The pdxTrees R package was written primarily in the Woodstock neighborhood, as a matter of fact. Sellwood-Moreland sits just to the west of Woodstock and has a variety of top-tier coffee shops, along with a gorgeous riverfront park with off-leash dogs allowed. Quite the place to be if you are a fruit forager, too!\n\n\nPart (g)\nOf the five neighborhoods found in part (e), what are the conditions of the edible fruit bearing trees (in other words, how many are in Good condition, Fair condition, etc., grouped by these five neighborhoods).\nHINT: you can use group_by() to group by multiple groups at once. Example: group_by(column1, column2).\n\n\n`summarise()` has grouped output by 'Neighborhood'. You can override using the\n`.groups` argument.\n\n\n# A tibble: 15 × 3\n# Groups:   Neighborhood [5]\n   Neighborhood      Condition num_fruit_trees\n   &lt;chr&gt;             &lt;chr&gt;               &lt;int&gt;\n 1 Montavilla        Fair                   92\n 2 Montavilla        Good                   63\n 3 Montavilla        Poor                   11\n 4 Richmond          Fair                   36\n 5 Richmond          Good                  104\n 6 Richmond          Poor                    8\n 7 Rose City Park    Fair                   71\n 8 Rose City Park    Good                   54\n 9 Rose City Park    Poor                    2\n10 Sellwood-Moreland Fair                   56\n11 Sellwood-Moreland Good                   89\n12 Sellwood-Moreland Poor                    9\n13 Woodstock         Fair                   39\n14 Woodstock         Good                   77\n15 Woodstock         Poor                    9"
+  },
+  {
+    "objectID": "slides/w1d1.html#agenda",
+    "href": "slides/w1d1.html#agenda",
+    "title": "Welcome to FOR 128!",
     "section": "Agenda",
-    "text": "Agenda\n\nReshaping data with tidyr\n\npivot_longer() and pivot_wider()\nunite()\nseparate_wider_delim()\ncomplete()\n\nApplication: stand and stock tables"
+    "text": "Agenda\n\nIntroductions\nCourse goals\nCourse expectations + syllabus\nExplore course website\nPreparing for Thursday"
   },
   {
-    "objectID": "slides/w10d2.html#the-tidyr-package",
-    "href": "slides/w10d2.html#the-tidyr-package",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "The tidyr package",
-    "text": "The tidyr package\n\n\nThe tidyr package allows us to transform data from long to wide formats, and back.\nA key use of the tidyr package is getting data in tidy format.\nBut what is tidy format?"
+    "objectID": "slides/w1d1.html#engagement",
+    "href": "slides/w1d1.html#engagement",
+    "title": "Welcome to FOR 128!",
+    "section": "Engagement",
+    "text": "Engagement\n\n\n\nIt has become harder and harder to stay focused over the last decade given the massive rise in wearable and mobile technology.\nIf you’ll be using a laptop to take notes, please avoid distractions to yourself and classmates by silencing notifications and avoiding checking emails, news, social media, etc.\nPlease leave your phone on silent and put it somewhere where it won’t distract you."
   },
   {
-    "objectID": "slides/w10d2.html#tidy-data",
-    "href": "slides/w10d2.html#tidy-data",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Tidy data",
-    "text": "Tidy data\n“Tidy data” or “tidy format” is a formal concept of how we organize data for analyses, in particular, with tidy data:\n\n\nEach row of the data correspond to a single observation, and\nEach column of the data correspond to a variable."
+    "objectID": "slides/w1d1.html#about-me",
+    "href": "slides/w1d1.html#about-me",
+    "title": "Welcome to FOR 128!",
+    "section": "About me",
+    "text": "About me\n\n\nI’m Grayson, a PhD student in Forestry.\nBefore coming to Michigan State, I worked as a Data Scientist contracting for the USDA Forest Service.\nBefore that, I majored in Mathematics & Statistics at Reed College."
   },
   {
-    "objectID": "slides/w10d2.html#tidying-data-with-tidyr",
-    "href": "slides/w10d2.html#tidying-data-with-tidyr",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Tidying data with tidyr",
-    "text": "Tidying data with tidyr\nConsider the face dataset from IFDAR:\n\nlibrary(tidyverse)\nface &lt;- read_csv(\"../labs/datasets/FACE/FACE_aspen_core_growth.csv\") %&gt;%\n  select(Rep, Treat, Clone, ID = `ID #`,\n        contains(as.character(2001:2005)) & contains(\"Height\"))\nface\n\n# A tibble: 1,991 × 9\n     Rep Treat Clone    ID `2001_Height` `2002_Height` `2003_Height`\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;\n 1     1     1     8    45            NA            NA            NA\n 2     1     1   216    44           547           622           715\n 3     1     1     8    43           273           275           305\n 4     1     1   216    42           526           619           720\n 5     1     1   216    54           328           341           364\n 6     1     1   271    55           543           590           634\n 7     1     1   271    56           450           502           587\n 8     1     1     8    57           217           227           256\n 9     1     1   259    58           158           155            NA\n10     1     1   271    59           230           241           260\n# ℹ 1,981 more rows\n# ℹ 2 more variables: `2004_Height` &lt;dbl&gt;, `2005_Height` &lt;dbl&gt;"
+    "objectID": "slides/w1d1.html#about-me-1",
+    "href": "slides/w1d1.html#about-me-1",
+    "title": "Welcome to FOR 128!",
+    "section": "About me",
+    "text": "About me\n\n\nI ❤️ teaching, especially about Data Science + Forestry.\nIn the past, I’ve co-directed a Forestry Data Science lab for undergraduates."
   },
   {
-    "objectID": "slides/w10d2.html#why-the-long-face",
-    "href": "slides/w10d2.html#why-the-long-face",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Why the long face?",
-    "text": "Why the long face?\n\nface_long &lt;- face %&gt;%\n  pivot_longer(\n    cols = c(\"2001_Height\", \"2002_Height\", \"2003_Height\", \n             \"2004_Height\", \"2005_Height\"),\n    names_to = \"Year_Type\",\n    values_to = \"Height_cm\")"
+    "objectID": "slides/w1d1.html#about-me-2",
+    "href": "slides/w1d1.html#about-me-2",
+    "title": "Welcome to FOR 128!",
+    "section": "About me",
+    "text": "About me\n\nI ❤️ teaching, especially about Data Science + Forestry.\nIn the past, I’ve co-directed a Forestry Data Science lab for undergraduates."
   },
   {
-    "objectID": "slides/w10d2.html#why-the-long-face-1",
-    "href": "slides/w10d2.html#why-the-long-face-1",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Why the long face?",
-    "text": "Why the long face?\n\nface_long &lt;- face %&gt;%\n  pivot_longer(\n    cols = c(\"2001_Height\", \"2002_Height\", \"2003_Height\", \n             \"2004_Height\", \"2005_Height\"),\n    names_to = \"Year_Type\",\n    values_to = \"Height_cm\")"
+    "objectID": "slides/w1d1.html#path-to-forestry-data-science",
+    "href": "slides/w1d1.html#path-to-forestry-data-science",
+    "title": "Welcome to FOR 128!",
+    "section": "Path to Forestry Data Science",
+    "text": "Path to Forestry Data Science\n\n\nTake this class and engage thoughtfully with the material. ✅\nTake FOR 372 (offered this spring) to gain more domain-specific statistical expertise.\nA wide variety of knowledge in statistics, computer science, and your domain field of expertise (forestry) is important.\nEngage in undergraduate research opportunities!"
   },
   {
-    "objectID": "slides/w10d2.html#why-the-long-face-2",
-    "href": "slides/w10d2.html#why-the-long-face-2",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Why the long face?",
-    "text": "Why the long face?\n\nface_long &lt;- face %&gt;%\n  pivot_longer(\n    cols = contains(\"Height\"),\n    names_to = \"Year_Type\",\n    values_to = \"Height_cm\")\n\n\nA cleaner way to select these columns is to use dplyr’s contains() function."
+    "objectID": "slides/w1d1.html#course-goals",
+    "href": "slides/w1d1.html#course-goals",
+    "title": "Welcome to FOR 128!",
+    "section": "Course goals",
+    "text": "Course goals\n\n\nGetting to know your computer and using it thoughtfully\n\noperating systems,\nfiles,\ndirectories,\ngood naming conventions,\nfile organization"
   },
   {
-    "objectID": "slides/w10d2.html#why-the-long-face-3",
-    "href": "slides/w10d2.html#why-the-long-face-3",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Why the long face?",
-    "text": "Why the long face?\n\nface_long\n\n# A tibble: 9,955 × 6\n     Rep Treat Clone    ID Year_Type   Height_cm\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1     1     1     8    45 2001_Height        NA\n 2     1     1     8    45 2002_Height        NA\n 3     1     1     8    45 2003_Height        NA\n 4     1     1     8    45 2004_Height        NA\n 5     1     1     8    45 2005_Height        NA\n 6     1     1   216    44 2001_Height       547\n 7     1     1   216    44 2002_Height       622\n 8     1     1   216    44 2003_Height       715\n 9     1     1   216    44 2004_Height       716\n10     1     1   216    44 2005_Height       817\n# ℹ 9,945 more rows\n\n\n\nTo get tidy data!"
+    "objectID": "slides/w1d1.html#course-goals-1",
+    "href": "slides/w1d1.html#course-goals-1",
+    "title": "Welcome to FOR 128!",
+    "section": "Course goals",
+    "text": "Course goals\n\n\nLearn how to use a variety of data science tools with forestry applications\n\nThe R programming language,\nThe RStudio IDE,\nQuarto (for reproducible reports)\n\nLearn extensive R programming skills\n\nbase R and tidyverse approaches\ndata structures\ncustom functions\ndata wrangling & reshaping\nbeautiful plots with ggplot2"
   },
   {
-    "objectID": "slides/w10d2.html#going-back-to-wide-data",
-    "href": "slides/w10d2.html#going-back-to-wide-data",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Going (back) to wide data",
-    "text": "Going (back) to wide data\n\n\nSometimes, we need to “widen” a dataset to get it into tidy format.\nFor this example, we will just widen the face_long dataset back to its original form.\ntidyr has an aptly named function, pivot_wider().\nKey arguments of pivot_wider():\n\n.data: the tibble to widen,\nnames_from: the column that contains values which will be assigned as the new column names,\nvalues_from: the column that contains values which will be assigned as the new column values."
+    "objectID": "slides/w1d1.html#syllabus-materials",
+    "href": "slides/w1d1.html#syllabus-materials",
+    "title": "Welcome to FOR 128!",
+    "section": "Syllabus: Materials",
+    "text": "Syllabus: Materials\nTextbook: IFDAR\nIntroduction to Forestry Data Analysis with R, by Andrew O. Finley and Jeffrey W. Doser. Available free, online: www.finley-lab.com/files/ifdar/\nTechnologies: R, RStudio, a laptop\nR is a free and open source programming language, and RStudio is an Integrated Development Environment (IDE) which allows for streamlined use of the R programming language. Both are free to install, and installation instructions will be provided in this course. A laptop that can run R and RStudio is required for this course."
   },
   {
-    "objectID": "slides/w10d2.html#pivoting-wider",
-    "href": "slides/w10d2.html#pivoting-wider",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Pivoting wider",
-    "text": "Pivoting wider\n\nface_wide &lt;- face_long %&gt;%\n  pivot_wider(names_from = \"Year_Type\", values_from = \"Height_cm\")\n\nall_equal(face, face_wide)\n\n[1] TRUE\n\n\n\n\nThis results in the same tibble that we started with!"
+    "objectID": "slides/w1d1.html#syllabus-meetings",
+    "href": "slides/w1d1.html#syllabus-meetings",
+    "title": "Welcome to FOR 128!",
+    "section": "Syllabus: Meetings",
+    "text": "Syllabus: Meetings"
   },
   {
-    "objectID": "slides/w10d2.html#other-useful-tidyr-functions",
-    "href": "slides/w10d2.html#other-useful-tidyr-functions",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Other useful tidyr functions",
-    "text": "Other useful tidyr functions\n\n\nunite() for pasteing column values together with specified seperators,\nThe separate_wider_*() family: for splitting columns into multiple new columns:\n\nseparate_wider_delim(): separate by delimiter\nseparate_wider_position(): separate by position\nseparate_wider_regex(): separate by regular expression"
+    "objectID": "slides/w1d1.html#syllabus-assessments",
+    "href": "slides/w1d1.html#syllabus-assessments",
+    "title": "Welcome to FOR 128!",
+    "section": "Syllabus: Assessments",
+    "text": "Syllabus: Assessments\n\n\nLab reports (40%)\n\nLab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on D2L. We will have a lab each week (except for the week of the midterm exam).\n\nMidterm Exams (20%)\n\nThere will be two midterm exams, one on week 6 and one on week 12. Each midterm is worth 10% of the final grade.\n\nIn-class quizzes (15%)\n\nIn-class quizzes do not have a regular schedule and will occur based on the material we get through."
   },
   {
-    "objectID": "slides/w10d2.html#unite-examples",
-    "href": "slides/w10d2.html#unite-examples",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "unite(): examples",
-    "text": "unite(): examples\n\nface_long\n\n# A tibble: 9,955 × 6\n     Rep Treat Clone    ID Year_Type   Height_cm\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1     1     1     8    45 2001_Height        NA\n 2     1     1     8    45 2002_Height        NA\n 3     1     1     8    45 2003_Height        NA\n 4     1     1     8    45 2004_Height        NA\n 5     1     1     8    45 2005_Height        NA\n 6     1     1   216    44 2001_Height       547\n 7     1     1   216    44 2002_Height       622\n 8     1     1   216    44 2003_Height       715\n 9     1     1   216    44 2004_Height       716\n10     1     1   216    44 2005_Height       817\n# ℹ 9,945 more rows"
+    "objectID": "slides/w1d1.html#syllabus-assessments-1",
+    "href": "slides/w1d1.html#syllabus-assessments-1",
+    "title": "Welcome to FOR 128!",
+    "section": "Syllabus: Assessments",
+    "text": "Syllabus: Assessments\n\n\nLecture tickets (10%)\n\nLecture tickets are due at the beginning of every lecture, handed in in-person, by you.\n\nFinal Project (15%)\n\nThe details of the final project will be discussed as the semester goes on."
   },
   {
-    "objectID": "slides/w10d2.html#unite-examples-1",
-    "href": "slides/w10d2.html#unite-examples-1",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "unite(): examples",
-    "text": "unite(): examples\n\nface_long %&gt;%\n  unite(col = \"Design\", Rep, Treat, Clone, sep = \"_\")\n\n# A tibble: 9,955 × 4\n   Design     ID Year_Type   Height_cm\n   &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1 1_1_8      45 2001_Height        NA\n 2 1_1_8      45 2002_Height        NA\n 3 1_1_8      45 2003_Height        NA\n 4 1_1_8      45 2004_Height        NA\n 5 1_1_8      45 2005_Height        NA\n 6 1_1_216    44 2001_Height       547\n 7 1_1_216    44 2002_Height       622\n 8 1_1_216    44 2003_Height       715\n 9 1_1_216    44 2004_Height       716\n10 1_1_216    44 2005_Height       817\n# ℹ 9,945 more rows"
+    "objectID": "slides/w1d1.html#syllabus-collaboration",
+    "href": "slides/w1d1.html#syllabus-collaboration",
+    "title": "Welcome to FOR 128!",
+    "section": "Syllabus: Collaboration",
+    "text": "Syllabus: Collaboration\n\n\nWorking with classmates on labs and lecture tickets is perfectly acceptable.\nHowever, please cite your collaborator(s) at the top of your assignment.\nCollaboration on exams and quizzes is strictly prohibited.\nBut what is collaboration?"
   },
   {
-    "objectID": "slides/w10d2.html#unite-examples-2",
-    "href": "slides/w10d2.html#unite-examples-2",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "unite(): examples",
-    "text": "unite(): examples\n\nface_long %&gt;%\n  unite(col = \"Design\", Rep, Treat, Clone, sep = \".\")\n\n# A tibble: 9,955 × 4\n   Design     ID Year_Type   Height_cm\n   &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1 1.1.8      45 2001_Height        NA\n 2 1.1.8      45 2002_Height        NA\n 3 1.1.8      45 2003_Height        NA\n 4 1.1.8      45 2004_Height        NA\n 5 1.1.8      45 2005_Height        NA\n 6 1.1.216    44 2001_Height       547\n 7 1.1.216    44 2002_Height       622\n 8 1.1.216    44 2003_Height       715\n 9 1.1.216    44 2004_Height       716\n10 1.1.216    44 2005_Height       817\n# ℹ 9,945 more rows"
+    "objectID": "slides/w1d1.html#artificial-intelligence-ai",
+    "href": "slides/w1d1.html#artificial-intelligence-ai",
+    "title": "Welcome to FOR 128!",
+    "section": "Artificial Intelligence (AI)",
+    "text": "Artificial Intelligence (AI)\n\n\n\n“…a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data”\nAI tools are being used by others to write code, but as Data Scientists, we must write code responsibly\nAt this stage of learning how to code, AI tools inhibit learning and understanding."
   },
   {
-    "objectID": "slides/w10d2.html#unite-examples-3",
-    "href": "slides/w10d2.html#unite-examples-3",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "unite(): examples",
-    "text": "unite(): examples\n\nface_long_abc &lt;- face_long %&gt;%\n  unite(col = \"Design\", Rep, Treat, Clone, sep = \"abc\")\nface_long_abc\n\n# A tibble: 9,955 × 4\n   Design         ID Year_Type   Height_cm\n   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1 1abc1abc8      45 2001_Height        NA\n 2 1abc1abc8      45 2002_Height        NA\n 3 1abc1abc8      45 2003_Height        NA\n 4 1abc1abc8      45 2004_Height        NA\n 5 1abc1abc8      45 2005_Height        NA\n 6 1abc1abc216    44 2001_Height       547\n 7 1abc1abc216    44 2002_Height       622\n 8 1abc1abc216    44 2003_Height       715\n 9 1abc1abc216    44 2004_Height       716\n10 1abc1abc216    44 2005_Height       817\n# ℹ 9,945 more rows"
-  },
-  {
-    "objectID": "slides/w10d2.html#separate_wider_delim-examples",
-    "href": "slides/w10d2.html#separate_wider_delim-examples",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "separate_wider_delim() examples",
-    "text": "separate_wider_delim() examples\n\nface_long_abc\n\n# A tibble: 9,955 × 4\n   Design         ID Year_Type   Height_cm\n   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1 1abc1abc8      45 2001_Height        NA\n 2 1abc1abc8      45 2002_Height        NA\n 3 1abc1abc8      45 2003_Height        NA\n 4 1abc1abc8      45 2004_Height        NA\n 5 1abc1abc8      45 2005_Height        NA\n 6 1abc1abc216    44 2001_Height       547\n 7 1abc1abc216    44 2002_Height       622\n 8 1abc1abc216    44 2003_Height       715\n 9 1abc1abc216    44 2004_Height       716\n10 1abc1abc216    44 2005_Height       817\n# ℹ 9,945 more rows"
-  },
-  {
-    "objectID": "slides/w10d2.html#separate_wider_delim-examples-1",
-    "href": "slides/w10d2.html#separate_wider_delim-examples-1",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "separate_wider_delim() examples",
-    "text": "separate_wider_delim() examples\n\nface_long_abc %&gt;%\n  separate_wider_delim(cols = \"Design\", \n                       delim = \"abc\",\n                       names = c(\"Rep\", \"Treat\", \"Clone\"))\n\n# A tibble: 9,955 × 6\n   Rep   Treat Clone    ID Year_Type   Height_cm\n   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1 1     1     8        45 2001_Height        NA\n 2 1     1     8        45 2002_Height        NA\n 3 1     1     8        45 2003_Height        NA\n 4 1     1     8        45 2004_Height        NA\n 5 1     1     8        45 2005_Height        NA\n 6 1     1     216      44 2001_Height       547\n 7 1     1     216      44 2002_Height       622\n 8 1     1     216      44 2003_Height       715\n 9 1     1     216      44 2004_Height       716\n10 1     1     216      44 2005_Height       817\n# ℹ 9,945 more rows"
-  },
-  {
-    "objectID": "slides/w10d2.html#separate_wider_delim-examples-2",
-    "href": "slides/w10d2.html#separate_wider_delim-examples-2",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "separate_wider_delim() examples",
-    "text": "separate_wider_delim() examples\n\nface_long\n\n# A tibble: 9,955 × 6\n     Rep Treat Clone    ID Year_Type   Height_cm\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1     1     1     8    45 2001_Height        NA\n 2     1     1     8    45 2002_Height        NA\n 3     1     1     8    45 2003_Height        NA\n 4     1     1     8    45 2004_Height        NA\n 5     1     1     8    45 2005_Height        NA\n 6     1     1   216    44 2001_Height       547\n 7     1     1   216    44 2002_Height       622\n 8     1     1   216    44 2003_Height       715\n 9     1     1   216    44 2004_Height       716\n10     1     1   216    44 2005_Height       817\n# ℹ 9,945 more rows\n\n\n\nface_long %&gt;%\n  separate_wider_delim(cols = \"Year_Type\", \n                       delim = \"_\",\n                       names = c(\"Year\", NA))\n\n# A tibble: 9,955 × 6\n     Rep Treat Clone    ID Year  Height_cm\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;\n 1     1     1     8    45 2001         NA\n 2     1     1     8    45 2002         NA\n 3     1     1     8    45 2003         NA\n 4     1     1     8    45 2004         NA\n 5     1     1     8    45 2005         NA\n 6     1     1   216    44 2001        547\n 7     1     1   216    44 2002        622\n 8     1     1   216    44 2003        715\n 9     1     1   216    44 2004        716\n10     1     1   216    44 2005        817\n# ℹ 9,945 more rows"
-  },
-  {
-    "objectID": "slides/w10d2.html#the-complete-function",
-    "href": "slides/w10d2.html#the-complete-function",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "The complete() function",
-    "text": "The complete() function\nThe complete() function is used for filling in values that are not explicitly in the dataset. Let’s consider some toy data for an example:\n\ntrees &lt;- tibble(\n  plot = c(1,1,1,2,2,2,3,3),\n  species = c(\"douglas-fir\", \"western red-cedar\", \"pacific madrone\",\n              \"douglas-fir\", \"douglas-fir\", \"douglas-fir\",\n              \"douglas-fir\", \"western red-cedar\"),\n  dbh = c(10, 12, 6, 13, 10, 8, 9, 14)\n)\ntrees\n\n# A tibble: 8 × 3\n   plot species             dbh\n  &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;\n1     1 douglas-fir          10\n2     1 western red-cedar    12\n3     1 pacific madrone       6\n4     2 douglas-fir          13\n5     2 douglas-fir          10\n6     2 douglas-fir           8\n7     3 douglas-fir           9\n8     3 western red-cedar    14"
-  },
-  {
-    "objectID": "slides/w10d2.html#compute-total-dbh-by-species-and-plot",
-    "href": "slides/w10d2.html#compute-total-dbh-by-species-and-plot",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Compute total DBH by species and plot",
-    "text": "Compute total DBH by species and plot\n\ntrees %&gt;%\n  group_by(plot, species) %&gt;%\n  summarize(total_DBH = sum(dbh))\n\n# A tibble: 6 × 3\n# Groups:   plot [3]\n   plot species           total_DBH\n  &lt;dbl&gt; &lt;chr&gt;                 &lt;dbl&gt;\n1     1 douglas-fir              10\n2     1 pacific madrone           6\n3     1 western red-cedar        12\n4     2 douglas-fir              31\n5     3 douglas-fir               9\n6     3 western red-cedar        14\n\n\n\n\nWhat’s the problem here?\nEvery possible species-plot observation doesn’t exist!\nexample: what should total DBH of western red-cedars be on plot 2?"
-  },
-  {
-    "objectID": "slides/w10d2.html#we-have-to-complete-the-dataset",
-    "href": "slides/w10d2.html#we-have-to-complete-the-dataset",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "We have to complete() the dataset!",
-    "text": "We have to complete() the dataset!\n\ntrees %&gt;%\n  complete(plot, species) \n\n# A tibble: 11 × 3\n    plot species             dbh\n   &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;\n 1     1 douglas-fir          10\n 2     1 pacific madrone       6\n 3     1 western red-cedar    12\n 4     2 douglas-fir          13\n 5     2 douglas-fir          10\n 6     2 douglas-fir           8\n 7     2 pacific madrone      NA\n 8     2 western red-cedar    NA\n 9     3 douglas-fir           9\n10     3 pacific madrone      NA\n11     3 western red-cedar    14\n\n\n\n\nNow there is a row for every species-plot combination,\nBut by default, complete() filled the values as NA.\nWe can change that!"
-  },
-  {
-    "objectID": "slides/w10d2.html#we-have-to-complete-the-dataset-1",
-    "href": "slides/w10d2.html#we-have-to-complete-the-dataset-1",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "We have to complete() the dataset!",
-    "text": "We have to complete() the dataset!\n\ntrees %&gt;%\n  complete(plot, species,\n           fill = list(dbh = 0))\n\n# A tibble: 11 × 3\n    plot species             dbh\n   &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;\n 1     1 douglas-fir          10\n 2     1 pacific madrone       6\n 3     1 western red-cedar    12\n 4     2 douglas-fir          13\n 5     2 douglas-fir          10\n 6     2 douglas-fir           8\n 7     2 pacific madrone       0\n 8     2 western red-cedar     0\n 9     3 douglas-fir           9\n10     3 pacific madrone       0\n11     3 western red-cedar    14"
-  },
-  {
-    "objectID": "slides/w10d2.html#now-we-can-compute-totals-for-each-combination",
-    "href": "slides/w10d2.html#now-we-can-compute-totals-for-each-combination",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Now we can compute totals for each combination!",
-    "text": "Now we can compute totals for each combination!\n\ntrees %&gt;%\n  complete(plot, species,\n           fill = list(dbh = 0)) %&gt;%\n  group_by(plot, species) %&gt;%\n  summarize(total_DBH = sum(dbh))\n\n# A tibble: 9 × 3\n# Groups:   plot [3]\n   plot species           total_DBH\n  &lt;dbl&gt; &lt;chr&gt;                 &lt;dbl&gt;\n1     1 douglas-fir              10\n2     1 pacific madrone           6\n3     1 western red-cedar        12\n4     2 douglas-fir              31\n5     2 pacific madrone           0\n6     2 western red-cedar         0\n7     3 douglas-fir               9\n8     3 pacific madrone           0\n9     3 western red-cedar        14"
-  },
-  {
-    "objectID": "slides/w10d2.html#stand-and-stock-tables",
-    "href": "slides/w10d2.html#stand-and-stock-tables",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Stand and Stock tables",
-    "text": "Stand and Stock tables\nStand tables:\n\n\nSummarize a quantitative discrete variable (e.g., stem count)\nSummaries are shown grouped by one or more categorical variable (e.g., size class or species).\n\n\nStock tables:\n\n\nSummarizes a quantitative continuous variable (e.g., volume, weight, or basal area)\nSummaries are shown grouped by one or more categorical variable (e.g., size class or species)."
-  },
-  {
-    "objectID": "slides/w10d2.html#common-standstock-tables-in-forestry",
-    "href": "slides/w10d2.html#common-standstock-tables-in-forestry",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Common Stand/Stock tables in forestry",
-    "text": "Common Stand/Stock tables in forestry\nIn forestry applications, stand and stock tables are most often grouped by DBH class and species."
-  },
-  {
-    "objectID": "slides/w10d2.html#data-used-to-create-stand-and-stock-tables-in-forestry",
-    "href": "slides/w10d2.html#data-used-to-create-stand-and-stock-tables-in-forestry",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Data used to create stand and stock tables in forestry",
-    "text": "Data used to create stand and stock tables in forestry\nIn forestry applications, stand and stock tables are most often grouped by DBH class and species."
-  },
-  {
-    "objectID": "slides/w10d2.html#stand-table-derived-from-the-data",
-    "href": "slides/w10d2.html#stand-table-derived-from-the-data",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Stand table derived from the data",
-    "text": "Stand table derived from the data\nIn forestry applications, stand and stock tables are most often grouped by DBH class and species.\n\n\n\nIs this table tidy?"
-  },
-  {
-    "objectID": "slides/w10d2.html#stock-table-derived-from-the-data",
-    "href": "slides/w10d2.html#stock-table-derived-from-the-data",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Stock table derived from the data",
-    "text": "Stock table derived from the data\nIn forestry applications, stand and stock tables are most often grouped by DBH class and species.\n\n\n\nIs this table tidy?"
-  },
-  {
-    "objectID": "slides/w10d2.html#building-these-stand-and-stock-tables-in-r",
-    "href": "slides/w10d2.html#building-these-stand-and-stock-tables-in-r",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Building these stand and stock tables in R",
-    "text": "Building these stand and stock tables in R\nWe load the data:\n\ntrees &lt;- tibble(\n  species = c(\"Abies balsamea\", \"Betula papyrifera\", \n              \"Betula papyrifera\", \"Pinus strobus\",\n              \"Pinus strobus\", \"Pinus strobus\"),\n  DBH_in = c(11.3, 14.8, 15.4, 9.8, 10.7, 13.1),\n  trees_ac = 8,\n  vol_cu_ft_ac = c(142.8, 269.6, 293.7, 116.3, 143.6, 231.9)\n)\ntrees\n\n# A tibble: 6 × 4\n  species           DBH_in trees_ac vol_cu_ft_ac\n  &lt;chr&gt;              &lt;dbl&gt;    &lt;dbl&gt;        &lt;dbl&gt;\n1 Abies balsamea      11.3        8         143.\n2 Betula papyrifera   14.8        8         270.\n3 Betula papyrifera   15.4        8         294.\n4 Pinus strobus        9.8        8         116.\n5 Pinus strobus       10.7        8         144.\n6 Pinus strobus       13.1        8         232."
-  },
-  {
-    "objectID": "slides/w10d2.html#adding-dbh-class",
-    "href": "slides/w10d2.html#adding-dbh-class",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Adding DBH class",
-    "text": "Adding DBH class\n\nests &lt;- trees %&gt;%\n  mutate(DBH_class = cut_width(DBH_in, width = 4))\nests\n\n# A tibble: 6 × 5\n  species           DBH_in trees_ac vol_cu_ft_ac DBH_class\n  &lt;chr&gt;              &lt;dbl&gt;    &lt;dbl&gt;        &lt;dbl&gt; &lt;fct&gt;    \n1 Abies balsamea      11.3        8         143. (10,14]  \n2 Betula papyrifera   14.8        8         270. (14,18]  \n3 Betula papyrifera   15.4        8         294. (14,18]  \n4 Pinus strobus        9.8        8         116. [6,10]   \n5 Pinus strobus       10.7        8         144. (10,14]  \n6 Pinus strobus       13.1        8         232. (10,14]"
-  },
-  {
-    "objectID": "slides/w10d2.html#complete-the-data",
-    "href": "slides/w10d2.html#complete-the-data",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "complete() the data",
-    "text": "complete() the data\n\nests &lt;- ests %&gt;%\n  complete(species, DBH_class, \n           fill = list(trees_ac = 0, vol_cu_ft_ac = 0))\nests\n\n# A tibble: 11 × 5\n   species           DBH_class DBH_in trees_ac vol_cu_ft_ac\n   &lt;chr&gt;             &lt;fct&gt;      &lt;dbl&gt;    &lt;dbl&gt;        &lt;dbl&gt;\n 1 Abies balsamea    [6,10]      NA          0           0 \n 2 Abies balsamea    (10,14]     11.3        8         143.\n 3 Abies balsamea    (14,18]     NA          0           0 \n 4 Betula papyrifera [6,10]      NA          0           0 \n 5 Betula papyrifera (10,14]     NA          0           0 \n 6 Betula papyrifera (14,18]     14.8        8         270.\n 7 Betula papyrifera (14,18]     15.4        8         294.\n 8 Pinus strobus     [6,10]       9.8        8         116.\n 9 Pinus strobus     (10,14]     10.7        8         144.\n10 Pinus strobus     (10,14]     13.1        8         232.\n11 Pinus strobus     (14,18]     NA          0           0 \n\n\n\n\nWhat happened here?\nNow each species/DBH_class combination has a row associated with it"
-  },
-  {
-    "objectID": "slides/w10d2.html#compute-our-variables-of-interest",
-    "href": "slides/w10d2.html#compute-our-variables-of-interest",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Compute our variables of interest",
-    "text": "Compute our variables of interest\n\nests &lt;- ests %&gt;% \n  group_by(species, DBH_class) %&gt;%\n  summarize(sum_trees_ac = sum(trees_ac),\n            sum_vol_cu_ft_ac = sum(vol_cu_ft_ac))\nests\n\n# A tibble: 9 × 4\n# Groups:   species [3]\n  species           DBH_class sum_trees_ac sum_vol_cu_ft_ac\n  &lt;chr&gt;             &lt;fct&gt;            &lt;dbl&gt;            &lt;dbl&gt;\n1 Abies balsamea    [6,10]               0               0 \n2 Abies balsamea    (10,14]              8             143.\n3 Abies balsamea    (14,18]              0               0 \n4 Betula papyrifera [6,10]               0               0 \n5 Betula papyrifera (10,14]              0               0 \n6 Betula papyrifera (14,18]             16             563.\n7 Pinus strobus     [6,10]               8             116.\n8 Pinus strobus     (10,14]             16             376.\n9 Pinus strobus     (14,18]              0               0"
-  },
-  {
-    "objectID": "slides/w10d2.html#make-the-stand-table",
-    "href": "slides/w10d2.html#make-the-stand-table",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Make the stand table",
-    "text": "Make the stand table\n\nstand &lt;- ests %&gt;% \n  pivot_wider(id_cols = species, \n              names_from = DBH_class,\n              values_from = sum_trees_ac)\n\nstand\n\n# A tibble: 3 × 4\n# Groups:   species [3]\n  species           `[6,10]` `(10,14]` `(14,18]`\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 Abies balsamea           0         8         0\n2 Betula papyrifera        0         0        16\n3 Pinus strobus            8        16         0"
-  },
-  {
-    "objectID": "slides/w10d2.html#make-the-stock-table",
-    "href": "slides/w10d2.html#make-the-stock-table",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Make the stock table",
-    "text": "Make the stock table\n\nstock &lt;- ests %&gt;% \n  pivot_wider(id_cols = species, \n              names_from = DBH_class,\n              values_from = sum_vol_cu_ft_ac)\n\nstock\n\n# A tibble: 3 × 4\n# Groups:   species [3]\n  species           `[6,10]` `(10,14]` `(14,18]`\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 Abies balsamea          0       143.        0 \n2 Betula papyrifera       0         0       563.\n3 Pinus strobus         116.      376.        0"
-  },
-  {
-    "objectID": "slides/w10d2.html#all-at-once-stand-table",
-    "href": "slides/w10d2.html#all-at-once-stand-table",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "All at once: stand table",
-    "text": "All at once: stand table\n\ntrees %&gt;%\n  mutate(DBH_class = cut_width(DBH_in, width = 4)) %&gt;%\n  complete(species, DBH_class, \n           fill = list(trees_ac = 0, vol_cu_ft_ac = 0)) %&gt;%\n  group_by(species, DBH_class) %&gt;%\n  summarize(sum_trees_ac = sum(trees_ac),\n            sum_vol_cu_ft_ac = sum(vol_cu_ft_ac)) %&gt;%\n  pivot_wider(id_cols = species, \n              names_from = DBH_class,\n              values_from = sum_trees_ac)\n\n# A tibble: 3 × 4\n# Groups:   species [3]\n  species           `[6,10]` `(10,14]` `(14,18]`\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 Abies balsamea           0         8         0\n2 Betula papyrifera        0         0        16\n3 Pinus strobus            8        16         0"
-  },
-  {
-    "objectID": "slides/w10d2.html#all-at-once-stock-table",
-    "href": "slides/w10d2.html#all-at-once-stock-table",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "All at once: stock table",
-    "text": "All at once: stock table\n\ntrees %&gt;%\n  mutate(DBH_class = cut_width(DBH_in, width = 4)) %&gt;%\n  complete(species, DBH_class, \n           fill = list(trees_ac = 0, vol_cu_ft_ac = 0)) %&gt;%\n  group_by(species, DBH_class) %&gt;%\n  summarize(sum_trees_ac = sum(trees_ac),\n            sum_vol_cu_ft_ac = sum(vol_cu_ft_ac)) %&gt;%\n  pivot_wider(id_cols = species, \n              names_from = DBH_class,\n              values_from = sum_vol_cu_ft_ac)\n\n# A tibble: 3 × 4\n# Groups:   species [3]\n  species           `[6,10]` `(10,14]` `(14,18]`\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 Abies balsamea          0       143.        0 \n2 Betula papyrifera       0         0       563.\n3 Pinus strobus         116.      376.        0"
-  },
-  {
-    "objectID": "slides/w10d2.html#next-time",
-    "href": "slides/w10d2.html#next-time",
-    "title": "Reshaping data with tidyr, part 2",
-    "section": "Next time",
-    "text": "Next time\n\nThe grammar of graphics"
+    "objectID": "slides/w1d1.html#next-time",
+    "href": "slides/w1d1.html#next-time",
+    "title": "Welcome to FOR 128!",
+    "section": "Next time:",
+    "text": "Next time:\n\nCome to class with a laptop\nComplete Lecture Ticket 1 before lecture on Thursday."
   },
   {
     "objectID": "slides/w5d2.html#annoucements",
@@ -2902,28 +2825,28 @@
     "href": "final_project.html",
     "title": "Final Project",
     "section": "",
-    "text": "In this class, we’ve learned how to analyze data in the R programming language. From reading in the data, to tidying and reshaping, to wrangling, and finally to plotting. The final project asks you to find a dataset that is interesting to you and analyze it with the tools we’ve learned in class. The dataset you use for the class should be environmental in some sense. It could relate to forestry, water and water quality, animals, climate, etc. We will include some datasets that could be a good choice for this project, but you are not limited to these datasets.\nThis is a group project, with groups of 3-5 people. You can choose your groups, but if you are having trouble finding a group or your group is too small (&lt; 3 people), please let Grayson or Andy know and we will combine you or your group with others."
+    "text": "In this class, we’ve learned how to analyze data in the R programming language. From reading in the data, to tidying and reshaping, to wrangling, and finally to plotting. The final project asks you to find a dataset that is interesting to you and analyze it with the tools we’ve learned in class. The dataset you use for the class should be environmental in some sense. It could relate to forestry, water and water quality, animals, climate, etc. We will include some datasets that could be a good choice for this project, but you are not limited to these datasets.\nThis is a group project, with groups of 3-5 people. You can choose your groups, but if you are having trouble finding a group or your group is too small (&lt; 3 people), please let Grayson know and we will combine you or your group with others."
   },
   {
     "objectID": "final_project.html#description",
     "href": "final_project.html#description",
     "title": "Final Project",
     "section": "",
-    "text": "In this class, we’ve learned how to analyze data in the R programming language. From reading in the data, to tidying and reshaping, to wrangling, and finally to plotting. The final project asks you to find a dataset that is interesting to you and analyze it with the tools we’ve learned in class. The dataset you use for the class should be environmental in some sense. It could relate to forestry, water and water quality, animals, climate, etc. We will include some datasets that could be a good choice for this project, but you are not limited to these datasets.\nThis is a group project, with groups of 3-5 people. You can choose your groups, but if you are having trouble finding a group or your group is too small (&lt; 3 people), please let Grayson or Andy know and we will combine you or your group with others."
+    "text": "In this class, we’ve learned how to analyze data in the R programming language. From reading in the data, to tidying and reshaping, to wrangling, and finally to plotting. The final project asks you to find a dataset that is interesting to you and analyze it with the tools we’ve learned in class. The dataset you use for the class should be environmental in some sense. It could relate to forestry, water and water quality, animals, climate, etc. We will include some datasets that could be a good choice for this project, but you are not limited to these datasets.\nThis is a group project, with groups of 3-5 people. You can choose your groups, but if you are having trouble finding a group or your group is too small (&lt; 3 people), please let Grayson know and we will combine you or your group with others."
   },
   {
     "objectID": "final_project.html#components",
     "href": "final_project.html#components",
     "title": "Final Project",
     "section": "Components",
-    "text": "Components\nThe final project will be composed of four components: a group member submission, a proposal, a blog post, and a presentation. For each component, your group will submit one document via D2L.\n\nThe group member submission\nDue date: Tuesday, November 12th, 5pm.\n\n\nThe proposal\nDue date: Tuesday, November 19th, 5pm.\n\n\nThe blog post\nDue date: Tuesday, December 10th, 5pm.\n\n\nThe presentation\nDue date: Thursday, December 12th, in class."
+    "text": "Components\nThe final project will be composed of four components: a group member submission, a proposal, a blog post, and a presentation. For each component, your group will submit one document via D2L.\n\nThe group member submission\nDue date: Tuesday, November 12th, 5pm.\nPlease submit a document to D2L with the names of your group members. Remember, groups of 3-5 people are allowed. If you are having trouble finding a group or your group is too small (&lt; 3 people), please let Grayson know and we will combine you or your group with others.\n\n\nThe proposal\nDue date: Tuesday, November 19th, 5pm.\nPlease submit a brief proposal of the project you would like to do. This should be a (no longer than 2 page) document outlining the data you will use and an idea of the story or information that you’d like to try to extract from the data. For this part, it is strongly recommended that you download the data you would like to use and take a look at it. In the proposal, describe any challenges you anticipate having working with the data, and the steps needed to get the data into a form that will be easy to work with in R. It is expected that this document is well-written, explains the data you’d like to work with, and conveys your ideas and hopes for what you’d like to do with the data (i.e. what your blog post will be about).\n\n\nThe blog post\nDue date: Wednesday, December 11th, 5pm.\nThe blog post is the heart of the final project. You and your group members will write a blog post in a Quarto document that takes the raw data you are using and tells a story with it. The blog post will include the story of getting the data, wrangling the data, and plots and summaries of the data. The blog posts will be posted on the course website (with groups permission), you have the right to not include your blog post on the course website, or to anonymize your blog post for the course website.\nMore details to come on the blog post.\n\n\nThe presentation\nDue date: Slides submitted by Wednesday, December 11th, 5pm. Presentations to be completed in class during the final exam slot on December 12th.\nYou and your group will present the results from your analyses (i.e. findings from the blog post) in slide show form to your classmates during the final exam slot. Groups will present together, and presentation time should be shared relatively equally between group members.\nMore details to come on the presentation."
   },
   {
     "objectID": "final_project.html#evaluation",
     "href": "final_project.html#evaluation",
     "title": "Final Project",
     "section": "Evaluation",
-    "text": "Evaluation"
+    "text": "Evaluation\nThe final project is worth 15% of your final grade. The proposal, blog post, and presentation will contribute to this 15%."
   },
   {
     "objectID": "midterm.html",
@@ -3227,193 +3150,627 @@
     "text": "Your turn!\n\nFind all trees with DBH less than 9.5.\nFind all trees that are not tsugca (hint use the !).\nFind all dead trees (hint use the !).\nFind all live trees of unacceptable growing stock.\nFind all live betual and acerru that are of acceptable growing stock.\nMake up your own subsetting criteria."
   },
   {
-    "objectID": "slides/w1d1.html#agenda",
-    "href": "slides/w1d1.html#agenda",
-    "title": "Welcome to FOR 128!",
-    "section": "Agenda",
-    "text": "Agenda\n\nIntroductions\nCourse goals\nCourse expectations + syllabus\nExplore course website\nPreparing for Thursday"
-  },
-  {
-    "objectID": "slides/w1d1.html#engagement",
-    "href": "slides/w1d1.html#engagement",
-    "title": "Welcome to FOR 128!",
-    "section": "Engagement",
-    "text": "Engagement\n\n\n\nIt has become harder and harder to stay focused over the last decade given the massive rise in wearable and mobile technology.\nIf you’ll be using a laptop to take notes, please avoid distractions to yourself and classmates by silencing notifications and avoiding checking emails, news, social media, etc.\nPlease leave your phone on silent and put it somewhere where it won’t distract you."
-  },
-  {
-    "objectID": "slides/w1d1.html#about-me",
-    "href": "slides/w1d1.html#about-me",
-    "title": "Welcome to FOR 128!",
-    "section": "About me",
-    "text": "About me\n\n\nI’m Grayson, a PhD student in Forestry.\nBefore coming to Michigan State, I worked as a Data Scientist contracting for the USDA Forest Service.\nBefore that, I majored in Mathematics & Statistics at Reed College."
-  },
-  {
-    "objectID": "slides/w1d1.html#about-me-1",
-    "href": "slides/w1d1.html#about-me-1",
-    "title": "Welcome to FOR 128!",
-    "section": "About me",
-    "text": "About me\n\n\nI ❤️ teaching, especially about Data Science + Forestry.\nIn the past, I’ve co-directed a Forestry Data Science lab for undergraduates."
-  },
-  {
-    "objectID": "slides/w1d1.html#about-me-2",
-    "href": "slides/w1d1.html#about-me-2",
-    "title": "Welcome to FOR 128!",
-    "section": "About me",
-    "text": "About me\n\nI ❤️ teaching, especially about Data Science + Forestry.\nIn the past, I’ve co-directed a Forestry Data Science lab for undergraduates."
-  },
-  {
-    "objectID": "slides/w1d1.html#path-to-forestry-data-science",
-    "href": "slides/w1d1.html#path-to-forestry-data-science",
-    "title": "Welcome to FOR 128!",
-    "section": "Path to Forestry Data Science",
-    "text": "Path to Forestry Data Science\n\n\nTake this class and engage thoughtfully with the material. ✅\nTake FOR 372 (offered this spring) to gain more domain-specific statistical expertise.\nA wide variety of knowledge in statistics, computer science, and your domain field of expertise (forestry) is important.\nEngage in undergraduate research opportunities!"
-  },
-  {
-    "objectID": "slides/w1d1.html#course-goals",
-    "href": "slides/w1d1.html#course-goals",
-    "title": "Welcome to FOR 128!",
-    "section": "Course goals",
-    "text": "Course goals\n\n\nGetting to know your computer and using it thoughtfully\n\noperating systems,\nfiles,\ndirectories,\ngood naming conventions,\nfile organization"
-  },
-  {
-    "objectID": "slides/w1d1.html#course-goals-1",
-    "href": "slides/w1d1.html#course-goals-1",
-    "title": "Welcome to FOR 128!",
-    "section": "Course goals",
-    "text": "Course goals\n\n\nLearn how to use a variety of data science tools with forestry applications\n\nThe R programming language,\nThe RStudio IDE,\nQuarto (for reproducible reports)\n\nLearn extensive R programming skills\n\nbase R and tidyverse approaches\ndata structures\ncustom functions\ndata wrangling & reshaping\nbeautiful plots with ggplot2"
-  },
-  {
-    "objectID": "slides/w1d1.html#syllabus-materials",
-    "href": "slides/w1d1.html#syllabus-materials",
-    "title": "Welcome to FOR 128!",
-    "section": "Syllabus: Materials",
-    "text": "Syllabus: Materials\nTextbook: IFDAR\nIntroduction to Forestry Data Analysis with R, by Andrew O. Finley and Jeffrey W. Doser. Available free, online: www.finley-lab.com/files/ifdar/\nTechnologies: R, RStudio, a laptop\nR is a free and open source programming language, and RStudio is an Integrated Development Environment (IDE) which allows for streamlined use of the R programming language. Both are free to install, and installation instructions will be provided in this course. A laptop that can run R and RStudio is required for this course."
-  },
-  {
-    "objectID": "slides/w1d1.html#syllabus-meetings",
-    "href": "slides/w1d1.html#syllabus-meetings",
-    "title": "Welcome to FOR 128!",
-    "section": "Syllabus: Meetings",
-    "text": "Syllabus: Meetings"
-  },
-  {
-    "objectID": "slides/w1d1.html#syllabus-assessments",
-    "href": "slides/w1d1.html#syllabus-assessments",
-    "title": "Welcome to FOR 128!",
-    "section": "Syllabus: Assessments",
-    "text": "Syllabus: Assessments\n\n\nLab reports (40%)\n\nLab reports are assigned on Thursdays during lab time, and due the following Wednesday at 5pm on D2L. We will have a lab each week (except for the week of the midterm exam).\n\nMidterm Exams (20%)\n\nThere will be two midterm exams, one on week 6 and one on week 12. Each midterm is worth 10% of the final grade.\n\nIn-class quizzes (15%)\n\nIn-class quizzes do not have a regular schedule and will occur based on the material we get through."
-  },
-  {
-    "objectID": "slides/w1d1.html#syllabus-assessments-1",
-    "href": "slides/w1d1.html#syllabus-assessments-1",
-    "title": "Welcome to FOR 128!",
-    "section": "Syllabus: Assessments",
-    "text": "Syllabus: Assessments\n\n\nLecture tickets (10%)\n\nLecture tickets are due at the beginning of every lecture, handed in in-person, by you.\n\nFinal Project (15%)\n\nThe details of the final project will be discussed as the semester goes on."
-  },
-  {
-    "objectID": "slides/w1d1.html#syllabus-collaboration",
-    "href": "slides/w1d1.html#syllabus-collaboration",
-    "title": "Welcome to FOR 128!",
-    "section": "Syllabus: Collaboration",
-    "text": "Syllabus: Collaboration\n\n\nWorking with classmates on labs and lecture tickets is perfectly acceptable.\nHowever, please cite your collaborator(s) at the top of your assignment.\nCollaboration on exams and quizzes is strictly prohibited.\nBut what is collaboration?"
-  },
-  {
-    "objectID": "slides/w1d1.html#artificial-intelligence-ai",
-    "href": "slides/w1d1.html#artificial-intelligence-ai",
-    "title": "Welcome to FOR 128!",
-    "section": "Artificial Intelligence (AI)",
-    "text": "Artificial Intelligence (AI)\n\n\n\n“…a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data”\nAI tools are being used by others to write code, but as Data Scientists, we must write code responsibly\nAt this stage of learning how to code, AI tools inhibit learning and understanding."
-  },
-  {
-    "objectID": "slides/w1d1.html#next-time",
-    "href": "slides/w1d1.html#next-time",
-    "title": "Welcome to FOR 128!",
-    "section": "Next time:",
-    "text": "Next time:\n\nCome to class with a laptop\nComplete Lecture Ticket 1 before lecture on Thursday."
-  },
-  {
-    "objectID": "labs/lab_08_web.html",
-    "href": "labs/lab_08_web.html",
-    "title": "Advanced Data Wrangling with dplyr",
+    "objectID": "labs/lab_10_web.html",
+    "href": "labs/lab_10_web.html",
+    "title": "Plotting with ggplot2",
     "section": "",
-    "text": "Welcome to Lab 8! Today, we’ll focus on writing extensive dplyr code on larger data. We will both use the verbs individually and “write a sentence” with the verbs by stringing them together with pipes.\n\n\n\nUse dplyr verbs together with pipes on larger datasets.\n\n\n\n\nUpload your rendered PDF (lab_08.pdf) and Quarto (lab_08.qmd) document to the lab drop box. Make sure the Quarto document properly renders to PDF.\n\n\n\nList any collaborators you worked with below."
+    "text": "Welcome to Lab 10! Today, we’ll focus on the grammar of graphics and plotting with ggplot2. Part 1 shows you some plots created in ggplot2 and asks about their aesthetics, geometries, coordinate systems, scales, facets, and themes. Part 2 asks you to create some plots with ggplot2.\n\n\n\nUnderstand and be able to identify the components of a plot\nCreate beautiful graphics with ggplot2.\n\n\n\n\nUpload your rendered PDF (lab_10.pdf) and Quarto (lab_10.qmd) document to the lab drop box. Make sure the Quarto document properly renders to PDF.\n\n\n\nList any collaborators you worked with below."
   },
   {
-    "objectID": "labs/lab_08_web.html#welcome",
-    "href": "labs/lab_08_web.html#welcome",
-    "title": "Advanced Data Wrangling with dplyr",
+    "objectID": "labs/lab_10_web.html#welcome",
+    "href": "labs/lab_10_web.html#welcome",
+    "title": "Plotting with ggplot2",
     "section": "",
-    "text": "Welcome to Lab 8! Today, we’ll focus on writing extensive dplyr code on larger data. We will both use the verbs individually and “write a sentence” with the verbs by stringing them together with pipes.\n\n\n\nUse dplyr verbs together with pipes on larger datasets.\n\n\n\n\nUpload your rendered PDF (lab_08.pdf) and Quarto (lab_08.qmd) document to the lab drop box. Make sure the Quarto document properly renders to PDF.\n\n\n\nList any collaborators you worked with below."
+    "text": "Welcome to Lab 10! Today, we’ll focus on the grammar of graphics and plotting with ggplot2. Part 1 shows you some plots created in ggplot2 and asks about their aesthetics, geometries, coordinate systems, scales, facets, and themes. Part 2 asks you to create some plots with ggplot2.\n\n\n\nUnderstand and be able to identify the components of a plot\nCreate beautiful graphics with ggplot2.\n\n\n\n\nUpload your rendered PDF (lab_10.pdf) and Quarto (lab_10.qmd) document to the lab drop box. Make sure the Quarto document properly renders to PDF.\n\n\n\nList any collaborators you worked with below."
   },
   {
-    "objectID": "labs/lab_08_web.html#data-pdxtrees",
-    "href": "labs/lab_08_web.html#data-pdxtrees",
-    "title": "Advanced Data Wrangling with dplyr",
-    "section": "Data: pdxTrees",
-    "text": "Data: pdxTrees\nThe pdxTrees R package contains measurements of every tree in the Portland, Oregon metro area. In particular, it contains two datasets, which we will call parks and streets. The parks dataset contains all of the trees in 174 parks in Portland. The streets dataset contains all the trees on the streets of Portland. The hex sticker for pdxTrees (as seen below) contains a fun easter egg from the city of Portland, as its graphics are done in a similar fashion to the famous airport carpet."
-  },
-  {
-    "objectID": "labs/lab_08_web.html#methods-dplyr",
-    "href": "labs/lab_08_web.html#methods-dplyr",
-    "title": "Advanced Data Wrangling with dplyr",
-    "section": "Methods: dplyr",
-    "text": "Methods: dplyr\nUse dplyr function that we’ve learned over the past few weeks to answer the questions in this lab."
-  },
-  {
-    "objectID": "labs/lab_08_web.html#exercise-0",
-    "href": "labs/lab_08_web.html#exercise-0",
-    "title": "Advanced Data Wrangling with dplyr",
+    "objectID": "labs/lab_10_web.html#exercise-0",
+    "href": "labs/lab_10_web.html#exercise-0",
+    "title": "Plotting with ggplot2",
     "section": "Exercise 0",
-    "text": "Exercise 0\nLoad any packages you’ll need for this lab below. Note, you’ll need to install pdxTrees with install.packages(\"pdxTrees\") before you can load it with library(pdxTrees)."
+    "text": "Exercise 0\nLoad any packages you’ll need for this lab below."
   },
   {
-    "objectID": "labs/lab_08_web.html#exercise-1",
-    "href": "labs/lab_08_web.html#exercise-1",
-    "title": "Advanced Data Wrangling with dplyr",
+    "objectID": "labs/lab_10_web.html#exercise-1",
+    "href": "labs/lab_10_web.html#exercise-1",
+    "title": "Plotting with ggplot2",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\nPart (a)\nLoad the data. For this lab, we will load both the parks and streets datasets. To do so, run the get_pdxTrees_parks() and get_pdxTrees_streets() functions (note, you don’t need to specify any arguments for these functions) and assign them to parks and streets, respectively.\nYour datasets should look like this when you print parks and streets as follows:\n\nparks\n\n# A tibble: 25,534 × 34\n   Longitude Latitude UserID Genus      Family   DBH Inventory_Date      Species\n       &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;  &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;  \n 1     -123.     45.6 1      Pseudotsu… Pinac…  37.4 2017-05-09 00:00:00 PSME   \n 2     -123.     45.6 2      Pseudotsu… Pinac…  32.5 2017-05-09 00:00:00 PSME   \n 3     -123.     45.6 3      Crataegus  Rosac…   9.7 2017-05-09 00:00:00 CRLA   \n 4     -123.     45.6 4      Quercus    Fagac…  10.3 2017-05-09 00:00:00 QURU   \n 5     -123.     45.6 5      Pseudotsu… Pinac…  33.2 2017-05-09 00:00:00 PSME   \n 6     -123.     45.6 6      Pseudotsu… Pinac…  32.1 2017-05-09 00:00:00 PSME   \n 7     -123.     45.6 7      Pseudotsu… Pinac…  28.4 2017-05-09 00:00:00 PSME   \n 8     -123.     45.6 8      Pseudotsu… Pinac…  27.2 2017-05-09 00:00:00 PSME   \n 9     -123.     45.6 9      Pseudotsu… Pinac…  35.2 2017-05-09 00:00:00 PSME   \n10     -123.     45.6 10     Pseudotsu… Pinac…  32.4 2017-05-09 00:00:00 PSME   \n# ℹ 25,524 more rows\n# ℹ 26 more variables: Common_Name &lt;chr&gt;, Condition &lt;chr&gt;, Tree_Height &lt;dbl&gt;,\n#   Crown_Width_NS &lt;dbl&gt;, Crown_Width_EW &lt;dbl&gt;, Crown_Base_Height &lt;dbl&gt;,\n#   Collected_By &lt;chr&gt;, Park &lt;chr&gt;, Scientific_Name &lt;chr&gt;,\n#   Functional_Type &lt;chr&gt;, Mature_Size &lt;fct&gt;, Native &lt;chr&gt;, Edible &lt;chr&gt;,\n#   Nuisance &lt;chr&gt;, Structural_Value &lt;dbl&gt;, Carbon_Storage_lb &lt;dbl&gt;,\n#   Carbon_Storage_value &lt;dbl&gt;, Carbon_Sequestration_lb &lt;dbl&gt;, …\n\nstreets\n\n# A tibble: 218,602 × 23\n   UserID Inventory_Date      Species   DBH Condition Site_Type Site_Width Wires\n   &lt;chr&gt;  &lt;dttm&gt;              &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;\n 1 1      2010-08-21 00:00:00 PRPL     6.10 Good      &lt;NA&gt;               9 High…\n 2 2      2010-08-21 00:00:00 ACMA    36.3  Poor      &lt;NA&gt;               9 High…\n 3 3      2010-08-21 00:00:00 PLAC    20.5  Fair      &lt;NA&gt;               9 No HV\n 4 4      2010-08-21 00:00:00 CO       8.20 Fair      &lt;NA&gt;               9 No HV\n 5 5      2010-08-21 00:00:00 ACMA    55.7  Good      &lt;NA&gt;               9 No HV\n 6 6      2010-08-21 00:00:00 ACPL    18.6  Good      &lt;NA&gt;               9 No HV\n 7 7      2010-08-21 00:00:00 ACPL    18.8  Good      &lt;NA&gt;               9 No HV\n 8 8      2010-08-21 00:00:00 ACPL    16    Good      &lt;NA&gt;               9 No HV\n 9 9      2010-08-21 00:00:00 QU       6.20 Good      &lt;NA&gt;               9 No HV\n10 10     2010-08-21 00:00:00 ACPL    19.3  Fair      &lt;NA&gt;               9 No HV\n# ℹ 218,592 more rows\n# ℹ 15 more variables: Site_Development &lt;chr&gt;, Site_Size &lt;chr&gt;, Notes &lt;chr&gt;,\n#   Address &lt;chr&gt;, Neighborhood &lt;chr&gt;, Collected_By &lt;chr&gt;, Scientific &lt;chr&gt;,\n#   Family &lt;chr&gt;, Genus &lt;chr&gt;, Common_Name &lt;chr&gt;, Functional_Type &lt;chr&gt;,\n#   Edible &lt;chr&gt;, Longitude &lt;dbl&gt;, Latitude &lt;dbl&gt;, Mature_Size &lt;fct&gt;\n\n\n\n\nPart (b)\nTake a look at the documentation by running ?get_pdxTrees_parks and ?get_pdxTrees_streets in your console, and tell me about two columns (what are their names? what do they measure? units? factor levels? etc.) from each of the datasets (four total)."
+    "text": "Exercise 1\nFor each plot presented in each part of this exercise, answer the following questions:\n\nWhat are the geometries used?\nWhat are the aesthetics used?\nWhat values (i.e. variables) are mapped each aesthetic?\nWhat coordinate system is used?\nWhat, if any, scales are used?\nAre there any facets? If so, what variable(s) are used to facet?\nWhat, if any, themes are used?\n\n\nPart (a)\n\n\n\n\n\n\n\n\n\n\n\nPart (b)\n\n\n\n\n\n\n\n\n\n\n\nPart (c)\n\n\n\n\n\n\n\n\n\n\n\nPart (d)\n\n\n\n\n\n\n\n\n\n\n\nPart (e)\n\n\n\n\n\n\n\n\n\n\n\nPart (f)\n\n\n\n\n\n\n\n\n\n\n\nPart (g)"
   },
   {
-    "objectID": "labs/lab_08_web.html#exercise-2",
-    "href": "labs/lab_08_web.html#exercise-2",
-    "title": "Advanced Data Wrangling with dplyr",
+    "objectID": "labs/lab_10_web.html#exercise-2",
+    "href": "labs/lab_10_web.html#exercise-2",
+    "title": "Plotting with ggplot2",
     "section": "Exercise 2",
-    "text": "Exercise 2\nFind how many trees of each species (use the common name column for species here and throughout the lab) are in the parks dataset, and order the data from greatest number of trees in a species to least. Notice I’ve called the number of trees num_trees.\n\n\n# A tibble: 304 × 2\n   Common_Name               num_trees\n   &lt;chr&gt;                         &lt;int&gt;\n 1 Douglas-Fir                    6783\n 2 Norway Maple                   1502\n 3 Western Redcedar                964\n 4 Northern Red Oak                736\n 5 Pin Oak                         619\n 6 Incense Cedar                   507\n 7 Bigleaf Maple                   490\n 8 Japanese Flowering Cherry       418\n 9 American Elm                    379\n10 Giant Sequoia                   349\n# ℹ 294 more rows"
+    "text": "Exercise 2\nUse the pdxTrees package to get the data for all parks in Portland. Then, filter the dataset to only contain rows that correspond to Irving Park, Sewallcrest Park, and Sellwood Riverfront Park. Call the resulting tibble parks. Hint: you can either call get_pdxTrees_parks() and then use a dplyr function to filter for only the parks we are interested in, or specify the park argument of get_pdxTrees_parks() when you call the function. Your resulting tibble should have 314 rows and 34 columns.\n\nparks\n\n# A tibble: 314 × 34\n   Longitude Latitude UserID Genus     Family    DBH Inventory_Date      Species\n       &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;   &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;  \n 1     -123.     45.5 1804   Acer      Sapind…  24.9 2017-08-12 00:00:00 ACPL   \n 2     -123.     45.5 1805   Quercus   Fagace…  56.9 2017-08-12 00:00:00 QURU   \n 3     -123.     45.5 1806   Quercus   Fagace…  43.8 2017-08-12 00:00:00 QURU   \n 4     -123.     45.5 5462   Acer      Sapind…  24.5 2017-08-12 00:00:00 ACPL   \n 5     -123.     45.5 5466   Acer      Sapind…  17.9 2017-08-12 00:00:00 ACPL   \n 6     -123.     45.5 5469   Acer      Sapind…  25.9 2017-08-12 00:00:00 ACPL   \n 7     -123.     45.5 5470   Quercus   Fagace…  47.9 2017-08-12 00:00:00 QURU   \n 8     -123.     45.5 5471   Pinus     Pinace…  24.4 2017-08-12 00:00:00 PIPO   \n 9     -123.     45.5 6011   Acer      Sapind…  31.2 2017-08-12 00:00:00 ACPL   \n10     -123.     45.5 6013   Crataegus Rosace…  11   2017-08-12 00:00:00 CRMO   \n# ℹ 304 more rows\n# ℹ 26 more variables: Common_Name &lt;chr&gt;, Condition &lt;chr&gt;, Tree_Height &lt;dbl&gt;,\n#   Crown_Width_NS &lt;dbl&gt;, Crown_Width_EW &lt;dbl&gt;, Crown_Base_Height &lt;dbl&gt;,\n#   Collected_By &lt;chr&gt;, Park &lt;chr&gt;, Scientific_Name &lt;chr&gt;,\n#   Functional_Type &lt;chr&gt;, Mature_Size &lt;fct&gt;, Native &lt;chr&gt;, Edible &lt;chr&gt;,\n#   Nuisance &lt;chr&gt;, Structural_Value &lt;dbl&gt;, Carbon_Storage_lb &lt;dbl&gt;,\n#   Carbon_Storage_value &lt;dbl&gt;, Carbon_Sequestration_lb &lt;dbl&gt;, …"
   },
   {
-    "objectID": "labs/lab_08_web.html#exercise-3",
-    "href": "labs/lab_08_web.html#exercise-3",
-    "title": "Advanced Data Wrangling with dplyr",
+    "objectID": "labs/lab_10_web.html#exercise-3",
+    "href": "labs/lab_10_web.html#exercise-3",
+    "title": "Plotting with ggplot2",
     "section": "Exercise 3",
-    "text": "Exercise 3\nA staple of Portland living in the springtime is to go out and see the Japanese Flowering Cherry trees beginning to bloom. Find the park with the most Japanese Flowering Cherry trees, and how many there are in that park.\n\n\n# A tibble: 1 × 2\n  Park                           num_cherries\n  &lt;chr&gt;                                 &lt;int&gt;\n1 Gov Tom McCall Waterfront Park          104"
+    "text": "Exercise 3\nRecreate the plots from Exercise 1.\n\nPart (a)\n\n\nPart (b)\n\n\nPart (c)\nHINT: the colors used were “goldenrod”, “steelblue”, and “forestgreen”.\n\n\nPart (d)\n\n\nPart (e)\nHINT: you can fill a bar plot by another variable by specifying a fill aesthetic mapping.\n\n\nPart (f)\nHINT: the theme used here is from the ggthemes package.\n\n\nPart (g)\nHINT: you’ll need to filter the data for a particular park."
   },
   {
-    "objectID": "labs/lab_08_web.html#exercise-4",
-    "href": "labs/lab_08_web.html#exercise-4",
-    "title": "Advanced Data Wrangling with dplyr",
+    "objectID": "labs/lab_10_web.html#exercise-4",
+    "href": "labs/lab_10_web.html#exercise-4",
+    "title": "Plotting with ggplot2",
     "section": "Exercise 4",
-    "text": "Exercise 4\n\nPart (a)\nFind the top 5 parks with the most total DBH (i.e. the sum of all the trees DBH in those parks).\n\n\n# A tibble: 5 × 2\n  Park             total_DBH\n  &lt;chr&gt;                &lt;dbl&gt;\n1 Mt Tabor Park       31965.\n2 Columbia Park       26952.\n3 Laurelhurst Park    26890.\n4 Washington Park     16081.\n5 John Luby Park      14519.\n\n\nMt. Tabor Park is one of my personal favorites in Portland, I used to live just a few blocks away. It is a wonderful place to watch the sun set over the West hills of the city. Not only does it have the most DBH in all of the parks in Portland, but Portland’s drinking water is stored in giant reservoirs at that park!\n\n\nPart (b)\nFind the top 5 parks with the highest DBH per tree (in other words, the 5 highest mean DBHs), along with how many trees are in those parks.\n\n\n# A tibble: 5 × 3\n  Park               mean_DBH number_of_trees\n  &lt;chr&gt;                 &lt;dbl&gt;           &lt;int&gt;\n1 Heritage Tree Park     59                 1\n2 Johnswood Property     43.1              18\n3 Patton Square Park     37.0              13\n4 Hancock Park           32.5             104\n5 Laurelwood Park        31.2              13\n\n\nWow! Heritage Tree Park has one giant tree!"
+    "text": "Exercise 4\nCreate your own plot from the parks data. Your plot should, at a minimum, map at least three variables to geometries, label its aesthetics nicely, have a title, and have a theme different from ggplot2’s default. Have fun with it! Feel free to choose different parks as well if you’d like."
   },
   {
-    "objectID": "labs/lab_08_web.html#exercise-5",
-    "href": "labs/lab_08_web.html#exercise-5",
-    "title": "Advanced Data Wrangling with dplyr",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nThere is a column in the parks dataset that represents the amount of carbon (in lbs) each tree has sequestered. Find the park with the highest carbon sequestration.\n\n\n# A tibble: 1 × 2\n  Park          carbon_sequestered\n  &lt;chr&gt;                      &lt;dbl&gt;\n1 Mt Tabor Park             36515.\n\n\nNice job, Mt. Tabor!"
+    "objectID": "slides/w10d2.html#annoucements",
+    "href": "slides/w10d2.html#annoucements",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Annoucements",
+    "text": "Annoucements\n\nMidterm II is Thursday, November 14th.\nMaterial on the midterm will include all material through Week 11."
   },
   {
-    "objectID": "labs/lab_08_web.html#exercise-6",
-    "href": "labs/lab_08_web.html#exercise-6",
-    "title": "Advanced Data Wrangling with dplyr",
-    "section": "Exercise 6",
-    "text": "Exercise 6\nThe parks dataset has a wide variety of numeric columns measuring things from DBH to pollution removal value of a given tree. Take the mean of all of these numeric columns, grouped by park. Make sure to remove NAs in the mean() function.\nHINT: In across() you can set .cols = where(is.numeric) to apply a function across all numeric columns.\n\n\n# A tibble: 174 × 18\n   Park       Longitude Latitude   DBH Tree_Height Crown_Width_NS Crown_Width_EW\n   &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt;\n 1 Albert Ke…     -123.     45.5  20.5        83.7           32.3           31.8\n 2 Alberta P…     -123.     45.6  28.4        96.6           45.5           43.4\n 3 Ankeny Pl…     -123.     45.5  30.8        69             62             62.2\n 4 April Hil…     -123.     45.5  18.9        47.9           34.0           33  \n 5 Arbor Lod…     -123.     45.6  19.2        49.4           39.8           39.7\n 6 Argay Park     -123.     45.6  19.6        46.2           35.3           35.3\n 7 Berkeley …     -123.     45.5  26.7        72.9           44.9           47.7\n 8 Berrydale…     -123.     45.5  23.6        69.8           41.3           39.3\n 9 Bloomingt…     -123.     45.5  24.1        62.6           47.9           48.2\n10 Brentwood…     -123.     45.5  17.4        40.8           29.7           30.8\n# ℹ 164 more rows\n# ℹ 11 more variables: Crown_Base_Height &lt;dbl&gt;, Structural_Value &lt;dbl&gt;,\n#   Carbon_Storage_lb &lt;dbl&gt;, Carbon_Storage_value &lt;dbl&gt;,\n#   Carbon_Sequestration_lb &lt;dbl&gt;, Carbon_Sequestration_value &lt;dbl&gt;,\n#   Stormwater_ft &lt;dbl&gt;, Stormwater_value &lt;dbl&gt;, Pollution_Removal_value &lt;dbl&gt;,\n#   Pollution_Removal_oz &lt;dbl&gt;, Total_Annual_Services &lt;dbl&gt;"
+    "objectID": "slides/w10d2.html#agenda",
+    "href": "slides/w10d2.html#agenda",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Agenda",
+    "text": "Agenda\n\nReshaping data with tidyr\n\npivot_longer() and pivot_wider()\nunite()\nseparate_wider_delim()\ncomplete()\n\nApplication: stand and stock tables"
   },
   {
-    "objectID": "labs/lab_08_web.html#exercise-7",
-    "href": "labs/lab_08_web.html#exercise-7",
-    "title": "Advanced Data Wrangling with dplyr",
-    "section": "Exercise 7",
-    "text": "Exercise 7\nFor this exercise, consider the streets dataset.\n\nPart (a)\nThere is a column delineating the edibility of the trees in the dataset. Find the possible values for this column and how many trees correspond to each value.\n\n\n# A tibble: 3 × 2\n  Edible n_rows\n  &lt;chr&gt;   &lt;int&gt;\n1 fruit    3649\n2 no     211954\n3 nut      2999\n\n\n\n\nPart (b)\nCreate a new tibble called forager that contains all rows of the streets with edible fruits or nuts but only the columns denoting the common name, neighborhood, condition, and edibility.\n\nforager\n\n# A tibble: 6,648 × 4\n   Common_Name Neighborhood Condition Edible\n   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt; \n 1 Persimmon   Concordia    Good      fruit \n 2 Walnut      Concordia    Fair      nut   \n 3 Walnut      Concordia    Fair      nut   \n 4 Walnut      Concordia    Fair      nut   \n 5 Walnut      Concordia    Good      nut   \n 6 Walnut      Concordia    Fair      nut   \n 7 Walnut      Concordia    Fair      nut   \n 8 Walnut      Concordia    Poor      nut   \n 9 Walnut      Concordia    Fair      nut   \n10 Fig         Concordia    Poor      fruit \n# ℹ 6,638 more rows\n\n\n\n\nPart (c)\nCreate a new logical column and save it in the forager dataset. Name it fruit_edible. The values in this columns should be TRUE or FALSE depending on if the given tree has edible fruits or not\n\nforager\n\n# A tibble: 6,648 × 5\n   Common_Name Neighborhood Condition Edible fruit_edible\n   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;  &lt;lgl&gt;       \n 1 Persimmon   Concordia    Good      fruit  TRUE        \n 2 Walnut      Concordia    Fair      nut    FALSE       \n 3 Walnut      Concordia    Fair      nut    FALSE       \n 4 Walnut      Concordia    Fair      nut    FALSE       \n 5 Walnut      Concordia    Good      nut    FALSE       \n 6 Walnut      Concordia    Fair      nut    FALSE       \n 7 Walnut      Concordia    Fair      nut    FALSE       \n 8 Walnut      Concordia    Poor      nut    FALSE       \n 9 Walnut      Concordia    Fair      nut    FALSE       \n10 Fig         Concordia    Poor      fruit  TRUE        \n# ℹ 6,638 more rows\n\n\n\n\nPart (d)\nArrange the forager dataset by the column you just created in (c), so that the TRUE values are at the top, and save this change to the forager dataset.\n\nforager\n\n# A tibble: 6,648 × 5\n   Common_Name Neighborhood Condition Edible fruit_edible\n   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;  &lt;lgl&gt;       \n 1 Persimmon   Concordia    Good      fruit  TRUE        \n 2 Fig         Concordia    Poor      fruit  TRUE        \n 3 Fig         Concordia    Good      fruit  TRUE        \n 4 Fig         Concordia    Fair      fruit  TRUE        \n 5 Fig         Concordia    Poor      fruit  TRUE        \n 6 Fig         Concordia    Good      fruit  TRUE        \n 7 Fig         Concordia    Fair      fruit  TRUE        \n 8 Persimmon   Concordia    Good      fruit  TRUE        \n 9 Persimmon   Concordia    Fair      fruit  TRUE        \n10 Persimmon   Concordia    Fair      fruit  TRUE        \n# ℹ 6,638 more rows\n\n\n\n\nPart (e)\nThe Edible column in named in a bit of a funny way. Rename the column to Edible_Component and save this change to the forager dataset.\n\nforager\n\n# A tibble: 6,648 × 5\n   Common_Name Neighborhood Condition Edible_Component fruit_edible\n   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;            &lt;lgl&gt;       \n 1 Persimmon   Concordia    Good      fruit            TRUE        \n 2 Fig         Concordia    Poor      fruit            TRUE        \n 3 Fig         Concordia    Good      fruit            TRUE        \n 4 Fig         Concordia    Fair      fruit            TRUE        \n 5 Fig         Concordia    Poor      fruit            TRUE        \n 6 Fig         Concordia    Good      fruit            TRUE        \n 7 Fig         Concordia    Fair      fruit            TRUE        \n 8 Persimmon   Concordia    Good      fruit            TRUE        \n 9 Persimmon   Concordia    Fair      fruit            TRUE        \n10 Persimmon   Concordia    Fair      fruit            TRUE        \n# ℹ 6,638 more rows\n\n\n\n\nPart (f)\nWhich five neighborhoods would a fruit loving forager most like to live (in other words, what are the five neighborhoods with the most trees with edible fruit)?\nHINT: using the sum() function on logical data will make all the TRUEs 1s and all the FALSEs 0s.\n\n\n# A tibble: 5 × 2\n  Neighborhood      n_edible_fruit_trees\n  &lt;chr&gt;                            &lt;int&gt;\n1 Montavilla                         166\n2 Sellwood-Moreland                  154\n3 Richmond                           148\n4 Rose City Park                     127\n5 Woodstock                          125\n\n\nThe Sellwood-Moreland and Woodstock neighborhoods are the heart of southeast Portland (in my opinion). The pdxTrees R package was written primarily in the Woodstock neighborhood, as a matter of fact. Sellwood-Moreland sits just to the west of Woodstock and has a variety of top-tier coffee shops, along with a gorgeous riverfront park with off-leash dogs allowed. Quite the place to be if you are a fruit forager, too!\n\n\nPart (g)\nOf the five neighborhoods found in part (e), what are the conditions of the edible fruit bearing trees (in other words, how many are in Good condition, Fair condition, etc., grouped by these five neighborhoods).\nHINT: you can use group_by() to group by multiple groups at once. Example: group_by(column1, column2).\n\n\n`summarise()` has grouped output by 'Neighborhood'. You can override using the\n`.groups` argument.\n\n\n# A tibble: 15 × 3\n# Groups:   Neighborhood [5]\n   Neighborhood      Condition num_fruit_trees\n   &lt;chr&gt;             &lt;chr&gt;               &lt;int&gt;\n 1 Montavilla        Fair                   92\n 2 Montavilla        Good                   63\n 3 Montavilla        Poor                   11\n 4 Richmond          Fair                   36\n 5 Richmond          Good                  104\n 6 Richmond          Poor                    8\n 7 Rose City Park    Fair                   71\n 8 Rose City Park    Good                   54\n 9 Rose City Park    Poor                    2\n10 Sellwood-Moreland Fair                   56\n11 Sellwood-Moreland Good                   89\n12 Sellwood-Moreland Poor                    9\n13 Woodstock         Fair                   39\n14 Woodstock         Good                   77\n15 Woodstock         Poor                    9"
+    "objectID": "slides/w10d2.html#the-tidyr-package",
+    "href": "slides/w10d2.html#the-tidyr-package",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "The tidyr package",
+    "text": "The tidyr package\n\n\nThe tidyr package allows us to transform data from long to wide formats, and back.\nA key use of the tidyr package is getting data in tidy format.\nBut what is tidy format?"
+  },
+  {
+    "objectID": "slides/w10d2.html#tidy-data",
+    "href": "slides/w10d2.html#tidy-data",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Tidy data",
+    "text": "Tidy data\n“Tidy data” or “tidy format” is a formal concept of how we organize data for analyses, in particular, with tidy data:\n\n\nEach row of the data correspond to a single observation, and\nEach column of the data correspond to a variable."
+  },
+  {
+    "objectID": "slides/w10d2.html#tidying-data-with-tidyr",
+    "href": "slides/w10d2.html#tidying-data-with-tidyr",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Tidying data with tidyr",
+    "text": "Tidying data with tidyr\nConsider the face dataset from IFDAR:\n\nlibrary(tidyverse)\nface &lt;- read_csv(\"../labs/datasets/FACE/FACE_aspen_core_growth.csv\") %&gt;%\n  select(Rep, Treat, Clone, ID = `ID #`,\n        contains(as.character(2001:2005)) & contains(\"Height\"))\nface\n\n# A tibble: 1,991 × 9\n     Rep Treat Clone    ID `2001_Height` `2002_Height` `2003_Height`\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;\n 1     1     1     8    45            NA            NA            NA\n 2     1     1   216    44           547           622           715\n 3     1     1     8    43           273           275           305\n 4     1     1   216    42           526           619           720\n 5     1     1   216    54           328           341           364\n 6     1     1   271    55           543           590           634\n 7     1     1   271    56           450           502           587\n 8     1     1     8    57           217           227           256\n 9     1     1   259    58           158           155            NA\n10     1     1   271    59           230           241           260\n# ℹ 1,981 more rows\n# ℹ 2 more variables: `2004_Height` &lt;dbl&gt;, `2005_Height` &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/w10d2.html#why-the-long-face",
+    "href": "slides/w10d2.html#why-the-long-face",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Why the long face?",
+    "text": "Why the long face?\n\nface_long &lt;- face %&gt;%\n  pivot_longer(\n    cols = c(\"2001_Height\", \"2002_Height\", \"2003_Height\", \n             \"2004_Height\", \"2005_Height\"),\n    names_to = \"Year_Type\",\n    values_to = \"Height_cm\")"
+  },
+  {
+    "objectID": "slides/w10d2.html#why-the-long-face-1",
+    "href": "slides/w10d2.html#why-the-long-face-1",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Why the long face?",
+    "text": "Why the long face?\n\nface_long &lt;- face %&gt;%\n  pivot_longer(\n    cols = c(\"2001_Height\", \"2002_Height\", \"2003_Height\", \n             \"2004_Height\", \"2005_Height\"),\n    names_to = \"Year_Type\",\n    values_to = \"Height_cm\")"
+  },
+  {
+    "objectID": "slides/w10d2.html#why-the-long-face-2",
+    "href": "slides/w10d2.html#why-the-long-face-2",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Why the long face?",
+    "text": "Why the long face?\n\nface_long &lt;- face %&gt;%\n  pivot_longer(\n    cols = contains(\"Height\"),\n    names_to = \"Year_Type\",\n    values_to = \"Height_cm\")\n\n\nA cleaner way to select these columns is to use dplyr’s contains() function."
+  },
+  {
+    "objectID": "slides/w10d2.html#why-the-long-face-3",
+    "href": "slides/w10d2.html#why-the-long-face-3",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Why the long face?",
+    "text": "Why the long face?\n\nface_long\n\n# A tibble: 9,955 × 6\n     Rep Treat Clone    ID Year_Type   Height_cm\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1     1     1     8    45 2001_Height        NA\n 2     1     1     8    45 2002_Height        NA\n 3     1     1     8    45 2003_Height        NA\n 4     1     1     8    45 2004_Height        NA\n 5     1     1     8    45 2005_Height        NA\n 6     1     1   216    44 2001_Height       547\n 7     1     1   216    44 2002_Height       622\n 8     1     1   216    44 2003_Height       715\n 9     1     1   216    44 2004_Height       716\n10     1     1   216    44 2005_Height       817\n# ℹ 9,945 more rows\n\n\n\nTo get tidy data!"
+  },
+  {
+    "objectID": "slides/w10d2.html#going-back-to-wide-data",
+    "href": "slides/w10d2.html#going-back-to-wide-data",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Going (back) to wide data",
+    "text": "Going (back) to wide data\n\n\nSometimes, we need to “widen” a dataset to get it into tidy format.\nFor this example, we will just widen the face_long dataset back to its original form.\ntidyr has an aptly named function, pivot_wider().\nKey arguments of pivot_wider():\n\n.data: the tibble to widen,\nnames_from: the column that contains values which will be assigned as the new column names,\nvalues_from: the column that contains values which will be assigned as the new column values."
+  },
+  {
+    "objectID": "slides/w10d2.html#pivoting-wider",
+    "href": "slides/w10d2.html#pivoting-wider",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Pivoting wider",
+    "text": "Pivoting wider\n\nface_wide &lt;- face_long %&gt;%\n  pivot_wider(names_from = \"Year_Type\", values_from = \"Height_cm\")\n\nall_equal(face, face_wide)\n\n[1] TRUE\n\n\n\n\nThis results in the same tibble that we started with!"
+  },
+  {
+    "objectID": "slides/w10d2.html#other-useful-tidyr-functions",
+    "href": "slides/w10d2.html#other-useful-tidyr-functions",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Other useful tidyr functions",
+    "text": "Other useful tidyr functions\n\n\nunite() for pasteing column values together with specified seperators,\nThe separate_wider_*() family: for splitting columns into multiple new columns:\n\nseparate_wider_delim(): separate by delimiter\nseparate_wider_position(): separate by position\nseparate_wider_regex(): separate by regular expression"
+  },
+  {
+    "objectID": "slides/w10d2.html#unite-examples",
+    "href": "slides/w10d2.html#unite-examples",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "unite(): examples",
+    "text": "unite(): examples\n\nface_long\n\n# A tibble: 9,955 × 6\n     Rep Treat Clone    ID Year_Type   Height_cm\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1     1     1     8    45 2001_Height        NA\n 2     1     1     8    45 2002_Height        NA\n 3     1     1     8    45 2003_Height        NA\n 4     1     1     8    45 2004_Height        NA\n 5     1     1     8    45 2005_Height        NA\n 6     1     1   216    44 2001_Height       547\n 7     1     1   216    44 2002_Height       622\n 8     1     1   216    44 2003_Height       715\n 9     1     1   216    44 2004_Height       716\n10     1     1   216    44 2005_Height       817\n# ℹ 9,945 more rows"
+  },
+  {
+    "objectID": "slides/w10d2.html#unite-examples-1",
+    "href": "slides/w10d2.html#unite-examples-1",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "unite(): examples",
+    "text": "unite(): examples\n\nface_long %&gt;%\n  unite(col = \"Design\", Rep, Treat, Clone, sep = \"_\")\n\n# A tibble: 9,955 × 4\n   Design     ID Year_Type   Height_cm\n   &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1 1_1_8      45 2001_Height        NA\n 2 1_1_8      45 2002_Height        NA\n 3 1_1_8      45 2003_Height        NA\n 4 1_1_8      45 2004_Height        NA\n 5 1_1_8      45 2005_Height        NA\n 6 1_1_216    44 2001_Height       547\n 7 1_1_216    44 2002_Height       622\n 8 1_1_216    44 2003_Height       715\n 9 1_1_216    44 2004_Height       716\n10 1_1_216    44 2005_Height       817\n# ℹ 9,945 more rows"
+  },
+  {
+    "objectID": "slides/w10d2.html#unite-examples-2",
+    "href": "slides/w10d2.html#unite-examples-2",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "unite(): examples",
+    "text": "unite(): examples\n\nface_long %&gt;%\n  unite(col = \"Design\", Rep, Treat, Clone, sep = \".\")\n\n# A tibble: 9,955 × 4\n   Design     ID Year_Type   Height_cm\n   &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1 1.1.8      45 2001_Height        NA\n 2 1.1.8      45 2002_Height        NA\n 3 1.1.8      45 2003_Height        NA\n 4 1.1.8      45 2004_Height        NA\n 5 1.1.8      45 2005_Height        NA\n 6 1.1.216    44 2001_Height       547\n 7 1.1.216    44 2002_Height       622\n 8 1.1.216    44 2003_Height       715\n 9 1.1.216    44 2004_Height       716\n10 1.1.216    44 2005_Height       817\n# ℹ 9,945 more rows"
+  },
+  {
+    "objectID": "slides/w10d2.html#unite-examples-3",
+    "href": "slides/w10d2.html#unite-examples-3",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "unite(): examples",
+    "text": "unite(): examples\n\nface_long_abc &lt;- face_long %&gt;%\n  unite(col = \"Design\", Rep, Treat, Clone, sep = \"abc\")\nface_long_abc\n\n# A tibble: 9,955 × 4\n   Design         ID Year_Type   Height_cm\n   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1 1abc1abc8      45 2001_Height        NA\n 2 1abc1abc8      45 2002_Height        NA\n 3 1abc1abc8      45 2003_Height        NA\n 4 1abc1abc8      45 2004_Height        NA\n 5 1abc1abc8      45 2005_Height        NA\n 6 1abc1abc216    44 2001_Height       547\n 7 1abc1abc216    44 2002_Height       622\n 8 1abc1abc216    44 2003_Height       715\n 9 1abc1abc216    44 2004_Height       716\n10 1abc1abc216    44 2005_Height       817\n# ℹ 9,945 more rows"
+  },
+  {
+    "objectID": "slides/w10d2.html#separate_wider_delim-examples",
+    "href": "slides/w10d2.html#separate_wider_delim-examples",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "separate_wider_delim() examples",
+    "text": "separate_wider_delim() examples\n\nface_long_abc\n\n# A tibble: 9,955 × 4\n   Design         ID Year_Type   Height_cm\n   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1 1abc1abc8      45 2001_Height        NA\n 2 1abc1abc8      45 2002_Height        NA\n 3 1abc1abc8      45 2003_Height        NA\n 4 1abc1abc8      45 2004_Height        NA\n 5 1abc1abc8      45 2005_Height        NA\n 6 1abc1abc216    44 2001_Height       547\n 7 1abc1abc216    44 2002_Height       622\n 8 1abc1abc216    44 2003_Height       715\n 9 1abc1abc216    44 2004_Height       716\n10 1abc1abc216    44 2005_Height       817\n# ℹ 9,945 more rows"
+  },
+  {
+    "objectID": "slides/w10d2.html#separate_wider_delim-examples-1",
+    "href": "slides/w10d2.html#separate_wider_delim-examples-1",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "separate_wider_delim() examples",
+    "text": "separate_wider_delim() examples\n\nface_long_abc %&gt;%\n  separate_wider_delim(cols = \"Design\", \n                       delim = \"abc\",\n                       names = c(\"Rep\", \"Treat\", \"Clone\"))\n\n# A tibble: 9,955 × 6\n   Rep   Treat Clone    ID Year_Type   Height_cm\n   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1 1     1     8        45 2001_Height        NA\n 2 1     1     8        45 2002_Height        NA\n 3 1     1     8        45 2003_Height        NA\n 4 1     1     8        45 2004_Height        NA\n 5 1     1     8        45 2005_Height        NA\n 6 1     1     216      44 2001_Height       547\n 7 1     1     216      44 2002_Height       622\n 8 1     1     216      44 2003_Height       715\n 9 1     1     216      44 2004_Height       716\n10 1     1     216      44 2005_Height       817\n# ℹ 9,945 more rows"
+  },
+  {
+    "objectID": "slides/w10d2.html#separate_wider_delim-examples-2",
+    "href": "slides/w10d2.html#separate_wider_delim-examples-2",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "separate_wider_delim() examples",
+    "text": "separate_wider_delim() examples\n\nface_long\n\n# A tibble: 9,955 × 6\n     Rep Treat Clone    ID Year_Type   Height_cm\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1     1     1     8    45 2001_Height        NA\n 2     1     1     8    45 2002_Height        NA\n 3     1     1     8    45 2003_Height        NA\n 4     1     1     8    45 2004_Height        NA\n 5     1     1     8    45 2005_Height        NA\n 6     1     1   216    44 2001_Height       547\n 7     1     1   216    44 2002_Height       622\n 8     1     1   216    44 2003_Height       715\n 9     1     1   216    44 2004_Height       716\n10     1     1   216    44 2005_Height       817\n# ℹ 9,945 more rows\n\n\n\nface_long %&gt;%\n  separate_wider_delim(cols = \"Year_Type\", \n                       delim = \"_\",\n                       names = c(\"Year\", NA))\n\n# A tibble: 9,955 × 6\n     Rep Treat Clone    ID Year  Height_cm\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;\n 1     1     1     8    45 2001         NA\n 2     1     1     8    45 2002         NA\n 3     1     1     8    45 2003         NA\n 4     1     1     8    45 2004         NA\n 5     1     1     8    45 2005         NA\n 6     1     1   216    44 2001        547\n 7     1     1   216    44 2002        622\n 8     1     1   216    44 2003        715\n 9     1     1   216    44 2004        716\n10     1     1   216    44 2005        817\n# ℹ 9,945 more rows"
+  },
+  {
+    "objectID": "slides/w10d2.html#the-complete-function",
+    "href": "slides/w10d2.html#the-complete-function",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "The complete() function",
+    "text": "The complete() function\nThe complete() function is used for filling in values that are not explicitly in the dataset. Let’s consider some toy data for an example:\n\ntrees &lt;- tibble(\n  plot = c(1,1,1,2,2,2,3,3),\n  species = c(\"douglas-fir\", \"western red-cedar\", \"pacific madrone\",\n              \"douglas-fir\", \"douglas-fir\", \"douglas-fir\",\n              \"douglas-fir\", \"western red-cedar\"),\n  dbh = c(10, 12, 6, 13, 10, 8, 9, 14)\n)\ntrees\n\n# A tibble: 8 × 3\n   plot species             dbh\n  &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;\n1     1 douglas-fir          10\n2     1 western red-cedar    12\n3     1 pacific madrone       6\n4     2 douglas-fir          13\n5     2 douglas-fir          10\n6     2 douglas-fir           8\n7     3 douglas-fir           9\n8     3 western red-cedar    14"
+  },
+  {
+    "objectID": "slides/w10d2.html#compute-total-dbh-by-species-and-plot",
+    "href": "slides/w10d2.html#compute-total-dbh-by-species-and-plot",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Compute total DBH by species and plot",
+    "text": "Compute total DBH by species and plot\n\ntrees %&gt;%\n  group_by(plot, species) %&gt;%\n  summarize(total_DBH = sum(dbh))\n\n# A tibble: 6 × 3\n# Groups:   plot [3]\n   plot species           total_DBH\n  &lt;dbl&gt; &lt;chr&gt;                 &lt;dbl&gt;\n1     1 douglas-fir              10\n2     1 pacific madrone           6\n3     1 western red-cedar        12\n4     2 douglas-fir              31\n5     3 douglas-fir               9\n6     3 western red-cedar        14\n\n\n\n\nWhat’s the problem here?\nEvery possible species-plot observation doesn’t exist!\nexample: what should total DBH of western red-cedars be on plot 2?"
+  },
+  {
+    "objectID": "slides/w10d2.html#we-have-to-complete-the-dataset",
+    "href": "slides/w10d2.html#we-have-to-complete-the-dataset",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "We have to complete() the dataset!",
+    "text": "We have to complete() the dataset!\n\ntrees %&gt;%\n  complete(plot, species) \n\n# A tibble: 11 × 3\n    plot species             dbh\n   &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;\n 1     1 douglas-fir          10\n 2     1 pacific madrone       6\n 3     1 western red-cedar    12\n 4     2 douglas-fir          13\n 5     2 douglas-fir          10\n 6     2 douglas-fir           8\n 7     2 pacific madrone      NA\n 8     2 western red-cedar    NA\n 9     3 douglas-fir           9\n10     3 pacific madrone      NA\n11     3 western red-cedar    14\n\n\n\n\nNow there is a row for every species-plot combination,\nBut by default, complete() filled the values as NA.\nWe can change that!"
+  },
+  {
+    "objectID": "slides/w10d2.html#we-have-to-complete-the-dataset-1",
+    "href": "slides/w10d2.html#we-have-to-complete-the-dataset-1",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "We have to complete() the dataset!",
+    "text": "We have to complete() the dataset!\n\ntrees %&gt;%\n  complete(plot, species,\n           fill = list(dbh = 0))\n\n# A tibble: 11 × 3\n    plot species             dbh\n   &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;\n 1     1 douglas-fir          10\n 2     1 pacific madrone       6\n 3     1 western red-cedar    12\n 4     2 douglas-fir          13\n 5     2 douglas-fir          10\n 6     2 douglas-fir           8\n 7     2 pacific madrone       0\n 8     2 western red-cedar     0\n 9     3 douglas-fir           9\n10     3 pacific madrone       0\n11     3 western red-cedar    14"
+  },
+  {
+    "objectID": "slides/w10d2.html#now-we-can-compute-totals-for-each-combination",
+    "href": "slides/w10d2.html#now-we-can-compute-totals-for-each-combination",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Now we can compute totals for each combination!",
+    "text": "Now we can compute totals for each combination!\n\ntrees %&gt;%\n  complete(plot, species,\n           fill = list(dbh = 0)) %&gt;%\n  group_by(plot, species) %&gt;%\n  summarize(total_DBH = sum(dbh))\n\n# A tibble: 9 × 3\n# Groups:   plot [3]\n   plot species           total_DBH\n  &lt;dbl&gt; &lt;chr&gt;                 &lt;dbl&gt;\n1     1 douglas-fir              10\n2     1 pacific madrone           6\n3     1 western red-cedar        12\n4     2 douglas-fir              31\n5     2 pacific madrone           0\n6     2 western red-cedar         0\n7     3 douglas-fir               9\n8     3 pacific madrone           0\n9     3 western red-cedar        14"
+  },
+  {
+    "objectID": "slides/w10d2.html#stand-and-stock-tables",
+    "href": "slides/w10d2.html#stand-and-stock-tables",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Stand and Stock tables",
+    "text": "Stand and Stock tables\nStand tables:\n\n\nSummarize a quantitative discrete variable (e.g., stem count)\nSummaries are shown grouped by one or more categorical variable (e.g., size class or species).\n\n\nStock tables:\n\n\nSummarizes a quantitative continuous variable (e.g., volume, weight, or basal area)\nSummaries are shown grouped by one or more categorical variable (e.g., size class or species)."
+  },
+  {
+    "objectID": "slides/w10d2.html#common-standstock-tables-in-forestry",
+    "href": "slides/w10d2.html#common-standstock-tables-in-forestry",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Common Stand/Stock tables in forestry",
+    "text": "Common Stand/Stock tables in forestry\nIn forestry applications, stand and stock tables are most often grouped by DBH class and species."
+  },
+  {
+    "objectID": "slides/w10d2.html#data-used-to-create-stand-and-stock-tables-in-forestry",
+    "href": "slides/w10d2.html#data-used-to-create-stand-and-stock-tables-in-forestry",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Data used to create stand and stock tables in forestry",
+    "text": "Data used to create stand and stock tables in forestry\nIn forestry applications, stand and stock tables are most often grouped by DBH class and species."
+  },
+  {
+    "objectID": "slides/w10d2.html#stand-table-derived-from-the-data",
+    "href": "slides/w10d2.html#stand-table-derived-from-the-data",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Stand table derived from the data",
+    "text": "Stand table derived from the data\nIn forestry applications, stand and stock tables are most often grouped by DBH class and species.\n\n\n\nIs this table tidy?"
+  },
+  {
+    "objectID": "slides/w10d2.html#stock-table-derived-from-the-data",
+    "href": "slides/w10d2.html#stock-table-derived-from-the-data",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Stock table derived from the data",
+    "text": "Stock table derived from the data\nIn forestry applications, stand and stock tables are most often grouped by DBH class and species.\n\n\n\nIs this table tidy?"
+  },
+  {
+    "objectID": "slides/w10d2.html#building-these-stand-and-stock-tables-in-r",
+    "href": "slides/w10d2.html#building-these-stand-and-stock-tables-in-r",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Building these stand and stock tables in R",
+    "text": "Building these stand and stock tables in R\nWe load the data:\n\ntrees &lt;- tibble(\n  species = c(\"Abies balsamea\", \"Betula papyrifera\", \n              \"Betula papyrifera\", \"Pinus strobus\",\n              \"Pinus strobus\", \"Pinus strobus\"),\n  DBH_in = c(11.3, 14.8, 15.4, 9.8, 10.7, 13.1),\n  trees_ac = 8,\n  vol_cu_ft_ac = c(142.8, 269.6, 293.7, 116.3, 143.6, 231.9)\n)\ntrees\n\n# A tibble: 6 × 4\n  species           DBH_in trees_ac vol_cu_ft_ac\n  &lt;chr&gt;              &lt;dbl&gt;    &lt;dbl&gt;        &lt;dbl&gt;\n1 Abies balsamea      11.3        8         143.\n2 Betula papyrifera   14.8        8         270.\n3 Betula papyrifera   15.4        8         294.\n4 Pinus strobus        9.8        8         116.\n5 Pinus strobus       10.7        8         144.\n6 Pinus strobus       13.1        8         232."
+  },
+  {
+    "objectID": "slides/w10d2.html#adding-dbh-class",
+    "href": "slides/w10d2.html#adding-dbh-class",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Adding DBH class",
+    "text": "Adding DBH class\n\nests &lt;- trees %&gt;%\n  mutate(DBH_class = cut_width(DBH_in, width = 4))\nests\n\n# A tibble: 6 × 5\n  species           DBH_in trees_ac vol_cu_ft_ac DBH_class\n  &lt;chr&gt;              &lt;dbl&gt;    &lt;dbl&gt;        &lt;dbl&gt; &lt;fct&gt;    \n1 Abies balsamea      11.3        8         143. (10,14]  \n2 Betula papyrifera   14.8        8         270. (14,18]  \n3 Betula papyrifera   15.4        8         294. (14,18]  \n4 Pinus strobus        9.8        8         116. [6,10]   \n5 Pinus strobus       10.7        8         144. (10,14]  \n6 Pinus strobus       13.1        8         232. (10,14]"
+  },
+  {
+    "objectID": "slides/w10d2.html#complete-the-data",
+    "href": "slides/w10d2.html#complete-the-data",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "complete() the data",
+    "text": "complete() the data\n\nests &lt;- ests %&gt;%\n  complete(species, DBH_class, \n           fill = list(trees_ac = 0, vol_cu_ft_ac = 0))\nests\n\n# A tibble: 11 × 5\n   species           DBH_class DBH_in trees_ac vol_cu_ft_ac\n   &lt;chr&gt;             &lt;fct&gt;      &lt;dbl&gt;    &lt;dbl&gt;        &lt;dbl&gt;\n 1 Abies balsamea    [6,10]      NA          0           0 \n 2 Abies balsamea    (10,14]     11.3        8         143.\n 3 Abies balsamea    (14,18]     NA          0           0 \n 4 Betula papyrifera [6,10]      NA          0           0 \n 5 Betula papyrifera (10,14]     NA          0           0 \n 6 Betula papyrifera (14,18]     14.8        8         270.\n 7 Betula papyrifera (14,18]     15.4        8         294.\n 8 Pinus strobus     [6,10]       9.8        8         116.\n 9 Pinus strobus     (10,14]     10.7        8         144.\n10 Pinus strobus     (10,14]     13.1        8         232.\n11 Pinus strobus     (14,18]     NA          0           0 \n\n\n\n\nWhat happened here?\nNow each species/DBH_class combination has a row associated with it"
+  },
+  {
+    "objectID": "slides/w10d2.html#compute-our-variables-of-interest",
+    "href": "slides/w10d2.html#compute-our-variables-of-interest",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Compute our variables of interest",
+    "text": "Compute our variables of interest\n\nests &lt;- ests %&gt;% \n  group_by(species, DBH_class) %&gt;%\n  summarize(sum_trees_ac = sum(trees_ac),\n            sum_vol_cu_ft_ac = sum(vol_cu_ft_ac))\nests\n\n# A tibble: 9 × 4\n# Groups:   species [3]\n  species           DBH_class sum_trees_ac sum_vol_cu_ft_ac\n  &lt;chr&gt;             &lt;fct&gt;            &lt;dbl&gt;            &lt;dbl&gt;\n1 Abies balsamea    [6,10]               0               0 \n2 Abies balsamea    (10,14]              8             143.\n3 Abies balsamea    (14,18]              0               0 \n4 Betula papyrifera [6,10]               0               0 \n5 Betula papyrifera (10,14]              0               0 \n6 Betula papyrifera (14,18]             16             563.\n7 Pinus strobus     [6,10]               8             116.\n8 Pinus strobus     (10,14]             16             376.\n9 Pinus strobus     (14,18]              0               0"
+  },
+  {
+    "objectID": "slides/w10d2.html#make-the-stand-table",
+    "href": "slides/w10d2.html#make-the-stand-table",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Make the stand table",
+    "text": "Make the stand table\n\nstand &lt;- ests %&gt;% \n  pivot_wider(id_cols = species, \n              names_from = DBH_class,\n              values_from = sum_trees_ac)\n\nstand\n\n# A tibble: 3 × 4\n# Groups:   species [3]\n  species           `[6,10]` `(10,14]` `(14,18]`\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 Abies balsamea           0         8         0\n2 Betula papyrifera        0         0        16\n3 Pinus strobus            8        16         0"
+  },
+  {
+    "objectID": "slides/w10d2.html#make-the-stock-table",
+    "href": "slides/w10d2.html#make-the-stock-table",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Make the stock table",
+    "text": "Make the stock table\n\nstock &lt;- ests %&gt;% \n  pivot_wider(id_cols = species, \n              names_from = DBH_class,\n              values_from = sum_vol_cu_ft_ac)\n\nstock\n\n# A tibble: 3 × 4\n# Groups:   species [3]\n  species           `[6,10]` `(10,14]` `(14,18]`\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 Abies balsamea          0       143.        0 \n2 Betula papyrifera       0         0       563.\n3 Pinus strobus         116.      376.        0"
+  },
+  {
+    "objectID": "slides/w10d2.html#all-at-once-stand-table",
+    "href": "slides/w10d2.html#all-at-once-stand-table",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "All at once: stand table",
+    "text": "All at once: stand table\n\ntrees %&gt;%\n  mutate(DBH_class = cut_width(DBH_in, width = 4)) %&gt;%\n  complete(species, DBH_class, \n           fill = list(trees_ac = 0, vol_cu_ft_ac = 0)) %&gt;%\n  group_by(species, DBH_class) %&gt;%\n  summarize(sum_trees_ac = sum(trees_ac),\n            sum_vol_cu_ft_ac = sum(vol_cu_ft_ac)) %&gt;%\n  pivot_wider(id_cols = species, \n              names_from = DBH_class,\n              values_from = sum_trees_ac)\n\n# A tibble: 3 × 4\n# Groups:   species [3]\n  species           `[6,10]` `(10,14]` `(14,18]`\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 Abies balsamea           0         8         0\n2 Betula papyrifera        0         0        16\n3 Pinus strobus            8        16         0"
+  },
+  {
+    "objectID": "slides/w10d2.html#all-at-once-stock-table",
+    "href": "slides/w10d2.html#all-at-once-stock-table",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "All at once: stock table",
+    "text": "All at once: stock table\n\ntrees %&gt;%\n  mutate(DBH_class = cut_width(DBH_in, width = 4)) %&gt;%\n  complete(species, DBH_class, \n           fill = list(trees_ac = 0, vol_cu_ft_ac = 0)) %&gt;%\n  group_by(species, DBH_class) %&gt;%\n  summarize(sum_trees_ac = sum(trees_ac),\n            sum_vol_cu_ft_ac = sum(vol_cu_ft_ac)) %&gt;%\n  pivot_wider(id_cols = species, \n              names_from = DBH_class,\n              values_from = sum_vol_cu_ft_ac)\n\n# A tibble: 3 × 4\n# Groups:   species [3]\n  species           `[6,10]` `(10,14]` `(14,18]`\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 Abies balsamea          0       143.        0 \n2 Betula papyrifera       0         0       563.\n3 Pinus strobus         116.      376.        0"
+  },
+  {
+    "objectID": "slides/w10d2.html#next-time",
+    "href": "slides/w10d2.html#next-time",
+    "title": "Reshaping data with tidyr, part 2",
+    "section": "Next time",
+    "text": "Next time\n\nThe grammar of graphics"
+  },
+  {
+    "objectID": "slides/w11d2.html#annoucements",
+    "href": "slides/w11d2.html#annoucements",
+    "title": "More graphics with ggplot2",
+    "section": "Annoucements",
+    "text": "Annoucements\n\nUPDATE: Midterm II is moved to Thursday, November 21st, during lab time.\nMaterial on the midterm will include all material through Week 12.\nThe midterm will be of similar form to the last midterm.\nClosed materials, but you are allowed one 8.5” x 11” sheet of paper, double-sided, hand-written note sheet."
+  },
+  {
+    "objectID": "slides/w11d2.html#agenda",
+    "href": "slides/w11d2.html#agenda",
+    "title": "More graphics with ggplot2",
+    "section": "Agenda",
+    "text": "Agenda\n\nFinal project\nReview components of a graphic (i.e. the grammar of graphics)\nComposing a graphic: bar plots, histograms, titles, labels, aesthetics vs. set values"
+  },
+  {
+    "objectID": "slides/w11d2.html#what-is-a-graphic-made-up-of",
+    "href": "slides/w11d2.html#what-is-a-graphic-made-up-of",
+    "title": "More graphics with ggplot2",
+    "section": "What is a graphic made up of?",
+    "text": "What is a graphic made up of?\n\n\nData, and\nVisual components"
+  },
+  {
+    "objectID": "slides/w11d2.html#visual-components",
+    "href": "slides/w11d2.html#visual-components",
+    "title": "More graphics with ggplot2",
+    "section": "Visual components",
+    "text": "Visual components\nIn order to create a graphic or “plot”, one must choose visualize the variables of the data to the attributes of the plot. Further, one must choose the cosmetic properties of the plot.\nLayers can be specified as a variety of components:\n\n\ngeom: the geometric shape that the data are mapped to,\n\nExamples: point, line, bar, text, path, …\n\naesthetics: The visual properties of the geom.\n\nExamples: x-position, y-position, color, fill, shape\n\ncoord: coordinate system,\n\nExamples: Cartesian, polar, lon/lat projection\n\nscale: how data are mapped to certain aesthetics.\n\nExample: which colors or shapes to use?\n\n\nfacet: a technique to split plots into multiple panels,\nthemes: the cosmetic attributes of the plot."
+  },
+  {
+    "objectID": "slides/w11d2.html#again-consider-the-fef-dataset",
+    "href": "slides/w11d2.html#again-consider-the-fef-dataset",
+    "title": "More graphics with ggplot2",
+    "section": "Again, consider the fef dataset",
+    "text": "Again, consider the fef dataset\n\nlibrary(tidyverse)\nfef &lt;- read_csv(\"../labs/datasets/FEF_trees.csv\")\nfef\n\n# A tibble: 88 × 18\n   watershed  year  plot species     dbh_in height_ft stem_green_kg top_green_kg\n       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;        &lt;dbl&gt;\n 1         3  1991    29 Acer rubrum    6        48            92.2         13.1\n 2         3  1991    33 Acer rubrum    6.9      48           102.          23.1\n 3         3  1991    35 Acer rubrum    6.4      48           124.           8.7\n 4         3  1991    39 Acer rubrum    6.5      49            91.7         39  \n 5         3  1991    44 Acer rubrum    7.2      51           186.           8.9\n 6         3  1992    26 Acer rubrum    3.1      40            20.8          0.9\n 7         3  1992    26 Acer rubrum    2        30.5           5.6          0.9\n 8         3  1992    26 Acer rubrum    4.1      50            54.1          8.6\n 9         3  1992    48 Acer rubrum    2.4      28            10.2          0.7\n10         3  1992    48 Acer rubrum    2.7      40.4          20.2          5  \n# ℹ 78 more rows\n# ℹ 10 more variables: smbranch_green_kg &lt;dbl&gt;, lgbranch_green_kg &lt;dbl&gt;,\n#   allwoody_green_kg &lt;dbl&gt;, leaves_green_kg &lt;dbl&gt;, stem_dry_kg &lt;dbl&gt;,\n#   top_dry_kg &lt;dbl&gt;, smbranch_dry_kg &lt;dbl&gt;, lgbranch_dry_kg &lt;dbl&gt;,\n#   allwoody_dry_kg &lt;dbl&gt;, leaves_dry_kg &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/w11d2.html#geometry-bar",
+    "href": "slides/w11d2.html#geometry-bar",
+    "title": "More graphics with ggplot2",
+    "section": "Geometry: bar",
+    "text": "Geometry: bar\n\nggplot(data = fef) +\n  geom_bar(mapping = aes(x = species))"
+  },
+  {
+    "objectID": "slides/w11d2.html#geometry-bar-1",
+    "href": "slides/w11d2.html#geometry-bar-1",
+    "title": "More graphics with ggplot2",
+    "section": "Geometry: bar",
+    "text": "Geometry: bar\n\nggplot(data = fef) +\n  geom_bar(mapping = aes(x = species))"
+  },
+  {
+    "objectID": "slides/w11d2.html#geometry-histogram",
+    "href": "slides/w11d2.html#geometry-histogram",
+    "title": "More graphics with ggplot2",
+    "section": "Geometry: histogram",
+    "text": "Geometry: histogram\n\nggplot(data = fef) +\n  geom_histogram(mapping = aes(x = dbh_in))"
+  },
+  {
+    "objectID": "slides/w11d2.html#geometry-histogram-1",
+    "href": "slides/w11d2.html#geometry-histogram-1",
+    "title": "More graphics with ggplot2",
+    "section": "Geometry: histogram",
+    "text": "Geometry: histogram\n\nggplot(data = fef) +\n  geom_histogram(mapping = aes(x = dbh_in),\n                 bins = 10)"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot",
+    "href": "slides/w11d2.html#lets-create-a-plot",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot\nFirst, our canvas:\n\nggplot()"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-output",
+    "href": "slides/w11d2.html#lets-create-a-plot-output",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-1",
+    "href": "slides/w11d2.html#lets-create-a-plot-1",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot\nThen, we specify the data:\n\nggplot(data = fef)"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-1-output",
+    "href": "slides/w11d2.html#lets-create-a-plot-1-output",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-2",
+    "href": "slides/w11d2.html#lets-create-a-plot-2",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot\nThen we specify some aesthetic mappings\n\nggplot(data = fef, mapping = aes(x = dbh_in, y = height_ft))"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-2-output",
+    "href": "slides/w11d2.html#lets-create-a-plot-2-output",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-3",
+    "href": "slides/w11d2.html#lets-create-a-plot-3",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot\nWe’ve now specified that we will map these aesthetics to “points”.\n\nggplot(data = fef, mapping = aes(x = dbh_in, y = height_ft)) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-3-output",
+    "href": "slides/w11d2.html#lets-create-a-plot-3-output",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-4",
+    "href": "slides/w11d2.html#lets-create-a-plot-4",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot\nYou can also specify the aesthetic mapping in the geometry layer:\n\nggplot(data = fef) +\n  geom_point(mapping = aes(x = dbh_in, y = height_ft))"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-4-output",
+    "href": "slides/w11d2.html#lets-create-a-plot-4-output",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-5",
+    "href": "slides/w11d2.html#lets-create-a-plot-5",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot\nWe can look at a third variable by adding another aesthetic mapping:\n\nggplot(data = fef) +\n  geom_point(mapping = aes(x = dbh_in, \n                           y = height_ft,\n                           color = species))"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-5-output",
+    "href": "slides/w11d2.html#lets-create-a-plot-5-output",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-6",
+    "href": "slides/w11d2.html#lets-create-a-plot-6",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot\nColor scales are different for continuous vs discrete data:\n\nggplot(data = fef) +\n  geom_point(mapping = aes(x = dbh_in, \n                           y = height_ft,\n                           color = stem_dry_kg))"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-6-output",
+    "href": "slides/w11d2.html#lets-create-a-plot-6-output",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-7",
+    "href": "slides/w11d2.html#lets-create-a-plot-7",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot\nRather than mapping stem_dry_kg to color, we could map it to size:\n\nggplot(data = fef) +\n  geom_point(mapping = aes(x = dbh_in, \n                           y = height_ft,\n                           size = stem_dry_kg))"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-7-output",
+    "href": "slides/w11d2.html#lets-create-a-plot-7-output",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-8",
+    "href": "slides/w11d2.html#lets-create-a-plot-8",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot\nThis is different than setting size outside of the aesthetics:\n\nggplot(data = fef) +\n  geom_point(mapping = aes(x = dbh_in, \n                           y = height_ft),\n             size = 5)"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-8-output",
+    "href": "slides/w11d2.html#lets-create-a-plot-8-output",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-9",
+    "href": "slides/w11d2.html#lets-create-a-plot-9",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot\nLet’s make this plot beautiful:\n\nggplot(data = fef) +\n  geom_point(mapping = aes(x = dbh_in, \n                           y = height_ft,\n                           size = stem_dry_kg))"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-9-output",
+    "href": "slides/w11d2.html#lets-create-a-plot-9-output",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-10",
+    "href": "slides/w11d2.html#lets-create-a-plot-10",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot\nLet’s make this plot beautiful:\n\nggplot(data = fef) +\n  geom_point(mapping = aes(x = dbh_in, \n                           y = height_ft,\n                           color = stem_dry_kg))"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-10-output",
+    "href": "slides/w11d2.html#lets-create-a-plot-10-output",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-11",
+    "href": "slides/w11d2.html#lets-create-a-plot-11",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot\nLet’s make this plot beautiful:\n\nggplot(data = fef) +\n  geom_point(mapping = aes(x = dbh_in, \n                           y = height_ft,\n                           color = stem_dry_kg)) + \n  scale_colour_distiller(type = \"seq\", palette = 3)"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-11-output",
+    "href": "slides/w11d2.html#lets-create-a-plot-11-output",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-12",
+    "href": "slides/w11d2.html#lets-create-a-plot-12",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot\nLet’s make this plot beautiful:\n\nggplot(data = fef) +\n  geom_point(mapping = aes(x = dbh_in, \n                           y = height_ft,\n                           color = stem_dry_kg),\n             size = 2.5) +\n  scale_colour_distiller(type = \"seq\", palette = 3) + \n  labs(x = \"DBH (inches)\",\n       y = \"Height (feet)\",\n       fill = \"Dry Stem \\nWeight (kg)\",\n       title = \"DBH, Height, and Stem weight \\nin the Fernow Experimental Forest\")"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-12-output",
+    "href": "slides/w11d2.html#lets-create-a-plot-12-output",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-13",
+    "href": "slides/w11d2.html#lets-create-a-plot-13",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot\nLet’s make this plot beautiful:\n\nggplot(data = fef) +\n  geom_point(mapping = aes(x = dbh_in, \n                           y = height_ft,\n                           color = stem_dry_kg),\n             size = 2.5,\n             shape = 21) +\n  scale_colour_distiller(type = \"seq\", palette = 3) + \n  labs(x = \"DBH (inches)\",\n       y = \"Height (feet)\",\n       fill = \"Dry Stem \\nWeight (kg)\",\n       title = \"DBH, Height, and Stem weight \\nin the Fernow Experimental Forest\")"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-13-output",
+    "href": "slides/w11d2.html#lets-create-a-plot-13-output",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-14",
+    "href": "slides/w11d2.html#lets-create-a-plot-14",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot\nLet’s make this plot beautiful:\n\nggplot(data = fef) +\n  geom_point(mapping = aes(x = dbh_in, \n                           y = height_ft,\n                           fill = stem_dry_kg),\n             size = 2.5,\n             shape = 21) +\n  scale_fill_distiller(type = \"seq\", palette = 3) + \n  labs(x = \"DBH (inches)\",\n       y = \"Height (feet)\",\n       fill = \"Dry Stem \\nWeight (kg)\",\n       title = \"DBH, Height, and Stem weight \\nin the Fernow Experimental Forest\")"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-14-output",
+    "href": "slides/w11d2.html#lets-create-a-plot-14-output",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-15",
+    "href": "slides/w11d2.html#lets-create-a-plot-15",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot\nLet’s make this plot beautiful:\n\nggplot(data = fef) +\n  geom_point(mapping = aes(x = dbh_in, \n                           y = height_ft,\n                           fill = stem_dry_kg),\n             size = 2.5,\n             shape = 21) +\n  scale_fill_distiller(type = \"seq\", palette = 3) + \n  labs(x = \"DBH (inches)\",\n       y = \"Height (feet)\",\n       fill = \"Dry Stem \\nWeight (kg)\",\n       title = \"DBH, Height, and Stem weight \\nin the Fernow Experimental Forest\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-15-output",
+    "href": "slides/w11d2.html#lets-create-a-plot-15-output",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-16",
+    "href": "slides/w11d2.html#lets-create-a-plot-16",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot\nLet’s make this plot beautiful:\n\nggplot(data = fef) +\n  geom_point(mapping = aes(x = dbh_in, \n                           y = height_ft,\n                           fill = stem_dry_kg),\n             size = 2.5,\n             shape = 21) +\n  scale_fill_distiller(type = \"seq\", palette = 3) + \n  labs(x = \"DBH (inches)\",\n       y = \"Height (feet)\",\n       fill = \"Dry Stem \\nWeight (kg)\",\n       title = \"DBH, Height, and Stem weight \\nin the Fernow Experimental Forest\") +\n  theme_bw() +\n  theme(plot.title = element_text(hjust = 0.5))"
+  },
+  {
+    "objectID": "slides/w11d2.html#lets-create-a-plot-16-output",
+    "href": "slides/w11d2.html#lets-create-a-plot-16-output",
+    "title": "More graphics with ggplot2",
+    "section": "Let’s create a plot",
+    "text": "Let’s create a plot"
+  },
+  {
+    "objectID": "slides/w11d2.html#next-time",
+    "href": "slides/w11d2.html#next-time",
+    "title": "More graphics with ggplot2",
+    "section": "Next time",
+    "text": "Next time\n\nMore plotting with ggplot2!\n\nmore details on histograms and bar plots\ncareful considerations when making plots\nspatial plotting"
   },
   {
     "objectID": "labs/lab_07_web.html",

@@ -1,0 +1,411 @@
+---
+title: "More graphics with `ggplot2`"
+editor: 
+  mode: source
+webr:
+  show-startup-message: false
+filters:
+  - webr
+engine: knitr
+execute:
+  echo: true
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+revealjs-plugins:
+  - revealjs-text-resizer
+---
+
+## Annoucements
+
+
+-   **UPDATE:** Midterm II is moved to Thursday, November 21st, during lab time.
+-   Material on the midterm will include all material through Week 12. 
+-   The midterm will be of similar form to the last midterm.
+-   Closed materials, but you are allowed one 8.5" x 11" sheet of paper, double-sided, hand-written note sheet. 
+
+## Agenda
+
+-   Final project
+-   Review components of a graphic (i.e. the grammar of graphics)
+-   Composing a graphic: bar plots, histograms, titles, labels, aesthetics vs. set values
+
+
+# [Final project](../final_project.qmd) {background-color="#00817c"}
+
+
+
+
+# Components of a graphic (review) {background-color="#00817c"}
+
+## What is a graphic made up of? 
+
+::: incremental
+
+-   Data, and
+-   Visual components
+
+:::
+
+
+## Visual components
+
+In order to create a graphic or "plot", one must choose visualize the variables of the data to the attributes of the plot. Further, one must choose the cosmetic properties of the plot. 
+
+Layers can be specified as a variety of components:
+
+::: incremental
+
+-   **geom**: the geometric shape that the data are mapped to,
+    - Examples: point, line, bar, text, path, ...
+-   **aes**thetics: The visual properties of the **geom**. 
+    - Examples: x-position, y-position, color, fill, shape
+-   **coord**: coordinate system,
+    - Examples: Cartesian, polar, lon/lat projection
+-   **scale**: how data are mapped to certain aesthetics. 
+    - Example: which colors or shapes to use?  
+-   **facet**: a technique to split plots into multiple panels,
+-   **themes**: the cosmetic attributes of the plot.
+
+:::
+
+# Composing a graphic {background-color="#00817c"}
+
+
+## Again, consider the `fef` dataset
+
+```{r}
+library(tidyverse)
+fef <- read_csv("../labs/datasets/FEF_trees.csv")
+fef
+```
+
+## Geometry: bar
+
+```{r}
+ggplot(data = fef) +
+  geom_bar(mapping = aes(x = species))
+```
+
+## Geometry: bar
+
+```{r}
+ggplot(data = fef) +
+  geom_bar(mapping = aes(x = species))
+```
+
+## Geometry: histogram
+
+```{r}
+ggplot(data = fef) +
+  geom_histogram(mapping = aes(x = dbh_in))
+```
+
+## Geometry: histogram
+
+```{r}
+ggplot(data = fef) +
+  geom_histogram(mapping = aes(x = dbh_in),
+                 bins = 10)
+```
+
+## Let's create a plot
+
+First, our canvas: 
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot()
+```
+
+## Let's create a plot
+
+Then, we specify the data:
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(data = fef)
+```
+
+
+## Let's create a plot
+
+Then we specify some aesthetic mappings
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(data = fef, mapping = aes(x = dbh_in, y = height_ft))
+```
+
+## Let's create a plot
+
+We've now specified that we will map these aesthetics to "points".
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(data = fef, mapping = aes(x = dbh_in, y = height_ft)) +
+  geom_point()
+```
+
+## Let's create a plot
+
+You can also specify the aesthetic mapping in the geometry layer: 
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(data = fef) +
+  geom_point(mapping = aes(x = dbh_in, y = height_ft))
+```
+
+## Let's create a plot
+
+We can look at a third variable by adding another aesthetic mapping:
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(data = fef) +
+  geom_point(mapping = aes(x = dbh_in, 
+                           y = height_ft,
+                           color = species))
+```
+
+## Let's create a plot
+
+Color scales are different for continuous vs discrete data:
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(data = fef) +
+  geom_point(mapping = aes(x = dbh_in, 
+                           y = height_ft,
+                           color = stem_dry_kg))
+```
+
+## Let's create a plot
+
+Rather than mapping `stem_dry_kg` to color, we could map it to size:
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(data = fef) +
+  geom_point(mapping = aes(x = dbh_in, 
+                           y = height_ft,
+                           size = stem_dry_kg))
+```
+
+## Let's create a plot
+
+This is different than setting size outside of the aesthetics:
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(data = fef) +
+  geom_point(mapping = aes(x = dbh_in, 
+                           y = height_ft),
+             size = 5)
+```
+
+## Let's create a plot
+
+Let's make this plot beautiful:
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(data = fef) +
+  geom_point(mapping = aes(x = dbh_in, 
+                           y = height_ft,
+                           size = stem_dry_kg))
+```
+
+## Let's create a plot
+
+Let's make this plot beautiful:
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(data = fef) +
+  geom_point(mapping = aes(x = dbh_in, 
+                           y = height_ft,
+                           color = stem_dry_kg))
+```
+
+## Let's create a plot
+
+Let's make this plot beautiful:
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(data = fef) +
+  geom_point(mapping = aes(x = dbh_in, 
+                           y = height_ft,
+                           color = stem_dry_kg)) + 
+  scale_colour_distiller(type = "seq", palette = 3)
+```
+
+## Let's create a plot
+
+Let's make this plot beautiful:
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(data = fef) +
+  geom_point(mapping = aes(x = dbh_in, 
+                           y = height_ft,
+                           color = stem_dry_kg),
+             size = 2.5) +
+  scale_colour_distiller(type = "seq", palette = 3) + 
+  labs(x = "DBH (inches)",
+       y = "Height (feet)",
+       fill = "Dry Stem \nWeight (kg)",
+       title = "DBH, Height, and Stem weight \nin the Fernow Experimental Forest")
+```
+
+## Let's create a plot
+
+Let's make this plot beautiful:
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(data = fef) +
+  geom_point(mapping = aes(x = dbh_in, 
+                           y = height_ft,
+                           color = stem_dry_kg),
+             size = 2.5,
+             shape = 21) +
+  scale_colour_distiller(type = "seq", palette = 3) + 
+  labs(x = "DBH (inches)",
+       y = "Height (feet)",
+       fill = "Dry Stem \nWeight (kg)",
+       title = "DBH, Height, and Stem weight \nin the Fernow Experimental Forest")
+```
+
+## Let's create a plot
+
+Let's make this plot beautiful:
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(data = fef) +
+  geom_point(mapping = aes(x = dbh_in, 
+                           y = height_ft,
+                           fill = stem_dry_kg),
+             size = 2.5,
+             shape = 21) +
+  scale_fill_distiller(type = "seq", palette = 3) + 
+  labs(x = "DBH (inches)",
+       y = "Height (feet)",
+       fill = "Dry Stem \nWeight (kg)",
+       title = "DBH, Height, and Stem weight \nin the Fernow Experimental Forest")
+```
+
+## Let's create a plot
+
+Let's make this plot beautiful:
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(data = fef) +
+  geom_point(mapping = aes(x = dbh_in, 
+                           y = height_ft,
+                           fill = stem_dry_kg),
+             size = 2.5,
+             shape = 21) +
+  scale_fill_distiller(type = "seq", palette = 3) + 
+  labs(x = "DBH (inches)",
+       y = "Height (feet)",
+       fill = "Dry Stem \nWeight (kg)",
+       title = "DBH, Height, and Stem weight \nin the Fernow Experimental Forest") +
+  theme_bw()
+```
+
+## Let's create a plot
+
+Let's make this plot beautiful:
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(data = fef) +
+  geom_point(mapping = aes(x = dbh_in, 
+                           y = height_ft,
+                           fill = stem_dry_kg),
+             size = 2.5,
+             shape = 21) +
+  scale_fill_distiller(type = "seq", palette = 3) + 
+  labs(x = "DBH (inches)",
+       y = "Height (feet)",
+       fill = "Dry Stem \nWeight (kg)",
+       title = "DBH, Height, and Stem weight \nin the Fernow Experimental Forest") +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+
+## Next time
+
+-   More plotting with `ggplot2`! 
+    - more details on histograms and bar plots
+    - careful considerations when making plots
+    - spatial plotting
+
+
+
+
+
+
+
+
+
+
+
+ 
