@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Assignments – FOR 128</title>
+<title>Final Project – FOR 128</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -177,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="./assignments.html" aria-current="page"> 
+    <a class="nav-link" href="./assignments.html"> 
 <span class="menu-text">Assignments</span></a>
   </li>  
   <li class="nav-item">
@@ -204,8 +204,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#labs" id="toc-labs" class="nav-link active" data-scroll-target="#labs">Labs</a></li>
-  <li><a href="#lecture-tickets" id="toc-lecture-tickets" class="nav-link" data-scroll-target="#lecture-tickets">Lecture Tickets</a></li>
+  <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a></li>
+  <li><a href="#components" id="toc-components" class="nav-link" data-scroll-target="#components">Components</a>
+  <ul class="collapse">
+  <li><a href="#the-group-member-submission" id="toc-the-group-member-submission" class="nav-link" data-scroll-target="#the-group-member-submission">The group member submission</a></li>
+  <li><a href="#the-proposal" id="toc-the-proposal" class="nav-link" data-scroll-target="#the-proposal">The proposal</a></li>
+  <li><a href="#the-blog-post" id="toc-the-blog-post" class="nav-link" data-scroll-target="#the-blog-post">The blog post</a></li>
+  <li><a href="#the-presentation" id="toc-the-presentation" class="nav-link" data-scroll-target="#the-presentation">The presentation</a></li>
+  </ul></li>
+  <li><a href="#evaluation" id="toc-evaluation" class="nav-link" data-scroll-target="#evaluation">Evaluation</a></li>
   </ul>
 </nav>
     </div>
@@ -214,7 +221,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Assignments</h1>
+<h1 class="title">Final Project</h1>
 <p class="subtitle lead">FOR 128: Practical Computing and Data Science Tools, Fall 2024</p>
 </div>
 
@@ -232,225 +239,33 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="labs" class="level2">
-<h2 class="anchored" data-anchor-id="labs">Labs</h2>
-<p>Labs are turned in on <a href="https://d2l.msu.edu">D2L</a>.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Assignment</th>
-<th>Available</th>
-<th>Due</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="labs/lab_01.qmd">Lab 1</a></td>
-<td>Thursday 8/27 (at lab time)</td>
-<td>Wednesday 9/4 (at 5pm)</td>
-</tr>
-<tr class="even">
-<td><a href="labs/lab_02.qmd">Lab 2</a></td>
-<td>Thursday 9/5 (at lab time)</td>
-<td>Wednesday 9/11 (at 5pm)</td>
-</tr>
-<tr class="odd">
-<td><a href="./labs/lab_03.html">Lab 3</a></td>
-<td>Thursday 9/12 (at lab time)</td>
-<td>Wednesday 9/18 (at 5pm)</td>
-</tr>
-<tr class="even">
-<td><a href="labs/lab_04.qmd">Lab 4</a></td>
-<td>Thursday 9/19 (at lab time)</td>
-<td>Wednesday 9/25 (at 5pm)</td>
-</tr>
-<tr class="odd">
-<td><a href="labs/lab_05.qmd">Lab 5</a></td>
-<td>Thursday 9/26 (at lab time)</td>
-<td>Wednesday 10/2 (at 5pm)</td>
-</tr>
-<tr class="even">
-<td><a href="labs/lab_06.qmd">Lab 6</a></td>
-<td>Thursday 10/10 (at lab time)</td>
-<td>Wednesday 10/16 (at 5pm)</td>
-</tr>
-<tr class="odd">
-<td><a href="labs/lab_07.qmd">Lab 7</a>, <a href="./labs/lab_07_web.html">Instructions &amp; Output</a></td>
-<td>Thursday 10/17 (at lab time)</td>
-<td>Wednesday 10/23 (at 5pm)</td>
-</tr>
-<tr class="even">
-<td><a href="labs/lab_08.qmd">Lab 8</a>, <a href="./labs/lab_08_web.html">Instructions &amp; Output</a></td>
-<td>Thursday 10/24 (at lab time)</td>
-<td>Wednesday 10/30 (at 5pm)</td>
-</tr>
-<tr class="odd">
-<td><a href="labs/lab_09.qmd">Lab 9</a>, <a href="./labs/lab_09_web.html">Instructions &amp; Output</a>, <a href="labs/data_lab9.zip">Data</a></td>
-<td>Thursday 10/31 (at lab time)</td>
-<td>Wednesday 11/6 (at 5pm)</td>
-</tr>
-<tr class="even">
-<td>Lab 10</td>
-<td>Thursday 11/7 (at lab time)</td>
-<td>Wednesday 11/13 (at 5pm)</td>
-</tr>
-<tr class="odd">
-<td>Lab 11</td>
-<td>Thursday 11/21 (at lab time)</td>
-<td>Wednesday 11/27 (at 5pm)</td>
-</tr>
-</tbody>
-</table>
+<section id="description" class="level2">
+<h2 class="anchored" data-anchor-id="description">Description</h2>
+<p>In this class, we’ve learned how to analyze data in the <code>R</code> programming language. From reading in the data, to tidying and reshaping, to wrangling, and finally to plotting. The final project asks you to find a dataset that is interesting to you and analyze it with the tools we’ve learned in class. The dataset you use for the class should be environmental in some sense. It could relate to forestry, water and water quality, animals, climate, etc. We will include some datasets that could be a good choice for this project, but you are not limited to these datasets.</p>
+<p>This is a group project, with groups of 3-5 people. You can choose your groups, but if you are having trouble finding a group or your group is too small (&lt; 3 people), please let Grayson or Andy know and we will combine you or your group with others.</p>
 </section>
-<section id="lecture-tickets" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-tickets">Lecture Tickets</h2>
-<p>Lecture tickets are turned in on a piece of paper in-person at lecture.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Assignment</th>
-<th>Available</th>
-<th>Due</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="./tickets/ticket_01.html">Lecture ticket 1</a></td>
-<td>Tuesday 8/27 (by 5pm)</td>
-<td>Thursday 8/29 (in lecture)</td>
-</tr>
-<tr class="even">
-<td><a href="./tickets/ticket_02.html">Lecture ticket 2</a></td>
-<td>Thursday 8/29 (by 5pm)</td>
-<td>Tuesday 9/3 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td><a href="./tickets/ticket_03.html">Lecture ticket 3</a></td>
-<td>Tuesday 9/3 (by 5pm)</td>
-<td>Thursday 9/5 (in lecture)</td>
-</tr>
-<tr class="even">
-<td><a href="./tickets/ticket_04.html">Lecture ticket 4</a></td>
-<td>Thursday 9/5 (by 5pm)</td>
-<td>Tuesday 9/10 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td><a href="./tickets/ticket_05.html">Lecture ticket 5</a></td>
-<td>Tuesday 9/10 (by 5pm)</td>
-<td>Thursday 9/12 (in lecture)</td>
-</tr>
-<tr class="even">
-<td><a href="./tickets/ticket_06.html">Lecture ticket 6</a></td>
-<td>Thursday 9/12 (by 5pm)</td>
-<td>Tuesday 9/17 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td><a href="./tickets/ticket_07.html">Lecture ticket 7</a></td>
-<td>Tuesday 9/17 (by 5pm)</td>
-<td>Thursday 9/19 (in lecture)</td>
-</tr>
-<tr class="even">
-<td><a href="./tickets/ticket_08.html">Lecture ticket 8</a></td>
-<td>Thursday 9/19 (by 5pm)</td>
-<td>Tuesday 9/24 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td><a href="./tickets/ticket_09.html">Lecture ticket 9</a></td>
-<td>Tuesday 9/24 (by 5pm)</td>
-<td>Thursday 9/26 (in lecture)</td>
-</tr>
-<tr class="even">
-<td><a href="./tickets/ticket_10.html">Lecture ticket 10</a></td>
-<td>Thursday 9/26 (by 5pm)</td>
-<td>Tuesday 10/1 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td><a href="./tickets/ticket_11.html">Lecture ticket 11</a></td>
-<td>Tuesday 10/1 (by 5pm)</td>
-<td>Thursday 10/3 (in lecture)</td>
-</tr>
-<tr class="even">
-<td><a href="./tickets/ticket_12.html">Lecture ticket 12</a></td>
-<td>Thursday 10/3 (by 5pm)</td>
-<td>Tuesday 10/8 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td><a href="./tickets/ticket_13.html">Lecture ticket 13</a></td>
-<td>Tuesday 10/8 (by 5pm)</td>
-<td>Thursday 10/10 (in lecture)</td>
-</tr>
-<tr class="even">
-<td><a href="./tickets/ticket_14.html">Lecture ticket 14</a></td>
-<td>Thursday 10/10 (by 5pm)</td>
-<td>Tuesday 10/15 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td><a href="./tickets/ticket_15.html">Lecture ticket 15</a></td>
-<td>Tuesday 10/15 (by 5pm)</td>
-<td>Thursday 10/17 (in lecture)</td>
-</tr>
-<tr class="even">
-<td><a href="./tickets/ticket_16.html">Lecture ticket 16</a></td>
-<td>Thursday 10/17 (by 5pm)</td>
-<td>Thursday 10/24 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td><a href="./tickets/ticket_17.html">Lecture ticket 17</a></td>
-<td>Thursday 10/24 (by 5pm)</td>
-<td>Tuesday 10/29 (in lecture)</td>
-</tr>
-<tr class="even">
-<td><a href="./tickets/ticket_18.html">Lecture ticket 18</a></td>
-<td>Tuesday 10/29 (by 5pm)</td>
-<td>Thursday 10/31 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td><a href="./tickets/ticket_19.html">Lecture ticket 19</a></td>
-<td>Thursday 10/31 (by 5pm)</td>
-<td>Tuesday 11/5 (in lecture)</td>
-</tr>
-<tr class="even">
-<td><a href="./tickets/ticket_20.html">Lecture ticket 20</a></td>
-<td>Tuesday 11/5 (by 5pm)</td>
-<td>Thursday 11/7 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td>Lecture ticket 21</td>
-<td>Thursday 11/7 (by 5pm)</td>
-<td>Tuesday 11/12 (in lecture)</td>
-</tr>
-<tr class="even">
-<td>Lecture ticket 22</td>
-<td>Tuesday 11/12 (by 5pm)</td>
-<td>Thursday 11/14 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td>Lecture ticket 23</td>
-<td>Thursday 11/14 (by 5pm)</td>
-<td>Tuesday 11/19 (in lecture)</td>
-</tr>
-<tr class="even">
-<td>Lecture ticket 24</td>
-<td>Tuesday 11/19 (by 5pm)</td>
-<td>Tuesday 11/26 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td>Lecture ticket 25</td>
-<td>Tuesday 11/26 (by 5pm)</td>
-<td>Thursday 11/28 (in lecture)</td>
-</tr>
-<tr class="even">
-<td>Lecture ticket 26</td>
-<td>Thursday 11/28 (by 5pm)</td>
-<td>Tuesday 12/3 (in lecture)</td>
-</tr>
-<tr class="odd">
-<td>Lecture ticket 27</td>
-<td>Tuesday 12/3 (by 5pm)</td>
-<td>Thursday 12/5 (in lecture)</td>
-</tr>
-</tbody>
-</table>
+<section id="components" class="level2">
+<h2 class="anchored" data-anchor-id="components">Components</h2>
+<p>The final project will be composed of four components: a group member submission, a proposal, a blog post, and a presentation. For each component, your group will submit one document via D2L.</p>
+<section id="the-group-member-submission" class="level3">
+<h3 class="anchored" data-anchor-id="the-group-member-submission">The group member submission</h3>
+<p><strong>Due date:</strong> Tuesday, November 12th, 5pm.</p>
+</section>
+<section id="the-proposal" class="level3">
+<h3 class="anchored" data-anchor-id="the-proposal">The proposal</h3>
+<p><strong>Due date:</strong> Tuesday, November 19th, 5pm.</p>
+</section>
+<section id="the-blog-post" class="level3">
+<h3 class="anchored" data-anchor-id="the-blog-post">The blog post</h3>
+<p><strong>Due date:</strong> Tuesday, December 10th, 5pm.</p>
+</section>
+<section id="the-presentation" class="level3">
+<h3 class="anchored" data-anchor-id="the-presentation">The presentation</h3>
+<p><strong>Due date:</strong> Thursday, December 12th, in class.</p>
+</section>
+</section>
+<section id="evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation">Evaluation</h2>
 
 
 </section>
