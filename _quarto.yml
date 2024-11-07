@@ -11,6 +11,7 @@ project:
     - "!labs/lab_07.qmd"
     - "!labs/lab_08.qmd"
     - "!labs/lab_09.qmd"
+    - "!labs/lab_10.qmd"
     - "!quizzes/"
     - "!labs/datasets/"
     - "!/in_class/*.qmd"
