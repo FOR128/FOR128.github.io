@@ -473,21 +473,21 @@
     "href": "slides/w2d2.html#reading-data-4",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/home/grayson/courses/FOR128/FOR128.github.io/slides\""
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\""
   },
   {
     "objectID": "slides/w2d2.html#reading-data-5",
     "href": "slides/w2d2.html#reading-data-5",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/home/grayson/courses/FOR128/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"data_lab9\"            \"data_lab9.zip\"        \"datasets\"            \n [4] \"FEF_trees.csv\"        \"lab_01_solutions.pdf\" \"lab_01_solutions.qmd\"\n [7] \"lab_01.qmd\"           \"lab_02.qmd\"           \"lab_03_example.R\"    \n[10] \"lab_03.html\"          \"lab_03.qmd\"           \"lab_04.qmd\"          \n[13] \"lab_05.qmd\"           \"lab_06.qmd\"           \"lab_07_web.html\"     \n[16] \"lab_07_web.qmd\"       \"lab_07.qmd\"           \"lab_08_web.html\"     \n[19] \"lab_08_web.qmd\"       \"lab_08.qmd\"           \"lab_09_web.html\"     \n[22] \"lab_09_web.qmd\"       \"lab_09.qmd\"           \"lab_10_web_files\"    \n[25] \"lab_10_web.html\"      \"lab_10_web.qmd\"       \"lab_10.qmd\""
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"data_lab9\"            \"data_lab9.zip\"        \"datasets\"            \n [4] \"FEF_trees.csv\"        \"lab_01_solutions.pdf\" \"lab_01_solutions.qmd\"\n [7] \"lab_01.qmd\"           \"lab_02.qmd\"           \"lab_03_example.R\"    \n[10] \"lab_03.html\"          \"lab_03.qmd\"           \"lab_04.qmd\"          \n[13] \"lab_05.qmd\"           \"lab_06.qmd\"           \"lab_07_web.html\"     \n[16] \"lab_07_web.qmd\"       \"lab_07.qmd\"           \"lab_08_web.html\"     \n[19] \"lab_08_web.qmd\"       \"lab_08.qmd\"           \"lab_09_web.html\"     \n[22] \"lab_09_web.qmd\"       \"lab_09.qmd\"           \"lab_10_web_files\"    \n[25] \"lab_10_web.html\"      \"lab_10_web.qmd\"       \"lab_10.qmd\""
   },
   {
     "objectID": "slides/w2d2.html#reading-data-6",
     "href": "slides/w2d2.html#reading-data-6",
     "title": "Reading and Writing Data",
     "section": "Reading data",
-    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/home/grayson/courses/FOR128/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"data_lab9\"            \"data_lab9.zip\"        \"datasets\"            \n [4] \"FEF_trees.csv\"        \"lab_01_solutions.pdf\" \"lab_01_solutions.qmd\"\n [7] \"lab_01.qmd\"           \"lab_02.qmd\"           \"lab_03_example.R\"    \n[10] \"lab_03.html\"          \"lab_03.qmd\"           \"lab_04.qmd\"          \n[13] \"lab_05.qmd\"           \"lab_06.qmd\"           \"lab_07_web.html\"     \n[16] \"lab_07_web.qmd\"       \"lab_07.qmd\"           \"lab_08_web.html\"     \n[19] \"lab_08_web.qmd\"       \"lab_08.qmd\"           \"lab_09_web.html\"     \n[22] \"lab_09_web.qmd\"       \"lab_09.qmd\"           \"lab_10_web_files\"    \n[25] \"lab_10_web.html\"      \"lab_10_web.qmd\"       \"lab_10.qmd\"          \n\n\nNow, given our working directory and datasets location, we specify a relative path and load in the data:\n\nfef &lt;- read.csv(file = \"../labs/datasets/FEF_trees.csv\")"
+    "text": "Reading data\nR includes a variety of functions for reading data efficiently. One of the most common is read.csv().\nTo read data, we first may want to check our working directory:\n\ngetwd()\n\n[1] \"/Users/graysonwhite/Documents/for128-org/FOR128.github.io/slides\"\n\n\nThen we can find the datasets folder. I’ve kept mine with my labs:\n\nlist.files(\"../labs/\")\n\n [1] \"data_lab9\"            \"data_lab9.zip\"        \"datasets\"            \n [4] \"FEF_trees.csv\"        \"lab_01_solutions.pdf\" \"lab_01_solutions.qmd\"\n [7] \"lab_01.qmd\"           \"lab_02.qmd\"           \"lab_03_example.R\"    \n[10] \"lab_03.html\"          \"lab_03.qmd\"           \"lab_04.qmd\"          \n[13] \"lab_05.qmd\"           \"lab_06.qmd\"           \"lab_07_web.html\"     \n[16] \"lab_07_web.qmd\"       \"lab_07.qmd\"           \"lab_08_web.html\"     \n[19] \"lab_08_web.qmd\"       \"lab_08.qmd\"           \"lab_09_web.html\"     \n[22] \"lab_09_web.qmd\"       \"lab_09.qmd\"           \"lab_10_web_files\"    \n[25] \"lab_10_web.html\"      \"lab_10_web.qmd\"       \"lab_10.qmd\"          \n\n\nNow, given our working directory and datasets location, we specify a relative path and load in the data:\n\nfef &lt;- read.csv(file = \"../labs/datasets/FEF_trees.csv\")"
   },
   {
     "objectID": "slides/w2d2.html#reading-data-7",
@@ -2027,7 +2027,7 @@
     "href": "labs/lab_08_web.html#exercise-4",
     "title": "Advanced Data Wrangling with dplyr",
     "section": "Exercise 4",
-    "text": "Exercise 4\n\nPart (a)\nFind the top 5 parks with the most total DBH (i.e. the sum of all the trees DBH in those parks).\n\n\n# A tibble: 5 × 2\n  Park             total_DBH\n  &lt;chr&gt;                &lt;dbl&gt;\n1 Mt Tabor Park       31965.\n2 Columbia Park       26952.\n3 Laurelhurst Park    26890 \n4 Washington Park     16081.\n5 John Luby Park      14519.\n\n\nMt. Tabor Park is one of my personal favorites in Portland, I used to live just a few blocks away. It is a wonderful place to watch the sun set over the West hills of the city. Not only does it have the most DBH in all of the parks in Portland, but Portland’s drinking water is stored in giant reservoirs at that park!\n\n\nPart (b)\nFind the top 5 parks with the highest DBH per tree (in other words, the 5 highest mean DBHs), along with how many trees are in those parks.\n\n\n# A tibble: 5 × 3\n  Park               mean_DBH number_of_trees\n  &lt;chr&gt;                 &lt;dbl&gt;           &lt;int&gt;\n1 Heritage Tree Park     59                 1\n2 Johnswood Property     43.1              18\n3 Patton Square Park     37.0              13\n4 Hancock Park           32.5             104\n5 Laurelwood Park        31.2              13\n\n\nWow! Heritage Tree Park has one giant tree!"
+    "text": "Exercise 4\n\nPart (a)\nFind the top 5 parks with the most total DBH (i.e. the sum of all the trees DBH in those parks).\n\n\n# A tibble: 5 × 2\n  Park             total_DBH\n  &lt;chr&gt;                &lt;dbl&gt;\n1 Mt Tabor Park       31965.\n2 Columbia Park       26952.\n3 Laurelhurst Park    26890.\n4 Washington Park     16081.\n5 John Luby Park      14519.\n\n\nMt. Tabor Park is one of my personal favorites in Portland, I used to live just a few blocks away. It is a wonderful place to watch the sun set over the West hills of the city. Not only does it have the most DBH in all of the parks in Portland, but Portland’s drinking water is stored in giant reservoirs at that park!\n\n\nPart (b)\nFind the top 5 parks with the highest DBH per tree (in other words, the 5 highest mean DBHs), along with how many trees are in those parks.\n\n\n# A tibble: 5 × 3\n  Park               mean_DBH number_of_trees\n  &lt;chr&gt;                 &lt;dbl&gt;           &lt;int&gt;\n1 Heritage Tree Park     59                 1\n2 Johnswood Property     43.1              18\n3 Patton Square Park     37.0              13\n4 Hancock Park           32.5             104\n5 Laurelwood Park        31.2              13\n\n\nWow! Heritage Tree Park has one giant tree!"
   },
   {
     "objectID": "labs/lab_08_web.html#exercise-5",
@@ -2534,137 +2534,326 @@
     "text": "Questions\n\nConsider the following dataset:\n\n\nten_cars &lt;- head(mtcars, n = 10)\nten_cars\n\n                   mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\nDuster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\nMerc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\nMerc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\nMerc 280          19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n\n\nHow would we use dplyr to filter for rows with horse power (hp) greater than 100? How would we use base R to do the same thing? Which do you prefer?"
   },
   {
-    "objectID": "tickets/ticket_20.html",
-    "href": "tickets/ticket_20.html",
-    "title": "Lecture Ticket 20",
+    "objectID": "tickets/ticket_21.html",
+    "href": "tickets/ticket_21.html",
+    "title": "Lecture Ticket 21",
     "section": "",
-    "text": "None."
+    "text": "Read the following sections of IFDAR.\n\nChapter 9, sections 9.1 and 9.2. When reading 9.1, consider the differences of how we defined the grammar components and how the book defines the components."
   },
   {
-    "objectID": "tickets/ticket_20.html#reading",
-    "href": "tickets/ticket_20.html#reading",
-    "title": "Lecture Ticket 20",
+    "objectID": "tickets/ticket_21.html#reading",
+    "href": "tickets/ticket_21.html#reading",
+    "title": "Lecture Ticket 21",
     "section": "",
-    "text": "None."
+    "text": "Read the following sections of IFDAR.\n\nChapter 9, sections 9.1 and 9.2. When reading 9.1, consider the differences of how we defined the grammar components and how the book defines the components."
   },
   {
-    "objectID": "tickets/ticket_20.html#questions",
-    "href": "tickets/ticket_20.html#questions",
-    "title": "Lecture Ticket 20",
+    "objectID": "tickets/ticket_21.html#questions",
+    "href": "tickets/ticket_21.html#questions",
+    "title": "Lecture Ticket 21",
     "section": "Questions",
-    "text": "Questions\nFor this lecture ticket, please just bring a piece of paper with your name on it."
+    "text": "Questions\n\nHow do facet_wrap() and facet_grid() differ?\nWhat package will we use the place multiple ggplots on the same output?\nHow will we save graphics?\nWhat is your favorite geom so far?"
   },
   {
-    "objectID": "tickets/ticket_18.html",
-    "href": "tickets/ticket_18.html",
-    "title": "Lecture Ticket 18",
+    "objectID": "tickets/ticket_19.html",
+    "href": "tickets/ticket_19.html",
+    "title": "Lecture Ticket 19",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nReview Chapter 8"
+    "text": "Read the following article: A Layered Grammar of Graphics."
   },
   {
-    "objectID": "tickets/ticket_18.html#reading",
-    "href": "tickets/ticket_18.html#reading",
-    "title": "Lecture Ticket 18",
+    "objectID": "tickets/ticket_19.html#reading",
+    "href": "tickets/ticket_19.html#reading",
+    "title": "Lecture Ticket 19",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nReview Chapter 8"
+    "text": "Read the following article: A Layered Grammar of Graphics."
   },
   {
-    "objectID": "tickets/ticket_18.html#questions",
-    "href": "tickets/ticket_18.html#questions",
-    "title": "Lecture Ticket 18",
+    "objectID": "tickets/ticket_19.html#questions",
+    "href": "tickets/ticket_19.html#questions",
+    "title": "Lecture Ticket 19",
     "section": "Questions",
-    "text": "Questions\n\nWhat are each of the arguments to pivot_longer() and pivot_wider() that we will use? What must be specified for each of those arguments?\nWhat about the “FACE” dataset made it not tidy?"
+    "text": "Questions\n\nWhat is a geometry? What are some examples of geometries?\nWhat is an aesthetic? What are some examples of aesthetics?\nWhat is a scale? How do scales differ between continuous and categorical variables?"
   },
   {
-    "objectID": "tickets/ticket_16.html",
-    "href": "tickets/ticket_16.html",
-    "title": "Lecture Ticket 16",
+    "objectID": "tickets/ticket_17.html",
+    "href": "tickets/ticket_17.html",
+    "title": "Lecture Ticket 17",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.14 - 7.15"
+    "text": "Read the following sections of IFDAR.\n\nChapter 8"
   },
   {
-    "objectID": "tickets/ticket_16.html#reading",
-    "href": "tickets/ticket_16.html#reading",
-    "title": "Lecture Ticket 16",
+    "objectID": "tickets/ticket_17.html#reading",
+    "href": "tickets/ticket_17.html#reading",
+    "title": "Lecture Ticket 17",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.14 - 7.15"
+    "text": "Read the following sections of IFDAR.\n\nChapter 8"
   },
   {
-    "objectID": "tickets/ticket_16.html#questions",
-    "href": "tickets/ticket_16.html#questions",
-    "title": "Lecture Ticket 16",
+    "objectID": "tickets/ticket_17.html#questions",
+    "href": "tickets/ticket_17.html#questions",
+    "title": "Lecture Ticket 17",
     "section": "Questions",
-    "text": "Questions\n\nWhat are the two major types of joins that we read about? What differentiates them?\nWe read about six joins. What are they? What do each of them do?\nWhich two joins are the most similar to each other?\nWhat is your favorite join? Why?"
+    "text": "Questions\n\nWhat makes data tidy?\nWhat do pivot_longer() and pivot_wider() do?\nWhat does unite() do?"
   },
   {
-    "objectID": "tickets/ticket_14.html",
-    "href": "tickets/ticket_14.html",
-    "title": "Lecture Ticket 14",
+    "objectID": "tickets/ticket_15.html",
+    "href": "tickets/ticket_15.html",
+    "title": "Lecture Ticket 15",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.6 - 7.9, 7.12"
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.10 - 7.11, 7.13"
   },
   {
-    "objectID": "tickets/ticket_14.html#reading",
-    "href": "tickets/ticket_14.html#reading",
-    "title": "Lecture Ticket 14",
+    "objectID": "tickets/ticket_15.html#reading",
+    "href": "tickets/ticket_15.html#reading",
+    "title": "Lecture Ticket 15",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.6 - 7.9, 7.12"
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.10 - 7.11, 7.13"
   },
   {
-    "objectID": "tickets/ticket_14.html#questions",
-    "href": "tickets/ticket_14.html#questions",
-    "title": "Lecture Ticket 14",
+    "objectID": "tickets/ticket_15.html#questions",
+    "href": "tickets/ticket_15.html#questions",
+    "title": "Lecture Ticket 15",
     "section": "Questions",
-    "text": "Questions\n\nWhat do mutate() and transmute() do? How are they different?\nWhat does the pipe (%&gt;%) operator do?\nWhat’s your favorite dplyr verb we’ve learned about so far? Why?"
+    "text": "Questions\n\nWhat do n() and n_distinct() do? How are they different?\nWhat two arguments do we always specify when we use across()?\nWhen we use across(), we use it within a few dplyr verbs – what are those verbs?\nWhat concepts in dplyr are you confidently understanding? What concepts are you still struggling with?"
   },
   {
-    "objectID": "tickets/ticket_11.html",
-    "href": "tickets/ticket_11.html",
-    "title": "Lecture Ticket 11",
+    "objectID": "tickets/ticket_12.html",
+    "href": "tickets/ticket_12.html",
+    "title": "Lecture Ticket 12",
     "section": "",
-    "text": "No lecture ticket today. Come to lecture with any last minute questions you might have about the midterm!"
+    "text": "Read the following sections of IFDAR.\n\nReview Chapter 6\nBegin Chapter 7 (read the introduction and 7.1)"
   },
   {
-    "objectID": "tickets/ticket_09.html",
-    "href": "tickets/ticket_09.html",
-    "title": "Lecture Ticket 9",
+    "objectID": "tickets/ticket_12.html#reading",
+    "href": "tickets/ticket_12.html#reading",
+    "title": "Lecture Ticket 12",
     "section": "",
-    "text": "No reading this time."
+    "text": "Read the following sections of IFDAR.\n\nReview Chapter 6\nBegin Chapter 7 (read the introduction and 7.1)"
   },
   {
-    "objectID": "tickets/ticket_09.html#reading",
-    "href": "tickets/ticket_09.html#reading",
-    "title": "Lecture Ticket 9",
-    "section": "",
-    "text": "No reading this time."
-  },
-  {
-    "objectID": "tickets/ticket_09.html#questions",
-    "href": "tickets/ticket_09.html#questions",
-    "title": "Lecture Ticket 9",
+    "objectID": "tickets/ticket_12.html#questions",
+    "href": "tickets/ticket_12.html#questions",
+    "title": "Lecture Ticket 12",
     "section": "Questions",
-    "text": "Questions\n\nWhat concepts from this course do you feel confident about?\nWhat concepts from this course are you struggling with?"
+    "text": "Questions\n\nYou want to read in a file called “my_data.csv” on your computer and assign it to an object called dat in R. Now, we’ve learned two approaches to reading in data (base and tidyverse). How would you read it into R (a) with base and (b) with tidyverse?\nWhat are the dplyr verbs that we will learn in Chapter 7? What do each of them do?"
   },
   {
-    "objectID": "tickets/ticket_03.html",
-    "href": "tickets/ticket_03.html",
-    "title": "Lecture Ticket 3",
+    "objectID": "tickets/ticket_10.html",
+    "href": "tickets/ticket_10.html",
+    "title": "Lecture Ticket 10",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 3"
+    "text": "Read the following sections of IFDAR.\n\nChapter 6"
   },
   {
-    "objectID": "tickets/ticket_03.html#reading",
-    "href": "tickets/ticket_03.html#reading",
-    "title": "Lecture Ticket 3",
+    "objectID": "tickets/ticket_10.html#reading",
+    "href": "tickets/ticket_10.html#reading",
+    "title": "Lecture Ticket 10",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 3"
+    "text": "Read the following sections of IFDAR.\n\nChapter 6"
   },
   {
-    "objectID": "tickets/ticket_03.html#questions",
-    "href": "tickets/ticket_03.html#questions",
-    "title": "Lecture Ticket 3",
+    "objectID": "tickets/ticket_10.html#questions",
+    "href": "tickets/ticket_10.html#questions",
+    "title": "Lecture Ticket 10",
     "section": "Questions",
-    "text": "Questions\n\nWhat function is used to set a working directory in R? How about to get your current working directory?\nWhat is the difference between a relative and absolute path?\nConsider the following absolute path:\n\n/home/grayson/courses/for128/lab_01.qmd\nIf the working directory is /home/grayson/courses/, what is the relative path to lab_01.qmd?"
+    "text": "Questions\n\nWhat is a tibble? How does it relate to a data.frame?\nWhy do we prefer reading in data with readr over base R?\nAre all tibbles data.frames? Are all data.frames tibbles?"
+  },
+  {
+    "objectID": "tickets/ticket_05.html",
+    "href": "tickets/ticket_05.html",
+    "title": "Lecture Ticket 5",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.3, 4.4 and 4.5 (Stop at 4.6)"
+  },
+  {
+    "objectID": "tickets/ticket_05.html#reading",
+    "href": "tickets/ticket_05.html#reading",
+    "title": "Lecture Ticket 5",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.3, 4.4 and 4.5 (Stop at 4.6)"
+  },
+  {
+    "objectID": "tickets/ticket_05.html#questions",
+    "href": "tickets/ticket_05.html#questions",
+    "title": "Lecture Ticket 5",
+    "section": "Questions",
+    "text": "Questions\n\nHow many dimensions do dataframes have?\nConsider the dataframe treedat. How would you access the element in the second row and third column of treedat?"
+  },
+  {
+    "objectID": "tickets/ticket_02.html",
+    "href": "tickets/ticket_02.html",
+    "title": "Lecture Ticket 2",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 2\nChapter 3: read through section 3.3.1 (STOP at 3.3.2 External data)"
+  },
+  {
+    "objectID": "tickets/ticket_02.html#reading",
+    "href": "tickets/ticket_02.html#reading",
+    "title": "Lecture Ticket 2",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 2\nChapter 3: read through section 3.3.1 (STOP at 3.3.2 External data)"
+  },
+  {
+    "objectID": "tickets/ticket_02.html#questions",
+    "href": "tickets/ticket_02.html#questions",
+    "title": "Lecture Ticket 2",
+    "section": "Questions",
+    "text": "Questions\n\nWhat are the two main operators used in R for assignment?\nWhat code would you write to assign the value 37 to the object favorite_number?\nOpen RStudio and check your working directory by entering a command into the R console. What is your working directory? Example: /Users/graysonwhite/Documents/"
+  },
+  {
+    "objectID": "slides/w3d1.html#agenda",
+    "href": "slides/w3d1.html#agenda",
+    "title": "Data Structures: Vectors",
+    "section": "Agenda",
+    "text": "Agenda\n\nOverview of data structures\nA tour of vectors"
+  },
+  {
+    "objectID": "slides/w3d1.html#data-structures",
+    "href": "slides/w3d1.html#data-structures",
+    "title": "Data Structures: Vectors",
+    "section": "Data structures",
+    "text": "Data structures\n\nA data structure is a format for organizing and storing data. The structure is designed so that data can be accessed and worked with in specific ways.\nStructures are either homogeneous or heterogeneous, which describes the data types they hold (one type versus multiple types).\nStructures can also be characterized by their dimensionality, see Table Table 1.\n\n\n\n\nTable 1: Dimension and type content of base data structures in R.\n\n\n\n\n\nDimension\nHomogeneous\nHeterogeneous\n\n\n\n\n1\nAtomic vector\nList\n\n\n2\nMatrix\nData frame\n\n\nN\nArray"
+  },
+  {
+    "objectID": "slides/w3d1.html#data-structures-1",
+    "href": "slides/w3d1.html#data-structures-1",
+    "title": "Data Structures: Vectors",
+    "section": "Data structures",
+    "text": "Data structures\n\nLet’s take a look at vectors.qmd."
+  },
+  {
+    "objectID": "midterm.html",
+    "href": "midterm.html",
+    "title": "Midterm I",
+    "section": "",
+    "text": "The midterm files are available below:\n\nmidterm_01.qmd\nLoblolly.csv"
+  },
+  {
+    "objectID": "midterm.html#files",
+    "href": "midterm.html#files",
+    "title": "Midterm I",
+    "section": "",
+    "text": "The midterm files are available below:\n\nmidterm_01.qmd\nLoblolly.csv"
+  },
+  {
+    "objectID": "final_project.html",
+    "href": "final_project.html",
+    "title": "Final Project",
+    "section": "",
+    "text": "In this class, we’ve learned how to analyze data in the R programming language. From reading in the data, to tidying and reshaping, to wrangling, and finally to plotting. The final project asks you to find a dataset that is interesting to you and analyze it with the tools we’ve learned in class. The dataset you use for the class should be environmental in some sense. It could relate to forestry, water and water quality, animals, climate, etc. We will include some datasets that could be a good choice for this project, but you are not limited to these datasets.\nThis is a group project, with groups of 3-5 people. You can choose your groups, but if you are having trouble finding a group or your group is too small (&lt; 3 people), please let Grayson know and we will combine you or your group with others."
+  },
+  {
+    "objectID": "final_project.html#description",
+    "href": "final_project.html#description",
+    "title": "Final Project",
+    "section": "",
+    "text": "In this class, we’ve learned how to analyze data in the R programming language. From reading in the data, to tidying and reshaping, to wrangling, and finally to plotting. The final project asks you to find a dataset that is interesting to you and analyze it with the tools we’ve learned in class. The dataset you use for the class should be environmental in some sense. It could relate to forestry, water and water quality, animals, climate, etc. We will include some datasets that could be a good choice for this project, but you are not limited to these datasets.\nThis is a group project, with groups of 3-5 people. You can choose your groups, but if you are having trouble finding a group or your group is too small (&lt; 3 people), please let Grayson know and we will combine you or your group with others."
+  },
+  {
+    "objectID": "final_project.html#components",
+    "href": "final_project.html#components",
+    "title": "Final Project",
+    "section": "Components",
+    "text": "Components\nThe final project will be composed of four components: a group member submission, a proposal, a blog post, and a presentation. For each component, your group will submit one document via D2L.\n\nThe group member submission\nDue date: Tuesday, November 12th, 5pm.\nPlease submit a document to D2L with the names of your group members. Remember, groups of 3-5 people are allowed. If you are having trouble finding a group or your group is too small (&lt; 3 people), please let Grayson know and we will combine you or your group with others.\n\n\nThe proposal\nDue date: Tuesday, November 19th, 5pm.\nPlease submit a brief proposal of the project you would like to do. This should be a (no longer than 2 page) document outlining the data you will use and an idea of the story or information that you’d like to try to extract from the data. For this part, it is strongly recommended that you download the data you would like to use and take a look at it. In the proposal, describe any challenges you anticipate having working with the data, and the steps needed to get the data into a form that will be easy to work with in R. It is expected that this document is well-written, explains the data you’d like to work with, and conveys your ideas and hopes for what you’d like to do with the data (i.e. what your blog post will be about).\n\n\nThe blog post\nDue date: Wednesday, December 11th, 5pm.\nThe blog post is the heart of the final project. You and your group members will write a blog post in a Quarto document that takes the raw data you are using and tells a story with it. The blog post will include the story of getting the data, wrangling the data, and plots and summaries of the data. The blog posts will be posted on the course website (with groups permission), you have the right to not include your blog post on the course website, or to anonymize your blog post for the course website.\nMore details to come on the blog post.\n\n\nThe presentation\nDue date: Slides submitted by Wednesday, December 11th, 5pm. Presentations to be completed in class during the final exam slot on December 12th.\nYou and your group will present the results from your analyses (i.e. findings from the blog post) in slide show form to your classmates during the final exam slot. Groups will present together, and presentation time should be shared relatively equally between group members.\nMore details to come on the presentation."
+  },
+  {
+    "objectID": "final_project.html#evaluation",
+    "href": "final_project.html#evaluation",
+    "title": "Final Project",
+    "section": "Evaluation",
+    "text": "Evaluation\nThe final project is worth 15% of your final grade. The proposal, blog post, and presentation will contribute to this 15%."
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7, Instructions & Output\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8, Instructions & Output\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9, Instructions & Output, Data\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)\n\n\nLab 10, Instructions & Output\nThursday 11/7 (at lab time)\nWednesday 11/13 (at 5pm)\n\n\nLab 11\nThursday 11/14 (at lab time)\nWednesday 11/20 (at 5pm)"
+  },
+  {
+    "objectID": "assignments.html#labs",
+    "href": "assignments.html#labs",
+    "title": "Assignments",
+    "section": "",
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7, Instructions & Output\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8, Instructions & Output\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9, Instructions & Output, Data\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)\n\n\nLab 10, Instructions & Output\nThursday 11/7 (at lab time)\nWednesday 11/13 (at 5pm)\n\n\nLab 11\nThursday 11/14 (at lab time)\nWednesday 11/20 (at 5pm)"
+  },
+  {
+    "objectID": "assignments.html#lecture-tickets",
+    "href": "assignments.html#lecture-tickets",
+    "title": "Assignments",
+    "section": "Lecture Tickets",
+    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)\n\n\nLecture ticket 3\nTuesday 9/3 (by 5pm)\nThursday 9/5 (in lecture)\n\n\nLecture ticket 4\nThursday 9/5 (by 5pm)\nTuesday 9/10 (in lecture)\n\n\nLecture ticket 5\nTuesday 9/10 (by 5pm)\nThursday 9/12 (in lecture)\n\n\nLecture ticket 6\nThursday 9/12 (by 5pm)\nTuesday 9/17 (in lecture)\n\n\nLecture ticket 7\nTuesday 9/17 (by 5pm)\nThursday 9/19 (in lecture)\n\n\nLecture ticket 8\nThursday 9/19 (by 5pm)\nTuesday 9/24 (in lecture)\n\n\nLecture ticket 9\nTuesday 9/24 (by 5pm)\nThursday 9/26 (in lecture)\n\n\nLecture ticket 10\nThursday 9/26 (by 5pm)\nTuesday 10/1 (in lecture)\n\n\nLecture ticket 11\nTuesday 10/1 (by 5pm)\nThursday 10/3 (in lecture)\n\n\nLecture ticket 12\nThursday 10/3 (by 5pm)\nTuesday 10/8 (in lecture)\n\n\nLecture ticket 13\nTuesday 10/8 (by 5pm)\nThursday 10/10 (in lecture)\n\n\nLecture ticket 14\nThursday 10/10 (by 5pm)\nTuesday 10/15 (in lecture)\n\n\nLecture ticket 15\nTuesday 10/15 (by 5pm)\nThursday 10/17 (in lecture)\n\n\nLecture ticket 16\nThursday 10/17 (by 5pm)\nThursday 10/24 (in lecture)\n\n\nLecture ticket 17\nThursday 10/24 (by 5pm)\nTuesday 10/29 (in lecture)\n\n\nLecture ticket 18\nTuesday 10/29 (by 5pm)\nThursday 10/31 (in lecture)\n\n\nLecture ticket 19\nThursday 10/31 (by 5pm)\nTuesday 11/5 (in lecture)\n\n\nLecture ticket 20\nTuesday 11/5 (by 5pm)\nThursday 11/7 (in lecture)\n\n\nLecture ticket 21\nThursday 11/7 (by 5pm)\nTuesday 11/12 (in lecture)\n\n\nLecture ticket 22\nTuesday 11/12 (by 5pm)\nThursday 11/14 (in lecture)\n\n\nLecture ticket 23\nThursday 11/14 (by 5pm)\nTuesday 11/19 (in lecture)\n\n\nLecture ticket 24\nTuesday 11/19 (by 5pm)\nTuesday 11/26 (in lecture)\n\n\nLecture ticket 25\nTuesday 11/26 (by 5pm)\nThursday 11/28 (in lecture)\n\n\nLecture ticket 26\nThursday 11/28 (by 5pm)\nTuesday 12/3 (in lecture)\n\n\nLecture ticket 27\nTuesday 12/3 (by 5pm)\nThursday 12/5 (in lecture)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "For 128 Michigan State University\nFall 2024\n\n\n\nWednesday office hours: 12:30 - 2:30\n\n\n\n\n\n\n\n\n\n\n\nMidterm I this week.\n\n\n\n\nExtra office hours this week:\n\nMonday 9/23: 10:30am - 11:30am\nTuesday 9/24: 10am - 11am (note the 30 minute change)\nWednesday 9/25: 12:30pm - 2pm\nThursday 9/26: 1:30pm - 2:30pm (regular time)\n\n\n\n\n\n\n\nThe lecture notes are available.\n\n\n\n\n\n\n\n\nWe’ll go through vectors.qmd in class.\n\n\n\n\n\nLecture materials:\n\nIn-class work: vectors_dataframes.qmd\nData for in-class work: Loblolly.csv\n\nSupplementary lab materials:\n\nExample R script lab setup: lab_03_example.R\nLab 3 data: FEF_trees.csv\n\n\n\n\n\n\n\n\n\nOffice hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L.\n\n\n\n\n\n\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+  },
+  {
+    "objectID": "index.html#week-9-october-20---26",
+    "href": "index.html#week-9-october-20---26",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "Wednesday office hours: 12:30 - 2:30"
+  },
+  {
+    "objectID": "index.html#week-6-september-29---october-5",
+    "href": "index.html#week-6-september-29---october-5",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "Midterm I this week."
+  },
+  {
+    "objectID": "index.html#week-5-september-22---28",
+    "href": "index.html#week-5-september-22---28",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "Extra office hours this week:\n\nMonday 9/23: 10:30am - 11:30am\nTuesday 9/24: 10am - 11am (note the 30 minute change)\nWednesday 9/25: 12:30pm - 2pm\nThursday 9/26: 1:30pm - 2:30pm (regular time)"
+  },
+  {
+    "objectID": "index.html#week-4-september-15---21",
+    "href": "index.html#week-4-september-15---21",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "The lecture notes are available."
+  },
+  {
+    "objectID": "index.html#week-3-september-8---14",
+    "href": "index.html#week-3-september-8---14",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "We’ll go through vectors.qmd in class.\n\n\n\n\n\nLecture materials:\n\nIn-class work: vectors_dataframes.qmd\nData for in-class work: Loblolly.csv\n\nSupplementary lab materials:\n\nExample R script lab setup: lab_03_example.R\nLab 3 data: FEF_trees.csv"
+  },
+  {
+    "objectID": "index.html#week-2-september-1---7",
+    "href": "index.html#week-2-september-1---7",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "Office hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L."
+  },
+  {
+    "objectID": "index.html#week-1-august-25---31",
+    "href": "index.html#week-1-august-25---31",
+    "title": "Practical Computing   and Data Science Tools",
+    "section": "",
+    "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
+  },
+  {
+    "objectID": "recordings.html",
+    "href": "recordings.html",
+    "title": "Lecture Recordings",
+    "section": "",
+    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 1: No recording available.\nWeek 3, day 2: Data structures. Available here.\nWeek 4, day 1: No recording available.\nWeek 4, day 2: Review of data structures & intro to functions. Available here.\nWeek 5, day 1: Functions and conditionals. Available here.\nWeek 5, day 2: Functions. NOTE: audio issues. Available here.\nWeek 6, day 1: Welcome to the tidyverse. Available here.\nWeek 6, day 2: Midterm review day. No recording.\nWeek 7, day 1: tibble and readr. Available here.\nWeek 7, day 2: Introduction to data wrangling with dplyr. Available here.\nWeek 8, day 1: More data wrangling with dplyr. Available here.\nWeek 8, day 2: Advanced grouping and summarizing. Available here.\nWeek 9, day 1: Combining multiple tibbles. Available here.\nWeek 10, day 1: Reshaping data with tidyr. Available here.\nWeek 10, day 2: Reshaping data with tidyr, part 2. Available here.\nWeek 11, day 1: The grammar of graphics. Available here.\nWeek 11, day 2: Final project explanation and more plotting with ggplot2. Available here."
+  },
+  {
+    "objectID": "recordings.html#recordings",
+    "href": "recordings.html#recordings",
+    "title": "Lecture Recordings",
+    "section": "",
+    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 1: No recording available.\nWeek 3, day 2: Data structures. Available here.\nWeek 4, day 1: No recording available.\nWeek 4, day 2: Review of data structures & intro to functions. Available here.\nWeek 5, day 1: Functions and conditionals. Available here.\nWeek 5, day 2: Functions. NOTE: audio issues. Available here.\nWeek 6, day 1: Welcome to the tidyverse. Available here.\nWeek 6, day 2: Midterm review day. No recording.\nWeek 7, day 1: tibble and readr. Available here.\nWeek 7, day 2: Introduction to data wrangling with dplyr. Available here.\nWeek 8, day 1: More data wrangling with dplyr. Available here.\nWeek 8, day 2: Advanced grouping and summarizing. Available here.\nWeek 9, day 1: Combining multiple tibbles. Available here.\nWeek 10, day 1: Reshaping data with tidyr. Available here.\nWeek 10, day 2: Reshaping data with tidyr, part 2. Available here.\nWeek 11, day 1: The grammar of graphics. Available here.\nWeek 11, day 2: Final project explanation and more plotting with ggplot2. Available here."
   },
   {
     "objectID": "syllabus.html",
@@ -2730,305 +2919,137 @@
     "text": "AI Policy for FOR 128\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
   },
   {
-    "objectID": "recordings.html",
-    "href": "recordings.html",
-    "title": "Lecture Recordings",
+    "objectID": "tickets/ticket_03.html",
+    "href": "tickets/ticket_03.html",
+    "title": "Lecture Ticket 3",
     "section": "",
-    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 1: No recording available.\nWeek 3, day 2: Data structures. Available here.\nWeek 4, day 1: No recording available.\nWeek 4, day 2: Review of data structures & intro to functions. Available here.\nWeek 5, day 1: Functions and conditionals. Available here.\nWeek 5, day 2: Functions. NOTE: audio issues. Available here.\nWeek 6, day 1: Welcome to the tidyverse. Available here.\nWeek 6, day 2: Midterm review day. No recording.\nWeek 7, day 1: tibble and readr. Available here.\nWeek 7, day 2: Introduction to data wrangling with dplyr. Available here.\nWeek 8, day 1: More data wrangling with dplyr. Available here.\nWeek 8, day 2: Advanced grouping and summarizing. Available here.\nWeek 9, day 1: Combining multiple tibbles. Available here.\nWeek 10, day 1: Reshaping data with tidyr. Available here.\nWeek 10, day 2: Reshaping data with tidyr, part 2. Available here.\nWeek 11, day 1: The grammar of graphics. Available here.\nWeek 11, day 2: Final project explanation and more plotting with ggplot2. Available here."
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 3"
   },
   {
-    "objectID": "recordings.html#recordings",
-    "href": "recordings.html#recordings",
-    "title": "Lecture Recordings",
+    "objectID": "tickets/ticket_03.html#reading",
+    "href": "tickets/ticket_03.html#reading",
+    "title": "Lecture Ticket 3",
     "section": "",
-    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 1: No recording available.\nWeek 3, day 2: Data structures. Available here.\nWeek 4, day 1: No recording available.\nWeek 4, day 2: Review of data structures & intro to functions. Available here.\nWeek 5, day 1: Functions and conditionals. Available here.\nWeek 5, day 2: Functions. NOTE: audio issues. Available here.\nWeek 6, day 1: Welcome to the tidyverse. Available here.\nWeek 6, day 2: Midterm review day. No recording.\nWeek 7, day 1: tibble and readr. Available here.\nWeek 7, day 2: Introduction to data wrangling with dplyr. Available here.\nWeek 8, day 1: More data wrangling with dplyr. Available here.\nWeek 8, day 2: Advanced grouping and summarizing. Available here.\nWeek 9, day 1: Combining multiple tibbles. Available here.\nWeek 10, day 1: Reshaping data with tidyr. Available here.\nWeek 10, day 2: Reshaping data with tidyr, part 2. Available here.\nWeek 11, day 1: The grammar of graphics. Available here.\nWeek 11, day 2: Final project explanation and more plotting with ggplot2. Available here."
+    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 3"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "For 128 Michigan State University\nFall 2024\n\n\n\nWednesday office hours: 12:30 - 2:30\n\n\n\n\n\n\n\n\n\n\n\nMidterm I this week.\n\n\n\n\nExtra office hours this week:\n\nMonday 9/23: 10:30am - 11:30am\nTuesday 9/24: 10am - 11am (note the 30 minute change)\nWednesday 9/25: 12:30pm - 2pm\nThursday 9/26: 1:30pm - 2:30pm (regular time)\n\n\n\n\n\n\n\nThe lecture notes are available.\n\n\n\n\n\n\n\n\nWe’ll go through vectors.qmd in class.\n\n\n\n\n\nLecture materials:\n\nIn-class work: vectors_dataframes.qmd\nData for in-class work: Loblolly.csv\n\nSupplementary lab materials:\n\nExample R script lab setup: lab_03_example.R\nLab 3 data: FEF_trees.csv\n\n\n\n\n\n\n\n\n\nOffice hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L.\n\n\n\n\n\n\n\n\n\n\n\nBefore coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
-  },
-  {
-    "objectID": "index.html#week-9-october-20---26",
-    "href": "index.html#week-9-october-20---26",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "Wednesday office hours: 12:30 - 2:30"
-  },
-  {
-    "objectID": "index.html#week-6-september-29---october-5",
-    "href": "index.html#week-6-september-29---october-5",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "Midterm I this week."
-  },
-  {
-    "objectID": "index.html#week-5-september-22---28",
-    "href": "index.html#week-5-september-22---28",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "Extra office hours this week:\n\nMonday 9/23: 10:30am - 11:30am\nTuesday 9/24: 10am - 11am (note the 30 minute change)\nWednesday 9/25: 12:30pm - 2pm\nThursday 9/26: 1:30pm - 2:30pm (regular time)"
-  },
-  {
-    "objectID": "index.html#week-4-september-15---21",
-    "href": "index.html#week-4-september-15---21",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "The lecture notes are available."
-  },
-  {
-    "objectID": "index.html#week-3-september-8---14",
-    "href": "index.html#week-3-september-8---14",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "We’ll go through vectors.qmd in class.\n\n\n\n\n\nLecture materials:\n\nIn-class work: vectors_dataframes.qmd\nData for in-class work: Loblolly.csv\n\nSupplementary lab materials:\n\nExample R script lab setup: lab_03_example.R\nLab 3 data: FEF_trees.csv"
-  },
-  {
-    "objectID": "index.html#week-2-september-1---7",
-    "href": "index.html#week-2-september-1---7",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "Office hours will be moved to 1:30 - 2:30 today.\nLab 1 is due Wednesday on D2L."
-  },
-  {
-    "objectID": "index.html#week-1-august-25---31",
-    "href": "index.html#week-1-august-25---31",
-    "title": "Practical Computing   and Data Science Tools",
-    "section": "",
-    "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7, Instructions & Output\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8, Instructions & Output\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9, Instructions & Output, Data\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)\n\n\nLab 10, Instructions & Output\nThursday 11/7 (at lab time)\nWednesday 11/13 (at 5pm)\n\n\nLab 11\nThursday 11/14 (at lab time)\nWednesday 11/20 (at 5pm)"
-  },
-  {
-    "objectID": "assignments.html#labs",
-    "href": "assignments.html#labs",
-    "title": "Assignments",
-    "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7, Instructions & Output\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8, Instructions & Output\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9, Instructions & Output, Data\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)\n\n\nLab 10, Instructions & Output\nThursday 11/7 (at lab time)\nWednesday 11/13 (at 5pm)\n\n\nLab 11\nThursday 11/14 (at lab time)\nWednesday 11/20 (at 5pm)"
-  },
-  {
-    "objectID": "assignments.html#lecture-tickets",
-    "href": "assignments.html#lecture-tickets",
-    "title": "Assignments",
-    "section": "Lecture Tickets",
-    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)\n\n\nLecture ticket 3\nTuesday 9/3 (by 5pm)\nThursday 9/5 (in lecture)\n\n\nLecture ticket 4\nThursday 9/5 (by 5pm)\nTuesday 9/10 (in lecture)\n\n\nLecture ticket 5\nTuesday 9/10 (by 5pm)\nThursday 9/12 (in lecture)\n\n\nLecture ticket 6\nThursday 9/12 (by 5pm)\nTuesday 9/17 (in lecture)\n\n\nLecture ticket 7\nTuesday 9/17 (by 5pm)\nThursday 9/19 (in lecture)\n\n\nLecture ticket 8\nThursday 9/19 (by 5pm)\nTuesday 9/24 (in lecture)\n\n\nLecture ticket 9\nTuesday 9/24 (by 5pm)\nThursday 9/26 (in lecture)\n\n\nLecture ticket 10\nThursday 9/26 (by 5pm)\nTuesday 10/1 (in lecture)\n\n\nLecture ticket 11\nTuesday 10/1 (by 5pm)\nThursday 10/3 (in lecture)\n\n\nLecture ticket 12\nThursday 10/3 (by 5pm)\nTuesday 10/8 (in lecture)\n\n\nLecture ticket 13\nTuesday 10/8 (by 5pm)\nThursday 10/10 (in lecture)\n\n\nLecture ticket 14\nThursday 10/10 (by 5pm)\nTuesday 10/15 (in lecture)\n\n\nLecture ticket 15\nTuesday 10/15 (by 5pm)\nThursday 10/17 (in lecture)\n\n\nLecture ticket 16\nThursday 10/17 (by 5pm)\nThursday 10/24 (in lecture)\n\n\nLecture ticket 17\nThursday 10/24 (by 5pm)\nTuesday 10/29 (in lecture)\n\n\nLecture ticket 18\nTuesday 10/29 (by 5pm)\nThursday 10/31 (in lecture)\n\n\nLecture ticket 19\nThursday 10/31 (by 5pm)\nTuesday 11/5 (in lecture)\n\n\nLecture ticket 20\nTuesday 11/5 (by 5pm)\nThursday 11/7 (in lecture)\n\n\nLecture ticket 21\nThursday 11/7 (by 5pm)\nTuesday 11/12 (in lecture)\n\n\nLecture ticket 22\nTuesday 11/12 (by 5pm)\nThursday 11/14 (in lecture)\n\n\nLecture ticket 23\nThursday 11/14 (by 5pm)\nTuesday 11/19 (in lecture)\n\n\nLecture ticket 24\nTuesday 11/19 (by 5pm)\nTuesday 11/26 (in lecture)\n\n\nLecture ticket 25\nTuesday 11/26 (by 5pm)\nThursday 11/28 (in lecture)\n\n\nLecture ticket 26\nThursday 11/28 (by 5pm)\nTuesday 12/3 (in lecture)\n\n\nLecture ticket 27\nTuesday 12/3 (by 5pm)\nThursday 12/5 (in lecture)"
-  },
-  {
-    "objectID": "final_project.html",
-    "href": "final_project.html",
-    "title": "Final Project",
-    "section": "",
-    "text": "In this class, we’ve learned how to analyze data in the R programming language. From reading in the data, to tidying and reshaping, to wrangling, and finally to plotting. The final project asks you to find a dataset that is interesting to you and analyze it with the tools we’ve learned in class. The dataset you use for the class should be environmental in some sense. It could relate to forestry, water and water quality, animals, climate, etc. We will include some datasets that could be a good choice for this project, but you are not limited to these datasets.\nThis is a group project, with groups of 3-5 people. You can choose your groups, but if you are having trouble finding a group or your group is too small (&lt; 3 people), please let Grayson know and we will combine you or your group with others."
-  },
-  {
-    "objectID": "final_project.html#description",
-    "href": "final_project.html#description",
-    "title": "Final Project",
-    "section": "",
-    "text": "In this class, we’ve learned how to analyze data in the R programming language. From reading in the data, to tidying and reshaping, to wrangling, and finally to plotting. The final project asks you to find a dataset that is interesting to you and analyze it with the tools we’ve learned in class. The dataset you use for the class should be environmental in some sense. It could relate to forestry, water and water quality, animals, climate, etc. We will include some datasets that could be a good choice for this project, but you are not limited to these datasets.\nThis is a group project, with groups of 3-5 people. You can choose your groups, but if you are having trouble finding a group or your group is too small (&lt; 3 people), please let Grayson know and we will combine you or your group with others."
-  },
-  {
-    "objectID": "final_project.html#components",
-    "href": "final_project.html#components",
-    "title": "Final Project",
-    "section": "Components",
-    "text": "Components\nThe final project will be composed of four components: a group member submission, a proposal, a blog post, and a presentation. For each component, your group will submit one document via D2L.\n\nThe group member submission\nDue date: Tuesday, November 12th, 5pm.\nPlease submit a document to D2L with the names of your group members. Remember, groups of 3-5 people are allowed. If you are having trouble finding a group or your group is too small (&lt; 3 people), please let Grayson know and we will combine you or your group with others.\n\n\nThe proposal\nDue date: Tuesday, November 19th, 5pm.\nPlease submit a brief proposal of the project you would like to do. This should be a (no longer than 2 page) document outlining the data you will use and an idea of the story or information that you’d like to try to extract from the data. For this part, it is strongly recommended that you download the data you would like to use and take a look at it. In the proposal, describe any challenges you anticipate having working with the data, and the steps needed to get the data into a form that will be easy to work with in R. It is expected that this document is well-written, explains the data you’d like to work with, and conveys your ideas and hopes for what you’d like to do with the data (i.e. what your blog post will be about).\n\n\nThe blog post\nDue date: Wednesday, December 11th, 5pm.\nThe blog post is the heart of the final project. You and your group members will write a blog post in a Quarto document that takes the raw data you are using and tells a story with it. The blog post will include the story of getting the data, wrangling the data, and plots and summaries of the data. The blog posts will be posted on the course website (with groups permission), you have the right to not include your blog post on the course website, or to anonymize your blog post for the course website.\nMore details to come on the blog post.\n\n\nThe presentation\nDue date: Slides submitted by Wednesday, December 11th, 5pm. Presentations to be completed in class during the final exam slot on December 12th.\nYou and your group will present the results from your analyses (i.e. findings from the blog post) in slide show form to your classmates during the final exam slot. Groups will present together, and presentation time should be shared relatively equally between group members.\nMore details to come on the presentation."
-  },
-  {
-    "objectID": "final_project.html#evaluation",
-    "href": "final_project.html#evaluation",
-    "title": "Final Project",
-    "section": "Evaluation",
-    "text": "Evaluation\nThe final project is worth 15% of your final grade. The proposal, blog post, and presentation will contribute to this 15%."
-  },
-  {
-    "objectID": "midterm.html",
-    "href": "midterm.html",
-    "title": "Midterm I",
-    "section": "",
-    "text": "The midterm files are available below:\n\nmidterm_01.qmd\nLoblolly.csv"
-  },
-  {
-    "objectID": "midterm.html#files",
-    "href": "midterm.html#files",
-    "title": "Midterm I",
-    "section": "",
-    "text": "The midterm files are available below:\n\nmidterm_01.qmd\nLoblolly.csv"
-  },
-  {
-    "objectID": "slides/w3d1.html#agenda",
-    "href": "slides/w3d1.html#agenda",
-    "title": "Data Structures: Vectors",
-    "section": "Agenda",
-    "text": "Agenda\n\nOverview of data structures\nA tour of vectors"
-  },
-  {
-    "objectID": "slides/w3d1.html#data-structures",
-    "href": "slides/w3d1.html#data-structures",
-    "title": "Data Structures: Vectors",
-    "section": "Data structures",
-    "text": "Data structures\n\nA data structure is a format for organizing and storing data. The structure is designed so that data can be accessed and worked with in specific ways.\nStructures are either homogeneous or heterogeneous, which describes the data types they hold (one type versus multiple types).\nStructures can also be characterized by their dimensionality, see Table Table 1.\n\n\n\n\nTable 1: Dimension and type content of base data structures in R.\n\n\n\n\n\nDimension\nHomogeneous\nHeterogeneous\n\n\n\n\n1\nAtomic vector\nList\n\n\n2\nMatrix\nData frame\n\n\nN\nArray"
-  },
-  {
-    "objectID": "slides/w3d1.html#data-structures-1",
-    "href": "slides/w3d1.html#data-structures-1",
-    "title": "Data Structures: Vectors",
-    "section": "Data structures",
-    "text": "Data structures\n\nLet’s take a look at vectors.qmd."
-  },
-  {
-    "objectID": "tickets/ticket_02.html",
-    "href": "tickets/ticket_02.html",
-    "title": "Lecture Ticket 2",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 2\nChapter 3: read through section 3.3.1 (STOP at 3.3.2 External data)"
-  },
-  {
-    "objectID": "tickets/ticket_02.html#reading",
-    "href": "tickets/ticket_02.html#reading",
-    "title": "Lecture Ticket 2",
-    "section": "",
-    "text": "Read the following sections of IFDAR.\n\nFinish Chapter 2\nChapter 3: read through section 3.3.1 (STOP at 3.3.2 External data)"
-  },
-  {
-    "objectID": "tickets/ticket_02.html#questions",
-    "href": "tickets/ticket_02.html#questions",
-    "title": "Lecture Ticket 2",
+    "objectID": "tickets/ticket_03.html#questions",
+    "href": "tickets/ticket_03.html#questions",
+    "title": "Lecture Ticket 3",
     "section": "Questions",
-    "text": "Questions\n\nWhat are the two main operators used in R for assignment?\nWhat code would you write to assign the value 37 to the object favorite_number?\nOpen RStudio and check your working directory by entering a command into the R console. What is your working directory? Example: /Users/graysonwhite/Documents/"
+    "text": "Questions\n\nWhat function is used to set a working directory in R? How about to get your current working directory?\nWhat is the difference between a relative and absolute path?\nConsider the following absolute path:\n\n/home/grayson/courses/for128/lab_01.qmd\nIf the working directory is /home/grayson/courses/, what is the relative path to lab_01.qmd?"
   },
   {
-    "objectID": "tickets/ticket_05.html",
-    "href": "tickets/ticket_05.html",
-    "title": "Lecture Ticket 5",
+    "objectID": "tickets/ticket_09.html",
+    "href": "tickets/ticket_09.html",
+    "title": "Lecture Ticket 9",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.3, 4.4 and 4.5 (Stop at 4.6)"
+    "text": "No reading this time."
   },
   {
-    "objectID": "tickets/ticket_05.html#reading",
-    "href": "tickets/ticket_05.html#reading",
-    "title": "Lecture Ticket 5",
+    "objectID": "tickets/ticket_09.html#reading",
+    "href": "tickets/ticket_09.html#reading",
+    "title": "Lecture Ticket 9",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 4: sections 4.3, 4.4 and 4.5 (Stop at 4.6)"
+    "text": "No reading this time."
   },
   {
-    "objectID": "tickets/ticket_05.html#questions",
-    "href": "tickets/ticket_05.html#questions",
-    "title": "Lecture Ticket 5",
+    "objectID": "tickets/ticket_09.html#questions",
+    "href": "tickets/ticket_09.html#questions",
+    "title": "Lecture Ticket 9",
     "section": "Questions",
-    "text": "Questions\n\nHow many dimensions do dataframes have?\nConsider the dataframe treedat. How would you access the element in the second row and third column of treedat?"
+    "text": "Questions\n\nWhat concepts from this course do you feel confident about?\nWhat concepts from this course are you struggling with?"
   },
   {
-    "objectID": "tickets/ticket_10.html",
-    "href": "tickets/ticket_10.html",
-    "title": "Lecture Ticket 10",
+    "objectID": "tickets/ticket_11.html",
+    "href": "tickets/ticket_11.html",
+    "title": "Lecture Ticket 11",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 6"
+    "text": "No lecture ticket today. Come to lecture with any last minute questions you might have about the midterm!"
   },
   {
-    "objectID": "tickets/ticket_10.html#reading",
-    "href": "tickets/ticket_10.html#reading",
-    "title": "Lecture Ticket 10",
+    "objectID": "tickets/ticket_14.html",
+    "href": "tickets/ticket_14.html",
+    "title": "Lecture Ticket 14",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 6"
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.6 - 7.9, 7.12"
   },
   {
-    "objectID": "tickets/ticket_10.html#questions",
-    "href": "tickets/ticket_10.html#questions",
-    "title": "Lecture Ticket 10",
+    "objectID": "tickets/ticket_14.html#reading",
+    "href": "tickets/ticket_14.html#reading",
+    "title": "Lecture Ticket 14",
+    "section": "",
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.6 - 7.9, 7.12"
+  },
+  {
+    "objectID": "tickets/ticket_14.html#questions",
+    "href": "tickets/ticket_14.html#questions",
+    "title": "Lecture Ticket 14",
     "section": "Questions",
-    "text": "Questions\n\nWhat is a tibble? How does it relate to a data.frame?\nWhy do we prefer reading in data with readr over base R?\nAre all tibbles data.frames? Are all data.frames tibbles?"
+    "text": "Questions\n\nWhat do mutate() and transmute() do? How are they different?\nWhat does the pipe (%&gt;%) operator do?\nWhat’s your favorite dplyr verb we’ve learned about so far? Why?"
   },
   {
-    "objectID": "tickets/ticket_12.html",
-    "href": "tickets/ticket_12.html",
-    "title": "Lecture Ticket 12",
+    "objectID": "tickets/ticket_16.html",
+    "href": "tickets/ticket_16.html",
+    "title": "Lecture Ticket 16",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nReview Chapter 6\nBegin Chapter 7 (read the introduction and 7.1)"
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.14 - 7.15"
   },
   {
-    "objectID": "tickets/ticket_12.html#reading",
-    "href": "tickets/ticket_12.html#reading",
-    "title": "Lecture Ticket 12",
+    "objectID": "tickets/ticket_16.html#reading",
+    "href": "tickets/ticket_16.html#reading",
+    "title": "Lecture Ticket 16",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nReview Chapter 6\nBegin Chapter 7 (read the introduction and 7.1)"
+    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.14 - 7.15"
   },
   {
-    "objectID": "tickets/ticket_12.html#questions",
-    "href": "tickets/ticket_12.html#questions",
-    "title": "Lecture Ticket 12",
+    "objectID": "tickets/ticket_16.html#questions",
+    "href": "tickets/ticket_16.html#questions",
+    "title": "Lecture Ticket 16",
     "section": "Questions",
-    "text": "Questions\n\nYou want to read in a file called “my_data.csv” on your computer and assign it to an object called dat in R. Now, we’ve learned two approaches to reading in data (base and tidyverse). How would you read it into R (a) with base and (b) with tidyverse?\nWhat are the dplyr verbs that we will learn in Chapter 7? What do each of them do?"
+    "text": "Questions\n\nWhat are the two major types of joins that we read about? What differentiates them?\nWe read about six joins. What are they? What do each of them do?\nWhich two joins are the most similar to each other?\nWhat is your favorite join? Why?"
   },
   {
-    "objectID": "tickets/ticket_15.html",
-    "href": "tickets/ticket_15.html",
-    "title": "Lecture Ticket 15",
+    "objectID": "tickets/ticket_18.html",
+    "href": "tickets/ticket_18.html",
+    "title": "Lecture Ticket 18",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.10 - 7.11, 7.13"
+    "text": "Read the following sections of IFDAR.\n\nReview Chapter 8"
   },
   {
-    "objectID": "tickets/ticket_15.html#reading",
-    "href": "tickets/ticket_15.html#reading",
-    "title": "Lecture Ticket 15",
+    "objectID": "tickets/ticket_18.html#reading",
+    "href": "tickets/ticket_18.html#reading",
+    "title": "Lecture Ticket 18",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 7: sections 7.10 - 7.11, 7.13"
+    "text": "Read the following sections of IFDAR.\n\nReview Chapter 8"
   },
   {
-    "objectID": "tickets/ticket_15.html#questions",
-    "href": "tickets/ticket_15.html#questions",
-    "title": "Lecture Ticket 15",
+    "objectID": "tickets/ticket_18.html#questions",
+    "href": "tickets/ticket_18.html#questions",
+    "title": "Lecture Ticket 18",
     "section": "Questions",
-    "text": "Questions\n\nWhat do n() and n_distinct() do? How are they different?\nWhat two arguments do we always specify when we use across()?\nWhen we use across(), we use it within a few dplyr verbs – what are those verbs?\nWhat concepts in dplyr are you confidently understanding? What concepts are you still struggling with?"
+    "text": "Questions\n\nWhat are each of the arguments to pivot_longer() and pivot_wider() that we will use? What must be specified for each of those arguments?\nWhat about the “FACE” dataset made it not tidy?"
   },
   {
-    "objectID": "tickets/ticket_17.html",
-    "href": "tickets/ticket_17.html",
-    "title": "Lecture Ticket 17",
+    "objectID": "tickets/ticket_20.html",
+    "href": "tickets/ticket_20.html",
+    "title": "Lecture Ticket 20",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 8"
+    "text": "None."
   },
   {
-    "objectID": "tickets/ticket_17.html#reading",
-    "href": "tickets/ticket_17.html#reading",
-    "title": "Lecture Ticket 17",
+    "objectID": "tickets/ticket_20.html#reading",
+    "href": "tickets/ticket_20.html#reading",
+    "title": "Lecture Ticket 20",
     "section": "",
-    "text": "Read the following sections of IFDAR.\n\nChapter 8"
+    "text": "None."
   },
   {
-    "objectID": "tickets/ticket_17.html#questions",
-    "href": "tickets/ticket_17.html#questions",
-    "title": "Lecture Ticket 17",
+    "objectID": "tickets/ticket_20.html#questions",
+    "href": "tickets/ticket_20.html#questions",
+    "title": "Lecture Ticket 20",
     "section": "Questions",
-    "text": "Questions\n\nWhat makes data tidy?\nWhat do pivot_longer() and pivot_wider() do?\nWhat does unite() do?"
-  },
-  {
-    "objectID": "tickets/ticket_19.html",
-    "href": "tickets/ticket_19.html",
-    "title": "Lecture Ticket 19",
-    "section": "",
-    "text": "Read the following article: A Layered Grammar of Graphics."
-  },
-  {
-    "objectID": "tickets/ticket_19.html#reading",
-    "href": "tickets/ticket_19.html#reading",
-    "title": "Lecture Ticket 19",
-    "section": "",
-    "text": "Read the following article: A Layered Grammar of Graphics."
-  },
-  {
-    "objectID": "tickets/ticket_19.html#questions",
-    "href": "tickets/ticket_19.html#questions",
-    "title": "Lecture Ticket 19",
-    "section": "Questions",
-    "text": "Questions\n\nWhat is a geometry? What are some examples of geometries?\nWhat is an aesthetic? What are some examples of aesthetics?\nWhat is a scale? How do scales differ between continuous and categorical variables?"
+    "text": "Questions\nFor this lecture ticket, please just bring a piece of paper with your name on it."
   },
   {
     "objectID": "tickets/ticket_04.html",

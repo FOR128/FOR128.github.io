@@ -1,0 +1,26 @@
+---
+title: "Lecture Ticket 21"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read the following sections of IFDAR.
+
+-   Chapter 9, sections 9.1 and 9.2. When reading 9.1, consider the differences of how we defined the grammar components and how the book defines the components. 
+
+
+## Questions
+
+1. How do `facet_wrap()` and `facet_grid()` differ? 
+
+2. What package will we use the place multiple ggplots on the same output? 
+3. How will we save graphics? 
+
+4. What is your favorite geom so far? 
+
+
+
+
+

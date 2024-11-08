@@ -51,7 +51,7 @@ Lecture tickets are turned in on a piece of paper in-person at lecture.
 | [Lecture ticket 18](tickets/ticket_18.qmd) | Tuesday  10/29 (by 5pm) | Thursday 10/31 (in lecture)  |
 | [Lecture ticket 19](tickets/ticket_19.qmd) | Thursday  10/31 (by 5pm) | Tuesday 11/5 (in lecture)  |
 | [Lecture ticket 20](tickets/ticket_20.qmd) | Tuesday  11/5 (by 5pm) | Thursday 11/7 (in lecture)  |
-| Lecture ticket 21 | Thursday  11/7 (by 5pm) | Tuesday 11/12 (in lecture)  |
+| [Lecture ticket 21](tickets/ticket_21.qmd) | Thursday  11/7 (by 5pm) | Tuesday 11/12 (in lecture)  |
 | Lecture ticket 22 | Tuesday  11/12 (by 5pm) | Thursday 11/14 (in lecture)  |
 | Lecture ticket 23 | Thursday  11/14 (by 5pm) | Tuesday 11/19 (in lecture)  |
 | Lecture ticket 24 | Tuesday  11/19 (by 5pm) | Tuesday 11/26 (in lecture)  |
