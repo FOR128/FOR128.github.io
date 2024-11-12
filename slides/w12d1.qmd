@@ -1,0 +1,762 @@
+---
+title: "More graphics with `ggplot2`"
+editor: 
+  mode: source
+webr:
+  show-startup-message: false
+filters:
+  - webr
+engine: knitr
+execute:
+  echo: true
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+revealjs-plugins:
+  - revealjs-text-resizer
+---
+
+## Annoucements
+
+
+Recall the following: 
+
+-   **UPDATE:** Midterm II is moved to Thursday, November 21st, during lab time.
+-   Material on the midterm will include all material through Week 12 (this week!). 
+-   The midterm will be of similar form to the last midterm.
+-   Closed materials, but you are allowed one 8.5" x 11" sheet of paper, double-sided, hand-written note sheet. 
+
+## Agenda
+
+-   Review final project
+-   Histogram vs. bar plot
+-   Reordering quantities in `ggplot2` output
+-   Further details on scales 
+-   Guides
+
+
+# [Final project](../final_project.qmd) {background-color="#00817c"}
+
+# Plotting with `ggplot2` {background-color="#00817c"}
+
+## Data
+
+Today, we'll use some data from `pdxTrees`: 
+
+```{r}
+library(tidyverse)
+library(pdxTrees)
+dat <- get_pdxTrees_parks(park = c("Jamison Square"))
+dat
+```
+
+## What are these plots called? 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot(aes(x = DBH)) +
+  geom_histogram(bins = 10)
+```
+
+::: incremental
+
+-   Histogram!
+-   Uses continuous data
+-   `geom_histogram()`
+
+:::
+
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot(aes(x = Condition)) +
+  geom_bar()
+```
+
+::: incremental
+
+-   Bar plot!
+-   Uses categorical data
+-   `geom_bar()`
+
+:::
+
+
+:::
+
+::::
+
+# Bar plots {background-color="#00817c"}
+
+## Bar plots
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition))
+```
+
+## How can we represent more variables in a bar plot? 
+
+## Adding a fill aesthetic mapping
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, fill = Common_Name))
+```
+
+## Why doesn't this work for `DBH`? 
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, fill = DBH))
+```
+
+## Adding a fill aesthetic mapping: what about color? 
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, fill = Common_Name))
+```
+
+## Adding a fill aesthetic mapping: what about color? 
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, color = Common_Name))
+```
+
+-   Hard to read!
+
+## Aesthetic vs. set value
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, fill = Common_Name), color = "black")
+```
+
+## Aesthetic vs. set value
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, color = Common_Name), fill = "black")
+```
+
+-   Hard to read!
+
+## Back to a nice barplot
+
+By default, bars are "stacked" (i.e. `position = "stack"`)
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, fill = Common_Name))
+```
+
+## Alternative: dodging bars
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, fill = Common_Name), position = "dodge")
+```
+
+## Alternative: filling bars
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, fill = Common_Name), position = "fill")
+```
+
+## Question: why choose a position filled vs position stacked barplot
+
+## Comparision
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, fill = Common_Name))
+```
+
+
+
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, fill = Common_Name), position = "fill")
+```
+
+:::
+::::
+
+## Comparision: stacked, filled, and dodged
+
+:::: {.columns}
+
+::: {.column width="33%"}
+
+```{r}
+#| echo: false
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, fill = Common_Name))
+```
+
+
+
+
+:::
+
+::: {.column width="33%"}
+
+```{r}
+#| echo: false
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, fill = Common_Name), position = "fill")
+```
+
+:::
+
+::: {.column width="33%"}
+
+```{r}
+#| echo: false
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, fill = Common_Name), position = "dodge")
+```
+
+:::
+::::
+
+
+## Stacked
+
+```{r}
+#| echo: false
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, fill = Common_Name))
+```
+
+## Stacked
+
+```{r}
+#| echo: false
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, fill = Common_Name), position = "stack")
+```
+
+
+
+
+## Filled
+
+```{r}
+#| echo: false
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, fill = Common_Name), position = "fill")
+```
+
+## Dodged
+
+```{r}
+#| echo: false
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, fill = Common_Name), position = "dodge")
+```
+
+
+# Histograms {background-color="#00817c"}
+
+
+## Histograms
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_histogram(aes(x = DBH), bins = 10)
+```
+
+## Multiple variables in histograms
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_histogram(aes(x = DBH, fill = Common_Name), bins = 10)
+```
+
+In general, it is very hard to interpret histograms with anything besides `position = "stack"`
+
+## Multiple variables in histograms
+
+Bad idea!
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_histogram(aes(x = DBH, fill = Common_Name), 
+                 bins = 10, 
+                 position = "dodge")
+```
+
+## Multiple variables in histograms
+
+Bad idea!
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_histogram(aes(x = DBH, fill = Common_Name), 
+                 bins = 10, 
+                 position = "fill")
+```
+
+# Flipping the coordinate system {background-color="#00817c"}
+
+
+## Flipping the coordinate system
+
+In `ggplot2`, it is quite easy to "flip" a coordinate system. 
+
+This is often done for aesthetic purposes. 
+
+This function works on many, if not all, geoms. 
+
+The function is `coord_flip()`. Let's take a look at it
+
+## Flipping the coordinate system
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, fill = Common_Name), position = "fill")
+```
+
+## Flipping the coordinate system
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_bar(aes(x = Condition, fill = Common_Name), position = "fill") + 
+  coord_flip()
+```
+
+## Flipping the coordinate system: boxplot
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_boxplot(aes(x = Common_Name, y = DBH))
+```
+
+## Flipping the coordinate system: boxplot
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_boxplot(aes(x = Common_Name, y = DBH)) + 
+  coord_flip()
+```
+
+## What if we wanted to reorder these common names from least to greatest DBH? 
+
+
+## Reordering `ggplot2` output
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_boxplot(aes(x = Common_Name, y = DBH)) + 
+  coord_flip()
+```
+
+## Reordering `ggplot2` output by a particular variable
+
+Use the `fct_reorder()` function from `forcats`. 
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_boxplot(aes(x = fct_reorder(Common_Name, DBH), y = DBH)) + 
+  coord_flip()
+```
+
+## Reordering `ggplot2` output by a particular variable
+
+Set `.desc = TRUE` to reverse the order
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_boxplot(aes(x = fct_reorder(Common_Name, DBH, .desc = TRUE), y = DBH)) + 
+  coord_flip()
+```
+
+## Reordering `ggplot2` output by a particular variable
+
+Make sure to rename the axis!
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_boxplot(aes(x = fct_reorder(Common_Name, DBH, .desc = TRUE), y = DBH)) + 
+  coord_flip() + 
+  labs(x = "Common Name")
+```
+
+## Reordering `ggplot2` output by a particular variable
+
+Question: why did I specify `x` here rather than `y`?
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+dat %>%
+  ggplot() +
+  geom_boxplot(aes(x = fct_reorder(Common_Name, DBH, .desc = TRUE), y = DBH)) + 
+  coord_flip() + 
+  labs(x = "Common Name")
+```
+
+# A deep dive into scales {background-color="#00817c"}
+
+## Scales
+
+Recall, we defined scales as "how data are mapped to certain aesthetics".
+
+We will expand that definition now.
+
+Scales not only encompass things like shape and color, but also the title, labels, and how we set, break the axis and color/fill scales. 
+## Modifying scales
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+dat %>% 
+  ggplot() + 
+  geom_point(aes(x = DBH,
+                 y = Tree_Height, 
+                 color = Carbon_Storage_lb))
+```
+
+## Modifying scales
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+dat %>% 
+  ggplot() + 
+  geom_point(aes(x = DBH,
+                 y = Tree_Height,
+                 color = Carbon_Storage_lb)) +
+  scale_color_distiller(type = "seq", palette = 2)
+```
+
+## Modifying scales
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+dat %>% 
+  ggplot() + 
+  geom_point(aes(x = DBH,
+                 y = Tree_Height,
+                 color = Carbon_Storage_lb)) +
+  scale_color_distiller(type = "seq", palette = 2) + 
+  scale_x_continuous(name = "Diameter at breast height")
+```
+
+## Modifying scales
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+dat %>% 
+  ggplot() + 
+  geom_point(aes(x = DBH,
+                 y = Tree_Height, 
+                 color = Carbon_Storage_lb)) +
+  scale_color_distiller(type = "seq", palette = 2) + 
+  scale_x_continuous(name = "Diameter at breast height",
+                     breaks = 0:20)
+```
+
+## Modifying scales
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+dat %>% 
+  ggplot() + 
+  geom_point(aes(x = DBH,
+                 y = Tree_Height,
+                 color = Carbon_Storage_lb)) +
+  scale_color_distiller(type = "seq", palette = 2) + 
+  scale_x_continuous(name = "Diameter at breast height",
+                     breaks = 0:20, 
+                     limits = c(0,20))
+```
+
+## Modifying scales
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+dat %>% 
+  ggplot() + 
+  geom_point(aes(x = DBH,
+                 y = Tree_Height, 
+                 color = Carbon_Storage_lb)) +
+  scale_color_distiller(type = "seq", palette = 2) + 
+  scale_x_continuous(name = "Diameter at breast height",
+                     breaks = seq(0, 20, by = 4), 
+                     limits = c(0,20))
+```
+
+## Modifying scales
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+dat %>% 
+  ggplot() + 
+  geom_point(aes(x = DBH,
+                 y = Tree_Height, 
+                 color = Carbon_Storage_lb)) +
+  scale_color_distiller(type = "seq", palette = 2,
+                        breaks = c(250, 500, 750, 1000, 1250)) + 
+  scale_x_continuous(name = "Diameter at breast height",
+                     breaks = seq(0, 20, by = 4), 
+                     limits = c(0,20))
+```
+
+
+# Guides (part of the theme) {background-color="#00817c"}
+
+## Guides
+
+Guides, a part of the theme of the graphic, are used to display the values associated with a given color or fill aesthetic. 
+
+
+## Guides
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+dat %>% 
+  ggplot() + 
+  geom_point(aes(x = DBH,
+                 y = Tree_Height, 
+                 color = Carbon_Storage_lb)) +
+  scale_color_distiller(type = "seq", palette = 2,
+                        breaks = c(250, 500, 750, 1000, 1250)) + 
+  scale_x_continuous(name = "Diameter at breast height",
+                     breaks = seq(0, 20, by = 4), 
+                     limits = c(0,20))
+```
+
+## Modifying guides
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+dat %>% 
+  ggplot() + 
+  geom_point(aes(x = DBH,
+                 y = Tree_Height, 
+                 color = Carbon_Storage_lb)) +
+  scale_color_distiller(type = "seq", palette = 2,
+                        breaks = c(250, 500, 750, 1000, 1250),
+                        guide = guide_colorbar(barheight = 15,
+                                               barwidth = 1)) + 
+  scale_x_continuous(name = "Diameter at breast height",
+                     breaks = seq(0, 20, by = 4), 
+                     limits = c(0,20))
+```
+
+## Modifying guides
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+dat %>% 
+  ggplot() + 
+  geom_point(aes(x = DBH,
+                 y = Tree_Height, 
+                 color = Carbon_Storage_lb)) +
+  scale_color_distiller(type = "seq", palette = 2,
+                        breaks = c(250, 500, 750, 1000, 1250),
+                        guide = guide_colorbar(barheight = 1,
+                                               barwidth = 15,
+                                               position = "bottom")) + 
+  scale_x_continuous(name = "Diameter at breast height",
+                     breaks = seq(0, 20, by = 4), 
+                     limits = c(0,20))
+```
+
+## Modifying guides
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+dat %>% 
+  ggplot() + 
+  geom_point(aes(x = DBH,
+                 y = Tree_Height, 
+                 color = Carbon_Storage_lb)) +
+  scale_color_distiller(type = "seq", palette = 2,
+                        breaks = c(250, 500, 750, 1000, 1250),
+                        guide = guide_colorbar(barheight = 1,
+                                               barwidth = 15,
+                                               position = "bottom")) + 
+  scale_x_continuous(name = "Diameter at breast height",
+                     breaks = seq(0, 20, by = 4), 
+                     limits = c(0,20)) +
+  theme(legend.title.position = "top",
+        legend.title = element_text(hjust = 0.5))
+```
+
+## Next time
+
+-   Building graphics incrementally,
+-   Arranging graphics,
+-   Saving graphics,
+-   Spatial data with `sf`
+-   Spatial plotting with `ggplot2` + `sf`
+
+
+
+
+
+
+
+
+
+
+
+ 

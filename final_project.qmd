@@ -29,7 +29,7 @@ Please submit a brief proposal of the project you would like to do. This should 
 
 ### The blog post
 
-**Due date:** Wednesday, December 11th, 5pm. 
+**Due date:** Monday, December 9th, 5pm. 
 
 The blog post is the heart of the final project. You and your group members will write a blog post in a Quarto document that takes the raw data you are using and tells a story with it. The blog post will include the story of getting the data, wrangling the data, and plots and summaries of the data. The blog posts will be posted on the course website (with groups permission), you have the right to not include your blog post on the course website, or to anonymize your blog post for the course website. 
 
