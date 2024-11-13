@@ -23,7 +23,7 @@ Please submit a document to D2L with the names of your group members. Remember, 
 
 ### The proposal
 
-**Due date:** Tuesday, November 19th, 5pm. 
+**Due date:** Saturday, November 23rd, 5pm. 
 
 Please submit a brief proposal of the project you would like to do. This should be a (no longer than 2 page) document outlining the data you will use and an idea of the story or information that you'd like to try to extract from the data. For this part, it is strongly recommended that you download the data you would like to use and take a look at it. In the proposal, describe any challenges you anticipate having working with the data, and the steps needed to get the data into a form that will be easy to work with in R. It is expected that this document is well-written, explains the data you'd like to work with, and conveys your ideas and hopes for what you'd like to do with the data (i.e. what your blog post will be about). 
 
@@ -42,6 +42,13 @@ More details to come on the blog post.
 You and your group will present the results from your analyses (i.e. findings from the blog post) in slide show form to your classmates during the final exam slot. Groups will present together, and presentation time should be shared relatively equally between group members. 
 
 More details to come on the presentation. 
+
+<!-- ## Potential Datasets -->
+
+<!-- While you can come up with your own dataset for the final project, we have provided some datasets that might be nice to explore. This list will continue to be updated.  -->
+
+<!-- -   [Penobscot Experimental Forest](https://www.fs.usda.gov/rds/efrdata/efr/3) -->
+<!-- -   [HJ Andrews Experimental Forest](https://andrewsforest.oregonstate.edu/data) -->
 
 
 ## Evaluation

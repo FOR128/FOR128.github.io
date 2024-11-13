@@ -49,3 +49,5 @@ Week 11, day 1: *The grammar of graphics*. Available [here](https://mediaspace.m
 
 Week 11, day 2: *Final project explanation and more plotting with `ggplot2`*. Available [here](https://mediaspace.msu.edu/media/Week+11+Day+2/1_5meoynmd).
 
+Week 12, day 1: *More plotting with `ggplot2`*. Available [here](https://mediaspace.msu.edu/media/Week+12+Day+1/1_nw3ma983).
+
