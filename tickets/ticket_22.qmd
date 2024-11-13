@@ -1,0 +1,27 @@
+---
+title: "Lecture Ticket 22"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read the following sections of IFDAR.
+
+-   Chapter 9, sections 9.3 - 9.5
+
+
+## Questions
+
+1. What geometry might we use to represent DBH class?
+
+2. Why can't we use a histogram to represent DBH class?
+
+3. Come up with an example of when we'd like to use the different types of bar plots: stacked, filled, and dodged; and why we'd use a particular type in a particular scenario. 
+
+
+
+
+
+
+
