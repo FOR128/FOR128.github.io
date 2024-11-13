@@ -43,12 +43,18 @@ You and your group will present the results from your analyses (i.e. findings fr
 
 More details to come on the presentation. 
 
-<!-- ## Potential Datasets -->
+## Potential Datasets
 
-<!-- While you can come up with your own dataset for the final project, we have provided some datasets that might be nice to explore. This list will continue to be updated.  -->
+While you can come up with your own dataset for the final project, we have provided some datasets that might be nice to explore. 
 
-<!-- -   [Penobscot Experimental Forest](https://www.fs.usda.gov/rds/efrdata/efr/3) -->
-<!-- -   [HJ Andrews Experimental Forest](https://andrewsforest.oregonstate.edu/data) -->
+-   [Penobscot Experimental Forest](https://www.fs.usda.gov/rds/efrdata/efr/3)
+-   [HJ Andrews Experimental Forest](https://andrewsforest.oregonstate.edu/data)
+-   [Harvard Forest](https://harvardforest.fas.harvard.edu/data-archive)
+-   [National Ecological Observatory Network](https://data.neonscience.org/)
+-   [Hubbard Brook Ecosystem Study](https://hubbardbrook.org/data-catalog/)
+-   [Bartlett Experimental Forest](https://www.fs.usda.gov/rds/archive/catalog/RDS-2017-0036)
+-   [Fernow Experimental Forest](https://www.fs.usda.gov/rds/archive/catalog/RDS-2011-0013)
+-   [National Park Service DataStore](https://irma.nps.gov/DataStore/)
 
 
 ## Evaluation
