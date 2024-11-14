@@ -5464,7 +5464,7 @@
     "href": "slides/w12d2.html#next-time",
     "title": "More graphics with ggplot2",
     "section": "Next time",
-    "text": "Next time\n\nBuilding graphics incrementally,\nArranging graphics,\nSaving graphics,\nSpatial data with sf\nSpatial plotting with ggplot2 + sf"
+    "text": "Next time\n\nSpatial data with sf,\nSpatial plotting with ggplot2 + sf"
   },
   {
     "objectID": "slides/w2d2.html#agenda",

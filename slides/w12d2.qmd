@@ -403,10 +403,7 @@ knitr::include_graphics("saved_plots/my_patchwork.jpg")
 
 ## Next time
 
--   Building graphics incrementally,
--   Arranging graphics,
--   Saving graphics,
--   Spatial data with `sf`
+-   Spatial data with `sf`,
 -   Spatial plotting with `ggplot2` + `sf`
 
 
