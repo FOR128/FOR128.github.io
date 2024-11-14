@@ -398,15 +398,6 @@ knitr::include_graphics("saved_plots/my_plot_big.png")
 #| fig-align: center
 knitr::include_graphics("saved_plots/my_patchwork.jpg")
 ```
-```{r}
-#| echo: false
-#| message: false
-#| output: false
-#| warning: false
-file.remove("saved_plots/my_plot.png")
-file.remove("saved_plots/my_plot_big.png")
-file.remove("saved_plots/my_patchwork.jpg")
-```
 
 
 

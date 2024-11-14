@@ -693,284 +693,340 @@
     "text": "Next time\n\nLoops\nMore advanced functions\nReview Quarto"
   },
   {
-    "objectID": "slides/w12d2.html#agenda",
-    "href": "slides/w12d2.html#agenda",
-    "title": "More graphics with ggplot2",
+    "objectID": "slides/w7d2.html#announcements",
+    "href": "slides/w7d2.html#announcements",
+    "title": "Intro to dplyr",
+    "section": "Announcements",
+    "text": "Announcements\n\nMidterm 1 were released yesterday.\nLab 5 grades coming soon."
+  },
+  {
+    "objectID": "slides/w7d2.html#agenda",
+    "href": "slides/w7d2.html#agenda",
+    "title": "Intro to dplyr",
     "section": "Agenda",
-    "text": "Agenda\n\nReview final project\nReview midterm parameters\nQuiz\nBuilding graphics incrementally\nArranging graphics\nSaving graphics\nFurther discussion of final project + midterm exam + lab 11"
+    "text": "Agenda\n\ndplyr verbs"
   },
   {
-    "objectID": "slides/w12d2.html#final-project",
-    "href": "slides/w12d2.html#final-project",
-    "title": "More graphics with ggplot2",
-    "section": "Final project",
-    "text": "Final project\n\n\nFinal presentations will occur during our final exam time slot: Thursday December 12th from 10am - 12pm, in NR223 (lab room).\nSome potential datasets for the final project have been added to the course website.\nGroups have been assigned and emailed to you all.\nNext deadline: the proposal. Saturday, Nov 23rd at 5pm."
+    "objectID": "slides/w7d2.html#filter",
+    "href": "slides/w7d2.html#filter",
+    "title": "Intro to dplyr",
+    "section": "filter()",
+    "text": "filter()\n\nSubsets rows of data based on logical conditions related to one or more columns in the dataset."
   },
   {
-    "objectID": "slides/w12d2.html#midterm-ii",
-    "href": "slides/w12d2.html#midterm-ii",
-    "title": "More graphics with ggplot2",
-    "section": "Midterm II",
-    "text": "Midterm II\n\n\nWill be taken in one week, Nov 23rd, during lab time.\nClosed book, closed notes.\nHandwritten “cheat sheet” allowed, just like Midterm I\nSame format as Midterm I: 5 questions, top 4 are graded."
-  },
-  {
-    "objectID": "slides/w12d2.html#data",
-    "href": "slides/w12d2.html#data",
-    "title": "More graphics with ggplot2",
+    "objectID": "slides/w7d2.html#data",
+    "href": "slides/w7d2.html#data",
+    "title": "Intro to dplyr",
     "section": "Data",
-    "text": "Data\nToday, we’ll use some data from pdxTrees:\n\nlibrary(tidyverse)\nlibrary(pdxTrees)\ndat &lt;- get_pdxTrees_parks(park = c(\"Woodstock Park\")) %&gt;%\n  filter(Common_Name %in% c(\"Douglas-Fir\", \n                            \"Japanese Flowering Cherry\",\n                            \"Western Redcedar\"))\ndat\n\n# A tibble: 97 × 34\n   Longitude Latitude UserID Genus      Family   DBH Inventory_Date      Species\n       &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;  &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;  \n 1     -123.     45.5 18381  Pseudotsu… Pinac…  41.3 2019-07-20 00:00:00 PSME   \n 2     -123.     45.5 18386  Pseudotsu… Pinac…  34.7 2019-07-20 00:00:00 PSME   \n 3     -123.     45.5 18415  Pseudotsu… Pinac…  36.3 2019-07-20 00:00:00 PSME   \n 4     -123.     45.5 18417  Pseudotsu… Pinac…  32.4 2019-07-20 00:00:00 PSME   \n 5     -123.     45.5 18420  Pseudotsu… Pinac…  18.2 2019-07-20 00:00:00 PSME   \n 6     -123.     45.5 18423  Thuja      Cupre…  34.4 2019-07-20 00:00:00 THPL   \n 7     -123.     45.5 18486  Pseudotsu… Pinac…  38   2019-07-20 00:00:00 PSME   \n 8     -123.     45.5 18488  Pseudotsu… Pinac…  31.2 2019-07-20 00:00:00 PSME   \n 9     -123.     45.5 18489  Pseudotsu… Pinac…  32.2 2019-07-20 00:00:00 PSME   \n10     -123.     45.5 18490  Pseudotsu… Pinac…  49.2 2019-07-20 00:00:00 PSME   \n# ℹ 87 more rows\n# ℹ 26 more variables: Common_Name &lt;chr&gt;, Condition &lt;chr&gt;, Tree_Height &lt;dbl&gt;,\n#   Crown_Width_NS &lt;dbl&gt;, Crown_Width_EW &lt;dbl&gt;, Crown_Base_Height &lt;dbl&gt;,\n#   Collected_By &lt;chr&gt;, Park &lt;chr&gt;, Scientific_Name &lt;chr&gt;,\n#   Functional_Type &lt;chr&gt;, Mature_Size &lt;fct&gt;, Native &lt;chr&gt;, Edible &lt;chr&gt;,\n#   Nuisance &lt;chr&gt;, Structural_Value &lt;dbl&gt;, Carbon_Storage_lb &lt;dbl&gt;,\n#   Carbon_Storage_value &lt;dbl&gt;, Carbon_Sequestration_lb &lt;dbl&gt;, …"
+    "text": "Data\n\nConsider our favorite toy dataset:\n\n\nlibrary(tidyverse)\npets &lt;- tibble(\n  names = c(\"Dude\", \"Pickle\", \"Kyle\", \"Nubs\"),\n  ages = c(6, 5, 3, 11),\n  is_dog = c(TRUE, FALSE, FALSE, FALSE)\n)\npets\n\n# A tibble: 4 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6 TRUE  \n2 Pickle     5 FALSE \n3 Kyle       3 FALSE \n4 Nubs      11 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#a-plot",
-    "href": "slides/w12d2.html#a-plot",
-    "title": "More graphics with ggplot2",
-    "section": "A plot",
-    "text": "A plot\n\nggplot(dat, aes(x = DBH, y = Pollution_Removal_value, color = Common_Name)) + \n  geom_point()"
+    "objectID": "slides/w7d2.html#filter-ages-greater-than-5",
+    "href": "slides/w7d2.html#filter-ages-greater-than-5",
+    "title": "Intro to dplyr",
+    "section": "filter() ages greater than 5",
+    "text": "filter() ages greater than 5\n\nfilter(pets, ages &gt; 5)\n\n# A tibble: 2 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Dude      6 TRUE  \n2 Nubs     11 FALSE \n\n\n\n\nNotice the pattern: filter(dataset, logical statement)\nThe first argument in filter(), and the other dplyr function we will learn, is the dataset we’d like to operate on."
   },
   {
-    "objectID": "slides/w12d2.html#a-plot-saved",
-    "href": "slides/w12d2.html#a-plot-saved",
-    "title": "More graphics with ggplot2",
-    "section": "A plot, saved",
-    "text": "A plot, saved\n\np1 &lt;- ggplot(dat, aes(x = DBH,\n                      y = Pollution_Removal_value, \n                      color = Common_Name)) + \n  geom_point()"
+    "objectID": "slides/w7d2.html#filter-dogs-with-ages-greater-than-5",
+    "href": "slides/w7d2.html#filter-dogs-with-ages-greater-than-5",
+    "title": "Intro to dplyr",
+    "section": "filter() dogs with ages greater than 5",
+    "text": "filter() dogs with ages greater than 5\n\nfilter(pets, ages &gt; 5, is_dog)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Dude      6 TRUE"
   },
   {
-    "objectID": "slides/w12d2.html#a-saved-plot-plotted",
-    "href": "slides/w12d2.html#a-saved-plot-plotted",
-    "title": "More graphics with ggplot2",
-    "section": "A saved plot, plotted",
-    "text": "A saved plot, plotted\n\np1"
+    "objectID": "slides/w7d2.html#filter-dogs-with-ages-greater-than-5-1",
+    "href": "slides/w7d2.html#filter-dogs-with-ages-greater-than-5-1",
+    "title": "Intro to dplyr",
+    "section": "filter() dogs with ages greater than 5",
+    "text": "filter() dogs with ages greater than 5\n\nfilter(pets, ages &gt; 5, is_dog)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Dude      6 TRUE  \n\n\nWe can equivalently write:\n\nfilter(pets, ages &gt; 5 & is_dog)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Dude      6 TRUE  \n\n\n\n\nIn filter() the comma between logical statements is the same as &."
   },
   {
-    "objectID": "slides/w12d2.html#plotting-a-saved-plot-and-modifying",
-    "href": "slides/w12d2.html#plotting-a-saved-plot-and-modifying",
-    "title": "More graphics with ggplot2",
-    "section": "Plotting a saved plot, and modifying",
-    "text": "Plotting a saved plot, and modifying\n\np1 + \n  scale_color_manual(values = c(\"forestgreen\", \"pink\", \"orange\")) +\n  theme_bw()"
+    "objectID": "slides/w7d2.html#filter-for-pets-named-pickle",
+    "href": "slides/w7d2.html#filter-for-pets-named-pickle",
+    "title": "Intro to dplyr",
+    "section": "filter() for pets named Pickle",
+    "text": "filter() for pets named Pickle\n\nfilter(pets, names == \"Pickle\")\n\n# A tibble: 1 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Pickle     5 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#saving-this-modification",
-    "href": "slides/w12d2.html#saving-this-modification",
-    "title": "More graphics with ggplot2",
-    "section": "Saving this modification",
-    "text": "Saving this modification\n\np1 &lt;- p1 + \n  scale_color_manual(values = c(\"forestgreen\", \"pink\", \"orange\")) +\n  theme_bw()"
+    "objectID": "slides/w7d2.html#filter-for-pets-named-pickle-or-dude",
+    "href": "slides/w7d2.html#filter-for-pets-named-pickle-or-dude",
+    "title": "Intro to dplyr",
+    "section": "filter() for pets named Pickle or Dude",
+    "text": "filter() for pets named Pickle or Dude\n\nfilter(pets, names %in% c(\"Pickle\", \"Dude\"))\n\n# A tibble: 2 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6 TRUE  \n2 Pickle     5 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#plotting-the-saved-plot",
-    "href": "slides/w12d2.html#plotting-the-saved-plot",
-    "title": "More graphics with ggplot2",
-    "section": "Plotting the saved plot",
-    "text": "Plotting the saved plot\n\np1"
+    "objectID": "slides/w7d2.html#filter-for-non-dogs",
+    "href": "slides/w7d2.html#filter-for-non-dogs",
+    "title": "Intro to dplyr",
+    "section": "filter() for non-dogs",
+    "text": "filter() for non-dogs\n\n\n# A tibble: 4 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6 TRUE  \n2 Pickle     5 FALSE \n3 Kyle       3 FALSE \n4 Nubs      11 FALSE \n\n\n\n−+\n01:00"
   },
   {
-    "objectID": "slides/w12d2.html#another-plot",
-    "href": "slides/w12d2.html#another-plot",
-    "title": "More graphics with ggplot2",
-    "section": "Another plot",
-    "text": "Another plot\n\np2 &lt;- ggplot(dat, aes(x = Common_Name, y = DBH)) + \n  geom_boxplot()"
+    "objectID": "slides/w7d2.html#filter-for-non-dogs-1",
+    "href": "slides/w7d2.html#filter-for-non-dogs-1",
+    "title": "Intro to dplyr",
+    "section": "filter() for non-dogs",
+    "text": "filter() for non-dogs\n\nfilter(pets, !is_dog)\n\n# A tibble: 3 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Pickle     5 FALSE \n2 Kyle       3 FALSE \n3 Nubs      11 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#viewing-the-plot",
-    "href": "slides/w12d2.html#viewing-the-plot",
-    "title": "More graphics with ggplot2",
-    "section": "Viewing the plot",
-    "text": "Viewing the plot\n\np2"
+    "objectID": "slides/w7d2.html#filter-for-non-dogs-2",
+    "href": "slides/w7d2.html#filter-for-non-dogs-2",
+    "title": "Intro to dplyr",
+    "section": "filter() for non-dogs",
+    "text": "filter() for non-dogs\n\nfilter(pets, !is_dog)\n\n# A tibble: 3 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Pickle     5 FALSE \n2 Kyle       3 FALSE \n3 Nubs      11 FALSE \n\n# or\nfilter(pets, is_dog == FALSE)\n\n# A tibble: 3 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Pickle     5 FALSE \n2 Kyle       3 FALSE \n3 Nubs      11 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#combining-enter-patchwork",
-    "href": "slides/w12d2.html#combining-enter-patchwork",
-    "title": "More graphics with ggplot2",
-    "section": "Combining: enter, patchwork",
-    "text": "Combining: enter, patchwork\n\nlibrary(patchwork)\np1 + p2"
+    "objectID": "slides/w7d2.html#filter-for-non-dogs-with-age-greater-than-10",
+    "href": "slides/w7d2.html#filter-for-non-dogs-with-age-greater-than-10",
+    "title": "Intro to dplyr",
+    "section": "filter() for non-dogs with age greater than 10",
+    "text": "filter() for non-dogs with age greater than 10\n\n\n# A tibble: 4 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6 TRUE  \n2 Pickle     5 FALSE \n3 Kyle       3 FALSE \n4 Nubs      11 FALSE \n\n\n\n−+\n01:00"
   },
   {
-    "objectID": "slides/w12d2.html#changing-plot-orientation",
-    "href": "slides/w12d2.html#changing-plot-orientation",
-    "title": "More graphics with ggplot2",
-    "section": "Changing plot orientation",
-    "text": "Changing plot orientation\n\np1 / p2"
+    "objectID": "slides/w7d2.html#filter-for-non-dogs-with-age-greater-than-10-1",
+    "href": "slides/w7d2.html#filter-for-non-dogs-with-age-greater-than-10-1",
+    "title": "Intro to dplyr",
+    "section": "filter() for non-dogs with age greater than 10",
+    "text": "filter() for non-dogs with age greater than 10\n\nfilter(pets, !is_dog & ages &gt; 10)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#applying-a-theme-to-all-plots",
-    "href": "slides/w12d2.html#applying-a-theme-to-all-plots",
-    "title": "More graphics with ggplot2",
-    "section": "Applying a theme to all plots",
-    "text": "Applying a theme to all plots\n\np1 + p2 & theme_bw()"
+    "objectID": "slides/w7d2.html#filter-for-non-dogs-with-age-greater-than-10-2",
+    "href": "slides/w7d2.html#filter-for-non-dogs-with-age-greater-than-10-2",
+    "title": "Intro to dplyr",
+    "section": "filter() for non-dogs with age greater than 10",
+    "text": "filter() for non-dogs with age greater than 10\n\nfilter(pets, !is_dog & ages &gt; 10)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE \n\n# or \nfilter(pets, !is_dog, ages &gt; 10)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#applying-a-theme-to-all-plots-1",
-    "href": "slides/w12d2.html#applying-a-theme-to-all-plots-1",
-    "title": "More graphics with ggplot2",
-    "section": "Applying a theme to all plots",
-    "text": "Applying a theme to all plots\n\np1 + p2 & theme_dark()"
+    "objectID": "slides/w7d2.html#filter-for-non-dogs-with-age-greater-than-10-3",
+    "href": "slides/w7d2.html#filter-for-non-dogs-with-age-greater-than-10-3",
+    "title": "Intro to dplyr",
+    "section": "filter() for non-dogs with age greater than 10",
+    "text": "filter() for non-dogs with age greater than 10\n\nfilter(pets, !is_dog & ages &gt; 10)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE \n\n# or \nfilter(pets, !is_dog, ages &gt; 10)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE \n\n# or \nfilter(pets, is_dog == FALSE, ages &gt; 10) # etc...\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#third-plot",
-    "href": "slides/w12d2.html#third-plot",
-    "title": "More graphics with ggplot2",
-    "section": "Third plot",
-    "text": "Third plot\n\np3 &lt;- ggplot(dat, aes(x = DBH)) + \n  geom_histogram(color = \"black\") + \n  theme_bw()\np3"
+    "objectID": "slides/w7d2.html#slice-1",
+    "href": "slides/w7d2.html#slice-1",
+    "title": "Intro to dplyr",
+    "section": "slice()",
+    "text": "slice()\nThere are five variations of slice() that we will learn in this course:\n\n\nslice(): for getting rows or sets of rows by index,\nslice_head(): for getting the first few (n) rows,\nslice_tail(): for getting the last few (n) rows,\nslice_min(): for getting the row with the minimum value of some column,\nslice_max(): for getting the row with the maximum value of some column."
   },
   {
-    "objectID": "slides/w12d2.html#combining-3-plots-with-patchwork",
-    "href": "slides/w12d2.html#combining-3-plots-with-patchwork",
-    "title": "More graphics with ggplot2",
-    "section": "Combining 3 plots with patchwork",
-    "text": "Combining 3 plots with patchwork\n\np1 + p2 + p3"
+    "objectID": "slides/w7d2.html#slice-2",
+    "href": "slides/w7d2.html#slice-2",
+    "title": "Intro to dplyr",
+    "section": "slice()",
+    "text": "slice()"
   },
   {
-    "objectID": "slides/w12d2.html#combining-3-plots-with-patchwork-1",
-    "href": "slides/w12d2.html#combining-3-plots-with-patchwork-1",
-    "title": "More graphics with ggplot2",
-    "section": "Combining 3 plots with patchwork",
-    "text": "Combining 3 plots with patchwork\n\n(p1 + p2) /  p3"
+    "objectID": "slides/w7d2.html#get-the-first-and-third-rows-of-pets",
+    "href": "slides/w7d2.html#get-the-first-and-third-rows-of-pets",
+    "title": "Intro to dplyr",
+    "section": "Get the first and third rows of pets",
+    "text": "Get the first and third rows of pets\n\nslice(pets, 1, 3)\n\n# A tibble: 2 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Dude      6 TRUE  \n2 Kyle      3 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#combining-3-plots-with-patchwork-2",
-    "href": "slides/w12d2.html#combining-3-plots-with-patchwork-2",
-    "title": "More graphics with ggplot2",
-    "section": "Combining 3 plots with patchwork",
-    "text": "Combining 3 plots with patchwork\n\n(p1 + p2) /  (p3 + plot_spacer())"
+    "objectID": "slides/w7d2.html#get-the-first-and-third-rows-of-pets-1",
+    "href": "slides/w7d2.html#get-the-first-and-third-rows-of-pets-1",
+    "title": "Intro to dplyr",
+    "section": "Get the first and third rows of pets",
+    "text": "Get the first and third rows of pets\n\nslice(pets, 1, 3)\n\n# A tibble: 2 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Dude      6 TRUE  \n2 Kyle      3 FALSE \n\n# or, equivalently\nslice(pets, c(1,3))\n\n# A tibble: 2 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Dude      6 TRUE  \n2 Kyle      3 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#collecting-the-guides",
-    "href": "slides/w12d2.html#collecting-the-guides",
-    "title": "More graphics with ggplot2",
-    "section": "Collecting the guides",
-    "text": "Collecting the guides\n\n(p1 + p2) /  (p3 + plot_spacer()) +\n  plot_layout(guides = \"collect\")"
+    "objectID": "slides/w7d2.html#get-the-first-two-rows-of-pets",
+    "href": "slides/w7d2.html#get-the-first-two-rows-of-pets",
+    "title": "Intro to dplyr",
+    "section": "Get the first two rows of pets",
+    "text": "Get the first two rows of pets\n\nslice(pets, 1, 2)\n\n# A tibble: 2 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6 TRUE  \n2 Pickle     5 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#collecting-the-guides-legend-at-bottom",
-    "href": "slides/w12d2.html#collecting-the-guides-legend-at-bottom",
-    "title": "More graphics with ggplot2",
-    "section": "Collecting the guides: legend at bottom",
-    "text": "Collecting the guides: legend at bottom\n\n(p1 + p2) /  (p3 + plot_spacer()) +\n  plot_layout(guides = \"collect\") &\n  theme(legend.position = \"bottom\")"
+    "objectID": "slides/w7d2.html#get-the-first-two-rows-of-pets-1",
+    "href": "slides/w7d2.html#get-the-first-two-rows-of-pets-1",
+    "title": "Intro to dplyr",
+    "section": "Get the first two rows of pets",
+    "text": "Get the first two rows of pets\n\nslice(pets, 1, 2)\n\n# A tibble: 2 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6 TRUE  \n2 Pickle     5 FALSE \n\n# or, equivalently\nslice_head(pets, n = 2)\n\n# A tibble: 2 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6 TRUE  \n2 Pickle     5 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#setting-the-theme-across-plots",
-    "href": "slides/w12d2.html#setting-the-theme-across-plots",
-    "title": "More graphics with ggplot2",
-    "section": "Setting the theme across plots",
-    "text": "Setting the theme across plots\n\n(p1 + p2) /  (p3 + plot_spacer()) +\n  plot_layout(guides = \"collect\") &\n  theme_bw() &\n  theme(legend.position = \"bottom\")"
+    "objectID": "slides/w7d2.html#get-the-last-row-of-pets",
+    "href": "slides/w7d2.html#get-the-last-row-of-pets",
+    "title": "Intro to dplyr",
+    "section": "Get the last row of pets",
+    "text": "Get the last row of pets\n\nslice_tail(pets)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE \n\n\n\n\nNote that in slice_tail() (and slice_head()) the default for n is 1."
   },
   {
-    "objectID": "slides/w12d2.html#more-with-patchwork",
-    "href": "slides/w12d2.html#more-with-patchwork",
-    "title": "More graphics with ggplot2",
-    "section": "More with patchwork",
-    "text": "More with patchwork\n\n\nThis is just the tip of the iceberg!\nSee https://patchwork.data-imaginist.com/index.html for much greater detail"
+    "objectID": "slides/w7d2.html#get-the-last-row-of-pets-1",
+    "href": "slides/w7d2.html#get-the-last-row-of-pets-1",
+    "title": "Intro to dplyr",
+    "section": "Get the last row of pets",
+    "text": "Get the last row of pets\n\nslice_tail(pets)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE \n\n\n\nNote that in slice_tail() (and slice_head()) the default for n is 1.\n\n\nslice_tail(pets, n = 1) # exactly the same as above\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#saving-graphics",
-    "href": "slides/w12d2.html#saving-graphics",
-    "title": "More graphics with ggplot2",
-    "section": "Saving graphics",
-    "text": "Saving graphics\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?"
+    "objectID": "slides/w7d2.html#get-the-pet-who-is-the-youngest",
+    "href": "slides/w7d2.html#get-the-pet-who-is-the-youngest",
+    "title": "Intro to dplyr",
+    "section": "Get the pet who is the youngest",
+    "text": "Get the pet who is the youngest\n\nslice_min(pets, ages)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Kyle      3 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#saving-graphics-1",
-    "href": "slides/w12d2.html#saving-graphics-1",
-    "title": "More graphics with ggplot2",
-    "section": "Saving graphics",
-    "text": "Saving graphics\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\np1"
+    "objectID": "slides/w7d2.html#get-the-pet-who-is-the-oldest",
+    "href": "slides/w7d2.html#get-the-pet-who-is-the-oldest",
+    "title": "Intro to dplyr",
+    "section": "Get the pet who is the oldest",
+    "text": "Get the pet who is the oldest\n\nslice_max(pets, ages)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#saving-graphics-2",
-    "href": "slides/w12d2.html#saving-graphics-2",
-    "title": "More graphics with ggplot2",
-    "section": "Saving graphics",
-    "text": "Saving graphics\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nlist.files()\n\n [1] \"figs\"              \"minard-cities.txt\" \"minard-troops.txt\"\n [4] \"pets.csv\"          \"saved_plots\"       \"w10d1.html\"       \n [7] \"w10d1.qmd\"         \"w10d2.html\"        \"w10d2.qmd\"        \n[10] \"w11d1_files\"       \"w11d1.html\"        \"w11d1.qmd\"        \n[13] \"w11d2_files\"       \"w11d2.html\"        \"w11d2.qmd\"        \n[16] \"w12d1.qmd\"         \"w12d2_files\"       \"w12d2.qmd\"        \n[19] \"w12d2.rmarkdown\"   \"w1d1.html\"         \"w1d1.qmd\"         \n[22] \"w1d2.html\"         \"w1d2.qmd\"          \"w2d1.html\"        \n[25] \"w2d1.qmd\"          \"w2d2.qmd\"          \"w3d1.html\"        \n[28] \"w3d1.qmd\"          \"w4d1.html\"         \"w4d1.qmd\"         \n[31] \"w4d2.qmd\"          \"w5d1.qmd\"          \"w5d2.html\"        \n[34] \"w5d2.qmd\"          \"w6d1.html\"         \"w6d1.qmd\"         \n[37] \"w7d1.html\"         \"w7d1.qmd\"          \"w7d2.html\"        \n[40] \"w7d2.qmd\"          \"w8d1.html\"         \"w8d1.qmd\"         \n[43] \"w8d2.html\"         \"w8d2.qmd\"          \"w9d1.html\"        \n[46] \"w9d1.qmd\"         \n\nlist.files(\"saved_plots\")\n\ncharacter(0)"
+    "objectID": "slides/w7d2.html#get-the-two-youngest-pets",
+    "href": "slides/w7d2.html#get-the-two-youngest-pets",
+    "title": "Intro to dplyr",
+    "section": "Get the two youngest pets",
+    "text": "Get the two youngest pets\n\nslice_min(pets, ages, n = 2)\n\n# A tibble: 2 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Kyle       3 FALSE \n2 Pickle     5 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#saving-graphics-3",
-    "href": "slides/w12d2.html#saving-graphics-3",
-    "title": "More graphics with ggplot2",
-    "section": "Saving graphics",
-    "text": "Saving graphics\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nggsave(filename = \"saved_plots/my_plot.png\", plot = p1)"
+    "objectID": "slides/w7d2.html#arrange-1",
+    "href": "slides/w7d2.html#arrange-1",
+    "title": "Intro to dplyr",
+    "section": "arrange()",
+    "text": "arrange()\n\n\narrange() orders rows based on values in one or more columns.\nBy default, arrange() puts smallest values at the top.\nIf you’d like largest values at the top, we can use the desc() function (named for descending order)\nWhen we arrange() by more than one column, the following columns “break ties” in the prior columns."
   },
   {
-    "objectID": "slides/w12d2.html#saving-graphics-4",
-    "href": "slides/w12d2.html#saving-graphics-4",
-    "title": "More graphics with ggplot2",
-    "section": "Saving graphics",
-    "text": "Saving graphics\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nlist.files(\"saved_plots\")\n\n[1] \"my_plot.png\""
+    "objectID": "slides/w7d2.html#arrange-2",
+    "href": "slides/w7d2.html#arrange-2",
+    "title": "Intro to dplyr",
+    "section": "arrange()",
+    "text": "arrange()"
   },
   {
-    "objectID": "slides/w12d2.html#saving-graphics-width-and-height",
-    "href": "slides/w12d2.html#saving-graphics-width-and-height",
-    "title": "More graphics with ggplot2",
-    "section": "Saving graphics: width and height",
-    "text": "Saving graphics: width and height\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nggsave(filename = \"saved_plots/my_plot_big.png\",\n       plot = p1, \n       width = 10,\n       height = 10, \n       units = \"in\")"
+    "objectID": "slides/w7d2.html#consider-a-modifed-pets-dataset",
+    "href": "slides/w7d2.html#consider-a-modifed-pets-dataset",
+    "title": "Intro to dplyr",
+    "section": "Consider a modifed pets dataset",
+    "text": "Consider a modifed pets dataset\n\nmore_pets &lt;- tibble(\n  names = c(\"Dude\", \"Pickle\", \"Kyle\", \"Nubs\", \"Marvin\", \"Figaro\", \"Slim\"),\n  ages = c(6, 5, 3, 11, 11, 3, 6),\n  meals_per_day = c(2, 3, 3, 3, 1, 2, 2),\n  is_dog = c(TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE)  \n)\nmore_pets\n\n# A tibble: 7 × 4\n  names   ages meals_per_day is_dog\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6             2 TRUE  \n2 Pickle     5             3 FALSE \n3 Kyle       3             3 FALSE \n4 Nubs      11             3 FALSE \n5 Marvin    11             1 FALSE \n6 Figaro     3             2 FALSE \n7 Slim       6             2 TRUE"
   },
   {
-    "objectID": "slides/w12d2.html#saving-graphics-width-and-height-1",
-    "href": "slides/w12d2.html#saving-graphics-width-and-height-1",
-    "title": "More graphics with ggplot2",
-    "section": "Saving graphics: width and height",
-    "text": "Saving graphics: width and height\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nlist.files(\"saved_plots\")\n\n[1] \"my_plot_big.png\" \"my_plot.png\""
+    "objectID": "slides/w7d2.html#arrange-more_pets-by-age",
+    "href": "slides/w7d2.html#arrange-more_pets-by-age",
+    "title": "Intro to dplyr",
+    "section": "arrange() more_pets by age",
+    "text": "arrange() more_pets by age\n\narrange(more_pets, ages)\n\n# A tibble: 7 × 4\n  names   ages meals_per_day is_dog\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Kyle       3             3 FALSE \n2 Figaro     3             2 FALSE \n3 Pickle     5             3 FALSE \n4 Dude       6             2 TRUE  \n5 Slim       6             2 TRUE  \n6 Nubs      11             3 FALSE \n7 Marvin    11             1 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#saving-graphics-a-patchwork-grob",
-    "href": "slides/w12d2.html#saving-graphics-a-patchwork-grob",
-    "title": "More graphics with ggplot2",
-    "section": "Saving graphics: a patchwork grob",
-    "text": "Saving graphics: a patchwork grob\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\n(p1 + p2) /  (p3 + plot_spacer()) +\n  plot_layout(guides = \"collect\") &\n  theme_bw() &\n  theme(legend.position = \"bottom\")"
+    "objectID": "slides/w7d2.html#arrange-more_pets-by-age-greatest-first",
+    "href": "slides/w7d2.html#arrange-more_pets-by-age-greatest-first",
+    "title": "Intro to dplyr",
+    "section": "arrange() more_pets by age, greatest first",
+    "text": "arrange() more_pets by age, greatest first\n\narrange(more_pets, desc(ages))\n\n# A tibble: 7 × 4\n  names   ages meals_per_day is_dog\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs      11             3 FALSE \n2 Marvin    11             1 FALSE \n3 Dude       6             2 TRUE  \n4 Slim       6             2 TRUE  \n5 Pickle     5             3 FALSE \n6 Kyle       3             3 FALSE \n7 Figaro     3             2 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#saving-graphics-a-patchwork-grob-1",
-    "href": "slides/w12d2.html#saving-graphics-a-patchwork-grob-1",
-    "title": "More graphics with ggplot2",
-    "section": "Saving graphics: a patchwork grob",
-    "text": "Saving graphics: a patchwork grob\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nfinal_plot &lt;- (p1 + p2) /  (p3 + plot_spacer()) +\n  plot_layout(guides = \"collect\") &\n  theme_bw() &\n  theme(legend.position = \"bottom\")"
+    "objectID": "slides/w7d2.html#arrange-more_pets-by-age-and-then-meals-per-day",
+    "href": "slides/w7d2.html#arrange-more_pets-by-age-and-then-meals-per-day",
+    "title": "Intro to dplyr",
+    "section": "arrange() more_pets by age and then meals per day",
+    "text": "arrange() more_pets by age and then meals per day\n\narrange(more_pets, ages, meals_per_day)\n\n# A tibble: 7 × 4\n  names   ages meals_per_day is_dog\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Figaro     3             2 FALSE \n2 Kyle       3             3 FALSE \n3 Pickle     5             3 FALSE \n4 Dude       6             2 TRUE  \n5 Slim       6             2 TRUE  \n6 Marvin    11             1 FALSE \n7 Nubs      11             3 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#saving-graphics-a-patchwork-grob-2",
-    "href": "slides/w12d2.html#saving-graphics-a-patchwork-grob-2",
-    "title": "More graphics with ggplot2",
-    "section": "Saving graphics: a patchwork grob",
-    "text": "Saving graphics: a patchwork grob\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nfinal_plot"
+    "objectID": "slides/w7d2.html#arrange-more_pets-by-is_dog",
+    "href": "slides/w7d2.html#arrange-more_pets-by-is_dog",
+    "title": "Intro to dplyr",
+    "section": "arrange() more_pets by is_dog",
+    "text": "arrange() more_pets by is_dog\n\narrange(more_pets, is_dog)\n\n# A tibble: 7 × 4\n  names   ages meals_per_day is_dog\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Pickle     5             3 FALSE \n2 Kyle       3             3 FALSE \n3 Nubs      11             3 FALSE \n4 Marvin    11             1 FALSE \n5 Figaro     3             2 FALSE \n6 Dude       6             2 TRUE  \n7 Slim       6             2 TRUE  \n\n\n\n\nWhen arrange()ing with a logical column, FALSE is before TRUE\nWe can switch this with desc()"
   },
   {
-    "objectID": "slides/w12d2.html#saving-graphics-a-patchwork-grob-3",
-    "href": "slides/w12d2.html#saving-graphics-a-patchwork-grob-3",
-    "title": "More graphics with ggplot2",
-    "section": "Saving graphics: a patchwork grob",
-    "text": "Saving graphics: a patchwork grob\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nggsave(filename = \"saved_plots/my_patchwork.jpg\",\n       plot = final_plot, \n       width = 12,\n       height = 10, \n       units = \"in\")"
+    "objectID": "slides/w7d2.html#arrange-more_pets-by-is_dog-true-first",
+    "href": "slides/w7d2.html#arrange-more_pets-by-is_dog-true-first",
+    "title": "Intro to dplyr",
+    "section": "arrange() more_pets by is_dog, TRUE first",
+    "text": "arrange() more_pets by is_dog, TRUE first\n\narrange(more_pets, desc(is_dog))\n\n# A tibble: 7 × 4\n  names   ages meals_per_day is_dog\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6             2 TRUE  \n2 Slim       6             2 TRUE  \n3 Pickle     5             3 FALSE \n4 Kyle       3             3 FALSE \n5 Nubs      11             3 FALSE \n6 Marvin    11             1 FALSE \n7 Figaro     3             2 FALSE"
   },
   {
-    "objectID": "slides/w12d2.html#saving-graphics-a-patchwork-grob-4",
-    "href": "slides/w12d2.html#saving-graphics-a-patchwork-grob-4",
-    "title": "More graphics with ggplot2",
-    "section": "Saving graphics: a patchwork grob",
-    "text": "Saving graphics: a patchwork grob\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nlist.files(\"saved_plots\")\n\n[1] \"my_patchwork.jpg\" \"my_plot_big.png\"  \"my_plot.png\""
+    "objectID": "slides/w7d2.html#arrange-more_pets-by-names",
+    "href": "slides/w7d2.html#arrange-more_pets-by-names",
+    "title": "Intro to dplyr",
+    "section": "arrange() more_pets by names",
+    "text": "arrange() more_pets by names\n\narrange(more_pets, names)\n\n# A tibble: 7 × 4\n  names   ages meals_per_day is_dog\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6             2 TRUE  \n2 Figaro     3             2 FALSE \n3 Kyle       3             3 FALSE \n4 Marvin    11             1 FALSE \n5 Nubs      11             3 FALSE \n6 Pickle     5             3 FALSE \n7 Slim       6             2 TRUE  \n\n\n\n\nWhat happened here?\nAlphabetical order!\nWhat will happen if we use desc() on names?"
   },
   {
-    "objectID": "slides/w12d2.html#taking-a-look-at-saved-plots",
-    "href": "slides/w12d2.html#taking-a-look-at-saved-plots",
-    "title": "More graphics with ggplot2",
-    "section": "Taking a look at saved plots",
-    "text": "Taking a look at saved plots\n\nknitr::include_graphics(\"saved_plots/my_plot.png\")"
+    "objectID": "slides/w7d2.html#arrange-more_pets-by-names-descending",
+    "href": "slides/w7d2.html#arrange-more_pets-by-names-descending",
+    "title": "Intro to dplyr",
+    "section": "arrange() more_pets by names, descending",
+    "text": "arrange() more_pets by names, descending\n\narrange(more_pets, desc(names))\n\n# A tibble: 7 × 4\n  names   ages meals_per_day is_dog\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Slim       6             2 TRUE  \n2 Pickle     5             3 FALSE \n3 Nubs      11             3 FALSE \n4 Marvin    11             1 FALSE \n5 Kyle       3             3 FALSE \n6 Figaro     3             2 FALSE \n7 Dude       6             2 TRUE"
   },
   {
-    "objectID": "slides/w12d2.html#taking-a-look-at-saved-plots-1",
-    "href": "slides/w12d2.html#taking-a-look-at-saved-plots-1",
-    "title": "More graphics with ggplot2",
-    "section": "Taking a look at saved plots",
-    "text": "Taking a look at saved plots\n\nknitr::include_graphics(\"saved_plots/my_plot_big.png\")"
+    "objectID": "slides/w7d2.html#select-1",
+    "href": "slides/w7d2.html#select-1",
+    "title": "Intro to dplyr",
+    "section": "select()",
+    "text": "select()\n\nselect() selects a subset of columns in the dataset."
   },
   {
-    "objectID": "slides/w12d2.html#taking-a-look-at-saved-plots-2",
-    "href": "slides/w12d2.html#taking-a-look-at-saved-plots-2",
-    "title": "More graphics with ggplot2",
-    "section": "Taking a look at saved plots",
-    "text": "Taking a look at saved plots\n\nknitr::include_graphics(\"saved_plots/my_patchwork.jpg\")"
+    "objectID": "slides/w7d2.html#select-names-and-ages-from-more_pets",
+    "href": "slides/w7d2.html#select-names-and-ages-from-more_pets",
+    "title": "Intro to dplyr",
+    "section": "select() names and ages from more_pets",
+    "text": "select() names and ages from more_pets\n\nselect(more_pets, names, ages)\n\n# A tibble: 7 × 2\n  names   ages\n  &lt;chr&gt;  &lt;dbl&gt;\n1 Dude       6\n2 Pickle     5\n3 Kyle       3\n4 Nubs      11\n5 Marvin    11\n6 Figaro     3\n7 Slim       6"
   },
   {
-    "objectID": "slides/w12d2.html#next-time",
-    "href": "slides/w12d2.html#next-time",
-    "title": "More graphics with ggplot2",
+    "objectID": "slides/w7d2.html#remove-meals_per_day-from-more_pets",
+    "href": "slides/w7d2.html#remove-meals_per_day-from-more_pets",
+    "title": "Intro to dplyr",
+    "section": "remove meals_per_day from more_pets",
+    "text": "remove meals_per_day from more_pets\n\nselect(more_pets, -meals_per_day, -ages)\n\n# A tibble: 7 × 2\n  names  is_dog\n  &lt;chr&gt;  &lt;lgl&gt; \n1 Dude   TRUE  \n2 Pickle FALSE \n3 Kyle   FALSE \n4 Nubs   FALSE \n5 Marvin FALSE \n6 Figaro FALSE \n7 Slim   TRUE  \n\n\n\n\nNOTE: The book uses ! instead of - in select(). We prefer - and will not use !."
+  },
+  {
+    "objectID": "slides/w7d2.html#select-columns-that-end-with-s",
+    "href": "slides/w7d2.html#select-columns-that-end-with-s",
+    "title": "Intro to dplyr",
+    "section": "select() columns that end with “s”",
+    "text": "select() columns that end with “s”\n\nselect(more_pets, ends_with(\"s\"))\n\n# A tibble: 7 × 2\n  names   ages\n  &lt;chr&gt;  &lt;dbl&gt;\n1 Dude       6\n2 Pickle     5\n3 Kyle       3\n4 Nubs      11\n5 Marvin    11\n6 Figaro     3\n7 Slim       6\n\n\n\n\nNOTE: The ends_with() function can be quite useful when selecting columns."
+  },
+  {
+    "objectID": "slides/w7d2.html#rename-1",
+    "href": "slides/w7d2.html#rename-1",
+    "title": "Intro to dplyr",
+    "section": "rename()",
+    "text": "rename()\n\nrename() renames columns that are already in your dataset."
+  },
+  {
+    "objectID": "slides/w7d2.html#rename-meals_per_day-to-meals-in-the-more_pets-tibble",
+    "href": "slides/w7d2.html#rename-meals_per_day-to-meals-in-the-more_pets-tibble",
+    "title": "Intro to dplyr",
+    "section": "rename() meals_per_day to meals in the more_pets tibble",
+    "text": "rename() meals_per_day to meals in the more_pets tibble\n\nrename(more_pets, meals = meals_per_day)\n\n# A tibble: 7 × 4\n  names   ages meals is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6     2 TRUE  \n2 Pickle     5     3 FALSE \n3 Kyle       3     3 FALSE \n4 Nubs      11     3 FALSE \n5 Marvin    11     1 FALSE \n6 Figaro     3     2 FALSE \n7 Slim       6     2 TRUE  \n\n\n\n\nNote the syntax of new_name = old_name to rename the old_name column with new_name."
+  },
+  {
+    "objectID": "slides/w7d2.html#rename-meals_per_day-to-meals-and-ages-to-age-in-the-more_pets-tibble",
+    "href": "slides/w7d2.html#rename-meals_per_day-to-meals-and-ages-to-age-in-the-more_pets-tibble",
+    "title": "Intro to dplyr",
+    "section": "rename() meals_per_day to meals and ages to age in the more_pets tibble",
+    "text": "rename() meals_per_day to meals and ages to age in the more_pets tibble\n\nrename(more_pets, \n       meals = meals_per_day,\n       age = ages)\n\n# A tibble: 7 × 4\n  names    age meals is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6     2 TRUE  \n2 Pickle     5     3 FALSE \n3 Kyle       3     3 FALSE \n4 Nubs      11     3 FALSE \n5 Marvin    11     1 FALSE \n6 Figaro     3     2 FALSE \n7 Slim       6     2 TRUE"
+  },
+  {
+    "objectID": "slides/w7d2.html#rename_with",
+    "href": "slides/w7d2.html#rename_with",
+    "title": "Intro to dplyr",
+    "section": "rename_with()",
+    "text": "rename_with()\n\nrename_with() allows us to use a function to rename columns. For example, the toupper() function. This function takes a character vector and makes it upper case:\n\n\ntoupper(\"trees\")\n\n[1] \"TREES\""
+  },
+  {
+    "objectID": "slides/w7d2.html#rename_with-1",
+    "href": "slides/w7d2.html#rename_with-1",
+    "title": "Intro to dplyr",
+    "section": "rename_with()",
+    "text": "rename_with()\n\nWe can use toupper() to rename all the columns in more_pets to upper case:\n\n\nrename_with(more_pets, toupper)\n\n# A tibble: 7 × 4\n  NAMES   AGES MEALS_PER_DAY IS_DOG\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6             2 TRUE  \n2 Pickle     5             3 FALSE \n3 Kyle       3             3 FALSE \n4 Nubs      11             3 FALSE \n5 Marvin    11             1 FALSE \n6 Figaro     3             2 FALSE \n7 Slim       6             2 TRUE"
+  },
+  {
+    "objectID": "slides/w7d2.html#rename_with-2",
+    "href": "slides/w7d2.html#rename_with-2",
+    "title": "Intro to dplyr",
+    "section": "rename_with()",
+    "text": "rename_with()\n\nRather than renaming all the columns to upper case, we choose which columns we’d like to change to upper case:\n\n\nrename_with(more_pets, toupper, c(names, ages))\n\n# A tibble: 7 × 4\n  NAMES   AGES meals_per_day is_dog\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6             2 TRUE  \n2 Pickle     5             3 FALSE \n3 Kyle       3             3 FALSE \n4 Nubs      11             3 FALSE \n5 Marvin    11             1 FALSE \n6 Figaro     3             2 FALSE \n7 Slim       6             2 TRUE  \n\n\n\n\nNOTE: Careful here, we need the c() function in this case to choose which columns to rename with toupper()"
+  },
+  {
+    "objectID": "slides/w7d2.html#next-time",
+    "href": "slides/w7d2.html#next-time",
+    "title": "Intro to dplyr",
     "section": "Next time",
-    "text": "Next time\n\nBuilding graphics incrementally,\nArranging graphics,\nSaving graphics,\nSpatial data with sf\nSpatial plotting with ggplot2 + sf"
+    "text": "Next time\n\nMore dplyr verbs\nWriting a sentence with pipes"
   },
   {
     "objectID": "slides/w7d1.html#announcements",
@@ -5131,340 +5187,284 @@
     "text": "Next time\n\nMore reshaping data with tidyr"
   },
   {
-    "objectID": "slides/w7d2.html#announcements",
-    "href": "slides/w7d2.html#announcements",
-    "title": "Intro to dplyr",
-    "section": "Announcements",
-    "text": "Announcements\n\nMidterm 1 were released yesterday.\nLab 5 grades coming soon."
-  },
-  {
-    "objectID": "slides/w7d2.html#agenda",
-    "href": "slides/w7d2.html#agenda",
-    "title": "Intro to dplyr",
+    "objectID": "slides/w12d2.html#agenda",
+    "href": "slides/w12d2.html#agenda",
+    "title": "More graphics with ggplot2",
     "section": "Agenda",
-    "text": "Agenda\n\ndplyr verbs"
+    "text": "Agenda\n\nReview final project\nReview midterm parameters\nQuiz\nBuilding graphics incrementally\nArranging graphics\nSaving graphics\nFurther discussion of final project + midterm exam + lab 11"
   },
   {
-    "objectID": "slides/w7d2.html#filter",
-    "href": "slides/w7d2.html#filter",
-    "title": "Intro to dplyr",
-    "section": "filter()",
-    "text": "filter()\n\nSubsets rows of data based on logical conditions related to one or more columns in the dataset."
+    "objectID": "slides/w12d2.html#final-project",
+    "href": "slides/w12d2.html#final-project",
+    "title": "More graphics with ggplot2",
+    "section": "Final project",
+    "text": "Final project\n\n\nFinal presentations will occur during our final exam time slot: Thursday December 12th from 10am - 12pm, in NR223 (lab room).\nSome potential datasets for the final project have been added to the course website.\nGroups have been assigned and emailed to you all.\nNext deadline: the proposal. Saturday, Nov 23rd at 5pm."
   },
   {
-    "objectID": "slides/w7d2.html#data",
-    "href": "slides/w7d2.html#data",
-    "title": "Intro to dplyr",
+    "objectID": "slides/w12d2.html#midterm-ii",
+    "href": "slides/w12d2.html#midterm-ii",
+    "title": "More graphics with ggplot2",
+    "section": "Midterm II",
+    "text": "Midterm II\n\n\nWill be taken in one week, Nov 23rd, during lab time.\nClosed book, closed notes.\nHandwritten “cheat sheet” allowed, just like Midterm I\nSame format as Midterm I: 5 questions, top 4 are graded."
+  },
+  {
+    "objectID": "slides/w12d2.html#data",
+    "href": "slides/w12d2.html#data",
+    "title": "More graphics with ggplot2",
     "section": "Data",
-    "text": "Data\n\nConsider our favorite toy dataset:\n\n\nlibrary(tidyverse)\npets &lt;- tibble(\n  names = c(\"Dude\", \"Pickle\", \"Kyle\", \"Nubs\"),\n  ages = c(6, 5, 3, 11),\n  is_dog = c(TRUE, FALSE, FALSE, FALSE)\n)\npets\n\n# A tibble: 4 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6 TRUE  \n2 Pickle     5 FALSE \n3 Kyle       3 FALSE \n4 Nubs      11 FALSE"
+    "text": "Data\nToday, we’ll use some data from pdxTrees:\n\nlibrary(tidyverse)\nlibrary(pdxTrees)\ndat &lt;- get_pdxTrees_parks(park = c(\"Woodstock Park\")) %&gt;%\n  filter(Common_Name %in% c(\"Douglas-Fir\", \n                            \"Japanese Flowering Cherry\",\n                            \"Western Redcedar\"))\ndat\n\n# A tibble: 97 × 34\n   Longitude Latitude UserID Genus      Family   DBH Inventory_Date      Species\n       &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;  &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;  \n 1     -123.     45.5 18381  Pseudotsu… Pinac…  41.3 2019-07-20 00:00:00 PSME   \n 2     -123.     45.5 18386  Pseudotsu… Pinac…  34.7 2019-07-20 00:00:00 PSME   \n 3     -123.     45.5 18415  Pseudotsu… Pinac…  36.3 2019-07-20 00:00:00 PSME   \n 4     -123.     45.5 18417  Pseudotsu… Pinac…  32.4 2019-07-20 00:00:00 PSME   \n 5     -123.     45.5 18420  Pseudotsu… Pinac…  18.2 2019-07-20 00:00:00 PSME   \n 6     -123.     45.5 18423  Thuja      Cupre…  34.4 2019-07-20 00:00:00 THPL   \n 7     -123.     45.5 18486  Pseudotsu… Pinac…  38   2019-07-20 00:00:00 PSME   \n 8     -123.     45.5 18488  Pseudotsu… Pinac…  31.2 2019-07-20 00:00:00 PSME   \n 9     -123.     45.5 18489  Pseudotsu… Pinac…  32.2 2019-07-20 00:00:00 PSME   \n10     -123.     45.5 18490  Pseudotsu… Pinac…  49.2 2019-07-20 00:00:00 PSME   \n# ℹ 87 more rows\n# ℹ 26 more variables: Common_Name &lt;chr&gt;, Condition &lt;chr&gt;, Tree_Height &lt;dbl&gt;,\n#   Crown_Width_NS &lt;dbl&gt;, Crown_Width_EW &lt;dbl&gt;, Crown_Base_Height &lt;dbl&gt;,\n#   Collected_By &lt;chr&gt;, Park &lt;chr&gt;, Scientific_Name &lt;chr&gt;,\n#   Functional_Type &lt;chr&gt;, Mature_Size &lt;fct&gt;, Native &lt;chr&gt;, Edible &lt;chr&gt;,\n#   Nuisance &lt;chr&gt;, Structural_Value &lt;dbl&gt;, Carbon_Storage_lb &lt;dbl&gt;,\n#   Carbon_Storage_value &lt;dbl&gt;, Carbon_Sequestration_lb &lt;dbl&gt;, …"
   },
   {
-    "objectID": "slides/w7d2.html#filter-ages-greater-than-5",
-    "href": "slides/w7d2.html#filter-ages-greater-than-5",
-    "title": "Intro to dplyr",
-    "section": "filter() ages greater than 5",
-    "text": "filter() ages greater than 5\n\nfilter(pets, ages &gt; 5)\n\n# A tibble: 2 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Dude      6 TRUE  \n2 Nubs     11 FALSE \n\n\n\n\nNotice the pattern: filter(dataset, logical statement)\nThe first argument in filter(), and the other dplyr function we will learn, is the dataset we’d like to operate on."
+    "objectID": "slides/w12d2.html#a-plot",
+    "href": "slides/w12d2.html#a-plot",
+    "title": "More graphics with ggplot2",
+    "section": "A plot",
+    "text": "A plot\n\nggplot(dat, aes(x = DBH, y = Pollution_Removal_value, color = Common_Name)) + \n  geom_point()"
   },
   {
-    "objectID": "slides/w7d2.html#filter-dogs-with-ages-greater-than-5",
-    "href": "slides/w7d2.html#filter-dogs-with-ages-greater-than-5",
-    "title": "Intro to dplyr",
-    "section": "filter() dogs with ages greater than 5",
-    "text": "filter() dogs with ages greater than 5\n\nfilter(pets, ages &gt; 5, is_dog)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Dude      6 TRUE"
+    "objectID": "slides/w12d2.html#a-plot-saved",
+    "href": "slides/w12d2.html#a-plot-saved",
+    "title": "More graphics with ggplot2",
+    "section": "A plot, saved",
+    "text": "A plot, saved\n\np1 &lt;- ggplot(dat, aes(x = DBH,\n                      y = Pollution_Removal_value, \n                      color = Common_Name)) + \n  geom_point()"
   },
   {
-    "objectID": "slides/w7d2.html#filter-dogs-with-ages-greater-than-5-1",
-    "href": "slides/w7d2.html#filter-dogs-with-ages-greater-than-5-1",
-    "title": "Intro to dplyr",
-    "section": "filter() dogs with ages greater than 5",
-    "text": "filter() dogs with ages greater than 5\n\nfilter(pets, ages &gt; 5, is_dog)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Dude      6 TRUE  \n\n\nWe can equivalently write:\n\nfilter(pets, ages &gt; 5 & is_dog)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Dude      6 TRUE  \n\n\n\n\nIn filter() the comma between logical statements is the same as &."
+    "objectID": "slides/w12d2.html#a-saved-plot-plotted",
+    "href": "slides/w12d2.html#a-saved-plot-plotted",
+    "title": "More graphics with ggplot2",
+    "section": "A saved plot, plotted",
+    "text": "A saved plot, plotted\n\np1"
   },
   {
-    "objectID": "slides/w7d2.html#filter-for-pets-named-pickle",
-    "href": "slides/w7d2.html#filter-for-pets-named-pickle",
-    "title": "Intro to dplyr",
-    "section": "filter() for pets named Pickle",
-    "text": "filter() for pets named Pickle\n\nfilter(pets, names == \"Pickle\")\n\n# A tibble: 1 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Pickle     5 FALSE"
+    "objectID": "slides/w12d2.html#plotting-a-saved-plot-and-modifying",
+    "href": "slides/w12d2.html#plotting-a-saved-plot-and-modifying",
+    "title": "More graphics with ggplot2",
+    "section": "Plotting a saved plot, and modifying",
+    "text": "Plotting a saved plot, and modifying\n\np1 + \n  scale_color_manual(values = c(\"forestgreen\", \"pink\", \"orange\")) +\n  theme_bw()"
   },
   {
-    "objectID": "slides/w7d2.html#filter-for-pets-named-pickle-or-dude",
-    "href": "slides/w7d2.html#filter-for-pets-named-pickle-or-dude",
-    "title": "Intro to dplyr",
-    "section": "filter() for pets named Pickle or Dude",
-    "text": "filter() for pets named Pickle or Dude\n\nfilter(pets, names %in% c(\"Pickle\", \"Dude\"))\n\n# A tibble: 2 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6 TRUE  \n2 Pickle     5 FALSE"
+    "objectID": "slides/w12d2.html#saving-this-modification",
+    "href": "slides/w12d2.html#saving-this-modification",
+    "title": "More graphics with ggplot2",
+    "section": "Saving this modification",
+    "text": "Saving this modification\n\np1 &lt;- p1 + \n  scale_color_manual(values = c(\"forestgreen\", \"pink\", \"orange\")) +\n  theme_bw()"
   },
   {
-    "objectID": "slides/w7d2.html#filter-for-non-dogs",
-    "href": "slides/w7d2.html#filter-for-non-dogs",
-    "title": "Intro to dplyr",
-    "section": "filter() for non-dogs",
-    "text": "filter() for non-dogs\n\n\n# A tibble: 4 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6 TRUE  \n2 Pickle     5 FALSE \n3 Kyle       3 FALSE \n4 Nubs      11 FALSE \n\n\n\n−+\n01:00"
+    "objectID": "slides/w12d2.html#plotting-the-saved-plot",
+    "href": "slides/w12d2.html#plotting-the-saved-plot",
+    "title": "More graphics with ggplot2",
+    "section": "Plotting the saved plot",
+    "text": "Plotting the saved plot\n\np1"
   },
   {
-    "objectID": "slides/w7d2.html#filter-for-non-dogs-1",
-    "href": "slides/w7d2.html#filter-for-non-dogs-1",
-    "title": "Intro to dplyr",
-    "section": "filter() for non-dogs",
-    "text": "filter() for non-dogs\n\nfilter(pets, !is_dog)\n\n# A tibble: 3 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Pickle     5 FALSE \n2 Kyle       3 FALSE \n3 Nubs      11 FALSE"
+    "objectID": "slides/w12d2.html#another-plot",
+    "href": "slides/w12d2.html#another-plot",
+    "title": "More graphics with ggplot2",
+    "section": "Another plot",
+    "text": "Another plot\n\np2 &lt;- ggplot(dat, aes(x = Common_Name, y = DBH)) + \n  geom_boxplot()"
   },
   {
-    "objectID": "slides/w7d2.html#filter-for-non-dogs-2",
-    "href": "slides/w7d2.html#filter-for-non-dogs-2",
-    "title": "Intro to dplyr",
-    "section": "filter() for non-dogs",
-    "text": "filter() for non-dogs\n\nfilter(pets, !is_dog)\n\n# A tibble: 3 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Pickle     5 FALSE \n2 Kyle       3 FALSE \n3 Nubs      11 FALSE \n\n# or\nfilter(pets, is_dog == FALSE)\n\n# A tibble: 3 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Pickle     5 FALSE \n2 Kyle       3 FALSE \n3 Nubs      11 FALSE"
+    "objectID": "slides/w12d2.html#viewing-the-plot",
+    "href": "slides/w12d2.html#viewing-the-plot",
+    "title": "More graphics with ggplot2",
+    "section": "Viewing the plot",
+    "text": "Viewing the plot\n\np2"
   },
   {
-    "objectID": "slides/w7d2.html#filter-for-non-dogs-with-age-greater-than-10",
-    "href": "slides/w7d2.html#filter-for-non-dogs-with-age-greater-than-10",
-    "title": "Intro to dplyr",
-    "section": "filter() for non-dogs with age greater than 10",
-    "text": "filter() for non-dogs with age greater than 10\n\n\n# A tibble: 4 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6 TRUE  \n2 Pickle     5 FALSE \n3 Kyle       3 FALSE \n4 Nubs      11 FALSE \n\n\n\n−+\n01:00"
+    "objectID": "slides/w12d2.html#combining-enter-patchwork",
+    "href": "slides/w12d2.html#combining-enter-patchwork",
+    "title": "More graphics with ggplot2",
+    "section": "Combining: enter, patchwork",
+    "text": "Combining: enter, patchwork\n\nlibrary(patchwork)\np1 + p2"
   },
   {
-    "objectID": "slides/w7d2.html#filter-for-non-dogs-with-age-greater-than-10-1",
-    "href": "slides/w7d2.html#filter-for-non-dogs-with-age-greater-than-10-1",
-    "title": "Intro to dplyr",
-    "section": "filter() for non-dogs with age greater than 10",
-    "text": "filter() for non-dogs with age greater than 10\n\nfilter(pets, !is_dog & ages &gt; 10)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE"
+    "objectID": "slides/w12d2.html#changing-plot-orientation",
+    "href": "slides/w12d2.html#changing-plot-orientation",
+    "title": "More graphics with ggplot2",
+    "section": "Changing plot orientation",
+    "text": "Changing plot orientation\n\np1 / p2"
   },
   {
-    "objectID": "slides/w7d2.html#filter-for-non-dogs-with-age-greater-than-10-2",
-    "href": "slides/w7d2.html#filter-for-non-dogs-with-age-greater-than-10-2",
-    "title": "Intro to dplyr",
-    "section": "filter() for non-dogs with age greater than 10",
-    "text": "filter() for non-dogs with age greater than 10\n\nfilter(pets, !is_dog & ages &gt; 10)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE \n\n# or \nfilter(pets, !is_dog, ages &gt; 10)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE"
+    "objectID": "slides/w12d2.html#applying-a-theme-to-all-plots",
+    "href": "slides/w12d2.html#applying-a-theme-to-all-plots",
+    "title": "More graphics with ggplot2",
+    "section": "Applying a theme to all plots",
+    "text": "Applying a theme to all plots\n\np1 + p2 & theme_bw()"
   },
   {
-    "objectID": "slides/w7d2.html#filter-for-non-dogs-with-age-greater-than-10-3",
-    "href": "slides/w7d2.html#filter-for-non-dogs-with-age-greater-than-10-3",
-    "title": "Intro to dplyr",
-    "section": "filter() for non-dogs with age greater than 10",
-    "text": "filter() for non-dogs with age greater than 10\n\nfilter(pets, !is_dog & ages &gt; 10)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE \n\n# or \nfilter(pets, !is_dog, ages &gt; 10)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE \n\n# or \nfilter(pets, is_dog == FALSE, ages &gt; 10) # etc...\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE"
+    "objectID": "slides/w12d2.html#applying-a-theme-to-all-plots-1",
+    "href": "slides/w12d2.html#applying-a-theme-to-all-plots-1",
+    "title": "More graphics with ggplot2",
+    "section": "Applying a theme to all plots",
+    "text": "Applying a theme to all plots\n\np1 + p2 & theme_dark()"
   },
   {
-    "objectID": "slides/w7d2.html#slice-1",
-    "href": "slides/w7d2.html#slice-1",
-    "title": "Intro to dplyr",
-    "section": "slice()",
-    "text": "slice()\nThere are five variations of slice() that we will learn in this course:\n\n\nslice(): for getting rows or sets of rows by index,\nslice_head(): for getting the first few (n) rows,\nslice_tail(): for getting the last few (n) rows,\nslice_min(): for getting the row with the minimum value of some column,\nslice_max(): for getting the row with the maximum value of some column."
+    "objectID": "slides/w12d2.html#third-plot",
+    "href": "slides/w12d2.html#third-plot",
+    "title": "More graphics with ggplot2",
+    "section": "Third plot",
+    "text": "Third plot\n\np3 &lt;- ggplot(dat, aes(x = DBH)) + \n  geom_histogram(color = \"black\") + \n  theme_bw()\np3"
   },
   {
-    "objectID": "slides/w7d2.html#slice-2",
-    "href": "slides/w7d2.html#slice-2",
-    "title": "Intro to dplyr",
-    "section": "slice()",
-    "text": "slice()"
+    "objectID": "slides/w12d2.html#combining-3-plots-with-patchwork",
+    "href": "slides/w12d2.html#combining-3-plots-with-patchwork",
+    "title": "More graphics with ggplot2",
+    "section": "Combining 3 plots with patchwork",
+    "text": "Combining 3 plots with patchwork\n\np1 + p2 + p3"
   },
   {
-    "objectID": "slides/w7d2.html#get-the-first-and-third-rows-of-pets",
-    "href": "slides/w7d2.html#get-the-first-and-third-rows-of-pets",
-    "title": "Intro to dplyr",
-    "section": "Get the first and third rows of pets",
-    "text": "Get the first and third rows of pets\n\nslice(pets, 1, 3)\n\n# A tibble: 2 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Dude      6 TRUE  \n2 Kyle      3 FALSE"
+    "objectID": "slides/w12d2.html#combining-3-plots-with-patchwork-1",
+    "href": "slides/w12d2.html#combining-3-plots-with-patchwork-1",
+    "title": "More graphics with ggplot2",
+    "section": "Combining 3 plots with patchwork",
+    "text": "Combining 3 plots with patchwork\n\n(p1 + p2) /  p3"
   },
   {
-    "objectID": "slides/w7d2.html#get-the-first-and-third-rows-of-pets-1",
-    "href": "slides/w7d2.html#get-the-first-and-third-rows-of-pets-1",
-    "title": "Intro to dplyr",
-    "section": "Get the first and third rows of pets",
-    "text": "Get the first and third rows of pets\n\nslice(pets, 1, 3)\n\n# A tibble: 2 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Dude      6 TRUE  \n2 Kyle      3 FALSE \n\n# or, equivalently\nslice(pets, c(1,3))\n\n# A tibble: 2 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Dude      6 TRUE  \n2 Kyle      3 FALSE"
+    "objectID": "slides/w12d2.html#combining-3-plots-with-patchwork-2",
+    "href": "slides/w12d2.html#combining-3-plots-with-patchwork-2",
+    "title": "More graphics with ggplot2",
+    "section": "Combining 3 plots with patchwork",
+    "text": "Combining 3 plots with patchwork\n\n(p1 + p2) /  (p3 + plot_spacer())"
   },
   {
-    "objectID": "slides/w7d2.html#get-the-first-two-rows-of-pets",
-    "href": "slides/w7d2.html#get-the-first-two-rows-of-pets",
-    "title": "Intro to dplyr",
-    "section": "Get the first two rows of pets",
-    "text": "Get the first two rows of pets\n\nslice(pets, 1, 2)\n\n# A tibble: 2 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6 TRUE  \n2 Pickle     5 FALSE"
+    "objectID": "slides/w12d2.html#collecting-the-guides",
+    "href": "slides/w12d2.html#collecting-the-guides",
+    "title": "More graphics with ggplot2",
+    "section": "Collecting the guides",
+    "text": "Collecting the guides\n\n(p1 + p2) /  (p3 + plot_spacer()) +\n  plot_layout(guides = \"collect\")"
   },
   {
-    "objectID": "slides/w7d2.html#get-the-first-two-rows-of-pets-1",
-    "href": "slides/w7d2.html#get-the-first-two-rows-of-pets-1",
-    "title": "Intro to dplyr",
-    "section": "Get the first two rows of pets",
-    "text": "Get the first two rows of pets\n\nslice(pets, 1, 2)\n\n# A tibble: 2 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6 TRUE  \n2 Pickle     5 FALSE \n\n# or, equivalently\nslice_head(pets, n = 2)\n\n# A tibble: 2 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6 TRUE  \n2 Pickle     5 FALSE"
+    "objectID": "slides/w12d2.html#collecting-the-guides-legend-at-bottom",
+    "href": "slides/w12d2.html#collecting-the-guides-legend-at-bottom",
+    "title": "More graphics with ggplot2",
+    "section": "Collecting the guides: legend at bottom",
+    "text": "Collecting the guides: legend at bottom\n\n(p1 + p2) /  (p3 + plot_spacer()) +\n  plot_layout(guides = \"collect\") &\n  theme(legend.position = \"bottom\")"
   },
   {
-    "objectID": "slides/w7d2.html#get-the-last-row-of-pets",
-    "href": "slides/w7d2.html#get-the-last-row-of-pets",
-    "title": "Intro to dplyr",
-    "section": "Get the last row of pets",
-    "text": "Get the last row of pets\n\nslice_tail(pets)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE \n\n\n\n\nNote that in slice_tail() (and slice_head()) the default for n is 1."
+    "objectID": "slides/w12d2.html#setting-the-theme-across-plots",
+    "href": "slides/w12d2.html#setting-the-theme-across-plots",
+    "title": "More graphics with ggplot2",
+    "section": "Setting the theme across plots",
+    "text": "Setting the theme across plots\n\n(p1 + p2) /  (p3 + plot_spacer()) +\n  plot_layout(guides = \"collect\") &\n  theme_bw() &\n  theme(legend.position = \"bottom\")"
   },
   {
-    "objectID": "slides/w7d2.html#get-the-last-row-of-pets-1",
-    "href": "slides/w7d2.html#get-the-last-row-of-pets-1",
-    "title": "Intro to dplyr",
-    "section": "Get the last row of pets",
-    "text": "Get the last row of pets\n\nslice_tail(pets)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE \n\n\n\nNote that in slice_tail() (and slice_head()) the default for n is 1.\n\n\nslice_tail(pets, n = 1) # exactly the same as above\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE"
+    "objectID": "slides/w12d2.html#more-with-patchwork",
+    "href": "slides/w12d2.html#more-with-patchwork",
+    "title": "More graphics with ggplot2",
+    "section": "More with patchwork",
+    "text": "More with patchwork\n\n\nThis is just the tip of the iceberg!\nSee https://patchwork.data-imaginist.com/index.html for much greater detail"
   },
   {
-    "objectID": "slides/w7d2.html#get-the-pet-who-is-the-youngest",
-    "href": "slides/w7d2.html#get-the-pet-who-is-the-youngest",
-    "title": "Intro to dplyr",
-    "section": "Get the pet who is the youngest",
-    "text": "Get the pet who is the youngest\n\nslice_min(pets, ages)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Kyle      3 FALSE"
+    "objectID": "slides/w12d2.html#saving-graphics",
+    "href": "slides/w12d2.html#saving-graphics",
+    "title": "More graphics with ggplot2",
+    "section": "Saving graphics",
+    "text": "Saving graphics\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?"
   },
   {
-    "objectID": "slides/w7d2.html#get-the-pet-who-is-the-oldest",
-    "href": "slides/w7d2.html#get-the-pet-who-is-the-oldest",
-    "title": "Intro to dplyr",
-    "section": "Get the pet who is the oldest",
-    "text": "Get the pet who is the oldest\n\nslice_max(pets, ages)\n\n# A tibble: 1 × 3\n  names  ages is_dog\n  &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs     11 FALSE"
+    "objectID": "slides/w12d2.html#saving-graphics-1",
+    "href": "slides/w12d2.html#saving-graphics-1",
+    "title": "More graphics with ggplot2",
+    "section": "Saving graphics",
+    "text": "Saving graphics\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\np1"
   },
   {
-    "objectID": "slides/w7d2.html#get-the-two-youngest-pets",
-    "href": "slides/w7d2.html#get-the-two-youngest-pets",
-    "title": "Intro to dplyr",
-    "section": "Get the two youngest pets",
-    "text": "Get the two youngest pets\n\nslice_min(pets, ages, n = 2)\n\n# A tibble: 2 × 3\n  names   ages is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;lgl&gt; \n1 Kyle       3 FALSE \n2 Pickle     5 FALSE"
+    "objectID": "slides/w12d2.html#saving-graphics-2",
+    "href": "slides/w12d2.html#saving-graphics-2",
+    "title": "More graphics with ggplot2",
+    "section": "Saving graphics",
+    "text": "Saving graphics\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nlist.files()\n\n [1] \"figs\"              \"minard-cities.txt\" \"minard-troops.txt\"\n [4] \"pets.csv\"          \"saved_plots\"       \"w10d1.html\"       \n [7] \"w10d1.qmd\"         \"w10d2.html\"        \"w10d2.qmd\"        \n[10] \"w11d1_files\"       \"w11d1.html\"        \"w11d1.qmd\"        \n[13] \"w11d2_files\"       \"w11d2.html\"        \"w11d2.qmd\"        \n[16] \"w12d1.qmd\"         \"w12d2_files\"       \"w12d2.qmd\"        \n[19] \"w12d2.rmarkdown\"   \"w1d1.html\"         \"w1d1.qmd\"         \n[22] \"w1d2.html\"         \"w1d2.qmd\"          \"w2d1.html\"        \n[25] \"w2d1.qmd\"          \"w2d2.qmd\"          \"w3d1.html\"        \n[28] \"w3d1.qmd\"          \"w4d1.html\"         \"w4d1.qmd\"         \n[31] \"w4d2.qmd\"          \"w5d1.qmd\"          \"w5d2.html\"        \n[34] \"w5d2.qmd\"          \"w6d1.html\"         \"w6d1.qmd\"         \n[37] \"w7d1.html\"         \"w7d1.qmd\"          \"w7d2.qmd\"         \n[40] \"w8d1.html\"         \"w8d1.qmd\"          \"w8d2.html\"        \n[43] \"w8d2.qmd\"          \"w9d1.html\"         \"w9d1.qmd\"         \n\nlist.files(\"saved_plots\")\n\ncharacter(0)"
   },
   {
-    "objectID": "slides/w7d2.html#arrange-1",
-    "href": "slides/w7d2.html#arrange-1",
-    "title": "Intro to dplyr",
-    "section": "arrange()",
-    "text": "arrange()\n\n\narrange() orders rows based on values in one or more columns.\nBy default, arrange() puts smallest values at the top.\nIf you’d like largest values at the top, we can use the desc() function (named for descending order)\nWhen we arrange() by more than one column, the following columns “break ties” in the prior columns."
+    "objectID": "slides/w12d2.html#saving-graphics-3",
+    "href": "slides/w12d2.html#saving-graphics-3",
+    "title": "More graphics with ggplot2",
+    "section": "Saving graphics",
+    "text": "Saving graphics\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nggsave(filename = \"saved_plots/my_plot.png\", plot = p1)"
   },
   {
-    "objectID": "slides/w7d2.html#arrange-2",
-    "href": "slides/w7d2.html#arrange-2",
-    "title": "Intro to dplyr",
-    "section": "arrange()",
-    "text": "arrange()"
+    "objectID": "slides/w12d2.html#saving-graphics-4",
+    "href": "slides/w12d2.html#saving-graphics-4",
+    "title": "More graphics with ggplot2",
+    "section": "Saving graphics",
+    "text": "Saving graphics\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nlist.files(\"saved_plots\")\n\n[1] \"my_plot.png\""
   },
   {
-    "objectID": "slides/w7d2.html#consider-a-modifed-pets-dataset",
-    "href": "slides/w7d2.html#consider-a-modifed-pets-dataset",
-    "title": "Intro to dplyr",
-    "section": "Consider a modifed pets dataset",
-    "text": "Consider a modifed pets dataset\n\nmore_pets &lt;- tibble(\n  names = c(\"Dude\", \"Pickle\", \"Kyle\", \"Nubs\", \"Marvin\", \"Figaro\", \"Slim\"),\n  ages = c(6, 5, 3, 11, 11, 3, 6),\n  meals_per_day = c(2, 3, 3, 3, 1, 2, 2),\n  is_dog = c(TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE)  \n)\nmore_pets\n\n# A tibble: 7 × 4\n  names   ages meals_per_day is_dog\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6             2 TRUE  \n2 Pickle     5             3 FALSE \n3 Kyle       3             3 FALSE \n4 Nubs      11             3 FALSE \n5 Marvin    11             1 FALSE \n6 Figaro     3             2 FALSE \n7 Slim       6             2 TRUE"
+    "objectID": "slides/w12d2.html#saving-graphics-width-and-height",
+    "href": "slides/w12d2.html#saving-graphics-width-and-height",
+    "title": "More graphics with ggplot2",
+    "section": "Saving graphics: width and height",
+    "text": "Saving graphics: width and height\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nggsave(filename = \"saved_plots/my_plot_big.png\",\n       plot = p1, \n       width = 10,\n       height = 10, \n       units = \"in\")"
   },
   {
-    "objectID": "slides/w7d2.html#arrange-more_pets-by-age",
-    "href": "slides/w7d2.html#arrange-more_pets-by-age",
-    "title": "Intro to dplyr",
-    "section": "arrange() more_pets by age",
-    "text": "arrange() more_pets by age\n\narrange(more_pets, ages)\n\n# A tibble: 7 × 4\n  names   ages meals_per_day is_dog\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Kyle       3             3 FALSE \n2 Figaro     3             2 FALSE \n3 Pickle     5             3 FALSE \n4 Dude       6             2 TRUE  \n5 Slim       6             2 TRUE  \n6 Nubs      11             3 FALSE \n7 Marvin    11             1 FALSE"
+    "objectID": "slides/w12d2.html#saving-graphics-width-and-height-1",
+    "href": "slides/w12d2.html#saving-graphics-width-and-height-1",
+    "title": "More graphics with ggplot2",
+    "section": "Saving graphics: width and height",
+    "text": "Saving graphics: width and height\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nlist.files(\"saved_plots\")\n\n[1] \"my_plot_big.png\" \"my_plot.png\""
   },
   {
-    "objectID": "slides/w7d2.html#arrange-more_pets-by-age-greatest-first",
-    "href": "slides/w7d2.html#arrange-more_pets-by-age-greatest-first",
-    "title": "Intro to dplyr",
-    "section": "arrange() more_pets by age, greatest first",
-    "text": "arrange() more_pets by age, greatest first\n\narrange(more_pets, desc(ages))\n\n# A tibble: 7 × 4\n  names   ages meals_per_day is_dog\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Nubs      11             3 FALSE \n2 Marvin    11             1 FALSE \n3 Dude       6             2 TRUE  \n4 Slim       6             2 TRUE  \n5 Pickle     5             3 FALSE \n6 Kyle       3             3 FALSE \n7 Figaro     3             2 FALSE"
+    "objectID": "slides/w12d2.html#saving-graphics-a-patchwork-grob",
+    "href": "slides/w12d2.html#saving-graphics-a-patchwork-grob",
+    "title": "More graphics with ggplot2",
+    "section": "Saving graphics: a patchwork grob",
+    "text": "Saving graphics: a patchwork grob\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\n(p1 + p2) /  (p3 + plot_spacer()) +\n  plot_layout(guides = \"collect\") &\n  theme_bw() &\n  theme(legend.position = \"bottom\")"
   },
   {
-    "objectID": "slides/w7d2.html#arrange-more_pets-by-age-and-then-meals-per-day",
-    "href": "slides/w7d2.html#arrange-more_pets-by-age-and-then-meals-per-day",
-    "title": "Intro to dplyr",
-    "section": "arrange() more_pets by age and then meals per day",
-    "text": "arrange() more_pets by age and then meals per day\n\narrange(more_pets, ages, meals_per_day)\n\n# A tibble: 7 × 4\n  names   ages meals_per_day is_dog\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Figaro     3             2 FALSE \n2 Kyle       3             3 FALSE \n3 Pickle     5             3 FALSE \n4 Dude       6             2 TRUE  \n5 Slim       6             2 TRUE  \n6 Marvin    11             1 FALSE \n7 Nubs      11             3 FALSE"
+    "objectID": "slides/w12d2.html#saving-graphics-a-patchwork-grob-1",
+    "href": "slides/w12d2.html#saving-graphics-a-patchwork-grob-1",
+    "title": "More graphics with ggplot2",
+    "section": "Saving graphics: a patchwork grob",
+    "text": "Saving graphics: a patchwork grob\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nfinal_plot &lt;- (p1 + p2) /  (p3 + plot_spacer()) +\n  plot_layout(guides = \"collect\") &\n  theme_bw() &\n  theme(legend.position = \"bottom\")"
   },
   {
-    "objectID": "slides/w7d2.html#arrange-more_pets-by-is_dog",
-    "href": "slides/w7d2.html#arrange-more_pets-by-is_dog",
-    "title": "Intro to dplyr",
-    "section": "arrange() more_pets by is_dog",
-    "text": "arrange() more_pets by is_dog\n\narrange(more_pets, is_dog)\n\n# A tibble: 7 × 4\n  names   ages meals_per_day is_dog\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Pickle     5             3 FALSE \n2 Kyle       3             3 FALSE \n3 Nubs      11             3 FALSE \n4 Marvin    11             1 FALSE \n5 Figaro     3             2 FALSE \n6 Dude       6             2 TRUE  \n7 Slim       6             2 TRUE  \n\n\n\n\nWhen arrange()ing with a logical column, FALSE is before TRUE\nWe can switch this with desc()"
+    "objectID": "slides/w12d2.html#saving-graphics-a-patchwork-grob-2",
+    "href": "slides/w12d2.html#saving-graphics-a-patchwork-grob-2",
+    "title": "More graphics with ggplot2",
+    "section": "Saving graphics: a patchwork grob",
+    "text": "Saving graphics: a patchwork grob\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nfinal_plot"
   },
   {
-    "objectID": "slides/w7d2.html#arrange-more_pets-by-is_dog-true-first",
-    "href": "slides/w7d2.html#arrange-more_pets-by-is_dog-true-first",
-    "title": "Intro to dplyr",
-    "section": "arrange() more_pets by is_dog, TRUE first",
-    "text": "arrange() more_pets by is_dog, TRUE first\n\narrange(more_pets, desc(is_dog))\n\n# A tibble: 7 × 4\n  names   ages meals_per_day is_dog\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6             2 TRUE  \n2 Slim       6             2 TRUE  \n3 Pickle     5             3 FALSE \n4 Kyle       3             3 FALSE \n5 Nubs      11             3 FALSE \n6 Marvin    11             1 FALSE \n7 Figaro     3             2 FALSE"
+    "objectID": "slides/w12d2.html#saving-graphics-a-patchwork-grob-3",
+    "href": "slides/w12d2.html#saving-graphics-a-patchwork-grob-3",
+    "title": "More graphics with ggplot2",
+    "section": "Saving graphics: a patchwork grob",
+    "text": "Saving graphics: a patchwork grob\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nggsave(filename = \"saved_plots/my_patchwork.jpg\",\n       plot = final_plot, \n       width = 12,\n       height = 10, \n       units = \"in\")"
   },
   {
-    "objectID": "slides/w7d2.html#arrange-more_pets-by-names",
-    "href": "slides/w7d2.html#arrange-more_pets-by-names",
-    "title": "Intro to dplyr",
-    "section": "arrange() more_pets by names",
-    "text": "arrange() more_pets by names\n\narrange(more_pets, names)\n\n# A tibble: 7 × 4\n  names   ages meals_per_day is_dog\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6             2 TRUE  \n2 Figaro     3             2 FALSE \n3 Kyle       3             3 FALSE \n4 Marvin    11             1 FALSE \n5 Nubs      11             3 FALSE \n6 Pickle     5             3 FALSE \n7 Slim       6             2 TRUE  \n\n\n\n\nWhat happened here?\nAlphabetical order!\nWhat will happen if we use desc() on names?"
+    "objectID": "slides/w12d2.html#saving-graphics-a-patchwork-grob-4",
+    "href": "slides/w12d2.html#saving-graphics-a-patchwork-grob-4",
+    "title": "More graphics with ggplot2",
+    "section": "Saving graphics: a patchwork grob",
+    "text": "Saving graphics: a patchwork grob\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nlist.files(\"saved_plots\")\n\n[1] \"my_patchwork.jpg\" \"my_plot_big.png\"  \"my_plot.png\""
   },
   {
-    "objectID": "slides/w7d2.html#arrange-more_pets-by-names-descending",
-    "href": "slides/w7d2.html#arrange-more_pets-by-names-descending",
-    "title": "Intro to dplyr",
-    "section": "arrange() more_pets by names, descending",
-    "text": "arrange() more_pets by names, descending\n\narrange(more_pets, desc(names))\n\n# A tibble: 7 × 4\n  names   ages meals_per_day is_dog\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Slim       6             2 TRUE  \n2 Pickle     5             3 FALSE \n3 Nubs      11             3 FALSE \n4 Marvin    11             1 FALSE \n5 Kyle       3             3 FALSE \n6 Figaro     3             2 FALSE \n7 Dude       6             2 TRUE"
+    "objectID": "slides/w12d2.html#taking-a-look-at-saved-plots",
+    "href": "slides/w12d2.html#taking-a-look-at-saved-plots",
+    "title": "More graphics with ggplot2",
+    "section": "Taking a look at saved plots",
+    "text": "Taking a look at saved plots\n\nknitr::include_graphics(\"saved_plots/my_plot.png\")"
   },
   {
-    "objectID": "slides/w7d2.html#select-1",
-    "href": "slides/w7d2.html#select-1",
-    "title": "Intro to dplyr",
-    "section": "select()",
-    "text": "select()\n\nselect() selects a subset of columns in the dataset."
+    "objectID": "slides/w12d2.html#taking-a-look-at-saved-plots-1",
+    "href": "slides/w12d2.html#taking-a-look-at-saved-plots-1",
+    "title": "More graphics with ggplot2",
+    "section": "Taking a look at saved plots",
+    "text": "Taking a look at saved plots\n\nknitr::include_graphics(\"saved_plots/my_plot_big.png\")"
   },
   {
-    "objectID": "slides/w7d2.html#select-names-and-ages-from-more_pets",
-    "href": "slides/w7d2.html#select-names-and-ages-from-more_pets",
-    "title": "Intro to dplyr",
-    "section": "select() names and ages from more_pets",
-    "text": "select() names and ages from more_pets\n\nselect(more_pets, names, ages)\n\n# A tibble: 7 × 2\n  names   ages\n  &lt;chr&gt;  &lt;dbl&gt;\n1 Dude       6\n2 Pickle     5\n3 Kyle       3\n4 Nubs      11\n5 Marvin    11\n6 Figaro     3\n7 Slim       6"
+    "objectID": "slides/w12d2.html#taking-a-look-at-saved-plots-2",
+    "href": "slides/w12d2.html#taking-a-look-at-saved-plots-2",
+    "title": "More graphics with ggplot2",
+    "section": "Taking a look at saved plots",
+    "text": "Taking a look at saved plots\n\nknitr::include_graphics(\"saved_plots/my_patchwork.jpg\")"
   },
   {
-    "objectID": "slides/w7d2.html#remove-meals_per_day-from-more_pets",
-    "href": "slides/w7d2.html#remove-meals_per_day-from-more_pets",
-    "title": "Intro to dplyr",
-    "section": "remove meals_per_day from more_pets",
-    "text": "remove meals_per_day from more_pets\n\nselect(more_pets, -meals_per_day, -ages)\n\n# A tibble: 7 × 2\n  names  is_dog\n  &lt;chr&gt;  &lt;lgl&gt; \n1 Dude   TRUE  \n2 Pickle FALSE \n3 Kyle   FALSE \n4 Nubs   FALSE \n5 Marvin FALSE \n6 Figaro FALSE \n7 Slim   TRUE  \n\n\n\n\nNOTE: The book uses ! instead of - in select(). We prefer - and will not use !."
-  },
-  {
-    "objectID": "slides/w7d2.html#select-columns-that-end-with-s",
-    "href": "slides/w7d2.html#select-columns-that-end-with-s",
-    "title": "Intro to dplyr",
-    "section": "select() columns that end with “s”",
-    "text": "select() columns that end with “s”\n\nselect(more_pets, ends_with(\"s\"))\n\n# A tibble: 7 × 2\n  names   ages\n  &lt;chr&gt;  &lt;dbl&gt;\n1 Dude       6\n2 Pickle     5\n3 Kyle       3\n4 Nubs      11\n5 Marvin    11\n6 Figaro     3\n7 Slim       6\n\n\n\n\nNOTE: The ends_with() function can be quite useful when selecting columns."
-  },
-  {
-    "objectID": "slides/w7d2.html#rename-1",
-    "href": "slides/w7d2.html#rename-1",
-    "title": "Intro to dplyr",
-    "section": "rename()",
-    "text": "rename()\n\nrename() renames columns that are already in your dataset."
-  },
-  {
-    "objectID": "slides/w7d2.html#rename-meals_per_day-to-meals-in-the-more_pets-tibble",
-    "href": "slides/w7d2.html#rename-meals_per_day-to-meals-in-the-more_pets-tibble",
-    "title": "Intro to dplyr",
-    "section": "rename() meals_per_day to meals in the more_pets tibble",
-    "text": "rename() meals_per_day to meals in the more_pets tibble\n\nrename(more_pets, meals = meals_per_day)\n\n# A tibble: 7 × 4\n  names   ages meals is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6     2 TRUE  \n2 Pickle     5     3 FALSE \n3 Kyle       3     3 FALSE \n4 Nubs      11     3 FALSE \n5 Marvin    11     1 FALSE \n6 Figaro     3     2 FALSE \n7 Slim       6     2 TRUE  \n\n\n\n\nNote the syntax of new_name = old_name to rename the old_name column with new_name."
-  },
-  {
-    "objectID": "slides/w7d2.html#rename-meals_per_day-to-meals-and-ages-to-age-in-the-more_pets-tibble",
-    "href": "slides/w7d2.html#rename-meals_per_day-to-meals-and-ages-to-age-in-the-more_pets-tibble",
-    "title": "Intro to dplyr",
-    "section": "rename() meals_per_day to meals and ages to age in the more_pets tibble",
-    "text": "rename() meals_per_day to meals and ages to age in the more_pets tibble\n\nrename(more_pets, \n       meals = meals_per_day,\n       age = ages)\n\n# A tibble: 7 × 4\n  names    age meals is_dog\n  &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6     2 TRUE  \n2 Pickle     5     3 FALSE \n3 Kyle       3     3 FALSE \n4 Nubs      11     3 FALSE \n5 Marvin    11     1 FALSE \n6 Figaro     3     2 FALSE \n7 Slim       6     2 TRUE"
-  },
-  {
-    "objectID": "slides/w7d2.html#rename_with",
-    "href": "slides/w7d2.html#rename_with",
-    "title": "Intro to dplyr",
-    "section": "rename_with()",
-    "text": "rename_with()\n\nrename_with() allows us to use a function to rename columns. For example, the toupper() function. This function takes a character vector and makes it upper case:\n\n\ntoupper(\"trees\")\n\n[1] \"TREES\""
-  },
-  {
-    "objectID": "slides/w7d2.html#rename_with-1",
-    "href": "slides/w7d2.html#rename_with-1",
-    "title": "Intro to dplyr",
-    "section": "rename_with()",
-    "text": "rename_with()\n\nWe can use toupper() to rename all the columns in more_pets to upper case:\n\n\nrename_with(more_pets, toupper)\n\n# A tibble: 7 × 4\n  NAMES   AGES MEALS_PER_DAY IS_DOG\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6             2 TRUE  \n2 Pickle     5             3 FALSE \n3 Kyle       3             3 FALSE \n4 Nubs      11             3 FALSE \n5 Marvin    11             1 FALSE \n6 Figaro     3             2 FALSE \n7 Slim       6             2 TRUE"
-  },
-  {
-    "objectID": "slides/w7d2.html#rename_with-2",
-    "href": "slides/w7d2.html#rename_with-2",
-    "title": "Intro to dplyr",
-    "section": "rename_with()",
-    "text": "rename_with()\n\nRather than renaming all the columns to upper case, we choose which columns we’d like to change to upper case:\n\n\nrename_with(more_pets, toupper, c(names, ages))\n\n# A tibble: 7 × 4\n  NAMES   AGES meals_per_day is_dog\n  &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; \n1 Dude       6             2 TRUE  \n2 Pickle     5             3 FALSE \n3 Kyle       3             3 FALSE \n4 Nubs      11             3 FALSE \n5 Marvin    11             1 FALSE \n6 Figaro     3             2 FALSE \n7 Slim       6             2 TRUE  \n\n\n\n\nNOTE: Careful here, we need the c() function in this case to choose which columns to rename with toupper()"
-  },
-  {
-    "objectID": "slides/w7d2.html#next-time",
-    "href": "slides/w7d2.html#next-time",
-    "title": "Intro to dplyr",
+    "objectID": "slides/w12d2.html#next-time",
+    "href": "slides/w12d2.html#next-time",
+    "title": "More graphics with ggplot2",
     "section": "Next time",
-    "text": "Next time\n\nMore dplyr verbs\nWriting a sentence with pipes"
+    "text": "Next time\n\nBuilding graphics incrementally,\nArranging graphics,\nSaving graphics,\nSpatial data with sf\nSpatial plotting with ggplot2 + sf"
   },
   {
     "objectID": "slides/w2d2.html#agenda",
