@@ -1,0 +1,145 @@
+---
+title: "More plotting with `ggplot2`"
+subtitle: "FOR 128: Lab 11"
+author: "Insert Your Name Here"
+date: "11/20/2024"
+format:
+  pdf: default
+editor: 
+  mode: source
+---
+
+## Welcome
+
+Welcome to Lab 11! Today, we'll focus on plotting with `ggplot2`, and recalling some skills from `dplyr` and `tidyr`. 
+
+### Learning objectives
+
+-   Recall some of the skills learned in Chapters 7 + 8
+-   Extend our knowledge of, and create beautiful graphics with `ggplot2`. 
+
+### Deliverables (i.e., what to put in the lab drop box)
+
+Upload your rendered PDF (`lab_11.pdf`) **and** Quarto (`lab_11.qmd`) document to the lab drop box. Make sure the Quarto document properly renders to PDF.
+
+### Collaborator(s)
+
+List any collaborators you worked with below. 
+
+
+
+
+# Lab Exercises
+
+## Exercise 0
+
+Load any packages you'll need for this lab below.
+
+```{r}
+
+```
+
+## Exercise 1
+
+Do Exercise 9.4 from IFDAR
+
+```{r}
+
+```
+
+## Exercise 2
+
+Do Exercise 9.5 from IFDAR
+
+```{r}
+
+```
+
+
+## Exercise 3
+
+Do Exercise 9.6 from IFDAR
+
+```{r}
+
+```
+
+
+## Exercise 4
+
+Do Exercise 9.7 from IFDAR
+
+```{r}
+
+```
+
+
+## Exercise 5
+
+Do Exercise 9.8 from IFDAR
+
+```{r}
+
+```
+
+## Exercise 6
+
+Do Exercise 9.10 from IFDAR. For this exercise, feel free to "polish" this plot. For example, you could add a theme, axis labels, title, and your choice of color pallete.
+
+```{r}
+
+```
+
+## Exercise 7
+
+Do Exercise 9.12 from IFDAR
+
+```{r}
+
+```
+
+## Exercise 8
+
+Do Exercise 9.14 from IFDAR
+
+```{r}
+
+```
+
+
+# Bonus Exercises
+
+The following exercises are considered bonus points for the lab. Up to 3 additional points are available for each bonus exercise.
+
+## Exercise B1
+
+Do Exercise 9.13 from IFDAR
+
+
+```{r}
+
+```
+
+
+## Exercise B2
+
+Do Exercise 9.15 from IFDAR
+
+
+```{r}
+
+```
+
+## Exercise B3
+
+Make a polished graphic with one of the datasets we used in this lab. Make sure the graphic conveys information in a thoughtful and clear way.  
+
+```{r}
+
+```
+
+
+
+# Wrap up
+
+Congratulations! You've made it to the end of Lab 11 (the last lab of the course). Make sure to render your final document and submit both the .pdf and .qmd file to D2L.
