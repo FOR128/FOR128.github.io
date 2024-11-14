@@ -12,6 +12,7 @@ project:
     - "!labs/lab_08.qmd"
     - "!labs/lab_09.qmd"
     - "!labs/lab_10.qmd"
+    - "!labs/lab_11.qmd"
     - "!quizzes/"
     - "!labs/datasets/"
     - "!/in_class/*.qmd"
@@ -33,7 +34,7 @@ website:
         text: Home
       - href: syllabus.qmd
         text: Syllabus
-      - text: Slides
+      - text: Slides (Weeks 1 - 5)
         menu:
           - href: slides/w1d1.qmd
             text: "Week 1 Day 1"
@@ -53,6 +54,8 @@ website:
             text: "Week 5 Day 1"
           - href: slides/w5d2.qmd
             text: "Week 5 Day 2"
+      - text: Slides (Weeks 6+)
+        menu:
           - href: slides/w6d1.qmd
             text: "Week 6 Day 1"
           - href: slides/w7d1.qmd
@@ -75,6 +78,8 @@ website:
             text: "Week 11 Day 2"
           - href: slides/w12d1.qmd
             text: "Week 12 Day 1"
+          - href: slides/w12d2.qmd
+            text: "Week 12 Day 2"
       - href: assignments.qmd
         text: Assignments
       - href: final_project.qmd

@@ -1,0 +1,431 @@
+---
+title: "More graphics with `ggplot2`"
+editor: 
+  mode: source
+webr:
+  show-startup-message: false
+filters:
+  - webr
+engine: knitr
+execute:
+  echo: true
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+revealjs-plugins:
+  - revealjs-text-resizer
+---
+
+## Agenda
+
+-   Review final project
+-   Review midterm parameters
+-   Quiz
+-   Building graphics incrementally
+-   Arranging graphics
+-   Saving graphics
+-   Further discussion of final project + midterm exam + lab 11
+
+
+## [Final project](../final_project.qmd)
+
+::: incremental
+
+-   Final presentations will occur during our final exam time slot: Thursday December 12th from 10am - 12pm, in NR223 (lab room). 
+-   Some potential datasets for the final project have been added to the course website.
+-   Groups have been assigned and emailed to you all. 
+-   Next deadline: the proposal. Saturday, Nov 23rd at 5pm. 
+
+:::
+
+## Midterm II
+
+::: incremental
+
+-   Will be taken in **one week**, Nov 23rd, during lab time. 
+-   Closed book, closed notes.
+-   Handwritten "cheat sheet" allowed, just like Midterm I
+-   Same format as Midterm I: 5 questions, top 4 are graded. 
+
+:::
+
+# Quiz {background-color="#00817c"}
+
+# Building graphics incrementally, combining plots with `patchwork`, and saving plots {background-color="#00817c"}
+
+## Data
+
+Today, we'll use some data from `pdxTrees`: 
+
+```{r}
+library(tidyverse)
+library(pdxTrees)
+dat <- get_pdxTrees_parks(park = c("Woodstock Park")) %>%
+  filter(Common_Name %in% c("Douglas-Fir", 
+                            "Japanese Flowering Cherry",
+                            "Western Redcedar"))
+dat
+```
+
+## A plot
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+ggplot(dat, aes(x = DBH, y = Pollution_Removal_value, color = Common_Name)) + 
+  geom_point()
+```
+
+## A plot, saved
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+p1 <- ggplot(dat, aes(x = DBH,
+                      y = Pollution_Removal_value, 
+                      color = Common_Name)) + 
+  geom_point()
+```
+
+## A saved plot, plotted
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+p1
+```
+
+## Plotting a saved plot, and modifying
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+p1 + 
+  scale_color_manual(values = c("forestgreen", "pink", "orange")) +
+  theme_bw() 
+```
+
+## Saving this modification
+
+```{r}
+p1 <- p1 + 
+  scale_color_manual(values = c("forestgreen", "pink", "orange")) +
+  theme_bw()
+```
+
+
+## Plotting the saved plot
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+p1
+```
+
+## Another plot
+
+```{r}
+p2 <- ggplot(dat, aes(x = Common_Name, y = DBH)) + 
+  geom_boxplot()
+```
+
+## Viewing the plot 
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+p2 
+```
+
+## Combining: enter, `patchwork`
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+library(patchwork)
+p1 + p2
+```
+
+## Changing plot orientation
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+p1 / p2
+```
+
+## Applying a theme to all plots
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+p1 + p2 & theme_bw()
+```
+
+## Applying a theme to all plots
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+p1 + p2 & theme_dark()
+```
+
+
+## Third plot
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+p3 <- ggplot(dat, aes(x = DBH)) + 
+  geom_histogram(color = "black") + 
+  theme_bw()
+p3
+```
+
+## Combining 3 plots with `patchwork`
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+p1 + p2 + p3
+```
+
+## Combining 3 plots with `patchwork`
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+(p1 + p2) /  p3
+```
+
+## Combining 3 plots with `patchwork`
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+(p1 + p2) /  (p3 + plot_spacer())
+```
+
+## Collecting the guides
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+(p1 + p2) /  (p3 + plot_spacer()) +
+  plot_layout(guides = "collect")
+```
+
+## Collecting the guides: legend at bottom
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+(p1 + p2) /  (p3 + plot_spacer()) +
+  plot_layout(guides = "collect") &
+  theme(legend.position = "bottom")
+```
+
+## Setting the theme across plots
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+(p1 + p2) /  (p3 + plot_spacer()) +
+  plot_layout(guides = "collect") &
+  theme_bw() &
+  theme(legend.position = "bottom")
+```
+
+## More with `patchwork`
+
+::: incremental
+
+-   This is just the tip of the iceberg! 
+-   See [https://patchwork.data-imaginist.com/index.html](https://patchwork.data-imaginist.com/index.html) for much greater detail
+
+
+:::
+
+## Saving graphics
+
+Graphics are best when shared with the world. How do we get these out of `R` and onto our computer? 
+
+## Saving graphics
+
+Graphics are best when shared with the world. How do we get these out of `R` and onto our computer? 
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+p1
+```
+
+## Saving graphics
+
+Graphics are best when shared with the world. How do we get these out of `R` and onto our computer? 
+
+```{r}
+list.files()
+list.files("saved_plots")
+```
+
+## Saving graphics
+
+Graphics are best when shared with the world. How do we get these out of `R` and onto our computer? 
+
+```{r}
+ggsave(filename = "saved_plots/my_plot.png", plot = p1)
+```
+
+## Saving graphics
+
+Graphics are best when shared with the world. How do we get these out of `R` and onto our computer? 
+
+```{r}
+list.files("saved_plots")
+```
+
+## Saving graphics: width and height
+
+Graphics are best when shared with the world. How do we get these out of `R` and onto our computer? 
+
+```{r}
+ggsave(filename = "saved_plots/my_plot_big.png",
+       plot = p1, 
+       width = 10,
+       height = 10, 
+       units = "in")
+```
+
+## Saving graphics: width and height
+
+Graphics are best when shared with the world. How do we get these out of `R` and onto our computer? 
+
+```{r}
+list.files("saved_plots")
+```
+
+## Saving graphics: a patchwork grob
+
+Graphics are best when shared with the world. How do we get these out of `R` and onto our computer? 
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+(p1 + p2) /  (p3 + plot_spacer()) +
+  plot_layout(guides = "collect") &
+  theme_bw() &
+  theme(legend.position = "bottom")
+```
+
+## Saving graphics: a patchwork grob
+
+Graphics are best when shared with the world. How do we get these out of `R` and onto our computer? 
+
+```{r}
+final_plot <- (p1 + p2) /  (p3 + plot_spacer()) +
+  plot_layout(guides = "collect") &
+  theme_bw() &
+  theme(legend.position = "bottom")
+```
+
+## Saving graphics: a patchwork grob
+
+Graphics are best when shared with the world. How do we get these out of `R` and onto our computer? 
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+final_plot
+```
+
+## Saving graphics: a patchwork grob
+
+Graphics are best when shared with the world. How do we get these out of `R` and onto our computer? 
+
+```{r}
+ggsave(filename = "saved_plots/my_patchwork.jpg",
+       plot = final_plot, 
+       width = 12,
+       height = 10, 
+       units = "in")
+```
+
+## Saving graphics: a patchwork grob
+
+Graphics are best when shared with the world. How do we get these out of `R` and onto our computer? 
+
+```{r}
+list.files("saved_plots")
+```
+
+## Taking a look at saved plots
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+knitr::include_graphics("saved_plots/my_plot.png")
+```
+
+## Taking a look at saved plots
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+knitr::include_graphics("saved_plots/my_plot_big.png")
+```
+
+## Taking a look at saved plots
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+knitr::include_graphics("saved_plots/my_patchwork.jpg")
+```
+```{r}
+#| echo: false
+#| message: false
+#| output: false
+#| warning: false
+file.remove("saved_plots/my_plot.png")
+file.remove("saved_plots/my_plot_big.png")
+file.remove("saved_plots/my_patchwork.jpg")
+```
+
+
+
+## Next time
+
+-   Building graphics incrementally,
+-   Arranging graphics,
+-   Saving graphics,
+-   Spatial data with `sf`
+-   Spatial plotting with `ggplot2` + `sf`
+
+
+
+
+
+
+
+
+
+
+
+ 
