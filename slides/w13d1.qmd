@@ -1,0 +1,442 @@
+---
+title: "More graphics with `ggplot2`"
+editor: 
+  mode: source
+webr:
+  show-startup-message: false
+filters:
+  - webr
+engine: knitr
+execute:
+  echo: true
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+revealjs-plugins:
+  - revealjs-text-resizer
+---
+
+## Agenda
+
+-   Midterm reminder
+-   Spatial data with `sf`
+-   Discussion: any questions about spatial data and the upcoming midterm
+
+## Midterm II
+
+::: incremental
+
+-   The second midterm is **this Thursday**, Nov 21st, during lab time. 
+-   Closed book, closed notes.
+-   Handwritten "cheat sheet" allowed, just like Midterm I
+-   Same format as Midterm I: 5 questions, top 4 are graded. 
+
+:::
+
+# `sf` {background-color="#00817c"}
+
+## `sf`
+
+```{r}
+#| echo: false
+#| out-width: 100%
+#| fig-align: center
+knitr::include_graphics("figs/horst/sf.png")
+```
+
+## `sf`
+
+`sf` is an R package for handling spatial data. It includes functions to read, write, modify, and plot spatial data. 
+
+To install `sf`, you can run `install.packages("sf")`, but will likely need to install a few more things if you are running Linux. 
+
+After you've installed `sf`, try loading the package: 
+
+```{r}
+library(sf)
+```
+
+## Reading spatial data
+
+Consider the following dataset: 
+
+[https://www.portlandmaps.com/metadata/index.cfm?action=DisplayLayer&LayerID=52451](https://www.portlandmaps.com/metadata/index.cfm?action=DisplayLayer&LayerID=52451)
+
+## Reading spatial data
+
+Now that we've taken a look at the data, downloaded and unzipped the file, let's load it with `sf`
+
+```{r}
+park_shape <- st_read("Parks/Parks.shp", as_tibble = TRUE)
+```
+
+## Examining spatial data
+
+```{r}
+park_shape
+class(park_shape)
+```
+
+## Examining spatial data
+
+```{r}
+str(park_shape)
+```
+
+## Spatial data structure 
+
+When you load in spatial data with `sf`, you get a modified version of a tibble to work with. Full functionality of `dplyr`, `tidyr`, `ggplot2`, etc. is thus available for `sf` objects. 
+
+## Plotting spatial data with `ggplot2`
+
+By default, `geom_sf()` takes a "geometry" aesthetic mapping. It will assign this mapping automatically. 
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+library(tidyverse)
+ggplot(park_shape) + 
+  geom_sf()
+```
+
+## Plotting spatial data with `ggplot2`
+
+Equivalently, you could write
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(park_shape) + 
+  geom_sf(aes(geometry = geometry))
+```
+
+## Plotting spatial data with `ggplot2`
+
+You can add layers just like any `ggplot` object
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(park_shape) + 
+  geom_sf() + 
+  theme_bw()
+```
+
+## Plotting spatial data with `ggplot2`
+
+You can specify aesthetic mappings just like any `ggplot` object
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(park_shape) + 
+  geom_sf(aes(fill = ACRES)) + 
+  theme_bw()
+```
+
+## Plotting spatial data with `ggplot2`
+
+You can set values just like an `ggplot` object
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(park_shape) + 
+  geom_sf(fill = "forestgreen") + 
+  theme_bw()
+```
+
+## Projections
+
+::: incremental
+
+-   We live on a globe, but we like to represent where we live on flat maps. 
+
+-   Therefore, we need to choose how to project this curved surface onto a map. 
+
+-   Spatial data has a projection chosen when loaded. With `sf`, we can easily modify the projection.
+
+:::
+
+## Projections
+
+```{r}
+# get current projection
+st_crs(park_shape)
+```
+
+## Projections
+
+```{r}
+# modify projection
+park_shape_3310 <- st_transform(park_shape, crs = "EPSG:3310")
+park_shape_3875 <- st_transform(park_shape, crs = "EPSG:3875")
+```
+
+## Projections
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+ggplot(park_shape) + 
+  geom_sf()
+```
+
+## Projections
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+ggplot(park_shape_3310) + 
+  geom_sf()
+```
+
+## Projections
+
+```{r}
+#| out-width: 100%
+#| fig-align: center
+ggplot(park_shape_3875) + 
+  geom_sf()
+```
+
+## Joining with other data
+
+Let's join this spatial data to the `pdxTrees` parks data
+
+```{r}
+library(pdxTrees)
+parks <- get_pdxTrees_parks()
+parks
+```
+
+## Joining with other data
+
+We need to find a "key" to join these data
+
+## Joining with other data
+
+```{r}
+# first 6 values of Park column, sorted alphabetically
+head(sort(unique(parks$Park)))
+
+# first 6 values of NAME column, sorted alphabetically
+head(sort(unique(park_shape$NAME)))
+```
+
+It looks like this might do!
+
+## Joining with other data
+
+```{r}
+joined_parks <- parks %>%
+  left_join(park_shape, by = c("Park" = "NAME")) 
+```
+
+## Joining with other data
+
+```{r}
+joined_parks
+class(joined_parks)
+```
+
+Oh no, it is no longer an `sf` object! 
+
+## Easily convert back to an `sf` object
+
+```{r}
+joined_parks <- st_as_sf(joined_parks)
+joined_parks
+class(joined_parks)
+```
+
+## Let's check how many rows did not get joined
+
+```{r}
+anti_join(parks, park_shape, by = c("Park" = "NAME"))
+```
+
+Just 290 (out of ~25,000) rows, that is okay for our purposes. 
+
+## Summarizing with our joined data
+
+```{r}
+joined_parks %>%
+  group_by(Park) %>%
+  summarize(mean_DBH = mean(DBH),
+            n_trees = n())
+```
+
+## Plotting with our joined data
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+joined_parks %>%
+  group_by(Park) %>%
+  summarize(mean_DBH = mean(DBH),
+            n_trees = n()) %>%
+  ggplot() + 
+  geom_sf(aes(fill = mean_DBH))
+```
+
+## Plotting with our joined data
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+joined_parks %>%
+  group_by(Park) %>%
+  summarize(mean_DBH = mean(DBH),
+            n_trees = n()) %>%
+  ggplot() + 
+  geom_sf(aes(fill = n_trees))
+```
+
+
+## Look at the Sellwood Riverfront Park
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+joined_parks %>%
+  filter(Park == "Sellwood Riverfront Park") %>%
+  summarize(mean_DBH = mean(DBH),
+            n_trees = n()) %>%
+  ggplot() + 
+  geom_sf(aes(fill = n_trees))
+```
+
+## Look at the Sellwood Riverfront Park
+
+```{r}
+sellwood <- get_pdxTrees_parks(park = "Sellwood Riverfront Park")
+sellwood
+```
+
+## Let's convert `sellwood` into an `sf` point object
+
+```{r}
+sellwood_sf <- st_as_sf(
+  # a tibble 
+  x = sellwood,
+  # the column names for lon/lat
+  coords = c("Longitude", "Latitude"),
+  # the projection those columns are in
+  crs = "EPSG:4269"
+)
+sellwood_sf
+```
+
+## plotting `sellwood_sf`
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot(sellwood_sf) + 
+  geom_sf()
+```
+
+## Plotting two `sf` objects
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+sellwood_shape <- park_shape %>% filter(NAME == "Sellwood Riverfront Park")
+ggplot() + 
+  geom_sf(data = sellwood_shape) +
+  geom_sf(data = sellwood_sf)
+```
+
+## Plotting two `sf` objects
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot() + 
+  geom_sf(data = sellwood_shape) +
+  geom_sf(data = sellwood_sf, aes(size = DBH))
+```
+
+## Plotting two `sf` objects
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot() + 
+  geom_sf(data = sellwood_shape) +
+  geom_sf(data = sellwood_sf, aes(size = DBH), alpha = 0.7)
+```
+
+## Plotting two `sf` objects
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot() + 
+  geom_sf(data = sellwood_shape, fill = "forestgreen") +
+  geom_sf(data = sellwood_sf, aes(size = DBH), alpha = 0.7)
+```
+
+## Plotting two `sf` objects
+
+```{r}
+#| output-location: slide
+#| out-width: 100%
+#| fig-align: center
+ggplot() + 
+  geom_sf(data = sellwood_shape, fill = "forestgreen") +
+  geom_sf(data = sellwood_sf, aes(size = DBH,
+                                  color = Common_Name),
+          alpha = 0.7)
+```
+
+
+
+
+
+
+
+
+## Questions
+
+-   Regarding `sf` or spatial data? 
+-   Regarding the upcoming midterm? 
+-   Regarding Lab 11? 
+
+## Next time
+
+-   Review of material during lecture time
+-   Midterm during lab time
+
+
+
