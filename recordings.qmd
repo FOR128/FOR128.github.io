@@ -51,3 +51,5 @@ Week 11, day 2: *Final project explanation and more plotting with `ggplot2`*. Av
 
 Week 12, day 1: *More plotting with `ggplot2`*. Available [here](https://mediaspace.msu.edu/media/Week+12+Day+1/1_nw3ma983).
 
+Week 12, day 2: *Building graphics incrementally, composing plots with `patchwork`, and saving plots*. Available [here](https://mediaspace.msu.edu/media/Week+12+Day+2/1_jqcpvr2o).
+

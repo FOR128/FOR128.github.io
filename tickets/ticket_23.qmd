@@ -1,0 +1,25 @@
+---
+title: "Lecture Ticket 23"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Read this [blog post](https://hrodmn.rbind.io/post/sf/2018-09-24-sf/).
+
+
+## Questions
+
+1. Try to install the `sf` library in R on your computer. 
+
+2. What does `sf` stand for? 
+
+3. What function in `ggplot2` will we use to plot `sf` objects?  
+
+
+
+
+
+
+
