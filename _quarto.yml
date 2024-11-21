@@ -82,6 +82,8 @@ website:
             text: "Week 12 Day 2"
           - href: slides/w13d1.qmd
             text: "Week 13 Day 1"
+      - href: midterm2.qmd
+        text: Midterm II
       - href: assignments.qmd
         text: Assignments
       - href: final_project.qmd

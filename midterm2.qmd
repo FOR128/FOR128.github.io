@@ -1,0 +1,13 @@
+---
+title: "Midterm II"
+subtitle: "FOR 128: Practical Computing and Data Science Tools, Fall 2024"
+editor: 
+  mode: source
+---
+
+## Files
+
+The midterm files are available below:
+
+-   [midterm_02.qmd](midterms/midterm_02.qmd)
+-   [islands_long.csv](midterms/islands_long.csv)
