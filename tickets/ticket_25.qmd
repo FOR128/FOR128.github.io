@@ -1,0 +1,24 @@
+---
+title: "Lecture Ticket 25"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Please read the following articles for writing your final blog posts with Quarto:
+
+-   [Hello, Quarto](https://quarto.org/docs/get-started/hello/rstudio.html)
+-   [Computations](https://quarto.org/docs/get-started/computations/rstudio.html)
+-   [Authoring](https://quarto.org/docs/get-started/authoring/rstudio.html)
+
+## Questions
+
+1. What questions do you have about writing your final project blog post with Quarto? 
+
+
+
+
+
+
+
