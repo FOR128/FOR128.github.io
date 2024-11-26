@@ -33,7 +33,21 @@ Please submit a brief proposal of the project you would like to do. This should 
 
 The blog post is the heart of the final project. You and your group members will write a blog post in a Quarto document that takes the raw data you are using and tells a story with it. The blog post will include the story of getting the data, wrangling the data, and plots and summaries of the data. The blog posts will be posted on the course website (with groups permission), you have the right to not include your blog post on the course website, or to anonymize your blog post for the course website. 
 
-More details to come on the blog post. 
+The blog post has the following parameters:
+
+-   I expect the post to be approximately 1000 words. This is a "soft" minimum: i.e., I wouldn't want to see a significantly shorter blog post, and it would be fine if you went significantly over this limit. In general, I want your blog post to convey the story you are telling in a thoughtful way that doesn't have too much "fluff" but isn't overly terse either. In other words, write naturally and thoughtfully. 
+
+-   Your blog post should include at least three (3) graphics created with `ggplot2` and at least one tabular summary of the data. For displaying tables in beautiful ways in your blog post, check out the `gt` R package. 
+
+-   Your blog post will be written in Quarto as a fully reproducible document. You will load in the data and necessary packages at the beginning of the blog post, do the necessary wrangling and cleaning in the blog post, and make the plots in the blog post. It is okay (and even encouraged) to work in separate documents to begin, but one final blog post will be the final product. 
+
+-   You likely should break your blog post into different sections. I suggest (but surely do not limit you to) the following sections:
+    -   **Introduction**: Give some background on the data and the questions you'd like to answer with it,
+    -   **Methods**: Include how you got the data, and the steps necessary to load it into R and wrangle it into appropriate format for data analysis,
+    -   **Analysis / Results**: Talk about and display your figures, tables, and findings from the data,
+    -   **Conclusions**: Summarize your findings and discuss the implications. Discuss possible future directions for working with these data. 
+    
+-   Your blog post will Render to HTML. You must submit your .qmd file, along with any data files (.csv, etc.) necessary for Rendering the document to D2L by the deadline, December 9th at 5pm. 
 
 ### The presentation
 
