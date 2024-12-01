@@ -1,0 +1,28 @@
+---
+title: "Lecture Ticket 26"
+editor: 
+  mode: source
+---
+
+## Reading
+
+Please read the following articles for creating slides with Quarto:
+
+-   [Quarto presentations](https://quarto.org/docs/presentations/)
+-   [Revealjs](https://quarto.org/docs/presentations/revealjs/)
+
+If you're interested, take a look at a few more advanced articles about making presentations with Quarto:
+
+-   [Advanced Revealjs](https://quarto.org/docs/presentations/revealjs/advanced.html)
+-   [Reveal themes](https://quarto.org/docs/presentations/revealjs/themes.html)
+
+## Questions
+
+1. What questions do you have about creating slides with Quarto? 
+
+
+
+
+
+
+
