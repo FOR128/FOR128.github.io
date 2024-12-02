@@ -1,0 +1,122 @@
+---
+title: "An example blog post"
+description: "An examination of the Thuja plicata trees in Portland, OR"
+author:
+  - name: Grayson White
+  - name: Andrew Finley
+date: 12-2-2024
+categories: [Example, R, Environmental data] # self-defined categories
+image: wrc.jpeg
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+
+# Introduction
+
+This is an example blog post about Western red cedar (*Thuja plicata*) trees in Portland, Oregon. I am using data from the `pdxTrees` R package. The `pdxTrees` R package has a nice hex sticker, which we can include in the blog post like this:
+
+```{r}
+#| out-width: 75%
+#| fig-align: "center"
+knitr::include_graphics("https://mcconville.rbind.io/pdxHexSticker.png")
+```
+
+and if the image was on my computer rather than online, I could include it by using the same syntax with a relative path rather than website URL. 
+
+We'll use a few packages for our analyses, namely the `tidyverse`, `gt`, and `pdxTrees`. 
+
+```{r}
+#| code-fold: true
+#| message: false
+library(tidyverse)
+library(gt)
+library(pdxTrees)
+```
+
+Note that we used the "code-fold" option here to fold the code used to load these libraries. We also set the "message" option to "false" in order to silence the message that the `tidyverse` prints upon loading. 
+
+
+# Methods
+
+Here we will discuss the two datasets we are using for this example project. 
+
+## Park data
+
+The parks data include measurements of every tree in every park in Portland, Oregon. We can load the data in as follows:
+
+```{r}
+parks <- get_pdxTrees_parks()
+dim(parks)
+```
+
+By default, both the code and output is included.
+
+The first few rows look like this:
+
+```{r}
+#| echo: false
+head(parks)
+```
+
+Note that setting echo to false includes the output of the code, but does not include the code. If we wanted to display the data in a more elegant way, we could use the `gt` package:
+
+```{r}
+head(parks) %>% select(1:6) %>% gt()
+```
+
+
+We need to filter for only Western red cedars! So let's do that:
+
+```{r}
+#| code-fold: show
+parks <- parks %>%
+  filter(Species == "THPL")
+```
+
+In this case, we set the "code-fold" option to "show" rather than "true" or "false", the "show" option allows the user to fold the code, but starts it as unfolded code. 
+
+## Street data
+
+We can also load in the streets dataset and include the code that was used to do that: 
+
+```{r}
+streets <- get_pdxTrees_streets() %>%
+  filter(Species == "THPL")
+```
+
+
+# Results
+
+We can include plots and tables...
+
+```{r}
+#| code-fold: true
+parks %>%
+  group_by(Park) %>%
+  summarize(mean_DBH = mean(DBH)) %>%
+  ggplot() +
+  geom_histogram(aes(x = mean_DBH), 
+                 color = "black", 
+                 fill = "steelblue",
+                 bins = 20) +
+  theme_bw()
+```
+
+
+```{r}
+#| code-fold: true
+parks %>%
+  group_by(Park) %>%
+  summarize(mean_DBH = mean(DBH),
+            num_trees = n()) %>%
+  slice_max(mean_DBH, n = 10) %>%
+  gt()
+```
+
+You can use the pipe to put a tibble right into a `gt` table
+
+
+# Conclusions
+
+There are lots of beautiful Western red cedars in Portland! 
+

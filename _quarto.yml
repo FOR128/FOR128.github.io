@@ -84,10 +84,10 @@ website:
             text: "Week 13 Day 1"
           - href: slides/w14d1.qmd
             text: "Week 14 Day 1"
-      - href: midterm2.qmd
-        text: Midterm II
       - href: assignments.qmd
         text: Assignments
+      - href: posts.qmd
+        text: Class Blog
       - href: final_project.qmd
         text: Final Project
       - href: recordings.qmd
