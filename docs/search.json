@@ -2793,25 +2793,130 @@
     "text": "Exercise 4\nCreate your own plot from the parks data. Your plot should, at a minimum, map at least three variables to geometries, label its aesthetics nicely, have a title, and have a theme different from ggplot2’s default. Have fun with it! Feel free to choose different parks as well if you’d like."
   },
   {
-    "objectID": "posts/example_post/index.html",
-    "href": "posts/example_post/index.html",
-    "title": "An example blog post",
-    "section": "",
-    "text": "This is an example blog post about Western red cedar (Thuja plicata) trees in Portland, Oregon. I am using data from the pdxTrees R package. The pdxTrees R package has a nice hex sticker, which we can include in the blog post like this:\n\nknitr::include_graphics(\"https://mcconville.rbind.io/pdxHexSticker.png\")\n\n\n\n\n\n\n\n\nand if the image was on my computer rather than online, I could include it by using the same syntax with a relative path rather than website URL.\nWe’ll use a few packages for our analyses, namely the tidyverse, gt, and pdxTrees.\n\n\nCode\nlibrary(tidyverse)\nlibrary(gt)\nlibrary(pdxTrees)\n\n\nNote that we used the “code-fold” option here to fold the code used to load these libraries. We also set the “message” option to “false” in order to silence the message that the tidyverse prints upon loading."
+    "objectID": "slides/w5d2.html#annoucements",
+    "href": "slides/w5d2.html#annoucements",
+    "title": "Functions",
+    "section": "Annoucements",
+    "text": "Annoucements\n\nMidterm 1 is in one week, Oct 3, during lab time.\nLab 3 grades coming soon.\nLab 4 grades by end of weekend."
   },
   {
-    "objectID": "posts/example_post/index.html#park-data",
-    "href": "posts/example_post/index.html#park-data",
-    "title": "An example blog post",
-    "section": "Park data",
-    "text": "Park data\nThe parks data include measurements of every tree in every park in Portland, Oregon. We can load the data in as follows:\n\nparks &lt;- get_pdxTrees_parks()\ndim(parks)\n\n[1] 25534    34\n\n\nBy default, both the code and output is included.\nThe first few rows look like this:\n\n\n# A tibble: 6 × 34\n  Longitude Latitude UserID Genus       Family   DBH Inventory_Date      Species\n      &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;  &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;  \n1     -123.     45.6 1      Pseudotsuga Pinac…  37.4 2017-05-09 00:00:00 PSME   \n2     -123.     45.6 2      Pseudotsuga Pinac…  32.5 2017-05-09 00:00:00 PSME   \n3     -123.     45.6 3      Crataegus   Rosac…   9.7 2017-05-09 00:00:00 CRLA   \n4     -123.     45.6 4      Quercus     Fagac…  10.3 2017-05-09 00:00:00 QURU   \n5     -123.     45.6 5      Pseudotsuga Pinac…  33.2 2017-05-09 00:00:00 PSME   \n6     -123.     45.6 6      Pseudotsuga Pinac…  32.1 2017-05-09 00:00:00 PSME   \n# ℹ 26 more variables: Common_Name &lt;chr&gt;, Condition &lt;chr&gt;, Tree_Height &lt;dbl&gt;,\n#   Crown_Width_NS &lt;dbl&gt;, Crown_Width_EW &lt;dbl&gt;, Crown_Base_Height &lt;dbl&gt;,\n#   Collected_By &lt;chr&gt;, Park &lt;chr&gt;, Scientific_Name &lt;chr&gt;,\n#   Functional_Type &lt;chr&gt;, Mature_Size &lt;fct&gt;, Native &lt;chr&gt;, Edible &lt;chr&gt;,\n#   Nuisance &lt;chr&gt;, Structural_Value &lt;dbl&gt;, Carbon_Storage_lb &lt;dbl&gt;,\n#   Carbon_Storage_value &lt;dbl&gt;, Carbon_Sequestration_lb &lt;dbl&gt;,\n#   Carbon_Sequestration_value &lt;dbl&gt;, Stormwater_ft &lt;dbl&gt;, …\n\n\nNote that setting echo to false includes the output of the code, but does not include the code. If we wanted to display the data in a more elegant way, we could use the gt package:\n\nhead(parks) %&gt;% select(1:6) %&gt;% gt()\n\n\n\n\n\n\n\nLongitude\nLatitude\nUserID\nGenus\nFamily\nDBH\n\n\n\n\n-122.6936\n45.57491\n1\nPseudotsuga\nPinaceae\n37.4\n\n\n-122.6938\n45.57489\n2\nPseudotsuga\nPinaceae\n32.5\n\n\n-122.6942\n45.57493\n3\nCrataegus\nRosaceae\n9.7\n\n\n-122.6939\n45.57490\n4\nQuercus\nFagaceae\n10.3\n\n\n-122.6940\n45.57491\n5\nPseudotsuga\nPinaceae\n33.2\n\n\n-122.6943\n45.57489\n6\nPseudotsuga\nPinaceae\n32.1\n\n\n\n\n\n\n\nWe need to filter for only Western red cedars! So let’s do that:\n\n\nCode\nparks &lt;- parks %&gt;%\n  filter(Species == \"THPL\")\n\n\nIn this case, we set the “code-fold” option to “show” rather than “true” or “false”, the “show” option allows the user to fold the code, but starts it as unfolded code."
+    "objectID": "slides/w5d2.html#agenda",
+    "href": "slides/w5d2.html#agenda",
+    "title": "Functions",
+    "section": "Agenda",
+    "text": "Agenda\n\nWarm-up\nLoops\nForestry functions\nQuarto practice"
   },
   {
-    "objectID": "posts/example_post/index.html#street-data",
-    "href": "posts/example_post/index.html#street-data",
-    "title": "An example blog post",
-    "section": "Street data",
-    "text": "Street data\nWe can also load in the streets dataset and include the code that was used to do that:\n\nstreets &lt;- get_pdxTrees_streets() %&gt;%\n  filter(Species == \"THPL\")"
+    "objectID": "slides/w5d2.html#warm-up-activity",
+    "href": "slides/w5d2.html#warm-up-activity",
+    "title": "Functions",
+    "section": "Warm-up activity",
+    "text": "Warm-up activity\nWrite a function that takes two vectors as arguments (inputs) and does the following:\nTakes the difference of the vectors’ means. In other words, take the mean() of each input and subtract the first input’s mean() from the second input’s mean(). Make sure to handle NA values that might exist in the vectors. Name this function diff_in_means().\nBonus: (only do if you have time) add a requirement that a and b are the same length vector.\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/w5d2.html#warm-up-activity-possible-solution",
+    "href": "slides/w5d2.html#warm-up-activity-possible-solution",
+    "title": "Functions",
+    "section": "Warm-up activity: possible solution",
+    "text": "Warm-up activity: possible solution\n\ndiff_in_means &lt;- function(a, b, na.rm = FALSE) {\n  if (na.rm) {\n    a &lt;- a[!is.na(a)]\n    b &lt;- b[!is.na[b]]\n  }\n  \n  a_mean &lt;- mean(a)\n  b_mean &lt;- mean(b)\n  \n  return(a_mean - b_mean)\n}"
+  },
+  {
+    "objectID": "slides/w5d2.html#warm-up-activity-possible-solution-with-bonus",
+    "href": "slides/w5d2.html#warm-up-activity-possible-solution-with-bonus",
+    "title": "Functions",
+    "section": "Warm-up activity: possible solution with bonus",
+    "text": "Warm-up activity: possible solution with bonus\n\ndiff_in_means &lt;- function(a, b, na.rm = FALSE) {\n  stopifnot(\n    \"Arguments `a` and `b` must be the same length.\" = length(a) == length(b)\n  )\n  \n  if (na.rm) {\n    a &lt;- a[!is.na(a)]\n    b &lt;- b[!is.na(b)]\n  }\n  \n  a_mean &lt;- mean(a)\n  b_mean &lt;- mean(b)\n  \n  return(a_mean - b_mean)\n}"
+  },
+  {
+    "objectID": "slides/w5d2.html#loops-1",
+    "href": "slides/w5d2.html#loops-1",
+    "title": "Functions",
+    "section": "Loops",
+    "text": "Loops\n\n\nLoops are important to R and many other programming languages.\nUnderstanding how to read, write, and utilize loops are key skills for data scientists.\nWe’ll introduce two types of loops in R: while and for loops"
+  },
+  {
+    "objectID": "slides/w5d2.html#while-loops",
+    "href": "slides/w5d2.html#while-loops",
+    "title": "Functions",
+    "section": "while loops",
+    "text": "while loops\n\nwhile loops look as follows:\n\n\nwhile (condition is true) {\n  run this code until condition is false\n}"
+  },
+  {
+    "objectID": "slides/w5d2.html#while-loops-1",
+    "href": "slides/w5d2.html#while-loops-1",
+    "title": "Functions",
+    "section": "while loops",
+    "text": "while loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/w5d2.html#for-loops",
+    "href": "slides/w5d2.html#for-loops",
+    "title": "Functions",
+    "section": "for loops",
+    "text": "for loops\n\nfor loops look as follows:\n\n\nfor (variable in vector) {\n  run this code until through each element of the vector\n}"
+  },
+  {
+    "objectID": "slides/w5d2.html#for-loops-1",
+    "href": "slides/w5d2.html#for-loops-1",
+    "title": "Functions",
+    "section": "for loops",
+    "text": "for loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/w5d2.html#for-loops-2",
+    "href": "slides/w5d2.html#for-loops-2",
+    "title": "Functions",
+    "section": "for loops",
+    "text": "for loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/w5d2.html#for-loop-in-a-function",
+    "href": "slides/w5d2.html#for-loop-in-a-function",
+    "title": "Functions",
+    "section": "for loop in a function",
+    "text": "for loop in a function\n\nmy_mean &lt;- function(x) {\n  total &lt;- 0\n  \n  for (i in 1:length(x)) {\n    total &lt;- total + x[i]\n  }\n  \n  average &lt;- total / length(x)\n  \n  return(average)\n}"
+  },
+  {
+    "objectID": "slides/w5d2.html#basal-area",
+    "href": "slides/w5d2.html#basal-area",
+    "title": "Functions",
+    "section": "Basal area",
+    "text": "Basal area\n\n\n\n\nBasal area is the measurement of a tree’s cross-sectional area at breast height, and is derived from the diameter at breast height measurement.\nOftentimes, we care about the basal area in a given stand and want to report basal area on a per-unit-area basis (e.g. square feet per acre or square meters per hectare), but we only have DBH measurements."
+  },
+  {
+    "objectID": "slides/w5d2.html#calculating-basal-area",
+    "href": "slides/w5d2.html#calculating-basal-area",
+    "title": "Functions",
+    "section": "Calculating basal area",
+    "text": "Calculating basal area\nBasal area in square feet per acre: \\[\n\\text{BA} = \\frac{\\pi}{144} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 144} \\cdot \\text{DBH}^2\n\\] Basal area in square meters per hectare: \\[\n\\text{BA} = \\frac{\\pi}{10000} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 10000} \\cdot \\text{DBH}^2\n\\] Basal area is of the form:\n\\(\\text{forester's constant} \\times \\text{DBH}^2\\)"
+  },
+  {
+    "objectID": "slides/w5d2.html#implementation-in-r",
+    "href": "slides/w5d2.html#implementation-in-r",
+    "title": "Functions",
+    "section": "Implementation in R",
+    "text": "Implementation in R\nWhat we want: A function that\n\n\nhas sensible input checks,\ncomputes basal area in either square feet per acre or square meters per hectare, and\nis flexible enough to allow for DBH measurements to be in inches or centimeters."
+  },
+  {
+    "objectID": "slides/w5d2.html#implementation-in-r-1",
+    "href": "slides/w5d2.html#implementation-in-r-1",
+    "title": "Functions",
+    "section": "Implementation in R",
+    "text": "Implementation in R\nHow we’ll do it:\n\n\nDefine the forester’s constant for whichever units DBH measurements are in,\nConvert inches to centimeters or vise versa to satisfy our formula for basal area,\nCompute basal area based on our formula,\nGo back and add some sensible input checks."
+  },
+  {
+    "objectID": "slides/w5d2.html#calculating-basal-area-1",
+    "href": "slides/w5d2.html#calculating-basal-area-1",
+    "title": "Functions",
+    "section": "Calculating basal area",
+    "text": "Calculating basal area\nBasal area in square feet per acre: \\[\n\\text{BA} = \\frac{\\pi}{144} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 144} \\cdot \\text{DBH}^2\n\\] Basal area in square meters per hectare: \\[\n\\text{BA} = \\frac{\\pi}{10000} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 10000} \\cdot \\text{DBH}^2\n\\] There are 2.54 centimeters in an inch."
+  },
+  {
+    "objectID": "slides/w5d2.html#next-time",
+    "href": "slides/w5d2.html#next-time",
+    "title": "Functions",
+    "section": "Next time",
+    "text": "Next time\n\nIntroduction to the tidyverse"
   },
   {
     "objectID": "slides/w2d1.html#agenda",
@@ -3318,102 +3423,60 @@
     "text": "AI Policy for FOR 128\nArtificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\nViolations of this policy are considered academic misconduct."
   },
   {
-    "objectID": "slides/w14d1.html#agenda",
-    "href": "slides/w14d1.html#agenda",
-    "title": "Projects and midterms and quizzes, galore!",
+    "objectID": "slides/w15d1.html#agenda",
+    "href": "slides/w15d1.html#agenda",
+    "title": "Final project logistics",
     "section": "Agenda",
-    "text": "Agenda\n\nReview Midterm II\nQuiz (1 - 9) make ups\nFinal project blog post discussion\nGroup work: discuss final project in groups (and fill out Quiz 10)"
+    "text": "Agenda\n\nQuiz (1 - 9) make ups\nFinal project blog post: example\nFinal project slides: example\nQuiz 11"
   },
   {
-    "objectID": "slides/w14d1.html#quizzes",
-    "href": "slides/w14d1.html#quizzes",
-    "title": "Projects and midterms and quizzes, galore!",
+    "objectID": "slides/w15d1.html#quizzes",
+    "href": "slides/w15d1.html#quizzes",
+    "title": "Final project logistics",
     "section": "Quizzes",
     "text": "Quizzes\n\nYou can receive up to full points on two (2) quizzes that you did not get full points on.\nTo do so, redo a Quiz on your own time and I will regrade it if you turn it in to me by the last day of class, Thursday Dec 5th, at 12:10pm.\nIf you need an extra copy of a Quiz you’d like to make up, come see me. If you have your old copy, please write your new answers in a different colored pen/pencil, and specify why you initially got the problem wrong."
   },
   {
-    "objectID": "slides/w14d1.html#next-time",
-    "href": "slides/w14d1.html#next-time",
-    "title": "Projects and midterms and quizzes, galore!",
+    "objectID": "slides/w15d1.html#final-project-slides",
+    "href": "slides/w15d1.html#final-project-slides",
+    "title": "Final project logistics",
+    "section": "Final project slides",
+    "text": "Final project slides\n\n\nYou are encouraged (but not required) to use Quarto to present your final project.\nI will now demo making slides in Quarto"
+  },
+  {
+    "objectID": "slides/w15d1.html#next-time",
+    "href": "slides/w15d1.html#next-time",
+    "title": "Final project logistics",
     "section": "Next time",
-    "text": "Next time\n\nEnjoy the holiday!\nMore spatial data, gt demo, Quarto, and group work!"
+    "text": "Next time\n\nWhere next in data science?\nGroup project questions"
   },
   {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "Class Blog",
+    "objectID": "recordings.html",
+    "href": "recordings.html",
+    "title": "Lecture Recordings",
     "section": "",
-    "text": "An example blog post\n\n\n\nExample\n\n\nR\n\n\nEnvironmental data\n\n\n\nAn examination of the Thuja plicata trees in Portland, OR\n\n\n\nGrayson White, Andrew Finley\n\n\nDec 2, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 1: No recording available.\nWeek 3, day 2: Data structures. Available here.\nWeek 4, day 1: No recording available.\nWeek 4, day 2: Review of data structures & intro to functions. Available here.\nWeek 5, day 1: Functions and conditionals. Available here.\nWeek 5, day 2: Functions. NOTE: audio issues. Available here.\nWeek 6, day 1: Welcome to the tidyverse. Available here.\nWeek 6, day 2: Midterm review day. No recording.\nWeek 7, day 1: tibble and readr. Available here.\nWeek 7, day 2: Introduction to data wrangling with dplyr. Available here.\nWeek 8, day 1: More data wrangling with dplyr. Available here.\nWeek 8, day 2: Advanced grouping and summarizing. Available here.\nWeek 9, day 1: Combining multiple tibbles. Available here.\nWeek 10, day 1: Reshaping data with tidyr. Available here.\nWeek 10, day 2: Reshaping data with tidyr, part 2. Available here.\nWeek 11, day 1: The grammar of graphics. Available here.\nWeek 11, day 2: Final project explanation and more plotting with ggplot2. Available here.\nWeek 12, day 1: More plotting with ggplot2. Available here.\nWeek 12, day 2: Building graphics incrementally, composing plots with patchwork, and saving plots. Available here.\nWeek 13, day 1: Spatial data with sf. Available here.\nWeek 14, day 1: Project and midterms and quizzes, galore! Available here."
   },
   {
-    "objectID": "midterm.html",
-    "href": "midterm.html",
-    "title": "Midterm I",
+    "objectID": "recordings.html#recordings",
+    "href": "recordings.html#recordings",
+    "title": "Lecture Recordings",
     "section": "",
-    "text": "The midterm files are available below:\n\nmidterm_01.qmd\nLoblolly.csv"
+    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 1: No recording available.\nWeek 3, day 2: Data structures. Available here.\nWeek 4, day 1: No recording available.\nWeek 4, day 2: Review of data structures & intro to functions. Available here.\nWeek 5, day 1: Functions and conditionals. Available here.\nWeek 5, day 2: Functions. NOTE: audio issues. Available here.\nWeek 6, day 1: Welcome to the tidyverse. Available here.\nWeek 6, day 2: Midterm review day. No recording.\nWeek 7, day 1: tibble and readr. Available here.\nWeek 7, day 2: Introduction to data wrangling with dplyr. Available here.\nWeek 8, day 1: More data wrangling with dplyr. Available here.\nWeek 8, day 2: Advanced grouping and summarizing. Available here.\nWeek 9, day 1: Combining multiple tibbles. Available here.\nWeek 10, day 1: Reshaping data with tidyr. Available here.\nWeek 10, day 2: Reshaping data with tidyr, part 2. Available here.\nWeek 11, day 1: The grammar of graphics. Available here.\nWeek 11, day 2: Final project explanation and more plotting with ggplot2. Available here.\nWeek 12, day 1: More plotting with ggplot2. Available here.\nWeek 12, day 2: Building graphics incrementally, composing plots with patchwork, and saving plots. Available here.\nWeek 13, day 1: Spatial data with sf. Available here.\nWeek 14, day 1: Project and midterms and quizzes, galore! Available here."
   },
   {
-    "objectID": "midterm.html#files",
-    "href": "midterm.html#files",
-    "title": "Midterm I",
+    "objectID": "midterm2.html",
+    "href": "midterm2.html",
+    "title": "Midterm II",
     "section": "",
-    "text": "The midterm files are available below:\n\nmidterm_01.qmd\nLoblolly.csv"
+    "text": "The midterm files are available below:\n\nmidterm_02.qmd\nislands_long.csv"
   },
   {
-    "objectID": "final_project.html",
-    "href": "final_project.html",
-    "title": "Final Project",
+    "objectID": "midterm2.html#files",
+    "href": "midterm2.html#files",
+    "title": "Midterm II",
     "section": "",
-    "text": "In this class, we’ve learned how to analyze data in the R programming language. From reading in the data, to tidying and reshaping, to wrangling, and finally to plotting. The final project asks you to find a dataset that is interesting to you and analyze it with the tools we’ve learned in class. The dataset you use for the class should be environmental in some sense. It could relate to forestry, water and water quality, animals, climate, etc. We will include some datasets that could be a good choice for this project, but you are not limited to these datasets.\nThis is a group project, with groups of 3-5 people. You can choose your groups, but if you are having trouble finding a group or your group is too small (&lt; 3 people), please let Grayson know and we will combine you or your group with others."
-  },
-  {
-    "objectID": "final_project.html#description",
-    "href": "final_project.html#description",
-    "title": "Final Project",
-    "section": "",
-    "text": "In this class, we’ve learned how to analyze data in the R programming language. From reading in the data, to tidying and reshaping, to wrangling, and finally to plotting. The final project asks you to find a dataset that is interesting to you and analyze it with the tools we’ve learned in class. The dataset you use for the class should be environmental in some sense. It could relate to forestry, water and water quality, animals, climate, etc. We will include some datasets that could be a good choice for this project, but you are not limited to these datasets.\nThis is a group project, with groups of 3-5 people. You can choose your groups, but if you are having trouble finding a group or your group is too small (&lt; 3 people), please let Grayson know and we will combine you or your group with others."
-  },
-  {
-    "objectID": "final_project.html#components",
-    "href": "final_project.html#components",
-    "title": "Final Project",
-    "section": "Components",
-    "text": "Components\nThe final project will be composed of four components: a group member submission, a proposal, a blog post, and a presentation. For each component, your group will submit one document via D2L.\n\nThe group member submission\nDue date: Tuesday, November 12th, 5pm.\nPlease submit a document to D2L with the names of your group members. Remember, groups of 3-5 people are allowed. If you are having trouble finding a group or your group is too small (&lt; 3 people), please let Grayson know and we will combine you or your group with others.\n\n\nThe proposal\nDue date: Saturday, November 23rd, 5pm.\nPlease submit a brief proposal of the project you would like to do. This should be a (no longer than 2 page) document outlining the data you will use and an idea of the story or information that you’d like to try to extract from the data. For this part, it is strongly recommended that you download the data you would like to use and take a look at it. In the proposal, describe any challenges you anticipate having working with the data, and the steps needed to get the data into a form that will be easy to work with in R. It is expected that this document is well-written, explains the data you’d like to work with, and conveys your ideas and hopes for what you’d like to do with the data (i.e. what your blog post will be about).\n\n\nThe blog post\nDue date: Monday, December 9th, 5pm.\nThe blog post is the heart of the final project. You and your group members will write a blog post in a Quarto document that takes the raw data you are using and tells a story with it. The blog post will include the story of getting the data, wrangling the data, and plots and summaries of the data. The blog posts will be posted on the course website (with groups permission), you have the right to not include your blog post on the course website, or to anonymize your blog post for the course website.\nThe blog post has the following parameters:\n\nI expect the post to be approximately 1000 words. This is a “soft” minimum: i.e., I wouldn’t want to see a significantly shorter blog post, and it would be fine if you went significantly over this limit. In general, I want your blog post to convey the story you are telling in a thoughtful way that doesn’t have too much “fluff” but isn’t overly terse either. In other words, write naturally and thoughtfully.\nYour blog post should include at least three (3) graphics created with ggplot2 and at least one tabular summary of the data. For displaying tables in beautiful ways in your blog post, check out the gt R package.\nYour blog post will be written in Quarto as a fully reproducible document. You will load in the data and necessary packages at the beginning of the blog post, do the necessary wrangling and cleaning in the blog post, and make the plots in the blog post. It is okay (and even encouraged) to work in separate documents to begin, but one final blog post will be the final product.\nYou likely should break your blog post into different sections. I suggest (but surely do not limit you to) the following sections:\n\nIntroduction: Give some background on the data and the questions you’d like to answer with it,\nMethods: Include how you got the data, and the steps necessary to load it into R and wrangle it into appropriate format for data analysis,\nAnalysis / Results: Talk about and display your figures, tables, and findings from the data,\nConclusions: Summarize your findings and discuss the implications. Discuss possible future directions for working with these data.\n\nYour blog post will Render to HTML. You must submit your .qmd file, along with any data files (.csv, etc.) necessary for Rendering the document to D2L by the deadline, December 9th at 5pm.\n\n\n\nThe presentation\nDue date: Slides submitted by Wednesday, December 11th, 5pm. Presentations to be completed in class during the final exam slot on December 12th.\nYou and your group will present the results from your analyses (i.e. findings from the blog post) in slide show form to your classmates during the final exam slot. Groups will present together, and presentation time should be shared relatively equally between group members.\nMore details to come on the presentation."
-  },
-  {
-    "objectID": "final_project.html#potential-datasets",
-    "href": "final_project.html#potential-datasets",
-    "title": "Final Project",
-    "section": "Potential Datasets",
-    "text": "Potential Datasets\nWhile you can come up with your own dataset for the final project, we have provided some datasets that might be nice to explore.\n\nPenobscot Experimental Forest\nHJ Andrews Experimental Forest\nHarvard Forest\nNational Ecological Observatory Network\nHubbard Brook Ecosystem Study\nBartlett Experimental Forest\nFernow Experimental Forest\nNational Park Service DataStore"
-  },
-  {
-    "objectID": "final_project.html#evaluation",
-    "href": "final_project.html#evaluation",
-    "title": "Final Project",
-    "section": "Evaluation",
-    "text": "Evaluation\nThe final project is worth 15% of your final grade. The proposal, blog post, and presentation will contribute to this 15%."
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7, Instructions & Output\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8, Instructions & Output\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9, Instructions & Output, Data\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)\n\n\nLab 10, Instructions & Output\nThursday 11/7 (at lab time)\nWednesday 11/13 (at 5pm)\n\n\nLab 11\nThursday 11/14 (at lab time)\nWednesday 11/20 (at 5pm)"
-  },
-  {
-    "objectID": "assignments.html#labs",
-    "href": "assignments.html#labs",
-    "title": "Assignments",
-    "section": "",
-    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7, Instructions & Output\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8, Instructions & Output\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9, Instructions & Output, Data\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)\n\n\nLab 10, Instructions & Output\nThursday 11/7 (at lab time)\nWednesday 11/13 (at 5pm)\n\n\nLab 11\nThursday 11/14 (at lab time)\nWednesday 11/20 (at 5pm)"
-  },
-  {
-    "objectID": "assignments.html#lecture-tickets",
-    "href": "assignments.html#lecture-tickets",
-    "title": "Assignments",
-    "section": "Lecture Tickets",
-    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)\n\n\nLecture ticket 3\nTuesday 9/3 (by 5pm)\nThursday 9/5 (in lecture)\n\n\nLecture ticket 4\nThursday 9/5 (by 5pm)\nTuesday 9/10 (in lecture)\n\n\nLecture ticket 5\nTuesday 9/10 (by 5pm)\nThursday 9/12 (in lecture)\n\n\nLecture ticket 6\nThursday 9/12 (by 5pm)\nTuesday 9/17 (in lecture)\n\n\nLecture ticket 7\nTuesday 9/17 (by 5pm)\nThursday 9/19 (in lecture)\n\n\nLecture ticket 8\nThursday 9/19 (by 5pm)\nTuesday 9/24 (in lecture)\n\n\nLecture ticket 9\nTuesday 9/24 (by 5pm)\nThursday 9/26 (in lecture)\n\n\nLecture ticket 10\nThursday 9/26 (by 5pm)\nTuesday 10/1 (in lecture)\n\n\nLecture ticket 11\nTuesday 10/1 (by 5pm)\nThursday 10/3 (in lecture)\n\n\nLecture ticket 12\nThursday 10/3 (by 5pm)\nTuesday 10/8 (in lecture)\n\n\nLecture ticket 13\nTuesday 10/8 (by 5pm)\nThursday 10/10 (in lecture)\n\n\nLecture ticket 14\nThursday 10/10 (by 5pm)\nTuesday 10/15 (in lecture)\n\n\nLecture ticket 15\nTuesday 10/15 (by 5pm)\nThursday 10/17 (in lecture)\n\n\nLecture ticket 16\nThursday 10/17 (by 5pm)\nThursday 10/24 (in lecture)\n\n\nLecture ticket 17\nThursday 10/24 (by 5pm)\nTuesday 10/29 (in lecture)\n\n\nLecture ticket 18\nTuesday 10/29 (by 5pm)\nThursday 10/31 (in lecture)\n\n\nLecture ticket 19\nThursday 10/31 (by 5pm)\nTuesday 11/5 (in lecture)\n\n\nLecture ticket 20\nTuesday 11/5 (by 5pm)\nThursday 11/7 (in lecture)\n\n\nLecture ticket 21\nThursday 11/7 (by 5pm)\nTuesday 11/12 (in lecture)\n\n\nLecture ticket 22\nTuesday 11/12 (by 5pm)\nThursday 11/14 (in lecture)\n\n\nLecture ticket 23\nThursday 11/14 (by 5pm)\nTuesday 11/19 (in lecture)\n\n\nLecture ticket 24\nTuesday 11/19 (by 5pm)\nTuesday 11/26 (in lecture)\n\n\nLecture ticket 25\nTuesday 11/26 (by 5pm)\nThursday 11/28 (in lecture)\n\n\nLecture ticket 26\nThursday 11/28 (by 5pm)\nTuesday 12/3 (in lecture)\n\n\nLecture ticket 27\nTuesday 12/3 (by 5pm)\nThursday 12/5 (in lecture)"
+    "text": "The midterm files are available below:\n\nmidterm_02.qmd\nislands_long.csv"
   },
   {
     "objectID": "index.html",
@@ -3472,32 +3535,102 @@
     "text": "Before coming to class, please read the syllabus.\nNo lecture ticket today.\n\n\n\n\n\nWe’ll have a lecture ticket due at the beginning of class. See the assignments page.\nLab 1, also available on the assignments page, will be assigned."
   },
   {
-    "objectID": "midterm2.html",
-    "href": "midterm2.html",
-    "title": "Midterm II",
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
     "section": "",
-    "text": "The midterm files are available below:\n\nmidterm_02.qmd\nislands_long.csv"
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7, Instructions & Output\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8, Instructions & Output\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9, Instructions & Output, Data\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)\n\n\nLab 10, Instructions & Output\nThursday 11/7 (at lab time)\nWednesday 11/13 (at 5pm)\n\n\nLab 11\nThursday 11/14 (at lab time)\nWednesday 11/20 (at 5pm)"
   },
   {
-    "objectID": "midterm2.html#files",
-    "href": "midterm2.html#files",
-    "title": "Midterm II",
+    "objectID": "assignments.html#labs",
+    "href": "assignments.html#labs",
+    "title": "Assignments",
     "section": "",
-    "text": "The midterm files are available below:\n\nmidterm_02.qmd\nislands_long.csv"
+    "text": "Labs are turned in on D2L.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLab 1\nThursday 8/27 (at lab time)\nWednesday 9/4 (at 5pm)\n\n\nLab 2\nThursday 9/5 (at lab time)\nWednesday 9/11 (at 5pm)\n\n\nLab 3\nThursday 9/12 (at lab time)\nWednesday 9/18 (at 5pm)\n\n\nLab 4\nThursday 9/19 (at lab time)\nWednesday 9/25 (at 5pm)\n\n\nLab 5\nThursday 9/26 (at lab time)\nWednesday 10/2 (at 5pm)\n\n\nLab 6\nThursday 10/10 (at lab time)\nWednesday 10/16 (at 5pm)\n\n\nLab 7, Instructions & Output\nThursday 10/17 (at lab time)\nWednesday 10/23 (at 5pm)\n\n\nLab 8, Instructions & Output\nThursday 10/24 (at lab time)\nWednesday 10/30 (at 5pm)\n\n\nLab 9, Instructions & Output, Data\nThursday 10/31 (at lab time)\nWednesday 11/6 (at 5pm)\n\n\nLab 10, Instructions & Output\nThursday 11/7 (at lab time)\nWednesday 11/13 (at 5pm)\n\n\nLab 11\nThursday 11/14 (at lab time)\nWednesday 11/20 (at 5pm)"
   },
   {
-    "objectID": "recordings.html",
-    "href": "recordings.html",
-    "title": "Lecture Recordings",
-    "section": "",
-    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 1: No recording available.\nWeek 3, day 2: Data structures. Available here.\nWeek 4, day 1: No recording available.\nWeek 4, day 2: Review of data structures & intro to functions. Available here.\nWeek 5, day 1: Functions and conditionals. Available here.\nWeek 5, day 2: Functions. NOTE: audio issues. Available here.\nWeek 6, day 1: Welcome to the tidyverse. Available here.\nWeek 6, day 2: Midterm review day. No recording.\nWeek 7, day 1: tibble and readr. Available here.\nWeek 7, day 2: Introduction to data wrangling with dplyr. Available here.\nWeek 8, day 1: More data wrangling with dplyr. Available here.\nWeek 8, day 2: Advanced grouping and summarizing. Available here.\nWeek 9, day 1: Combining multiple tibbles. Available here.\nWeek 10, day 1: Reshaping data with tidyr. Available here.\nWeek 10, day 2: Reshaping data with tidyr, part 2. Available here.\nWeek 11, day 1: The grammar of graphics. Available here.\nWeek 11, day 2: Final project explanation and more plotting with ggplot2. Available here.\nWeek 12, day 1: More plotting with ggplot2. Available here.\nWeek 12, day 2: Building graphics incrementally, composing plots with patchwork, and saving plots. Available here."
+    "objectID": "assignments.html#lecture-tickets",
+    "href": "assignments.html#lecture-tickets",
+    "title": "Assignments",
+    "section": "Lecture Tickets",
+    "text": "Lecture Tickets\nLecture tickets are turned in on a piece of paper in-person at lecture.\n\n\n\nAssignment\nAvailable\nDue\n\n\n\n\nLecture ticket 1\nTuesday 8/27 (by 5pm)\nThursday 8/29 (in lecture)\n\n\nLecture ticket 2\nThursday 8/29 (by 5pm)\nTuesday 9/3 (in lecture)\n\n\nLecture ticket 3\nTuesday 9/3 (by 5pm)\nThursday 9/5 (in lecture)\n\n\nLecture ticket 4\nThursday 9/5 (by 5pm)\nTuesday 9/10 (in lecture)\n\n\nLecture ticket 5\nTuesday 9/10 (by 5pm)\nThursday 9/12 (in lecture)\n\n\nLecture ticket 6\nThursday 9/12 (by 5pm)\nTuesday 9/17 (in lecture)\n\n\nLecture ticket 7\nTuesday 9/17 (by 5pm)\nThursday 9/19 (in lecture)\n\n\nLecture ticket 8\nThursday 9/19 (by 5pm)\nTuesday 9/24 (in lecture)\n\n\nLecture ticket 9\nTuesday 9/24 (by 5pm)\nThursday 9/26 (in lecture)\n\n\nLecture ticket 10\nThursday 9/26 (by 5pm)\nTuesday 10/1 (in lecture)\n\n\nLecture ticket 11\nTuesday 10/1 (by 5pm)\nThursday 10/3 (in lecture)\n\n\nLecture ticket 12\nThursday 10/3 (by 5pm)\nTuesday 10/8 (in lecture)\n\n\nLecture ticket 13\nTuesday 10/8 (by 5pm)\nThursday 10/10 (in lecture)\n\n\nLecture ticket 14\nThursday 10/10 (by 5pm)\nTuesday 10/15 (in lecture)\n\n\nLecture ticket 15\nTuesday 10/15 (by 5pm)\nThursday 10/17 (in lecture)\n\n\nLecture ticket 16\nThursday 10/17 (by 5pm)\nThursday 10/24 (in lecture)\n\n\nLecture ticket 17\nThursday 10/24 (by 5pm)\nTuesday 10/29 (in lecture)\n\n\nLecture ticket 18\nTuesday 10/29 (by 5pm)\nThursday 10/31 (in lecture)\n\n\nLecture ticket 19\nThursday 10/31 (by 5pm)\nTuesday 11/5 (in lecture)\n\n\nLecture ticket 20\nTuesday 11/5 (by 5pm)\nThursday 11/7 (in lecture)\n\n\nLecture ticket 21\nThursday 11/7 (by 5pm)\nTuesday 11/12 (in lecture)\n\n\nLecture ticket 22\nTuesday 11/12 (by 5pm)\nThursday 11/14 (in lecture)\n\n\nLecture ticket 23\nThursday 11/14 (by 5pm)\nTuesday 11/19 (in lecture)\n\n\nLecture ticket 24\nTuesday 11/19 (by 5pm)\nTuesday 11/26 (in lecture)\n\n\nLecture ticket 25\nTuesday 11/26 (by 5pm)\nThursday 11/28 (in lecture)\n\n\nLecture ticket 26\nThursday 11/28 (by 5pm)\nTuesday 12/3 (in lecture)\n\n\nLecture ticket 27\nTuesday 12/3 (by 5pm)\nThursday 12/5 (in lecture)"
   },
   {
-    "objectID": "recordings.html#recordings",
-    "href": "recordings.html#recordings",
-    "title": "Lecture Recordings",
+    "objectID": "final_project.html",
+    "href": "final_project.html",
+    "title": "Final Project",
     "section": "",
-    "text": "Week 1, day 1: Welcome to the course. Available here.\nWeek 1, day 2: Data science tools. Available here.\nWeek 2, day 1: Practical computing. Available here.\nWeek 2, day 2: Reading and writing data. Available here.\nWeek 3, day 1: No recording available.\nWeek 3, day 2: Data structures. Available here.\nWeek 4, day 1: No recording available.\nWeek 4, day 2: Review of data structures & intro to functions. Available here.\nWeek 5, day 1: Functions and conditionals. Available here.\nWeek 5, day 2: Functions. NOTE: audio issues. Available here.\nWeek 6, day 1: Welcome to the tidyverse. Available here.\nWeek 6, day 2: Midterm review day. No recording.\nWeek 7, day 1: tibble and readr. Available here.\nWeek 7, day 2: Introduction to data wrangling with dplyr. Available here.\nWeek 8, day 1: More data wrangling with dplyr. Available here.\nWeek 8, day 2: Advanced grouping and summarizing. Available here.\nWeek 9, day 1: Combining multiple tibbles. Available here.\nWeek 10, day 1: Reshaping data with tidyr. Available here.\nWeek 10, day 2: Reshaping data with tidyr, part 2. Available here.\nWeek 11, day 1: The grammar of graphics. Available here.\nWeek 11, day 2: Final project explanation and more plotting with ggplot2. Available here.\nWeek 12, day 1: More plotting with ggplot2. Available here.\nWeek 12, day 2: Building graphics incrementally, composing plots with patchwork, and saving plots. Available here."
+    "text": "In this class, we’ve learned how to analyze data in the R programming language. From reading in the data, to tidying and reshaping, to wrangling, and finally to plotting. The final project asks you to find a dataset that is interesting to you and analyze it with the tools we’ve learned in class. The dataset you use for the class should be environmental in some sense. It could relate to forestry, water and water quality, animals, climate, etc. We will include some datasets that could be a good choice for this project, but you are not limited to these datasets.\nThis is a group project, with groups of 3-5 people. You can choose your groups, but if you are having trouble finding a group or your group is too small (&lt; 3 people), please let Grayson know and we will combine you or your group with others."
+  },
+  {
+    "objectID": "final_project.html#description",
+    "href": "final_project.html#description",
+    "title": "Final Project",
+    "section": "",
+    "text": "In this class, we’ve learned how to analyze data in the R programming language. From reading in the data, to tidying and reshaping, to wrangling, and finally to plotting. The final project asks you to find a dataset that is interesting to you and analyze it with the tools we’ve learned in class. The dataset you use for the class should be environmental in some sense. It could relate to forestry, water and water quality, animals, climate, etc. We will include some datasets that could be a good choice for this project, but you are not limited to these datasets.\nThis is a group project, with groups of 3-5 people. You can choose your groups, but if you are having trouble finding a group or your group is too small (&lt; 3 people), please let Grayson know and we will combine you or your group with others."
+  },
+  {
+    "objectID": "final_project.html#components",
+    "href": "final_project.html#components",
+    "title": "Final Project",
+    "section": "Components",
+    "text": "Components\nThe final project will be composed of four components: a group member submission, a proposal, a blog post, and a presentation. For each component, your group will submit one document via D2L.\n\nThe group member submission\nDue date: Tuesday, November 12th, 5pm.\nPlease submit a document to D2L with the names of your group members. Remember, groups of 3-5 people are allowed. If you are having trouble finding a group or your group is too small (&lt; 3 people), please let Grayson know and we will combine you or your group with others.\n\n\nThe proposal\nDue date: Saturday, November 23rd, 5pm.\nPlease submit a brief proposal of the project you would like to do. This should be a (no longer than 2 page) document outlining the data you will use and an idea of the story or information that you’d like to try to extract from the data. For this part, it is strongly recommended that you download the data you would like to use and take a look at it. In the proposal, describe any challenges you anticipate having working with the data, and the steps needed to get the data into a form that will be easy to work with in R. It is expected that this document is well-written, explains the data you’d like to work with, and conveys your ideas and hopes for what you’d like to do with the data (i.e. what your blog post will be about).\n\n\nThe blog post\nDue date: Monday, December 9th, 5pm.\nThe blog post is the heart of the final project. You and your group members will write a blog post in a Quarto document that takes the raw data you are using and tells a story with it. The blog post will include the story of getting the data, wrangling the data, and plots and summaries of the data. The blog posts will be posted on the course website (with groups permission), you have the right to not include your blog post on the course website, or to anonymize your blog post for the course website.\nThe blog post has the following parameters:\n\nI expect the post to be approximately 1000 words. This is a “soft” minimum: i.e., I wouldn’t want to see a significantly shorter blog post, and it would be fine if you went significantly over this limit. In general, I want your blog post to convey the story you are telling in a thoughtful way that doesn’t have too much “fluff” but isn’t overly terse either. In other words, write naturally and thoughtfully.\nYour blog post should include at least three (3) graphics created with ggplot2 and at least one tabular summary of the data. For displaying tables in beautiful ways in your blog post, check out the gt R package.\nYour blog post will be written in Quarto as a fully reproducible document. You will load in the data and necessary packages at the beginning of the blog post, do the necessary wrangling and cleaning in the blog post, and make the plots in the blog post. It is okay (and even encouraged) to work in separate documents to begin, but one final blog post will be the final product.\nYou likely should break your blog post into different sections. I suggest (but surely do not limit you to) the following sections:\n\nIntroduction: Give some background on the data and the questions you’d like to answer with it,\nMethods: Include how you got the data, and the steps necessary to load it into R and wrangle it into appropriate format for data analysis,\nAnalysis / Results: Talk about and display your figures, tables, and findings from the data,\nConclusions: Summarize your findings and discuss the implications. Discuss possible future directions for working with these data.\n\nYour blog post will Render to HTML. You must submit your .qmd file, along with any data files (.csv, etc.) necessary for Rendering the document to D2L by the deadline, December 9th at 5pm.\n\n\n\nThe presentation\nDue date: Slides submitted by Wednesday, December 11th, 5pm. Presentations to be completed in class during the final exam slot on December 12th.\nYou and your group will present the results from your analyses (i.e. findings from the blog post) in slide show form to your classmates during the final exam slot. Groups will present together, and presentation time should be shared relatively equally between group members.\nMore details to come on the presentation."
+  },
+  {
+    "objectID": "final_project.html#potential-datasets",
+    "href": "final_project.html#potential-datasets",
+    "title": "Final Project",
+    "section": "Potential Datasets",
+    "text": "Potential Datasets\nWhile you can come up with your own dataset for the final project, we have provided some datasets that might be nice to explore.\n\nPenobscot Experimental Forest\nHJ Andrews Experimental Forest\nHarvard Forest\nNational Ecological Observatory Network\nHubbard Brook Ecosystem Study\nBartlett Experimental Forest\nFernow Experimental Forest\nNational Park Service DataStore"
+  },
+  {
+    "objectID": "final_project.html#evaluation",
+    "href": "final_project.html#evaluation",
+    "title": "Final Project",
+    "section": "Evaluation",
+    "text": "Evaluation\nThe final project is worth 15% of your final grade. The proposal, blog post, and presentation will contribute to this 15%."
+  },
+  {
+    "objectID": "midterm.html",
+    "href": "midterm.html",
+    "title": "Midterm I",
+    "section": "",
+    "text": "The midterm files are available below:\n\nmidterm_01.qmd\nLoblolly.csv"
+  },
+  {
+    "objectID": "midterm.html#files",
+    "href": "midterm.html#files",
+    "title": "Midterm I",
+    "section": "",
+    "text": "The midterm files are available below:\n\nmidterm_01.qmd\nLoblolly.csv"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Class Blog",
+    "section": "",
+    "text": "An example blog post\n\n\n\nExample\n\n\nR\n\n\nEnvironmental data\n\n\n\nAn examination of the Thuja plicata trees in Portland, OR\n\n\n\nGrayson White, Andrew Finley\n\n\nDec 2, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "slides/w14d1.html#agenda",
+    "href": "slides/w14d1.html#agenda",
+    "title": "Projects and midterms and quizzes, galore!",
+    "section": "Agenda",
+    "text": "Agenda\n\nReview Midterm II\nQuiz (1 - 9) make ups\nFinal project blog post discussion\nGroup work: discuss final project in groups (and fill out Quiz 10)"
+  },
+  {
+    "objectID": "slides/w14d1.html#quizzes",
+    "href": "slides/w14d1.html#quizzes",
+    "title": "Projects and midterms and quizzes, galore!",
+    "section": "Quizzes",
+    "text": "Quizzes\n\nYou can receive up to full points on two (2) quizzes that you did not get full points on.\nTo do so, redo a Quiz on your own time and I will regrade it if you turn it in to me by the last day of class, Thursday Dec 5th, at 12:10pm.\nIf you need an extra copy of a Quiz you’d like to make up, come see me. If you have your old copy, please write your new answers in a different colored pen/pencil, and specify why you initially got the problem wrong."
+  },
+  {
+    "objectID": "slides/w14d1.html#next-time",
+    "href": "slides/w14d1.html#next-time",
+    "title": "Projects and midterms and quizzes, galore!",
+    "section": "Next time",
+    "text": "Next time\n\nEnjoy the holiday!\nMore spatial data, gt demo, Quarto, and group work!"
   },
   {
     "objectID": "slides/w3d1.html#agenda",
@@ -3850,130 +3983,25 @@
     "text": "Your turn!\n\nFind all trees with DBH less than 9.5.\nFind all trees that are not tsugca (hint use the !).\nFind all dead trees (hint use the !).\nFind all live trees of unacceptable growing stock.\nFind all live betual and acerru that are of acceptable growing stock.\nMake up your own subsetting criteria."
   },
   {
-    "objectID": "slides/w5d2.html#annoucements",
-    "href": "slides/w5d2.html#annoucements",
-    "title": "Functions",
-    "section": "Annoucements",
-    "text": "Annoucements\n\nMidterm 1 is in one week, Oct 3, during lab time.\nLab 3 grades coming soon.\nLab 4 grades by end of weekend."
+    "objectID": "posts/example_post/index.html",
+    "href": "posts/example_post/index.html",
+    "title": "An example blog post",
+    "section": "",
+    "text": "This is an example blog post about Western red cedar (Thuja plicata) trees in Portland, Oregon. I am using data from the pdxTrees R package. The pdxTrees R package has a nice hex sticker, which we can include in the blog post like this:\n\n\n\n\n\n\n\n\n\nand if the image was on my computer rather than online, I could include it by using the same syntax with a relative path rather than website URL. Note the options I used to include this figure. “out-width” decides how wide the image should be, from 0% to 100%. “fig-align” allows you to align the image on the “left”, “center”, or “right”. “echo” either includes the code (echo: true) or does not include the code (echo: false) in the Rendered document. By default echo is true.\nWe’ll use a few packages for our analyses, namely the tidyverse, gt, and pdxTrees.\n\n\nCode\nlibrary(tidyverse)\nlibrary(gt)\nlibrary(pdxTrees)\n\n\nNote that we used the “code-fold” option here to fold the code used to load these libraries. We also set the “message” option to false in order to silence the message that the tidyverse prints upon loading."
   },
   {
-    "objectID": "slides/w5d2.html#agenda",
-    "href": "slides/w5d2.html#agenda",
-    "title": "Functions",
-    "section": "Agenda",
-    "text": "Agenda\n\nWarm-up\nLoops\nForestry functions\nQuarto practice"
+    "objectID": "posts/example_post/index.html#park-data",
+    "href": "posts/example_post/index.html#park-data",
+    "title": "An example blog post",
+    "section": "Park data",
+    "text": "Park data\nThe parks data include measurements of every tree in every park in Portland, Oregon. We can load the data in as follows:\n\nparks &lt;- get_pdxTrees_parks()\ndim(parks)\n\n[1] 25534    34\n\n\nBy default, both the code and output is included.\nThe first few rows look like this:\n\nhead(parks)\n\n# A tibble: 6 × 34\n  Longitude Latitude UserID Genus       Family   DBH Inventory_Date      Species\n      &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;  &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;  \n1     -123.     45.6 1      Pseudotsuga Pinac…  37.4 2017-05-09 00:00:00 PSME   \n2     -123.     45.6 2      Pseudotsuga Pinac…  32.5 2017-05-09 00:00:00 PSME   \n3     -123.     45.6 3      Crataegus   Rosac…   9.7 2017-05-09 00:00:00 CRLA   \n4     -123.     45.6 4      Quercus     Fagac…  10.3 2017-05-09 00:00:00 QURU   \n5     -123.     45.6 5      Pseudotsuga Pinac…  33.2 2017-05-09 00:00:00 PSME   \n6     -123.     45.6 6      Pseudotsuga Pinac…  32.1 2017-05-09 00:00:00 PSME   \n# ℹ 26 more variables: Common_Name &lt;chr&gt;, Condition &lt;chr&gt;, Tree_Height &lt;dbl&gt;,\n#   Crown_Width_NS &lt;dbl&gt;, Crown_Width_EW &lt;dbl&gt;, Crown_Base_Height &lt;dbl&gt;,\n#   Collected_By &lt;chr&gt;, Park &lt;chr&gt;, Scientific_Name &lt;chr&gt;,\n#   Functional_Type &lt;chr&gt;, Mature_Size &lt;fct&gt;, Native &lt;chr&gt;, Edible &lt;chr&gt;,\n#   Nuisance &lt;chr&gt;, Structural_Value &lt;dbl&gt;, Carbon_Storage_lb &lt;dbl&gt;,\n#   Carbon_Storage_value &lt;dbl&gt;, Carbon_Sequestration_lb &lt;dbl&gt;,\n#   Carbon_Sequestration_value &lt;dbl&gt;, Stormwater_ft &lt;dbl&gt;, …\n\n\nIf we wanted to display the data in a more elegant way, we could use the gt package:\n\nhead(parks) %&gt;% select(1:6) %&gt;% gt()\n\n\n\n\n\n\n\nLongitude\nLatitude\nUserID\nGenus\nFamily\nDBH\n\n\n\n\n-122.6936\n45.57491\n1\nPseudotsuga\nPinaceae\n37.4\n\n\n-122.6938\n45.57489\n2\nPseudotsuga\nPinaceae\n32.5\n\n\n-122.6942\n45.57493\n3\nCrataegus\nRosaceae\n9.7\n\n\n-122.6939\n45.57490\n4\nQuercus\nFagaceae\n10.3\n\n\n-122.6940\n45.57491\n5\nPseudotsuga\nPinaceae\n33.2\n\n\n-122.6943\n45.57489\n6\nPseudotsuga\nPinaceae\n32.1\n\n\n\n\n\n\n\nWe need to filter for only Western red cedars! So let’s do that:\n\n\nCode\nparks &lt;- parks %&gt;%\n  filter(Species == \"THPL\")\n\n\nIn this case, we set the “code-fold” option to show rather than true or false, the show option allows the user to fold the code, but starts it as unfolded code."
   },
   {
-    "objectID": "slides/w5d2.html#warm-up-activity",
-    "href": "slides/w5d2.html#warm-up-activity",
-    "title": "Functions",
-    "section": "Warm-up activity",
-    "text": "Warm-up activity\nWrite a function that takes two vectors as arguments (inputs) and does the following:\nTakes the difference of the vectors’ means. In other words, take the mean() of each input and subtract the first input’s mean() from the second input’s mean(). Make sure to handle NA values that might exist in the vectors. Name this function diff_in_means().\nBonus: (only do if you have time) add a requirement that a and b are the same length vector.\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "slides/w5d2.html#warm-up-activity-possible-solution",
-    "href": "slides/w5d2.html#warm-up-activity-possible-solution",
-    "title": "Functions",
-    "section": "Warm-up activity: possible solution",
-    "text": "Warm-up activity: possible solution\n\ndiff_in_means &lt;- function(a, b, na.rm = FALSE) {\n  if (na.rm) {\n    a &lt;- a[!is.na(a)]\n    b &lt;- b[!is.na[b]]\n  }\n  \n  a_mean &lt;- mean(a)\n  b_mean &lt;- mean(b)\n  \n  return(a_mean - b_mean)\n}"
-  },
-  {
-    "objectID": "slides/w5d2.html#warm-up-activity-possible-solution-with-bonus",
-    "href": "slides/w5d2.html#warm-up-activity-possible-solution-with-bonus",
-    "title": "Functions",
-    "section": "Warm-up activity: possible solution with bonus",
-    "text": "Warm-up activity: possible solution with bonus\n\ndiff_in_means &lt;- function(a, b, na.rm = FALSE) {\n  stopifnot(\n    \"Arguments `a` and `b` must be the same length.\" = length(a) == length(b)\n  )\n  \n  if (na.rm) {\n    a &lt;- a[!is.na(a)]\n    b &lt;- b[!is.na(b)]\n  }\n  \n  a_mean &lt;- mean(a)\n  b_mean &lt;- mean(b)\n  \n  return(a_mean - b_mean)\n}"
-  },
-  {
-    "objectID": "slides/w5d2.html#loops-1",
-    "href": "slides/w5d2.html#loops-1",
-    "title": "Functions",
-    "section": "Loops",
-    "text": "Loops\n\n\nLoops are important to R and many other programming languages.\nUnderstanding how to read, write, and utilize loops are key skills for data scientists.\nWe’ll introduce two types of loops in R: while and for loops"
-  },
-  {
-    "objectID": "slides/w5d2.html#while-loops",
-    "href": "slides/w5d2.html#while-loops",
-    "title": "Functions",
-    "section": "while loops",
-    "text": "while loops\n\nwhile loops look as follows:\n\n\nwhile (condition is true) {\n  run this code until condition is false\n}"
-  },
-  {
-    "objectID": "slides/w5d2.html#while-loops-1",
-    "href": "slides/w5d2.html#while-loops-1",
-    "title": "Functions",
-    "section": "while loops",
-    "text": "while loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "slides/w5d2.html#for-loops",
-    "href": "slides/w5d2.html#for-loops",
-    "title": "Functions",
-    "section": "for loops",
-    "text": "for loops\n\nfor loops look as follows:\n\n\nfor (variable in vector) {\n  run this code until through each element of the vector\n}"
-  },
-  {
-    "objectID": "slides/w5d2.html#for-loops-1",
-    "href": "slides/w5d2.html#for-loops-1",
-    "title": "Functions",
-    "section": "for loops",
-    "text": "for loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "slides/w5d2.html#for-loops-2",
-    "href": "slides/w5d2.html#for-loops-2",
-    "title": "Functions",
-    "section": "for loops",
-    "text": "for loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "slides/w5d2.html#for-loop-in-a-function",
-    "href": "slides/w5d2.html#for-loop-in-a-function",
-    "title": "Functions",
-    "section": "for loop in a function",
-    "text": "for loop in a function\n\nmy_mean &lt;- function(x) {\n  total &lt;- 0\n  \n  for (i in 1:length(x)) {\n    total &lt;- total + x[i]\n  }\n  \n  average &lt;- total / length(x)\n  \n  return(average)\n}"
-  },
-  {
-    "objectID": "slides/w5d2.html#basal-area",
-    "href": "slides/w5d2.html#basal-area",
-    "title": "Functions",
-    "section": "Basal area",
-    "text": "Basal area\n\n\n\n\nBasal area is the measurement of a tree’s cross-sectional area at breast height, and is derived from the diameter at breast height measurement.\nOftentimes, we care about the basal area in a given stand and want to report basal area on a per-unit-area basis (e.g. square feet per acre or square meters per hectare), but we only have DBH measurements."
-  },
-  {
-    "objectID": "slides/w5d2.html#calculating-basal-area",
-    "href": "slides/w5d2.html#calculating-basal-area",
-    "title": "Functions",
-    "section": "Calculating basal area",
-    "text": "Calculating basal area\nBasal area in square feet per acre: \\[\n\\text{BA} = \\frac{\\pi}{144} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 144} \\cdot \\text{DBH}^2\n\\] Basal area in square meters per hectare: \\[\n\\text{BA} = \\frac{\\pi}{10000} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 10000} \\cdot \\text{DBH}^2\n\\] Basal area is of the form:\n\\(\\text{forester's constant} \\times \\text{DBH}^2\\)"
-  },
-  {
-    "objectID": "slides/w5d2.html#implementation-in-r",
-    "href": "slides/w5d2.html#implementation-in-r",
-    "title": "Functions",
-    "section": "Implementation in R",
-    "text": "Implementation in R\nWhat we want: A function that\n\n\nhas sensible input checks,\ncomputes basal area in either square feet per acre or square meters per hectare, and\nis flexible enough to allow for DBH measurements to be in inches or centimeters."
-  },
-  {
-    "objectID": "slides/w5d2.html#implementation-in-r-1",
-    "href": "slides/w5d2.html#implementation-in-r-1",
-    "title": "Functions",
-    "section": "Implementation in R",
-    "text": "Implementation in R\nHow we’ll do it:\n\n\nDefine the forester’s constant for whichever units DBH measurements are in,\nConvert inches to centimeters or vise versa to satisfy our formula for basal area,\nCompute basal area based on our formula,\nGo back and add some sensible input checks."
-  },
-  {
-    "objectID": "slides/w5d2.html#calculating-basal-area-1",
-    "href": "slides/w5d2.html#calculating-basal-area-1",
-    "title": "Functions",
-    "section": "Calculating basal area",
-    "text": "Calculating basal area\nBasal area in square feet per acre: \\[\n\\text{BA} = \\frac{\\pi}{144} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 144} \\cdot \\text{DBH}^2\n\\] Basal area in square meters per hectare: \\[\n\\text{BA} = \\frac{\\pi}{10000} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 10000} \\cdot \\text{DBH}^2\n\\] There are 2.54 centimeters in an inch."
-  },
-  {
-    "objectID": "slides/w5d2.html#next-time",
-    "href": "slides/w5d2.html#next-time",
-    "title": "Functions",
-    "section": "Next time",
-    "text": "Next time\n\nIntroduction to the tidyverse"
+    "objectID": "posts/example_post/index.html#street-data",
+    "href": "posts/example_post/index.html#street-data",
+    "title": "An example blog post",
+    "section": "Street data",
+    "text": "Street data\nWe can also load in the streets dataset and include the code that was used to do that:\n\nstreets &lt;- get_pdxTrees_streets() %&gt;%\n  filter(Species == \"THPL\")"
   },
   {
     "objectID": "slides/w1d1.html#agenda",
@@ -5898,7 +5926,7 @@
     "href": "slides/w12d2.html#saving-graphics-2",
     "title": "More graphics with ggplot2",
     "section": "Saving graphics",
-    "text": "Saving graphics\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nlist.files()\n\n [1] \"figs\"              \"minard-cities.txt\" \"minard-troops.txt\"\n [4] \"Parks\"             \"pets.csv\"          \"saved_plots\"      \n [7] \"w10d1.html\"        \"w10d1.qmd\"         \"w10d2.html\"       \n[10] \"w10d2.qmd\"         \"w11d1_files\"       \"w11d1.html\"       \n[13] \"w11d1.qmd\"         \"w11d2_files\"       \"w11d2.html\"       \n[16] \"w11d2.qmd\"         \"w12d1.qmd\"         \"w12d2_files\"      \n[19] \"w12d2.qmd\"         \"w12d2.rmarkdown\"   \"w13d1_files\"      \n[22] \"w13d1.html\"        \"w13d1.qmd\"         \"w14d1.html\"       \n[25] \"w14d1.qmd\"         \"w1d1.html\"         \"w1d1.qmd\"         \n[28] \"w1d2.html\"         \"w1d2.qmd\"          \"w2d1.html\"        \n[31] \"w2d1.qmd\"          \"w2d2.qmd\"          \"w3d1.html\"        \n[34] \"w3d1.qmd\"          \"w4d1.html\"         \"w4d1.qmd\"         \n[37] \"w4d2.qmd\"          \"w5d1.qmd\"          \"w5d2.html\"        \n[40] \"w5d2.qmd\"          \"w6d1.html\"         \"w6d1.qmd\"         \n[43] \"w7d1.html\"         \"w7d1.qmd\"          \"w7d2.qmd\"         \n[46] \"w8d1.html\"         \"w8d1.qmd\"          \"w8d2.html\"        \n[49] \"w8d2.qmd\"          \"w9d1.html\"         \"w9d1.qmd\"         \n\nlist.files(\"saved_plots\")\n\n[1] \"my_patchwork.jpg\" \"my_plot_big.png\"  \"my_plot.png\""
+    "text": "Saving graphics\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nlist.files()\n\n [1] \"figs\"              \"minard-cities.txt\" \"minard-troops.txt\"\n [4] \"Parks\"             \"pets.csv\"          \"saved_plots\"      \n [7] \"w10d1.html\"        \"w10d1.qmd\"         \"w10d2.html\"       \n[10] \"w10d2.qmd\"         \"w11d1_files\"       \"w11d1.html\"       \n[13] \"w11d1.qmd\"         \"w11d2_files\"       \"w11d2.html\"       \n[16] \"w11d2.qmd\"         \"w12d1.qmd\"         \"w12d2_files\"      \n[19] \"w12d2.qmd\"         \"w12d2.rmarkdown\"   \"w13d1_files\"      \n[22] \"w13d1.html\"        \"w13d1.qmd\"         \"w14d1.html\"       \n[25] \"w14d1.qmd\"         \"w15d1.html\"        \"w15d1.qmd\"        \n[28] \"w1d1.html\"         \"w1d1.qmd\"          \"w1d2.html\"        \n[31] \"w1d2.qmd\"          \"w2d1.html\"         \"w2d1.qmd\"         \n[34] \"w2d2.qmd\"          \"w3d1.html\"         \"w3d1.qmd\"         \n[37] \"w4d1.html\"         \"w4d1.qmd\"          \"w4d2.qmd\"         \n[40] \"w5d1.qmd\"          \"w5d2.html\"         \"w5d2.qmd\"         \n[43] \"w6d1.html\"         \"w6d1.qmd\"          \"w7d1.html\"        \n[46] \"w7d1.qmd\"          \"w7d2.qmd\"          \"w8d1.html\"        \n[49] \"w8d1.qmd\"          \"w8d2.html\"         \"w8d2.qmd\"         \n[52] \"w9d1.html\"         \"w9d1.qmd\"         \n\nlist.files(\"saved_plots\")\n\n[1] \"my_patchwork.jpg\" \"my_plot_big.png\"  \"my_plot.png\""
   },
   {
     "objectID": "slides/w12d2.html#saving-graphics-3",

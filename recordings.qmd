@@ -53,3 +53,7 @@ Week 12, day 1: *More plotting with `ggplot2`*. Available [here](https://mediasp
 
 Week 12, day 2: *Building graphics incrementally, composing plots with `patchwork`, and saving plots*. Available [here](https://mediaspace.msu.edu/media/Week+12+Day+2/1_jqcpvr2o).
 
+Week 13, day 1: *Spatial data with `sf`*. Available [here](https://mediaspace.msu.edu/media/Week+13+Day+1/1_13u3a4rh).
+
+Week 14, day 1: *Project and midterms and quizzes, galore!* Available [here](https://mediaspace.msu.edu/media/Week+14+Day+1/1_xvw49g8u).
+

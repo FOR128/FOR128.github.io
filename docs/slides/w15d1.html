@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Practical Computing and Data Science Tools">
-  <title>FOR 128 – Welcome to the tidyverse</title>
+  <title>FOR 128 – Final project logistics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -321,15 +321,13 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
-  <script src="../site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" data-background-image="../assets/for128-hex.png" data-background-position="50% 20%" data-background-size="20%" class="quarto-title-block center">
-  <h1 class="title">Welcome to the <code>tidyverse</code></h1>
+  <h1 class="title">Final project logistics</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -340,123 +338,47 @@ Practical Computing and Data Science Tools
 </div>
 
 </section>
-<section id="annoucements" class="slide level2">
-<h2>Annoucements</h2>
-<ul>
-<li>Midterm 1 is this Thursday, Oct 3, during lab time.</li>
-</ul>
-</section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ul>
-<li>Midterm format overview</li>
-<li>Intro to the <code>tidyverse</code></li>
-<li>Quiz + group activity</li>
+<li>Quiz (1 - 9) make ups</li>
+<li>Final project blog post: example</li>
+<li>Final project slides: example</li>
+<li>Quiz 11</li>
+</ul>
+</section>
+<section id="quizzes" class="slide level2">
+<h2>Quizzes</h2>
+<ul>
+<li>You can receive up to full points on two (2) quizzes that you did not get full points on.</li>
+<li>To do so, redo a Quiz on your own time and I will regrade it if you turn it in to me by the last day of class, Thursday Dec 5th, at 12:10pm.</li>
+<li>If you need an extra copy of a Quiz you’d like to make up, come see me. If you have your old copy, please write your new answers in a different colored pen/pencil, and specify why you initially got the problem wrong.</li>
 </ul>
 </section>
 <section>
-<section id="generative-ai-tools" class="title-slide slide level1 center" data-background-color="#00817c">
-<h1>Generative AI Tools</h1>
+<section id="final-project-blog-post" class="title-slide slide level1 center" data-background-color="#00817c">
+<h1><a href="../posts.html">Final project blog post</a></h1>
 
-<img data-src="figs/elephant.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="reminder-from-the-syllabus" class="slide level2">
-<h2>Reminder from the syllabus</h2>
-<p>Artificial intelligence (AI) tools, such as ChatGPT, are being used to generate code, analyze data, and much more. However, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently write code and extract knowledge from data. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.</p>
-<p>Violations of this policy are considered academic misconduct.</p>
 </section>
-<section id="midterm-i-overview" class="slide level2">
-<h2>Midterm I overview</h2>
+<section id="final-project-slides" class="slide level2">
+<h2>Final project slides</h2>
 <div>
 <ul>
-<li class="fragment">The test will be taken in person, in lab.</li>
-<li class="fragment">5 questions, all equally weighted. You only have to answer 4 of 5 questions. If you answer 5, I will count the 4 you did the best on.</li>
-<li class="fragment">There will be a paper test with the questions on it, but you will answer them in a Quarto document (similar to your labs).</li>
-<li class="fragment">Lecture slides and previous labs/quizzes are your best resource for success.</li>
-<li class="fragment">Questions cover material from chapters 1 - 5 of IFDAR, or Week 5 Day 2.</li>
+<li class="fragment">You are encouraged (but not required) to use Quarto to present your final project.</li>
+<li class="fragment">I will now demo making slides in Quarto</li>
 </ul>
 </div>
 </section></section>
 <section>
-<section id="welcome-to-the-tidyverse" class="title-slide slide level1 center" data-background-color="#00817c">
-<h1>Welcome to the <code>tidyverse</code></h1>
+<section id="quiz-11" class="title-slide slide level1 center" data-background-color="#00817c">
+<h1>Quiz 11</h1>
 
-<img data-src="figs/tidyverse.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="what-is-the-tidyverse" class="slide level2">
-<h2>What is the <code>tidyverse</code></h2>
-<div>
-<ul>
-<li class="fragment">A collection of <code>R</code> packages that work together to provide extensive and intuitive data analysis functions.</li>
-<li class="fragment">In this class, we will focus on 5 <code>tidyverse</code> packages:
-<ul>
-<li class="fragment"><code>tibble</code>, to improve on the data.frame,</li>
-<li class="fragment"><code>readr</code>, to improve reading and writing data,</li>
-<li class="fragment"><code>dplyr</code>, to manipulate and summarize data “data plyers”,</li>
-<li class="fragment"><code>tidyr</code>, to clean and reshape data, and</li>
-<li class="fragment"><code>ggplot2</code>, to produce beautiful graphics with intuitive syntax “the grammer of graphics”.</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section class="slide level2">
-
-<div class="columns">
-<div class="column" style="width:20%;">
-<p><img data-src="figs/tibble.svg"></p>
-</div><div class="column" style="width:20%;">
-<p><img data-src="figs/readr.png"></p>
-</div><div class="column" style="width:20%;">
-<p><img data-src="figs/dplyr.png"></p>
-</div><div class="column" style="width:20%;">
-<p><img data-src="figs/tidyr.png"></p>
-</div><div class="column" style="width:20%;">
-<p><img data-src="figs/ggplot2.png"></p>
-</div></div>
-<div>
-<ul>
-<li class="fragment">Next week, we will begin to talk in-depth about using the <code>tidyverse</code> to perform data analysis.</li>
-<li class="fragment">For now, I just want you all to have a concept of where we are going.</li>
-</ul>
-</div>
-</section>
-<section id="a-note-on-the-course" class="slide level2">
-<h2>A note on the course</h2>
-<div>
-<ul>
-<li class="fragment">So far, we have almost entirely focused on <code>R</code> in its “base” form. That is, <code>R</code> with only built-in functions.</li>
-<li class="fragment">Base <code>R</code> has many advantages: especially in being fast and reliable.</li>
-<li class="fragment">However, I believe that the <code>tidyverse</code> can provide a more intuitive approach to data analysis.</li>
-</ul>
-</div>
-</section></section>
-<section id="quiz" class="title-slide slide level1 center" data-background-color="#00817c">
-<h1>Quiz</h1>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_ba5e5a6a" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
-</section>
-
-<section>
-<section id="group-activity" class="title-slide slide level1 center" data-background-color="#00817c">
-<h1>Group activity</h1>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_ad03ac98" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
 </section>
 <section id="next-time" class="slide level2">
 <h2>Next time</h2>
 <ul>
-<li>Review day. We will discuss any questions about the material for the midterm.</li>
-<li>Come ready to ask any last minute questions, discuss approaches to problems, etc.</li>
+<li>Where next in data science?</li>
+<li>Group project questions</li>
 </ul>
 
 <div class="quarto-auto-generated-content">
@@ -475,6 +397,7 @@ Practical Computing and Data Science Tools
   <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-text-resizer/revealjs-text-resizer.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -666,7 +589,7 @@ Practical Computing and Data Science Tools
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealTextResizer, QuartoSupport,
 
           RevealMath,
           RevealNotes,

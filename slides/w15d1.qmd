@@ -1,0 +1,68 @@
+---
+title: "Final project logistics"
+editor: 
+  mode: source
+webr:
+  show-startup-message: false
+filters:
+  - webr
+engine: knitr
+execute:
+  echo: true
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+revealjs-plugins:
+  - revealjs-text-resizer
+---
+
+## Agenda
+
+-   Quiz (1 - 9) make ups
+-   Final project blog post: example
+-   Final project slides: example
+-   Quiz 11
+
+## Quizzes
+
+-   You can receive up to full points on two (2) quizzes that you did not get full points on. 
+-   To do so, redo a Quiz on your own time and I will regrade it if you turn it in to me by the last day of class, Thursday Dec 5th, at 12:10pm. 
+-   If you need an extra copy of a Quiz you'd like to make up, come see me. If you have your old copy, please write your new answers in a different colored pen/pencil, and specify why you initially got the problem wrong. 
+
+# [Final project blog post](../posts.qmd) {background-color="#00817c"}
+
+## Final project slides
+
+::: incremental
+
+-   You are encouraged (but not required) to use Quarto to present your final project. 
+-   I will now demo making slides in Quarto
+
+:::
+
+
+# Quiz 11 {background-color="#00817c"}
+
+
+## Next time
+
+-   Where next in data science? 
+-   Group project questions
+
+
