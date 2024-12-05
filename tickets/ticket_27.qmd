@@ -1,0 +1,15 @@
+---
+title: "Lecture Ticket 27"
+editor: 
+  mode: source
+---
+
+Just a piece of paper with your name on it. 
+
+If you're interested in taking more data science courses at MSU, the courses offered for the [MSU minor in Data Science](https://reg.msu.edu/AcademicPrograms/ProgramDetail.aspx?Program=DATAS_MNUN) are a good place to start! 
+
+
+
+
+
+
