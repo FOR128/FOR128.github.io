@@ -356,14 +356,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'gt' was built under R version 4.3.3</code></pre>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pdxTrees)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pdxTrees)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Note that we used the “code-fold” option here to fold the code used to load these libraries. We also set the “message” option to false in order to silence the message that the <code>tidyverse</code> prints upon loading.</p>
@@ -375,8 +369,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="park-data">Park data</h2>
 <p>The parks data include measurements of every tree in every park in Portland, Oregon. We can load the data in as follows:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>parks <span class="ot">&lt;-</span> <span class="fu">get_pdxTrees_parks</span>()</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(parks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>parks <span class="ot">&lt;-</span> <span class="fu">get_pdxTrees_parks</span>()</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(parks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 25534    34</code></pre>
 </div>
@@ -384,7 +378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>By default, both the code and output is included.</p>
 <p>The first few rows look like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(parks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(parks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 34
   Longitude Latitude UserID Genus       Family   DBH Inventory_Date      Species
@@ -406,25 +400,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>If we wanted to display the data in a more elegant way, we could use the <code>gt</code> package:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(parks) <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(parks) <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="dyrxtclqlz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dyrxtclqlz table {
+<div id="ptyedrsxkq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ptyedrsxkq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dyrxtclqlz thead, #dyrxtclqlz tbody, #dyrxtclqlz tfoot, #dyrxtclqlz tr, #dyrxtclqlz td, #dyrxtclqlz th {
+#ptyedrsxkq thead, #ptyedrsxkq tbody, #ptyedrsxkq tfoot, #ptyedrsxkq tr, #ptyedrsxkq td, #ptyedrsxkq th {
   border-style: none;
 }
 
-#dyrxtclqlz p {
+#ptyedrsxkq p {
   margin: 0;
   padding: 0;
 }
 
-#dyrxtclqlz .gt_table {
+#ptyedrsxkq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -450,12 +444,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#dyrxtclqlz .gt_caption {
+#ptyedrsxkq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dyrxtclqlz .gt_title {
+#ptyedrsxkq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -467,7 +461,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#dyrxtclqlz .gt_subtitle {
+#ptyedrsxkq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -479,7 +473,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#dyrxtclqlz .gt_heading {
+#ptyedrsxkq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -491,13 +485,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#dyrxtclqlz .gt_bottom_border {
+#ptyedrsxkq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dyrxtclqlz .gt_col_headings {
+#ptyedrsxkq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -512,7 +506,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#dyrxtclqlz .gt_col_heading {
+#ptyedrsxkq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -532,7 +526,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#dyrxtclqlz .gt_column_spanner_outer {
+#ptyedrsxkq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -544,15 +538,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#dyrxtclqlz .gt_column_spanner_outer:first-child {
+#ptyedrsxkq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dyrxtclqlz .gt_column_spanner_outer:last-child {
+#ptyedrsxkq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dyrxtclqlz .gt_column_spanner {
+#ptyedrsxkq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -564,11 +558,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#dyrxtclqlz .gt_spanner_row {
+#ptyedrsxkq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dyrxtclqlz .gt_group_heading {
+#ptyedrsxkq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -594,7 +588,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#dyrxtclqlz .gt_empty_group_heading {
+#ptyedrsxkq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -609,15 +603,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#dyrxtclqlz .gt_from_md > :first-child {
+#ptyedrsxkq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dyrxtclqlz .gt_from_md > :last-child {
+#ptyedrsxkq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dyrxtclqlz .gt_row {
+#ptyedrsxkq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -636,7 +630,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#dyrxtclqlz .gt_stub {
+#ptyedrsxkq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -649,7 +643,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#dyrxtclqlz .gt_stub_row_group {
+#ptyedrsxkq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -663,15 +657,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#dyrxtclqlz .gt_row_group_first td {
+#ptyedrsxkq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dyrxtclqlz .gt_row_group_first th {
+#ptyedrsxkq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dyrxtclqlz .gt_summary_row {
+#ptyedrsxkq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -681,16 +675,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#dyrxtclqlz .gt_first_summary_row {
+#ptyedrsxkq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dyrxtclqlz .gt_first_summary_row.thick {
+#ptyedrsxkq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dyrxtclqlz .gt_last_summary_row {
+#ptyedrsxkq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -700,7 +694,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#dyrxtclqlz .gt_grand_summary_row {
+#ptyedrsxkq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -710,7 +704,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#dyrxtclqlz .gt_first_grand_summary_row {
+#ptyedrsxkq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -720,7 +714,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#dyrxtclqlz .gt_last_grand_summary_row_top {
+#ptyedrsxkq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -730,11 +724,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#dyrxtclqlz .gt_striped {
+#ptyedrsxkq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dyrxtclqlz .gt_table_body {
+#ptyedrsxkq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -743,7 +737,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#dyrxtclqlz .gt_footnotes {
+#ptyedrsxkq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -757,7 +751,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#dyrxtclqlz .gt_footnote {
+#ptyedrsxkq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -766,7 +760,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#dyrxtclqlz .gt_sourcenotes {
+#ptyedrsxkq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -780,7 +774,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#dyrxtclqlz .gt_sourcenote {
+#ptyedrsxkq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -788,72 +782,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#dyrxtclqlz .gt_left {
+#ptyedrsxkq .gt_left {
   text-align: left;
 }
 
-#dyrxtclqlz .gt_center {
+#ptyedrsxkq .gt_center {
   text-align: center;
 }
 
-#dyrxtclqlz .gt_right {
+#ptyedrsxkq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dyrxtclqlz .gt_font_normal {
+#ptyedrsxkq .gt_font_normal {
   font-weight: normal;
 }
 
-#dyrxtclqlz .gt_font_bold {
+#ptyedrsxkq .gt_font_bold {
   font-weight: bold;
 }
 
-#dyrxtclqlz .gt_font_italic {
+#ptyedrsxkq .gt_font_italic {
   font-style: italic;
 }
 
-#dyrxtclqlz .gt_super {
+#ptyedrsxkq .gt_super {
   font-size: 65%;
 }
 
-#dyrxtclqlz .gt_footnote_marks {
+#ptyedrsxkq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dyrxtclqlz .gt_asterisk {
+#ptyedrsxkq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dyrxtclqlz .gt_indent_1 {
+#ptyedrsxkq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dyrxtclqlz .gt_indent_2 {
+#ptyedrsxkq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dyrxtclqlz .gt_indent_3 {
+#ptyedrsxkq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dyrxtclqlz .gt_indent_4 {
+#ptyedrsxkq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dyrxtclqlz .gt_indent_5 {
+#ptyedrsxkq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#dyrxtclqlz .katex-display {
+#ptyedrsxkq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#dyrxtclqlz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ptyedrsxkq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -928,8 +922,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>parks <span class="ot">&lt;-</span> parks <span class="sc">%&gt;%</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">"THPL"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>parks <span class="ot">&lt;-</span> parks <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">"THPL"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>In this case, we set the “code-fold” option to show rather than true or false, the show option allows the user to fold the code, but starts it as unfolded code.</p>
@@ -938,8 +932,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="street-data">Street data</h2>
 <p>We can also load in the streets dataset and include the code that was used to do that:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>streets <span class="ot">&lt;-</span> <span class="fu">get_pdxTrees_streets</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">"THPL"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>streets <span class="ot">&lt;-</span> <span class="fu">get_pdxTrees_streets</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">"THPL"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -949,15 +943,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>parks <span class="sc">%&gt;%</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Park) <span class="sc">%&gt;%</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_DBH =</span> <span class="fu">mean</span>(DBH)) <span class="sc">%&gt;%</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean_DBH), </span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">"black"</span>, </span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">"steelblue"</span>,</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">20</span>) <span class="sc">+</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>parks <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Park) <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_DBH =</span> <span class="fu">mean</span>(DBH)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean_DBH), </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">"black"</span>, </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">"steelblue"</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">20</span>) <span class="sc">+</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -970,31 +964,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>parks <span class="sc">%&gt;%</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Park) <span class="sc">%&gt;%</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_DBH =</span> <span class="fu">mean</span>(DBH),</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">num_trees =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(mean_DBH, <span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>parks <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Park) <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_DBH =</span> <span class="fu">mean</span>(DBH),</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">num_trees =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(mean_DBH, <span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="yarybovjbe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yarybovjbe table {
+<div id="pbcqpmwbme" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pbcqpmwbme table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yarybovjbe thead, #yarybovjbe tbody, #yarybovjbe tfoot, #yarybovjbe tr, #yarybovjbe td, #yarybovjbe th {
+#pbcqpmwbme thead, #pbcqpmwbme tbody, #pbcqpmwbme tfoot, #pbcqpmwbme tr, #pbcqpmwbme td, #pbcqpmwbme th {
   border-style: none;
 }
 
-#yarybovjbe p {
+#pbcqpmwbme p {
   margin: 0;
   padding: 0;
 }
 
-#yarybovjbe .gt_table {
+#pbcqpmwbme .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1020,12 +1014,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#yarybovjbe .gt_caption {
+#pbcqpmwbme .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yarybovjbe .gt_title {
+#pbcqpmwbme .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1037,7 +1031,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#yarybovjbe .gt_subtitle {
+#pbcqpmwbme .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1049,7 +1043,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#yarybovjbe .gt_heading {
+#pbcqpmwbme .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1061,13 +1055,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yarybovjbe .gt_bottom_border {
+#pbcqpmwbme .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yarybovjbe .gt_col_headings {
+#pbcqpmwbme .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1082,7 +1076,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yarybovjbe .gt_col_heading {
+#pbcqpmwbme .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1102,7 +1096,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#yarybovjbe .gt_column_spanner_outer {
+#pbcqpmwbme .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1114,15 +1108,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#yarybovjbe .gt_column_spanner_outer:first-child {
+#pbcqpmwbme .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yarybovjbe .gt_column_spanner_outer:last-child {
+#pbcqpmwbme .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yarybovjbe .gt_column_spanner {
+#pbcqpmwbme .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1134,11 +1128,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#yarybovjbe .gt_spanner_row {
+#pbcqpmwbme .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yarybovjbe .gt_group_heading {
+#pbcqpmwbme .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1164,7 +1158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#yarybovjbe .gt_empty_group_heading {
+#pbcqpmwbme .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1179,15 +1173,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#yarybovjbe .gt_from_md > :first-child {
+#pbcqpmwbme .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yarybovjbe .gt_from_md > :last-child {
+#pbcqpmwbme .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yarybovjbe .gt_row {
+#pbcqpmwbme .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1206,7 +1200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#yarybovjbe .gt_stub {
+#pbcqpmwbme .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1219,7 +1213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yarybovjbe .gt_stub_row_group {
+#pbcqpmwbme .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1233,15 +1227,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#yarybovjbe .gt_row_group_first td {
+#pbcqpmwbme .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yarybovjbe .gt_row_group_first th {
+#pbcqpmwbme .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yarybovjbe .gt_summary_row {
+#pbcqpmwbme .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1251,16 +1245,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yarybovjbe .gt_first_summary_row {
+#pbcqpmwbme .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yarybovjbe .gt_first_summary_row.thick {
+#pbcqpmwbme .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yarybovjbe .gt_last_summary_row {
+#pbcqpmwbme .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1270,7 +1264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#yarybovjbe .gt_grand_summary_row {
+#pbcqpmwbme .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1280,7 +1274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yarybovjbe .gt_first_grand_summary_row {
+#pbcqpmwbme .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1290,7 +1284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#yarybovjbe .gt_last_grand_summary_row_top {
+#pbcqpmwbme .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1300,11 +1294,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#yarybovjbe .gt_striped {
+#pbcqpmwbme .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yarybovjbe .gt_table_body {
+#pbcqpmwbme .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1313,7 +1307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#yarybovjbe .gt_footnotes {
+#pbcqpmwbme .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1327,7 +1321,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yarybovjbe .gt_footnote {
+#pbcqpmwbme .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1336,7 +1330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yarybovjbe .gt_sourcenotes {
+#pbcqpmwbme .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1350,7 +1344,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yarybovjbe .gt_sourcenote {
+#pbcqpmwbme .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1358,72 +1352,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yarybovjbe .gt_left {
+#pbcqpmwbme .gt_left {
   text-align: left;
 }
 
-#yarybovjbe .gt_center {
+#pbcqpmwbme .gt_center {
   text-align: center;
 }
 
-#yarybovjbe .gt_right {
+#pbcqpmwbme .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yarybovjbe .gt_font_normal {
+#pbcqpmwbme .gt_font_normal {
   font-weight: normal;
 }
 
-#yarybovjbe .gt_font_bold {
+#pbcqpmwbme .gt_font_bold {
   font-weight: bold;
 }
 
-#yarybovjbe .gt_font_italic {
+#pbcqpmwbme .gt_font_italic {
   font-style: italic;
 }
 
-#yarybovjbe .gt_super {
+#pbcqpmwbme .gt_super {
   font-size: 65%;
 }
 
-#yarybovjbe .gt_footnote_marks {
+#pbcqpmwbme .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yarybovjbe .gt_asterisk {
+#pbcqpmwbme .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yarybovjbe .gt_indent_1 {
+#pbcqpmwbme .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yarybovjbe .gt_indent_2 {
+#pbcqpmwbme .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yarybovjbe .gt_indent_3 {
+#pbcqpmwbme .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yarybovjbe .gt_indent_4 {
+#pbcqpmwbme .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yarybovjbe .gt_indent_5 {
+#pbcqpmwbme .gt_indent_5 {
   text-indent: 25px;
 }
 
-#yarybovjbe .katex-display {
+#pbcqpmwbme .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#yarybovjbe div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pbcqpmwbme div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1499,7 +1493,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Conclusions</h1>
 <p>There are lots of beautiful Western red cedars in Portland! If I wanted to include a figure on my computer, I could do so like this:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"wrc.jpeg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"wrc.jpeg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
