@@ -48,28 +48,28 @@ Recall "Quiz" 11
 #| echo: false
 #| out-width: 100%
 #| fig-align: "center"
-library(tidyverse)
-class <- read_csv("~/Desktop/class2.csv") %>%
-  pivot_longer(cols = 1:9,
-               names_to = "response",
-               values_to = "score") %>%
-  mutate(response = sub("_", " ", response),
-         response = tools::toTitleCase(response))
-
-class %>% 
-  ggplot(aes(x = score)) + 
-  geom_bar(color = "black", fill = "seagreen") + 
-  facet_wrap(~response) +
-  labs(caption = "Scores defined as follows. 1: Very unimportant / very unhelpful,\n
-       2: Unimportant / not helpful, 3: Neutral / somewhat helpful,\n
-       4: Important / helpful, and 5: Very important / very helpful",
-       title = "Student's responses to how helpful different aspects of the course were for their learning",
-       subtitle = "Forestry 128, Michigan State University, Fall 2024",
-       x = "Likert Scale Score",
-       y = "Number of Student Responses") + 
-  theme_bw() +
-  theme(plot.title = element_text(hjust = 0.5),
-        plot.subtitle = element_text(hjust = 0.5))
+# library(tidyverse)
+# class <- read_csv("~/Desktop/class2.csv") %>%
+#   pivot_longer(cols = 1:9,
+#                names_to = "response",
+#                values_to = "score") %>%
+#   mutate(response = sub("_", " ", response),
+#          response = tools::toTitleCase(response))
+# 
+# class %>% 
+#   ggplot(aes(x = score)) + 
+#   geom_bar(color = "black", fill = "seagreen") + 
+#   facet_wrap(~response) +
+#   labs(caption = "Scores defined as follows. 1: Very unimportant / very unhelpful,\n
+#        2: Unimportant / not helpful, 3: Neutral / somewhat helpful,\n
+#        4: Important / helpful, and 5: Very important / very helpful",
+#        title = "Student's responses to how helpful different aspects of the course were for their learning",
+#        subtitle = "Forestry 128, Michigan State University, Fall 2024",
+#        x = "Likert Scale Score",
+#        y = "Number of Student Responses") + 
+#   theme_bw() +
+#   theme(plot.title = element_text(hjust = 0.5),
+#         plot.subtitle = element_text(hjust = 0.5))
 ```
 
 ## Some data
@@ -78,27 +78,27 @@ class %>%
 #| echo: false
 #| out-width: 100%
 #| fig-align: "center"
-grades <- read_csv("~/Downloads/Practical Computing and Data Science Tools_GradesExport_2024-12-04-18-21.csv") %>%
-  filter(!(`Last Name` %in% c("Student", "Cook"))) %>%
-  mutate(attendence_rate = (`Lecture tickets Subtotal Numerator` - 3*4) / (`Lecture tickets Subtotal Denominator` - 3*4),
-         final_grade = `Calculated Final Grade Numerator` / `Calculated Final Grade Denominator`)
-
-
-grades_long <- grades %>%
-  select(-`Lecture tickets Subtotal Denominator`,
-         -`Lecture tickets Subtotal Numerator`,
-         - `Lecture Ticket 0 Points Grade <Numeric MaxPoints:4 Category:Lecture tickets>`,
-         - `Lecture Ticket 27 Points Grade <Numeric MaxPoints:4 Category:Lecture tickets>`) %>%
-  pivot_longer(cols = starts_with("Lecture Ticket"),
-               names_to = "ltnum", values_to = "score") 
-grades_long %>%
-  group_by(Username) %>%
-  summarize(attendance_rate = (sum(score, na.rm = T) - 4) / 100,
-            final_grade = mean(final_grade))  %>%
-  ggplot(aes(x = attendance_rate, y = final_grade)) + 
-  geom_point() + 
-  # geom_smooth(method = "lm", se = F) + 
-  theme_bw()
+# grades <- read_csv("~/Downloads/Practical Computing and Data Science Tools_GradesExport_2024-12-04-18-21.csv") %>%
+#   filter(!(`Last Name` %in% c("Student", "Cook"))) %>%
+#   mutate(attendence_rate = (`Lecture tickets Subtotal Numerator` - 3*4) / (`Lecture tickets Subtotal Denominator` - 3*4),
+#          final_grade = `Calculated Final Grade Numerator` / `Calculated Final Grade Denominator`)
+# 
+# 
+# grades_long <- grades %>%
+#   select(-`Lecture tickets Subtotal Denominator`,
+#          -`Lecture tickets Subtotal Numerator`,
+#          - `Lecture Ticket 0 Points Grade <Numeric MaxPoints:4 Category:Lecture tickets>`,
+#          - `Lecture Ticket 27 Points Grade <Numeric MaxPoints:4 Category:Lecture tickets>`) %>%
+#   pivot_longer(cols = starts_with("Lecture Ticket"),
+#                names_to = "ltnum", values_to = "score") 
+# grades_long %>%
+#   group_by(Username) %>%
+#   summarize(attendance_rate = (sum(score, na.rm = T) - 4) / 100,
+#             final_grade = mean(final_grade))  %>%
+#   ggplot(aes(x = attendance_rate, y = final_grade)) + 
+#   geom_point() + 
+#   # geom_smooth(method = "lm", se = F) + 
+#   theme_bw()
 ```
 
 
@@ -121,12 +121,12 @@ where $y_i$ is the final grade for the $i$th student in the class, and $x_i$ is 
 
 ```{r}
 #| echo: false
-grades_long %>%
-  group_by(Username) %>%
-  summarize(attendance_rate = (sum(score, na.rm = T) - 4) / 100,
-            final_grade = mean(final_grade)) %>%
-  lm(final_grade ~ attendance_rate, .) %>%
-  summary()
+# grades_long %>%
+#   group_by(Username) %>%
+#   summarize(attendance_rate = (sum(score, na.rm = T) - 4) / 100,
+#             final_grade = mean(final_grade)) %>%
+#   lm(final_grade ~ attendance_rate, .) %>%
+#   summary()
 ```
 
 ::: incremental
@@ -141,14 +141,14 @@ grades_long %>%
 
 ```{r}
 #| echo: false
-grades_long %>%
-  group_by(Username) %>%
-  summarize(attendance_rate = (sum(score, na.rm = T) - 4) / 100,
-            final_grade = mean(final_grade))  %>%
-  ggplot(aes(x = attendance_rate, y = final_grade)) + 
-  geom_point() + 
-  geom_smooth(method = "lm", se = F) + 
-  theme_bw()
+# grades_long %>%
+#   group_by(Username) %>%
+#   summarize(attendance_rate = (sum(score, na.rm = T) - 4) / 100,
+#             final_grade = mean(final_grade))  %>%
+#   ggplot(aes(x = attendance_rate, y = final_grade)) + 
+#   geom_point() + 
+#   geom_smooth(method = "lm", se = F) + 
+#   theme_bw()
 ```
 
 ---
@@ -157,20 +157,20 @@ grades_long %>%
 #| echo: false
 #| out-width: 100%
 #| fig-align: "center"
-class %>% 
-  ggplot(aes(x = score)) + 
-  geom_bar(color = "black", fill = "seagreen") + 
-  facet_wrap(~response) +
-  labs(caption = "Scores defined as follows. 1: Very unimportant / very unhelpful,\n
-       2: Unimportant / not helpful, 3: Neutral / somewhat helpful,\n
-       4: Important / helpful, and 5: Very important / very helpful",
-       title = "Student's responses to how helpful different aspects of the course were for their learning",
-       subtitle = "Forestry 128, Michigan State University, Fall 2024",
-       x = "Likert Scale Score",
-       y = "Number of Student Responses") + 
-  theme_bw() +
-  theme(plot.title = element_text(hjust = 0.5),
-        plot.subtitle = element_text(hjust = 0.5))
+# class %>% 
+#   ggplot(aes(x = score)) + 
+#   geom_bar(color = "black", fill = "seagreen") + 
+#   facet_wrap(~response) +
+#   labs(caption = "Scores defined as follows. 1: Very unimportant / very unhelpful,\n
+#        2: Unimportant / not helpful, 3: Neutral / somewhat helpful,\n
+#        4: Important / helpful, and 5: Very important / very helpful",
+#        title = "Student's responses to how helpful different aspects of the course were for their learning",
+#        subtitle = "Forestry 128, Michigan State University, Fall 2024",
+#        x = "Likert Scale Score",
+#        y = "Number of Student Responses") + 
+#   theme_bw() +
+#   theme(plot.title = element_text(hjust = 0.5),
+#         plot.subtitle = element_text(hjust = 0.5))
 ```
 
 

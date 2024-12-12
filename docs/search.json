@@ -2835,200 +2835,186 @@
     "text": "Next time:\n\nCome to class with a laptop\nComplete Lecture Ticket 1 before lecture on Thursday."
   },
   {
-    "objectID": "posts/example_post/index.html",
-    "href": "posts/example_post/index.html",
-    "title": "An example blog post",
-    "section": "",
-    "text": "This is an example blog post about Western red cedar (Thuja plicata) trees in Portland, Oregon. I am using data from the pdxTrees R package. The pdxTrees R package has a nice hex sticker, which we can include in the blog post like this:\n\n\n\n\n\n\n\n\n\nand if the image was on my computer rather than online, I could include it by using the same syntax with a relative path rather than website URL. Note the options I used to include this figure. “out-width” decides how wide the image should be, from 0% to 100%. “fig-align” allows you to align the image on the “left”, “center”, or “right”. “echo” either includes the code (echo: true) or does not include the code (echo: false) in the Rendered document. By default echo is true.\nWe’ll use a few packages for our analyses, namely the tidyverse, gt, and pdxTrees.\n\n\nCode\nlibrary(tidyverse)\nlibrary(gt)\nlibrary(pdxTrees)\n\n\nNote that we used the “code-fold” option here to fold the code used to load these libraries. We also set the “message” option to false in order to silence the message that the tidyverse prints upon loading."
+    "objectID": "slides/w5d2.html#annoucements",
+    "href": "slides/w5d2.html#annoucements",
+    "title": "Functions",
+    "section": "Annoucements",
+    "text": "Annoucements\n\nMidterm 1 is in one week, Oct 3, during lab time.\nLab 3 grades coming soon.\nLab 4 grades by end of weekend."
   },
   {
-    "objectID": "posts/example_post/index.html#park-data",
-    "href": "posts/example_post/index.html#park-data",
-    "title": "An example blog post",
-    "section": "Park data",
-    "text": "Park data\nThe parks data include measurements of every tree in every park in Portland, Oregon. We can load the data in as follows:\n\nparks &lt;- get_pdxTrees_parks()\ndim(parks)\n\n[1] 25534    34\n\n\nBy default, both the code and output is included.\nThe first few rows look like this:\n\nhead(parks)\n\n# A tibble: 6 × 34\n  Longitude Latitude UserID Genus       Family   DBH Inventory_Date      Species\n      &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;  &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;  \n1     -123.     45.6 1      Pseudotsuga Pinac…  37.4 2017-05-09 00:00:00 PSME   \n2     -123.     45.6 2      Pseudotsuga Pinac…  32.5 2017-05-09 00:00:00 PSME   \n3     -123.     45.6 3      Crataegus   Rosac…   9.7 2017-05-09 00:00:00 CRLA   \n4     -123.     45.6 4      Quercus     Fagac…  10.3 2017-05-09 00:00:00 QURU   \n5     -123.     45.6 5      Pseudotsuga Pinac…  33.2 2017-05-09 00:00:00 PSME   \n6     -123.     45.6 6      Pseudotsuga Pinac…  32.1 2017-05-09 00:00:00 PSME   \n# ℹ 26 more variables: Common_Name &lt;chr&gt;, Condition &lt;chr&gt;, Tree_Height &lt;dbl&gt;,\n#   Crown_Width_NS &lt;dbl&gt;, Crown_Width_EW &lt;dbl&gt;, Crown_Base_Height &lt;dbl&gt;,\n#   Collected_By &lt;chr&gt;, Park &lt;chr&gt;, Scientific_Name &lt;chr&gt;,\n#   Functional_Type &lt;chr&gt;, Mature_Size &lt;fct&gt;, Native &lt;chr&gt;, Edible &lt;chr&gt;,\n#   Nuisance &lt;chr&gt;, Structural_Value &lt;dbl&gt;, Carbon_Storage_lb &lt;dbl&gt;,\n#   Carbon_Storage_value &lt;dbl&gt;, Carbon_Sequestration_lb &lt;dbl&gt;,\n#   Carbon_Sequestration_value &lt;dbl&gt;, Stormwater_ft &lt;dbl&gt;, …\n\n\nIf we wanted to display the data in a more elegant way, we could use the gt package:\n\nhead(parks) %&gt;% select(1:6) %&gt;% gt()\n\n\n\n\n\n\n\nLongitude\nLatitude\nUserID\nGenus\nFamily\nDBH\n\n\n\n\n-122.6936\n45.57491\n1\nPseudotsuga\nPinaceae\n37.4\n\n\n-122.6938\n45.57489\n2\nPseudotsuga\nPinaceae\n32.5\n\n\n-122.6942\n45.57493\n3\nCrataegus\nRosaceae\n9.7\n\n\n-122.6939\n45.57490\n4\nQuercus\nFagaceae\n10.3\n\n\n-122.6940\n45.57491\n5\nPseudotsuga\nPinaceae\n33.2\n\n\n-122.6943\n45.57489\n6\nPseudotsuga\nPinaceae\n32.1\n\n\n\n\n\n\n\nWe need to filter for only Western red cedars! So let’s do that:\n\n\nCode\nparks &lt;- parks %&gt;%\n  filter(Species == \"THPL\")\n\n\nIn this case, we set the “code-fold” option to show rather than true or false, the show option allows the user to fold the code, but starts it as unfolded code."
-  },
-  {
-    "objectID": "posts/example_post/index.html#street-data",
-    "href": "posts/example_post/index.html#street-data",
-    "title": "An example blog post",
-    "section": "Street data",
-    "text": "Street data\nWe can also load in the streets dataset and include the code that was used to do that:\n\nstreets &lt;- get_pdxTrees_streets() %&gt;%\n  filter(Species == \"THPL\")"
-  },
-  {
-    "objectID": "slides/w4d1.html",
-    "href": "slides/w4d1.html",
-    "title": "Logical subsetting vectors and data frames",
-    "section": "",
-    "text": "create, subset, and manipulate vectors and data frames\nuse comparison and logical operators\npractice combining logical tests to extract information from vectors and data frames\nstart thinking “inside out”"
-  },
-  {
-    "objectID": "slides/w4d1.html#learning-objectives",
-    "href": "slides/w4d1.html#learning-objectives",
-    "title": "Logical subsetting vectors and data frames",
-    "section": "",
-    "text": "create, subset, and manipulate vectors and data frames\nuse comparison and logical operators\npractice combining logical tests to extract information from vectors and data frames\nstart thinking “inside out”"
-  },
-  {
-    "objectID": "slides/w4d1.html#logical-subsetting",
-    "href": "slides/w4d1.html#logical-subsetting",
-    "title": "Logical subsetting vectors and data frames",
-    "section": "Logical subsetting",
-    "text": "Logical subsetting\nSo far we have directly specified the elements of vectors that we want to extract, for example spp[1] or dbh[length(dbh)] or spp[c(1,3,5)]. We have also subsetted data frame rows and columns, for example, plt[c(2,5),], plt[nrow(plt),], plt[,1:2], or plt[,c(\"spp\",\"dbh\")]. More commonly we want to extract elements that meet a condition, such as all trees greater than some minimum DBH or all trees of a given species. For this we use subsetting with logical vectors, see Section 6.6 in the course book.\nHere are the comparison operators:\n\nEqual: ==\nNot equal: !=\nGreater than: &gt;\nLess than: &lt;\nGreater than or equal to: &gt;=\nLess than or equal to: &lt;=\n\nLet’s give these operators a spin using the plt data frame.\nFirst on a single column, i.e., a vector subset operation.\n\nplt$qual[plt$qual == \"ags\"] # Understand this statement from the inside out!\n\n[1] \"ags\" \"ags\" \"ags\" \"ags\" \"ags\"\n\n\nGet all trees (i.e., rows) for species acerru.\n\nplt[plt$spp == \"acerru\", ]\n\n     spp  dbh qual  live\n4 acerru  9.3  ugs FALSE\n8 acerru 11.1  ags  TRUE\n\n\nGet all trees (i.e., rows) but for acerru.\n\nplt[plt$spp != \"acerru\", ]\n\n     spp   dbh qual  live\n1 tsugca 15.00  ugs  TRUE\n2 tsugca 12.00  ags  TRUE\n3 betual  6.60  ags  TRUE\n5 pinust 28.10  ags  TRUE\n6 pinust  9.23  ags  TRUE\n7 betual 15.30  ugs FALSE\n\n\nGet all trees (i.e., rows) with DBH greater than 10.\n\nplt[plt$dbh &gt; 10, ]\n\n     spp  dbh qual  live\n1 tsugca 15.0  ugs  TRUE\n2 tsugca 12.0  ags  TRUE\n5 pinust 28.1  ags  TRUE\n7 betual 15.3  ugs FALSE\n8 acerru 11.1  ags  TRUE\n\n\nGet all tree species with DBH greater than 10.\n\nplt[plt$dbh &gt; 10, \"spp\"]\n\n[1] \"tsugca\" \"tsugca\" \"pinust\" \"betual\" \"acerru\"\n\n\nFind all live trees. Note, why do I have plt$live and not plt$live == TRUE in the code below?\n\nplt[plt$live, ]\n\n     spp   dbh qual live\n1 tsugca 15.00  ugs TRUE\n2 tsugca 12.00  ags TRUE\n3 betual  6.60  ags TRUE\n5 pinust 28.10  ags TRUE\n6 pinust  9.23  ags TRUE\n8 acerru 11.10  ags TRUE"
-  },
-  {
-    "objectID": "slides/w4d1.html#a-bit-on-logical-operators-and-subsetting",
-    "href": "slides/w4d1.html#a-bit-on-logical-operators-and-subsetting",
-    "title": "Logical subsetting vectors and data frames",
-    "section": "A bit on logical operators and subsetting",
-    "text": "A bit on logical operators and subsetting\nThere are some logical operators we haven’t seen yet, including the “and” operator and the “or” operator.\n\nand: &\nor: |\n\nThe & operator compares vector elements on its left and right to see if they match. If they are both TRUE, then & returns TRUE, otherwise FALSE. The | operator compares vector elements on its left and right to see if either of them are TRUE. If at least one is TRUE then | returns TRUE, otherwise if both are FALSE then FALSE is returned. These operations are applied for each element pair along the vectors. For example:\n\nc(FALSE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)\n\n[1]  TRUE  TRUE FALSE\n\nc(FALSE, TRUE, FALSE) & c(TRUE, TRUE, FALSE)\n\n[1] FALSE  TRUE FALSE\n\n\nSo, say you want all acerru with DBH greater than 10.\n\nplt[plt$spp == \"acerru\" & plt$dbh &gt; 10, ]\n\n     spp  dbh qual live\n8 acerru 11.1  ags TRUE\n\n\nAnother useful logical operator is the ! (i.e., the exclamation point, referred to as the “bang” in coding slang) which negates or flips the logical value, so for example !FALSE is TRUE and !TRUE is FALSE (or !“I know what I’m talking about”).\nYet another very handy operator is %in% which is used to identify if an element occurs in a second vector. Or a substitute for a series of “or” statements. Consider the example below and consult the manual page via help(\"%in%\").\n\ndbh == 15 | dbh == 6 | dbh == 11\n\n[1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n\ndbh %in% c(15, 6, 11)\n\n[1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n\n\n\nletters\n\n [1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\" \"k\" \"l\" \"m\" \"n\" \"o\" \"p\" \"q\" \"r\" \"s\"\n[20] \"t\" \"u\" \"v\" \"w\" \"x\" \"y\" \"z\"\n\nletters %in% c(\"a\", \"m\", \"q\", \"s\")\n\n [1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n[13]  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE\n[25] FALSE FALSE\n\n# letters == \"a\" | letters == \"m\" | letters = \"q\" | letters == \"s\" ## Find the error.\n\nSay you want acerru and tsugca with DBH greater than 10.\n\nplt[plt$spp %in% c(\"acerru\", \"tsugca\") & plt$dbh &gt; 10,]\n\n     spp  dbh qual live\n1 tsugca 15.0  ugs TRUE\n2 tsugca 12.0  ags TRUE\n8 acerru 11.1  ags TRUE\n\n\nNow, say you want acerru and tsugca with DBH greater than 10 and acceptable growing stock.\n\nplt[plt$spp %in% c(\"acerru\", \"tsugca\") & plt$dbh &gt; 10 & plt$qual == \"ags\",]\n\n     spp  dbh qual live\n2 tsugca 12.0  ags TRUE\n8 acerru 11.1  ags TRUE"
-  },
-  {
-    "objectID": "slides/w4d1.html#your-turn",
-    "href": "slides/w4d1.html#your-turn",
-    "title": "Logical subsetting vectors and data frames",
-    "section": "Your turn!",
-    "text": "Your turn!\n\nFind all trees with DBH less than 9.5.\nFind all trees that are not tsugca (hint use the !).\nFind all dead trees (hint use the !).\nFind all live trees of unacceptable growing stock.\nFind all live betual and acerru that are of acceptable growing stock.\nMake up your own subsetting criteria."
-  },
-  {
-    "objectID": "slides/w2d1.html#agenda",
-    "href": "slides/w2d1.html#agenda",
-    "title": "Intro to Practical Computing",
+    "objectID": "slides/w5d2.html#agenda",
+    "href": "slides/w5d2.html#agenda",
+    "title": "Functions",
     "section": "Agenda",
-    "text": "Agenda\n\nReview\nNaming best practices\nFiles and directories"
+    "text": "Agenda\n\nWarm-up\nLoops\nForestry functions\nQuarto practice"
   },
   {
-    "objectID": "slides/w2d1.html#last-week",
-    "href": "slides/w2d1.html#last-week",
-    "title": "Intro to Practical Computing",
-    "section": "Last week",
-    "text": "Last week\n\nSyllabus\nLab 1\nTools for the course: R, RStudio, and Quarto"
+    "objectID": "slides/w5d2.html#warm-up-activity",
+    "href": "slides/w5d2.html#warm-up-activity",
+    "title": "Functions",
+    "section": "Warm-up activity",
+    "text": "Warm-up activity\nWrite a function that takes two vectors as arguments (inputs) and does the following:\nTakes the difference of the vectors’ means. In other words, take the mean() of each input and subtract the first input’s mean() from the second input’s mean(). Make sure to handle NA values that might exist in the vectors. Name this function diff_in_means().\nBonus: (only do if you have time) add a requirement that a and b are the same length vector.\n\n\n\n−+\n05:00"
   },
   {
-    "objectID": "slides/w2d1.html#syllabus",
-    "href": "slides/w2d1.html#syllabus",
-    "title": "Intro to Practical Computing",
-    "section": "Syllabus",
-    "text": "Syllabus\n\n\nRecall lecture tickets are due in person at the beginning of lecture.\n\nCourse late policy has been added to online version.\nLet’s quickly review the late policy."
+    "objectID": "slides/w5d2.html#warm-up-activity-possible-solution",
+    "href": "slides/w5d2.html#warm-up-activity-possible-solution",
+    "title": "Functions",
+    "section": "Warm-up activity: possible solution",
+    "text": "Warm-up activity: possible solution\n\ndiff_in_means &lt;- function(a, b, na.rm = FALSE) {\n  if (na.rm) {\n    a &lt;- a[!is.na(a)]\n    b &lt;- b[!is.na[b]]\n  }\n  \n  a_mean &lt;- mean(a)\n  b_mean &lt;- mean(b)\n  \n  return(a_mean - b_mean)\n}"
   },
   {
-    "objectID": "slides/w2d1.html#lab-1",
-    "href": "slides/w2d1.html#lab-1",
-    "title": "Intro to Practical Computing",
-    "section": "Lab 1",
-    "text": "Lab 1\n\n\nIf you’re having troubles, technical or otherwise, come to office hours.\nMake sure to turn in (.pdf and .qmd) to D2L by 5pm on Wednesday (tomorrow)."
+    "objectID": "slides/w5d2.html#warm-up-activity-possible-solution-with-bonus",
+    "href": "slides/w5d2.html#warm-up-activity-possible-solution-with-bonus",
+    "title": "Functions",
+    "section": "Warm-up activity: possible solution with bonus",
+    "text": "Warm-up activity: possible solution with bonus\n\ndiff_in_means &lt;- function(a, b, na.rm = FALSE) {\n  stopifnot(\n    \"Arguments `a` and `b` must be the same length.\" = length(a) == length(b)\n  )\n  \n  if (na.rm) {\n    a &lt;- a[!is.na(a)]\n    b &lt;- b[!is.na(b)]\n  }\n  \n  a_mean &lt;- mean(a)\n  b_mean &lt;- mean(b)\n  \n  return(a_mean - b_mean)\n}"
   },
   {
-    "objectID": "slides/w2d1.html#data-science-tools",
-    "href": "slides/w2d1.html#data-science-tools",
-    "title": "Intro to Practical Computing",
-    "section": "Data Science Tools",
-    "text": "Data Science Tools\n\n\nR is a programming language.\nRStudio is an IDE (what we use to interact with R and our computer).\nQuarto is a markdown language, for writing reports."
+    "objectID": "slides/w5d2.html#loops-1",
+    "href": "slides/w5d2.html#loops-1",
+    "title": "Functions",
+    "section": "Loops",
+    "text": "Loops\n\n\nLoops are important to R and many other programming languages.\nUnderstanding how to read, write, and utilize loops are key skills for data scientists.\nWe’ll introduce two types of loops in R: while and for loops"
   },
   {
-    "objectID": "slides/w2d1.html#practical-computing-1",
-    "href": "slides/w2d1.html#practical-computing-1",
-    "title": "Intro to Practical Computing",
-    "section": "Practical computing",
-    "text": "Practical computing\n\n\nUnderstanding your computer and its file system is vital to success in this class and beyond.\nLast week, we threw you into the deep end with data science tools.\nThis week, we’ll spend a bit more time on the details to help you interact with your computer and these tools.\nToday, we’ll focus on file systems and file/folder naming."
+    "objectID": "slides/w5d2.html#while-loops",
+    "href": "slides/w5d2.html#while-loops",
+    "title": "Functions",
+    "section": "while loops",
+    "text": "while loops\n\nwhile loops look as follows:\n\n\nwhile (condition is true) {\n  run this code until condition is false\n}"
   },
   {
-    "objectID": "slides/w2d1.html#naming-files-and-folders",
-    "href": "slides/w2d1.html#naming-files-and-folders",
-    "title": "Intro to Practical Computing",
-    "section": "Naming files and folders",
-    "text": "Naming files and folders\nSome best practices are important for naming files and folders:\n\n\nUse consistent casing:\n\ndelimiter naming, e.g. lab_01.qmd or cat_pictures\ncamel case, e.g., finalProjectMaterials.qmd or catPictures\n\nName your files and folders clearly, concisely, and informatively:\n\nGood: for128_f24\nBad: my_work_for_forestry128_in_fall_2024\nReally bad: myWorkFor_forestry128_inFall_2024"
+    "objectID": "slides/w5d2.html#while-loops-1",
+    "href": "slides/w5d2.html#while-loops-1",
+    "title": "Functions",
+    "section": "while loops",
+    "text": "while loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
-    "objectID": "slides/w2d1.html#file-systems-directories",
-    "href": "slides/w2d1.html#file-systems-directories",
-    "title": "Intro to Practical Computing",
-    "section": "File systems / directories",
-    "text": "File systems / directories\n\n\nEvery time you create or download a file, you are storing it somewhere in your computer’s file system.\nBut where? 🤔"
+    "objectID": "slides/w5d2.html#for-loops",
+    "href": "slides/w5d2.html#for-loops",
+    "title": "Functions",
+    "section": "for loops",
+    "text": "for loops\n\nfor loops look as follows:\n\n\nfor (variable in vector) {\n  run this code until through each element of the vector\n}"
   },
   {
-    "objectID": "slides/w2d1.html#file-systems-directories-1",
-    "href": "slides/w2d1.html#file-systems-directories-1",
-    "title": "Intro to Practical Computing",
-    "section": "File systems / directories",
-    "text": "File systems / directories\n\nThink of your computer’s file system as a tree"
+    "objectID": "slides/w5d2.html#for-loops-1",
+    "href": "slides/w5d2.html#for-loops-1",
+    "title": "Functions",
+    "section": "for loops",
+    "text": "for loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
-    "objectID": "slides/w2d1.html#the-root",
-    "href": "slides/w2d1.html#the-root",
-    "title": "Intro to Practical Computing",
-    "section": "The root",
-    "text": "The root\nThe root directory is the start or base of your file system.\n\n\nOn Windows, the root is C:/\nOn macOS and Linux, the root is /"
+    "objectID": "slides/w5d2.html#for-loops-2",
+    "href": "slides/w5d2.html#for-loops-2",
+    "title": "Functions",
+    "section": "for loops",
+    "text": "for loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
-    "objectID": "slides/w2d1.html#your-home-directory",
-    "href": "slides/w2d1.html#your-home-directory",
-    "title": "Intro to Practical Computing",
-    "section": "Your home directory",
-    "text": "Your home directory\nWhen interacting with your computer, you are logged in as a user. Each user has a home directory.\nFor example:\n\n\nOn Windows, C:/Users/Sarah\nOn macOS and Linux, /home/sarah"
+    "objectID": "slides/w5d2.html#for-loop-in-a-function",
+    "href": "slides/w5d2.html#for-loop-in-a-function",
+    "title": "Functions",
+    "section": "for loop in a function",
+    "text": "for loop in a function\n\nmy_mean &lt;- function(x) {\n  total &lt;- 0\n  \n  for (i in 1:length(x)) {\n    total &lt;- total + x[i]\n  }\n  \n  average &lt;- total / length(x)\n  \n  return(average)\n}"
   },
   {
-    "objectID": "slides/w2d1.html#your-home-directory-1",
-    "href": "slides/w2d1.html#your-home-directory-1",
-    "title": "Intro to Practical Computing",
-    "section": "Your home directory",
-    "text": "Your home directory\nIt is often easier to use a shortcut to access your home directory: ~. On Windows, macOS, and Linux, you can use ~ to access your home directory:\n\n~ is equivalent to C:/Users/Sarah and /home/sarah"
+    "objectID": "slides/w5d2.html#basal-area",
+    "href": "slides/w5d2.html#basal-area",
+    "title": "Functions",
+    "section": "Basal area",
+    "text": "Basal area\n\n\n\n\nBasal area is the measurement of a tree’s cross-sectional area at breast height, and is derived from the diameter at breast height measurement.\nOftentimes, we care about the basal area in a given stand and want to report basal area on a per-unit-area basis (e.g. square feet per acre or square meters per hectare), but we only have DBH measurements."
   },
   {
-    "objectID": "slides/w2d1.html#paths",
-    "href": "slides/w2d1.html#paths",
-    "title": "Intro to Practical Computing",
-    "section": "Paths",
-    "text": "Paths\nC:/Users/Sarah and /home/sarah are examples of paths. In particular, these are paths to Sarah’s home directory."
+    "objectID": "slides/w5d2.html#calculating-basal-area",
+    "href": "slides/w5d2.html#calculating-basal-area",
+    "title": "Functions",
+    "section": "Calculating basal area",
+    "text": "Calculating basal area\nBasal area in square feet per acre: \\[\n\\text{BA} = \\frac{\\pi}{144} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 144} \\cdot \\text{DBH}^2\n\\] Basal area in square meters per hectare: \\[\n\\text{BA} = \\frac{\\pi}{10000} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 10000} \\cdot \\text{DBH}^2\n\\] Basal area is of the form:\n\\(\\text{forester's constant} \\times \\text{DBH}^2\\)"
   },
   {
-    "objectID": "slides/w2d1.html#paths-1",
-    "href": "slides/w2d1.html#paths-1",
-    "title": "Intro to Practical Computing",
-    "section": "Paths",
-    "text": "Paths\n\n\nPaths specify the location of a file or folder on your computer, let’s look at a few examples:\n\n/\n/home/sarah\n/home/sarah/Desktop\n/home/sarah/Documents/for128/lab_01.qmd\n~/Documents/for128/lab_01.qmd"
+    "objectID": "slides/w5d2.html#implementation-in-r",
+    "href": "slides/w5d2.html#implementation-in-r",
+    "title": "Functions",
+    "section": "Implementation in R",
+    "text": "Implementation in R\nWhat we want: A function that\n\n\nhas sensible input checks,\ncomputes basal area in either square feet per acre or square meters per hectare, and\nis flexible enough to allow for DBH measurements to be in inches or centimeters."
   },
   {
-    "objectID": "slides/w2d1.html#paths-2",
-    "href": "slides/w2d1.html#paths-2",
-    "title": "Intro to Practical Computing",
-    "section": "Paths",
-    "text": "Paths\n\nEquivalent paths, on Windows:\n\nC:/\nC:/Users/Sarah\nC:/Users/Sarah/Desktop\nC:/Users/Sarah/Documents/for128/lab_01.qmd\n~/Documents/for128/lab_01.qmd"
+    "objectID": "slides/w5d2.html#implementation-in-r-1",
+    "href": "slides/w5d2.html#implementation-in-r-1",
+    "title": "Functions",
+    "section": "Implementation in R",
+    "text": "Implementation in R\nHow we’ll do it:\n\n\nDefine the forester’s constant for whichever units DBH measurements are in,\nConvert inches to centimeters or vise versa to satisfy our formula for basal area,\nCompute basal area based on our formula,\nGo back and add some sensible input checks."
   },
   {
-    "objectID": "slides/w2d1.html#relative-vs.-absolute-paths",
-    "href": "slides/w2d1.html#relative-vs.-absolute-paths",
-    "title": "Intro to Practical Computing",
-    "section": "Relative vs. absolute paths",
-    "text": "Relative vs. absolute paths\n\n\nSo far, we’ve only shown absolute paths.\nAbsolute paths show a file or folder in reference to your computer’s file system.\nRelative paths, on the other hand, show a file or folder in relation to a working directory."
+    "objectID": "slides/w5d2.html#calculating-basal-area-1",
+    "href": "slides/w5d2.html#calculating-basal-area-1",
+    "title": "Functions",
+    "section": "Calculating basal area",
+    "text": "Calculating basal area\nBasal area in square feet per acre: \\[\n\\text{BA} = \\frac{\\pi}{144} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 144} \\cdot \\text{DBH}^2\n\\] Basal area in square meters per hectare: \\[\n\\text{BA} = \\frac{\\pi}{10000} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 10000} \\cdot \\text{DBH}^2\n\\] There are 2.54 centimeters in an inch."
   },
   {
-    "objectID": "slides/w2d1.html#working-directory-example",
-    "href": "slides/w2d1.html#working-directory-example",
-    "title": "Intro to Practical Computing",
-    "section": "Working directory example",
-    "text": "Working directory example\n\n\nRecall the absolute path to lab_01.qmd:\n\n/home/sarah/Documents/for128/lab_01.qmd\n\nSay our working directory is the documents folder:\n\n/home/sarah/Documents\n\nThen the relative path to lab_01.qmd is:\n\nfor128/lab_01.qmd"
-  },
-  {
-    "objectID": "slides/w2d1.html#why",
-    "href": "slides/w2d1.html#why",
-    "title": "Intro to Practical Computing",
-    "section": "Why?",
-    "text": "Why?\n\n\nReproducibility!\n\nThey will work on any computer, not just your own.\n\nClear and concise.\nBut really, reproducibility."
-  },
-  {
-    "objectID": "slides/w2d1.html#what-have-we-learned",
-    "href": "slides/w2d1.html#what-have-we-learned",
-    "title": "Intro to Practical Computing",
-    "section": "What have we learned?",
-    "text": "What have we learned?\n\n\nIn Quarto, the default working directory is the folder where the quarto document lives.\n\nCrucial note: this may be different than the working directory in your R console.\n\nYou can set your working directory in R with setwd()\n\nJust for your R console, though. This does not apply to Quarto documents.\n\nYou can get your current working directory in R with getwd()"
-  },
-  {
-    "objectID": "slides/w2d1.html#next-time",
-    "href": "slides/w2d1.html#next-time",
-    "title": "Intro to Practical Computing",
+    "objectID": "slides/w5d2.html#next-time",
+    "href": "slides/w5d2.html#next-time",
+    "title": "Functions",
     "section": "Next time",
-    "text": "Next time\n\nRemember, lab 1 is due tomorrow at 5pm on D2L.\nRStudio projects.\nReading and writing data."
+    "text": "Next time\n\nIntroduction to the tidyverse"
+  },
+  {
+    "objectID": "posts/group11/FOR128 PROJECT index.html",
+    "href": "posts/group11/FOR128 PROJECT index.html",
+    "title": "Hubbard BRook Gas flux study",
+    "section": "",
+    "text": "The USDA Forest service has been assisting with the management of experimental forests for years now, and in one particularly interesting study done on the Hubbard Brook Experimental Forest, they’ve maintained a collaborative effort to study the Soil atmosphere fluxes of trace gases. In this short blog post, our team would like to share and discuss the information gathered throughout this twenty year long study on the fluxes of Carbon dioxide (CO2), Nitrous oxide (N2O) and Methane (CH4) in the Hubbard Brook Experimental study.\n\n\n\n\n\n\n\n\n\nBelow is a list of the packages used.\n\n\nCode\nlibrary(tidyverse)\nlibrary(gt)\nlibrary(readr)\nlibrary(dplyr)\nlibrary(tidyr)\nlibrary(ggplot2)"
+  },
+  {
+    "objectID": "posts/group11/FOR128 PROJECT index.html#hubbard-brook-data",
+    "href": "posts/group11/FOR128 PROJECT index.html#hubbard-brook-data",
+    "title": "Hubbard BRook Gas flux study",
+    "section": "Hubbard Brook data",
+    "text": "Hubbard Brook data\nThe parks data include measurements of every tree in every park in Portland, Oregon. We can load the data in as follows:\n\ndata &lt;- read.csv(\"HubbardBrook_TraceGas_Watershed1_BearBrook_2002-2022.csv\")"
+  },
+  {
+    "objectID": "slides/w15d2.html#agenda",
+    "href": "slides/w15d2.html#agenda",
+    "title": "Last day!",
+    "section": "Agenda",
+    "text": "Agenda\n\nQuiz 11 results\nAcademic trajectory\nFinal project help"
+  },
+  {
+    "objectID": "slides/w15d2.html#quiz-11-perceptions-of-learning",
+    "href": "slides/w15d2.html#quiz-11-perceptions-of-learning",
+    "title": "Last day!",
+    "section": "Quiz 11: Perceptions of learning",
+    "text": "Quiz 11: Perceptions of learning\nRecall “Quiz” 11"
+  },
+  {
+    "objectID": "slides/w15d2.html#some-data",
+    "href": "slides/w15d2.html#some-data",
+    "title": "Last day!",
+    "section": "Some data",
+    "text": "Some data"
+  },
+  {
+    "objectID": "slides/w15d2.html#as-a-linear-model",
+    "href": "slides/w15d2.html#as-a-linear-model",
+    "title": "Last day!",
+    "section": "As a linear model",
+    "text": "As a linear model\n\\[\ny_i = \\beta_0 + \\beta_1 \\cdot x_i + \\epsilon_i\n\\]\nwhere \\(y_i\\) is the final grade for the \\(i\\)th student in the class, and \\(x_i\\) is the attendance rate of the \\(i\\)th student in the class.\n\n\nWe estimate \\(\\beta_0\\) and \\(\\beta_1\\), the intercept and slope of the “best fit” line.\nWe also calculate \\(R^2\\), the proportion of variance in the student’s final grade that can be explained by attendance."
+  },
+  {
+    "objectID": "slides/w15d2.html#as-a-linear-model-1",
+    "href": "slides/w15d2.html#as-a-linear-model-1",
+    "title": "Last day!",
+    "section": "As a linear model",
+    "text": "As a linear model\n\n\nThe estimate of the intercept: \\(\\hat \\beta_0 = 0.305\\),\nThe estimate of the slope: \\(\\hat \\beta_1 = 0.676\\),\nThe proportion of variance explained by attendance: \\(R^2 = 0.699 \\approx 0.7\\)"
+  },
+  {
+    "objectID": "slides/w15d2.html#as-a-linear-model-2",
+    "href": "slides/w15d2.html#as-a-linear-model-2",
+    "title": "Last day!",
+    "section": "As a linear model",
+    "text": "As a linear model"
   },
   {
     "objectID": "posts/group4/Final_Project.html#relevant-packages.",
@@ -3469,7 +3455,7 @@
     "href": "posts.html",
     "title": "Class Blog",
     "section": "",
-    "text": "Analyzing Data of H.J. Andrew Experimental Forest Using R Studio\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Value of Baker Woodlot\n\n\n\nBaker Woodlot\n\n\nR\n\n\nEnvironmental Values\n\n\nSpecies\n\n\n\n\n\n\n\nBraeden Klaty, Luke Nawrocki, Riley Kuczynski, Lavoness Boldes, Jalen Willis\n\n\n\n\n\n\n\n\n\n\n\n\nImpacts of Hemlock Woolly Adelgid After Preventative Treatment in Lincoln, MA 2015-2018\n\n\n\n\n\n\n\n\n\nDec 9, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nFOR 128 Final Project\n\n\n\n\n\n\nNicole Bommarito, Abigail Matson, Avrie Hoell, Kaily Hurt, Voka Schiller\n\n\nDec 9, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMichigan Conifers: 1800s vs. Today\n\n\n\nConifers\n\n\nR\n\n\nEnvironmental Data\n\n\n\nA Comparison of Canopies\n\n\n\nRachel Adams, Timothy Hooten, Mary Jane Moncman, Rachel Sackett, Christin Toney\n\n\nDec 8, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nFOR 128 Blog Post\n\n\n\nPenobscot Experimental Forest\n\n\nR\n\n\nEnvironmental data\n\n\n\nAnalyzing the Penobscot Experimental Forests\n\n\n\nSamuel Quinto, Kayla Cameron, Dustin Lambries, Makayla Nason, Leah Boocher\n\n\nDec 5, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nTemperature at Buoy Height\n\n\n\nR\n\n\nTemperature\n\n\nEnvironmental data\n\n\n\nAnalysis of temperature changes at Lake Barco over time.\n\n\n\nElliot Beck, Jonah Benson, Bennett Vandenberg, Phillip Forest, Brady Fletcher\n\n\nDec 3, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nHubbard BRook Gas flux study\n\n\n\nExample\n\n\nR\n\n\nEnvironmental data\n\n\n\nA data study of a twenty-year-long soil study\n\n\n\nIshmael A. Miller, William Krajcik, Alex Loeffler, Bryson Taylor, Bridget Flynn\n\n\nDec 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAn example blog post\n\n\n\nExample\n\n\nR\n\n\nEnvironmental data\n\n\n\nAn examination of the Thuja plicata trees in Portland, OR\n\n\n\nGrayson White, Andrew Finley\n\n\nDec 2, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Analyzing Data of H.J. Andrew Experimental Forest Using R Studio\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Value of Baker Woodlot\n\n\n\nBaker Woodlot\n\n\nR\n\n\nEnvironmental Values\n\n\nSpecies\n\n\n\n\n\n\n\nBraeden Klaty, Luke Nawrocki, Riley Kuczynski, Lavoness Boldes, Jalen Willis\n\n\n\n\n\n\n\n\n\n\n\n\nImpacts of Hemlock Woolly Adelgid After Preventative Treatment in Lincoln, MA 2015-2018\n\n\n\n\n\n\n\n\n\nDec 9, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nFOR 128 Final Project\n\n\n\n\n\n\nNicole Bommarito, Abigail Matson, Avrie Hoell, Kaily Hurt, Voka Schiller\n\n\nDec 9, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMichigan Conifers: 1800s vs. Today\n\n\n\nConifers\n\n\nR\n\n\nEnvironmental Data\n\n\n\nA Comparison of Canopies\n\n\n\nRachel Adams, Timothy Hooten, Mary Jane Moncman, Rachel Sackett, Christin Toney\n\n\nDec 8, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nFOR 128 Blog Post\n\n\n\nPenobscot Experimental Forest\n\n\nR\n\n\nEnvironmental data\n\n\n\nAnalyzing the Penobscot Experimental Forests\n\n\n\nSamuel Quinto, Kayla Cameron, Dustin Lambries, Makayla Nason, Leah Boocher\n\n\nDec 5, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nTemperature at Buoy Height\n\n\n\nR\n\n\nTemperature\n\n\nEnvironmental data\n\n\n\nAnalysis of temperature changes at Lake Barco over time.\n\n\n\nElliot Beck, Jonah Benson, Bennett Vandenberg, Phillip Forest, Brady Fletcher\n\n\nDec 3, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nHubbard BRook Gas flux study\n\n\n\nExample\n\n\nR\n\n\nEnvironmental data\n\n\n\nA data study of a twenty-year-long soil study\n\n\n\nIshmael A. Miller, William Krajcik, Alex Loeffler, Bryson Taylor, Bridget Flynn\n\n\nDec 2, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "midterm.html",
@@ -3658,14 +3644,14 @@
     "href": "syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "Instructor: Andrew Finley (finleya@msu.edu, Room 211 Natural Resources Building)\nResearch Assistant: Grayson White (whitegra@msu.edu, Room 211 Natural Resources Building)\nEmails: Direct all email inquiries regarding the course and material covered to both the Instructor and Research Assistant, Andrew Finley and Grayson White (both as recipient, or CC’d).\nLinks:\n\nThe course website, www.for128.org, for course information, lecture slides, and course materials.\nD2L, for course feedback and non-public course materials.\n\nCourse Description:\nThis course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences."
+    "text": "Instructor: Grayson White (whitegra@msu.edu, Room 211 Natural Resources Building)\nLinks:\n\nThe course website, www.for128.org, for course information, lecture slides, and course materials.\nD2L, for course feedback and non-public course materials.\n\nCourse Description:\nThis course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences."
   },
   {
     "objectID": "syllabus.html#useful-information",
     "href": "syllabus.html#useful-information",
     "title": "Syllabus",
     "section": "",
-    "text": "Instructor: Andrew Finley (finleya@msu.edu, Room 211 Natural Resources Building)\nResearch Assistant: Grayson White (whitegra@msu.edu, Room 211 Natural Resources Building)\nEmails: Direct all email inquiries regarding the course and material covered to both the Instructor and Research Assistant, Andrew Finley and Grayson White (both as recipient, or CC’d).\nLinks:\n\nThe course website, www.for128.org, for course information, lecture slides, and course materials.\nD2L, for course feedback and non-public course materials.\n\nCourse Description:\nThis course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences."
+    "text": "Instructor: Grayson White (whitegra@msu.edu, Room 211 Natural Resources Building)\nLinks:\n\nThe course website, www.for128.org, for course information, lecture slides, and course materials.\nD2L, for course feedback and non-public course materials.\n\nCourse Description:\nThis course covers foundational skills needed to work efficiently within a computing environment. The course serves as an introduction to exploratory data analysis (EDA) using the R programming language. Use of R focuses on cleaning, structuring, and enriching raw data to facilitate EDA. The course is designed as a general precursor for subsequent discipline-specific courses. Learning occurs in a hands-on active environment with topics motivated using real datasets from environmental and biological sciences."
   },
   {
     "objectID": "syllabus.html#learning-outcomes",
@@ -4032,144 +4018,179 @@
     "text": "Conclusion\nTemperature changes at Lake Barco in Florida are significantly influenced by two major climate patterns: El Niño and La Niña. These patterns originate in the Pacific Ocean and have far-reaching effects on the weather and environment of Florida. Understanding these patterns helps scientists and environmental experts better predict seasonal changes, protect wildlife, and manage local ecosystems.\nEl Niño occurs when the temperatures in the Pacific Ocean become warmer than average. This warming often brings wetter weather and increased rainfall to Florida. One reason for this is that stronger winds prevent storm systems from forming in the Atlantic Ocean, which can mean fewer hurricanes. In 2019, for example, the El Niño phase helped contribute to warmer temperatures at Lake Barco while also possibly reducing the frequency of hurricanes. This highlights how El Niño can change seasonal patterns and have important effects on the climate.\nOn the other hand, La Niña is the opposite climate pattern. It happens when the Pacific Ocean temperatures become cooler than average. These cooler temperatures typically result in drier conditions, which can sometimes cause droughts. Additionally, La Niña often leads to more intense and frequent hurricanes because there is less wind shear to break up developing storm systems. From 2020 to 2023, La Niña became more dominant and led to cooler temperatures at Lake Barco and an increase in hurricane activity. This demonstrates how La Niña affects local climate patterns by allowing storms to grow stronger and more destructive.\nUnderstanding El Niño and La Niña is crucial not just for weather predictions but also for environmental management and community planning. Changes in temperature and rainfall can affect the health of the entire ecosystem in Lake Barco. For instance, fluctuations in temperature and water levels can impact fish populations, plant growth, and overall biodiversity. Healthy ecosystems support the plants and animals native to Lake Barco, which is vital for maintaining a balanced environment."
   },
   {
-    "objectID": "posts/group11/FOR128 PROJECT index.html",
-    "href": "posts/group11/FOR128 PROJECT index.html",
-    "title": "Hubbard BRook Gas flux study",
-    "section": "",
-    "text": "The USDA Forest service has been assisting with the management of experimental forests for years now, and in one particularly interesting study done on the Hubbard Brook Experimental Forest, they’ve maintained a collaborative effort to study the Soil atmosphere fluxes of trace gases. In this short blog post, our team would like to share and discuss the information gathered throughout this twenty year long study on the fluxes of Carbon dioxide (CO2), Nitrous oxide (N2O) and Methane (CH4) in the Hubbard Brook Experimental study.\n\n\n\n\n\n\n\n\n\nBelow is a list of the packages used.\n\n\nCode\nlibrary(tidyverse)\nlibrary(gt)\nlibrary(readr)\nlibrary(dplyr)\nlibrary(tidyr)\nlibrary(ggplot2)"
-  },
-  {
-    "objectID": "posts/group11/FOR128 PROJECT index.html#hubbard-brook-data",
-    "href": "posts/group11/FOR128 PROJECT index.html#hubbard-brook-data",
-    "title": "Hubbard BRook Gas flux study",
-    "section": "Hubbard Brook data",
-    "text": "Hubbard Brook data\nThe parks data include measurements of every tree in every park in Portland, Oregon. We can load the data in as follows:\n\ndata &lt;- read.csv(\"HubbardBrook_TraceGas_Watershed1_BearBrook_2002-2022.csv\")"
-  },
-  {
-    "objectID": "slides/w5d2.html#annoucements",
-    "href": "slides/w5d2.html#annoucements",
-    "title": "Functions",
-    "section": "Annoucements",
-    "text": "Annoucements\n\nMidterm 1 is in one week, Oct 3, during lab time.\nLab 3 grades coming soon.\nLab 4 grades by end of weekend."
-  },
-  {
-    "objectID": "slides/w5d2.html#agenda",
-    "href": "slides/w5d2.html#agenda",
-    "title": "Functions",
+    "objectID": "slides/w2d1.html#agenda",
+    "href": "slides/w2d1.html#agenda",
+    "title": "Intro to Practical Computing",
     "section": "Agenda",
-    "text": "Agenda\n\nWarm-up\nLoops\nForestry functions\nQuarto practice"
+    "text": "Agenda\n\nReview\nNaming best practices\nFiles and directories"
   },
   {
-    "objectID": "slides/w5d2.html#warm-up-activity",
-    "href": "slides/w5d2.html#warm-up-activity",
-    "title": "Functions",
-    "section": "Warm-up activity",
-    "text": "Warm-up activity\nWrite a function that takes two vectors as arguments (inputs) and does the following:\nTakes the difference of the vectors’ means. In other words, take the mean() of each input and subtract the first input’s mean() from the second input’s mean(). Make sure to handle NA values that might exist in the vectors. Name this function diff_in_means().\nBonus: (only do if you have time) add a requirement that a and b are the same length vector.\n\n\n\n−+\n05:00"
+    "objectID": "slides/w2d1.html#last-week",
+    "href": "slides/w2d1.html#last-week",
+    "title": "Intro to Practical Computing",
+    "section": "Last week",
+    "text": "Last week\n\nSyllabus\nLab 1\nTools for the course: R, RStudio, and Quarto"
   },
   {
-    "objectID": "slides/w5d2.html#warm-up-activity-possible-solution",
-    "href": "slides/w5d2.html#warm-up-activity-possible-solution",
-    "title": "Functions",
-    "section": "Warm-up activity: possible solution",
-    "text": "Warm-up activity: possible solution\n\ndiff_in_means &lt;- function(a, b, na.rm = FALSE) {\n  if (na.rm) {\n    a &lt;- a[!is.na(a)]\n    b &lt;- b[!is.na[b]]\n  }\n  \n  a_mean &lt;- mean(a)\n  b_mean &lt;- mean(b)\n  \n  return(a_mean - b_mean)\n}"
+    "objectID": "slides/w2d1.html#syllabus",
+    "href": "slides/w2d1.html#syllabus",
+    "title": "Intro to Practical Computing",
+    "section": "Syllabus",
+    "text": "Syllabus\n\n\nRecall lecture tickets are due in person at the beginning of lecture.\n\nCourse late policy has been added to online version.\nLet’s quickly review the late policy."
   },
   {
-    "objectID": "slides/w5d2.html#warm-up-activity-possible-solution-with-bonus",
-    "href": "slides/w5d2.html#warm-up-activity-possible-solution-with-bonus",
-    "title": "Functions",
-    "section": "Warm-up activity: possible solution with bonus",
-    "text": "Warm-up activity: possible solution with bonus\n\ndiff_in_means &lt;- function(a, b, na.rm = FALSE) {\n  stopifnot(\n    \"Arguments `a` and `b` must be the same length.\" = length(a) == length(b)\n  )\n  \n  if (na.rm) {\n    a &lt;- a[!is.na(a)]\n    b &lt;- b[!is.na(b)]\n  }\n  \n  a_mean &lt;- mean(a)\n  b_mean &lt;- mean(b)\n  \n  return(a_mean - b_mean)\n}"
+    "objectID": "slides/w2d1.html#lab-1",
+    "href": "slides/w2d1.html#lab-1",
+    "title": "Intro to Practical Computing",
+    "section": "Lab 1",
+    "text": "Lab 1\n\n\nIf you’re having troubles, technical or otherwise, come to office hours.\nMake sure to turn in (.pdf and .qmd) to D2L by 5pm on Wednesday (tomorrow)."
   },
   {
-    "objectID": "slides/w5d2.html#loops-1",
-    "href": "slides/w5d2.html#loops-1",
-    "title": "Functions",
-    "section": "Loops",
-    "text": "Loops\n\n\nLoops are important to R and many other programming languages.\nUnderstanding how to read, write, and utilize loops are key skills for data scientists.\nWe’ll introduce two types of loops in R: while and for loops"
+    "objectID": "slides/w2d1.html#data-science-tools",
+    "href": "slides/w2d1.html#data-science-tools",
+    "title": "Intro to Practical Computing",
+    "section": "Data Science Tools",
+    "text": "Data Science Tools\n\n\nR is a programming language.\nRStudio is an IDE (what we use to interact with R and our computer).\nQuarto is a markdown language, for writing reports."
   },
   {
-    "objectID": "slides/w5d2.html#while-loops",
-    "href": "slides/w5d2.html#while-loops",
-    "title": "Functions",
-    "section": "while loops",
-    "text": "while loops\n\nwhile loops look as follows:\n\n\nwhile (condition is true) {\n  run this code until condition is false\n}"
+    "objectID": "slides/w2d1.html#practical-computing-1",
+    "href": "slides/w2d1.html#practical-computing-1",
+    "title": "Intro to Practical Computing",
+    "section": "Practical computing",
+    "text": "Practical computing\n\n\nUnderstanding your computer and its file system is vital to success in this class and beyond.\nLast week, we threw you into the deep end with data science tools.\nThis week, we’ll spend a bit more time on the details to help you interact with your computer and these tools.\nToday, we’ll focus on file systems and file/folder naming."
   },
   {
-    "objectID": "slides/w5d2.html#while-loops-1",
-    "href": "slides/w5d2.html#while-loops-1",
-    "title": "Functions",
-    "section": "while loops",
-    "text": "while loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "objectID": "slides/w2d1.html#naming-files-and-folders",
+    "href": "slides/w2d1.html#naming-files-and-folders",
+    "title": "Intro to Practical Computing",
+    "section": "Naming files and folders",
+    "text": "Naming files and folders\nSome best practices are important for naming files and folders:\n\n\nUse consistent casing:\n\ndelimiter naming, e.g. lab_01.qmd or cat_pictures\ncamel case, e.g., finalProjectMaterials.qmd or catPictures\n\nName your files and folders clearly, concisely, and informatively:\n\nGood: for128_f24\nBad: my_work_for_forestry128_in_fall_2024\nReally bad: myWorkFor_forestry128_inFall_2024"
   },
   {
-    "objectID": "slides/w5d2.html#for-loops",
-    "href": "slides/w5d2.html#for-loops",
-    "title": "Functions",
-    "section": "for loops",
-    "text": "for loops\n\nfor loops look as follows:\n\n\nfor (variable in vector) {\n  run this code until through each element of the vector\n}"
+    "objectID": "slides/w2d1.html#file-systems-directories",
+    "href": "slides/w2d1.html#file-systems-directories",
+    "title": "Intro to Practical Computing",
+    "section": "File systems / directories",
+    "text": "File systems / directories\n\n\nEvery time you create or download a file, you are storing it somewhere in your computer’s file system.\nBut where? 🤔"
   },
   {
-    "objectID": "slides/w5d2.html#for-loops-1",
-    "href": "slides/w5d2.html#for-loops-1",
-    "title": "Functions",
-    "section": "for loops",
-    "text": "for loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "objectID": "slides/w2d1.html#file-systems-directories-1",
+    "href": "slides/w2d1.html#file-systems-directories-1",
+    "title": "Intro to Practical Computing",
+    "section": "File systems / directories",
+    "text": "File systems / directories\n\nThink of your computer’s file system as a tree"
   },
   {
-    "objectID": "slides/w5d2.html#for-loops-2",
-    "href": "slides/w5d2.html#for-loops-2",
-    "title": "Functions",
-    "section": "for loops",
-    "text": "for loops\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "objectID": "slides/w2d1.html#the-root",
+    "href": "slides/w2d1.html#the-root",
+    "title": "Intro to Practical Computing",
+    "section": "The root",
+    "text": "The root\nThe root directory is the start or base of your file system.\n\n\nOn Windows, the root is C:/\nOn macOS and Linux, the root is /"
   },
   {
-    "objectID": "slides/w5d2.html#for-loop-in-a-function",
-    "href": "slides/w5d2.html#for-loop-in-a-function",
-    "title": "Functions",
-    "section": "for loop in a function",
-    "text": "for loop in a function\n\nmy_mean &lt;- function(x) {\n  total &lt;- 0\n  \n  for (i in 1:length(x)) {\n    total &lt;- total + x[i]\n  }\n  \n  average &lt;- total / length(x)\n  \n  return(average)\n}"
+    "objectID": "slides/w2d1.html#your-home-directory",
+    "href": "slides/w2d1.html#your-home-directory",
+    "title": "Intro to Practical Computing",
+    "section": "Your home directory",
+    "text": "Your home directory\nWhen interacting with your computer, you are logged in as a user. Each user has a home directory.\nFor example:\n\n\nOn Windows, C:/Users/Sarah\nOn macOS and Linux, /home/sarah"
   },
   {
-    "objectID": "slides/w5d2.html#basal-area",
-    "href": "slides/w5d2.html#basal-area",
-    "title": "Functions",
-    "section": "Basal area",
-    "text": "Basal area\n\n\n\n\nBasal area is the measurement of a tree’s cross-sectional area at breast height, and is derived from the diameter at breast height measurement.\nOftentimes, we care about the basal area in a given stand and want to report basal area on a per-unit-area basis (e.g. square feet per acre or square meters per hectare), but we only have DBH measurements."
+    "objectID": "slides/w2d1.html#your-home-directory-1",
+    "href": "slides/w2d1.html#your-home-directory-1",
+    "title": "Intro to Practical Computing",
+    "section": "Your home directory",
+    "text": "Your home directory\nIt is often easier to use a shortcut to access your home directory: ~. On Windows, macOS, and Linux, you can use ~ to access your home directory:\n\n~ is equivalent to C:/Users/Sarah and /home/sarah"
   },
   {
-    "objectID": "slides/w5d2.html#calculating-basal-area",
-    "href": "slides/w5d2.html#calculating-basal-area",
-    "title": "Functions",
-    "section": "Calculating basal area",
-    "text": "Calculating basal area\nBasal area in square feet per acre: \\[\n\\text{BA} = \\frac{\\pi}{144} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 144} \\cdot \\text{DBH}^2\n\\] Basal area in square meters per hectare: \\[\n\\text{BA} = \\frac{\\pi}{10000} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 10000} \\cdot \\text{DBH}^2\n\\] Basal area is of the form:\n\\(\\text{forester's constant} \\times \\text{DBH}^2\\)"
+    "objectID": "slides/w2d1.html#paths",
+    "href": "slides/w2d1.html#paths",
+    "title": "Intro to Practical Computing",
+    "section": "Paths",
+    "text": "Paths\nC:/Users/Sarah and /home/sarah are examples of paths. In particular, these are paths to Sarah’s home directory."
   },
   {
-    "objectID": "slides/w5d2.html#implementation-in-r",
-    "href": "slides/w5d2.html#implementation-in-r",
-    "title": "Functions",
-    "section": "Implementation in R",
-    "text": "Implementation in R\nWhat we want: A function that\n\n\nhas sensible input checks,\ncomputes basal area in either square feet per acre or square meters per hectare, and\nis flexible enough to allow for DBH measurements to be in inches or centimeters."
+    "objectID": "slides/w2d1.html#paths-1",
+    "href": "slides/w2d1.html#paths-1",
+    "title": "Intro to Practical Computing",
+    "section": "Paths",
+    "text": "Paths\n\n\nPaths specify the location of a file or folder on your computer, let’s look at a few examples:\n\n/\n/home/sarah\n/home/sarah/Desktop\n/home/sarah/Documents/for128/lab_01.qmd\n~/Documents/for128/lab_01.qmd"
   },
   {
-    "objectID": "slides/w5d2.html#implementation-in-r-1",
-    "href": "slides/w5d2.html#implementation-in-r-1",
-    "title": "Functions",
-    "section": "Implementation in R",
-    "text": "Implementation in R\nHow we’ll do it:\n\n\nDefine the forester’s constant for whichever units DBH measurements are in,\nConvert inches to centimeters or vise versa to satisfy our formula for basal area,\nCompute basal area based on our formula,\nGo back and add some sensible input checks."
+    "objectID": "slides/w2d1.html#paths-2",
+    "href": "slides/w2d1.html#paths-2",
+    "title": "Intro to Practical Computing",
+    "section": "Paths",
+    "text": "Paths\n\nEquivalent paths, on Windows:\n\nC:/\nC:/Users/Sarah\nC:/Users/Sarah/Desktop\nC:/Users/Sarah/Documents/for128/lab_01.qmd\n~/Documents/for128/lab_01.qmd"
   },
   {
-    "objectID": "slides/w5d2.html#calculating-basal-area-1",
-    "href": "slides/w5d2.html#calculating-basal-area-1",
-    "title": "Functions",
-    "section": "Calculating basal area",
-    "text": "Calculating basal area\nBasal area in square feet per acre: \\[\n\\text{BA} = \\frac{\\pi}{144} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 144} \\cdot \\text{DBH}^2\n\\] Basal area in square meters per hectare: \\[\n\\text{BA} = \\frac{\\pi}{10000} \\cdot \\left( \\frac{\\text{DBH}}{2} \\right)^2 = \\frac{\\pi}{4\\cdot 10000} \\cdot \\text{DBH}^2\n\\] There are 2.54 centimeters in an inch."
+    "objectID": "slides/w2d1.html#relative-vs.-absolute-paths",
+    "href": "slides/w2d1.html#relative-vs.-absolute-paths",
+    "title": "Intro to Practical Computing",
+    "section": "Relative vs. absolute paths",
+    "text": "Relative vs. absolute paths\n\n\nSo far, we’ve only shown absolute paths.\nAbsolute paths show a file or folder in reference to your computer’s file system.\nRelative paths, on the other hand, show a file or folder in relation to a working directory."
   },
   {
-    "objectID": "slides/w5d2.html#next-time",
-    "href": "slides/w5d2.html#next-time",
-    "title": "Functions",
+    "objectID": "slides/w2d1.html#working-directory-example",
+    "href": "slides/w2d1.html#working-directory-example",
+    "title": "Intro to Practical Computing",
+    "section": "Working directory example",
+    "text": "Working directory example\n\n\nRecall the absolute path to lab_01.qmd:\n\n/home/sarah/Documents/for128/lab_01.qmd\n\nSay our working directory is the documents folder:\n\n/home/sarah/Documents\n\nThen the relative path to lab_01.qmd is:\n\nfor128/lab_01.qmd"
+  },
+  {
+    "objectID": "slides/w2d1.html#why",
+    "href": "slides/w2d1.html#why",
+    "title": "Intro to Practical Computing",
+    "section": "Why?",
+    "text": "Why?\n\n\nReproducibility!\n\nThey will work on any computer, not just your own.\n\nClear and concise.\nBut really, reproducibility."
+  },
+  {
+    "objectID": "slides/w2d1.html#what-have-we-learned",
+    "href": "slides/w2d1.html#what-have-we-learned",
+    "title": "Intro to Practical Computing",
+    "section": "What have we learned?",
+    "text": "What have we learned?\n\n\nIn Quarto, the default working directory is the folder where the quarto document lives.\n\nCrucial note: this may be different than the working directory in your R console.\n\nYou can set your working directory in R with setwd()\n\nJust for your R console, though. This does not apply to Quarto documents.\n\nYou can get your current working directory in R with getwd()"
+  },
+  {
+    "objectID": "slides/w2d1.html#next-time",
+    "href": "slides/w2d1.html#next-time",
+    "title": "Intro to Practical Computing",
     "section": "Next time",
-    "text": "Next time\n\nIntroduction to the tidyverse"
+    "text": "Next time\n\nRemember, lab 1 is due tomorrow at 5pm on D2L.\nRStudio projects.\nReading and writing data."
+  },
+  {
+    "objectID": "slides/w4d1.html",
+    "href": "slides/w4d1.html",
+    "title": "Logical subsetting vectors and data frames",
+    "section": "",
+    "text": "create, subset, and manipulate vectors and data frames\nuse comparison and logical operators\npractice combining logical tests to extract information from vectors and data frames\nstart thinking “inside out”"
+  },
+  {
+    "objectID": "slides/w4d1.html#learning-objectives",
+    "href": "slides/w4d1.html#learning-objectives",
+    "title": "Logical subsetting vectors and data frames",
+    "section": "",
+    "text": "create, subset, and manipulate vectors and data frames\nuse comparison and logical operators\npractice combining logical tests to extract information from vectors and data frames\nstart thinking “inside out”"
+  },
+  {
+    "objectID": "slides/w4d1.html#logical-subsetting",
+    "href": "slides/w4d1.html#logical-subsetting",
+    "title": "Logical subsetting vectors and data frames",
+    "section": "Logical subsetting",
+    "text": "Logical subsetting\nSo far we have directly specified the elements of vectors that we want to extract, for example spp[1] or dbh[length(dbh)] or spp[c(1,3,5)]. We have also subsetted data frame rows and columns, for example, plt[c(2,5),], plt[nrow(plt),], plt[,1:2], or plt[,c(\"spp\",\"dbh\")]. More commonly we want to extract elements that meet a condition, such as all trees greater than some minimum DBH or all trees of a given species. For this we use subsetting with logical vectors, see Section 6.6 in the course book.\nHere are the comparison operators:\n\nEqual: ==\nNot equal: !=\nGreater than: &gt;\nLess than: &lt;\nGreater than or equal to: &gt;=\nLess than or equal to: &lt;=\n\nLet’s give these operators a spin using the plt data frame.\nFirst on a single column, i.e., a vector subset operation.\n\nplt$qual[plt$qual == \"ags\"] # Understand this statement from the inside out!\n\n[1] \"ags\" \"ags\" \"ags\" \"ags\" \"ags\"\n\n\nGet all trees (i.e., rows) for species acerru.\n\nplt[plt$spp == \"acerru\", ]\n\n     spp  dbh qual  live\n4 acerru  9.3  ugs FALSE\n8 acerru 11.1  ags  TRUE\n\n\nGet all trees (i.e., rows) but for acerru.\n\nplt[plt$spp != \"acerru\", ]\n\n     spp   dbh qual  live\n1 tsugca 15.00  ugs  TRUE\n2 tsugca 12.00  ags  TRUE\n3 betual  6.60  ags  TRUE\n5 pinust 28.10  ags  TRUE\n6 pinust  9.23  ags  TRUE\n7 betual 15.30  ugs FALSE\n\n\nGet all trees (i.e., rows) with DBH greater than 10.\n\nplt[plt$dbh &gt; 10, ]\n\n     spp  dbh qual  live\n1 tsugca 15.0  ugs  TRUE\n2 tsugca 12.0  ags  TRUE\n5 pinust 28.1  ags  TRUE\n7 betual 15.3  ugs FALSE\n8 acerru 11.1  ags  TRUE\n\n\nGet all tree species with DBH greater than 10.\n\nplt[plt$dbh &gt; 10, \"spp\"]\n\n[1] \"tsugca\" \"tsugca\" \"pinust\" \"betual\" \"acerru\"\n\n\nFind all live trees. Note, why do I have plt$live and not plt$live == TRUE in the code below?\n\nplt[plt$live, ]\n\n     spp   dbh qual live\n1 tsugca 15.00  ugs TRUE\n2 tsugca 12.00  ags TRUE\n3 betual  6.60  ags TRUE\n5 pinust 28.10  ags TRUE\n6 pinust  9.23  ags TRUE\n8 acerru 11.10  ags TRUE"
+  },
+  {
+    "objectID": "slides/w4d1.html#a-bit-on-logical-operators-and-subsetting",
+    "href": "slides/w4d1.html#a-bit-on-logical-operators-and-subsetting",
+    "title": "Logical subsetting vectors and data frames",
+    "section": "A bit on logical operators and subsetting",
+    "text": "A bit on logical operators and subsetting\nThere are some logical operators we haven’t seen yet, including the “and” operator and the “or” operator.\n\nand: &\nor: |\n\nThe & operator compares vector elements on its left and right to see if they match. If they are both TRUE, then & returns TRUE, otherwise FALSE. The | operator compares vector elements on its left and right to see if either of them are TRUE. If at least one is TRUE then | returns TRUE, otherwise if both are FALSE then FALSE is returned. These operations are applied for each element pair along the vectors. For example:\n\nc(FALSE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)\n\n[1]  TRUE  TRUE FALSE\n\nc(FALSE, TRUE, FALSE) & c(TRUE, TRUE, FALSE)\n\n[1] FALSE  TRUE FALSE\n\n\nSo, say you want all acerru with DBH greater than 10.\n\nplt[plt$spp == \"acerru\" & plt$dbh &gt; 10, ]\n\n     spp  dbh qual live\n8 acerru 11.1  ags TRUE\n\n\nAnother useful logical operator is the ! (i.e., the exclamation point, referred to as the “bang” in coding slang) which negates or flips the logical value, so for example !FALSE is TRUE and !TRUE is FALSE (or !“I know what I’m talking about”).\nYet another very handy operator is %in% which is used to identify if an element occurs in a second vector. Or a substitute for a series of “or” statements. Consider the example below and consult the manual page via help(\"%in%\").\n\ndbh == 15 | dbh == 6 | dbh == 11\n\n[1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n\ndbh %in% c(15, 6, 11)\n\n[1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n\n\n\nletters\n\n [1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\" \"k\" \"l\" \"m\" \"n\" \"o\" \"p\" \"q\" \"r\" \"s\"\n[20] \"t\" \"u\" \"v\" \"w\" \"x\" \"y\" \"z\"\n\nletters %in% c(\"a\", \"m\", \"q\", \"s\")\n\n [1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n[13]  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE\n[25] FALSE FALSE\n\n# letters == \"a\" | letters == \"m\" | letters = \"q\" | letters == \"s\" ## Find the error.\n\nSay you want acerru and tsugca with DBH greater than 10.\n\nplt[plt$spp %in% c(\"acerru\", \"tsugca\") & plt$dbh &gt; 10,]\n\n     spp  dbh qual live\n1 tsugca 15.0  ugs TRUE\n2 tsugca 12.0  ags TRUE\n8 acerru 11.1  ags TRUE\n\n\nNow, say you want acerru and tsugca with DBH greater than 10 and acceptable growing stock.\n\nplt[plt$spp %in% c(\"acerru\", \"tsugca\") & plt$dbh &gt; 10 & plt$qual == \"ags\",]\n\n     spp  dbh qual live\n2 tsugca 12.0  ags TRUE\n8 acerru 11.1  ags TRUE"
+  },
+  {
+    "objectID": "slides/w4d1.html#your-turn",
+    "href": "slides/w4d1.html#your-turn",
+    "title": "Logical subsetting vectors and data frames",
+    "section": "Your turn!",
+    "text": "Your turn!\n\nFind all trees with DBH less than 9.5.\nFind all trees that are not tsugca (hint use the !).\nFind all dead trees (hint use the !).\nFind all live trees of unacceptable growing stock.\nFind all live betual and acerru that are of acceptable growing stock.\nMake up your own subsetting criteria."
   },
   {
     "objectID": "labs/lab_10_web.html",
@@ -6178,7 +6199,7 @@
     "href": "slides/w12d2.html#saving-graphics-2",
     "title": "More graphics with ggplot2",
     "section": "Saving graphics",
-    "text": "Saving graphics\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nlist.files()\n\n [1] \"figs\"              \"minard-cities.txt\" \"minard-troops.txt\"\n [4] \"Parks\"             \"pets.csv\"          \"saved_plots\"      \n [7] \"w10d1.html\"        \"w10d1.qmd\"         \"w10d2.html\"       \n[10] \"w10d2.qmd\"         \"w11d1_files\"       \"w11d1.html\"       \n[13] \"w11d1.qmd\"         \"w11d2_files\"       \"w11d2.html\"       \n[16] \"w11d2.qmd\"         \"w12d1.qmd\"         \"w12d2_files\"      \n[19] \"w12d2.qmd\"         \"w12d2.rmarkdown\"   \"w13d1_files\"      \n[22] \"w13d1.html\"        \"w13d1.qmd\"         \"w14d1.html\"       \n[25] \"w14d1.qmd\"         \"w15d1.html\"        \"w15d1.qmd\"        \n[28] \"w1d1.html\"         \"w1d1.qmd\"          \"w1d2.html\"        \n[31] \"w1d2.qmd\"          \"w2d1.html\"         \"w2d1.qmd\"         \n[34] \"w2d2.qmd\"          \"w3d1.html\"         \"w3d1.qmd\"         \n[37] \"w4d1.html\"         \"w4d1.qmd\"          \"w4d2.qmd\"         \n[40] \"w5d1.qmd\"          \"w5d2.html\"         \"w5d2.qmd\"         \n[43] \"w6d1.html\"         \"w6d1.qmd\"          \"w7d1.html\"        \n[46] \"w7d1.qmd\"          \"w7d2.qmd\"          \"w8d1.html\"        \n[49] \"w8d1.qmd\"          \"w8d2.html\"         \"w8d2.qmd\"         \n[52] \"w9d1.html\"         \"w9d1.qmd\"         \n\nlist.files(\"saved_plots\")\n\n[1] \"my_patchwork.jpg\" \"my_plot_big.png\"  \"my_plot.png\""
+    "text": "Saving graphics\nGraphics are best when shared with the world. How do we get these out of R and onto our computer?\n\nlist.files()\n\n [1] \"figs\"              \"minard-cities.txt\" \"minard-troops.txt\"\n [4] \"Parks\"             \"pets.csv\"          \"saved_plots\"      \n [7] \"w10d1.html\"        \"w10d1.qmd\"         \"w10d2.html\"       \n[10] \"w10d2.qmd\"         \"w11d1_files\"       \"w11d1.html\"       \n[13] \"w11d1.qmd\"         \"w11d2_files\"       \"w11d2.html\"       \n[16] \"w11d2.qmd\"         \"w12d1.qmd\"         \"w12d2_files\"      \n[19] \"w12d2.qmd\"         \"w12d2.rmarkdown\"   \"w13d1_files\"      \n[22] \"w13d1.html\"        \"w13d1.qmd\"         \"w14d1.html\"       \n[25] \"w14d1.qmd\"         \"w15d1.html\"        \"w15d1.qmd\"        \n[28] \"w15d2.html\"        \"w15d2.qmd\"         \"w1d1.html\"        \n[31] \"w1d1.qmd\"          \"w1d2.html\"         \"w1d2.qmd\"         \n[34] \"w2d1.html\"         \"w2d1.qmd\"          \"w2d2.qmd\"         \n[37] \"w3d1.html\"         \"w3d1.qmd\"          \"w4d1.html\"        \n[40] \"w4d1.qmd\"          \"w4d2.qmd\"          \"w5d1.qmd\"         \n[43] \"w5d2.html\"         \"w5d2.qmd\"          \"w6d1.html\"        \n[46] \"w6d1.qmd\"          \"w7d1.html\"         \"w7d1.qmd\"         \n[49] \"w7d2.qmd\"          \"w8d1.html\"         \"w8d1.qmd\"         \n[52] \"w8d2.html\"         \"w8d2.qmd\"          \"w9d1.html\"        \n[55] \"w9d1.qmd\"         \n\nlist.files(\"saved_plots\")\n\n[1] \"my_patchwork.jpg\" \"my_plot_big.png\"  \"my_plot.png\""
   },
   {
     "objectID": "slides/w12d2.html#saving-graphics-3",
@@ -6865,61 +6886,5 @@
     "title": "Functions",
     "section": "Next Week",
     "text": "Next Week\n\nMore functions!\nControl statements: if, else\nLoops!"
-  },
-  {
-    "objectID": "slides/w15d2.html#agenda",
-    "href": "slides/w15d2.html#agenda",
-    "title": "Last day!",
-    "section": "Agenda",
-    "text": "Agenda\n\nQuiz 11 results\nAcademic trajectory\nFinal project help"
-  },
-  {
-    "objectID": "slides/w15d2.html#quiz-11-perceptions-of-learning",
-    "href": "slides/w15d2.html#quiz-11-perceptions-of-learning",
-    "title": "Last day!",
-    "section": "Quiz 11: Perceptions of learning",
-    "text": "Quiz 11: Perceptions of learning\nRecall “Quiz” 11"
-  },
-  {
-    "objectID": "slides/w15d2.html#next-time",
-    "href": "slides/w15d2.html#next-time",
-    "title": "Last day!",
-    "section": "Next time",
-    "text": "Next time\n\nWhere next in data science?\nGroup project questions"
-  },
-  {
-    "objectID": "slides/w15d2.html#quiz-11-perceptions-of-learning-results",
-    "href": "slides/w15d2.html#quiz-11-perceptions-of-learning-results",
-    "title": "Last day!",
-    "section": "Quiz 11: Perceptions of learning results",
-    "text": "Quiz 11: Perceptions of learning results"
-  },
-  {
-    "objectID": "slides/w15d2.html#some-data",
-    "href": "slides/w15d2.html#some-data",
-    "title": "Last day!",
-    "section": "Some data",
-    "text": "Some data"
-  },
-  {
-    "objectID": "slides/w15d2.html#as-a-linear-model",
-    "href": "slides/w15d2.html#as-a-linear-model",
-    "title": "Last day!",
-    "section": "As a linear model",
-    "text": "As a linear model\n\\[\ny_i = \\beta_0 + \\beta_1 \\cdot x_i + \\epsilon_i\n\\]\nwhere \\(y_i\\) is the final grade for the \\(i\\)th student in the class, and \\(x_i\\) is the attendance rate of the \\(i\\)th student in the class.\n\n\nWe estimate \\(\\beta_0\\) and \\(\\beta_1\\), the intercept and slope of the “best fit” line.\nWe also calculate \\(R^2\\), the proportion of variance in the student’s final grade that can be explained by attendance."
-  },
-  {
-    "objectID": "slides/w15d2.html#as-a-linear-model-1",
-    "href": "slides/w15d2.html#as-a-linear-model-1",
-    "title": "Last day!",
-    "section": "As a linear model",
-    "text": "As a linear model\n\n\n\nCall:\nlm(formula = final_grade ~ attendance_rate, data = .)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.244940 -0.057939 -0.002879  0.045848  0.286447 \n\nCoefficients:\n                Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)      0.30535    0.05315   5.745 6.13e-07 ***\nattendance_rate  0.67558    0.06395  10.563 4.08e-14 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.09512 on 48 degrees of freedom\nMultiple R-squared:  0.6992,    Adjusted R-squared:  0.693 \nF-statistic: 111.6 on 1 and 48 DF,  p-value: 4.083e-14\n\n\n\n\nThe estimate of the intercept: \\(\\hat \\beta_0 = 0.305\\),\nThe estimate of the slope: \\(\\hat \\beta_1 = 0.676\\),\nThe proportion of variance explained by attendance: \\(R^2 = 0.699 \\approx 0.7\\)"
-  },
-  {
-    "objectID": "slides/w15d2.html#as-a-linear-model-2",
-    "href": "slides/w15d2.html#as-a-linear-model-2",
-    "title": "Last day!",
-    "section": "As a linear model",
-    "text": "As a linear model"
   }
 ]

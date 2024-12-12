@@ -90,8 +90,6 @@ website:
         text: Assignments
       - href: posts.qmd
         text: Class Blog
-      - href: final_project.qmd
-        text: Final Project
       - href: recordings.qmd
         text: Lecture Recordings
       - href: https://www.finley-lab.com/files/ifdar/
