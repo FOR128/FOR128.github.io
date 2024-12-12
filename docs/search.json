@@ -6620,5 +6620,61 @@
     "title": "Functions",
     "section": "Next Week",
     "text": "Next Week\n\nMore functions!\nControl statements: if, else\nLoops!"
+  },
+  {
+    "objectID": "slides/w15d2.html#agenda",
+    "href": "slides/w15d2.html#agenda",
+    "title": "Last day!",
+    "section": "Agenda",
+    "text": "Agenda\n\nQuiz 11 results\nAcademic trajectory\nFinal project help"
+  },
+  {
+    "objectID": "slides/w15d2.html#quiz-11-perceptions-of-learning",
+    "href": "slides/w15d2.html#quiz-11-perceptions-of-learning",
+    "title": "Last day!",
+    "section": "Quiz 11: Perceptions of learning",
+    "text": "Quiz 11: Perceptions of learning\nRecall “Quiz” 11"
+  },
+  {
+    "objectID": "slides/w15d2.html#next-time",
+    "href": "slides/w15d2.html#next-time",
+    "title": "Last day!",
+    "section": "Next time",
+    "text": "Next time\n\nWhere next in data science?\nGroup project questions"
+  },
+  {
+    "objectID": "slides/w15d2.html#quiz-11-perceptions-of-learning-results",
+    "href": "slides/w15d2.html#quiz-11-perceptions-of-learning-results",
+    "title": "Last day!",
+    "section": "Quiz 11: Perceptions of learning results",
+    "text": "Quiz 11: Perceptions of learning results"
+  },
+  {
+    "objectID": "slides/w15d2.html#some-data",
+    "href": "slides/w15d2.html#some-data",
+    "title": "Last day!",
+    "section": "Some data",
+    "text": "Some data"
+  },
+  {
+    "objectID": "slides/w15d2.html#as-a-linear-model",
+    "href": "slides/w15d2.html#as-a-linear-model",
+    "title": "Last day!",
+    "section": "As a linear model",
+    "text": "As a linear model\n\\[\ny_i = \\beta_0 + \\beta_1 \\cdot x_i + \\epsilon_i\n\\]\nwhere \\(y_i\\) is the final grade for the \\(i\\)th student in the class, and \\(x_i\\) is the attendance rate of the \\(i\\)th student in the class.\n\n\nWe estimate \\(\\beta_0\\) and \\(\\beta_1\\), the intercept and slope of the “best fit” line.\nWe also calculate \\(R^2\\), the proportion of variance in the student’s final grade that can be explained by attendance."
+  },
+  {
+    "objectID": "slides/w15d2.html#as-a-linear-model-1",
+    "href": "slides/w15d2.html#as-a-linear-model-1",
+    "title": "Last day!",
+    "section": "As a linear model",
+    "text": "As a linear model\n\n\n\nCall:\nlm(formula = final_grade ~ attendance_rate, data = .)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.244940 -0.057939 -0.002879  0.045848  0.286447 \n\nCoefficients:\n                Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)      0.30535    0.05315   5.745 6.13e-07 ***\nattendance_rate  0.67558    0.06395  10.563 4.08e-14 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.09512 on 48 degrees of freedom\nMultiple R-squared:  0.6992,    Adjusted R-squared:  0.693 \nF-statistic: 111.6 on 1 and 48 DF,  p-value: 4.083e-14\n\n\n\n\nThe estimate of the intercept: \\(\\hat \\beta_0 = 0.305\\),\nThe estimate of the slope: \\(\\hat \\beta_1 = 0.676\\),\nThe proportion of variance explained by attendance: \\(R^2 = 0.699 \\approx 0.7\\)"
+  },
+  {
+    "objectID": "slides/w15d2.html#as-a-linear-model-2",
+    "href": "slides/w15d2.html#as-a-linear-model-2",
+    "title": "Last day!",
+    "section": "As a linear model",
+    "text": "As a linear model"
   }
 ]

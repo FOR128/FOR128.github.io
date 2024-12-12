@@ -1,0 +1,200 @@
+---
+title: "Last day!"
+editor: 
+  mode: source
+webr:
+  show-startup-message: false
+filters:
+  - webr
+engine: knitr
+execute:
+  echo: true
+format: 
+  revealjs:
+    author: "Practical Computing and Data Science Tools"
+    height: 900
+    width: 1600
+    theme: ../assets/slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: c
+    incremental: false
+    center: false
+    menu: false
+    highlight-style: github
+    progress: false
+    code-overflow: wrap
+    title-slide-attributes:
+      data-background-image: ../assets/for128-hex.png
+      data-background-size: 20%
+      data-background-position: 50% 20%
+revealjs-plugins:
+  - revealjs-text-resizer
+---
+
+## Agenda
+
+-   Quiz 11 results
+-   Academic trajectory
+-   Final project help
+
+## Quiz 11: Perceptions of learning
+
+Recall "Quiz" 11 
+
+---
+
+```{r}
+#| echo: false
+#| out-width: 100%
+#| fig-align: "center"
+library(tidyverse)
+class <- read_csv("~/Desktop/class2.csv") %>%
+  pivot_longer(cols = 1:9,
+               names_to = "response",
+               values_to = "score") %>%
+  mutate(response = sub("_", " ", response),
+         response = tools::toTitleCase(response))
+
+class %>% 
+  ggplot(aes(x = score)) + 
+  geom_bar(color = "black", fill = "seagreen") + 
+  facet_wrap(~response) +
+  labs(caption = "Scores defined as follows. 1: Very unimportant / very unhelpful,\n
+       2: Unimportant / not helpful, 3: Neutral / somewhat helpful,\n
+       4: Important / helpful, and 5: Very important / very helpful",
+       title = "Student's responses to how helpful different aspects of the course were for their learning",
+       subtitle = "Forestry 128, Michigan State University, Fall 2024",
+       x = "Likert Scale Score",
+       y = "Number of Student Responses") + 
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+## Some data
+
+```{r}
+#| echo: false
+#| out-width: 100%
+#| fig-align: "center"
+grades <- read_csv("~/Downloads/Practical Computing and Data Science Tools_GradesExport_2024-12-04-18-21.csv") %>%
+  filter(!(`Last Name` %in% c("Student", "Cook"))) %>%
+  mutate(attendence_rate = (`Lecture tickets Subtotal Numerator` - 3*4) / (`Lecture tickets Subtotal Denominator` - 3*4),
+         final_grade = `Calculated Final Grade Numerator` / `Calculated Final Grade Denominator`)
+
+
+grades_long <- grades %>%
+  select(-`Lecture tickets Subtotal Denominator`,
+         -`Lecture tickets Subtotal Numerator`,
+         - `Lecture Ticket 0 Points Grade <Numeric MaxPoints:4 Category:Lecture tickets>`,
+         - `Lecture Ticket 27 Points Grade <Numeric MaxPoints:4 Category:Lecture tickets>`) %>%
+  pivot_longer(cols = starts_with("Lecture Ticket"),
+               names_to = "ltnum", values_to = "score") 
+grades_long %>%
+  group_by(Username) %>%
+  summarize(attendance_rate = (sum(score, na.rm = T) - 4) / 100,
+            final_grade = mean(final_grade))  %>%
+  ggplot(aes(x = attendance_rate, y = final_grade)) + 
+  geom_point() + 
+  # geom_smooth(method = "lm", se = F) + 
+  theme_bw()
+```
+
+
+## As a linear model
+
+$$
+y_i = \beta_0 + \beta_1 \cdot x_i + \epsilon_i
+$$
+
+where $y_i$ is the final grade for the $i$th student in the class, and $x_i$ is the attendance rate of the $i$th student in the class. 
+
+::: incremental
+
+-   We estimate $\beta_0$ and $\beta_1$, the intercept and slope of the "best fit" line.
+-   We also calculate $R^2$, the proportion of variance in the student's final grade that can be explained by attendance. 
+
+:::
+
+## As a linear model
+
+```{r}
+#| echo: false
+grades_long %>%
+  group_by(Username) %>%
+  summarize(attendance_rate = (sum(score, na.rm = T) - 4) / 100,
+            final_grade = mean(final_grade)) %>%
+  lm(final_grade ~ attendance_rate, .) %>%
+  summary()
+```
+
+::: incremental
+
+-   The estimate of the intercept: $\hat \beta_0 = 0.305$, 
+-   The estimate of the slope: $\hat \beta_1 = 0.676$,
+-   The proportion of variance explained by attendance: $R^2 = 0.699 \approx 0.7$
+
+:::
+
+## As a linear model
+
+```{r}
+#| echo: false
+grades_long %>%
+  group_by(Username) %>%
+  summarize(attendance_rate = (sum(score, na.rm = T) - 4) / 100,
+            final_grade = mean(final_grade))  %>%
+  ggplot(aes(x = attendance_rate, y = final_grade)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = F) + 
+  theme_bw()
+```
+
+---
+
+```{r}
+#| echo: false
+#| out-width: 100%
+#| fig-align: "center"
+class %>% 
+  ggplot(aes(x = score)) + 
+  geom_bar(color = "black", fill = "seagreen") + 
+  facet_wrap(~response) +
+  labs(caption = "Scores defined as follows. 1: Very unimportant / very unhelpful,\n
+       2: Unimportant / not helpful, 3: Neutral / somewhat helpful,\n
+       4: Important / helpful, and 5: Very important / very helpful",
+       title = "Student's responses to how helpful different aspects of the course were for their learning",
+       subtitle = "Forestry 128, Michigan State University, Fall 2024",
+       x = "Likert Scale Score",
+       y = "Number of Student Responses") + 
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+
+# Trajectory {background-color="#00817c"}
+
+# Where'd you come from? 
+
+# Where are you going? 
+
+# Where can you take more data science classes? 
+
+# Thank you for a wonderful semester! {background-color="#00817c"}
+
+```{r}
+#| echo: false
+set.seed(5)
+emo::ji("excited")
+emo::ji("party")
+emo::ji("party")
+emo::ji("party")
+emo::ji("tree")
+emo::ji("tree")
+emo::ji("tree")
+
+```
+
+
